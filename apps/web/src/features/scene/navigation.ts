@@ -1,8 +1,9 @@
 import { type Category, categorySlugs } from '@choose/catalog'
 import { useNavigate } from '@tanstack/react-router'
 import { type MouseEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import type { FinderSearch } from '~/features/finder/useFinder'
 import { useLocale } from '~/i18n/locale'
-import { scene } from './controller'
+import { type Arrival, scene } from './controller'
 import type { Pt, Viewport } from './geometry'
 import type { SceneTarget } from './renderer'
 
@@ -15,14 +16,19 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
 /** Longest a page exit may hold a navigation. */
 const EXIT_CAP_MS = 650
 
-let exit: (() => Promise<void>) | null = null
+/** `leave`: the page goes away (home ↔ category); `switch`: one category's finder for another. */
+export type ExitKind = 'leave' | 'switch'
+
+let exit: ((kind: ExitKind) => Promise<void>) | null = null
+/** Bumped by every scene navigation: only the last of several quick clicks navigates. */
+let ticket = 0
 
 /** Registers the exit animation of the page on screen. */
-export function usePageExit(play: () => Promise<void>) {
+export function usePageExit(play: (kind: ExitKind) => Promise<void>) {
   const latest = useRef(play)
   latest.current = play
   useEffect(() => {
-    const run = () => latest.current()
+    const run = (kind: ExitKind) => latest.current(kind)
     exit = run
     return () => {
       if (exit === run) exit = null
@@ -30,12 +36,12 @@ export function usePageExit(play: () => Promise<void>) {
   }, [])
 }
 
-function runPageExit() {
+function runPageExit(kind: ExitKind) {
   const play = exit
   exit = null
   if (!play) return Promise.resolve()
   return Promise.race([
-    play().catch(() => {}),
+    play(kind).catch(() => {}),
     new Promise<void>((resolve) => setTimeout(resolve, EXIT_CAP_MS)),
   ])
 }
@@ -44,27 +50,56 @@ function runPageExit() {
 export const isPlainClick = (e: MouseEvent) =>
   e.button === 0 && !e.metaKey && !e.ctrlKey && !e.shiftKey && !e.altKey
 
+// ---- Journeys ---------------------------------------------------------------------------------
+
+// Each category remembers where the visitor left its questionnaire, so switching to monitors and
+// back to keyboards resumes the keyboard answers. Browser storage only: a convenience, never
+// required (private windows and blocked storage simply start afresh).
+
+const journeyKey = (category: Category) => `choose-a-device:journey:${category}`
+
+export function saveJourney(category: Category, search: FinderSearch) {
+  try {
+    localStorage.setItem(journeyKey(category), JSON.stringify(search))
+  } catch {}
+}
+
+function loadJourney(category: Category): FinderSearch {
+  try {
+    const raw = localStorage.getItem(journeyKey(category))
+    const value: unknown = raw ? JSON.parse(raw) : null
+    if (!value || typeof value !== 'object') return {}
+    return Object.fromEntries(
+      Object.entries(value).filter(([, v]) => typeof v === 'string'),
+    ) as FinderSearch
+  } catch {
+    return {}
+  }
+}
+
 /** Goes to a category (or home with null), through the scene transition. */
 export function useSceneNavigation() {
   const navigate = useNavigate()
   const locale = useLocale()
   return useCallback(
     (category: Category | null, focal?: Pt) => {
-      const go = () =>
-        category
-          ? navigate({
-              to: '/$lang/$category',
-              params: { lang: locale, category: categorySlugs[category][locale] },
-            })
-          : navigate({ to: '/$lang', params: { lang: locale } })
       const current = scene.current
-      const already = category
-        ? current?.mode === 'canvas' && current.category === category
-        : current?.mode === 'bands'
-      if (already) return void go()
+      // Already there: the link of the page on screen does nothing.
+      if (category && current?.mode === 'canvas' && current.category === category) return
+      if (!category && current?.mode === 'bands') return
+      const kind: ExitKind = category && current?.mode === 'canvas' ? 'switch' : 'leave'
       if (category) scene.showCanvas(category, focal)
       else scene.showBands()
-      void runPageExit().then(go)
+      const mine = ++ticket
+      void runPageExit(kind).then(() => {
+        if (mine !== ticket) return
+        if (!category) return navigate({ to: '/$lang', params: { lang: locale } })
+        return navigate({
+          to: '/$lang/$category',
+          params: { lang: locale, category: categorySlugs[category][locale] },
+          search: loadJourney(category),
+        })
+      })
     },
     [navigate, locale],
   )
@@ -87,6 +122,12 @@ export const markHydrated = () => {
 export function useEnterDelay(target: SceneTarget, share = 1, base = 0.1) {
   const [delay] = useState(() => (hydrated ? Math.max(base, scene.until(target) * share) : base))
   return delay
+}
+
+/** How the scene brings this page in (`intro` on the first paint, server render included). */
+export function useArrival(target: SceneTarget): Arrival {
+  const [arrival] = useState(() => (hydrated ? scene.arrivalTo(target) : 'intro'))
+  return arrival
 }
 
 /** The viewport, once known on the client (null while rendering on the server or hydrating). */

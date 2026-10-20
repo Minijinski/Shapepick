@@ -1,6 +1,14 @@
 import type { Category } from '@choose/catalog'
 import type { Pt } from './geometry'
-import { CLOSE_S, type ItemTargets, OPEN_S, type SceneRenderer, type SceneTarget } from './renderer'
+import {
+  CLOSE_S,
+  type ItemTargets,
+  OPEN_S,
+  type Rect,
+  type SceneRenderer,
+  type SceneTarget,
+  SWAP_S,
+} from './renderer'
 
 // The bridge between the routes and the scene. A page says what the scene should show
 // (`showBands`, `showCanvas`) and the finder pushes its per-product targets and details. Requests
@@ -10,6 +18,12 @@ import { CLOSE_S, type ItemTargets, OPEN_S, type SceneRenderer, type SceneTarget
 /** What the product popup prints besides the specs. */
 export type ItemDetail = { rank: number | null; score: number | null; excludedBy: string | null }
 
+/**
+ * How the scene reaches a page: its first paint, a panel opening from the home page, one
+ * category's canvas replaced by another's, or the canvas folding back home.
+ */
+export type Arrival = 'intro' | 'open' | 'swap' | 'close'
+
 export const sameTarget = (a: SceneTarget | null, b: SceneTarget) =>
   !!a &&
   a.mode === b.mode &&
@@ -18,6 +32,8 @@ export const sameTarget = (a: SceneTarget | null, b: SceneTarget) =>
 class SceneController {
   private renderer: SceneRenderer | null = null
   private target: SceneTarget | null = null
+  private kind: Arrival = 'intro'
+  private stage: Rect | null = null
   private settleAt = 0
   private timer: ReturnType<typeof setTimeout> | undefined
   private readonly waiting = new Set<() => void>()
@@ -28,7 +44,9 @@ class SceneController {
 
   attach(renderer: SceneRenderer) {
     this.renderer = renderer
+    this.kind = 'intro'
     for (const [category, targets] of this.targets) renderer.setTargets(category, targets)
+    renderer.setStage(this.stage)
     if (this.target) this.settleIn(renderer.go(this.target, { intro: true }))
     return () => {
       if (this.renderer === renderer) this.renderer = null
@@ -50,8 +68,20 @@ class SceneController {
 
   private go(target: SceneTarget, focal?: Pt) {
     if (sameTarget(this.target, target)) return
+    this.kind = this.arrivalTo(target)
     this.target = target
+    // The free space belongs to the page that asked for it; the next page measures its own.
+    this.stage = null
+    this.renderer?.setStage(null)
     if (this.renderer) this.settleIn(this.renderer.go(target, { focal }))
+  }
+
+  /** The kind of transition that brings the scene to `target` (the current one if it is there). */
+  arrivalTo(target: SceneTarget): Arrival {
+    if (sameTarget(this.target, target)) return this.kind
+    if (!this.renderer || !this.target) return 'intro'
+    if (target.mode === 'bands') return 'close'
+    return this.target.mode === 'canvas' ? 'swap' : 'open'
   }
 
   /**
@@ -82,7 +112,8 @@ class SceneController {
    */
   until(target: SceneTarget) {
     if (sameTarget(this.target, target) || !this.renderer) return this.remaining()
-    return target.mode === 'bands' ? CLOSE_S : OPEN_S
+    const arrival = this.arrivalTo(target)
+    return arrival === 'close' ? CLOSE_S : arrival === 'swap' ? SWAP_S : OPEN_S
   }
 
   /** Calls back once the scene has settled; returns an unsubscribe. */
@@ -104,6 +135,13 @@ class SceneController {
 
   hoverBand(category: Category | null) {
     this.renderer?.hoverBand(category)
+  }
+
+  /** The free part of the screen on a category's canvas, where its short list gathers. */
+  setStage(category: Category, stage: Rect | null) {
+    if (this.target?.mode !== 'canvas' || this.target.category !== category) return
+    this.stage = stage
+    this.renderer?.setStage(stage)
   }
 
   // ---- Popup details: a tiny store React subscribes to -----------------------------------------

@@ -214,11 +214,11 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 | --- | --- | --- |
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
-| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol | Dérive en diagonale, drag avec inertie, molette ; une réponse transforme les écartés en esquisses puis leur place est reprise par un produit retenu, en vague depuis la console |
-| Console (`Console`) | Titre, aide, tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
+| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol | Dérive en diagonale, drag avec inertie, molette ; une réponse change les écartés en esquisses graduées, en vague depuis la console ; une liste courte se regroupe devant le canvas |
+| Console (`Console`) | Hauteur fixe ; titre, aide en surimpression, tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 3 : silhouette, % de compatibilité, prix | Les cartes changent de place (Flip) |
 | Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres | Panneau qui monte, traits de rapport qui se dessinent |
-| Budget (`BudgetControl`) | Double curseur ; tout en haut signifie sans plafond | Aucune |
+| Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, double curseur ; tout en haut signifie sans plafond | Les barres de la plage passent à l'encre au fil du curseur |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
 | Accueil | Accroche « Arrête de chercher. Commence à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
@@ -234,14 +234,17 @@ Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule
 - **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît.
 - **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
 - **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel.
-- **Filtres** : une réponse transforme les produits écartés en esquisses (contours pointillés, comme les lignes cachées d'un dessin technique), puis leur place est reprise par des produits retenus ; tout part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
+- **Filtres** : chaque produit garde ses places. Un produit retenu est dessiné en couleur ; un produit écarté devient une esquisse (contours pointillés, comme les lignes cachées d'un dessin technique), d'autant plus pâle qu'il rate de réponses (1, 2, 3 et plus). Le changement part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
+- **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge.
+- **Changement de catégorie** (header, depuis un canvas) : le canvas reste en place, les anciens produits se dissolvent et les nouveaux apparaissent en vague depuis le lien cliqué. La console ne bouge pas : seule sa question change. Chaque catégorie mémorise son parcours dans le stockage du navigateur (`choose-a-device:journey:<catégorie>`) et le reprend au retour ; « Recommencer » le remet à zéro.
+- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (peu d'options font de grandes tuiles, au-delà de deux rangées la grille défile), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus.
 
 | Fichier | Rôle |
 | --- | --- |
 | `features/scene/geometry.ts` | Forme des bandes selon l'écran, motif du canvas, tracés arrondis, `clip-path` des liens |
 | `features/scene/renderer.ts` | Dessin, dérive, transitions (`go`), états des produits (`setTargets`), pointeur (`pick`, drag) |
-| `features/scene/controller.ts` | Pont routes ↔ scène (`scene.showBands`, `scene.showCanvas`), délais d'entrée |
-| `features/scene/navigation.ts` | Sortie de page puis navigation (`useSceneNavigation`), délai d'entrée des pages |
+| `features/scene/controller.ts` | Pont routes ↔ scène (`scene.showBands`, `scene.showCanvas`, `scene.setStage`), type de transition à l'arrivée, délais d'entrée |
+| `features/scene/navigation.ts` | Sortie de page puis navigation (`useSceneNavigation`), parcours mémorisés par catégorie, délai d'entrée des pages |
 | `features/scene/sprites.tsx` | Silhouettes rendues hors écran puis converties en images (couleur et esquisse) |
 | `features/scene/Scene.tsx`, `PopupCard.tsx` | Le canvas, la gestion du pointeur, la fiche produit |
 

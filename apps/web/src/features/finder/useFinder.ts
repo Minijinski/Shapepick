@@ -131,8 +131,27 @@ export function useFinder(
   )
 
   // ---- Canvas --------------------------------------------------------------------------------
-  /** Products the answers keep, the draft included: drawn in colour, the rest as sketches. */
-  const matchingIds = useMemo(() => new Set(ranked.map((r) => def.id(r.item))), [def, ranked])
+  /** The test each answered step puts on a product, the draft included. */
+  const tests = useMemo(
+    () =>
+      def.steps.flatMap((s) => {
+        const test = predicateOf(s, effective)
+        return test ? [{ step: s, test }] : []
+      }),
+    [def, effective],
+  )
+
+  /**
+   * How many answers each product fails: 0 is kept (drawn in colour), more is drawn as an ever
+   * fainter sketch. null while no answer filters anything yet.
+   */
+  const misses = useMemo(() => {
+    if (!tests.length) return null
+    return new Map(items.map((item) => [def.id(item), tests.filter((t) => !t.test(item)).length]))
+  }, [def, items, tests])
+
+  /** Kept products, best match first: the canvas's short list and podium badges follow it. */
+  const order = useMemo(() => ranked.map((r) => def.id(r.item)), [def, ranked])
 
   /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
   const hotIds = useMemo(() => {
@@ -145,20 +164,11 @@ export function useFinder(
     return new Set(pool.filter(option.match).map(def.id))
   }, [def, items, answers, effective, step, hovered])
 
-  const podiumRanks = useMemo(
-    () => new Map(ranked.slice(0, 3).map((r, i) => [def.id(r.item), i])),
-    [def, ranked],
-  )
-
   /** What the product popup prints: rank and match for a kept product, the blocking answer otherwise. */
   const details = useMemo(() => {
     const map = new Map<string, ItemDetail>()
     ranked.forEach((r, i) => {
       map.set(def.id(r.item), { rank: i, score: r.score, excludedBy: null })
-    })
-    const tests = def.steps.flatMap((s) => {
-      const test = predicateOf(s, effective)
-      return test ? [{ step: s, test }] : []
     })
     for (const item of items) {
       const id = def.id(item)
@@ -167,7 +177,7 @@ export function useFinder(
       map.set(id, { rank: null, score: null, excludedBy: blocker?.step.label[locale] ?? null })
     }
     return map
-  }, [def, items, ranked, effective, locale])
+  }, [def, items, ranked, tests, locale])
 
   return {
     def,
@@ -186,9 +196,9 @@ export function useFinder(
     asked,
     position: currentKey ? asked.indexOf(currentKey) + 1 : asked.length,
     rail,
-    matchingIds,
+    misses,
+    order,
     hotIds,
-    podiumRanks,
     details,
     commit,
     goTo,

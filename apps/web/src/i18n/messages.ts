@@ -12,7 +12,7 @@ export const messages = {
     'Le bon appareil, sans tableau de specs',
     'The right device, without a spec sheet',
   ),
-  homeTitle: text('Arrête de chercher.\nCommence à choisir.', 'Stop searching.\nStart choosing.'),
+  homeTitle: text('Arrêter de chercher.\nCommencer à choisir.', 'Stop searching.\nStart choosing.'),
   homeSub: text(
     'Choisis un univers : le catalogue se resserre avec toi, question après question.',
     'Pick a world: the catalogue narrows with you, one question at a time.',
@@ -43,6 +43,7 @@ export const messages = {
   noPreferenceHint: text('Tout garder', 'Keep everything'),
   noMustHaves: text('Rien d’indispensable', 'No must-haves'),
   help: text('Aide', 'Help'),
+  gotIt: text('Compris', 'Got it'),
   seeResults: (n: number, locale: Locale) =>
     locale === 'fr' ? `Voir les ${count(n, locale)} résultats` : `See ${count(n, locale)} results`,
   ifPicked: text('si choisi', 'if picked'),

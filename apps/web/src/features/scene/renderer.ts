@@ -23,52 +23,80 @@ import type { Sprite } from './sprites'
 // category page the chosen panel has grown over the others into the whole screen, and its world
 // is the canvas the visitor browses. Both are the same drawing with different numbers, which is
 // why going from one to the other cannot flicker.
+//
+// On the canvas every product keeps its places. The answers grade it: kept products are drawn in
+// colour, ruled-out ones as sketches, fainter the more answers they miss. Once only a short list
+// is left, those products leave the field and gather in front of it, each shown once.
 
 export type SceneTarget = { mode: 'bands' } | { mode: 'canvas'; category: Category }
 
 /** What the finder wants each product of its category to look like. */
 export type ItemTargets = {
-  /** Products the current answers keep, draft included; null keeps everything. */
-  matching: Set<string> | null
-  /** Products the hovered option would keep, highlighted. */
+  /** How many answers each product fails (0: kept); null while nothing filters yet. */
+  misses: Map<string, number> | null
+  /** Products the hovered option keeps, highlighted. */
   hot: Set<string> | null
-  /** Podium position (0, 1, 2) of the best matches. */
-  ranks: Map<string, number>
+  /** Kept products, best match first. */
+  order: string[]
 }
 
-/** One product instance on the infinite canvas: the tile repeats, kx/ky say which copy. */
-export type Hit = { category: Category; slug: string; slot: number; kx: number; ky: number }
+/** The part of the screen the finder leaves free, where the short list gathers. */
+export type Rect = { x: number; y: number; w: number; h: number }
+
+/**
+ * A product under the pointer: one of the short list (`spot`), or one copy on the field (the tile
+ * repeats; `slot` is its place in the tile, `kx`/`ky` which repetition).
+ */
+export type Hit = {
+  category: Category
+  slug: string
+  spot: boolean
+  slot: number
+  kx: number
+  ky: number
+}
 
 export const sameHit = (a: Hit | null, b: Hit | null) =>
   a === b ||
-  (!!a && !!b && a.category === b.category && a.slot === b.slot && a.kx === b.kx && a.ky === b.ky)
+  (!!a &&
+    !!b &&
+    a.category === b.category &&
+    a.slug === b.slug &&
+    a.spot === b.spot &&
+    a.slot === b.slot &&
+    a.kx === b.kx &&
+    a.ky === b.ky)
 
 // ==== Tuning ===================================================================================
 
-/** Room per product in the repeating tile, in world px. */
+/** Room per product in the repeating tile, in world px: wide enough that neighbours never touch. */
 const CELL: Record<Category, { w: number; h: number }> = {
-  keyboard: { w: 330, h: 178 },
-  monitor: { w: 520, h: 330 },
+  keyboard: { w: 400, h: 230 },
+  monitor: { w: 540, h: 370 },
 }
+/** How far a product may stray from its cell centre, as a share of the room it leaves. */
+const JITTER = 0.3
+/** A small catalogue is laid out more than once per tile, so its repetition is far apart. */
+const MIN_SLOTS = 50
 const ZOOM = { band: 0.5, canvas: 1, bandCompact: 0.4, canvasCompact: 0.56 }
 /** On-screen drift in px/s: along the panel on the home page, a calmer diagonal on the canvas. */
 const SPEED = { band: 36, canvas: 18 }
 /** Direction products travel on the canvas: from the top-right corner towards the bottom-left. */
 const CANVAS_ANGLE = (145 * Math.PI) / 180
 const HOVER_ZOOM = 0.07
-/** A small catalogue is laid out several times per tile, so its repetition is far apart. */
-const MIN_SLOTS = 60
-/** A ruled-out product turns into a sketch, then gives its place to a kept one. */
-const SWAP_DELAY_MS = 260
-const SWAP_MS = 720
-const RIPPLE_MAX_MS = 420
-/** Seconds a panel takes to open over the others, and to fold back. */
+/** Seconds a panel takes to open over the others, to fold back, and to swap categories. */
 export const OPEN_S = 1.25
 export const CLOSE_S = 1.1
+export const SWAP_S = 1.05
 const MASK_EASE = 'expo.inOut'
-/** The world properties a transition animates; the sprites' fade-in is left alone. */
+/** The world properties transitions animate; the sprites' fade-in is left alone. */
 const MOTION = 'zoom,angle,speed,pause'
 const DOT_STEP = 28
+/** Up to this many kept products gather in front of the field, if the free space fits them. */
+const SPOT_MAX = 12
+const SPOT_ZOOM = { max: 1, maxCompact: 0.72, min: 0.42 }
+/** Opacity of a sketch by the number of answers its product fails (1, 2, 3 or more). */
+const FAINT = [1, 0.75, 0.5, 0.3] as const
 
 const PAPER = [243, 241, 236] as const
 const PANEL = [234, 231, 224] as const
@@ -77,26 +105,27 @@ const SIGNAL = '#FF5A1F'
 const INK = '#141414'
 const MONO = '"Geist Mono Variable", "Geist Mono", ui-monospace, monospace'
 
-/** Device px per world px the sprites need: device pixel ratio times the canvas zoom. */
+/** Device px per world px the sprites need: the pixel ratio times the largest zoom drawn. */
 export const spriteResolution = (vp: Viewport, dpr: number) =>
-  dpr * (isCompact(vp) ? ZOOM.canvasCompact : ZOOM.canvas)
+  dpr *
+  (isCompact(vp)
+    ? Math.max(ZOOM.canvasCompact, SPOT_ZOOM.maxCompact)
+    : Math.max(ZOOM.canvas, SPOT_ZOOM.max))
 
-// ==== Per-product animation channels ===========================================================
+// ==== Animation channels =======================================================================
 
 // Products change state in bulk (an answer can grey out half the canvas), so they are not GSAP
 // tweens: each channel stores where it comes from, where it goes and when it started, and the
-// drawing reads it. That also lets every on-screen copy of a product start late by its distance
-// from the console, which makes a new answer ripple across the canvas.
+// drawing reads it. That also lets every on-screen copy start late by its distance from the
+// console, which makes a new answer ripple across the canvas.
 
 type Channel = { from: number; to: number; start: number; dur: number; ripple: boolean }
 
 const channel = (v: number): Channel => ({ from: v, to: v, start: 0, dur: 0, ripple: false })
+const clamp01 = (t: number) => Math.min(1, Math.max(0, t))
 const easeOut = (t: number) => 1 - (1 - t) ** 3
-const backOut = (t: number) => 1 + 2.2 * (t - 1) ** 3 + 1.2 * (t - 1) ** 2
-const smooth = (a: number, b: number, x: number) => {
-  const t = Math.min(1, Math.max(0, (x - a) / (b - a)))
-  return t * t * (3 - 2 * t)
-}
+const easeInOut = (t: number) => (t < 0.5 ? 4 * t * t * t : 1 - (-2 * t + 2) ** 3 / 2)
+const lerp = (a: number, b: number, t: number) => a + (b - a) * t
 
 function read(c: Channel, now: number, delay = 0) {
   if (c.dur <= 0) return c.to
@@ -108,43 +137,58 @@ function read(c: Channel, now: number, delay = 0) {
 
 function aim(c: Channel, to: number, now: number, dur: number, ripple = false) {
   if (c.to === to) return
-  c.from = read(c, now)
+  c.from = dur > 0 ? read(c, now) : to
   c.to = to
   c.start = now
   c.dur = dur
   c.ripple = ripple
 }
 
-/** One product: its bitmaps and its state, shared by every place it appears in the tile. */
+// ==== Model ====================================================================================
+
+/** One product: its bitmaps and its state, shared by every place it has in the tile. */
 type Item = {
   slug: string
   sprite: Sprite
   /** 1 kept by the answers (drawn in colour), 0 ruled out (drawn as a sketch). */
   on: Channel
+  /** Opacity of the sketch: fainter the more answers the product fails. */
+  faint: Channel
   /** 1 kept by the option under the pointer. */
   hot: Channel
   /** 1 while another option is previewed. */
   dim: Channel
+  /** The field copies: shown (1), or handed over to the short list (0). */
+  field: Channel
+  /** Position among the kept products, best first. */
   rank: number | null
 }
 
-/**
- * A place in the tile. It belongs to one product (`original`); while the answers rule that
- * product out, a kept product stands in, so the canvas only ever shows what still fits.
- */
-type Slot = {
-  /** Cell centre in tile coordinates, and a -1..1 jitter scaled by the room the product leaves. */
-  cx: number
-  cy: number
-  jx: number
-  jy: number
-  original: Item
-  occupant: Item
-  /** The product giving way to `occupant` while `swap` runs from 0 to 1. */
-  prev: Item | null
-  swap: Channel
-  seed: number
+/** A place in the tile: a cell centre and a -1..1 jitter scaled by the room its product leaves. */
+type Slot = { cx: number; cy: number; jx: number; jy: number; item: Item }
+
+/** One copy on the field: a slot of the tile and which repetition of the tile. */
+type Copy = { slot: number; kx: number; ky: number }
+
+/** A product of the short list, flying between the field and its place in front. */
+type SpotItem = {
+  item: Item
+  /** Its place in the short list (screen px) and scale. */
+  to: Pt
+  scale: number
+  /** The flight towards it (or back to the field). */
+  from: Pt
+  fromScale: number
+  start: number
+  dur: number
+  leaving: boolean
+  /** Leaving a short list it still belongs to the answers of: the field copy it lands on. */
+  land: Copy | null
+  landed: boolean
+  phase: number
 }
+
+type Pose = { x: number; y: number; scale: number; alpha: number }
 
 class World {
   items: Item[] = []
@@ -158,14 +202,17 @@ class World {
   /** Direction products travel on screen, radians. */
   angle = Math.PI / 2
   speed = SPEED.band
-  /** Drift multiplier: eased to 0 while a product is hovered or the canvas dragged. */
+  /** Drift multiplier: eased to 0 while a product is looked at or the canvas dragged. */
   pause = 1
   /** Fades the products in once their sprites exist. */
   alpha = 0
+  /** Fades a whole category out and in when the visitor switches categories. */
+  presence = channel(1)
   /** Fling after a drag, screen px/s. */
   velocity: Pt = { x: 0, y: 0 }
   /** During a zoom, the world point that stays under a screen point (the click). */
   anchor: { screen: Pt; world: Pt } | null = null
+  spot: SpotItem[] = []
 
   constructor(readonly category: Category) {
     const cell = CELL[category]
@@ -185,29 +232,11 @@ type Band = {
   hover: number
   /** Paper veil over a panel while another one is hovered or opening. */
   veil: number
+  /** The panel's own paper and dots; off while its products appear over another category. */
+  ground: number
 }
 
 type Transform = { scale: number; ox: number; oy: number }
-
-/** One product drawn in one copy of a slot. */
-type DrawProduct = {
-  world: World
-  t: Transform
-  now: number
-  alpha: number
-  slot: Slot
-  item: Item
-  kx: number
-  ky: number
-  /** Ripple delay of this copy, ms. */
-  delay: number
-  /** Swap fade (0..1) and scale. */
-  fade: number
-  grow: number
-  focused: boolean
-  focusIn: number
-  ranked: boolean
-}
 
 const mix = (a: readonly number[], b: readonly number[], t: number) =>
   a.map((v, i) => Math.round(v + ((b[i] ?? v) - v) * t))
@@ -225,6 +254,7 @@ export class SceneRenderer {
   private stack: Category[] = []
   private target: SceneTarget = { mode: 'bands' }
   private readonly targets = new Map<Category, ItemTargets | null>()
+  private stage: Rect | null = null
   private dots: CanvasPattern | null = null
   private focus: { hit: Hit; since: number } | null = null
   private dragging = false
@@ -233,7 +263,6 @@ export class SceneRenderer {
   private readonly reduce: boolean
   /** Called after every frame, for overlays that follow a product (the popup). */
   onFrame: (() => void) | null = null
-  private readonly record = {} as DrawProduct
 
   constructor(
     private readonly canvas: HTMLCanvasElement,
@@ -251,6 +280,7 @@ export class SceneRenderer {
       expand: 0,
       hover: 0,
       veil: 0,
+      ground: 1,
     }))
   }
 
@@ -284,8 +314,10 @@ export class SceneRenderer {
       slug,
       sprite,
       on: channel(1),
+      faint: channel(1),
       hot: channel(0),
       dim: channel(0),
+      field: channel(1),
       rank: null,
     }))
     world.bySlug = new Map(world.items.map((item) => [item.slug, item]))
@@ -297,12 +329,11 @@ export class SceneRenderer {
     )
     world.cell = CELL[category]
     world.tile = { w: layout.w, h: layout.h }
-    world.slots = layout.cells.flatMap((c, i) => {
+    world.slots = layout.cells.flatMap((c) => {
       const item = world.bySlug.get(c.id)
-      if (!item) return []
-      const seed = Math.floor(hash01(`${c.id}:${i}`) * 997)
-      return [{ ...c, original: item, occupant: item, prev: null, swap: channel(1), seed }]
+      return item ? [{ cx: c.cx, cy: c.cy, jx: c.jx, jy: c.jy, item }] : []
     })
+    world.spot = []
     this.applyTargets(band, this.targets.get(category) ?? null, false)
     gsap.to(world, { alpha: 1, duration: this.reduce ? 0 : 0.9, ease: 'power2.out' })
   }
@@ -320,11 +351,15 @@ export class SceneRenderer {
     this.target = target
     this.focus = null
     this.canvas.dataset.mode = target.mode
+    for (const band of this.bands) gsap.killTweensOf(band)
     if (intro) {
       return target.mode === 'bands' ? this.introBands() : this.introCanvas(target.category)
     }
     if (target.mode === 'bands') {
       return from.mode === 'canvas' ? this.close(from.category) : this.introBands()
+    }
+    if (from.mode === 'canvas' && from.category !== target.category) {
+      return this.swap(from.category, target.category, focal)
     }
     return this.open(target.category, focal)
   }
@@ -332,8 +367,7 @@ export class SceneRenderer {
   private introBands() {
     this.stack = []
     this.bands.forEach((band, i) => {
-      gsap.killTweensOf(band)
-      Object.assign(band, { expand: 0, hover: 0, veil: 0 })
+      Object.assign(band, { expand: 0, hover: 0, veil: 0, ground: 1 })
       this.rest(band)
       if (this.reduce) band.enter = 1
       else
@@ -351,8 +385,8 @@ export class SceneRenderer {
     if (!band) return 0
     this.stack = [category]
     for (const other of this.bands) {
-      gsap.killTweensOf(other)
       Object.assign(other, { enter: 1, expand: other === band ? 1 : 0, hover: 0, veil: 0 })
+      other.ground = 1
       this.rest(other)
     }
     if (!this.reduce) {
@@ -369,11 +403,9 @@ export class SceneRenderer {
     const world = band.world
     const below = this.stack.filter((c) => c !== category)
     this.stack = [...below, category]
-    gsap.killTweensOf(band)
     gsap.killTweensOf(world, MOTION)
     this.foldHover(band)
-    band.enter = 1
-    band.veil = 0
+    Object.assign(band, { enter: 1, veil: 0, ground: 1 })
     const point = focal ?? centroid(base)
     world.anchor = { screen: point, world: this.toWorld(band, point) }
     const zoom = this.zoomFor(band)
@@ -384,7 +416,7 @@ export class SceneRenderer {
       for (const other of this.bands) {
         if (other === band) continue
         gsap.killTweensOf(other)
-        Object.assign(other, { expand: 0, veil: 0, hover: 0, enter: 1 })
+        Object.assign(other, { expand: 0, veil: 0, hover: 0, enter: 1, ground: 1 })
         this.rest(other)
       }
     }
@@ -415,13 +447,12 @@ export class SceneRenderer {
     const base = band && this.quads[band.index]
     if (!band || !base) return this.introBands()
     const world = band.world
-    gsap.killTweensOf(band)
     gsap.killTweensOf(world, MOTION)
     this.stack = [category]
+    Object.assign(band, { ground: 1, veil: 0 })
     for (const other of this.bands) {
       if (other === band) continue
-      gsap.killTweensOf(other)
-      Object.assign(other, { enter: 1, expand: 0, hover: 0, veil: 1 })
+      Object.assign(other, { enter: 1, expand: 0, hover: 0, veil: 1, ground: 1 })
       this.rest(other)
       gsap.to(other, { veil: 0, duration: CLOSE_S * 0.7, delay: CLOSE_S * 0.3, ease: 'power2.out' })
     }
@@ -451,6 +482,57 @@ export class SceneRenderer {
     return CLOSE_S
   }
 
+  /**
+   * From one category's canvas to another's, in place: the screen stays a canvas, the old
+   * products dissolve and the new ones appear, both in a wave from where the visitor clicked.
+   */
+  private swap(from: Category, to: Category, focal: Pt | undefined) {
+    const old = this.band(from)
+    const band = this.band(to)
+    if (!old || !band) return this.open(to, focal)
+    const now = performance.now()
+    if (focal) this.ripple = focal
+    // Whatever was half-way (a panel still opening) lands at once: the old canvas fills the screen.
+    for (const other of this.bands) {
+      if (other === old || other === band) continue
+      Object.assign(other, { expand: 0, veil: 0, hover: 0, enter: 1, ground: 1 })
+      this.rest(other)
+    }
+    gsap.killTweensOf(old.world, MOTION)
+    Object.assign(old, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 1 })
+    Object.assign(old.world, { zoom: this.zoomForCanvas(), pause: 1, anchor: null })
+    gsap.killTweensOf(band.world, MOTION)
+    Object.assign(band, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 0 })
+    // Same camera, zoom and drift as the old world: the dots run on without a seam.
+    Object.assign(band.world, {
+      zoom: old.world.zoom,
+      cam: { ...old.world.cam },
+      angle: CANVAS_ANGLE,
+      speed: SPEED.canvas,
+      pause: 1,
+      velocity: { ...old.world.velocity },
+      anchor: null,
+      spot: [],
+    })
+    for (const item of band.world.items) aim(item.field, 1, now, 0)
+    this.stack = [from, to]
+    const settle = () => {
+      this.stack = [to]
+      band.ground = 1
+      Object.assign(old, { expand: 0, veil: 0, hover: 0, enter: 1, ground: 1 })
+      this.rest(old)
+    }
+    if (this.reduce) {
+      band.world.presence = channel(1)
+      settle()
+      return 0
+    }
+    aim(old.world.presence, 0, now, 520, true)
+    band.world.presence = { from: 0, to: 1, start: now + 280, dur: 720, ripple: true }
+    gsap.to(band, { ground: 0, duration: SWAP_S, onComplete: settle })
+    return SWAP_S
+  }
+
   /** The pointer is over a panel of the home page (null: over none). */
   hoverBand(category: Category | null) {
     if (this.target.mode !== 'bands' || this.stack.length) return
@@ -476,47 +558,232 @@ export class SceneRenderer {
     if (band) this.applyTargets(band, targets, true)
   }
 
+  /** The free part of the screen on the open canvas (null: no short list, e.g. on results). */
+  setStage(stage: Rect | null) {
+    const same =
+      stage === this.stage ||
+      (!!stage &&
+        !!this.stage &&
+        Math.abs(stage.x - this.stage.x) < 1 &&
+        Math.abs(stage.y - this.stage.y) < 1 &&
+        Math.abs(stage.w - this.stage.w) < 1 &&
+        Math.abs(stage.h - this.stage.h) < 1)
+    if (same) return
+    this.stage = stage
+    if (this.target.mode !== 'canvas') return
+    const band = this.band(this.target.category)
+    const t = band && this.targets.get(band.category)
+    if (band) this.updateSpot(band, t?.misses ? t.order : null, performance.now(), true)
+  }
+
   private applyTargets(band: Band, t: ItemTargets | null, animate: boolean) {
     const now = performance.now()
     const slow = animate ? 560 : 0
     const fast = animate ? 240 : 0
+    const rankOf = new Map(t?.order.map((slug, i) => [slug, i]) ?? [])
     for (const item of band.world.items) {
+      const misses = t?.misses?.get(item.slug) ?? 0
       const hot = !!t?.hot?.has(item.slug)
-      const kept = !t?.matching || t.matching.has(item.slug)
-      // A preview lights up at once; an answer ripples out from the console.
-      const previewing = hot || item.hot.to === 1
-      aim(item.on, kept || hot ? 1 : 0, now, slow, !previewing)
+      aim(item.on, misses === 0 ? 1 : 0, now, slow, true)
+      aim(item.faint, FAINT[Math.min(misses, FAINT.length - 1)] ?? 1, now, slow, true)
       aim(item.hot, hot ? 1 : 0, now, fast)
       aim(item.dim, t?.hot && !hot ? 1 : 0, now, fast)
-      item.rank = t?.ranks.get(item.slug) ?? null
+      item.rank = rankOf.get(item.slug) ?? null
     }
-    this.assign(band.world, t?.matching ?? null, now, animate)
+    this.updateSpot(band, t?.misses ? t.order : null, now, animate)
   }
 
   /**
-   * Gives the places of ruled-out products to kept ones (each place picks its stand-in from its
-   * seed, so neighbours differ), and hands places back as soon as their own product fits again.
-   * With nothing kept, every place shows its own product as a sketch.
+   * The short list: when few products are left, they fly out of the field to a grid in the free
+   * space, each shown once; the ones dropped fly back (or fade into their sketches).
    */
-  private assign(world: World, kept: Set<string> | null, now: number, animate: boolean) {
-    const pool = kept ? world.items.filter((item) => kept.has(item.slug)) : []
-    world.slots.forEach((slot, index) => {
-      const own = !kept || !pool.length || kept.has(slot.original.slug)
-      const next = own ? slot.original : (pool[(index * 7 + slot.seed) % pool.length] as Item)
-      if (next === slot.occupant) return
-      slot.prev = animate ? slot.occupant : null
-      slot.swap = animate
-        ? { from: 0, to: 1, start: now + SWAP_DELAY_MS, dur: SWAP_MS, ripple: true }
-        : channel(1)
-      slot.occupant = next
+  private updateSpot(band: Band, order: string[] | null, now: number, animate: boolean) {
+    const world = band.world
+    if (!world.items.length) return
+    const wanted =
+      order && order.length > 0 && order.length <= SPOT_MAX && this.target.mode === 'canvas'
+        ? order
+        : []
+    const layout = wanted.length ? this.spotLayout(world, wanted) : null
+    const keep = layout ? wanted : []
+
+    for (const s of world.spot) {
+      if (s.leaving || keep.includes(s.item.slug)) continue
+      const pose = this.spotPose(band, s, now)
+      Object.assign(s, {
+        leaving: true,
+        from: { x: pose.x, y: pose.y },
+        fromScale: pose.scale,
+        start: now,
+        dur: animate ? 820 : 0,
+      })
+      if (s.item.on.to === 1) {
+        // Still kept (the list just grew too long): back to the nearest copy on the field.
+        s.land = this.nearestCopy(band, s.item, pose)
+      } else {
+        // Ruled out: it fades where it is while its sketches come back on the field.
+        s.land = null
+        aim(s.item.field, 1, now, animate ? 420 : 0)
+      }
+    }
+
+    keep.forEach((slug, i) => {
+      const item = world.bySlug.get(slug)
+      const to = layout?.positions[i]
+      if (!item || !to || !layout) return
+      const existing = world.spot.find((s) => s.item === item)
+      if (existing) {
+        const settled =
+          !existing.leaving && Math.hypot(existing.to.x - to.x, existing.to.y - to.y) < 1
+        if (settled && Math.abs(existing.scale - layout.zoom) < 0.001) return
+        const pose = this.spotPose(band, existing, now)
+        Object.assign(existing, {
+          to,
+          scale: layout.zoom,
+          from: { x: pose.x, y: pose.y },
+          fromScale: pose.scale,
+          start: now + i * 40,
+          dur: animate ? 720 : 0,
+          leaving: false,
+          land: null,
+          landed: false,
+        })
+        aim(item.field, 0, now, animate ? 250 : 0)
+        return
+      }
+      // Entering: it takes off from its nearest copy on the field, which hands over to it.
+      const copy = this.nearestCopy(band, item, to)
+      const pose = copy ? this.copyPose(band, copy) : { x: to.x, y: to.y + 40, scale: layout.zoom }
+      world.spot.push({
+        item,
+        to,
+        scale: layout.zoom,
+        from: { x: pose.x, y: pose.y },
+        fromScale: pose.scale,
+        start: now + i * 55,
+        dur: animate ? 950 : 0,
+        leaving: false,
+        land: null,
+        landed: false,
+        phase: hash01(slug) * Math.PI * 2,
+      })
+      aim(item.field, 0, now, animate ? 250 : 0)
     })
   }
 
-  /** Where a product sits in a slot: its cell centre, nudged as far as its size allows. */
-  private placeIn(world: World, slot: Slot, item: Item): Pt {
+  /** The short list's grid in the free space: the largest scale at which every product fits. */
+  private spotLayout(world: World, slugs: string[]) {
+    const stage = this.stage
+    if (!stage || stage.w < 120 || stage.h < 80) return null
+    const items = slugs.flatMap((slug) => world.bySlug.get(slug) ?? [])
+    const n = items.length
+    if (!n) return null
+    const maxW = Math.max(...items.map((i) => i.sprite.w))
+    const maxH = Math.max(...items.map((i) => i.sprite.h))
+    const compact = isCompact(this.vp)
+    const gap = compact ? 18 : 36
+    const ceiling = compact ? SPOT_ZOOM.maxCompact : SPOT_ZOOM.max
+    // The largest scale wins; among layouts that reach it, the one shaped most like the free space.
+    const aspect = stage.w / stage.h
+    let best = { cols: 1, rows: n, zoom: 0, fit: Number.POSITIVE_INFINITY }
+    for (let cols = 1; cols <= n; cols++) {
+      const rows = Math.ceil(n / cols)
+      const zoom = Math.min(
+        (stage.w - gap * (cols - 1)) / cols / maxW,
+        (stage.h - gap * (rows - 1)) / rows / maxH,
+        ceiling,
+      )
+      const gridW = cols * (maxW * zoom + gap) - gap
+      const gridH = rows * (maxH * zoom + gap) - gap
+      const fit = Math.abs(Math.log(gridW / gridH / aspect)) + (cols * rows - n) * 0.15
+      if (zoom > best.zoom + 0.01 || (zoom > best.zoom - 0.01 && fit < best.fit)) {
+        best = { cols, rows, zoom, fit }
+      }
+    }
+    if (best.zoom < SPOT_ZOOM.min) return null
+    const { cols, rows, zoom } = best
+    const cw = maxW * zoom + gap
+    const ch = maxH * zoom + gap
+    const gridH = rows * ch - gap
+    const positions = items.map((_, i) => {
+      const row = Math.floor(i / cols)
+      const inRow = row < rows - 1 ? cols : n - cols * (rows - 1)
+      const rowW = inRow * cw - gap
+      return {
+        x: stage.x + (stage.w - rowW) / 2 + (i % cols) * cw + (maxW * zoom) / 2,
+        y: stage.y + (stage.h - gridH) / 2 + row * ch + (maxH * zoom) / 2,
+      }
+    })
+    return { zoom, positions }
+  }
+
+  /** Where a product of the short list is now: on its flight, then floating gently. */
+  private spotPose(band: Band, s: SpotItem, now: number): Pose {
+    const p = s.dur > 0 ? easeInOut(clamp01((now - s.start) / s.dur)) : now >= s.start ? 1 : 0
+    let to = s.to
+    let scale = s.scale
+    if (s.leaving && s.land) {
+      const copy = this.copyPose(band, s.land)
+      to = copy
+      scale = copy.scale
+    }
+    const settled = s.leaving ? 1 - p : p
+    const bob = this.reduce ? 0 : Math.sin(now / 1400 + s.phase) * 3 * settled
+    let alpha = 1
+    if (s.leaving && !s.land) alpha = 1 - p
+    // Once landed, the copy on the field has faded back in under it: hand over, then go.
+    if (s.landed) alpha = 1 - clamp01((now - s.start - s.dur) / 260)
     return {
-      x: slot.cx + slot.jx * Math.max(0, world.cell.w - item.sprite.w) * 0.42,
-      y: slot.cy + slot.jy * Math.max(0, world.cell.h - item.sprite.h) * 0.42,
+      x: lerp(s.from.x, to.x, p),
+      y: lerp(s.from.y, to.y, p) + bob,
+      scale: lerp(s.fromScale, scale, p),
+      alpha,
+    }
+  }
+
+  /** The copy of a product on the field closest to a screen point. */
+  private nearestCopy(band: Band, item: Item, near: Pt): Copy | null {
+    const world = band.world
+    const t = this.transformOf(band)
+    const wx = (near.x - t.ox) / t.scale
+    const wy = (near.y - t.oy) / t.scale
+    let best: Copy | null = null
+    let bestDistance = Number.POSITIVE_INFINITY
+    for (let index = 0; index < world.slots.length; index++) {
+      const slot = world.slots[index]
+      if (!slot || slot.item !== item) continue
+      const at = this.placeIn(world, slot)
+      const kx = Math.round((wx - at.x) / world.tile.w)
+      const ky = Math.round((wy - at.y) / world.tile.h)
+      const distance = Math.hypot(at.x + kx * world.tile.w - wx, at.y + ky * world.tile.h - wy)
+      if (distance < bestDistance) {
+        bestDistance = distance
+        best = { slot: index, kx, ky }
+      }
+    }
+    return best
+  }
+
+  /** Screen position and scale of one copy on the field. */
+  private copyPose(band: Band, copy: Copy) {
+    const world = band.world
+    const t = this.transformOf(band)
+    const slot = world.slots[copy.slot]
+    if (!slot) return { x: 0, y: 0, scale: t.scale }
+    const at = this.placeIn(world, slot)
+    return {
+      x: (at.x + copy.kx * world.tile.w) * t.scale + t.ox,
+      y: (at.y + copy.ky * world.tile.h) * t.scale + t.oy,
+      scale: t.scale,
+    }
+  }
+
+  /** Where a slot's product sits: its cell centre, nudged as far as its size allows. */
+  private placeIn(world: World, slot: Slot): Pt {
+    const { sprite } = slot.item
+    return {
+      x: slot.cx + slot.jx * Math.max(0, world.cell.w - sprite.w) * JITTER,
+      y: slot.cy + slot.jy * Math.max(0, world.cell.h - sprite.h) * JITTER,
     }
   }
 
@@ -526,26 +793,42 @@ export class SceneRenderer {
   pick(p: Pt): Hit | null {
     const band = this.activeBand()
     if (!band) return null
+    const world = band.world
+    const now = performance.now()
+    // The short list sits in front of the field.
+    for (let i = world.spot.length - 1; i >= 0; i--) {
+      const s = world.spot[i]
+      if (!s || s.leaving) continue
+      const pose = this.spotPose(band, s, now)
+      const { w, h } = s.item.sprite
+      if (Math.abs(p.x - pose.x) <= (w * pose.scale) / 2 + 6) {
+        if (Math.abs(p.y - pose.y) <= (h * pose.scale) / 2 + 6) {
+          return { category: band.category, slug: s.item.slug, spot: true, slot: -1, kx: 0, ky: 0 }
+        }
+      }
+    }
     const t = this.transformOf(band)
     const wx = (p.x - t.ox) / t.scale
     const wy = (p.y - t.oy) / t.scale
-    const { w: tw, h: th } = band.world.tile
+    const { w: tw, h: th } = world.tile
     let best: Hit | null = null
     let bestDistance = Number.POSITIVE_INFINITY
-    band.world.slots.forEach((slot, index) => {
-      const item = slot.occupant
-      const at = this.placeIn(band.world, slot, item)
+    for (let index = 0; index < world.slots.length; index++) {
+      const slot = world.slots[index]
+      if (!slot || slot.item.field.to < 1) continue
+      const { item } = slot
+      const at = this.placeIn(world, slot)
       const kx = Math.round((wx - at.x) / tw)
       const ky = Math.round((wy - at.y) / th)
       const dx = wx - (at.x + kx * tw)
       const dy = wy - (at.y + ky * th)
-      if (Math.abs(dx) > item.sprite.w / 2 + 6 || Math.abs(dy) > item.sprite.h / 2 + 6) return
+      if (Math.abs(dx) > item.sprite.w / 2 + 6 || Math.abs(dy) > item.sprite.h / 2 + 6) continue
       const distance = dx * dx + dy * dy
       if (distance < bestDistance) {
         bestDistance = distance
-        best = { category: band.category, slug: item.slug, slot: index, kx, ky }
+        best = { category: band.category, slug: item.slug, spot: false, slot: index, kx, ky }
       }
-    })
+    }
     return best
   }
 
@@ -568,16 +851,22 @@ export class SceneRenderer {
     const focus = this.focus
     const band = focus && this.activeBand()
     if (!focus || !band || band.category !== focus.hit.category) return null
-    const slot = band.world.slots[focus.hit.slot]
-    // A product that just gave its place away no longer has a popup.
-    if (!slot || slot.occupant.slug !== focus.hit.slug) return null
-    const t = this.transformOf(band)
-    const at = this.placeIn(band.world, slot, slot.occupant)
-    const w = slot.occupant.sprite.w * t.scale
-    const h = slot.occupant.sprite.h * t.scale
-    const cx = (at.x + focus.hit.kx * band.world.tile.w) * t.scale + t.ox
-    const cy = (at.y + focus.hit.ky * band.world.tile.h) * t.scale + t.oy
-    return { x: cx - w / 2, y: cy - h / 2, w, h }
+    const world = band.world
+    if (focus.hit.spot) {
+      const s = world.spot.find((x) => x.item.slug === focus.hit.slug && !x.leaving)
+      if (!s) return null
+      const pose = this.spotPose(band, s, performance.now())
+      const w = s.item.sprite.w * pose.scale
+      const h = s.item.sprite.h * pose.scale
+      return { x: pose.x - w / 2, y: pose.y - h / 2, w, h }
+    }
+    const slot = world.slots[focus.hit.slot]
+    // A product that just left the field for the short list no longer has its popup here.
+    if (!slot || slot.item.slug !== focus.hit.slug || slot.item.field.to < 1) return null
+    const pose = this.copyPose(band, focus.hit)
+    const w = slot.item.sprite.w * pose.scale
+    const h = slot.item.sprite.h * pose.scale
+    return { x: pose.x - w / 2, y: pose.y - h / 2, w, h }
   }
 
   beginDrag() {
@@ -617,7 +906,10 @@ export class SceneRenderer {
     const now = performance.now()
     const dt = Math.min(0.05, (now - this.last) / 1000)
     this.last = now
-    for (const band of this.bands) this.step(band, dt)
+    for (const band of this.bands) {
+      this.step(band, dt)
+      this.settleSpot(band, now)
+    }
     this.draw(now)
     this.onFrame?.()
   }
@@ -646,6 +938,21 @@ export class SceneRenderer {
     }
   }
 
+  /** Lands the products flying back to the field, then lets them go. */
+  private settleSpot(band: Band, now: number) {
+    const world = band.world
+    if (!world.spot.length) return
+    world.spot = world.spot.filter((s) => {
+      if (!s.leaving || now < s.start + s.dur) return true
+      if (!s.land) return false
+      if (!s.landed) {
+        s.landed = true
+        aim(s.item.field, 1, now, 240)
+      }
+      return now < s.start + s.dur + 260
+    })
+  }
+
   private draw(now: number) {
     const { ctx, vp, dpr } = this
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
@@ -655,7 +962,7 @@ export class SceneRenderer {
     // Nothing under a panel that already covers the screen needs drawing.
     let first = 0
     order.forEach((band, i) => {
-      if (band.expand >= 1 && band.enter >= 1) first = i
+      if (band.expand >= 1 && band.enter >= 1 && band.ground >= 1) first = i
     })
     for (const band of order.slice(first)) this.drawBand(band, now)
   }
@@ -669,22 +976,26 @@ export class SceneRenderer {
     if (lift) quad = quad.map((p) => ({ x: p.x, y: p.y + lift })) as Quad
     const path = new Path2D()
     traceRounded(path, quad, frameOf(vp).radius * (1 - band.expand))
+    const t = this.transformOf(band)
 
     ctx.save()
-    ctx.globalAlpha = band.enter
-    if (band.expand > 0 && band.expand < 1) {
-      // A sheet sliding over the others casts a shadow while it moves.
-      ctx.shadowColor = `rgba(20, 20, 20, ${0.2 * Math.sin(Math.PI * band.expand)})`
-      ctx.shadowBlur = 64 * dpr
-      ctx.shadowOffsetY = 20 * dpr
+    if (band.ground > 0) {
+      ctx.globalAlpha = band.enter * band.ground
+      if (band.expand > 0 && band.expand < 1) {
+        // A sheet sliding over the others casts a shadow while it moves.
+        ctx.shadowColor = `rgba(20, 20, 20, ${0.2 * Math.sin(Math.PI * band.expand)})`
+        ctx.shadowBlur = 64 * dpr
+        ctx.shadowOffsetY = 20 * dpr
+      }
+      ctx.fillStyle = rgb(mix(mix(PANEL, PANEL_HOVER, band.hover), PAPER, band.expand))
+      ctx.fill(path)
+      ctx.shadowColor = 'transparent'
     }
-    ctx.fillStyle = rgb(mix(mix(PANEL, PANEL_HOVER, band.hover), PAPER, band.expand))
-    ctx.fill(path)
-    ctx.shadowColor = 'transparent'
     ctx.clip(path)
-    const t = this.transformOf(band)
-    this.drawDots(t, quad)
-    this.drawItems(band, t, quad, now)
+    if (band.ground > 0) this.drawDots(t, quad)
+    // Each product sets its own opacity: hand the panel's down explicitly, never read it back.
+    this.drawField(band, t, quad, now, band.enter)
+    this.drawSpot(band, now, band.enter)
     if (band.veil > 0.001) {
       ctx.globalAlpha = band.enter * band.veil * 0.62
       ctx.fillStyle = rgb(PAPER)
@@ -704,7 +1015,7 @@ export class SceneRenderer {
     this.ctx.fillRect(b.x0, b.y0, b.x1 - b.x0, b.y1 - b.y0)
   }
 
-  private drawItems(band: Band, t: Transform, quad: Quad, now: number) {
+  private drawField(band: Band, t: Transform, quad: Quad, now: number, bandAlpha: number) {
     const world = band.world
     if (!world.slots.length || world.alpha <= 0) return
     const b = boundsOf(quad)
@@ -714,97 +1025,109 @@ export class SceneRenderer {
     const wy1 = (b.y1 - t.oy) / t.scale
     const { w: tw, h: th } = world.tile
     const { w: cw, h: ch } = world.cell
-    const bandAlpha = this.ctx.globalAlpha
+    const alpha = bandAlpha * world.alpha
     const open = this.activeBand() === band
-    const focus = open && this.focus?.hit.category === band.category ? this.focus : null
-    const focusIn = focus ? easeOut(Math.min(1, (now - focus.since) / 240)) : 0
-    // One record reused for every product drawn this frame: this loop runs hundreds of times.
-    const d = this.record
-    d.world = world
-    d.t = t
-    d.now = now
-    d.alpha = bandAlpha * world.alpha
-    d.focusIn = focusIn
+    const focus = open && this.focus && !this.focus.hit.spot ? this.focus : null
+    const focusIn = this.focusIn(now)
+    // With a short list on show, the podium badges ride on it rather than on the field.
+    const ranked = open && !world.spot.some((s) => !s.leaving)
 
     world.slots.forEach((slot, index) => {
-      if (slot.prev && now - slot.swap.start > slot.swap.dur + RIPPLE_MAX_MS) slot.prev = null
-      const kx0 = Math.ceil((wx0 - cw - slot.cx) / tw)
-      const kx1 = Math.floor((wx1 + cw - slot.cx) / tw)
-      const ky0 = Math.ceil((wy0 - ch - slot.cy) / th)
-      const ky1 = Math.floor((wy1 + ch - slot.cy) / th)
+      const { item } = slot
+      const field = read(item.field, now)
+      if (field <= 0.002) return
+      const at = this.placeIn(world, slot)
+      const kx0 = Math.ceil((wx0 - cw - at.x) / tw)
+      const kx1 = Math.floor((wx1 + cw - at.x) / tw)
+      const ky0 = Math.ceil((wy0 - ch - at.y) / th)
+      const ky1 = Math.floor((wy1 + ch - at.y) / th)
       for (let kx = kx0; kx <= kx1; kx++) {
         for (let ky = ky0; ky <= ky1; ky++) {
-          // Every copy of a place starts late by its distance from the console: a ripple.
-          const delay = this.rippleDelay(
-            (slot.cx + kx * tw) * t.scale + t.ox,
-            (slot.cy + ky * th) * t.scale + t.oy,
+          const sx = (at.x + kx * tw) * t.scale + t.ox
+          const sy = (at.y + ky * th) * t.scale + t.oy
+          const delay = this.rippleDelay(sx, sy)
+          const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
+          if (presence <= 0.002) continue
+          const focused =
+            !!focus && focus.hit.slot === index && focus.hit.kx === kx && focus.hit.ky === ky
+          this.drawProduct(
+            item,
+            sx,
+            sy,
+            t.scale * (0.9 + 0.1 * presence),
+            alpha * field * presence,
+            now,
+            delay,
+            focused ? focusIn : 0,
+            ranked,
           )
-          const swap = slot.prev ? read(slot.swap, now, delay) : 1
-          d.slot = slot
-          d.kx = kx
-          d.ky = ky
-          d.delay = delay
-          d.focused = false
-          d.ranked = false
-          if (slot.prev && swap < 1) {
-            d.item = slot.prev
-            d.fade = 1 - smooth(0.2, 0.65, swap)
-            d.grow = 1 - 0.12 * swap
-            this.drawProduct(d)
-            const arrive = smooth(0.4, 1, swap)
-            d.item = slot.occupant
-            d.fade = arrive
-            d.grow = 0.8 + 0.2 * backOut(arrive)
-            this.drawProduct(d)
-          } else {
-            d.item = slot.occupant
-            d.fade = 1
-            d.grow = 1
-            d.focused =
-              !!focus && focus.hit.slot === index && focus.hit.kx === kx && focus.hit.ky === ky
-            // The podium badge marks a product's own places, not its stand-ins.
-            d.ranked = open && slot.occupant === slot.original
-            this.drawProduct(d)
-          }
         }
       }
     })
-    this.ctx.globalAlpha = bandAlpha
   }
 
-  private drawProduct(d: DrawProduct) {
+  private drawSpot(band: Band, now: number, bandAlpha: number) {
+    const world = band.world
+    if (!world.spot.length || world.alpha <= 0) return
+    const alpha = bandAlpha * world.alpha
+    const focus = this.activeBand() === band && this.focus?.hit.spot ? this.focus : null
+    const focusIn = this.focusIn(now)
+    for (const s of world.spot) {
+      const pose = this.spotPose(band, s, now)
+      const delay = this.rippleDelay(pose.x, pose.y)
+      const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
+      const focused = !!focus && !s.leaving && focus.hit.slug === s.item.slug
+      this.drawProduct(
+        s.item,
+        pose.x,
+        pose.y,
+        pose.scale,
+        alpha * pose.alpha * presence,
+        now,
+        0,
+        focused ? focusIn : 0,
+        !s.leaving,
+      )
+    }
+  }
+
+  private drawProduct(
+    item: Item,
+    x: number,
+    y: number,
+    base: number,
+    alpha: number,
+    now: number,
+    delay: number,
+    focus: number,
+    ranked: boolean,
+  ) {
     const { ctx } = this
-    const { item, t } = d
     const s = item.sprite
-    const at = this.placeIn(d.world, d.slot, item)
-    const sx = (at.x + d.kx * d.world.tile.w) * t.scale + t.ox
-    const sy = (at.y + d.ky * d.world.tile.h) * t.scale + t.oy
-    const on = read(item.on, d.now, item.on.ripple ? d.delay : 0)
-    const hot = read(item.hot, d.now)
-    const dim = read(item.dim, d.now)
-    const scale =
-      t.scale *
-      d.grow *
-      (0.9 + 0.1 * on) *
-      (1 + 0.04 * hot) *
-      (d.focused ? 1 + 0.05 * d.focusIn : 1)
+    const on = read(item.on, now, item.on.ripple ? delay : 0)
+    const faint = read(item.faint, now, item.faint.ripple ? delay : 0)
+    const hot = read(item.hot, now)
+    const dim = read(item.dim, now)
+    const scale = base * (0.88 + 0.12 * on) * (1 + 0.04 * hot) * (1 + 0.05 * focus)
     const dw = (s.w + s.pad * 2) * scale
     const dh = (s.h + s.pad * 2) * scale
-    const a = d.alpha * d.fade * (1 - 0.5 * dim)
+    const a = alpha * (1 - 0.5 * dim)
     if (a <= 0.002) return
     if (on < 0.999) {
-      ctx.globalAlpha = a * (1 - on)
-      ctx.drawImage(s.ghost, sx - dw / 2, sy - dh / 2, dw, dh)
+      ctx.globalAlpha = a * (1 - on) * faint
+      ctx.drawImage(s.ghost, x - dw / 2, y - dh / 2, dw, dh)
     }
     if (on > 0.001) {
       ctx.globalAlpha = a * on
-      ctx.drawImage(s.color, sx - dw / 2, sy - dh / 2, dw, dh)
+      ctx.drawImage(s.color, x - dw / 2, y - dh / 2, dw, dh)
     }
     const w = s.w * scale
     const h = s.h * scale
-    if (hot > 0.01) this.drawRing(sx, sy, w, h, a * hot)
-    if (d.ranked && item.rank != null && on > 0.5) this.drawRank(item.rank, sx, sy, w, h, a * on)
-    if (d.focused) this.drawBrackets(sx, sy, w, h, a * d.focusIn)
+    if (hot > 0.01) this.drawRing(x, y, w, h, a * hot * Math.max(on, faint))
+    if (ranked && item.rank != null && item.rank < 3 && on > 0.5) {
+      this.drawRank(item.rank, x, y, w, h, a * on)
+    }
+    if (focus > 0) this.drawBrackets(x, y, w, h, a * focus)
   }
 
   private drawRing(cx: number, cy: number, w: number, h: number, alpha: number) {
@@ -877,10 +1200,17 @@ export class SceneRenderer {
     return this.target.mode === 'canvas' && this.target.category === band.category
   }
 
+  private focusIn(now: number) {
+    return this.focus ? easeOut(Math.min(1, (now - this.focus.since) / 240)) : 0
+  }
+
   private zoomFor(band: Band) {
-    const compact = isCompact(this.vp)
-    if (this.isOpen(band)) return compact ? ZOOM.canvasCompact : ZOOM.canvas
-    return compact ? ZOOM.bandCompact : ZOOM.band
+    if (this.isOpen(band)) return this.zoomForCanvas()
+    return isCompact(this.vp) ? ZOOM.bandCompact : ZOOM.band
+  }
+
+  private zoomForCanvas() {
+    return isCompact(this.vp) ? ZOOM.canvasCompact : ZOOM.canvas
   }
 
   /** Along the panel, downwards: the direction of its tilted dividers. */
@@ -888,7 +1218,7 @@ export class SceneRenderer {
     return this.isOpen(band) ? CANVAS_ANGLE : Math.PI / 2 + tiltFor(this.vp, this.bands.length)
   }
 
-  /** A panel back at rest: home zoom, drifting along its tilt. */
+  /** A panel back at rest: home zoom, drifting along its tilt, every product on its field. */
   private rest(band: Band) {
     const world = band.world
     gsap.killTweensOf(world, MOTION)
@@ -899,7 +1229,11 @@ export class SceneRenderer {
       pause: 1,
       anchor: null,
       velocity: { x: 0, y: 0 },
+      presence: channel(1),
+      spot: [],
     })
+    const now = performance.now()
+    for (const item of world.items) aim(item.field, 1, now, 0)
   }
 
   /** World → screen: the camera, then the hover zoom around the panel's centre. */

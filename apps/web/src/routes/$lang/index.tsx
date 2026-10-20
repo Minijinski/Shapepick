@@ -187,10 +187,10 @@ function Home() {
           </p>
           <h1
             className={css({
-              fontSize: 'display',
+              fontSize: 'clamp(2.4rem, 1.35rem + 3.5vw, 4.75rem)',
               fontWeight: '650',
-              letterSpacing: '-0.055em',
-              lineHeight: '0.95',
+              letterSpacing: '-0.035em',
+              lineHeight: '1.04',
             })}
           >
             {lines.map((line, l) => (
@@ -201,13 +201,18 @@ function Home() {
                   return (
                     <span key={`${w}-${i}`}>
                       {j > 0 && ' '}
+                      {/* The mask leaves room for accents and overhangs, so nothing is clipped. */}
                       <span
                         className={css({
                           display: 'inline-block',
                           overflow: 'hidden',
                           verticalAlign: 'top',
-                          pb: '0.08em',
-                          mb: '-0.08em',
+                          pt: '0.14em',
+                          mt: '-0.14em',
+                          pb: '0.1em',
+                          mb: '-0.1em',
+                          px: '0.06em',
+                          mx: '-0.06em',
                         })}
                       >
                         <span
@@ -261,7 +266,28 @@ const label = css({
   w: 'max-content',
   maxW: '30rem',
   pointerEvents: 'none',
+  isolation: 'isolate',
   '& > *': { ml: 'calc(var(--rise) * var(--slope))' },
+  // A frosted plate behind the name, so it stays legible over the products drifting under it.
+  _before: {
+    content: '""',
+    position: 'absolute',
+    inset: '-14px -18px -14px -16px',
+    zIndex: '-1',
+    borderRadius: 'xl',
+    bg: 'paper/72',
+    backdropFilter: 'blur(14px) saturate(1.1)',
+    boxShadow: '0 0 0 1px rgba(20,20,20,0.05), 0 18px 40px -20px rgba(20,20,20,0.25)',
+    opacity: 0,
+    transform: 'scale(0.96)',
+    transformOrigin: 'left bottom',
+    transition: 'opacity 450ms, transform 600ms token(easings.signal)',
+  },
+  '@media (hover: hover)': {
+    _groupHover: { _before: { opacity: 1, transform: 'scale(1)' } },
+    _groupFocusVisible: { _before: { opacity: 1, transform: 'scale(1)' } },
+  },
+  '@media (hover: none)': { _before: { opacity: 1, transform: 'scale(1)' } },
 })
 // Revealed by hovering or focusing the panel; always shown where there is no hover.
 const reveal = css({

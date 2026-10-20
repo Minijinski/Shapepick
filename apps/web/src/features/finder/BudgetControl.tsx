@@ -1,17 +1,28 @@
-import { ANY, type Locale, type RangeStep, readRange, writeRange } from '@choose/catalog'
+import { ANY, type Bin, type Locale, type RangeStep, readRange, writeRange } from '@choose/catalog'
 import { css } from 'styled-system/css'
 import { formatPrice } from '../product/specs'
 
-// Two thumbs on one rail. The top of the rail means "no ceiling", so the answer stays open-ended
-// rather than silently capping at the slider's maximum.
+// Two thumbs on one rail, under the price histogram of what the other answers leave: the bars in
+// the range turn ink as the thumbs move. The top of the rail means "no ceiling", so the answer
+// stays open-ended rather than silently capping at the slider's maximum.
 
 type Props = {
   step: RangeStep<unknown>
   draft: string | undefined
   onDraft: (value: string) => void
+  bins: Bin[]
   locale: Locale
   labels: { min: string; max: string; noLimit: string }
 }
+
+const bar = css({
+  flex: '1',
+  minW: '0',
+  borderTopRadius: '2px',
+  transition: 'height 400ms token(easings.signal), background-color 200ms',
+})
+const barIn = css({ bg: 'ink' })
+const barOut = css({ bg: 'line' })
 
 const thumb = css({
   position: 'absolute',
@@ -43,7 +54,7 @@ const thumb = css({
   _focusVisible: { outline: 'none', '&::-webkit-slider-thumb': { borderColor: 'signal' } },
 })
 
-export function BudgetControl({ step, draft, onDraft, locale, labels }: Props) {
+export function BudgetControl({ step, draft, onDraft, bins, locale, labels }: Props) {
   const [lo, hi] = step.bounds
   const range = readRange(draft)
   const [min, max] = range && range !== ANY ? [range[0], range[1] ?? hi] : [lo, hi]
@@ -53,9 +64,30 @@ export function BudgetControl({ step, draft, onDraft, locale, labels }: Props) {
     onDraft(writeRange([Math.max(lo, a), b >= hi ? null : b]))
   }
   const pct = (v: number) => ((v - lo) / (hi - lo)) * 100
+  const peak = Math.max(1, ...bins.map((b) => b.count))
 
   return (
-    <div className={css({ display: 'grid', gap: '4', py: '2' })}>
+    <div
+      className={css({
+        h: '100%',
+        display: 'grid',
+        gridTemplateRows: 'minmax(0, 1fr) auto auto',
+        gap: '3',
+        pt: '1',
+      })}
+    >
+      <div
+        aria-hidden
+        className={css({ minH: '0', display: 'flex', alignItems: 'flex-end', gap: '2px' })}
+      >
+        {bins.map((bin) => (
+          <span
+            key={bin.from}
+            className={`${bar} ${bin.to > min && (max >= hi || bin.from < max) ? barIn : barOut}`}
+            style={{ height: `${Math.max(3, (bin.count / peak) * 100)}%` }}
+          />
+        ))}
+      </div>
       <div
         className={css({
           display: 'flex',

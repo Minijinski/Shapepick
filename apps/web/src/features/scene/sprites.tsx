@@ -22,7 +22,7 @@ export type Sprite = {
  * World px per glyph unit. Keyboards are drawn in key units (1u ≈ 19 mm), monitors in inches;
  * each category has its own canvas, so only the proportions inside a category matter.
  */
-const PX_PER_UNIT: Record<Category, number> = { keyboard: 11, monitor: 8.6 }
+const PX_PER_UNIT: Record<Category, number> = { keyboard: 11, monitor: 7.4 }
 const PAD = 16
 
 const nextTask = () => new Promise<void>((resolve) => setTimeout(resolve, 0))

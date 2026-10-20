@@ -247,7 +247,7 @@ export function Scene({ catalogs, locale }: Props) {
         >
           {hit && item && (
             <PopupCard
-              key={`${hit.slug}:${hit.kx}:${hit.ky}`}
+              key={`${hit.slug}:${hit.spot}:${hit.slot}:${hit.kx}:${hit.ky}`}
               item={item}
               detail={scene.detailOf(hit.category, hit.slug)}
               locale={locale}

@@ -50,9 +50,9 @@ const optionTile = defineSlotRecipe({
       flexDirection: 'column',
       alignItems: 'flex-start',
       justifyContent: 'space-between',
-      gap: '2',
-      minH: { base: '16', md: '24' },
-      p: { base: '3', md: '3.5' },
+      gap: '1.5',
+      minH: { base: '16', md: '20' },
+      p: '3',
       textAlign: 'left',
       bg: 'surface',
       borderRadius: 'lg',
@@ -75,14 +75,14 @@ const optionTile = defineSlotRecipe({
     },
     visual: {
       color: 'ink.muted',
-      h: { base: '7', md: '10' },
+      h: { base: '7', md: '8' },
       w: '100%',
       display: 'flex',
       alignItems: 'flex-end',
     },
     label: {
       fontWeight: '600',
-      fontSize: { base: 'sm', md: 'md' },
+      fontSize: { base: 'sm', md: '0.9375rem' },
       lineHeight: '1.2',
       letterSpacing: '-0.01em',
     },
@@ -90,7 +90,11 @@ const optionTile = defineSlotRecipe({
       display: { base: 'none', md: 'block' },
       fontSize: 'xs',
       color: 'ink.muted',
-      lineHeight: '1.3',
+      lineHeight: '1.25',
+      // One line, always: the console keeps the same height whatever the options say. The count
+      // sits at the end of this line.
+      truncate: true,
+      pr: '7',
     },
     count: {
       position: 'absolute',

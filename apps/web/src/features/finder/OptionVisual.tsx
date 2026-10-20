@@ -5,7 +5,7 @@ import { KeyboardGlyph, MonitorGlyph } from '../product/glyphs'
 // Small worked examples on the tiles where a picture says more than a word: the board drawn at
 // its size, the monitor drawn to scale, the colour as a swatch.
 
-const glyph = css({ w: '100%', h: 'auto', maxH: { base: '7', md: '10' } })
+const glyph = css({ w: '100%', h: 'auto', maxH: { base: '7', md: '8' } })
 
 const keyboardSizes = {
   full: 'full',
@@ -58,7 +58,7 @@ export function OptionVisual({
   }
   if (category === 'monitor' && stepKey === 'format' && optionId in monitorFormats) {
     const spec = monitorFormats[optionId as keyof typeof monitorFormats]
-    return <MonitorGlyph absolute {...spec} className={css({ h: '10', w: 'auto' })} />
+    return <MonitorGlyph absolute {...spec} className={css({ h: '8', w: 'auto' })} />
   }
   const fill =
     (category === 'keyboard' && stepKey === 'look' && swatches[optionId]) ||

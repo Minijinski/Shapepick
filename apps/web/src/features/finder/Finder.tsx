@@ -4,7 +4,7 @@ import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
 import { scene } from '../scene/controller'
-import { useEnterDelay, usePageExit } from '../scene/navigation'
+import { saveJourney, useArrival, useEnterDelay, usePageExit } from '../scene/navigation'
 import { AnswerRail } from './AnswerRail'
 import { Console } from './Console'
 import { LiveCounter } from './LiveCounter'
@@ -41,24 +41,35 @@ const enterFade = css({
 export function Finder({ category, items, search, locale }: Props) {
   const finder = useFinder(category, items, search, locale)
   const stage = useRef<HTMLElement>(null)
+  const hud = useRef<HTMLDivElement>(null)
+  const podium = useRef<HTMLElement>(null)
   const dock = useRef<HTMLDivElement>(null)
   const done = finder.step == null
-  // Coming from the home page, the chrome waits for the panel to finish opening.
-  const delay = useEnterDelay({ mode: 'canvas', category }, 0.92, 0.1)
+  const target = { mode: 'canvas', category } as const
+  // From the home page the chrome waits for the panel to open. Switching categories, the console
+  // stays where it is and only what it says changes.
+  const arrival = useArrival(target)
+  const swapped = arrival === 'swap'
+  const delay = useEnterDelay(target, swapped ? 0.3 : 0.92, 0.1)
 
   useEffect(() => {
     scene.showCanvas(category)
   }, [category])
+
+  // Each category remembers where its questionnaire was left.
+  useEffect(() => {
+    saveJourney(category, search)
+  }, [category, search])
 
   // The canvas mirrors the answers; a new answer ripples out from the console.
   useEffect(() => {
     const box = dock.current?.getBoundingClientRect()
     scene.setTargets(
       category,
-      { matching: finder.matchingIds, hot: finder.hotIds, ranks: finder.podiumRanks },
+      { misses: finder.misses, hot: finder.hotIds, order: finder.order },
       box ? { x: box.left + box.width / 2, y: box.top + box.height / 3 } : undefined,
     )
-  }, [category, finder.matchingIds, finder.hotIds, finder.podiumRanks])
+  }, [category, finder.misses, finder.hotIds, finder.order])
   useEffect(() => {
     scene.setDetails(category, finder.details)
   }, [category, finder.details])
@@ -67,49 +78,75 @@ export function Finder({ category, items, search, locale }: Props) {
       // Back on the home page the panel shows every product again.
       scene.setTargets(category, null)
       scene.setDetails(category, null)
+      scene.setStage(category, null)
     },
     [category],
   )
 
-  // The hint sits right above the console, whose height changes per question.
+  // The free space between the counter, the podium and the console is where a short list of
+  // products gathers. Layout boxes, not on-screen ones: the entrances move them with transforms.
   useEffect(() => {
-    const el = dock.current
-    if (!el || !stage.current) return
-    const observer = new ResizeObserver(([entry]) => {
-      stage.current?.style.setProperty(
-        '--dock-h',
-        `${Math.round(entry?.contentRect.height ?? 0)}px`,
-      )
-    })
-    observer.observe(el)
-    return () => observer.disconnect()
-  }, [])
+    const main = stage.current
+    if (!main) return
+    const measure = () => {
+      const d = dock.current
+      const h = hud.current
+      if (!d || !h) return
+      main.style.setProperty('--dock-h', `${d.offsetHeight}px`)
+      if (done) return scene.setStage(category, null)
+      const p = podium.current
+      const left = 20
+      const right = p?.offsetWidth ? p.offsetLeft - 28 : main.clientWidth - 20
+      const top = h.offsetTop + h.offsetHeight + 28
+      const bottom = d.offsetTop - 64
+      scene.setStage(category, { x: left, y: top, w: right - left, h: bottom - top })
+    }
+    measure()
+    const observer = new ResizeObserver(measure)
+    for (const el of [dock.current, hud.current, podium.current]) if (el) observer.observe(el)
+    window.addEventListener('resize', measure)
+    return () => {
+      observer.disconnect()
+      window.removeEventListener('resize', measure)
+    }
+  }, [category, done])
 
   usePageExit(
-    () =>
+    (kind) =>
       new Promise<void>((resolve) => {
         const el = stage.current
         if (!el || prefersReducedMotion()) return resolve()
         gsap.set(el.querySelectorAll('[data-enter]'), { animation: 'none' })
-        gsap
-          .timeline({ onComplete: resolve, defaults: { ease: 'power3.in' } })
-          .to(
-            el.querySelectorAll('[data-enter=dock]'),
-            {
-              y: 80,
-              rotateX: 26,
-              opacity: 0,
-              transformPerspective: 1400,
-              transformOrigin: '50% 100%',
-              duration: 0.4,
-            },
+        const tl = gsap.timeline({ onComplete: resolve, defaults: { ease: 'power3.in' } })
+        if (kind === 'switch') {
+          // The console stays: only its question goes, and the new category's comes in.
+          tl.to(
+            el.querySelectorAll(done ? '[data-enter=dock]' : '[data-console-part]'),
+            { opacity: 0, y: -10, duration: 0.26, stagger: 0.015 },
             0,
-          )
-          .to(
+          ).to(
             el.querySelectorAll('[data-enter=hud], [data-enter=podium], [data-enter=hint]'),
-            { opacity: 0, y: -10, duration: 0.3 },
+            { opacity: 0, duration: 0.22 },
             0,
           )
+          return
+        }
+        tl.to(
+          el.querySelectorAll('[data-enter=dock]'),
+          {
+            y: 80,
+            rotateX: 26,
+            opacity: 0,
+            transformPerspective: 1400,
+            transformOrigin: '50% 100%',
+            duration: 0.4,
+          },
+          0,
+        ).to(
+          el.querySelectorAll('[data-enter=hud], [data-enter=podium], [data-enter=hint]'),
+          { opacity: 0, y: -10, duration: 0.3 },
+          0,
+        )
       }),
   )
 
@@ -145,9 +182,10 @@ export function Finder({ category, items, search, locale }: Props) {
       />
 
       <div
+        ref={hud}
         data-enter="hud"
         className={cx(
-          enterLeft,
+          swapped ? enterFade : enterLeft,
           css({
             position: 'absolute',
             top: { base: '16', md: '20' },
@@ -174,9 +212,10 @@ export function Finder({ category, items, search, locale }: Props) {
 
       {!done && (
         <aside
+          ref={podium}
           data-enter="podium"
           className={cx(
-            enterRight,
+            swapped ? enterFade : enterRight,
             css({
               position: 'absolute',
               top: '24',
@@ -241,7 +280,7 @@ export function Finder({ category, items, search, locale }: Props) {
         <div
           data-enter="dock"
           className={cx(
-            enterDock,
+            !swapped && enterDock,
             css({
               display: 'grid',
               gridTemplateColumns: 'minmax(0, 1fr)',
