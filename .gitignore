@@ -1,0 +1,14 @@
+node_modules
+.turbo
+.output
+.nitro
+.tanstack
+dist
+*.tsbuildinfo
+.env
+.env.local
+.DS_Store
+.pgdata
+apps/web/styled-system
+apps/web/src/paraglide
+apps/web/src/routeTree.gen.ts
