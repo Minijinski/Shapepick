@@ -1,0 +1,114 @@
+import type { Text } from '../i18n'
+import type { colorFamilies, keyboardLayouts } from './enums'
+import {
+  type Brand,
+  type KeyboardInput,
+  type KeyboardSpecs,
+  type MonitorInput,
+  type MonitorSpecs,
+  ppiOf,
+  type Switch,
+} from './schemas'
+
+// What the finder works on: one record per product, brand and switches resolved, nothing nested
+// deeper than the variants. The snapshot route serves exactly this shape, and the engine never sees
+// anything else, so the same predicates run on the server (SSR) and in the browser.
+
+type ItemBase = {
+  slug: string
+  brand: Pick<Brand, 'slug' | 'name'>
+  name: string
+  releaseYear?: number
+  priceEur: number
+  popularity: number
+  editorialScore: number
+  tagline?: Text
+}
+
+export type KeyboardItem = ItemBase & {
+  category: 'keyboard'
+  specs: KeyboardSpecs
+  variants: {
+    colorName: string
+    colorFamily: (typeof colorFamilies)[number]
+    layout: (typeof keyboardLayouts)[number]
+    switch: Switch | null
+    priceEur: number
+  }[]
+}
+
+export type MonitorItem = ItemBase & {
+  category: 'monitor'
+  specs: MonitorSpecs & { ppi: number }
+  variants: { colorName: string; colorFamily: (typeof colorFamilies)[number]; priceEur: number }[]
+}
+
+export type CatalogItem = KeyboardItem | MonitorItem
+
+const brandOf = (brands: Map<string, Brand>, slug: string, product: string) => {
+  const brand = brands.get(slug)
+  if (!brand) throw new Error(`${product}: unknown brand "${slug}"`)
+  return { slug: brand.slug, name: brand.name }
+}
+
+// A product's price is its cheapest variant, which is what a budget answer should be read against.
+const cheapest = (prices: number[]) => Math.min(...prices)
+
+export function toKeyboardItems(
+  inputs: KeyboardInput[],
+  brandList: Brand[],
+  switchList: Switch[],
+): KeyboardItem[] {
+  const brands = new Map(brandList.map((b) => [b.slug, b]))
+  const switches = new Map(switchList.map((s) => [s.slug, s]))
+  return inputs.map((k) => {
+    const variants = k.variants.map((v) => {
+      const sw = v.switch ? switches.get(v.switch) : null
+      if (v.switch && !sw) throw new Error(`${k.slug}: unknown switch "${v.switch}"`)
+      return {
+        colorName: v.colorName,
+        colorFamily: v.colorFamily,
+        layout: v.layout,
+        switch: sw ?? null,
+        priceEur: v.msrpEur ?? k.msrpEur,
+      }
+    })
+    return {
+      category: 'keyboard',
+      slug: k.slug,
+      brand: brandOf(brands, k.brand, k.slug),
+      name: k.name,
+      releaseYear: k.releaseYear,
+      priceEur: cheapest(variants.map((v) => v.priceEur)),
+      popularity: k.popularity,
+      editorialScore: k.editorialScore,
+      tagline: k.tagline,
+      specs: k.specs,
+      variants,
+    }
+  })
+}
+
+export function toMonitorItems(inputs: MonitorInput[], brandList: Brand[]): MonitorItem[] {
+  const brands = new Map(brandList.map((b) => [b.slug, b]))
+  return inputs.map((m) => {
+    const variants = m.variants.map((v) => ({
+      colorName: v.colorName,
+      colorFamily: v.colorFamily,
+      priceEur: v.msrpEur ?? m.msrpEur,
+    }))
+    return {
+      category: 'monitor',
+      slug: m.slug,
+      brand: brandOf(brands, m.brand, m.slug),
+      name: m.name,
+      releaseYear: m.releaseYear,
+      priceEur: cheapest(variants.map((v) => v.priceEur)),
+      popularity: m.popularity,
+      editorialScore: m.editorialScore,
+      tagline: m.tagline,
+      specs: { ...m.specs, ppi: ppiOf(m.specs) },
+      variants,
+    }
+  })
+}

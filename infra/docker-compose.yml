@@ -1,0 +1,15 @@
+services:
+  postgres:
+    image: postgres:17-alpine
+    restart: unless-stopped
+    environment:
+      POSTGRES_USER: choose
+      POSTGRES_PASSWORD: choose
+      POSTGRES_DB: choose_a_device
+    ports:
+      - "54329:5432"
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+volumes:
+  pgdata:
