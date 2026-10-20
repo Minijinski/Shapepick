@@ -1,0 +1,319 @@
+# Claviers FICTIFS (démo) : des specs plausibles pour développer le parcours, pas de vrais produits.
+# Un fichier peut contenir un ou plusieurs claviers ; pnpm db:seed les valide (Zod) puis les upserte.
+
+- slug: northkey-n75-pro
+  brand: northkey
+  name: N75 Pro
+  releaseYear: 2025
+  msrpEur: 179
+  popularity: 0.85
+  editorialScore: 0.88
+  tagline: { fr: "Le 75 % sans fil qui fait tout bien", en: "The wireless 75% that does everything right" }
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1650, widthMm: 325, depthMm: 140, typingAngleDeg: 7 }
+  variants:
+    - { colorName: Graphite, colorFamily: black, layout: ansi_us, switch: ember-linear }
+    - { colorName: Graphite, colorFamily: black, layout: iso_fr, switch: ember-tactile }
+    - { colorName: Craie, colorFamily: white, layout: ansi_us, switch: ember-tactile }
+
+- slug: northkey-n65
+  brand: northkey
+  name: N65
+  releaseYear: 2024
+  msrpEur: 99
+  popularity: 0.7
+  editorialScore: 0.74
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: via, macSupport: true, batteryMah: 3000, soundDampening: true, weightG: 820, widthMm: 315, depthMm: 108 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: ember-linear }
+    - { colorName: Blanc, colorFamily: white, layout: ansi_us, switch: ember-tactile }
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: ember-linear }
+
+- slug: northkey-n100
+  brand: northkey
+  name: N100
+  releaseYear: 2023
+  msrpEur: 79
+  popularity: 0.6
+  editorialScore: 0.6
+  specs: { formFactor: full, technology: mechanical, hotSwap: 3pin, pollingHzWired: 1000, mount: tray, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1100, widthMm: 440, depthMm: 135 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: classic-red }
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: classic-brown }
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: classic-blue }
+
+- slug: northkey-nx-tkl
+  brand: northkey
+  name: NX TKL
+  releaseYear: 2025
+  msrpEur: 229
+  popularity: 0.45
+  editorialScore: 0.9
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: brass, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, soundDampening: true, weightG: 2100, widthMm: 360, depthMm: 140, typingAngleDeg: 6 }
+  variants:
+    - { colorName: Anodisé noir, colorFamily: black, layout: ansi_us, switch: ember-linear }
+    - { colorName: Argent, colorFamily: white, layout: ansi_us, switch: ember-tactile }
+
+- slug: northkey-n96-wireless
+  brand: northkey
+  name: N96 Wireless
+  releaseYear: 2024
+  msrpEur: 119
+  popularity: 0.55
+  editorialScore: 0.7
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: via, macSupport: true, batteryMah: 4000, weightG: 1250, widthMm: 390, depthMm: 135 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: ember-tactile }
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: ember-linear }
+
+- slug: northkey-n60-he-lite
+  brand: northkey
+  name: N60 HE Lite
+  releaseYear: 2025
+  msrpEur: 69
+  popularity: 0.5
+  editorialScore: 0.62
+  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 600, widthMm: 295, depthMm: 102 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: flux-he-lite }
+
+- slug: atelier-silence-96
+  brand: atelier
+  name: Silence 96
+  releaseYear: 2025
+  msrpEur: 149
+  popularity: 0.6
+  editorialScore: 0.82
+  tagline: { fr: "Le mécanique qu'on n'entend pas", en: "The mechanical you cannot hear" }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000, wristRestIncluded: true, soundDampening: true, weightG: 1300, widthMm: 385, depthMm: 135 }
+  variants:
+    - { colorName: Craie, colorFamily: white, layout: iso_fr, switch: soie }
+    - { colorName: Craie, colorFamily: white, layout: iso_fr, switch: brise }
+    - { colorName: Ardoise, colorFamily: black, layout: ansi_us, switch: soie }
+    - { colorName: Ardoise, colorFamily: black, layout: iso_de, switch: brise }
+
+- slug: atelier-plume
+  brand: atelier
+  name: Plume
+  releaseYear: 2024
+  msrpEur: 89
+  popularity: 0.65
+  editorialScore: 0.72
+  tagline: { fr: "Extra-plat, trois appareils, une touche pour basculer", en: "Ultra-thin, three devices, one key to switch" }
+  specs: { formFactor: full, technology: scissor, lowProfile: true, connBt: true, conn24ghz: true, btDevices: 3, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 1500, weightG: 620, widthMm: 430, depthMm: 115 }
+  variants:
+    - { colorName: Blanc, colorFamily: white, layout: iso_fr }
+    - { colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { colorName: Blanc, colorFamily: white, layout: iso_uk }
+
+- slug: atelier-bureau
+  brand: atelier
+  name: Bureau
+  releaseYear: 2022
+  msrpEur: 39
+  popularity: 0.55
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: membrane, conn24ghz: true, caseMaterial: plastic, keycapMaterial: abs, firmware: proprietary, wristRestIncluded: true, weightG: 900, widthMm: 445, depthMm: 150 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { colorName: Noir, colorFamily: black, layout: iso_de }
+
+- slug: atelier-ergo-split
+  brand: atelier
+  name: Ergo Split
+  releaseYear: 2025
+  msrpEur: 249
+  popularity: 0.3
+  editorialScore: 0.84
+  specs: { formFactor: split, technology: mechanical, hotSwap: 5pin, connBt: true, btDevices: 4, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, firmware: zmk, macSupport: true, batteryMah: 2000, wristRestIncluded: true, soundDampening: true, weightG: 1100, typingAngleDeg: 8 }
+  variants:
+    - { colorName: Ardoise, colorFamily: black, layout: ansi_us, switch: soie }
+    - { colorName: Ardoise, colorFamily: black, layout: ansi_us, switch: brise }
+
+- slug: atelier-compact-scissor
+  brand: atelier
+  name: Plume Compact
+  releaseYear: 2025
+  msrpEur: 69
+  popularity: 0.45
+  editorialScore: 0.66
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, connBt: true, btDevices: 3, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 1000, weightG: 380, widthMm: 285, depthMm: 115 }
+  variants:
+    - { colorName: Blanc, colorFamily: white, layout: iso_fr }
+    - { colorName: Blanc, colorFamily: white, layout: ansi_us }
+
+- slug: pulse-velocity-60-he
+  brand: pulse
+  name: Velocity 60 HE
+  releaseYear: 2025
+  msrpEur: 129
+  popularity: 0.8
+  editorialScore: 0.86
+  tagline: { fr: "Rapid trigger, 8 000 Hz, rien de superflu", en: "Rapid trigger, 8,000 Hz, nothing superfluous" }
+  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, weightG: 640, widthMm: 293, depthMm: 103 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: flux-he }
+    - { colorName: Blanc, colorFamily: white, layout: ansi_us, switch: flux-he }
+
+- slug: pulse-velocity-75-he
+  brand: pulse
+  name: Velocity 75 HE
+  releaseYear: 2026
+  msrpEur: 199
+  popularity: 0.75
+  editorialScore: 0.89
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, pollingHzWired: 8000, pollingHzWireless: 4000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, weightG: 1400, widthMm: 320, depthMm: 135 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: flux-he }
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: flux-he }
+    - { colorName: Blanc, colorFamily: white, layout: ansi_us, switch: flux-he }
+
+- slug: pulse-velocity-tkl-he
+  brand: pulse
+  name: Velocity TKL HE
+  releaseYear: 2025
+  msrpEur: 149
+  popularity: 0.6
+  editorialScore: 0.8
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 950, widthMm: 355, depthMm: 135 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: flux-he }
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: flux-he }
+    - { colorName: Noir, colorFamily: black, layout: iso_uk, switch: flux-he }
+
+- slug: pulse-pro-full-he
+  brand: pulse
+  name: Pro Full HE
+  releaseYear: 2026
+  msrpEur: 249
+  popularity: 0.55
+  editorialScore: 0.78
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: proprietary, wristRestIncluded: true, weightG: 1800, widthMm: 450, depthMm: 150 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: flux-he }
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: flux-he }
+    - { colorName: Noir, colorFamily: black, layout: iso_de, switch: flux-he }
+
+- slug: pulse-swift-optical
+  brand: pulse
+  name: Swift Optical
+  releaseYear: 2024
+  msrpEur: 159
+  popularity: 0.5
+  editorialScore: 0.7
+  specs: { formFactor: full, technology: optical, pollingHzWired: 8000, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, wristRestIncluded: true, weightG: 1300, widthMm: 445, depthMm: 140 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: iso_fr, switch: photon-linear }
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: photon-clicky }
+    - { colorName: Noir, colorFamily: black, layout: iso_de, switch: photon-linear }
+
+- slug: pulse-swift-mini
+  brand: pulse
+  name: Swift Mini
+  releaseYear: 2024
+  msrpEur: 89
+  popularity: 0.45
+  editorialScore: 0.66
+  specs: { formFactor: f65, technology: optical, pollingHzWired: 4000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 700, widthMm: 315, depthMm: 105 }
+  variants:
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: photon-linear }
+
+- slug: hexa-h40
+  brand: hexa
+  name: H40
+  releaseYear: 2024
+  msrpEur: 119
+  popularity: 0.2
+  editorialScore: 0.72
+  specs: { formFactor: f40, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: top, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: mda, firmware: qmk, macSupport: true, weightG: 900, widthMm: 245, depthMm: 85 }
+  variants:
+    - { colorName: Corail, colorFamily: color, layout: ansi_us, switch: cream }
+    - { colorName: Noir, colorFamily: black, layout: ansi_us, switch: latte }
+
+- slug: hexa-alice
+  brand: hexa
+  name: Alice Arc
+  releaseYear: 2025
+  msrpEur: 169
+  popularity: 0.3
+  editorialScore: 0.8
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, mount: gasket, caseMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: via, macSupport: true, batteryMah: 3000, soundDampening: true, weightG: 1200, typingAngleDeg: 6 }
+  variants:
+    - { colorName: Givré, colorFamily: transparent, layout: ansi_us, switch: cream }
+    - { colorName: Lavande, colorFamily: color, layout: ansi_us, switch: latte }
+
+- slug: hexa-glass-65
+  brand: hexa
+  name: Glass 65
+  releaseYear: 2025
+  msrpEur: 109
+  popularity: 0.5
+  editorialScore: 0.75
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: gasket, caseMaterial: polycarbonate, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, macSupport: true, soundDampening: true, weightG: 950, widthMm: 318, depthMm: 110 }
+  variants:
+    - { colorName: Cristal, colorFamily: transparent, layout: ansi_us, switch: cream }
+    - { colorName: Menthe, colorFamily: color, layout: iso_uk, switch: latte }
+
+- slug: hexa-nano-60
+  brand: hexa
+  name: Nano 60
+  releaseYear: 2023
+  msrpEur: 59
+  popularity: 0.4
+  editorialScore: 0.6
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 3pin, pollingHzWired: 1000, mount: tray, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: via, weightG: 580, widthMm: 292, depthMm: 102 }
+  variants:
+    - { colorName: Pêche, colorFamily: color, layout: ansi_us, switch: classic-red }
+    - { colorName: Blanc, colorFamily: white, layout: ansi_us, switch: classic-brown }
+
+- slug: kestrel-k1-max
+  brand: kestrel
+  name: K1 Max
+  releaseYear: 2025
+  msrpEur: 119
+  popularity: 0.7
+  editorialScore: 0.77
+  tagline: { fr: "La sensation mécanique, la hauteur d'un portable", en: "Mechanical feel, laptop height" }
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 3pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, macSupport: true, batteryMah: 2000, weightG: 600, widthMm: 315, depthMm: 120 }
+  variants:
+    - { colorName: Gris sidéral, colorFamily: black, layout: iso_fr, switch: low-red }
+    - { colorName: Gris sidéral, colorFamily: black, layout: ansi_us, switch: low-brown }
+    - { colorName: Argent, colorFamily: white, layout: iso_uk, switch: low-red }
+    - { colorName: Argent, colorFamily: white, layout: iso_de, switch: low-brown }
+
+- slug: kestrel-k10-pro
+  brand: kestrel
+  name: K10 Pro
+  releaseYear: 2024
+  msrpEur: 109
+  popularity: 0.5
+  editorialScore: 0.68
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: 3pin, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 2500, weightG: 850, widthMm: 435, depthMm: 120 }
+  variants:
+    - { colorName: Gris sidéral, colorFamily: black, layout: iso_fr, switch: low-brown }
+    - { colorName: Gris sidéral, colorFamily: black, layout: ansi_us, switch: low-red }
+
+- slug: kestrel-q-wood
+  brand: kestrel
+  name: Q Wood
+  releaseYear: 2026
+  msrpEur: 289
+  popularity: 0.25
+  editorialScore: 0.87
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, connBt: true, btDevices: 3, pollingHzWired: 1000, mount: gasket, caseMaterial: wood, plateMaterial: brass, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1900, widthMm: 360, depthMm: 140 }
+  variants:
+    - { colorName: Noyer, colorFamily: color, layout: ansi_us, switch: latte }
+    - { colorName: Noyer, colorFamily: color, layout: ansi_us, switch: cream }
+
+- slug: kestrel-travel-60
+  brand: kestrel
+  name: Travel 60
+  releaseYear: 2025
+  msrpEur: 79
+  popularity: 0.35
+  editorialScore: 0.65
+  specs: { formFactor: f60, technology: mechanical, lowProfile: true, hotSwap: 3pin, connBt: true, btDevices: 3, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 2000, weightG: 450, widthMm: 285, depthMm: 98 }
+  variants:
+    - { colorName: Argent, colorFamily: white, layout: ansi_us, switch: low-red }
+    - { colorName: Argent, colorFamily: white, layout: iso_fr, switch: low-brown }

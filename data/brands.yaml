@@ -1,0 +1,10 @@
+# Marques FICTIVES pour le développement. Les vraies données remplaceront ces fichiers.
+- { slug: northkey, name: Northkey, country: SE }
+- { slug: atelier, name: Atelier Clavier, country: FR }
+- { slug: pulse, name: Pulse Dynamics, country: US }
+- { slug: hexa, name: Hexa Works, country: KR }
+- { slug: kestrel, name: Kestrel, country: CN }
+- { slug: lumen, name: Lumen Display, country: DE }
+- { slug: vanta, name: Vanta, country: TW }
+- { slug: prism, name: Prism, country: CN }
+- { slug: halcyon, name: Halcyon, country: JP }
