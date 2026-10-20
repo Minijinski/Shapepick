@@ -1,0 +1,28 @@
+{
+  "name": "choose-a-device",
+  "private": true,
+  "type": "module",
+  "packageManager": "pnpm@9.9.0",
+  "engines": {
+    "node": ">=22.12"
+  },
+  "scripts": {
+    "dev": "turbo run dev --filter=@choose/web",
+    "build": "turbo run build",
+    "test": "turbo run test",
+    "typecheck": "turbo run typecheck",
+    "lint": "biome check .",
+    "format": "biome check --write .",
+    "pg:local": "sh scripts/pg-local.sh",
+    "db:generate": "pnpm --filter @choose/db generate",
+    "db:migrate": "pnpm --filter @choose/db migrate",
+    "db:seed": "pnpm --filter @choose/db seed",
+    "db:studio": "pnpm --filter @choose/db studio"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "^2.5.15",
+    "@typescript/native": "npm:typescript@^7.0.2",
+    "turbo": "^2.11.9",
+    "typescript": "npm:@typescript/typescript6@^6.0.2"
+  }
+}

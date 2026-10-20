@@ -1,0 +1,12 @@
+{
+  "extends": "../../tsconfig.base.json",
+  "compilerOptions": {
+    "jsx": "react-jsx",
+    "types": ["vite/client", "node"],
+    "paths": {
+      "~/*": ["./src/*"],
+      "styled-system/*": ["./styled-system/*"]
+    }
+  },
+  "include": ["src", "styled-system", "vite.config.ts", "panda.config.ts"]
+}

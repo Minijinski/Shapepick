@@ -1,0 +1,17 @@
+# Switchs FICTIFS (démo). Forces en grammes, courses en millimètres.
+- { slug: ember-linear, brand: Northkey, name: Ember Linear, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 55, preTravelMm: 2, totalTravelMm: 3.8, factoryLubed: true, soundProfile: deep }
+- { slug: ember-tactile, brand: Northkey, name: Ember Tactile, feel: tactile, tech: mechanical, actuationForceG: 55, bottomOutG: 63, preTravelMm: 2, totalTravelMm: 3.8, factoryLubed: true, soundProfile: poppy }
+- { slug: ember-clicky, brand: Northkey, name: Ember Clicky, feel: clicky, tech: mechanical, actuationForceG: 60, bottomOutG: 70, preTravelMm: 2.2, totalTravelMm: 4, soundProfile: clacky }
+- { slug: soie, brand: Atelier, name: Soie, feel: linear, silent: true, tech: mechanical, actuationForceG: 40, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true, soundProfile: muted }
+- { slug: brise, brand: Atelier, name: Brise, feel: tactile, silent: true, tech: mechanical, actuationForceG: 62, bottomOutG: 67, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true, soundProfile: muted }
+- { slug: flux-he, brand: Pulse, name: Flux HE, feel: linear, tech: magnetic, actuationForceG: 40, bottomOutG: 50, preTravelMm: 0.1, totalTravelMm: 4, factoryLubed: true, soundProfile: crisp }
+- { slug: flux-he-lite, brand: Pulse, name: Flux HE Lite, feel: linear, tech: magnetic, actuationForceG: 35, bottomOutG: 45, preTravelMm: 0.1, totalTravelMm: 3.5, soundProfile: crisp }
+- { slug: photon-linear, brand: Pulse, name: Photon Linear, feel: linear, tech: optical, actuationForceG: 45, preTravelMm: 1.5, totalTravelMm: 3.5, soundProfile: clacky }
+- { slug: photon-clicky, brand: Pulse, name: Photon Clicky, feel: clicky, tech: optical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 3.6, soundProfile: clacky }
+- { slug: cream, brand: Kestrel, name: Cream, feel: linear, tech: mechanical, actuationForceG: 55, bottomOutG: 62, preTravelMm: 2, totalTravelMm: 4, soundProfile: poppy }
+- { slug: latte, brand: Kestrel, name: Latte, feel: tactile, tech: mechanical, actuationForceG: 67, bottomOutG: 72, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true, soundProfile: deep }
+- { slug: classic-red, brand: Generic, name: Classic Red, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 4, soundProfile: clacky }
+- { slug: classic-brown, brand: Generic, name: Classic Brown, feel: tactile, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 4, soundProfile: clacky }
+- { slug: classic-blue, brand: Generic, name: Classic Blue, feel: clicky, tech: mechanical, actuationForceG: 50, bottomOutG: 60, preTravelMm: 2.2, totalTravelMm: 4, soundProfile: clacky }
+- { slug: low-red, brand: Kestrel, name: Low Red, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.2, totalTravelMm: 3.2, soundProfile: crisp }
+- { slug: low-brown, brand: Kestrel, name: Low Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 1.3, totalTravelMm: 3.2, soundProfile: crisp }
