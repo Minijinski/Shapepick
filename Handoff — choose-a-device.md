@@ -4,12 +4,12 @@ Oct 20, 2026 · @Eddy
 
 ## En bref
 
-choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées, avec une première version 2D du nuage de données.
+choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
 - **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8), résultats annotés, en français et en anglais, avec rendu côté serveur.
 - **Données** : 25 claviers et 25 écrans fictifs (marques inventées) pour développer. Les vraies données viendront plus tard.
 - **Qualité** : 28 tests du moteur, typecheck, lint et build de production au vert.
-- **État du dépôt** : rien n'est encore commité, la branche `main` est vide. Au moment de l'écriture, le serveur de dev est arrêté et le Postgres local tourne.
+- **État du dépôt** : commit de référence `e4ca02a` sur `main` (état initial, 20 octobre 2026) ; la refonte de l'accueil et du canvas est sur la branche `feat/bands-canvas`.
 
 Pour reprendre : Node 24, puis `pnpm pg:local`, `pnpm db:migrate && pnpm db:seed` et `pnpm dev` (détails dans « Lancer le projet »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -25,9 +25,9 @@ shapefinder a été analysé en direct le 19 octobre 2026 ([accueil](https://sha
 | Étape sautée quand elle ne départage rien | Repris (`isTrivial`) |
 | Option en impasse grisée avec sa raison | Repris, avec un lien « Changer → » vers la réponse qui bloque |
 | Choix multiple = OU, indispensables = ET | Repris |
-| Compteur vivant, budget au curseur | Repris, plus un histogramme des prix dans le nuage |
+| Compteur vivant, budget au curseur | Repris |
 | Questions déclaratives séparées du moteur | Repris : définitions dans `packages/catalog`, moteur pur et testé |
-| Dizaines de produits flottant autour de la question | Remplacé par un nuage de données : un point par produit, seul le top 3 en visuel |
+| Dizaines de produits flottant autour de la question | Repris en canvas infini : les produits dérivent derrière la question, les écartés laissent leur place aux retenus |
 | 5 questions pour les claviers | 10 questions (dont AZERTY, techno, ressenti) et un parcours écrans en 8 questions |
 
 ## Recherche design
@@ -75,7 +75,7 @@ Tout est en TypeScript dans un seul monorepo, avec un Postgres auto-hébergé. C
 - **Paraglide abandonné** : il télécharge ses plugins depuis un CDN à chaque compilation et impose sa détection de langue, en conflit avec `/fr` et `/en`. Remplacé par des objets `{ fr, en }` typés.
 - **Panda v2**, sorti fin septembre 2026, n'ajoute plus ses presets : `@pandacss/preset-base` et `@pandacss/preset-panda` sont déclarés à la main ([guide de migration](https://raw.githubusercontent.com/chakra-ui/panda/v2/website/content/docs/get-started/upgrading-to-v2.mdx)).
 - **Pas de Docker sur la machine** : Postgres 14 (Homebrew) tourne dans le dossier du projet via `scripts/pg-local.sh`. `infra/docker-compose.yml` (Postgres 17) reste prêt pour le serveur.
-- **Nuage en SVG dès la phase 3** : la version 2D prévue comme repli est livrée d'abord. three et React Three Fiber ne sont pas encore installés.
+- **Scène en canvas 2D (20 octobre 2026)** : le nuage SVG a été remplacé par une scène dessinée sur un seul `<canvas>` 2D, sans three ni React Three Fiber (non installés).
 
 ## Structure du monorepo
 
@@ -98,7 +98,7 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | `apps/web/src/routes/` | Redirection de langue, accueil, parcours, API JSON |
 | `apps/web/src/server/` | Server function `getCatalog` et accès à la base, côté serveur seulement |
 | `apps/web/src/features/finder/` | État du parcours (`useFinder`) et composants de la scène |
-| `apps/web/src/features/cloud/` | Positions du nuage (`layout.ts`, fonctions pures) et rendu SVG animé |
+| `apps/web/src/features/scene/` | Scène partagée accueil ↔ canvas : géométrie des bandes et du motif (`geometry.ts`), rendu (`renderer.ts`), pont routes ↔ scène (`controller.ts`), navigation chorégraphiée (`navigation.ts`), sprites des silhouettes, popup produit |
 | `apps/web/src/features/product/` | Silhouettes SVG générées depuis les specs, specs clés formatées |
 | `apps/web/src/features/motion/` | Enregistrement de GSAP, durées et courbes communes |
 | `apps/web/src/i18n/` | Textes d'interface FR/EN, langue de la page |
@@ -204,7 +204,7 @@ La première réponse choisit les poids des critères ; sans réponse, un profil
 
 ## Interface et animations
 
-Chaque catégorie tient sur un seul écran, la « scène » : compteur et rail en haut à gauche, nuage au centre, podium à droite, console des questions en bas. En fin de parcours, la console laisse la place aux résultats.
+Chaque catégorie tient sur un seul écran : compteur et rail en haut à gauche, canvas infini des produits derrière, podium à droite, console des questions en bas. En fin de parcours, la console laisse la place aux résultats.
 
 &#91;embedded content: maquette de la scène · écran de bureau\]
 
@@ -214,18 +214,36 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 | --- | --- | --- |
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
-| Nuage (`DataCloud`) | Un point par produit : grappes par option avec compteur, histogramme des prix au budget, écartés en anneau pâle, top 3 cerclé | Chaque point se déplace (0,9 s, léger décalage) ; survol et sélection recolorent en 0,22 s |
+| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol | Dérive en diagonale, drag avec inertie, molette ; une réponse transforme les écartés en esquisses puis leur place est reprise par un produit retenu, en vague depuis la console |
 | Console (`Console`) | Titre, aide, tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 3 : silhouette, % de compatibilité, prix | Les cartes changent de place (Flip) |
 | Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres | Panneau qui monte, traits de rapport qui se dessinent |
 | Budget (`BudgetControl`) | Double curseur ; tout en haut signifie sans plafond | Aucune |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
-| Accueil | Titre et deux cartes Claviers / Écrans | Titre mot par mot ; la silhouette de chaque carte change de format toutes les 1,8 s |
+| Accueil | Accroche « Arrête de chercher. Commence à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
 - **Mobile** : la console devient un panneau du bas limité à 56 % de la hauteur, avec défilement interne. Podium et rail défilent horizontalement, les tuiles sont compactes. Vérifié à 375 px : aucun défilement horizontal.
 - **Mouvement réduit** : chaque animation teste `prefersReducedMotion()` et pose directement l'état final.
 - **Onglet masqué** : le navigateur suspend les animations, donc la sortie de la console a une minuterie de secours. La navigation ne dépend jamais d'une animation.
-- **Style** : tout passe par les tokens et recettes Panda ; seuls les dessins SVG (nuage, silhouettes) ont des couleurs en dur.
+- **Style** : tout passe par les tokens et recettes Panda ; seuls le canvas et les silhouettes ont des couleurs en dur.
+
+## Scène : bandes et canvas
+
+Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule scène, un `<canvas>` 2D monté dans le layout `/$lang`. Comme c'est le même dessin des deux côtés, passer de l'un à l'autre n'est qu'une interpolation : rien n'est démonté, donc rien ne clignote.
+
+- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît.
+- **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
+- **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel.
+- **Filtres** : une réponse transforme les produits écartés en esquisses (contours pointillés, comme les lignes cachées d'un dessin technique), puis leur place est reprise par des produits retenus ; tout part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
+
+| Fichier | Rôle |
+| --- | --- |
+| `features/scene/geometry.ts` | Forme des bandes selon l'écran, motif du canvas, tracés arrondis, `clip-path` des liens |
+| `features/scene/renderer.ts` | Dessin, dérive, transitions (`go`), états des produits (`setTargets`), pointeur (`pick`, drag) |
+| `features/scene/controller.ts` | Pont routes ↔ scène (`scene.showBands`, `scene.showCanvas`), délais d'entrée |
+| `features/scene/navigation.ts` | Sortie de page puis navigation (`useSceneNavigation`), délai d'entrée des pages |
+| `features/scene/sprites.tsx` | Silhouettes rendues hors écran puis converties en images (couleur et esquisse) |
+| `features/scene/Scene.tsx`, `PopupCard.tsx` | Le canvas, la gestion du pointeur, la fiche produit |
 
 ## SEO et i18n
 
@@ -302,7 +320,8 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 - **Accès à la base** : uniquement via `await import('./snapshot.server')` dans un handler de server function ou de route serveur. Un import statique de `@choose/db` embarque `postgres` dans le bundle client (« Buffer is not defined »).
 - **`navigator` existe côté serveur** : Node 24 l'expose. Pour savoir si on est dans le navigateur, tester `typeof window`.
 - **Animations et onglet masqué** : `requestAnimationFrame` s'arrête. Tout code qui attend la fin d'une animation GSAP doit avoir une minuterie de secours.
-- **Positions du nuage** : après le premier rendu, GSAP pilote `cx`, `cy` et `r` des points. Ne pas les repasser en props React, sinon les points sautent.
+- **Scène** : elle est montée une fois dans le layout `/$lang` ; une page demande ce qu'elle doit montrer (`scene.showBands()`, `scene.showCanvas(c)`) et ne la démonte jamais. Les entrées de page sont des animations CSS (`animation-fill-mode: backwards`) pour ne pas clignoter au rendu serveur ; les sorties sont en GSAP.
+- **Panneau du navigateur masqué** : rAF, animations et minuteries y ralentissent fortement ; les captures peuvent montrer une image ancienne. Vérifier l'état par le DOM ou forcer la fin des animations.
 - **Tester une animation sans la voir** : dans la console du navigateur, `(await import('/src/features/motion/gsap.ts')).gsap.globalTimeline.getChildren(true, true, true).forEach(t => t.progress(1))`.
 - **YAML** : une valeur avec une virgule dans une map en ligne `{ … }` doit être entre guillemets.
 - **TypeScript** : `tsc` est TypeScript 7 (natif, rapide) ; le paquet `typescript` est un alias vers TypeScript 6 pour les outils qui ont besoin de son API JavaScript.
@@ -313,12 +332,12 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 La principale limite tient aux données : avec 25 produits fictifs par catégorie, le nuage paraît clairsemé et plusieurs étapes se sautent vite. Le reste est une dette assumée pour cette première version.
 
 - **Données** : grappes de 1 à 4 points. Après « 40 % », il ne reste qu'un clavier et le parcours va directement aux résultats.
-- **Nuage en SVG** : adapté à quelques centaines de points. Au-delà, il faut la version WebGL (phase 4).
+- **Canvas 2D** : à l'aise avec quelques centaines de produits ; les sprites coûtent environ 50 Mo de mémoire sur un écran DPR 2. Au-delà, passer la scène en WebGL.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu. Correct à 50 produits ; à 2 000, rendre seulement le top côté serveur et charger le reste ensuite.
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
 - **Ni photos, ni prix boutiques, ni fiche produit** : les visuels sont des silhouettes SVG, la table `offers` est vide et les résultats ne mènent encore nulle part.
 - **Seuils de format** : « Grand format 42"+ » prend les écrans 16:9 dès 36". Les seuils sont à recaler sur les vraies données.
-- **Accessibilité** : tuiles et nuage non audités (le nuage est masqué aux lecteurs d'écran), pas de test au clavier seul.
+- **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
 - **Le seed ne supprime rien** : un produit retiré des YAML reste en base.
 - **Ni tests d'interface ni CI**, et aucun commit pour l'instant.
@@ -326,10 +345,10 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 
 ## Prochaines étapes
 
-La suite logique est de commiter cet état, puis d'enchaîner la phase 4 (nuage WebGL) et la phase 5 (pages SEO) du plan. Les vraies données peuvent avancer en parallèle.
+La suite logique est la phase 5 (pages SEO) et les vraies données ; la scène pourra passer en WebGL si le catalogue grossit.
 
-- [ ] **Premier commit** sur `main` : tout le dépôt est encore non suivi.
-- [ ] **Phase 4, nuage WebGL** : three + React Three Fiber, des `Points` avec shader, transition pilotée par GSAP, chargé après le premier rendu. Le SVG actuel devient le repli.
+- [x] **Premier commit** sur `main` : fait (`e4ca02a`).
+- [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiche produit `/fr/claviers/<slug>` (héros annoté, fiche technique, JSON-LD), pages collections (« 75 % sans fil », « OLED 27" 240 Hz »), `sitemap.xml`, `robots.txt`, `noindex` des combinaisons, images OG, prérendu.
 - [ ] **Vraies données** : rechercher les claviers et écrans, écrire les scripts d'ingestion (TS, ou Python qui écrit dans Postgres), ajouter photos détourées, prix (`offers`) et liens d'affiliation.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.

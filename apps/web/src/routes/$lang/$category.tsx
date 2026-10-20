@@ -1,23 +1,21 @@
 import { categoryFromSlug, categorySlugs, type Locale } from '@choose/catalog'
-import { createFileRoute, notFound } from '@tanstack/react-router'
+import { createFileRoute, getRouteApi, notFound } from '@tanstack/react-router'
 import { Finder } from '~/features/finder/Finder'
 import type { FinderSearch } from '~/features/finder/useFinder'
 import { messages as m } from '~/i18n/messages'
-import { getCatalog } from '~/server/catalog'
 
 export const Route = createFileRoute('/$lang/$category')({
   validateSearch: (search: Record<string, unknown>): FinderSearch =>
     Object.fromEntries(
       Object.entries(search).filter(([, v]) => typeof v === 'string'),
     ) as FinderSearch,
-  // The catalogue does not depend on the answers: load it once, then every answer is local.
+  // The catalogue comes from the layout and does not depend on the answers: every answer is local.
   staleTime: Number.POSITIVE_INFINITY,
   shouldReload: false,
-  loader: async ({ params }) => {
+  loader: ({ params }) => {
     const category = categoryFromSlug(params.category, params.lang as Locale)
     if (!category) throw notFound()
-    const snapshot = await getCatalog({ data: category })
-    return { category, items: snapshot.items }
+    return { category }
   },
   head: ({ params, loaderData }) => {
     const lang = params.lang as Locale
@@ -44,15 +42,18 @@ export const Route = createFileRoute('/$lang/$category')({
   component: FinderPage,
 })
 
+const layout = getRouteApi('/$lang')
+
 function FinderPage() {
-  const { category, items } = Route.useLoaderData()
+  const { category } = Route.useLoaderData()
+  const { catalogs } = layout.useLoaderData()
   const search = Route.useSearch()
   const { lang } = Route.useParams()
   return (
     <Finder
       key={category}
       category={category}
-      items={items}
+      items={catalogs[category]}
       search={search}
       locale={lang as Locale}
     />

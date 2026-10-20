@@ -12,17 +12,17 @@ import {
   firstPending,
   type Locale,
   optionCounts,
+  predicateOf,
   previousStep,
   rank,
   readChoice,
-  readRange,
   type Step,
   sanitizeAnswers,
   withAnswer,
 } from '@choose/catalog'
 import { useNavigate } from '@tanstack/react-router'
 import { useCallback, useEffect, useMemo, useState } from 'react'
-import { type CloudLayout, clusterLayout, fieldLayout, histogramLayout } from '../cloud/layout'
+import type { ItemDetail } from '../scene/controller'
 
 // Everything a finder screen shows is derived here from three inputs: the catalogue, the answers
 // in the URL, and what the visitor is doing right now (a draft pick, a hovered tile). Committed
@@ -130,11 +130,44 @@ export function useFinder(
     [def, answers, asked, locale],
   )
 
-  // ---- Cloud ---------------------------------------------------------------------------------
-  const cloud = useMemo(
-    () => cloudFor({ def, items, answers, effective, step, ranked, hovered, draft, locale }),
-    [def, items, answers, effective, step, ranked, hovered, draft, locale],
+  // ---- Canvas --------------------------------------------------------------------------------
+  /** Products the answers keep, the draft included: drawn in colour, the rest as sketches. */
+  const matchingIds = useMemo(() => new Set(ranked.map((r) => def.id(r.item))), [def, ranked])
+
+  /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
+  const hotIds = useMemo(() => {
+    if (!step || !hovered || step.weightOnly || step.kind === 'range') return null
+    const option = step.options.find((o) => o.id === hovered)
+    if (!option) return null
+    const base = filter(def, items, answers, { without: step.key })
+    // A must-have adds to the ones already picked, so those stay applied.
+    const pool = step.kind === 'musts' ? filter(def, base, effective) : base
+    return new Set(pool.filter(option.match).map(def.id))
+  }, [def, items, answers, effective, step, hovered])
+
+  const podiumRanks = useMemo(
+    () => new Map(ranked.slice(0, 3).map((r, i) => [def.id(r.item), i])),
+    [def, ranked],
   )
+
+  /** What the product popup prints: rank and match for a kept product, the blocking answer otherwise. */
+  const details = useMemo(() => {
+    const map = new Map<string, ItemDetail>()
+    ranked.forEach((r, i) => {
+      map.set(def.id(r.item), { rank: i, score: r.score, excludedBy: null })
+    })
+    const tests = def.steps.flatMap((s) => {
+      const test = predicateOf(s, effective)
+      return test ? [{ step: s, test }] : []
+    })
+    for (const item of items) {
+      const id = def.id(item)
+      if (map.has(id)) continue
+      const blocker = tests.find((t) => !t.test(item))
+      map.set(id, { rank: null, score: null, excludedBy: blocker?.step.label[locale] ?? null })
+    }
+    return map
+  }, [def, items, ranked, effective, locale])
 
   return {
     def,
@@ -153,7 +186,10 @@ export function useFinder(
     asked,
     position: currentKey ? asked.indexOf(currentKey) + 1 : asked.length,
     rail,
-    cloud,
+    matchingIds,
+    hotIds,
+    podiumRanks,
+    details,
     commit,
     goTo,
     back,
@@ -173,114 +209,4 @@ export function toggled<I>(step: Step<I>, draft: string | undefined, id: string)
   const list = picked && picked !== ANY ? picked : []
   const next = list.includes(id) ? list.filter((x) => x !== id) : [...list, id]
   return next.length ? next.join(',') : ''
-}
-
-const euroShort = (locale: Locale) => (v: number) =>
-  new Intl.NumberFormat(locale === 'fr' ? 'fr-FR' : 'en-IE', {
-    style: 'currency',
-    currency: 'EUR',
-    maximumFractionDigits: 0,
-  }).format(v)
-
-function cloudFor({
-  def,
-  items,
-  answers,
-  effective,
-  step,
-  ranked,
-  hovered,
-  draft,
-  locale,
-}: {
-  def: ReturnType<typeof finderOf>
-  items: CatalogItem[]
-  answers: Answers
-  effective: Answers
-  step: Step<CatalogItem> | null
-  ranked: ReturnType<typeof rank<CatalogItem>>
-  hovered: string | null
-  draft: string | undefined
-  locale: Locale
-}): { key: string; layout: CloudLayout } {
-  const ids = items.map(def.id)
-  const order = new Map(ranked.map((r, i) => [def.id(r.item), i]))
-  const byId = new Map(items.map((item) => [def.id(item), item]))
-
-  if (!step) {
-    const remaining = new Set(ranked.map((r) => def.id(r.item)))
-    return {
-      key: DONE,
-      layout: fieldLayout({
-        ids,
-        remaining,
-        order,
-        tone: (id) => ((order.get(id) ?? 9) < 3 ? 'sel' : 'in'),
-      }),
-    }
-  }
-
-  const base = filter(def, items, answers, { without: step.key })
-  const remaining = new Set(base.map(def.id))
-  // Rank order for packing: the current picture's ranking, falling back to the base order.
-  const packing = new Map(order)
-  base.forEach((item, i) => {
-    const id = def.id(item)
-    if (!packing.has(id)) packing.set(id, ranked.length + i)
-  })
-  const common = { ids, remaining, order: packing }
-
-  if (step.kind === 'range') {
-    return {
-      key: step.key,
-      layout: histogramLayout({
-        ...common,
-        value: (id) => step.value(byId.get(id) as CatalogItem),
-        bounds: step.bounds,
-        range: (() => {
-          const r = readRange(draft)
-          return r && r !== ANY ? r : null
-        })(),
-        format: euroShort(locale),
-      }),
-    }
-  }
-
-  const kept = new Set(filter(def, base, effective).map(def.id))
-  if (step.weightOnly)
-    return { key: step.key, layout: fieldLayout({ ...common, tone: () => 'in' }) }
-
-  if (step.kind === 'musts') {
-    const hot = hovered ? step.options.find((o) => o.id === hovered) : null
-    const anyPicked = !!draft
-    return {
-      key: step.key,
-      layout: fieldLayout({
-        ...common,
-        tone: (id) => {
-          const item = byId.get(id) as CatalogItem
-          if (hot?.match(item) && kept.has(id)) return 'hot'
-          return kept.has(id) ? (anyPicked ? 'sel' : 'in') : 'dim'
-        },
-      }),
-    }
-  }
-
-  const picked = readChoice(step, draft)
-  const selected = new Set(picked && picked !== ANY ? picked : [])
-  const counts = optionCounts(def, items, answers, step.key).counts
-  return {
-    key: step.key,
-    layout: clusterLayout({
-      ...common,
-      selected,
-      hot: hovered,
-      groups: step.options.map((o) => ({
-        id: o.id,
-        text: o.label[locale],
-        count: counts[o.id] ?? 0,
-        members: (id: string) => o.match(byId.get(id) as CatalogItem),
-      })),
-    }),
-  }
 }

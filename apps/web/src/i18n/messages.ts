@@ -12,7 +12,11 @@ export const messages = {
     'Le bon appareil, sans tableau de specs',
     'The right device, without a spec sheet',
   ),
-  homeTitle: text('Quelques questions.\nLe bon appareil.', 'A few questions.\nThe right device.'),
+  homeTitle: text('Arrête de chercher.\nCommence à choisir.', 'Stop searching.\nStart choosing.'),
+  homeSub: text(
+    'Choisis un univers : le catalogue se resserre avec toi, question après question.',
+    'Pick a world: the catalogue narrows with you, one question at a time.',
+  ),
   homeLead: text(
     'Réponds à quelques questions : le catalogue se resserre à chaque réponse, en direct, jusqu’aux trois modèles faits pour toi.',
     'Answer a few questions: the catalogue narrows with every answer, live, down to the three models made for you.',
@@ -62,6 +66,12 @@ export const messages = {
   from: text('à partir de', 'from'),
   language: text('Langue', 'Language'),
   demoData: text('Données de démonstration', 'Demo data'),
+  worlds: text('Univers', 'Worlds'),
+  explore: text('Explorer', 'Explore'),
+  canvasHint: text('Glisse pour explorer · survole un modèle', 'Drag to explore · hover a model'),
+  canvasHintTouch: text('Glisse pour explorer · touche un modèle', 'Drag to explore · tap a model'),
+  ruledOutBy: text('Écarté par', 'Ruled out by'),
+  ruledOut: text('Écarté', 'Ruled out'),
 } as const
 
 export const formatCount = count

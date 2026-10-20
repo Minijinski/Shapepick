@@ -76,20 +76,26 @@ export function Console({
   finder,
   category,
   locale,
+  enterDelay = 0,
 }: {
   finder: Finder
   category: Category
   locale: Locale
+  /** Seconds before the first question plays in, while the console itself rises. */
+  enterDelay?: number
 }) {
   const { step, counts, draft } = finder
   const root = useRef<HTMLElement>(null)
   const [helpOpen, setHelpOpen] = useState(false)
   const leaving = useRef(false)
+  const first = useRef(true)
 
   useGSAP(
     () => {
       leaving.current = false
       setHelpOpen(false)
+      const delay = first.current ? enterDelay : 0
+      first.current = false
       if (prefersReducedMotion() || !root.current) return
       const split = SplitText.create('[data-title]', { type: 'words,chars', mask: 'words' })
       gsap.from(split.chars, {
@@ -97,6 +103,7 @@ export function Console({
         duration: motion.base,
         ease: motion.ease,
         stagger: 0.012,
+        delay,
       })
       gsap.from('[data-tile], [data-budget]', {
         opacity: 0,
@@ -104,7 +111,7 @@ export function Console({
         duration: motion.base,
         ease: motion.ease,
         stagger: motion.stagger,
-        delay: 0.08,
+        delay: delay + 0.08,
       })
       return () => split.revert()
     },

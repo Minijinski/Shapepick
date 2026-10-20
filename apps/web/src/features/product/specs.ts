@@ -102,3 +102,80 @@ export function keySpecs(item: CatalogItem, locale: Locale): SpecLine[] {
     { label: fr ? 'Fréquence' : 'Refresh', value: `${s.refreshHzMax} Hz` },
   ]
 }
+
+const layoutName: Record<string, [string, string]> = {
+  iso_fr: ['AZERTY', 'AZERTY'],
+  ansi_us: ['QWERTY US', 'US QWERTY'],
+  iso_uk: ['QWERTY UK', 'UK QWERTY'],
+  iso_de: ['QWERTZ', 'QWERTZ'],
+  iso_nordic: ['Nordique', 'Nordic'],
+  jis: ['JIS', 'JIS'],
+}
+const hotSwapName: Record<string, [string, string]> = {
+  '3pin': ['3 broches', '3-pin'],
+  '5pin': ['5 broches', '5-pin'],
+  magnetic: ['Magnétique', 'Magnetic'],
+}
+const hdrName: Record<string, string> = {
+  hdr400: 'HDR 400',
+  hdr500: 'HDR 500',
+  hdr600: 'HDR 600',
+  hdr1000: 'HDR 1000',
+  hdr1400: 'HDR 1400',
+  true_black_400: 'True Black 400',
+  true_black_500: 'True Black 500',
+}
+const coatingName: Record<string, [string, string]> = {
+  matte: ['mat', 'matte'],
+  semi: ['semi-brillant', 'semi-gloss'],
+  glossy: ['brillant', 'glossy'],
+}
+
+/** The fuller spec sheet of the canvas popup: the key specs plus what a buyer checks next. */
+export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
+  const fr = locale === 'fr'
+  const known = (lines: (SpecLine | undefined)[]) =>
+    lines.filter((line): line is SpecLine => !!line?.value)
+  if (item.category === 'keyboard') {
+    const [format, keys, connection, extra] = keySpecs(item, locale)
+    const s = item.specs
+    const switches = [
+      ...new Set(
+        item.variants.flatMap((v) =>
+          v.switch ? [`${v.switch.name} · ${num(v.switch.actuationForceG, locale)} g`] : [],
+        ),
+      ),
+    ]
+    const layouts = [...new Set(item.variants.map((v) => pick(layoutName[v.layout], locale)))]
+    return known([
+      format,
+      keys,
+      switches.length
+        ? { label: 'Switch', value: switches.slice(0, 2).join(', ') }
+        : { label: 'Hot-swap', value: pick(hotSwapName[s.hotSwap], locale) || (fr ? 'Non' : 'No') },
+      connection,
+      { label: fr ? 'Disposition' : 'Layout', value: layouts.join(', ') },
+      extra,
+    ])
+  }
+  const [size, resolution, panel, refresh] = keySpecs(item, locale)
+  const s = item.specs
+  const ports = [
+    s.hdmiVersion && `HDMI ${s.hdmiVersion}`,
+    s.dpVersion && `DP ${s.dpVersion}`,
+    s.usbcPdW > 0 && `USB-C ${s.usbcPdW} W`,
+  ].filter(Boolean)
+  return known([
+    size,
+    resolution,
+    panel && { ...panel, value: `${panel.value} · ${pick(coatingName[s.coating], locale)}` },
+    refresh && {
+      ...refresh,
+      value: s.responseGtgMs
+        ? `${refresh.value} · ${num(s.responseGtgMs, locale)} ms`
+        : refresh.value,
+    },
+    { label: 'HDR', value: hdrName[s.hdrCert] ?? '—' },
+    { label: fr ? 'Connectique' : 'Ports', value: ports.join(' · ') || '—' },
+  ])
+}

@@ -1,6 +1,8 @@
 import { type Category, categoryFromSlug, categorySlugs, locales } from '@choose/catalog'
 import { Link, useLocation, useParams } from '@tanstack/react-router'
+import type { MouseEvent } from 'react'
 import { css, cx } from 'styled-system/css'
+import { isPlainClick, useSceneNavigation } from '~/features/scene/navigation'
 import { useLocale } from '~/i18n/locale'
 import { messages as m } from '~/i18n/messages'
 
@@ -28,6 +30,13 @@ export function SiteHeader() {
   const params = useParams({ strict: false }) as { category?: string }
   const { searchStr } = useLocation()
   const current = params.category ? categoryFromSlug(params.category, locale) : null
+  // Plain clicks go through the scene (the panel opens or folds back); modified clicks stay links.
+  const sceneTo = useSceneNavigation()
+  const via = (category: Category | null) => (e: MouseEvent) => {
+    if (!isPlainClick(e)) return
+    e.preventDefault()
+    sceneTo(category)
+  }
 
   return (
     <header
@@ -49,6 +58,7 @@ export function SiteHeader() {
       <Link
         to="/$lang"
         params={{ lang: locale }}
+        onClick={via(null)}
         className={css({
           display: 'inline-flex',
           alignItems: 'center',
@@ -75,6 +85,7 @@ export function SiteHeader() {
             key={category}
             to="/$lang/$category"
             params={{ lang: locale, category: categorySlugs[category][locale] }}
+            onClick={via(category)}
             className={link}
           >
             {m.category[category][locale]}

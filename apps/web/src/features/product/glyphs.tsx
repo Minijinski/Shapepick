@@ -101,6 +101,17 @@ const keyboardPalette: Record<
   },
 }
 
+// A product the answers rule out is drawn like a hidden line on a technical drawing: no fill,
+// grey strokes, the outline dashed.
+const GHOST = { line: '#A8A399', faint: '#C9C5BB', dash: '0.3 0.2' } as const
+const ghostPalette = {
+  case: 'none',
+  stroke: GHOST.line,
+  key: 'none',
+  keyStroke: GHOST.faint,
+  accent: 'none',
+}
+
 type KeyboardGlyphProps = {
   formFactor: KeyboardSpecs['formFactor']
   colorFamily?: ColorFamily
@@ -109,6 +120,8 @@ type KeyboardGlyphProps = {
   screen?: boolean
   /** Fixed scale against a full-size board instead of filling the box. */
   absolute?: boolean
+  /** Outline only, for products the answers rule out. */
+  ghost?: boolean
 } & Omit<SVGProps<SVGSVGElement>, 'children'>
 
 export function KeyboardGlyph({
@@ -118,10 +131,11 @@ export function KeyboardGlyph({
   knob = false,
   screen = false,
   absolute = false,
+  ghost = false,
   ...svg
 }: KeyboardGlyphProps) {
   const blocks = layouts[formFactor]
-  const pal = keyboardPalette[colorFamily]
+  const pal = ghost ? ghostPalette : keyboardPalette[colorFamily]
   const pad = lowProfile ? 0.25 : 0.45
   const keys: { x: number; y: number; w: number; accent: boolean }[] = []
   let width = 0
@@ -148,7 +162,8 @@ export function KeyboardGlyph({
   const view = absolute ? { w: 23.5, h: 7.4 } : { w: caseW, h: caseH + (halves ? 1.6 : 0) }
   const ox = absolute ? (view.w - caseW) / 2 : 0
   const oy = absolute ? (view.h - caseH) / 2 : halves ? 0.8 : 0
-  const strokeDash = colorFamily === 'transparent' ? '0.25 0.18' : undefined
+  const strokeDash = ghost ? GHOST.dash : colorFamily === 'transparent' ? '0.25 0.18' : undefined
+  const caseStroke = ghost ? 0.07 : 0.05
 
   const renderKeys = (subset: typeof keys) =>
     subset.map((k) => (
@@ -160,8 +175,8 @@ export function KeyboardGlyph({
         height={0.88}
         rx={lowProfile ? 0.08 : 0.14}
         fill={k.accent ? pal.accent : pal.key}
-        stroke={k.accent ? 'none' : pal.keyStroke}
-        strokeWidth={0.04}
+        stroke={k.accent && !ghost ? 'none' : pal.keyStroke}
+        strokeWidth={ghost ? 0.05 : 0.04}
       />
     ))
 
@@ -185,7 +200,7 @@ export function KeyboardGlyph({
             rx={0.6}
             fill={pal.case}
             stroke={pal.stroke}
-            strokeWidth={0.05}
+            strokeWidth={caseStroke}
             strokeDasharray={strokeDash}
           />
           {renderKeys(subset)}
@@ -200,11 +215,20 @@ export function KeyboardGlyph({
         rx={0.6}
         fill={pal.case}
         stroke={pal.stroke}
-        strokeWidth={0.05}
+        strokeWidth={caseStroke}
         strokeDasharray={strokeDash}
       />
       {renderKeys(keys)}
-      {knob && <circle cx={caseW - pad - 0.5} cy={pad + 0.5} r={0.42} fill={pal.accent} />}
+      {knob && (
+        <circle
+          cx={caseW - pad - 0.5}
+          cy={pad + 0.5}
+          r={0.42}
+          fill={pal.accent}
+          stroke={ghost ? pal.keyStroke : 'none'}
+          strokeWidth={0.05}
+        />
+      )}
       {screen && (
         <rect
           x={caseW - pad - 3.2}
@@ -212,8 +236,8 @@ export function KeyboardGlyph({
           width={1.6}
           height={0.76}
           rx={0.1}
-          fill="#0A0A0A"
-          stroke={pal.accent}
+          fill={ghost ? 'none' : '#0A0A0A'}
+          stroke={ghost ? pal.keyStroke : pal.accent}
           strokeWidth={0.05}
         />
       )}
@@ -255,6 +279,8 @@ type MonitorGlyphProps = {
   colorFamily?: ColorFamily
   /** Fixed scale (a 49" super-ultrawide fills the width) instead of filling the box. */
   absolute?: boolean
+  /** Outline only, for products the answers rule out. */
+  ghost?: boolean
 } & Omit<SVGProps<SVGSVGElement>, 'children'>
 
 export function MonitorGlyph({
@@ -264,6 +290,7 @@ export function MonitorGlyph({
   curvatureR,
   colorFamily = 'black',
   absolute = false,
+  ghost = false,
   ...svg
 }: MonitorGlyphProps) {
   const ratio = aspectRatio[aspect]
@@ -280,6 +307,8 @@ export function MonitorGlyph({
   const frame = colorFamily === 'white' ? '#E6E2DA' : '#1C1C1B'
   const [deep, sheen] = screenFill[panel]
   const id = `scr-${aspect.replace(':', '')}-${Math.round(diagonalIn * 10)}-${panel}`
+  const solid = (fill: string) =>
+    ghost ? { fill: 'none', stroke: GHOST.line, strokeWidth: 0.1 } : { fill }
 
   const edge = (x0: number, y0: number, x1: number, y1: number, depth: number, sweep: 1 | -1) =>
     `M${x0},${y0} Q${(x0 + x1) / 2},${y0 + depth * sweep} ${x1},${y1}`
@@ -305,17 +334,26 @@ export function MonitorGlyph({
           y={h + bezel * 2 - 0.2}
           width={1}
           height={standH - 0.5}
-          fill={frame}
+          {...solid(frame)}
         />
         <ellipse
           cx={totalW / 2}
           cy={h + bezel * 2 + standH - 0.4}
           rx={Math.min(totalW * 0.22, 6)}
           ry={0.45}
-          fill={frame}
+          {...solid(frame)}
         />
-        <path d={outline(0, bow)} fill={frame} />
-        <path d={outline(bezel, bow)} fill={`url(#${id})`} />
+        <path
+          d={outline(0, bow)}
+          {...solid(frame)}
+          strokeDasharray={ghost ? '0.6 0.4' : undefined}
+        />
+        <path
+          d={outline(bezel, bow)}
+          {...(ghost
+            ? { fill: 'none', stroke: GHOST.faint, strokeWidth: 0.08 }
+            : { fill: `url(#${id})` })}
+        />
       </g>
     </svg>
   )
@@ -325,8 +363,9 @@ export function MonitorGlyph({
 
 export function ProductGlyph({
   item,
+  ghost = false,
   ...svg
-}: { item: CatalogItem } & Omit<SVGProps<SVGSVGElement>, 'children'>) {
+}: { item: CatalogItem; ghost?: boolean } & Omit<SVGProps<SVGSVGElement>, 'children'>) {
   const colorFamily = item.variants[0]?.colorFamily
   if (item.category === 'keyboard') {
     const { formFactor, lowProfile, knob, screen } = item.specs
@@ -337,6 +376,7 @@ export function ProductGlyph({
         lowProfile={lowProfile}
         knob={knob}
         screen={screen}
+        ghost={ghost}
         {...svg}
       />
     )
@@ -349,6 +389,7 @@ export function ProductGlyph({
       panel={panel}
       curvatureR={curvatureR}
       colorFamily={colorFamily}
+      ghost={ghost}
       {...svg}
     />
   )

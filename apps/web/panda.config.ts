@@ -194,6 +194,42 @@ export default defineConfig({
           signal: { value: 'cubic-bezier(0.22, 1, 0.36, 1)' },
         },
       },
+      // Entrances run in CSS so they start with the server HTML (no flash before hydration).
+      // They fill backwards only: once played, GSAP is free to animate the same elements out.
+      keyframes: {
+        wordUp: { from: { transform: 'translateY(105%)' }, to: { transform: 'translateY(0)' } },
+        fadeUp: {
+          from: { opacity: '0', transform: 'translateY(14px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
+        },
+        slideInLeft: {
+          from: { opacity: '0', transform: 'translateX(-28px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        slideInRight: {
+          from: { opacity: '0', transform: 'translateX(40px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        // The question console rises like a lid hinged on its bottom edge.
+        dockRise: {
+          from: {
+            opacity: '0',
+            transform: 'perspective(1400px) translateY(110px) rotateX(42deg) scale(0.94)',
+            filter: 'blur(12px)',
+          },
+          '55%': { opacity: '1', filter: 'blur(0px)' },
+          to: {
+            opacity: '1',
+            transform: 'perspective(1400px) translateY(0) rotateX(0deg) scale(1)',
+            filter: 'blur(0px)',
+          },
+        },
+        cardIn: {
+          from: { opacity: '0', transform: 'translateY(6px) scale(0.97)' },
+          to: { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        lineDraw: { from: { transform: 'scaleX(0)' }, to: { transform: 'scaleX(1)' } },
+      },
       semanticTokens: {
         colors: {
           surface: { DEFAULT: { value: '{colors.grey.50}' }, raised: { value: '{colors.white}' } },

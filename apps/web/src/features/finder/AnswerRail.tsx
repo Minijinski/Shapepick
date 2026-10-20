@@ -45,6 +45,8 @@ export function AnswerRail({ items, current, onPick }: Props) {
         rowGap: '2',
         mx: { base: '-4', md: '0' },
         px: { base: '4', md: '0' },
+        // The rest of the stage lets the pointer through to the canvas; the chips take it.
+        pointerEvents: 'auto',
       })}
     >
       {items.map((item, i) => (

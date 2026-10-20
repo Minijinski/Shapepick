@@ -1,14 +1,13 @@
-import { type Category, categories } from '@choose/catalog'
+import { type CatalogItem, type Category, categories } from '@choose/catalog'
 import { createServerFn } from '@tanstack/react-start'
 
-// The finder's catalogue comes from one snapshot per category. Filtering and ranking then happen
-// in memory (server for the first paint, browser afterwards), so no answer waits on the database.
-export const getCatalog = createServerFn({ method: 'GET' })
-  .validator((category: unknown): Category => {
-    if (!(categories as readonly unknown[]).includes(category)) throw new Error('Unknown category')
-    return category as Category
-  })
-  .handler(async ({ data }) => {
-    const { snapshotOf } = await import('./snapshot.server')
-    return snapshotOf(data)
-  })
+// Every category's catalogue, from one snapshot per category. The layout loads them once: the
+// home page draws every category in its panels, and a category page filters and ranks in memory
+// (server for the first paint, browser afterwards), so no answer waits on the database.
+export const getCatalogs = createServerFn({ method: 'GET' }).handler(async () => {
+  const { snapshotOf } = await import('./snapshot.server')
+  const entries = await Promise.all(
+    categories.map(async (category) => [category, (await snapshotOf(category)).items] as const),
+  )
+  return Object.fromEntries(entries) as Record<Category, CatalogItem[]>
+})
