@@ -2,7 +2,7 @@ import { fileURLToPath } from 'node:url'
 import type { KeyboardInput, MonitorInput } from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
 import { eq, sql } from 'drizzle-orm'
-import { createDb } from './client'
+import { connectDirect } from './client'
 import * as t from './schema'
 
 // data/*.yaml → Postgres. Validated by Zod on the way in (loadData), upserted by slug, and the
@@ -10,7 +10,8 @@ import * as t from './schema'
 // seed after editing a YAML file always converges on what the file says.
 
 const dataDir = fileURLToPath(new URL('../../../data', import.meta.url))
-const db = createDb()
+// One interactive transaction: a TCP connection, not the site's HTTP driver.
+const db = connectDirect()
 const data = await loadData(dataDir)
 
 const excluded = (columns: string[]) =>

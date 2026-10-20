@@ -21,6 +21,8 @@
   },
   "devDependencies": {
     "@biomejs/biome": "^2.5.15",
+    "@neon/config": "^1.9.2",
+    "@neon/env": "^1.6.3",
     "@netlify/vite-plugin-tanstack-start": "^1.3.19",
     "@typescript/native": "npm:typescript@^7.0.2",
     "turbo": "^2.11.9",
