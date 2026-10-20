@@ -27,7 +27,7 @@ shapefinder a été analysé en direct le 19 octobre 2026 ([accueil](https://sha
 | Choix multiple = OU, indispensables = ET | Repris |
 | Compteur vivant, budget au curseur | Repris |
 | Questions déclaratives séparées du moteur | Repris : définitions dans `packages/catalog`, moteur pur et testé |
-| Dizaines de produits flottant autour de la question | Repris en canvas infini : les produits dérivent derrière la question, les écartés laissent leur place aux retenus |
+| Dizaines de produits flottant autour de la question | Repris en canvas infini : les produits dérivent derrière la question ; quand il en reste peu, ils se regroupent devant |
 | 5 questions pour les claviers | 10 questions (dont AZERTY, techno, ressenti) et un parcours écrans en 8 questions |
 
 ## Recherche design
@@ -220,7 +220,7 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 | Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres | Panneau qui monte, traits de rapport qui se dessinent |
 | Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, double curseur ; tout en haut signifie sans plafond | Les barres de la plage passent à l'encre au fil du curseur |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
-| Accueil | Accroche « Arrête de chercher. Commence à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
+| Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
 - **Mobile** : la console devient un panneau du bas limité à 56 % de la hauteur, avec défilement interne. Podium et rail défilent horizontalement, les tuiles sont compactes. Vérifié à 375 px : aucun défilement horizontal.
 - **Mouvement réduit** : chaque animation teste `prefersReducedMotion()` et pose directement l'état final.
@@ -231,7 +231,7 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 
 Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule scène, un `<canvas>` 2D monté dans le layout `/$lang`. Comme c'est le même dessin des deux côtés, passer de l'un à l'autre n'est qu'une interpolation : rien n'est démonté, donc rien ne clignote.
 
-- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît.
+- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée.
 - **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
 - **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel.
 - **Filtres** : chaque produit garde ses places. Un produit retenu est dessiné en couleur ; un produit écarté devient une esquisse (contours pointillés, comme les lignes cachées d'un dessin technique), d'autant plus pâle qu'il rate de réponses (1, 2, 3 et plus). Le changement part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
@@ -309,9 +309,12 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Rendu serveur en production (`curl`) | `/en/monitors?use=fps` : `lang="en"`, titre traduit, `hreflang`, question « How big? » présente. `/` redirige selon la langue, `/xx/claviers` répond 404, l'API répond 200 (35 Ko, ETag) |
 | Bundle client | Aucune trace de `postgres` ni de `drizzle` |
 | Navigateur en 1440 × 900 | Parcours clavier complet, choix multiple, impasse « Bloqué par Taille », budget en direct (700 € → 4 écrans), résultats annotés, FR et EN |
-| Navigateur en 375 × 812 | Aucun défilement horizontal, console défilable |
+| Navigateur en 375 × 812 | Accueil et canvas sans défilement horizontal ; la grille de la console défile dans sa hauteur fixe |
+| Scène (712 × 1302 et 1280 × 800) | Bandes, survol avec le nom sur plaque floutée, ouverture en masque + zoom, popup de specs, retour à l'accueil, passage Claviers ↔ Écrans avec reprise du parcours |
+| Console à hauteur fixe | 360 px aux 10 étapes claviers et aux étapes écrans en 1280 × 800, FR et EN, aucune tuile coupée |
+| Liste courte | « 75 % » : les 4 claviers retenus regroupés devant le canvas, une fois chacun, esquisses graduées derrière |
 
-Les animations n'ont été vérifiées que par leur état final : le panneau du navigateur était masqué, ce qui les met en pause. Pour les captures, la fin de chaque animation a été forcée depuis la console.
+Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
 ## Pièges et points d'attention
 
@@ -332,9 +335,10 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 
 ## Limites connues et dette technique
 
-La principale limite tient aux données : avec 25 produits fictifs par catégorie, le nuage paraît clairsemé et plusieurs étapes se sautent vite. Le reste est une dette assumée pour cette première version.
+La principale limite tient aux données : avec 25 produits fictifs par catégorie, le motif du canvas se répète vite et plusieurs étapes se sautent. Le reste est une dette assumée pour cette première version.
 
-- **Données** : grappes de 1 à 4 points. Après « 40 % », il ne reste qu'un clavier et le parcours va directement aux résultats.
+- **Données** : la liste courte arrive dès la 2e question (« 75 % » ne garde que 4 claviers). Après « 40 % », il ne reste qu'un clavier et le parcours va directement aux résultats.
+- **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; le canvas garde alors les esquisses graduées.
 - **Canvas 2D** : à l'aise avec quelques centaines de produits ; les sprites coûtent environ 50 Mo de mémoire sur un écran DPR 2. Au-delà, passer la scène en WebGL.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu. Correct à 50 produits ; à 2 000, rendre seulement le top côté serveur et charger le reste ensuite.
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
@@ -343,12 +347,12 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
 - **Le seed ne supprime rien** : un produit retiré des YAML reste en base.
-- **Ni tests d'interface ni CI**, et aucun commit pour l'instant.
+- **Ni tests d'interface ni CI.**
 - **Prévu mais pas encore utilisé** : ScrollTrigger, three et React Three Fiber.
 
 ## Prochaines étapes
 
-La suite logique est la phase 5 (pages SEO) et les vraies données ; la scène pourra passer en WebGL si le catalogue grossit.
+Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les vraies données ; la phase 4 (nuage WebGL) devient facultative : la scène pourra passer en WebGL si le catalogue grossit.
 
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
