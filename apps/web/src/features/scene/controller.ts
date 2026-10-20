@@ -15,8 +15,16 @@ import {
 // made before the canvas exists are kept and applied when it attaches: React runs a child's
 // effects before its parent's, so the page always speaks before the layout's canvas is ready.
 
-/** What the product popup prints besides the specs. */
-export type ItemDetail = { rank: number | null; score: number | null; excludedBy: string | null }
+/**
+ * What the product popup prints besides the specs: its rank and match once the finder ranks, or
+ * the answer that rules it out.
+ */
+export type ItemDetail = {
+  rank: number | null
+  score: number | null
+  ruledOut: boolean
+  excludedBy: string | null
+}
 
 /**
  * How the scene reaches a page: its first paint, a panel opening from the home page, one
@@ -34,6 +42,7 @@ class SceneController {
   private target: SceneTarget | null = null
   private kind: Arrival = 'intro'
   private stage: Rect | null = null
+  private pickable = true
   private settleAt = 0
   private timer: ReturnType<typeof setTimeout> | undefined
   private readonly waiting = new Set<() => void>()
@@ -48,6 +57,7 @@ class SceneController {
     this.kind = 'intro'
     for (const [category, targets] of this.targets) renderer.setTargets(category, targets)
     renderer.setStage(this.stage)
+    renderer.setPickable(this.pickable)
     if (this.target) this.settleIn(renderer.go(this.target, { intro: true }))
     return () => {
       if (this.renderer === renderer) this.renderer = null
@@ -136,6 +146,12 @@ class SceneController {
 
   hoverBand(category: Category | null) {
     this.renderer?.hoverBand(category)
+  }
+
+  /** Whether the products on the canvas take the pointer (off while the results cover it). */
+  setPickable(pickable: boolean) {
+    this.pickable = pickable
+    this.renderer?.setPickable(pickable)
   }
 
   /** The free part of the screen on a category's canvas, where its short list gathers. */

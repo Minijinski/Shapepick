@@ -7,17 +7,20 @@ import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
 import { AnnotatedHero } from '../product/AnnotatedHero'
 import { Match } from '../product/Match'
+import { MatchBreakdown } from '../product/MatchBreakdown'
 import { formatPrice, sheetSpecs } from '../product/specs'
 import type { ProductSheet } from './useFinder'
 
 // One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
-// It reads like the results' best match (annotated drawing, strengths, caveats), adds the full
-// spec sheet, and ends where buying will happen. A side panel on wide screens, a bottom sheet on
+// It reads like the results' best match (annotated drawing, strengths, caveats), says what its match
+// is made of, adds the full spec sheet, and ends where buying will happen. A side panel on wide screens, a bottom sheet on
 // phones; Escape, the backdrop and the close button fold it away, the arrows step through the
 // ranking.
 
 type Props = {
   sheet: ProductSheet
+  /** The use the visitor picked, which the match is measured against. */
+  use: string | null
   locale: Locale
   /** Place among the kept products, for stepping through them; null for a ruled-out product. */
   position: { index: number; total: number } | null
@@ -51,7 +54,7 @@ const Icon = ({ d }: { d: string }) => (
   </svg>
 )
 
-export function ProductDrawer({ sheet, locale, position, onStep, onClose }: Props) {
+export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }: Props) {
   const panel = useRef<HTMLElement>(null)
   const backdrop = useRef<HTMLDivElement>(null)
   const closing = useRef(false)
@@ -178,7 +181,7 @@ export function ProductDrawer({ sheet, locale, position, onStep, onClose }: Prop
               <span className={css({ color: sheet.rank === 0 ? 'signal' : 'ink.muted' })}>
                 {String((sheet.rank ?? 0) + 1).padStart(2, '0')}
               </span>
-            ) : sheet.excludedBy ? (
+            ) : !sheet.ruledOut ? null : sheet.excludedBy ? (
               `${m.ruledOutBy[locale]} · ${sheet.excludedBy}`
             ) : (
               m.ruledOut[locale]
@@ -281,6 +284,9 @@ export function ProductDrawer({ sheet, locale, position, onStep, onClose }: Prop
                   <Match score={sheet.score} locale={locale} accent={sheet.rank === 0} />
                 )}
               </div>
+              {sheet.fit != null && sheet.met != null && (
+                <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
+              )}
             </div>
 
             {/* The drawing on the canvas's dotted paper. */}

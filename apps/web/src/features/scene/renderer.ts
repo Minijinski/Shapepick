@@ -90,6 +90,8 @@ const SPEED = { band: 36, canvas: 18 }
 /** Direction products travel on the canvas: from the top-right corner towards the bottom-left. */
 const CANVAS_ANGLE = (145 * Math.PI) / 180
 const HOVER_ZOOM = 0.07
+/** How much a product the hovered option keeps grows: a breath, its ring stays put. */
+const HOT_LIFT = 0.015
 /** Seconds a panel takes to open over the others, to fold back, and to swap categories. */
 export const OPEN_S = 1.25
 export const CLOSE_S = 1.1
@@ -101,8 +103,10 @@ const DOT_STEP = 28
 /** Up to this many kept products gather in front of the field, if the free space fits them. */
 const SPOT_MAX = 12
 const SPOT_ZOOM = { max: 1, maxCompact: 0.72, min: 0.42 }
-/** Margin around the short list, in screen px, where the field below never takes the pointer. */
-const SPOT_MARGIN = 32
+/** The rank badge: its height, and how far in from the product's left edge it starts (screen px). */
+const BADGE = { h: 18, inset: 8 }
+/** Room left between the badge and the ring it interrupts. */
+const BADGE_GAP = 5
 /** Opacity of a sketch by the number of answers its product fails (1, 2, 3 or more). */
 const FAINT = [1, 0.75, 0.5, 0.3] as const
 
@@ -201,6 +205,17 @@ type SpotItem = {
 
 type Pose = { x: number; y: number; scale: number; alpha: number }
 
+/** A rank badge laid out above its product: the pill from `x` to `x + pill`, its text to `right`. */
+type Badge = {
+  rank: number
+  label: string
+  match: string | null
+  x: number
+  y: number
+  pill: number
+  right: number
+}
+
 class World {
   items: Item[] = []
   slots: Slot[] = []
@@ -266,6 +281,8 @@ export class SceneRenderer {
   private target: SceneTarget = { mode: 'bands' }
   private readonly targets = new Map<Category, ItemTargets | null>()
   private stage: Rect | null = null
+  /** Off while the finder's results cover the canvas: the products then take no pointer. */
+  private pickable = true
   private dots: CanvasPattern | null = null
   private focus: { hit: Hit; since: number } | null = null
   private dragging = false
@@ -703,14 +720,22 @@ export class SceneRenderer {
     return this.gridIn(stage, items)
   }
 
-  /** A grid of `items` in `stage`: the largest scale at which every product fits. */
+  /**
+   * A grid of `items` in `stage`: the largest scale at which every product fits, with room around
+   * each for its ring and above it for its badge, so neither ever meets a neighbour's.
+   */
   private gridIn(stage: Rect, items: Item[]) {
     if (stage.w < 120 || stage.h < 80) return null
     const n = items.length
     const maxW = Math.max(...items.map((i) => i.sprite.w))
     const maxH = Math.max(...items.map((i) => i.sprite.h))
     const compact = isCompact(this.vp)
-    const gap = compact ? 18 : 36
+    const pad = this.ringPad()
+    const reach = pad + BADGE.h / 2
+    const gapX = 2 * pad + (compact ? 10 : 18)
+    const gapY = pad + reach + (compact ? 8 : 14)
+    const roomW = stage.w - 2 * pad
+    const roomH = stage.h - reach - pad
     const ceiling = compact ? SPOT_ZOOM.maxCompact : SPOT_ZOOM.max
     // The largest scale wins; among layouts that reach it, the one shaped most like the free space.
     const aspect = stage.w / stage.h
@@ -718,12 +743,12 @@ export class SceneRenderer {
     for (let cols = 1; cols <= n; cols++) {
       const rows = Math.ceil(n / cols)
       const zoom = Math.min(
-        (stage.w - gap * (cols - 1)) / cols / maxW,
-        (stage.h - gap * (rows - 1)) / rows / maxH,
+        (roomW - gapX * (cols - 1)) / cols / maxW,
+        (roomH - gapY * (rows - 1)) / rows / maxH,
         ceiling,
       )
-      const gridW = cols * (maxW * zoom + gap) - gap
-      const gridH = rows * (maxH * zoom + gap) - gap
+      const gridW = cols * (maxW * zoom + gapX) - gapX
+      const gridH = rows * (maxH * zoom + gapY) - gapY
       const fit = Math.abs(Math.log(gridW / gridH / aspect)) + (cols * rows - n) * 0.15
       if (zoom > best.zoom + 0.01 || (zoom > best.zoom - 0.01 && fit < best.fit)) {
         best = { cols, rows, zoom, fit }
@@ -731,16 +756,16 @@ export class SceneRenderer {
     }
     if (best.zoom < SPOT_ZOOM.min) return null
     const { cols, rows, zoom } = best
-    const cw = maxW * zoom + gap
-    const ch = maxH * zoom + gap
-    const gridH = rows * ch - gap
+    const cw = maxW * zoom + gapX
+    const ch = maxH * zoom + gapY
+    const gridH = rows * ch - gapY
     const positions = items.map((_, i) => {
       const row = Math.floor(i / cols)
       const inRow = row < rows - 1 ? cols : n - cols * (rows - 1)
-      const rowW = inRow * cw - gap
+      const rowW = inRow * cw - gapX
       return {
         x: stage.x + (stage.w - rowW) / 2 + (i % cols) * cw + (maxW * zoom) / 2,
-        y: stage.y + (stage.h - gridH) / 2 + row * ch + (maxH * zoom) / 2,
+        y: stage.y + reach + (roomH - gridH) / 2 + row * ch + (maxH * zoom) / 2,
       }
     })
     return { zoom, positions }
@@ -821,7 +846,7 @@ export class SceneRenderer {
   /** The product under a screen point, on the open canvas only. */
   pick(p: Pt): Hit | null {
     const band = this.activeBand()
-    if (!band) return null
+    if (!band || !this.pickable) return null
     const world = band.world
     const now = performance.now()
     // The short list sits in front of the field.
@@ -836,9 +861,9 @@ export class SceneRenderer {
         }
       }
     }
-    // Under the short list the field only drifts by, greyed out: it never takes the pointer
-    // there, so a gap between two products of the list never opens a sketch's card.
-    if (this.overSpot(band, p, now)) return null
+    // With a short list on show the field behind it is scenery: it never takes the pointer, so
+    // only the products of the list open their card.
+    if (world.spot.some((s) => !s.leaving)) return null
     const t = this.transformOf(band)
     const wx = (p.x - t.ox) / t.scale
     const wy = (p.y - t.oy) / t.scale
@@ -864,24 +889,10 @@ export class SceneRenderer {
     return best
   }
 
-  /** Whether a screen point is over the short list, the gaps between its products included. */
-  private overSpot(band: Band, p: Pt, now: number) {
-    let x0 = Number.POSITIVE_INFINITY
-    let y0 = Number.POSITIVE_INFINITY
-    let x1 = Number.NEGATIVE_INFINITY
-    let y1 = Number.NEGATIVE_INFINITY
-    for (const s of band.world.spot) {
-      if (s.leaving) continue
-      const pose = this.spotPose(band, s, now)
-      const hw = (s.item.sprite.w * pose.scale) / 2
-      const hh = (s.item.sprite.h * pose.scale) / 2
-      x0 = Math.min(x0, pose.x - hw)
-      x1 = Math.max(x1, pose.x + hw)
-      y0 = Math.min(y0, pose.y - hh)
-      y1 = Math.max(y1, pose.y + hh)
-    }
-    const m = SPOT_MARGIN
-    return p.x >= x0 - m && p.x <= x1 + m && p.y >= y0 - m && p.y <= y1 + m
+  /** Whether the products take the pointer: off while the finder's results cover the canvas. */
+  setPickable(on: boolean) {
+    this.pickable = on
+    if (!on) this.setFocus(null)
   }
 
   /** Highlights a product (null: none) and holds the drift while it is looked at. */
@@ -1160,7 +1171,9 @@ export class SceneRenderer {
     const faint = read(item.faint, now, item.faint.ripple ? delay : 0)
     const hot = read(item.hot, now)
     const dim = read(item.dim, now)
-    const scale = base * (0.88 + 0.12 * on) * (1 + 0.04 * hot) * (1 + 0.05 * focus)
+    // The ring and the badge hold to the product's resting size; only the drawing breathes.
+    const rest = base * (0.88 + 0.12 * on)
+    const scale = rest * (1 + HOT_LIFT * hot) * (1 + 0.05 * focus)
     const dw = (s.w + s.pad * 2) * scale
     const dh = (s.h + s.pad * 2) * scale
     const a = alpha * (1 - 0.5 * dim)
@@ -1173,57 +1186,96 @@ export class SceneRenderer {
       ctx.globalAlpha = a * on
       ctx.drawImage(s.color, x - dw / 2, y - dh / 2, dw, dh)
     }
-    const w = s.w * scale
-    const h = s.h * scale
-    if (hot > 0.01) this.drawRing(x, y, w, h, a * hot * Math.max(on, faint))
-    if (ranked && item.rank != null && item.rank < 3 && on > 0.5) {
-      this.drawRank(item.rank, item.score, x, y, w, h, a * on)
-    }
-    if (focus > 0) this.drawBrackets(x, y, w, h, a * focus)
+    const w = s.w * rest
+    const h = s.h * rest
+    const badge =
+      ranked && item.rank != null && item.rank < 3 && on > 0.5
+        ? this.badgeOf(item.rank, item.score, x, y, w, h)
+        : null
+    if (hot > 0.01) this.drawRing(x, y, w, h, a * hot * Math.max(on, faint), badge)
+    if (badge) this.drawBadge(badge, a * on)
+    if (focus > 0) this.drawBrackets(x, y, s.w * scale, s.h * scale, a * focus)
   }
 
-  private drawRing(cx: number, cy: number, w: number, h: number, alpha: number) {
+  /** Room between a product and the ring that highlights it, in screen px. */
+  private ringPad() {
+    return isCompact(this.vp) ? 9 : 12
+  }
+
+  /**
+   * The ring around a product the hovered option keeps. With a badge, its top edge opens around
+   * it, like a legend on a technical drawing.
+   */
+  private drawRing(
+    cx: number,
+    cy: number,
+    w: number,
+    h: number,
+    alpha: number,
+    badge: Badge | null,
+  ) {
     const { ctx } = this
-    const pad = 10
+    const pad = this.ringPad()
+    const r = radii.card
+    const x0 = cx - w / 2 - pad
+    const x1 = cx + w / 2 + pad
+    const y0 = cy - h / 2 - pad
+    const y1 = cy + h / 2 + pad
     ctx.globalAlpha = alpha
     ctx.strokeStyle = SIGNAL
     ctx.lineWidth = 1.5
     ctx.beginPath()
-    ctx.roundRect(cx - w / 2 - pad, cy - h / 2 - pad, w + pad * 2, h + pad * 2, radii.card)
+    if (badge) {
+      ctx.moveTo(Math.min(x1 - r, badge.right + BADGE_GAP), y0)
+      ctx.arcTo(x1, y0, x1, y1, r)
+      ctx.arcTo(x1, y1, x0, y1, r)
+      ctx.arcTo(x0, y1, x0, y0, r)
+      ctx.arcTo(x0, y0, x1, y0, r)
+      ctx.lineTo(Math.max(x0 + r, badge.x - BADGE_GAP), y0)
+    } else {
+      ctx.roundRect(x0, y0, x1 - x0, y1 - y0, r)
+    }
     ctx.stroke()
   }
 
-  /** The podium's rank medal above a product, and its match beside it. */
-  private drawRank(
+  /** Where a product's rank badge goes: astride the top edge of its ring, its match beside it. */
+  private badgeOf(
     rank: number,
     score: number | null,
     cx: number,
     cy: number,
     w: number,
     h: number,
-    alpha: number,
-  ) {
+  ): Badge {
     const { ctx } = this
     const label = String(rank + 1)
-    const x = cx - w / 2
-    const y = cy - h / 2 - 15
-    const size = 18
-    ctx.globalAlpha = alpha
     ctx.font = `500 10px ${MONO}`
-    const pill = Math.max(size, ctx.measureText(label).width + 10)
-    ctx.fillStyle = rank === 0 ? SIGNAL : INK
+    const pill = Math.max(BADGE.h, ctx.measureText(label).width + 10)
+    const x = cx - w / 2 + BADGE.inset
+    const match = score != null ? `${Math.round(score * 100)} %` : null
+    ctx.font = `500 11px ${MONO}`
+    const right = x + pill + (match ? 6 + ctx.measureText(match).width : 0)
+    return { rank, label, match, x, y: cy - h / 2 - this.ringPad(), pill, right }
+  }
+
+  /** The podium's rank medal above a product, and its match beside it. */
+  private drawBadge(b: Badge, alpha: number) {
+    const { ctx } = this
+    ctx.globalAlpha = alpha
+    ctx.fillStyle = b.rank === 0 ? SIGNAL : INK
     ctx.beginPath()
-    ctx.roundRect(x, y - size / 2, pill, size, size / 2)
+    ctx.roundRect(b.x, b.y - BADGE.h / 2, b.pill, BADGE.h, BADGE.h / 2)
     ctx.fill()
-    ctx.fillStyle = rank === 0 ? '#FFFFFF' : rgb(PAPER)
+    ctx.font = `500 10px ${MONO}`
+    ctx.fillStyle = b.rank === 0 ? '#FFFFFF' : rgb(PAPER)
     ctx.textAlign = 'center'
     ctx.textBaseline = 'middle'
-    ctx.fillText(label, x + pill / 2, y + 0.5)
-    if (score != null) {
+    ctx.fillText(b.label, b.x + b.pill / 2, b.y + 0.5)
+    if (b.match) {
       ctx.textAlign = 'left'
       ctx.fillStyle = INK_MUTED
       ctx.font = `500 11px ${MONO}`
-      ctx.fillText(`${Math.round(score * 100)} %`, x + pill + 6, y + 0.5)
+      ctx.fillText(b.match, b.x + b.pill + 6, b.y + 0.5)
     }
     ctx.textAlign = 'left'
     ctx.textBaseline = 'alphabetic'

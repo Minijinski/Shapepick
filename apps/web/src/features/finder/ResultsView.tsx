@@ -8,15 +8,22 @@ import { motion } from "../motion/tokens";
 import { AnnotatedHero } from "../product/AnnotatedHero";
 import { ProductGlyph } from "../product/glyphs";
 import { Match } from "../product/Match";
+import { MatchBreakdown } from "../product/MatchBreakdown";
 import { formatPrice, keySpecs } from "../product/specs";
+import { useDockHeight } from "./DockPanel";
 
-// The end of the questionnaire: the best match annotated like a spec drawing, the next two beside
-// it, every other match in a list below. Leader lines draw themselves in when the view opens.
-// Every product opens its sheet: the best match from its button, the others from anywhere on
-// their card or row.
+// The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
+// out of it. The best match annotated like a spec drawing, with what its match is made of, the
+// next two beside it, every other match in a list below. Leader lines draw themselves in when the
+// view opens. Every product opens its sheet: the best match from its button, the others from
+// anywhere on their card or row.
 
 type Props = {
   ranked: Ranked<CatalogItem>[];
+  /** False until an answer gives the ranking something to go on: no match is printed then. */
+  scored?: boolean;
+  /** The use the visitor picked, which the match is measured against. */
+  use: string | null;
   locale: Locale;
   onEdit: () => void;
   onReset: () => void;
@@ -36,14 +43,35 @@ const opener = css({
   },
 });
 
+const caption = css({
+  fontFamily: "mono",
+  fontSize: "2xs",
+  color: "ink.faint",
+  textTransform: "uppercase",
+  mb: "2",
+});
+const heroNotes = css({
+  display: "grid",
+  gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
+  gap: "4",
+});
+const heroNotesScored = css({
+  display: "grid",
+  gridTemplateColumns: { base: "1fr", md: "1.15fr 1fr 1fr" },
+  gap: { base: "4", md: "6" },
+});
+
 export function ResultsView({
   ranked,
+  scored = true,
+  use,
   locale,
   onEdit,
   onReset,
   onOpen,
 }: Props) {
   const root = useRef<HTMLElement>(null);
+  const leaving = useRef(false);
   const [first, ...others] = ranked;
   const runnersUp = others.slice(0, 2);
   const rest = others.slice(2);
@@ -52,11 +80,8 @@ export function ResultsView({
     () => {
       if (prefersReducedMotion()) return;
       const tl = gsap.timeline({ defaults: { ease: motion.ease } });
-      tl.from(root.current, {
-        yPercent: 18,
-        opacity: 0,
-        duration: motion.slow,
-      });
+      // The panel grows into the results: they fade in as it opens.
+      tl.from(root.current, { opacity: 0, duration: motion.base, delay: 0.08 });
       tl.from(
         "[data-leader-dot]",
         { scale: 0, duration: motion.base, stagger: 0.08 },
@@ -85,18 +110,37 @@ export function ResultsView({
     },
     { scope: root },
   );
+  useDockHeight();
+
+  /** Fades the results out, then lets the console take their place again. */
+  const leave = (then: () => void) => () => {
+    if (leaving.current) return;
+    leaving.current = true;
+    const el = root.current;
+    if (!el || prefersReducedMotion() || document.hidden) return then();
+    let done = false;
+    const finish = () => {
+      if (done) return;
+      done = true;
+      then();
+    };
+    gsap.to(el, {
+      opacity: 0,
+      duration: motion.fast,
+      ease: motion.easeIn,
+      onComplete: finish,
+    });
+    window.setTimeout(finish, (motion.fast + 0.2) * 1000);
+  };
 
   return (
     <section
       ref={root}
       aria-labelledby="results-title"
       className={css({
-        bg: "surface.raised",
-        borderRadius: "panel",
-        borderWidth: "1px",
-        borderColor: "line",
-        boxShadow: "panel",
-        maxH: "calc(100dvh - 230px)",
+        flexShrink: "0",
+        // Room above for the counter, below for the journey bar.
+        maxH: "calc(100dvh - 290px)",
         overflowY: "auto",
         overscrollBehavior: "contain",
       })}
@@ -132,14 +176,14 @@ export function ResultsView({
           <button
             type="button"
             className={button({ tone: "line", size: "sm" })}
-            onClick={onEdit}
+            onClick={leave(onEdit)}
           >
             {m.editAnswers[locale]}
           </button>
           <button
             type="button"
             className={button({ tone: "ghost", size: "sm" })}
-            onClick={onReset}
+            onClick={leave(onReset)}
           >
             {m.reset[locale]}
           </button>
@@ -209,7 +253,9 @@ export function ResultsView({
                 <span className={css({ fontFamily: "mono", fontSize: "2xl" })}>
                   {formatPrice(first.item.priceEur, locale)}
                 </span>
-                <Match score={first.score} locale={locale} size="lg" accent />
+                {scored && (
+                  <Match score={first.score} locale={locale} size="lg" accent />
+                )}
                 <button
                   type="button"
                   className={button({ tone: "ink", size: "sm" })}
@@ -220,13 +266,18 @@ export function ResultsView({
               </div>
             </div>
             <AnnotatedHero item={first.item} locale={locale} />
-            <div
-              className={css({
-                display: "grid",
-                gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
-                gap: "4",
-              })}
-            >
+            <div className={scored ? heroNotesScored : heroNotes}>
+              {scored && (
+                <div>
+                  <h4 className={caption}>{m.match[locale]}</h4>
+                  <MatchBreakdown
+                    fit={first.fit}
+                    met={first.met}
+                    use={use}
+                    locale={locale}
+                  />
+                </div>
+              )}
               {first.pros.length > 0 && (
                 <div>
                   <h4
@@ -321,7 +372,9 @@ export function ResultsView({
                     })}
                   >
                     <span>{String(i + 2).padStart(2, "0")}</span>
-                    <Match score={entry.score} locale={locale} size="sm" />
+                    {scored && (
+                      <Match score={entry.score} locale={locale} size="sm" />
+                    )}
                   </div>
                   <div
                     className={css({
@@ -490,15 +543,17 @@ export function ResultsView({
                       >
                         {formatPrice(entry.item.priceEur, locale)}
                       </span>
-                      <span
-                        className={css({
-                          fontFamily: "mono",
-                          fontSize: "2xs",
-                          color: "ink.faint",
-                        })}
-                      >
-                        {Math.round(entry.score * 100)}%
-                      </span>
+                      {scored && (
+                        <span
+                          className={css({
+                            fontFamily: "mono",
+                            fontSize: "2xs",
+                            color: "ink.faint",
+                          })}
+                        >
+                          {Math.round(entry.score * 100)}%
+                        </span>
+                      )}
                     </span>
                     <button
                       type="button"

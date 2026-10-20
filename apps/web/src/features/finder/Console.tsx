@@ -13,39 +13,31 @@ import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, SplitText, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
 import { BudgetControl } from "./BudgetControl";
+import { useDockHeight } from "./DockPanel";
 import { hasVisual, OptionVisual } from "./OptionVisual";
 import { type Finder, toggled } from "./useFinder";
 
-// The question panel. One question at a time; tiles carry a live count, picked tiles a tick, and
-// a tile that would leave nothing says which earlier answer blocks it.
+// The question console, in the dock's panel. One question at a time; tiles carry a live count,
+// picked tiles a tick, and a tile that would leave nothing says which earlier answer blocks it.
 //
-// Every question gets the same panel: same height, same header, same footer. The tiles share the
-// space between (many make two rows, more scroll), the budget fills it with its price histogram,
-// and the help opens over it, so the panel never moves under the visitor's pointer from one
-// question to the next. A question whose tiles fit on one row keeps tiles of the same height
-// and spends the room above them on its explanation instead.
+// The console takes the height of its question: same header and footer for every question, tiles
+// of one height in between (a long list scrolls past a ceiling), the budget's histogram at a fixed
+// height. The panel eases from one height to the next, growing or shrinking upwards, so the footer
+// and its buttons never move under the visitor's pointer. A question whose tiles fit on one row
+// spends the room above them on its explanation.
 
-const panel = css({
-  position: "relative",
-  bg: "surface.raised",
-  borderRadius: "panel",
-  borderWidth: "1px",
-  borderColor: "line",
-  boxShadow: "panel",
+const content = css({
+  flexShrink: "0",
   p: { base: "4", md: "5" },
   display: "flex",
   flexDirection: "column",
   gap: "3",
-  h: {
-    base: "clamp(19rem, 46dvh, 25rem)",
-    md: "clamp(20.5rem, 45dvh, 23.5rem)",
-  },
-  overflow: "hidden",
+  // Past this, the tiles scroll inside the panel rather than covering the page.
+  maxH: { base: "min(25rem, 46dvh)", md: "min(32rem, 58dvh)" },
 });
 
 const body = css({
   position: "relative",
-  flex: "1",
   minH: "0",
   display: "flex",
   flexDirection: "column",
@@ -55,30 +47,33 @@ const body = css({
 /** Columns of the tile grid on a wide console: up to this many tiles make a single row. */
 const WIDE_COLUMNS = 5;
 
-const tileGrid = css({
-  border: "0",
-  // The padding is room for what overhangs a tile (the tick, the focus ring), which the scroll
-  // box would otherwise cut; the negative margin keeps the tiles aligned with the header.
+/**
+ * The tiles' scroll box. A div rather than the fieldset itself, which does not clip what
+ * overflows it. The padding is room for what overhangs a tile (the tick, the focus ring), which
+ * the scroll box would otherwise cut; the negative margin keeps the tiles aligned with the header.
+ */
+const tileScroll = css({
   m: "-2",
   p: "2",
   minW: "0",
-  flex: "1",
   minH: "0",
+  overflowY: "auto",
+  overscrollBehavior: "contain",
+  scrollbarWidth: "thin",
+});
+
+const tileGrid = css({
+  border: "0",
+  m: "0",
+  p: "0",
+  minW: "0",
   display: "grid",
   gridTemplateColumns: {
     base: "repeat(2, minmax(0, 1fr))",
     md: "repeat(5, minmax(0, 1fr))",
   },
-  gridAutoRows: { base: "minmax(4.75rem, 1fr)", md: "minmax(6.25rem, 1fr)" },
+  gridAutoRows: { base: "4.75rem", md: "6.25rem" },
   gap: "2.5",
-  overflowY: "auto",
-  overscrollBehavior: "contain",
-  scrollbarWidth: "thin",
-  // A single row keeps the height of a two-row question's tiles, at the foot of the panel.
-  "&[data-one-row]": {
-    gridAutoRows: { md: "minmax(5.5rem, 7rem)" },
-    alignContent: { md: "end" },
-  },
 });
 
 const lead = css({
@@ -116,12 +111,15 @@ export function Console({
   category,
   locale,
   enterDelay = 0,
+  morph = false,
 }: {
   finder: Finder;
   category: Category;
   locale: Locale;
   /** Seconds before the first question plays in, while the console itself rises. */
   enterDelay?: number;
+  /** In place of the results: its header and footer fade in with the question. */
+  morph?: boolean;
 }) {
   const { step, counts, draft } = finder;
   const root = useRef<HTMLElement>(null);
@@ -133,9 +131,18 @@ export function Console({
     () => {
       leaving.current = false;
       setHelpOpen(false);
-      const delay = first.current ? enterDelay : 0;
+      const fresh = first.current;
+      const delay = fresh ? enterDelay : 0;
       first.current = false;
       if (prefersReducedMotion() || !root.current) return;
+      if (fresh && morph) {
+        gsap.from("[data-console-part]", {
+          opacity: 0,
+          duration: motion.base,
+          ease: motion.ease,
+          delay,
+        });
+      }
       const split = SplitText.create("[data-title]", {
         type: "words,chars",
         mask: "words",
@@ -159,12 +166,15 @@ export function Console({
     },
     { dependencies: [step?.key, finder.answers], scope: root },
   );
+  // Once the title is split into words (above), the panel eases to the question's height.
+  useDockHeight();
 
   /**
-   * Plays the tiles out, then runs the navigation. A timer backs the animation up: in a hidden tab
-   * the browser pauses animation frames, and an answer must never wait on one.
+   * Plays the tiles out (the whole console when the results take its place), then runs the
+   * navigation. A timer backs the animation up: in a hidden tab the browser pauses animation
+   * frames, and an answer must never wait on one.
    */
-  const leave = (then: () => void) => {
+  const leave = (then: () => void, whole = false) => {
     if (leaving.current) return;
     leaving.current = true;
     if (prefersReducedMotion() || document.hidden) return then();
@@ -174,7 +184,9 @@ export function Console({
       done = true;
       then();
     };
-    const parts = "[data-tile], [data-budget], [data-title], [data-lead]";
+    const parts = whole
+      ? "[data-console-part]"
+      : "[data-tile], [data-budget], [data-title], [data-lead]";
     gsap.to(root.current?.querySelectorAll(parts) ?? [], {
       opacity: 0,
       y: -10,
@@ -218,7 +230,11 @@ export function Console({
       : [];
 
   return (
-    <section ref={root} className={panel} aria-labelledby="step-title">
+    <section
+      ref={root}
+      className={content}
+      aria-labelledby="step-title"
+    >
       <div
         data-console-part
         className={css({
@@ -292,7 +308,10 @@ export function Console({
 
       <div data-console-part className={body}>
         {step.kind === "range" ? (
-          <div data-budget className={css({ flex: "1", minH: "0" })}>
+          <div
+            data-budget
+            className={css({ h: { base: "12rem", md: "13.5rem" } })}
+          >
             <BudgetControl
               step={step as never}
               draft={draft}
@@ -313,143 +332,144 @@ export function Console({
                 {step.help?.[locale]}
               </p>
             )}
-            <fieldset
-              aria-labelledby="step-title"
-              aria-describedby={explained ? "step-lead" : undefined}
-              className={tileGrid}
-              data-one-row={oneRow || undefined}
-            >
-              {options.map((option) => {
-                const selected = pickedIds.has(option.id);
-                const count = counts?.counts[option.id] ?? 0;
-                const dead = count === 0 && !selected && !step.weightOnly;
-                const blocker = dead ? finder.blockerOf(option.id) : null;
-                const tile = optionTile();
-                return (
-                  <div
-                    key={option.id}
-                    data-tile
-                    className={css({ position: "relative", display: "grid" })}
-                  >
-                    <button
-                      type="button"
-                      className={tile.root}
-                      aria-pressed={isMulti ? selected : undefined}
-                      aria-disabled={dead || undefined}
-                      onPointerEnter={() =>
-                        !dead && finder.setHovered(option.id)
-                      }
-                      onPointerLeave={() => finder.setHovered(null)}
-                      onFocus={() => !dead && finder.setHovered(option.id)}
-                      onBlur={() => finder.setHovered(null)}
-                      onClick={() => {
-                        if (dead) return;
-                        if (isMulti)
-                          finder.setDraft(toggled(step, draft, option.id));
-                        else leave(() => finder.commit(option.id));
-                      }}
+            <div className={tileScroll}>
+              <fieldset
+                aria-labelledby="step-title"
+                aria-describedby={explained ? "step-lead" : undefined}
+                className={tileGrid}
+              >
+                {options.map((option) => {
+                  const selected = pickedIds.has(option.id);
+                  const count = counts?.counts[option.id] ?? 0;
+                  const dead = count === 0 && !selected && !step.weightOnly;
+                  const blocker = dead ? finder.blockerOf(option.id) : null;
+                  const tile = optionTile();
+                  return (
+                    <div
+                      key={option.id}
+                      data-tile
+                      className={css({ position: "relative", display: "grid" })}
                     >
-                      {visual && (
-                        <span className={tile.visual}>
-                          <OptionVisual
-                            category={category}
-                            stepKey={step.key}
-                            optionId={option.id}
-                          />
-                        </span>
-                      )}
-                      <span
-                        className={css({
-                          display: "grid",
-                          gap: "1",
-                          pr: { base: "7", md: "0" },
-                        })}
-                      >
-                        <span className={tile.label}>
-                          {option.label[locale]}
-                        </span>
-                        {option.hint && !dead && (
-                          <span className={tile.hint}>
-                            {option.hint[locale]}
-                          </span>
-                        )}
-                        {dead && (
-                          <span className={tile.blocked}>
-                            {blocker
-                              ? `${m.blockedBy[locale]} ${blocker.label}`
-                              : m.noMatch[locale]}
-                          </span>
-                        )}
-                      </span>
-                      {!step.weightOnly && !dead && (
-                        <span className={tile.count}>
-                          {String(count).padStart(3, "0")}
-                        </span>
-                      )}
-                      {selected && (
-                        <span className={tile.tick} aria-hidden>
-                          <svg
-                            aria-hidden
-                            viewBox="0 0 24 24"
-                            width="12"
-                            height="12"
-                            fill="none"
-                            stroke="currentColor"
-                            strokeWidth="3.2"
-                            strokeLinecap="round"
-                            strokeLinejoin="round"
-                          >
-                            <path d="M5 12l5 5 9-10" />
-                          </svg>
-                        </span>
-                      )}
-                    </button>
-                    {blocker && (
                       <button
                         type="button"
-                        onClick={() => finder.goTo(blocker.key)}
-                        className={css({
-                          position: "absolute",
-                          right: "2.5",
-                          bottom: "2.5",
-                          fontSize: "2xs",
-                          fontFamily: "mono",
-                          color: "signal",
-                          textDecoration: "underline",
-                          textUnderlineOffset: "3px",
-                          cursor: "pointer",
-                        })}
+                        className={tile.root}
+                        aria-pressed={isMulti ? selected : undefined}
+                        aria-disabled={dead || undefined}
+                        onPointerEnter={() =>
+                          !dead && finder.setHovered(option.id)
+                        }
+                        onPointerLeave={() => finder.setHovered(null)}
+                        onFocus={() => !dead && finder.setHovered(option.id)}
+                        onBlur={() => finder.setHovered(null)}
+                        onClick={() => {
+                          if (dead) return;
+                          if (isMulti)
+                            finder.setDraft(toggled(step, draft, option.id));
+                          else leave(() => finder.commit(option.id));
+                        }}
                       >
-                        {m.change[locale]} →
+                        {visual && (
+                          <span className={tile.visual}>
+                            <OptionVisual
+                              category={category}
+                              stepKey={step.key}
+                              optionId={option.id}
+                            />
+                          </span>
+                        )}
+                        <span
+                          className={css({
+                            display: "grid",
+                            gap: "1",
+                            pr: { base: "7", md: "0" },
+                          })}
+                        >
+                          <span className={tile.label}>
+                            {option.label[locale]}
+                          </span>
+                          {option.hint && !dead && (
+                            <span className={tile.hint}>
+                              {option.hint[locale]}
+                            </span>
+                          )}
+                          {dead && (
+                            <span className={tile.blocked}>
+                              {blocker
+                                ? `${m.blockedBy[locale]} ${blocker.label}`
+                                : m.noMatch[locale]}
+                            </span>
+                          )}
+                        </span>
+                        {!step.weightOnly && !dead && (
+                          <span className={tile.count}>
+                            {String(count).padStart(3, "0")}
+                          </span>
+                        )}
+                        {selected && (
+                          <span className={tile.tick} aria-hidden>
+                            <svg
+                              aria-hidden
+                              viewBox="0 0 24 24"
+                              width="12"
+                              height="12"
+                              fill="none"
+                              stroke="currentColor"
+                              strokeWidth="3.2"
+                              strokeLinecap="round"
+                              strokeLinejoin="round"
+                            >
+                              <path d="M5 12l5 5 9-10" />
+                            </svg>
+                          </span>
+                        )}
                       </button>
-                    )}
+                      {blocker && (
+                        <button
+                          type="button"
+                          onClick={() => finder.goTo(blocker.key)}
+                          className={css({
+                            position: "absolute",
+                            right: "2.5",
+                            bottom: "2.5",
+                            fontSize: "2xs",
+                            fontFamily: "mono",
+                            color: "signal",
+                            textDecoration: "underline",
+                            textUnderlineOffset: "3px",
+                            cursor: "pointer",
+                          })}
+                        >
+                          {m.change[locale]} →
+                        </button>
+                      )}
+                    </div>
+                  );
+                })}
+                {anyTile && (
+                  <div data-tile className={css({ display: "grid" })}>
+                    <button
+                      type="button"
+                      className={cx(
+                        optionTile().root,
+                        css({ borderStyle: "dashed", bg: "transparent" }),
+                      )}
+                      onClick={() => leave(() => finder.commit(ANY))}
+                    >
+                      <span className={css({ display: "grid", gap: "1" })}>
+                        <span className={optionTile().label}>
+                          {step.kind === "musts"
+                            ? m.noMustHaves[locale]
+                            : m.noPreference[locale]}
+                        </span>
+                        <span className={optionTile().hint}>
+                          {m.noPreferenceHint[locale]}
+                        </span>
+                      </span>
+                    </button>
                   </div>
-                );
-              })}
-              {anyTile && (
-                <div data-tile className={css({ display: "grid" })}>
-                  <button
-                    type="button"
-                    className={cx(
-                      optionTile().root,
-                      css({ borderStyle: "dashed", bg: "transparent" }),
-                    )}
-                    onClick={() => leave(() => finder.commit(ANY))}
-                  >
-                    <span className={css({ display: "grid", gap: "1" })}>
-                      <span className={optionTile().label}>
-                        {step.kind === "musts"
-                          ? m.noMustHaves[locale]
-                          : m.noPreference[locale]}
-                      </span>
-                      <span className={optionTile().hint}>
-                        {m.noPreferenceHint[locale]}
-                      </span>
-                    </span>
-                  </button>
-                </div>
-              )}
-            </fieldset>
+                )}
+              </fieldset>
+            </div>
           </>
         )}
         {helpOpen && step.help && (
@@ -509,7 +529,7 @@ export function Console({
           <button
             type="button"
             className={button({ tone: "ghost", size: "sm" })}
-            onClick={() => leave(finder.showResults)}
+            onClick={() => leave(finder.showResults, true)}
           >
             {m.seeResults(total, locale)} →
           </button>

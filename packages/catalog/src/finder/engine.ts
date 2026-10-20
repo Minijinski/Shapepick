@@ -82,6 +82,25 @@ export const withAnswer = (answers: Answers, key: string, value: string | null):
   return next
 }
 
+// ==== Order ====================================================================================
+
+/** Step keys from a comma-separated list (`order=use,tech`): known keys only, each once. */
+export const readOrder = <I>(def: FinderDefinition<I>, raw: string | undefined): string[] =>
+  [...new Set(raw?.split(',') ?? [])].filter((key) => def.steps.some((s) => s.key === key))
+
+/**
+ * The definition with its steps in the visitor's order: the `first` keys in that order, then every
+ * other step where the definition has it. Skips, Back and the progress all read the order from the
+ * definition, so a questionnaire taken in another order stays consistent.
+ */
+export function withOrder<I>(
+  def: FinderDefinition<I>,
+  first: readonly string[],
+): FinderDefinition<I> {
+  const head = first.flatMap((key) => def.steps.find((s) => s.key === key) ?? [])
+  return head.length ? { ...def, steps: [...new Set([...head, ...def.steps])] } : def
+}
+
 // ==== Filtering ================================================================================
 
 export const applies = <I>(step: Step<I>, answers: Answers) => step.applies?.(answers) ?? true
@@ -237,14 +256,25 @@ export function deadEnd<I>(
 
 const FLOOR = 0.05
 const FIT_SHARE = 0.75
+/** Weight of the fit in the match, against one answer that an item meets. */
+const FIT_WEIGHT = 3
+
+/** Whether the answers say anything to rank on: the use, or an answer that narrows the catalogue. */
+export const isInformed = <I>(def: FinderDefinition<I>, answers: Answers) =>
+  (answers[def.profileStep] ?? ANY) !== ANY ||
+  def.steps.some((s) => predicateOf(s, answers) != null)
 
 /**
  * Scores the items that pass every filter. The fit is a weighted geometric mean of the profile's
  * criteria, so one catastrophic axis drags the whole score down instead of being averaged away.
  * A prior from the editorial score and popularity settles near-ties between equally fitting items.
+ * The match printed adds the answers: each one that narrows the catalogue is a criterion every
+ * ranked item meets, so the match starts at the fit and fills up as the visitor answers, without
+ * changing the order.
  */
 export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers): Ranked<I>[] {
   const pool = filter(def, items, answers)
+  const met = def.steps.filter((s) => predicateOf(s, answers) != null).length
   const profileId = answers[def.profileStep]
   const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
   const criteria = def.criteria.filter((c) => (weights[c.key] ?? 0) > 0)
@@ -253,7 +283,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
 
   const ranked = pool.map((item) => {
     const scores = new Map(criteria.map((c) => [c.key, clamp(c.score(item))]))
-    const fit = total
+    const profileFit = total
       ? Math.exp(
           criteria.reduce(
             (sum, c) =>
@@ -268,9 +298,12 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       .slice(0, Math.max(3, Math.ceil(heavy.length / 2)))
       .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
+    const fit = FIT_SHARE * profileFit + (1 - FIT_SHARE) * prior
     return {
       item,
-      score: FIT_SHARE * fit + (1 - FIT_SHARE) * prior,
+      score: (FIT_WEIGHT * fit + met) / (FIT_WEIGHT + met),
+      fit,
+      met,
       pros: pros.map((c) => c.label),
       cons: cons.map((c) => c.label),
     }

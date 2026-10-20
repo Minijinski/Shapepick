@@ -10,36 +10,54 @@ import {
   filter,
   finderOf,
   firstPending,
+  isInformed,
   type Locale,
   optionCounts,
   predicateOf,
   previousStep,
   rank,
   readChoice,
+  readOrder,
   type Step,
   sanitizeAnswers,
   type Text,
   withAnswer,
+  withOrder,
 } from "@choose/catalog";
 import { useNavigate } from "@tanstack/react-router";
-import { useCallback, useEffect, useMemo, useState } from "react";
+import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ItemDetail } from "../scene/controller";
+import type { JourneyStop } from "./JourneyBar";
 
 // Everything a finder screen shows is derived here from three inputs: the catalogue, the answers
 // in the URL, and what the visitor is doing right now (a draft pick, a hovered tile). Committed
-// answers live in the URL; the draft lives in state until "Continue".
+// answers live in the URL, with the order the visitor chose for the questions (`order`); the
+// draft lives in state until "Continue".
 
 export const DONE = "done";
 
+/**
+ * How long a hovered option stays hovered once the pointer leaves its tile. Going from one tile
+ * to the next crosses the gap between them: the canvas then moves straight from one option's
+ * products to the other's instead of flashing back to none in between.
+ */
+const HOVER_GRACE_MS = 160;
+
 export type FinderSearch = Record<string, string | undefined>;
 
-/** What a product's sheet shows: its rank and fit when the answers keep it, what rules it out otherwise. */
+/**
+ * What a product's sheet shows: its rank and match (with the fit and the answers met it is made
+ * of) once there is something to rank on, what rules it out when the answers do.
+ */
 export type ProductSheet = {
   item: CatalogItem;
   rank: number | null;
   score: number | null;
+  fit: number | null;
+  met: number | null;
   pros: Text[];
   cons: Text[];
+  ruledOut: boolean;
   excludedBy: string | null;
 };
 
@@ -49,7 +67,11 @@ export function useFinder(
   search: FinderSearch,
   locale: Locale,
 ) {
-  const def = finderOf(category);
+  const sequence = search.order;
+  const def = useMemo(() => {
+    const base = finderOf(category);
+    return withOrder(base, readOrder(base, sequence));
+  }, [category, sequence]);
   const navigate = useNavigate();
   const answers = useMemo(() => sanitizeAnswers(def, search), [def, search]);
   const at = search.at;
@@ -68,10 +90,18 @@ export function useFinder(
   const [draft, setDraft] = useState<string | undefined>(
     currentKey ? answers[currentKey] : undefined,
   );
-  const [hovered, setHovered] = useState<string | null>(null);
+  const [hovered, setHoveredNow] = useState<string | null>(null);
+  const letGo = useRef<ReturnType<typeof setTimeout>>(undefined);
+  const setHovered = useCallback((id: string | null) => {
+    clearTimeout(letGo.current);
+    if (id != null) setHoveredNow(id);
+    else letGo.current = setTimeout(() => setHoveredNow(null), HOVER_GRACE_MS);
+  }, []);
+  useEffect(() => () => clearTimeout(letGo.current), []);
   useEffect(() => {
     setDraft(currentKey ? answers[currentKey] : undefined);
-    setHovered(null);
+    clearTimeout(letGo.current);
+    setHoveredNow(null);
   }, [currentKey, answers]);
 
   const effective = useMemo(
@@ -87,6 +117,18 @@ export function useFinder(
     () => rank(def, items, effective),
     [def, items, effective],
   );
+  /** Whether the answers give the ranking anything to go on: until then, no podium, rank or match. */
+  const informed = useMemo(
+    () => isInformed(def, effective),
+    [def, effective],
+  );
+  /** The use the visitor picked, which the match is measured against. */
+  const useLabel = useMemo(() => {
+    const profile = def.steps.find((s) => s.key === def.profileStep);
+    return profile
+      ? describeAnswer(profile, effective[def.profileStep], locale)
+      : null;
+  }, [def, effective, locale]);
   const asked = useMemo(
     () => askedSteps(def, items, answers),
     [def, items, answers],
@@ -106,13 +148,18 @@ export function useFinder(
 
   // ---- Navigation ----------------------------------------------------------------------------
   const go = useCallback(
-    (next: Answers, at?: string, from?: string) =>
+    (next: Answers, at?: string, from?: string, order = sequence) =>
       navigate({
         to: ".",
-        search: { ...next, ...(at && { at }), ...(from && { from }) },
+        search: {
+          ...next,
+          ...(order && { order }),
+          ...(at && { at }),
+          ...(from && { from }),
+        },
         resetScroll: false,
       }),
-    [navigate],
+    [navigate, sequence],
   );
   const commit = useCallback(
     (value: string | null) => {
@@ -122,11 +169,27 @@ export function useFinder(
     [answers, currentKey, go],
   );
   const goTo = useCallback((key: string) => go(answers, key), [answers, go]);
+  /**
+   * A question picked on the journey bar. An answered one reopens, like a chip of the rail; one
+   * still ahead moves up to be the next answered, and the others keep their order behind it.
+   */
+  const pickStep = useCallback(
+    (key: string) => {
+      if (key === currentKey) return;
+      if (answers[key] != null) return go(answers, key);
+      const answered = def.steps
+        .filter((s) => s.key !== key && answers[s.key] != null)
+        .map((s) => s.key);
+      go(answers, undefined, undefined, [...answered, key].join(","));
+    },
+    [def, answers, currentKey, go],
+  );
   const back = useCallback(() => {
     const previous = previousStep(def, items, answers, currentKey);
     if (previous) go(answers, previous);
   }, [def, items, answers, currentKey, go]);
-  const reset = useCallback(() => go({}), [go]);
+  // Starting over forgets the order too.
+  const reset = useCallback(() => go({}, undefined, undefined, ""), [go]);
   // The results read the answers on screen, picks not yet confirmed included (the button said
   // how many they leave), and remember the question they were opened from.
   const showResults = useCallback(
@@ -174,6 +237,32 @@ export function useFinder(
     [def, answers, asked, locale],
   );
 
+  // ---- Journey bar ---------------------------------------------------------------------------
+  /**
+   * Every question the visitor will see, answered, on screen or still ahead, in the
+   * questionnaire's own order: the bar is a map that stays put whatever order they answer in.
+   */
+  const journey = useMemo(
+    () =>
+      finderOf(category)
+        .steps.filter((s) => asked.includes(s.key))
+        .map((s) => {
+          const state: JourneyStop["state"] =
+            s.key === currentKey
+              ? "current"
+              : answers[s.key] != null
+                ? "done"
+                : "ahead";
+          return {
+            key: s.key,
+            label: s.label[locale],
+            value: describeAnswer(s, answers[s.key], locale),
+            state,
+          };
+        }),
+    [category, asked, answers, currentKey, locale],
+  );
+
   // ---- Canvas --------------------------------------------------------------------------------
   /** The test each answered step puts on a product, the draft included. */
   const tests = useMemo(
@@ -219,7 +308,12 @@ export function useFinder(
   const details = useMemo(() => {
     const map = new Map<string, ItemDetail>();
     ranked.forEach((r, i) => {
-      map.set(def.id(r.item), { rank: i, score: r.score, excludedBy: null });
+      map.set(
+        def.id(r.item),
+        informed
+          ? { rank: i, score: r.score, ruledOut: false, excludedBy: null }
+          : { rank: null, score: null, ruledOut: false, excludedBy: null },
+      );
     });
     for (const item of items) {
       const id = def.id(item);
@@ -228,18 +322,30 @@ export function useFinder(
       map.set(id, {
         rank: null,
         score: null,
+        ruledOut: true,
         excludedBy: blocker?.step.label[locale] ?? null,
       });
     }
     return map;
-  }, [def, items, ranked, tests, locale]);
+  }, [def, items, ranked, informed, tests, locale]);
 
   /** One product's sheet, whether the answers keep it or rule it out. */
   const sheetOf = useCallback(
     (slug: string): ProductSheet | null => {
       const index = ranked.findIndex((r) => def.id(r.item) === slug);
       const entry = ranked[index];
-      if (entry) return { ...entry, rank: index, excludedBy: null };
+      if (entry && !informed)
+        return {
+          ...entry,
+          rank: null,
+          score: null,
+          fit: null,
+          met: null,
+          ruledOut: false,
+          excludedBy: null,
+        };
+      if (entry)
+        return { ...entry, rank: index, ruledOut: false, excludedBy: null };
       const item = items.find((i) => def.id(i) === slug);
       if (!item) return null;
       // Ruled out: no rank and no score, but its strengths still read against the visitor's use.
@@ -249,12 +355,15 @@ export function useFinder(
         item,
         rank: null,
         score: null,
+        fit: null,
+        met: null,
         pros: fit?.pros ?? [],
         cons: fit?.cons ?? [],
+        ruledOut: true,
         excludedBy: details.get(slug)?.excludedBy ?? null,
       };
     },
-    [def, items, ranked, effective, details],
+    [def, items, ranked, informed, effective, details],
   );
 
   return {
@@ -268,12 +377,15 @@ export function useFinder(
     hovered,
     setHovered,
     ranked,
+    informed,
+    useLabel,
     matching: ranked.length,
     preview,
     counts,
     asked,
     position: currentKey ? asked.indexOf(currentKey) + 1 : asked.length,
     rail,
+    journey,
     misses,
     order,
     scores,
@@ -281,6 +393,7 @@ export function useFinder(
     details,
     commit,
     goTo,
+    pickStep,
     back,
     canGoBack,
     reset,

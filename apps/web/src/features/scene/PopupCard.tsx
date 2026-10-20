@@ -45,39 +45,42 @@ export function PopupCard({
   detail: ItemDetail | null
   locale: Locale
 }) {
-  const kept = detail?.rank != null
+  const ranked = detail?.rank != null
   return (
     <div className={card}>
-      <div
-        className={css({
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'space-between',
-          gap: '3',
-          fontFamily: 'mono',
-          fontSize: '2xs',
-          color: 'ink.faint',
-          textTransform: 'uppercase',
-          letterSpacing: '0.04em',
-        })}
-      >
-        {kept ? (
-          <>
-            <span className={css({ color: detail?.rank === 0 ? 'signal' : 'ink.muted' })}>
-              {String((detail?.rank ?? 0) + 1).padStart(2, '0')}
+      {/* Before any answer to rank on, a kept product has no rank or match to print. */}
+      {(ranked || detail?.ruledOut) && (
+        <div
+          className={css({
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'space-between',
+            gap: '3',
+            fontFamily: 'mono',
+            fontSize: '2xs',
+            color: 'ink.faint',
+            textTransform: 'uppercase',
+            letterSpacing: '0.04em',
+          })}
+        >
+          {ranked ? (
+            <>
+              <span className={css({ color: detail?.rank === 0 ? 'signal' : 'ink.muted' })}>
+                {String((detail?.rank ?? 0) + 1).padStart(2, '0')}
+              </span>
+              {detail?.score != null && (
+                <Match score={detail.score} locale={locale} size="sm" accent={detail.rank === 0} />
+              )}
+            </>
+          ) : (
+            <span>
+              {detail?.excludedBy
+                ? `${m.ruledOutBy[locale]} · ${detail.excludedBy}`
+                : m.ruledOut[locale]}
             </span>
-            {detail?.score != null && (
-              <Match score={detail.score} locale={locale} size="sm" accent={detail.rank === 0} />
-            )}
-          </>
-        ) : (
-          <span>
-            {detail?.excludedBy
-              ? `${m.ruledOutBy[locale]} · ${detail.excludedBy}`
-              : m.ruledOut[locale]}
-          </span>
-        )}
-      </div>
+          )}
+        </div>
+      )}
 
       <div className={css({ display: 'grid', gap: '1' })}>
         <div

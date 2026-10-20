@@ -14,7 +14,8 @@ import { formatPrice } from "../product/specs";
 // three), then a way to the whole ranking. Every entry opens its product's sheet: hovered, the
 // drawing lifts and the price gives way to "View details"; until the visitor has opened a sheet,
 // the best match plays that once by itself. When the ranking changes, GSAP Flip moves each entry
-// from where it was to where it now belongs, so a product visibly climbs or drops.
+// from where it was to where it now belongs, so a product visibly climbs or drops. Before the first
+// answer there is nothing to rank on: three empty places wait for the podium.
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
@@ -129,6 +130,24 @@ const fifth = css({
   "@container (min-height: 25.25rem)": { display: "block" },
 });
 
+/** An empty place of the podium, before the first answer: the shape of a card, drawn dashed. */
+const slot = css({
+  display: "grid",
+  gridTemplateColumns: {
+    base: "48px minmax(0, 1fr) auto",
+    md: "64px minmax(0, 1fr) auto",
+  },
+  alignItems: "center",
+  gap: "3",
+  px: "3",
+  py: "2",
+  borderWidth: "1px",
+  borderStyle: "dashed",
+  borderColor: "line.strong",
+  borderRadius: "card",
+});
+const bone = css({ display: "block", borderRadius: "full", bg: "grey.100" });
+
 const columnLabel = css({
   fontFamily: "mono",
   fontSize: "2xs",
@@ -137,9 +156,51 @@ const columnLabel = css({
   letterSpacing: "0.06em",
 });
 
+/** What the match is made of, under the column header: shown while it is hovered or focused. */
+const matchHelp = css({
+  position: "absolute",
+  top: "calc(100% + 8px)",
+  right: "-3",
+  zIndex: "5",
+  display: "grid",
+  gap: "1.5",
+  w: "72",
+  p: "3.5",
+  bg: "surface.raised/95",
+  backdropFilter: "blur(12px)",
+  borderWidth: "1px",
+  borderColor: "line",
+  borderRadius: "card",
+  boxShadow: "panel",
+  fontSize: "xs",
+  lineHeight: "1.5",
+  color: "ink.muted",
+  textAlign: "left",
+  textTransform: "none",
+  letterSpacing: "normal",
+  opacity: 0,
+  visibility: "hidden",
+  transform: "translateY(-4px)",
+  transition:
+    "opacity 200ms, transform 300ms token(easings.signal), visibility 0s 300ms",
+  _groupHover: {
+    opacity: 1,
+    visibility: "visible",
+    transform: "translateY(0)",
+    transitionDelay: "0s",
+  },
+  _groupFocusWithin: {
+    opacity: 1,
+    visibility: "visible",
+    transform: "translateY(0)",
+    transitionDelay: "0s",
+  },
+});
+
 export function Podium({
   top,
   total,
+  informed = true,
   locale,
   layout = "column",
   hint = false,
@@ -149,6 +210,8 @@ export function Podium({
   top: Ranked<CatalogItem>[];
   /** How many products the answers keep: the whole ranking behind "See all". */
   total: number;
+  /** False until an answer gives the ranking something to go on. */
+  informed?: boolean;
   locale: Locale;
   layout?: "column" | "row";
   /** The best match shows once, by itself, what hovering it does. */
@@ -158,7 +221,8 @@ export function Podium({
 }) {
   const root = useRef<HTMLOListElement>(null);
   const state = useRef<Flip.FlipState | null>(null);
-  const signature = top.map((r) => r.item.slug).join("|");
+  // Empty places have no entry to move: the first ranking enters as a whole.
+  const signature = informed ? top.map((r) => r.item.slug).join("|") : "";
 
   useIsoLayoutEffect(() => {
     const all = root.current?.querySelectorAll<HTMLElement>("[data-flip-id]");
@@ -187,6 +251,7 @@ export function Podium({
   const row = layout === "row";
   const name = (entry: Ranked<CatalogItem>) =>
     `${entry.item.brand.name} ${entry.item.name}`;
+  if (row && !informed) return null;
 
   return (
     <div
@@ -208,7 +273,44 @@ export function Podium({
           })}
         >
           <span className={columnLabel}>{m.ranking[locale]}</span>
-          <span className={columnLabel}>{m.match[locale]}</span>
+          <span className={cx("group", css({ position: "relative" }))}>
+            <button
+              type="button"
+              aria-describedby="match-help"
+              className={cx(
+                columnLabel,
+                css({
+                  display: "inline-flex",
+                  alignItems: "center",
+                  gap: "1",
+                  cursor: "help",
+                  _hover: { color: "ink.muted" },
+                }),
+              )}
+            >
+              {m.match[locale]}
+              <svg
+                aria-hidden
+                viewBox="0 0 24 24"
+                width="11"
+                height="11"
+                fill="none"
+                stroke="currentColor"
+                strokeWidth="2"
+                strokeLinecap="round"
+              >
+                <circle cx="12" cy="12" r="9" />
+                <path d="M12 16v-4.5M12 8h.01" />
+              </svg>
+            </button>
+            <span id="match-help" role="tooltip" className={matchHelp}>
+              <strong className={css({ color: "ink", fontWeight: "600" })}>
+                {m.matchHow[locale]}
+              </strong>
+              <span>{m.matchExplain[locale]}</span>
+              <span>{m.matchSeeSheet[locale]}</span>
+            </span>
+          </span>
         </div>
       )}
       <ol
@@ -219,7 +321,63 @@ export function Podium({
           gap: "2.5",
         })}
       >
-        {top.map((entry, i) => {
+        {!informed &&
+          [1, 0.7, 0.45].map((opacity, i) => (
+            <li key={opacity} aria-hidden style={{ opacity }}>
+              <div className={slot}>
+                <span
+                  className={css({
+                    position: "relative",
+                    display: "grid",
+                    placeItems: "center",
+                    h: { base: "9", md: "10" },
+                  })}
+                >
+                  <span className={bone} style={{ width: "78%", height: 16 }} />
+                  <span
+                    className={css({
+                      position: "absolute",
+                      top: "-1.5",
+                      left: "-1.5",
+                      display: "grid",
+                      placeItems: "center",
+                      minW: "4.5",
+                      h: "4.5",
+                      borderRadius: "pill",
+                      fontFamily: "mono",
+                      fontSize: "2xs",
+                      lineHeight: "1",
+                      bg: "grey.200",
+                      color: "ink.faint",
+                    })}
+                  >
+                    {i + 1}
+                  </span>
+                </span>
+                <span className={css({ display: "grid", gap: "1.5" })}>
+                  <span className={bone} style={{ width: "42%", height: 6 }} />
+                  <span className={bone} style={{ width: "74%", height: 9 }} />
+                </span>
+                <span
+                  className={css({
+                    display: "grid",
+                    placeItems: "center",
+                    w: "34px",
+                    h: "34px",
+                    borderRadius: "full",
+                    borderWidth: "3px",
+                    borderColor: "grey.100",
+                    fontFamily: "mono",
+                    fontSize: "2xs",
+                    color: "ink.faint",
+                  })}
+                >
+                  –
+                </span>
+              </div>
+            </li>
+          ))}
+        {informed && top.map((entry, i) => {
           const asCard = row || i < 3;
           const first = i === 0;
           return (
@@ -382,6 +540,18 @@ export function Podium({
           );
         })}
       </ol>
+      {!informed && (
+        <p
+          className={css({
+            px: "3",
+            fontSize: "xs",
+            lineHeight: "1.45",
+            color: "ink.muted",
+          })}
+        >
+          {m.rankingSoon[locale]}
+        </p>
+      )}
       {total > 0 && (
         <button
           type="button"

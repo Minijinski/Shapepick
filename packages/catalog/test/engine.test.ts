@@ -5,13 +5,16 @@ import {
   filter,
   firstPending,
   histogram,
+  isInformed,
   isTrivial,
   optionCounts,
   previousStep,
   rank,
+  readOrder,
   readRange,
   sanitizeAnswers,
   stepOf,
+  withOrder,
 } from '../src'
 import type { FinderDefinition } from '../src/finder/types'
 import { text } from '../src/i18n'
@@ -200,6 +203,45 @@ describe('rank', () => {
   it('is deterministic on ties', () => {
     const first = rank(def, toys, {}).map((r) => r.item.id)
     expect(rank(def, [...toys].reverse(), {}).map((r) => r.item.id)).toEqual(first)
+  })
+  it('fills the match up with every answer that narrows, keeping the order', () => {
+    const fit = rank(def, toys, { use: 'quality' })
+    const answered = rank(def, toys, { use: 'quality', musts: 'wifi' })
+    expect(answered.map((r) => r.item.id)).toEqual(
+      fit.filter((r) => r.item.wifi).map((r) => r.item.id),
+    )
+    for (const r of answered) {
+      const before = fit.find((f) => f.item.id === r.item.id)
+      expect(r.score).toBeGreaterThan(before?.score ?? 1)
+      expect(r.score).toBeLessThanOrEqual(1)
+      // The two parts a sheet explains the match with: the fit to the use, the answers met.
+      expect(r.fit).toBe(before?.fit)
+      expect(r.met).toBe(1)
+      expect(r.score).toBeCloseTo((3 * r.fit + 1) / 4)
+    }
+    // "No preference" narrows nothing, so it changes nothing.
+    expect(rank(def, toys, { use: 'quality', color: 'any' })).toEqual(fit)
+  })
+  it('knows when the answers give it nothing to rank on', () => {
+    expect(isInformed(def, {})).toBe(false)
+    expect(isInformed(def, { color: 'any' })).toBe(false)
+    expect(isInformed(def, { use: 'cheap' })).toBe(true)
+    expect(isInformed(def, { color: 'blue' })).toBe(true)
+  })
+})
+
+describe('order', () => {
+  it('reads known keys, each once', () => {
+    expect(readOrder(def, 'musts,junk,color,musts')).toEqual(['musts', 'color'])
+    expect(readOrder(def, undefined)).toEqual([])
+  })
+  it("asks the steps in the visitor's order, and Back follows it", () => {
+    const ordered = withOrder(def, ['use', 'musts'])
+    expect(ordered.steps.map((s) => s.key)).toEqual(['use', 'musts', 'color', 'size', 'budget'])
+    expect(firstPending(ordered, toys, { use: 'quality' })).toBe('musts')
+    expect(firstPending(ordered, toys, { use: 'quality', musts: 'wifi' })).toBe('color')
+    expect(previousStep(ordered, toys, { use: 'quality', musts: 'wifi' }, 'color')).toBe('musts')
+    expect(withOrder(def, [])).toBe(def)
   })
 })
 

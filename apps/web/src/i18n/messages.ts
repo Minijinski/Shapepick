@@ -92,6 +92,36 @@ export const messages = {
   ruledOut: text("Écarté", "Ruled out"),
   seeAll: text("Voir tout", "See all"),
   ranking: text("Classement", "Ranking"),
+  rankingSoon: text(
+    "Ton classement se dessine dès ta première réponse.",
+    "Your ranking takes shape with your first answer.",
+  ),
+  journey: text("Parcours", "Journey"),
+  answerNow: text("Y répondre maintenant", "Answer it now"),
+  inProgress: text("En cours", "Now"),
+  results: text("Résultats", "Results"),
+  journeyHint: text(
+    "Pas d’ordre imposé : choisis ici ta prochaine question.",
+    "No set order: pick your next question here.",
+  ),
+  matchHow: text("Comment lire ce %", "How to read this %"),
+  matchExplain: text(
+    "Les modèles listés respectent toutes tes réponses, et chacune fait monter leur score. Le reste dépend de ce qui compte le plus pour ton usage : un modèle peut cocher toutes tes cases sans être idéal pour lui.",
+    "The models listed meet all your answers, and each one raises their score. The rest depends on what matters most for your use: a model can tick every box without being ideal for it.",
+  ),
+  matchSeeSheet: text(
+    "Sa fiche détaille le calcul.",
+    "Its sheet breaks the number down.",
+  ),
+  yourAnswers: text("Tes réponses", "Your answers"),
+  allMet: (n: number, locale: Locale) =>
+    locale === "fr" ? `${n} sur ${n}` : `${n} of ${n}`,
+  forYourUse: text("Pour ton usage", "For your use"),
+  overallQuality: text("Qualité générale", "Overall quality"),
+  matchNote: text(
+    "Chaque réponse respectée fait monter la compatibilité ; le reste dépend de ce qui compte le plus pour ton usage.",
+    "Each answer it meets raises the match; the rest depends on what matters most for your use.",
+  ),
   matchHelp: text(
     "Compatibilité avec ton usage et tes réponses, sur 100",
     "How well it fits your use and your answers, out of 100",

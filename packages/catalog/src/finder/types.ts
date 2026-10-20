@@ -71,6 +71,10 @@ export type Ranked<I> = {
   item: I
   /** 0 … 1, what the card prints as a match percentage. */
   score: number
+  /** 0 … 1, how well it suits the visitor's use: the profile's fit, with the editorial prior. */
+  fit: number
+  /** How many answers narrow the catalogue: a ranked item meets every one of them. */
+  met: number
   pros: Text[]
   cons: Text[]
 }

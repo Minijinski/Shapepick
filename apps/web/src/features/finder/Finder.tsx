@@ -12,6 +12,8 @@ import {
 } from "../scene/navigation";
 import { AnswerRail } from "./AnswerRail";
 import { Console } from "./Console";
+import { DockPanel } from "./DockPanel";
+import { JourneyBar } from "./JourneyBar";
 import { LiveCounter } from "./LiveCounter";
 import { PODIUM_SIZE, Podium } from "./Podium";
 import { ProductDrawer } from "./ProductDrawer";
@@ -19,11 +21,13 @@ import { ResultsView } from "./ResultsView";
 import { type FinderSearch, useFinder } from "./useFinder";
 
 // The finder over its category's canvas: the live counter and the answer rail top-left, the
-// podium on the right, the question console docked at the bottom; at the end the console gives
-// way to the results. The canvas itself is the layout's scene: the finder only tells it which
-// products the answers keep, which ones the hovered option would keep, and the podium. Only the
-// widgets take the pointer, so dragging anywhere else browses the canvas. Any product, on the
-// canvas, the podium or the results, opens its sheet over the page.
+// podium on the right, the question console docked at the bottom over the journey bar, where the
+// visitor can take the questions in any order; at the end the console's panel grows into the
+// results, and shrinks back when the visitor edits an answer. The
+// canvas itself is the layout's scene: the finder only tells it which products the answers keep,
+// which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
+// dragging anywhere else browses the canvas. Any product, on the canvas, the podium or the
+// results, opens its sheet over the page.
 
 type Props = {
   category: Category;
@@ -32,19 +36,24 @@ type Props = {
   locale: Locale;
 };
 
+// One-time hints, remembered in the browser only: a blocked storage just shows them again.
 const SHEET_SEEN = "choose-a-device:sheet-seen";
-const sheetSeen = () => {
+const JOURNEY_SEEN = "choose-a-device:journey-seen";
+const seen = (key: string) => {
   try {
-    return localStorage.getItem(SHEET_SEEN) === "1";
+    return localStorage.getItem(key) === "1";
   } catch {
     return false;
   }
 };
-const markSheetSeen = () => {
+const markSeen = (key: string) => {
   try {
-    localStorage.setItem(SHEET_SEEN, "1");
+    localStorage.setItem(key, "1");
   } catch {}
 };
+
+/** How long the journey bar's hint stays up if the visitor does nothing with it. */
+const JOURNEY_HINT_MS = 10_000;
 
 const enterLeft = css({
   animation: "slideInLeft 0.9s token(easings.signal) backwards",
@@ -77,6 +86,12 @@ export function Finder({ category, items, search, locale }: Props) {
   const arrival = useArrival(target);
   const swapped = arrival === "swap";
   const delay = useEnterDelay(target, swapped ? 0.3 : 0.92, 0.1);
+  // Back from the results, the console grows back in at once rather than with the page entrance.
+  const wasDone = useRef(done);
+  const backFromResults = !done && wasDone.current;
+  useEffect(() => {
+    wasDone.current = done;
+  }, [done]);
 
   // The product whose sheet is open, and where it stands among the kept ones.
   const [open, setOpen] = useState<string | null>(null);
@@ -92,12 +107,37 @@ export function Finder({ category, items, search, locale }: Props) {
   const closeSheet = useCallback(() => setOpen(null), []);
   // Until the visitor has opened a sheet once, the podium's best match shows how.
   const [hint, setHint] = useState(false);
-  useEffect(() => setHint(!sheetSeen()), []);
+  useEffect(() => setHint(!seen(SHEET_SEEN)), []);
   const openSheet = useCallback((slug: string) => {
     setOpen(slug);
     setHint(false);
-    markSheetSeen();
+    markSeen(SHEET_SEEN);
   }, []);
+
+  // Once a first answer is in, the journey bar says once that the questions can come in any order.
+  const [journeyHint, setJourneyHint] = useState(false);
+  const ahead = finder.journey.filter((s) => s.state === "ahead").length;
+  useEffect(() => {
+    if (!done && finder.informed && ahead > 1 && !seen(JOURNEY_SEEN))
+      setJourneyHint(true);
+  }, [done, finder.informed, ahead]);
+  const dismissJourneyHint = useCallback(() => {
+    setJourneyHint(false);
+    markSeen(JOURNEY_SEEN);
+  }, []);
+  useEffect(() => {
+    if (!journeyHint) return;
+    const timer = setTimeout(dismissJourneyHint, JOURNEY_HINT_MS);
+    return () => clearTimeout(timer);
+  }, [journeyHint, dismissJourneyHint]);
+  const { pickStep } = finder;
+  const pickFromJourney = useCallback(
+    (key: string) => {
+      dismissJourneyHint();
+      pickStep(key);
+    },
+    [dismissJourneyHint, pickStep],
+  );
 
   useEffect(() => {
     scene.showCanvas(category);
@@ -117,7 +157,8 @@ export function Finder({ category, items, search, locale }: Props) {
     saveJourney(category, search);
   }, [category, search]);
 
-  // The canvas mirrors the answers; a new answer ripples out from the console.
+  // The canvas mirrors the answers; a new answer ripples out from the console. Ranks only show
+  // once there is something to rank on.
   useEffect(() => {
     const box = dock.current?.getBoundingClientRect();
     scene.setTargets(
@@ -125,43 +166,71 @@ export function Finder({ category, items, search, locale }: Props) {
       {
         misses: finder.misses,
         hot: finder.hotIds,
-        order: finder.order,
-        scores: finder.scores,
+        order: finder.informed ? finder.order : [],
+        scores: finder.informed ? finder.scores : [],
       },
       box
         ? { x: box.left + box.width / 2, y: box.top + box.height / 3 }
         : undefined,
     );
-  }, [category, finder.misses, finder.hotIds, finder.order, finder.scores]);
+  }, [
+    category,
+    finder.misses,
+    finder.hotIds,
+    finder.informed,
+    finder.order,
+    finder.scores,
+  ]);
   useEffect(() => {
     scene.setDetails(category, finder.details);
   }, [category, finder.details]);
+  // The results cover the canvas: its products take no pointer meanwhile.
+  useEffect(() => {
+    scene.setPickable(!done);
+  }, [done]);
   useEffect(
     () => () => {
       // Back on the home page the panel shows every product again.
       scene.setTargets(category, null);
       scene.setDetails(category, null);
       scene.setStage(category, null);
+      scene.setPickable(true);
     },
     [category],
   );
 
   // The free space between the counter, the podium and the console is where a short list of
   // products gathers. Layout boxes, not on-screen ones: the entrances move them with transforms.
+  // While the dock's panel eases to the height of a new question (or of the results), the page
+  // lays out for the height it is heading to, so the short list, the podium and the hint move with
+  // it rather than after it.
   useEffect(() => {
     const main = stage.current;
     if (!main) return;
+    const panelOf = () =>
+      dock.current?.querySelector<HTMLElement>("[data-dock-panel]");
+    const contentOf = () => panelOf()?.firstElementChild ?? null;
     const measure = () => {
       const d = dock.current;
       const h = hud.current;
       if (!d || !h) return;
-      main.style.setProperty("--dock-h", `${d.offsetHeight}px`);
+      const panel = panelOf();
+      const content = contentOf();
+      const dockH =
+        d.offsetHeight +
+        (panel && content instanceof HTMLElement
+          ? content.offsetHeight - panel.clientHeight
+          : 0);
+      main.style.setProperty("--dock-h", `${dockH}px`);
       if (done) return scene.setStage(category, null);
       const p = podium.current;
       const left = 20;
       const right = p?.offsetWidth ? p.offsetLeft - 28 : main.clientWidth - 20;
       const top = h.offsetTop + h.offsetHeight + 28;
-      const bottom = d.offsetTop - 64;
+      // The dock hangs from the bottom of the page: its top is where its new height puts it.
+      const bottom = d.offsetTop + d.offsetHeight - dockH - 64;
+      // No free space left above the dock (a phone): the canvas hint would sit on the counter.
+      main.toggleAttribute("data-cramped", bottom < top);
       // Centred under the console when it fits, like everything else on the page's axis.
       const axis = main.clientWidth / 2;
       scene.setStage(category, {
@@ -174,7 +243,7 @@ export function Finder({ category, items, search, locale }: Props) {
     };
     measure();
     const observer = new ResizeObserver(measure);
-    for (const el of [dock.current, hud.current, podium.current])
+    for (const el of [dock.current, hud.current, podium.current, contentOf()])
       if (el) observer.observe(el);
     window.addEventListener("resize", measure);
     return () => {
@@ -295,36 +364,45 @@ export function Finder({ category, items, search, locale }: Props) {
         />
       </div>
 
-      {!done && (
-        <aside
-          ref={podium}
-          data-enter="podium"
-          className={cx(
-            swapped ? enterFade : enterRight,
-            css({
-              position: "absolute",
-              top: "20",
-              right: "8",
-              // Down to just above the console: the podium shows as many entries as fit.
-              bottom: "calc(var(--dock-h) + 2.5rem)",
-              w: "72",
-              display: { base: "none", lg: "block" },
-              containerType: "size",
-              "& button": { pointerEvents: "auto" },
-            }),
-          )}
-          style={{ animationDelay: `${delay + 0.2}s` }}
-        >
-          <Podium
-            top={finder.ranked.slice(0, PODIUM_SIZE)}
-            total={finder.matching}
-            locale={locale}
-            hint={hint}
-            onOpen={openSheet}
-            onShowAll={finder.showResults}
-          />
-        </aside>
-      )}
+      {/* The results grow over its place: the podium fades out meanwhile, and back after. */}
+      <aside
+        ref={podium}
+        data-enter="podium"
+        data-done={done || undefined}
+        aria-hidden={done || undefined}
+        className={cx(
+          swapped ? enterFade : enterRight,
+          css({
+            position: "absolute",
+            top: "20",
+            right: "8",
+            // Down to just above the console: the podium shows as many entries as fit.
+            bottom: "calc(var(--dock-h) + 2.5rem)",
+            w: "72",
+            display: { base: "none", lg: "block" },
+            containerType: "size",
+            transition:
+              "opacity 300ms, transform 450ms token(easings.signal)",
+            "& button": { pointerEvents: "auto" },
+            "&[data-done]": {
+              opacity: 0,
+              transform: "translateX(16px)",
+              "& button": { pointerEvents: "none" },
+            },
+          }),
+        )}
+        style={{ animationDelay: `${delay + 0.2}s` }}
+      >
+        <Podium
+          top={finder.ranked.slice(0, PODIUM_SIZE)}
+          total={finder.matching}
+          informed={finder.informed}
+          locale={locale}
+          hint={hint}
+          onOpen={openSheet}
+          onShowAll={finder.showResults}
+        />
+      </aside>
 
       {!done && (
         <p
@@ -348,7 +426,9 @@ export function Finder({ category, items, search, locale }: Props) {
               borderRadius: "pill",
               bg: "paper/80",
               backdropFilter: "blur(8px)",
-              transition: "bottom 400ms token(easings.signal)",
+              transition:
+                "bottom 400ms token(easings.signal), opacity 300ms",
+              "[data-cramped] &": { opacity: 0 },
             }),
           )}
           style={{ animationDelay: `${delay + 0.5}s` }}
@@ -389,7 +469,7 @@ export function Finder({ category, items, search, locale }: Props) {
           )}
           style={{ animationDelay: `${delay}s` }}
         >
-          {!done && (
+          {!done && finder.informed && (
             <div className={css({ display: { base: "block", lg: "none" } })}>
               <Podium
                 top={finder.ranked.slice(0, PODIUM_SIZE)}
@@ -402,28 +482,43 @@ export function Finder({ category, items, search, locale }: Props) {
               />
             </div>
           )}
-          {done ? (
-            <ResultsView
-              ranked={finder.ranked}
-              locale={locale}
-              onEdit={finder.editAnswers}
-              onReset={finder.reset}
-              onOpen={openSheet}
-            />
-          ) : (
-            <Console
-              finder={finder}
-              category={category}
-              locale={locale}
-              enterDelay={delay + 0.3}
-            />
-          )}
+          <DockPanel>
+            {done ? (
+              <ResultsView
+                ranked={finder.ranked}
+                scored={finder.informed}
+                use={finder.useLabel}
+                locale={locale}
+                onEdit={finder.editAnswers}
+                onReset={finder.reset}
+                onOpen={openSheet}
+              />
+            ) : (
+              <Console
+                finder={finder}
+                category={category}
+                locale={locale}
+                enterDelay={backFromResults ? 0.12 : delay + 0.3}
+                morph={backFromResults}
+              />
+            )}
+          </DockPanel>
+          <JourneyBar
+            stops={finder.journey}
+            done={done}
+            locale={locale}
+            hint={journeyHint && !done}
+            onDismissHint={dismissJourneyHint}
+            onPick={pickFromJourney}
+            enterDelay={delay + 0.45}
+          />
         </div>
       </div>
 
       {sheet && (
         <ProductDrawer
           sheet={sheet}
+          use={finder.useLabel}
           locale={locale}
           position={
             sheet.rank != null
