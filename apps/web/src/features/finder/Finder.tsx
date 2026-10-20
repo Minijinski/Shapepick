@@ -1,5 +1,5 @@
 import type { CatalogItem, Category, Locale } from '@choose/catalog'
-import { useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
@@ -8,7 +8,8 @@ import { saveJourney, useArrival, useEnterDelay, usePageExit } from '../scene/na
 import { AnswerRail } from './AnswerRail'
 import { Console } from './Console'
 import { LiveCounter } from './LiveCounter'
-import { Podium } from './Podium'
+import { PODIUM_SIZE, Podium } from './Podium'
+import { ProductDrawer } from './ProductDrawer'
 import { ResultsView } from './ResultsView'
 import { type FinderSearch, useFinder } from './useFinder'
 
@@ -16,9 +17,24 @@ import { type FinderSearch, useFinder } from './useFinder'
 // podium on the right, the question console docked at the bottom; at the end the console gives
 // way to the results. The canvas itself is the layout's scene: the finder only tells it which
 // products the answers keep, which ones the hovered option would keep, and the podium. Only the
-// widgets take the pointer, so dragging anywhere else browses the canvas.
+// widgets take the pointer, so dragging anywhere else browses the canvas. Any product, on the
+// canvas, the podium or the results, opens its sheet over the page.
 
 type Props = { category: Category; items: CatalogItem[]; search: FinderSearch; locale: Locale }
+
+const SHEET_SEEN = 'choose-a-device:sheet-seen'
+const sheetSeen = () => {
+  try {
+    return localStorage.getItem(SHEET_SEEN) === '1'
+  } catch {
+    return false
+  }
+}
+const markSheetSeen = () => {
+  try {
+    localStorage.setItem(SHEET_SEEN, '1')
+  } catch {}
+}
 
 const enterLeft = css({
   animation: 'slideInLeft 0.9s token(easings.signal) backwards',
@@ -52,9 +68,35 @@ export function Finder({ category, items, search, locale }: Props) {
   const swapped = arrival === 'swap'
   const delay = useEnterDelay(target, swapped ? 0.3 : 0.92, 0.1)
 
+  // The product whose sheet is open, and where it stands among the kept ones.
+  const [open, setOpen] = useState<string | null>(null)
+  const sheet = open ? finder.sheetOf(open) : null
+  const stepSheet = useCallback(
+    (delta: -1 | 1) => {
+      const next = sheet?.rank != null ? finder.ranked[sheet.rank + delta] : undefined
+      if (next) setOpen(next.item.slug)
+    },
+    [sheet?.rank, finder.ranked],
+  )
+  const closeSheet = useCallback(() => setOpen(null), [])
+  // Until the visitor has opened a sheet once, the podium's best match shows how.
+  const [hint, setHint] = useState(false)
+  useEffect(() => setHint(!sheetSeen()), [])
+  const openSheet = useCallback((slug: string) => {
+    setOpen(slug)
+    setHint(false)
+    markSheetSeen()
+  }, [])
+
   useEffect(() => {
     scene.showCanvas(category)
   }, [category])
+
+  // A product clicked on the canvas opens its sheet.
+  useEffect(
+    () => scene.onOpenProduct((picked, slug) => picked === category && openSheet(slug)),
+    [category, openSheet],
+  )
 
   // Each category remembers where its questionnaire was left.
   useEffect(() => {
@@ -66,10 +108,10 @@ export function Finder({ category, items, search, locale }: Props) {
     const box = dock.current?.getBoundingClientRect()
     scene.setTargets(
       category,
-      { misses: finder.misses, hot: finder.hotIds, order: finder.order },
+      { misses: finder.misses, hot: finder.hotIds, order: finder.order, scores: finder.scores },
       box ? { x: box.left + box.width / 2, y: box.top + box.height / 3 } : undefined,
     )
-  }, [category, finder.misses, finder.hotIds, finder.order])
+  }, [category, finder.misses, finder.hotIds, finder.order, finder.scores])
   useEffect(() => {
     scene.setDetails(category, finder.details)
   }, [category, finder.details])
@@ -99,7 +141,9 @@ export function Finder({ category, items, search, locale }: Props) {
       const right = p?.offsetWidth ? p.offsetLeft - 28 : main.clientWidth - 20
       const top = h.offsetTop + h.offsetHeight + 28
       const bottom = d.offsetTop - 64
-      scene.setStage(category, { x: left, y: top, w: right - left, h: bottom - top })
+      // Centred under the console when it fits, like everything else on the page's axis.
+      const axis = main.clientWidth / 2
+      scene.setStage(category, { x: left, y: top, w: right - left, h: bottom - top, axis })
     }
     measure()
     const observer = new ResizeObserver(measure)
@@ -218,16 +262,26 @@ export function Finder({ category, items, search, locale }: Props) {
             swapped ? enterFade : enterRight,
             css({
               position: 'absolute',
-              top: '24',
+              top: '20',
               right: '8',
+              // Down to just above the console: the podium shows as many entries as fit.
+              bottom: 'calc(var(--dock-h) + 2.5rem)',
               w: '72',
               display: { base: 'none', lg: 'block' },
-              pointerEvents: 'auto',
+              containerType: 'size',
+              '& button': { pointerEvents: 'auto' },
             }),
           )}
           style={{ animationDelay: `${delay + 0.2}s` }}
         >
-          <Podium top={finder.ranked.slice(0, 3)} locale={locale} />
+          <Podium
+            top={finder.ranked.slice(0, PODIUM_SIZE)}
+            total={finder.matching}
+            locale={locale}
+            hint={hint}
+            onOpen={openSheet}
+            onShowAll={finder.showResults}
+          />
         </aside>
       )}
 
@@ -250,7 +304,7 @@ export function Finder({ category, items, search, locale }: Props) {
               whiteSpace: 'nowrap',
               px: '3',
               py: '1.5',
-              borderRadius: 'full',
+              borderRadius: 'pill',
               bg: 'paper/80',
               backdropFilter: 'blur(8px)',
               transition: 'bottom 400ms token(easings.signal)',
@@ -292,21 +346,40 @@ export function Finder({ category, items, search, locale }: Props) {
         >
           {!done && (
             <div className={css({ display: { base: 'block', lg: 'none' } })}>
-              <Podium top={finder.ranked.slice(0, 3)} locale={locale} layout="row" />
+              <Podium
+                top={finder.ranked.slice(0, PODIUM_SIZE)}
+                total={finder.matching}
+                locale={locale}
+                layout="row"
+                hint={hint}
+                onOpen={openSheet}
+                onShowAll={finder.showResults}
+              />
             </div>
           )}
           {done ? (
             <ResultsView
               ranked={finder.ranked}
               locale={locale}
-              onEdit={finder.back}
+              onEdit={finder.editAnswers}
               onReset={finder.reset}
+              onOpen={openSheet}
             />
           ) : (
             <Console finder={finder} category={category} locale={locale} enterDelay={delay + 0.3} />
           )}
         </div>
       </div>
+
+      {sheet && (
+        <ProductDrawer
+          sheet={sheet}
+          locale={locale}
+          position={sheet.rank != null ? { index: sheet.rank, total: finder.ranked.length } : null}
+          onStep={stepSheet}
+          onClose={closeSheet}
+        />
+      )}
     </main>
   )
 }

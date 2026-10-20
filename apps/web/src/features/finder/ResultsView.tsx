@@ -5,209 +5,34 @@ import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion, useGSAP } from '../motion/gsap'
 import { motion } from '../motion/tokens'
+import { AnnotatedHero } from '../product/AnnotatedHero'
 import { ProductGlyph } from '../product/glyphs'
+import { Match } from '../product/Match'
 import { formatPrice, keySpecs } from '../product/specs'
 
 // The end of the questionnaire: the best match annotated like a spec drawing, the next two beside
 // it, every other match in a list below. Leader lines draw themselves in when the view opens.
+// Every product opens its sheet: the best match from its button, the others from anywhere on
+// their card or row.
 
 type Props = {
   ranked: Ranked<CatalogItem>[]
   locale: Locale
   onEdit: () => void
   onReset: () => void
+  onOpen: (slug: string) => void
 }
 
-const Match = ({ score, locale }: { score: number; locale: Locale }) => (
-  <span
-    className={css({
-      display: 'inline-flex',
-      alignItems: 'center',
-      gap: '2',
-      fontFamily: 'mono',
-      fontSize: 'xs',
-      color: 'ink.muted',
-    })}
-  >
-    <span
-      className={css({
-        position: 'relative',
-        w: '12',
-        h: '1',
-        bg: 'line',
-        borderRadius: 'full',
-        overflow: 'hidden',
-      })}
-    >
-      <span
-        className={css({
-          position: 'absolute',
-          insetBlock: '0',
-          left: '0',
-          bg: 'ink',
-          borderRadius: 'full',
-        })}
-        style={{ width: `${Math.round(score * 100)}%` }}
-      />
-    </span>
-    {Math.round(score * 100)}% {m.match[locale]}
-  </span>
-)
+/** A card or row that opens its product's sheet: a button stretched over the whole of it. */
+const opener = css({
+  position: 'absolute',
+  inset: '0',
+  borderRadius: 'inherit',
+  cursor: 'pointer',
+  _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '2px' },
+})
 
-function AnnotatedHero({ entry, locale }: { entry: Ranked<CatalogItem>; locale: Locale }) {
-  const specs = keySpecs(entry.item, locale)
-  // Anchor points on the drawing (in % of its box) and the side their callout sits on.
-  const anchors = [
-    { x: 24, y: 30, side: 'left' },
-    { x: 34, y: 74, side: 'left' },
-    { x: 76, y: 26, side: 'right' },
-    { x: 66, y: 70, side: 'right' },
-  ] as const
-  const callout = (side: 'left' | 'right') =>
-    specs.map((spec, i) => {
-      const a = anchors[i]
-      if (!a || a.side !== side) return null
-      return (
-        <figcaption
-          key={spec.label}
-          data-callout
-          className={css({
-            position: 'absolute',
-            insetInline: '0',
-            display: 'grid',
-            gap: '0.5',
-            fontSize: 'sm',
-            transform: 'translateY(-100%)',
-            pb: '1.5',
-          })}
-          style={{ top: `${a.y - 8}%`, textAlign: side === 'left' ? 'left' : 'right' }}
-        >
-          <span
-            className={css({
-              fontFamily: 'mono',
-              fontSize: '2xs',
-              color: 'ink.faint',
-              textTransform: 'uppercase',
-              letterSpacing: '0.04em',
-            })}
-          >
-            {spec.label}
-          </span>
-          <span className={css({ fontWeight: '600', lineHeight: '1.25' })}>{spec.value}</span>
-        </figcaption>
-      )
-    })
-  const column = css({ position: 'relative', display: { base: 'none', md: 'block' } })
-
-  return (
-    <div className={css({ display: 'grid', gap: '4' })}>
-      <figure
-        className={css({
-          display: 'grid',
-          gridTemplateColumns: { base: '1fr', md: '11rem 1fr 11rem' },
-          h: { base: '44', md: '64' },
-        })}
-      >
-        <div className={column}>{callout('left')}</div>
-        <div className={css({ position: 'relative' })}>
-          <div
-            className={css({
-              position: 'absolute',
-              inset: '0',
-              display: 'grid',
-              placeItems: 'center',
-              p: '4',
-            })}
-          >
-            <ProductGlyph item={entry.item} className={css({ w: '100%', h: '100%' })} />
-          </div>
-          {/* Percent coordinates without a viewBox keep the strokes one pixel wide at any size. */}
-          <svg
-            className={css({
-              position: 'absolute',
-              inset: '0',
-              w: '100%',
-              h: '100%',
-              overflow: 'visible',
-              display: { base: 'none', md: 'block' },
-            })}
-            aria-hidden
-          >
-            {specs.map((spec, i) => {
-              const a = anchors[i]
-              if (!a) return null
-              const elbow = a.side === 'left' ? a.x - 6 : a.x + 6
-              const edge = a.side === 'left' ? 0 : 100
-              return (
-                <g key={spec.label} stroke="#141414" strokeWidth={1}>
-                  <line
-                    data-leader
-                    pathLength={1}
-                    strokeDasharray={1}
-                    x1={`${a.x}%`}
-                    y1={`${a.y}%`}
-                    x2={`${elbow}%`}
-                    y2={`${a.y - 8}%`}
-                  />
-                  <line
-                    data-leader
-                    pathLength={1}
-                    strokeDasharray={1}
-                    x1={`${elbow}%`}
-                    y1={`${a.y - 8}%`}
-                    x2={`${edge}%`}
-                    y2={`${a.y - 8}%`}
-                  />
-                </g>
-              )
-            })}
-          </svg>
-          {specs.map((spec, i) => {
-            const a = anchors[i]
-            return a ? (
-              <span
-                key={spec.label}
-                data-leader-dot
-                className={css({
-                  position: 'absolute',
-                  w: '2',
-                  h: '2',
-                  ml: '-1',
-                  mt: '-1',
-                  borderRadius: 'full',
-                  bg: 'signal',
-                  display: { base: 'none', md: 'block' },
-                })}
-                style={{ left: `${a.x}%`, top: `${a.y}%` }}
-              />
-            ) : null
-          })}
-        </div>
-        <div className={column}>{callout('right')}</div>
-      </figure>
-      <dl
-        className={css({
-          display: { base: 'grid', md: 'none' },
-          gridTemplateColumns: 'auto 1fr',
-          columnGap: '3',
-          rowGap: '1',
-          fontSize: 'sm',
-        })}
-      >
-        {specs.map((s) => (
-          <div key={s.label} className={css({ display: 'contents' })}>
-            <dt className={css({ fontFamily: 'mono', fontSize: 'xs', color: 'ink.faint' })}>
-              {s.label}
-            </dt>
-            <dd>{s.value}</dd>
-          </div>
-        ))}
-      </dl>
-    </div>
-  )
-}
-
-export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
+export function ResultsView({ ranked, locale, onEdit, onReset, onOpen }: Props) {
   const root = useRef<HTMLElement>(null)
   const [first, ...others] = ranked
   const runnersUp = others.slice(0, 2)
@@ -236,7 +61,7 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
       aria-labelledby="results-title"
       className={css({
         bg: 'surface.raised',
-        borderRadius: 'xl',
+        borderRadius: 'panel',
         borderWidth: '1px',
         borderColor: 'line',
         boxShadow: 'panel',
@@ -319,14 +144,21 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                   </p>
                 )}
               </div>
-              <div className={css({ display: 'grid', justifyItems: 'end', gap: '1' })}>
+              <div className={css({ display: 'grid', justifyItems: 'end', gap: '2' })}>
                 <span className={css({ fontFamily: 'mono', fontSize: '2xl' })}>
                   {formatPrice(first.item.priceEur, locale)}
                 </span>
-                <Match score={first.score} locale={locale} />
+                <Match score={first.score} locale={locale} size="lg" accent />
+                <button
+                  type="button"
+                  className={button({ tone: 'ink', size: 'sm' })}
+                  onClick={() => onOpen(first.item.slug)}
+                >
+                  {m.viewSheet[locale]} →
+                </button>
               </div>
             </div>
-            <AnnotatedHero entry={first} locale={locale} />
+            <AnnotatedHero item={first.item} locale={locale} />
             <div
               className={css({
                 display: 'grid',
@@ -397,13 +229,16 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                   key={entry.item.slug}
                   data-result
                   className={css({
+                    position: 'relative',
                     display: 'grid',
                     gap: '3',
                     p: '4',
-                    borderRadius: 'lg',
+                    borderRadius: 'card',
                     borderWidth: '1px',
                     borderColor: 'line',
                     bg: 'surface',
+                    transition: 'border-color 160ms, background 160ms',
+                    _hover: { borderColor: 'line.strong', bg: 'surface.raised' },
                   })}
                 >
                   <div
@@ -416,7 +251,7 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                     })}
                   >
                     <span>{String(i + 2).padStart(2, '0')}</span>
-                    <Match score={entry.score} locale={locale} />
+                    <Match score={entry.score} locale={locale} size="sm" />
                   </div>
                   <div className={css({ h: '24', display: 'grid', placeItems: 'center' })}>
                     <ProductGlyph
@@ -460,6 +295,12 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                       </div>
                     ))}
                   </dl>
+                  <button
+                    type="button"
+                    className={opener}
+                    aria-label={m.sheetOf(`${entry.item.brand.name} ${entry.item.name}`, locale)}
+                    onClick={() => onOpen(entry.item.slug)}
+                  />
                 </article>
               ))}
             </div>
@@ -483,6 +324,7 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                     key={entry.item.slug}
                     data-result
                     className={css({
+                      position: 'relative',
                       display: 'grid',
                       gridTemplateColumns: {
                         base: '28px 56px 1fr auto',
@@ -491,8 +333,12 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                       alignItems: 'center',
                       gap: '3',
                       py: '3',
+                      px: '2',
+                      mx: '-2',
                       borderTopWidth: '1px',
                       borderColor: 'line',
+                      transition: 'background 160ms',
+                      _hover: { bg: 'surface' },
                     })}
                   >
                     <span
@@ -532,6 +378,12 @@ export function ResultsView({ ranked, locale, onEdit, onReset }: Props) {
                         {Math.round(entry.score * 100)}%
                       </span>
                     </span>
+                    <button
+                      type="button"
+                      className={opener}
+                      aria-label={m.sheetOf(`${entry.item.brand.name} ${entry.item.name}`, locale)}
+                      onClick={() => onOpen(entry.item.slug)}
+                    />
                   </li>
                 ))}
               </ol>

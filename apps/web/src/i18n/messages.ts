@@ -73,6 +73,26 @@ export const messages = {
   canvasHintTouch: text('Glisse pour explorer · touche un modèle', 'Drag to explore · tap a model'),
   ruledOutBy: text('Écarté par', 'Ruled out by'),
   ruledOut: text('Écarté', 'Ruled out'),
+  seeAll: text('Voir tout', 'See all'),
+  ranking: text('Classement', 'Ranking'),
+  matchHelp: text(
+    'Compatibilité avec ton usage et tes réponses, sur 100',
+    'How well it fits your use and your answers, out of 100',
+  ),
+  clickForSheet: text('Clique pour ouvrir sa fiche', 'Click to open its sheet'),
+  viewSheet: text('Voir la fiche', 'View details'),
+  sheetOf: (name: string, locale: Locale) =>
+    locale === 'fr' ? `Voir la fiche : ${name}` : `View details: ${name}`,
+  close: text('Fermer', 'Close'),
+  previous: text('Précédent', 'Previous'),
+  next: text('Suivant', 'Next'),
+  specSheet: text('Fiche technique', 'Spec sheet'),
+  whereToBuy: text('Où l’acheter', 'Where to buy'),
+  listPrice: text('Prix conseillé', 'List price'),
+  offersSoon: text(
+    'Les offres des marchands arrivent bientôt : prix du jour, stock et livraison, au même endroit.',
+    'Shop offers are coming soon: today’s prices, stock and delivery, all in one place.',
+  ),
 } as const
 
 export const formatCount = count

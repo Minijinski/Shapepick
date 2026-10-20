@@ -10,7 +10,8 @@ import { buildSprites } from './sprites'
 
 // The canvas behind the pages of a locale, mounted once by the layout so it survives every
 // navigation between the home page and the categories. It owns the pointer on the open canvas
-// (hover, drag, fling, wheel) and the popup that follows the product under the pointer.
+// (hover, drag, fling, wheel) and the popup that follows the product under the pointer; a click
+// (or a tap) on a product asks the page to open that product's sheet.
 
 type Props = { catalogs: Record<Category, CatalogItem[]>; locale: Locale }
 
@@ -30,6 +31,13 @@ export function Scene({ catalogs, locale }: Props) {
   useSyncExternalStore(scene.subscribe, scene.snapshot, () => 0)
 
   useEffect(() => markHydrated(), [])
+
+  // No native drag anywhere (links, drawings): CSS covers WebKit, this covers every browser.
+  useEffect(() => {
+    const prevent = (e: DragEvent) => e.preventDefault()
+    document.addEventListener('dragstart', prevent)
+    return () => document.removeEventListener('dragstart', prevent)
+  }, [])
 
   useEffect(() => {
     const canvas = canvasRef.current
@@ -114,6 +122,9 @@ export function Scene({ catalogs, locale }: Props) {
     const show = (next: Hit | null) => {
       renderer.setFocus(next)
       setHit((prev) => (sameHit(prev, next) ? prev : next))
+      // A product under the pointer is clickable: it opens the product's sheet.
+      if (next) canvas.dataset.hover = 'true'
+      else delete canvas.dataset.hover
     }
     const down = (e: PointerEvent) => {
       if (e.button !== 0) return
@@ -158,7 +169,11 @@ export function Scene({ catalogs, locale }: Props) {
       renderer.endDrag(tap || still ? 0 : drag.vx, tap || still ? 0 : drag.vy)
       delete canvas.dataset.dragging
       drag = null
-      if (tap) show(renderer.pick({ x: e.clientX, y: e.clientY }))
+      if (!tap) return
+      const picked = renderer.pick({ x: e.clientX, y: e.clientY })
+      // The sheet replaces the popup; without a page to open it, a tap still shows the popup.
+      if (picked && scene.openProduct(picked.category, picked.slug)) show(null)
+      else show(picked)
     }
     const leave = () => {
       if (!drag) show(null)
@@ -207,6 +222,7 @@ export function Scene({ catalogs, locale }: Props) {
           touchAction: 'none',
           userSelect: 'none',
           '&[data-mode=canvas]': { cursor: 'grab' },
+          '&[data-mode=canvas][data-hover]': { cursor: 'pointer' },
           '&[data-dragging]': { cursor: 'grabbing' },
         })}
       />

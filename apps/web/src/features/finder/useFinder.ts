@@ -18,6 +18,7 @@ import {
   readChoice,
   type Step,
   sanitizeAnswers,
+  type Text,
   withAnswer,
 } from '@choose/catalog'
 import { useNavigate } from '@tanstack/react-router'
@@ -31,6 +32,16 @@ import type { ItemDetail } from '../scene/controller'
 export const DONE = 'done'
 
 export type FinderSearch = Record<string, string | undefined>
+
+/** What a product's sheet shows: its rank and fit when the answers keep it, what rules it out otherwise. */
+export type ProductSheet = {
+  item: CatalogItem
+  rank: number | null
+  score: number | null
+  pros: Text[]
+  cons: Text[]
+  excludedBy: string | null
+}
 
 export function useFinder(
   category: Category,
@@ -83,8 +94,12 @@ export function useFinder(
 
   // ---- Navigation ----------------------------------------------------------------------------
   const go = useCallback(
-    (next: Answers, at?: string) =>
-      navigate({ to: '.', search: at ? { ...next, at } : next, resetScroll: false }),
+    (next: Answers, at?: string, from?: string) =>
+      navigate({
+        to: '.',
+        search: { ...next, ...(at && { at }), ...(from && { from }) },
+        resetScroll: false,
+      }),
     [navigate],
   )
   const commit = useCallback(
@@ -100,7 +115,22 @@ export function useFinder(
     if (previous) go(answers, previous)
   }, [def, items, answers, currentKey, go])
   const reset = useCallback(() => go({}), [go])
-  const showResults = useCallback(() => go(answers, DONE), [answers, go])
+  // The results read the answers on screen, picks not yet confirmed included (the button said
+  // how many they leave), and remember the question they were opened from.
+  const showResults = useCallback(
+    () => go(sanitizeAnswers(def, effective), DONE, currentKey ?? undefined),
+    [def, effective, currentKey, go],
+  )
+  // Back from the results to that question; without one (a shared link), to the first question
+  // left unanswered, or the last one asked when every question has its answer.
+  const from = search.from
+  const editAnswers = useCallback(() => {
+    const target =
+      (from && asked.includes(from) ? from : null) ??
+      firstPending(def, items, answers) ??
+      asked[asked.length - 1]
+    if (target) go(answers, target)
+  }, [def, items, answers, asked, from, go])
   const canGoBack = useMemo(
     () => previousStep(def, items, answers, currentKey) != null,
     [def, items, answers, currentKey],
@@ -152,6 +182,7 @@ export function useFinder(
 
   /** Kept products, best match first: the canvas's short list and podium badges follow it. */
   const order = useMemo(() => ranked.map((r) => def.id(r.item)), [def, ranked])
+  const scores = useMemo(() => ranked.map((r) => r.score), [ranked])
 
   /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
   const hotIds = useMemo(() => {
@@ -179,6 +210,29 @@ export function useFinder(
     return map
   }, [def, items, ranked, tests, locale])
 
+  /** One product's sheet, whether the answers keep it or rule it out. */
+  const sheetOf = useCallback(
+    (slug: string): ProductSheet | null => {
+      const index = ranked.findIndex((r) => def.id(r.item) === slug)
+      const entry = ranked[index]
+      if (entry) return { ...entry, rank: index, excludedBy: null }
+      const item = items.find((i) => def.id(i) === slug)
+      if (!item) return null
+      // Ruled out: no rank and no score, but its strengths still read against the visitor's use.
+      const use = effective[def.profileStep]
+      const [fit] = rank(def, [item], use ? { [def.profileStep]: use } : {})
+      return {
+        item,
+        rank: null,
+        score: null,
+        pros: fit?.pros ?? [],
+        cons: fit?.cons ?? [],
+        excludedBy: details.get(slug)?.excludedBy ?? null,
+      }
+    },
+    [def, items, ranked, effective, details],
+  )
+
   return {
     def,
     items,
@@ -198,6 +252,7 @@ export function useFinder(
     rail,
     misses,
     order,
+    scores,
     hotIds,
     details,
     commit,
@@ -206,7 +261,9 @@ export function useFinder(
     canGoBack,
     reset,
     showResults,
+    editAnswers,
     blockerOf,
+    sheetOf,
   }
 }
 

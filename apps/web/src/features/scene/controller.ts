@@ -40,6 +40,7 @@ class SceneController {
   private readonly targets = new Map<Category, ItemTargets | null>()
   private readonly details = new Map<Category, Map<string, ItemDetail>>()
   private readonly listeners = new Set<() => void>()
+  private readonly openers = new Set<(category: Category, slug: string) => void>()
   private version = 0
 
   attach(renderer: SceneRenderer) {
@@ -142,6 +143,22 @@ class SceneController {
     if (this.target?.mode !== 'canvas' || this.target.category !== category) return
     this.stage = stage
     this.renderer?.setStage(stage)
+  }
+
+  // ---- Products picked on the canvas -----------------------------------------------------------
+
+  /** A product clicked on the canvas: the page opens its sheet. False when no page listens. */
+  openProduct(category: Category, slug: string) {
+    for (const open of this.openers) open(category, slug)
+    return this.openers.size > 0
+  }
+
+  /** Called with every product clicked on the canvas; returns an unsubscribe. */
+  onOpenProduct(open: (category: Category, slug: string) => void) {
+    this.openers.add(open)
+    return () => {
+      this.openers.delete(open)
+    }
   }
 
   // ---- Popup details: a tiny store React subscribes to -----------------------------------------

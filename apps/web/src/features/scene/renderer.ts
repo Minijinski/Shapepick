@@ -1,4 +1,5 @@
 import type { Category } from '@choose/catalog'
+import { radii } from '~/styles/radii'
 import { gsap } from '../motion/gsap'
 import {
   bandQuads,
@@ -38,10 +39,15 @@ export type ItemTargets = {
   hot: Set<string> | null
   /** Kept products, best match first. */
   order: string[]
+  /** Their match, 0 … 1, in the same order: printed beside the podium's ranks on the canvas. */
+  scores?: number[]
 }
 
-/** The part of the screen the finder leaves free, where the short list gathers. */
-export type Rect = { x: number; y: number; w: number; h: number }
+/**
+ * The part of the screen the finder leaves free, where the short list gathers. `axis` is the x it
+ * centres on when it fits around it (the console's axis), rather than on the free space's own.
+ */
+export type Rect = { x: number; y: number; w: number; h: number; axis?: number }
 
 /**
  * A product under the pointer: one of the short list (`spot`), or one copy on the field (the tile
@@ -95,6 +101,8 @@ const DOT_STEP = 28
 /** Up to this many kept products gather in front of the field, if the free space fits them. */
 const SPOT_MAX = 12
 const SPOT_ZOOM = { max: 1, maxCompact: 0.72, min: 0.42 }
+/** Margin around the short list, in screen px, where the field below never takes the pointer. */
+const SPOT_MARGIN = 32
 /** Opacity of a sketch by the number of answers its product fails (1, 2, 3 or more). */
 const FAINT = [1, 0.75, 0.5, 0.3] as const
 
@@ -103,6 +111,7 @@ const PANEL = [234, 231, 224] as const
 const PANEL_HOVER = [248, 247, 244] as const
 const SIGNAL = '#FF5A1F'
 const INK = '#141414'
+const INK_MUTED = '#625E56'
 const MONO = '"Geist Mono Variable", "Geist Mono", ui-monospace, monospace'
 
 /** Device px per world px the sprites need: the pixel ratio times the largest zoom drawn. */
@@ -162,6 +171,8 @@ type Item = {
   field: Channel
   /** Position among the kept products, best first. */
   rank: number | null
+  /** Its match (0 … 1) while it is kept. */
+  score: number | null
 }
 
 /** A place in the tile: a cell centre and a -1..1 jitter scaled by the room its product leaves. */
@@ -319,6 +330,7 @@ export class SceneRenderer {
       dim: channel(0),
       field: channel(1),
       rank: null,
+      score: null,
     }))
     world.bySlug = new Map(world.items.map((item) => [item.slug, item]))
     const copies = Math.max(1, Math.ceil(MIN_SLOTS / Math.max(world.items.length, 1)))
@@ -567,7 +579,8 @@ export class SceneRenderer {
         Math.abs(stage.x - this.stage.x) < 1 &&
         Math.abs(stage.y - this.stage.y) < 1 &&
         Math.abs(stage.w - this.stage.w) < 1 &&
-        Math.abs(stage.h - this.stage.h) < 1)
+        Math.abs(stage.h - this.stage.h) < 1 &&
+        Math.abs((stage.axis ?? 0) - (this.stage.axis ?? 0)) < 1)
     if (same) return
     this.stage = stage
     if (this.target.mode !== 'canvas') return
@@ -589,6 +602,7 @@ export class SceneRenderer {
       aim(item.hot, hot ? 1 : 0, now, fast)
       aim(item.dim, t?.hot && !hot ? 1 : 0, now, fast)
       item.rank = rankOf.get(item.slug) ?? null
+      item.score = item.rank != null ? (t?.scores?.[item.rank] ?? null) : null
     }
     this.updateSpot(band, t?.misses ? t.order : null, now, animate)
   }
@@ -671,13 +685,28 @@ export class SceneRenderer {
     })
   }
 
-  /** The short list's grid in the free space: the largest scale at which every product fits. */
+  /**
+   * The short list's grid: centred on the stage's axis (under the console) when it fits there,
+   * otherwise across the whole free space.
+   */
   private spotLayout(world: World, slugs: string[]) {
     const stage = this.stage
-    if (!stage || stage.w < 120 || stage.h < 80) return null
+    if (!stage) return null
     const items = slugs.flatMap((slug) => world.bySlug.get(slug) ?? [])
+    if (!items.length) return null
+    if (stage.axis != null) {
+      const half = Math.min(stage.axis - stage.x, stage.x + stage.w - stage.axis)
+      const centred = { ...stage, x: stage.axis - half, w: half * 2 }
+      const layout = half > 0 ? this.gridIn(centred, items) : null
+      if (layout) return layout
+    }
+    return this.gridIn(stage, items)
+  }
+
+  /** A grid of `items` in `stage`: the largest scale at which every product fits. */
+  private gridIn(stage: Rect, items: Item[]) {
+    if (stage.w < 120 || stage.h < 80) return null
     const n = items.length
-    if (!n) return null
     const maxW = Math.max(...items.map((i) => i.sprite.w))
     const maxH = Math.max(...items.map((i) => i.sprite.h))
     const compact = isCompact(this.vp)
@@ -807,6 +836,9 @@ export class SceneRenderer {
         }
       }
     }
+    // Under the short list the field only drifts by, greyed out: it never takes the pointer
+    // there, so a gap between two products of the list never opens a sketch's card.
+    if (this.overSpot(band, p, now)) return null
     const t = this.transformOf(band)
     const wx = (p.x - t.ox) / t.scale
     const wy = (p.y - t.oy) / t.scale
@@ -830,6 +862,26 @@ export class SceneRenderer {
       }
     }
     return best
+  }
+
+  /** Whether a screen point is over the short list, the gaps between its products included. */
+  private overSpot(band: Band, p: Pt, now: number) {
+    let x0 = Number.POSITIVE_INFINITY
+    let y0 = Number.POSITIVE_INFINITY
+    let x1 = Number.NEGATIVE_INFINITY
+    let y1 = Number.NEGATIVE_INFINITY
+    for (const s of band.world.spot) {
+      if (s.leaving) continue
+      const pose = this.spotPose(band, s, now)
+      const hw = (s.item.sprite.w * pose.scale) / 2
+      const hh = (s.item.sprite.h * pose.scale) / 2
+      x0 = Math.min(x0, pose.x - hw)
+      x1 = Math.max(x1, pose.x + hw)
+      y0 = Math.min(y0, pose.y - hh)
+      y1 = Math.max(y1, pose.y + hh)
+    }
+    const m = SPOT_MARGIN
+    return p.x >= x0 - m && p.x <= x1 + m && p.y >= y0 - m && p.y <= y1 + m
   }
 
   /** Highlights a product (null: none) and holds the drift while it is looked at. */
@@ -1125,7 +1177,7 @@ export class SceneRenderer {
     const h = s.h * scale
     if (hot > 0.01) this.drawRing(x, y, w, h, a * hot * Math.max(on, faint))
     if (ranked && item.rank != null && item.rank < 3 && on > 0.5) {
-      this.drawRank(item.rank, x, y, w, h, a * on)
+      this.drawRank(item.rank, item.score, x, y, w, h, a * on)
     }
     if (focus > 0) this.drawBrackets(x, y, w, h, a * focus)
   }
@@ -1137,22 +1189,44 @@ export class SceneRenderer {
     ctx.strokeStyle = SIGNAL
     ctx.lineWidth = 1.5
     ctx.beginPath()
-    ctx.roundRect(cx - w / 2 - pad, cy - h / 2 - pad, w + pad * 2, h + pad * 2, 12)
+    ctx.roundRect(cx - w / 2 - pad, cy - h / 2 - pad, w + pad * 2, h + pad * 2, radii.card)
     ctx.stroke()
   }
 
-  private drawRank(rank: number, cx: number, cy: number, w: number, h: number, alpha: number) {
+  /** The podium's rank medal above a product, and its match beside it. */
+  private drawRank(
+    rank: number,
+    score: number | null,
+    cx: number,
+    cy: number,
+    w: number,
+    h: number,
+    alpha: number,
+  ) {
     const { ctx } = this
+    const label = String(rank + 1)
     const x = cx - w / 2
-    const y = cy - h / 2 - 12
+    const y = cy - h / 2 - 15
+    const size = 18
     ctx.globalAlpha = alpha
+    ctx.font = `500 10px ${MONO}`
+    const pill = Math.max(size, ctx.measureText(label).width + 10)
     ctx.fillStyle = rank === 0 ? SIGNAL : INK
     ctx.beginPath()
-    ctx.arc(x + 3, y - 4, 3, 0, Math.PI * 2)
+    ctx.roundRect(x, y - size / 2, pill, size, size / 2)
     ctx.fill()
-    ctx.font = `500 11px ${MONO}`
+    ctx.fillStyle = rank === 0 ? '#FFFFFF' : rgb(PAPER)
+    ctx.textAlign = 'center'
+    ctx.textBaseline = 'middle'
+    ctx.fillText(label, x + pill / 2, y + 0.5)
+    if (score != null) {
+      ctx.textAlign = 'left'
+      ctx.fillStyle = INK_MUTED
+      ctx.font = `500 11px ${MONO}`
+      ctx.fillText(`${Math.round(score * 100)} %`, x + pill + 6, y + 0.5)
+    }
+    ctx.textAlign = 'left'
     ctx.textBaseline = 'alphabetic'
-    ctx.fillText(String(rank + 1).padStart(2, '0'), x + 11, y)
   }
 
   /** Corner marks around the product under the pointer, like a viewfinder. */

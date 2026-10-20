@@ -2,6 +2,8 @@
 // the canvas that draws the panels and the links that sit on top of them (hover, focus, click)
 // always agree to the pixel.
 
+import { radii } from '~/styles/radii'
+
 export type Pt = { x: number; y: number }
 /** Top-left, top-right, bottom-right, bottom-left. */
 export type Quad = [Pt, Pt, Pt, Pt]
@@ -20,7 +22,8 @@ export function frameOf(vp: Viewport) {
     side: compact ? 8 : 14,
     bottom: compact ? 8 : 14,
     gutter: compact ? 8 : 14,
-    radius: compact ? 16 : 24,
+    // The panels round their corners like every other panel of the site.
+    radius: radii.panel,
   }
 }
 

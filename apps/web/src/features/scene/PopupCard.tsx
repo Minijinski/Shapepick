@@ -1,17 +1,19 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
 import { css } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
+import { Match } from '../product/Match'
 import { formatPrice, sheetSpecs } from '../product/specs'
 import type { ItemDetail } from './controller'
 
 // The card that opens next to a product on the canvas: what it is, how well it fits the answers
 // (or which answer rules it out), and its spec sheet, set like a callout on a technical drawing.
+// Its last line says that a click opens the product's full sheet.
 
 const card = css({
   w: { base: '60', md: '72' },
   bg: 'surface.raised/92',
   backdropFilter: 'blur(14px) saturate(1.2)',
-  borderRadius: 'lg',
+  borderRadius: 'card',
   borderWidth: '1px',
   borderColor: 'line',
   boxShadow: 'panel',
@@ -44,7 +46,6 @@ export function PopupCard({
   locale: Locale
 }) {
   const kept = detail?.rank != null
-  const score = detail?.score != null ? Math.round(detail.score * 100) : null
   return (
     <div className={card}>
       <div
@@ -65,31 +66,8 @@ export function PopupCard({
             <span className={css({ color: detail?.rank === 0 ? 'signal' : 'ink.muted' })}>
               {String((detail?.rank ?? 0) + 1).padStart(2, '0')}
             </span>
-            {score != null && (
-              <span className={css({ display: 'inline-flex', alignItems: 'center', gap: '2' })}>
-                <span
-                  className={css({
-                    position: 'relative',
-                    w: '10',
-                    h: '1',
-                    bg: 'line',
-                    borderRadius: 'full',
-                    overflow: 'hidden',
-                  })}
-                >
-                  <span
-                    className={css({
-                      position: 'absolute',
-                      insetBlock: '0',
-                      left: '0',
-                      bg: 'ink',
-                      borderRadius: 'full',
-                    })}
-                    style={{ width: `${score}%` }}
-                  />
-                </span>
-                {score}% {m.match[locale]}
-              </span>
+            {detail?.score != null && (
+              <Match score={detail.score} locale={locale} size="sm" accent={detail.rank === 0} />
             )}
           </>
         ) : (
@@ -152,6 +130,35 @@ export function PopupCard({
           </div>
         ))}
       </dl>
+
+      {/* The card follows the pointer; the product under it opens on a click. */}
+      <div
+        className={css({
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '3',
+          pt: '2.5',
+          borderTopWidth: '1px',
+          borderColor: 'line',
+          fontSize: 'xs',
+          fontWeight: '550',
+          '@media (hover: none)': { display: 'none' },
+        })}
+      >
+        <span>{m.clickForSheet[locale]}</span>
+        <span
+          aria-hidden
+          className={css({
+            display: 'inline-block',
+            color: 'signal',
+            animation: 'nudge 1.8s ease-in-out infinite',
+            _motionReduce: { animation: 'none' },
+          })}
+        >
+          →
+        </span>
+      </div>
     </div>
   )
 }

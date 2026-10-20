@@ -6,10 +6,10 @@ Oct 20, 2026 · @Eddy
 
 choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8), résultats annotés, en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8), résultats annotés, fiche produit (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
 - **Données** : 25 claviers et 25 écrans fictifs (marques inventées) pour développer. Les vraies données viendront plus tard.
 - **Qualité** : 28 tests du moteur, typecheck, lint et build de production au vert.
-- **État du dépôt** : commit de référence `e4ca02a` sur `main` (état initial, 20 octobre 2026) ; la refonte de l'accueil et du canvas est sur la branche `feat/bands-canvas`.
+- **État du dépôt** : commit de référence `e4ca02a` sur `main` (état initial, 20 octobre 2026) ; la refonte de l'accueil et du canvas, puis la fiche produit et les retours du 20 octobre (pas encore commités), sont sur la branche `feat/bands-canvas`.
 
 Pour reprendre : Node 24, puis `pnpm pg:local`, `pnpm db:migrate && pnpm db:seed` et `pnpm dev` (détails dans « Lancer le projet »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -97,9 +97,9 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | `packages/db/src/seed.ts`, `snapshot.ts` | YAML vers Postgres, puis Postgres vers items |
 | `apps/web/src/routes/` | Redirection de langue, accueil, parcours, API JSON |
 | `apps/web/src/server/` | Server function `getCatalog` et accès à la base, côté serveur seulement |
-| `apps/web/src/features/finder/` | État du parcours (`useFinder`) et composants de la scène |
+| `apps/web/src/features/finder/` | État du parcours (`useFinder`) et ses composants : console, podium, résultats, fiche produit en tiroir |
 | `apps/web/src/features/scene/` | Scène partagée accueil ↔ canvas : géométrie des bandes et du motif (`geometry.ts`), rendu (`renderer.ts`), pont routes ↔ scène (`controller.ts`), navigation chorégraphiée (`navigation.ts`), sprites des silhouettes, popup produit |
-| `apps/web/src/features/product/` | Silhouettes SVG générées depuis les specs, specs clés formatées |
+| `apps/web/src/features/product/` | Silhouettes SVG générées depuis les specs, specs clés formatées, héros annoté et jauge de compatibilité partagés par les résultats et la fiche produit |
 | `apps/web/src/features/motion/` | Enregistrement de GSAP, durées et courbes communes |
 | `apps/web/src/i18n/` | Textes d'interface FR/EN, langue de la page |
 | `apps/web/panda.config.ts` | Tokens « Labo clair », recettes `button`, `chip`, `optionTile` |
@@ -214,13 +214,14 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 | --- | --- | --- |
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
-| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol | Dérive en diagonale, drag avec inertie, molette ; une réponse change les écartés en esquisses graduées, en vague depuis la console ; une liste courte se regroupe devant le canvas |
-| Console (`Console`) | Hauteur fixe ; titre, aide en surimpression, tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
-| Podium (`Podium`) | Top 3 : silhouette, % de compatibilité, prix | Les cartes changent de place (Flip) |
-| Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres | Panneau qui monte, traits de rapport qui se dessinent |
+| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol, fiche produit au clic | Dérive en diagonale, drag avec inertie, molette ; une réponse change les écartés en esquisses graduées, en vague depuis la console ; une liste courte se regroupe devant le canvas |
+| Console (`Console`) | Hauteur fixe ; titre, aide en surimpression (en clair au-dessus des tuiles quand elles tiennent sur une rangée), tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
+| Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
+| Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Panneau qui monte, traits de rapport qui se dessinent |
+| Fiche produit (`ProductDrawer`) | Rang et compatibilité, ou « Écarté par … » ; dessin annoté à légende numérotée, points forts, « à savoir », fiche technique, « Où l'acheter » (emplacement des offres affiliées) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer |
 | Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, double curseur ; tout en haut signifie sans plafond | Les barres de la plage passent à l'encre au fil du curseur |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
-| Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
+| Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
 - **Mobile** : la console devient un panneau du bas limité à 56 % de la hauteur, avec défilement interne. Podium et rail défilent horizontalement, les tuiles sont compactes. Vérifié à 375 px : aucun défilement horizontal.
 - **Mouvement réduit** : chaque animation teste `prefersReducedMotion()` et pose directement l'état final.
@@ -231,13 +232,13 @@ Le bleu tient ici la place de l'orange du site : n°1 du podium et option survol
 
 Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule scène, un `<canvas>` 2D monté dans le layout `/$lang`. Comme c'est le même dessin des deux côtés, passer de l'un à l'autre n'est qu'une interpolation : rien n'est démonté, donc rien ne clignote.
 
-- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée.
+- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée. Cette étiquette est posée à côté du lien, donc jamais coupée par sa découpe ; elle penche avec le bord gauche de sa bande et prend la largeur que la bande lui laisse, si bien qu'elle y tient quel que soit le nombre de catégories.
 - **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
-- **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel.
+- **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel. Un clic (ou un tap) ouvre la fiche produit complète ; le curseur devient une main au survol d'un produit.
 - **Filtres** : chaque produit garde ses places. Un produit retenu est dessiné en couleur ; un produit écarté devient une esquisse (contours pointillés, comme les lignes cachées d'un dessin technique), d'autant plus pâle qu'il rate de réponses (1, 2, 3 et plus). Le changement part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
-- **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge.
+- **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge. La grille se centre sur l'axe de la console quand elle y tient (sinon sur tout l'espace libre) ; sous elle, à 32 px près, les esquisses du canvas ne réagissent plus au survol.
 - **Changement de catégorie** (header, depuis un canvas) : le canvas reste en place, les anciens produits se dissolvent et les nouveaux apparaissent en vague depuis le lien cliqué. La console ne bouge pas : seule sa question change. Chaque catégorie mémorise son parcours dans le stockage du navigateur (`choose-a-device:journey:<catégorie>`) et le reprend au retour ; « Recommencer » le remet à zéro.
-- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (peu d'options font de grandes tuiles, au-delà de deux rangées la grille défile), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus.
+- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale et affiche son aide en clair au-dessus), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
 
 | Fichier | Rôle |
 | --- | --- |
@@ -260,7 +261,7 @@ Chaque page est rendue côté serveur avec son titre, sa description, une URL ca
 | `/api/catalog/keyboard`, `/api/catalog/monitor` | Snapshot JSON avec ETag, cache 60 s puis 600 s en stale-while-revalidate |
 | Toute autre langue ou catégorie | 404 |
 
-- **Paramètres** : chaînes simples, virgules non encodées (`?size=full,f96&layout=azerty`). `at=<étape>` rouvre une étape, `at=done` affiche les résultats.
+- **Paramètres** : chaînes simples, virgules non encodées (`?size=full,f96&layout=azerty`). `at=<étape>` rouvre une étape, `at=done` affiche les résultats ; il s'accompagne de from=<étape>, l'étape d'où ils ont été ouverts, où « Modifier mes réponses » revient.
 - **Canonique** : une URL de parcours avec réponses pointe vers la page de catégorie, pour ne pas indexer chaque combinaison.
 - **Changement de langue** : garde la catégorie et les réponses (`/fr/claviers?…` ↔ `/en/keyboards?…`).
 - **Textes** : interface dans `apps/web/src/i18n/messages.ts` ; questions, options et critères dans `packages/catalog`, toujours sous la forme `{ fr, en }`.
@@ -313,6 +314,9 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Scène (712 × 1302 et 1280 × 800) | Bandes, survol avec le nom sur plaque floutée, ouverture en masque + zoom, popup de specs, retour à l'accueil, passage Claviers ↔ Écrans avec reprise du parcours |
 | Console à hauteur fixe | 360 px aux 10 étapes claviers et aux étapes écrans en 1280 × 800, FR et EN, aucune tuile coupée |
 | Liste courte | « 75 % » : les 4 claviers retenus regroupés devant le canvas, une fois chacun, esquisses graduées derrière |
+| Accueil (1440 × 900 et 375 × 812) | Plaque « Écrans » à 16 px du séparateur en haut comme en bas (−17 px avant) ; sur téléphone, les deux étiquettes tiennent dans leur bande ; calcul de la place vérifié de 2 à 5 catégories |
+| Console et liste courte (1440 × 900) | Tuiles d'une rangée à 112 px au lieu de 228, console toujours à 376 px ; coches entières ; liste courte centrée sur l'axe (claviers 3 × 3, écrans 5 en ligne) ; sous elle, aucune esquisse ne réagit au survol |
+| Fiche produit, podium et résultats | Fiche ouverte depuis le canvas, le podium et les résultats, précédent / suivant, Échap ; « Voir les 9 résultats » garde la sélection en cours, « Modifier mes réponses » revient à l'étape quittée ; top 5 à 900 px de haut, top 3 + « Voir tout » à 790 px |
 
 Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
@@ -332,6 +336,8 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 - **YAML** : une valeur avec une virgule dans une map en ligne `{ … }` doit être entre guillemets.
 - **TypeScript** : `tsc` est TypeScript 7 (natif, rapide) ; le paquet `typescript` est un alias vers TypeScript 6 pour les outils qui ont besoin de son API JavaScript.
 - **Rechargement à chaud** : une modification de code pendant un parcours peut remettre à zéro un choix multiple en cours (vu une fois en dev).
+- **Container queries** : le podium en colonne et le héros annoté se règlent sur leur conteneur, pas sur l'écran (`@container`). Le podium montre le n°4 dès 22rem de haut et le n°5 dès 25rem ; le héros passe en légende numérotée sous 40rem de large.
+- **Sélection et glisser natif coupés** : `user-select: none` sur tout le site (sauf les champs de saisie) et `dragstart` annulé sur le document. Un texte qui doit se copier réactive la sélection localement.
 
 ## Limites connues et dette technique
 
@@ -342,7 +348,7 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 - **Canvas 2D** : à l'aise avec quelques centaines de produits ; les sprites coûtent environ 50 Mo de mémoire sur un écran DPR 2. Au-delà, passer la scène en WebGL.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu. Correct à 50 produits ; à 2 000, rendre seulement le top côté serveur et charger le reste ensuite.
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
-- **Ni photos, ni prix boutiques, ni fiche produit** : les visuels sont des silhouettes SVG, la table `offers` est vide et les résultats ne mènent encore nulle part.
+- **Ni photos, ni prix boutiques** : les visuels sont des silhouettes SVG, la table `offers` est vide : la section « Où l'acheter » de la fiche produit n'affiche encore qu'un message d'attente.
 - **Seuils de format** : « Grand format 42"+ » prend les écrans 16:9 dès 36". Les seuils sont à recaler sur les vraies données.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
@@ -358,5 +364,6 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiche produit `/fr/claviers/<slug>` (héros annoté, fiche technique, JSON-LD), pages collections (« 75 % sans fil », « OLED 27" 240 Hz »), `sitemap.xml`, `robots.txt`, `noindex` des combinaisons, images OG, prérendu.
 - [ ] **Vraies données** : rechercher les claviers et écrans, écrire les scripts d'ingestion (TS, ou Python qui écrit dans Postgres), ajouter photos détourées, prix (`offers`) et liens d'affiliation.
+- [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres dans « Où l'acheter » de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
 - [ ] **Idées en attente** : spécimen 3D procédural (accueil, tuiles), sons et courbes de force des switchs, démo de fréquence et loupe PPI dans les tuiles, vue éclatée, thème sombre, analytics, back-office (interface interne ou Directus).

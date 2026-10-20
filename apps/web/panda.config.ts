@@ -1,4 +1,5 @@
 import { defineConfig, defineRecipe, defineSlotRecipe } from '@pandacss/dev'
+import { radii } from './src/styles/radii'
 
 // "Labo clair": paper, ink, technical greys and a single signal orange used sparingly (selection,
 // the live counter, the top match). Numbers, units and labels are set in mono.
@@ -12,7 +13,7 @@ const button = defineRecipe({
     gap: '2',
     fontWeight: '550',
     letterSpacing: '-0.01em',
-    borderRadius: 'full',
+    borderRadius: 'pill',
     cursor: 'pointer',
     transition: 'background 160ms, color 160ms, transform 160ms',
     _active: { transform: 'scale(0.98)' },
@@ -55,7 +56,7 @@ const optionTile = defineSlotRecipe({
       p: '3',
       textAlign: 'left',
       bg: 'surface',
-      borderRadius: 'lg',
+      borderRadius: 'card',
       borderWidth: '1px',
       borderColor: 'line',
       cursor: 'pointer',
@@ -129,7 +130,7 @@ const chip = defineRecipe({
     gap: '1.5',
     h: '7',
     px: '2.5',
-    borderRadius: 'full',
+    borderRadius: 'pill',
     fontSize: 'xs',
     whiteSpace: 'nowrap',
     bg: 'surface',
@@ -158,7 +159,11 @@ export default defineConfig({
       WebkitFontSmoothing: 'antialiased',
       textRendering: 'optimizeLegibility',
     },
-    body: { bg: 'paper', minH: '100dvh', overflowX: 'hidden' },
+    // An app surface, not a document: a press-and-drag browses the canvas, it never selects text
+    // or picks up a link or a drawing.
+    body: { bg: 'paper', minH: '100dvh', overflowX: 'hidden', userSelect: 'none' },
+    'input, textarea, select, [contenteditable]': { userSelect: 'text' },
+    'a, img, svg': { WebkitUserDrag: 'none' },
     '::selection': { bg: 'signal', color: 'white' },
     'button, [role=button]': { WebkitTapHighlightColor: 'transparent' },
   },
@@ -193,7 +198,12 @@ export default defineConfig({
           '2xs': { value: '0.6875rem' },
           display: { value: 'clamp(3rem, 2rem + 5vw, 6.5rem)' },
         },
-        radii: { lg: { value: '14px' }, xl: { value: '22px' } },
+        // Three corner shapes for the whole site (src/styles/radii.ts, shared with the canvas).
+        radii: {
+          panel: { value: `${radii.panel}px` },
+          card: { value: `${radii.card}px` },
+          pill: { value: '9999px' },
+        },
         easings: {
           signal: { value: 'cubic-bezier(0.22, 1, 0.36, 1)' },
         },
@@ -201,7 +211,11 @@ export default defineConfig({
       // Entrances run in CSS so they start with the server HTML (no flash before hydration).
       // They fill backwards only: once played, GSAP is free to animate the same elements out.
       keyframes: {
-        wordUp: { from: { transform: 'translateY(105%)' }, to: { transform: 'translateY(0)' } },
+        // A whole line plus half an em below its slot: accents and overhangs stay hidden too.
+        wordUp: {
+          from: { transform: 'translateY(calc(100% + 0.5em))' },
+          to: { transform: 'translateY(0)' },
+        },
         fadeUp: {
           from: { opacity: '0', transform: 'translateY(14px)' },
           to: { opacity: '1', transform: 'translateY(0)' },
@@ -231,6 +245,36 @@ export default defineConfig({
         cardIn: {
           from: { opacity: '0', transform: 'translateY(6px) scale(0.97)' },
           to: { opacity: '1', transform: 'translateY(0) scale(1)' },
+        },
+        fadeIn: { from: { opacity: '0' }, to: { opacity: '1' } },
+        // The match ring fills from empty when it appears (`--ring` = its circumference).
+        ringDraw: { from: { strokeDashoffset: 'var(--ring)' } },
+        // The best match shows once what hovering it does: its drawing lifts, its price makes way
+        // for "View details" (Podium).
+        hintLift: {
+          '0%, 100%': { transform: 'translateY(0) scale(1)' },
+          '30%, 70%': { transform: 'translateY(-3px) scale(1.06)' },
+        },
+        hintOut: {
+          '0%, 100%': { transform: 'translateY(0)' },
+          '25%, 75%': { transform: 'translateY(-115%)' },
+        },
+        hintIn: {
+          '0%, 100%': { transform: 'translateY(115%)' },
+          '25%, 75%': { transform: 'translateY(0)' },
+        },
+        nudge: {
+          '0%, 60%, 100%': { transform: 'translateX(0)' },
+          '30%': { transform: 'translateX(3px)' },
+        },
+        // The product sheet slides in from the right edge, or up from the bottom on phones.
+        sheetIn: {
+          from: { opacity: '0', transform: 'translateX(48px)' },
+          to: { opacity: '1', transform: 'translateX(0)' },
+        },
+        sheetUp: {
+          from: { opacity: '0', transform: 'translateY(80px)' },
+          to: { opacity: '1', transform: 'translateY(0)' },
         },
         lineDraw: { from: { transform: 'scaleX(0)' }, to: { transform: 'scaleX(1)' } },
       },

@@ -20,14 +20,15 @@ import { type Finder, toggled } from './useFinder'
 // a tile that would leave nothing says which earlier answer blocks it.
 //
 // Every question gets the same panel: same height, same header, same footer. The tiles share the
-// space between (a few options make tall tiles, many make two rows, more scroll), the budget fills
-// it with its price histogram, and the help opens over it, so the panel never moves under the
-// visitor's pointer from one question to the next.
+// space between (many make two rows, more scroll), the budget fills it with its price histogram,
+// and the help opens over it, so the panel never moves under the visitor's pointer from one
+// question to the next. A question whose tiles fit on one row keeps tiles of the same height
+// and spends the room above them on its explanation instead.
 
 const panel = css({
   position: 'relative',
   bg: 'surface.raised',
-  borderRadius: 'xl',
+  borderRadius: 'panel',
   borderWidth: '1px',
   borderColor: 'line',
   boxShadow: 'panel',
@@ -39,14 +40,27 @@ const panel = css({
   overflow: 'hidden',
 })
 
-const body = css({ position: 'relative', flex: '1', minH: '0' })
+const body = css({
+  position: 'relative',
+  flex: '1',
+  minH: '0',
+  display: 'flex',
+  flexDirection: 'column',
+  gap: '3',
+})
+
+/** Columns of the tile grid on a wide console: up to this many tiles make a single row. */
+const WIDE_COLUMNS = 5
 
 const tileGrid = css({
   border: '0',
-  m: '0',
-  p: '0',
+  // The padding is room for what overhangs a tile (the tick, the focus ring), which the scroll
+  // box would otherwise cut; the negative margin keeps the tiles aligned with the header.
+  m: '-2',
+  p: '2',
   minW: '0',
-  h: '100%',
+  flex: '1',
+  minH: '0',
   display: 'grid',
   gridTemplateColumns: { base: 'repeat(2, minmax(0, 1fr))', md: 'repeat(5, minmax(0, 1fr))' },
   gridAutoRows: { base: 'minmax(4.75rem, 1fr)', md: 'minmax(6.25rem, 1fr)' },
@@ -54,6 +68,20 @@ const tileGrid = css({
   overflowY: 'auto',
   overscrollBehavior: 'contain',
   scrollbarWidth: 'thin',
+  // A single row keeps the height of a two-row question's tiles, at the foot of the panel.
+  '&[data-one-row]': {
+    gridAutoRows: { md: 'minmax(5.5rem, 7rem)' },
+    alignContent: { md: 'end' },
+  },
+})
+
+const lead = css({
+  display: { base: 'none', md: 'block' },
+  flexShrink: '0',
+  maxW: '46rem',
+  fontSize: 'sm',
+  color: 'ink.muted',
+  lineHeight: '1.55',
 })
 
 const iconButton = cx(button({ tone: 'ghost', size: 'icon' }), css({ color: 'ink.muted' }))
@@ -107,7 +135,7 @@ export function Console({
         stagger: 0.012,
         delay,
       })
-      gsap.from('[data-tile], [data-budget]', {
+      gsap.from('[data-tile], [data-budget], [data-lead]', {
         opacity: 0,
         y: 14,
         duration: motion.base,
@@ -134,7 +162,8 @@ export function Console({
       done = true
       then()
     }
-    gsap.to(root.current?.querySelectorAll('[data-tile], [data-budget], [data-title]') ?? [], {
+    const parts = '[data-tile], [data-budget], [data-title], [data-lead]'
+    gsap.to(root.current?.querySelectorAll(parts) ?? [], {
       opacity: 0,
       y: -10,
       duration: motion.fast,
@@ -163,6 +192,9 @@ export function Console({
         })
 
   const anyTile = !step.required && step.kind !== 'range'
+  const oneRow = step.kind !== 'range' && options.length + (anyTile ? 1 : 0) <= WIDE_COLUMNS
+  // Above a single row of tiles the explanation fits in the panel: no need for the help button.
+  const explained = oneRow && !!step.help
   const visual = hasVisual(category, step.key)
   const bins =
     step.kind === 'range' ? histogram(finder.def, finder.items, finder.answers, step.key, 32) : []
@@ -227,7 +259,7 @@ export function Console({
         {step.help && (
           <button
             type="button"
-            className={iconButton}
+            className={cx(iconButton, explained && css({ md: { display: 'none' } }))}
             aria-expanded={helpOpen}
             aria-label={m.help[locale]}
             onClick={() => setHelpOpen((v) => !v)}
@@ -239,7 +271,7 @@ export function Console({
 
       <div data-console-part className={body}>
         {step.kind === 'range' ? (
-          <div data-budget className={css({ h: '100%' })}>
+          <div data-budget className={css({ flex: '1', minH: '0' })}>
             <BudgetControl
               step={step as never}
               draft={draft}
@@ -254,115 +286,133 @@ export function Console({
             />
           </div>
         ) : (
-          <fieldset aria-labelledby="step-title" className={tileGrid}>
-            {options.map((option) => {
-              const selected = pickedIds.has(option.id)
-              const count = counts?.counts[option.id] ?? 0
-              const dead = count === 0 && !selected && !step.weightOnly
-              const blocker = dead ? finder.blockerOf(option.id) : null
-              const tile = optionTile()
-              return (
-                <div
-                  key={option.id}
-                  data-tile
-                  className={css({ position: 'relative', display: 'grid' })}
-                >
-                  <button
-                    type="button"
-                    className={tile.root}
-                    aria-pressed={isMulti ? selected : undefined}
-                    aria-disabled={dead || undefined}
-                    onPointerEnter={() => !dead && finder.setHovered(option.id)}
-                    onPointerLeave={() => finder.setHovered(null)}
-                    onFocus={() => !dead && finder.setHovered(option.id)}
-                    onBlur={() => finder.setHovered(null)}
-                    onClick={() => {
-                      if (dead) return
-                      if (isMulti) finder.setDraft(toggled(step, draft, option.id))
-                      else leave(() => finder.commit(option.id))
-                    }}
+          <>
+            {explained && (
+              <p id="step-lead" data-lead className={lead}>
+                {step.help?.[locale]}
+              </p>
+            )}
+            <fieldset
+              aria-labelledby="step-title"
+              aria-describedby={explained ? 'step-lead' : undefined}
+              className={tileGrid}
+              data-one-row={oneRow || undefined}
+            >
+              {options.map((option) => {
+                const selected = pickedIds.has(option.id)
+                const count = counts?.counts[option.id] ?? 0
+                const dead = count === 0 && !selected && !step.weightOnly
+                const blocker = dead ? finder.blockerOf(option.id) : null
+                const tile = optionTile()
+                return (
+                  <div
+                    key={option.id}
+                    data-tile
+                    className={css({ position: 'relative', display: 'grid' })}
                   >
-                    {visual && (
-                      <span className={tile.visual}>
-                        <OptionVisual category={category} stepKey={step.key} optionId={option.id} />
-                      </span>
-                    )}
-                    <span
-                      className={css({ display: 'grid', gap: '1', pr: { base: '7', md: '0' } })}
-                    >
-                      <span className={tile.label}>{option.label[locale]}</span>
-                      {option.hint && !dead && (
-                        <span className={tile.hint}>{option.hint[locale]}</span>
-                      )}
-                      {dead && (
-                        <span className={tile.blocked}>
-                          {blocker ? `${m.blockedBy[locale]} ${blocker.label}` : m.noMatch[locale]}
-                        </span>
-                      )}
-                    </span>
-                    {!step.weightOnly && !dead && (
-                      <span className={tile.count}>{String(count).padStart(3, '0')}</span>
-                    )}
-                    {selected && (
-                      <span className={tile.tick} aria-hidden>
-                        <svg
-                          aria-hidden
-                          viewBox="0 0 24 24"
-                          width="12"
-                          height="12"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="3.2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                        >
-                          <path d="M5 12l5 5 9-10" />
-                        </svg>
-                      </span>
-                    )}
-                  </button>
-                  {blocker && (
                     <button
                       type="button"
-                      onClick={() => finder.goTo(blocker.key)}
-                      className={css({
-                        position: 'absolute',
-                        right: '2.5',
-                        bottom: '2.5',
-                        fontSize: '2xs',
-                        fontFamily: 'mono',
-                        color: 'signal',
-                        textDecoration: 'underline',
-                        textUnderlineOffset: '3px',
-                        cursor: 'pointer',
-                      })}
+                      className={tile.root}
+                      aria-pressed={isMulti ? selected : undefined}
+                      aria-disabled={dead || undefined}
+                      onPointerEnter={() => !dead && finder.setHovered(option.id)}
+                      onPointerLeave={() => finder.setHovered(null)}
+                      onFocus={() => !dead && finder.setHovered(option.id)}
+                      onBlur={() => finder.setHovered(null)}
+                      onClick={() => {
+                        if (dead) return
+                        if (isMulti) finder.setDraft(toggled(step, draft, option.id))
+                        else leave(() => finder.commit(option.id))
+                      }}
                     >
-                      {m.change[locale]} →
+                      {visual && (
+                        <span className={tile.visual}>
+                          <OptionVisual
+                            category={category}
+                            stepKey={step.key}
+                            optionId={option.id}
+                          />
+                        </span>
+                      )}
+                      <span
+                        className={css({ display: 'grid', gap: '1', pr: { base: '7', md: '0' } })}
+                      >
+                        <span className={tile.label}>{option.label[locale]}</span>
+                        {option.hint && !dead && (
+                          <span className={tile.hint}>{option.hint[locale]}</span>
+                        )}
+                        {dead && (
+                          <span className={tile.blocked}>
+                            {blocker
+                              ? `${m.blockedBy[locale]} ${blocker.label}`
+                              : m.noMatch[locale]}
+                          </span>
+                        )}
+                      </span>
+                      {!step.weightOnly && !dead && (
+                        <span className={tile.count}>{String(count).padStart(3, '0')}</span>
+                      )}
+                      {selected && (
+                        <span className={tile.tick} aria-hidden>
+                          <svg
+                            aria-hidden
+                            viewBox="0 0 24 24"
+                            width="12"
+                            height="12"
+                            fill="none"
+                            stroke="currentColor"
+                            strokeWidth="3.2"
+                            strokeLinecap="round"
+                            strokeLinejoin="round"
+                          >
+                            <path d="M5 12l5 5 9-10" />
+                          </svg>
+                        </span>
+                      )}
                     </button>
-                  )}
-                </div>
-              )
-            })}
-            {anyTile && (
-              <div data-tile className={css({ display: 'grid' })}>
-                <button
-                  type="button"
-                  className={cx(
-                    optionTile().root,
-                    css({ borderStyle: 'dashed', bg: 'transparent' }),
-                  )}
-                  onClick={() => leave(() => finder.commit(ANY))}
-                >
-                  <span className={css({ display: 'grid', gap: '1' })}>
-                    <span className={optionTile().label}>
-                      {step.kind === 'musts' ? m.noMustHaves[locale] : m.noPreference[locale]}
+                    {blocker && (
+                      <button
+                        type="button"
+                        onClick={() => finder.goTo(blocker.key)}
+                        className={css({
+                          position: 'absolute',
+                          right: '2.5',
+                          bottom: '2.5',
+                          fontSize: '2xs',
+                          fontFamily: 'mono',
+                          color: 'signal',
+                          textDecoration: 'underline',
+                          textUnderlineOffset: '3px',
+                          cursor: 'pointer',
+                        })}
+                      >
+                        {m.change[locale]} →
+                      </button>
+                    )}
+                  </div>
+                )
+              })}
+              {anyTile && (
+                <div data-tile className={css({ display: 'grid' })}>
+                  <button
+                    type="button"
+                    className={cx(
+                      optionTile().root,
+                      css({ borderStyle: 'dashed', bg: 'transparent' }),
+                    )}
+                    onClick={() => leave(() => finder.commit(ANY))}
+                  >
+                    <span className={css({ display: 'grid', gap: '1' })}>
+                      <span className={optionTile().label}>
+                        {step.kind === 'musts' ? m.noMustHaves[locale] : m.noPreference[locale]}
+                      </span>
+                      <span className={optionTile().hint}>{m.noPreferenceHint[locale]}</span>
                     </span>
-                    <span className={optionTile().hint}>{m.noPreferenceHint[locale]}</span>
-                  </span>
-                </button>
-              </div>
-            )}
-          </fieldset>
+                  </button>
+                </div>
+              )}
+            </fieldset>
+          </>
         )}
         {helpOpen && step.help && (
           <div
@@ -377,7 +427,7 @@ export function Console({
               p: { base: '3', md: '4' },
               bg: 'surface.raised/95',
               backdropFilter: 'blur(10px)',
-              borderRadius: 'lg',
+              borderRadius: 'card',
               borderWidth: '1px',
               borderColor: 'line',
               overflowY: 'auto',

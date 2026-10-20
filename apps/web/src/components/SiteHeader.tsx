@@ -15,7 +15,7 @@ const link = css({
   h: '8',
   display: 'inline-flex',
   alignItems: 'center',
-  borderRadius: 'full',
+  borderRadius: 'pill',
   transition: 'color 160ms, background 160ms',
   _hover: { color: 'ink' },
   '&[data-status=active]': {

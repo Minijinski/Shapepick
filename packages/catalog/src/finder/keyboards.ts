@@ -327,6 +327,10 @@ export const keyboardFinder: FinderDefinition<K> = {
       kind: 'multi',
       label: text('Couleur', 'Colour'),
       title: text('Une couleur ?', 'Any colour?'),
+      help: text(
+        'Un clavier compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. Coloré : teintes vives ou pastel ; transparent : boîtier translucide.',
+        'A board counts as soon as one of its versions comes in one of the picked colours. Colourful: bright or pastel finishes; transparent: see-through case.',
+      ),
       options: [
         opt('black', 'Noir', 'Black', (k) => k.variants.some((v) => v.colorFamily === 'black')),
         opt('white', 'Blanc', 'White', (k) => k.variants.some((v) => v.colorFamily === 'white')),
