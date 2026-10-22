@@ -3,9 +3,10 @@ import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
 import { parseArgs } from 'node:util'
 import { keyboardInputSchema, switchSchema } from '@choose/catalog'
-import { parse } from 'yaml'
 import { loadData } from '@choose/catalog/node'
+import { parse } from 'yaml'
 import { http } from './http'
+import { pickPhotos } from './photos'
 import { refreshPrices } from './refresh-prices'
 import { type Draft, Skip, type Source } from './source'
 import * as corsair from './sources/corsair'
@@ -22,6 +23,7 @@ import { appendEntries, compact } from './yaml'
 //   sources: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, logitech,
 //   logitechg, corsair, razer, steelseries, hyperx, turtlebeach
 // pnpm ingest prices [--dry-run]                              weekly price refresh, in place
+// pnpm ingest photos [--dry-run]                              each board's best photo as primary
 //
 // An import takes the next N models of a source that are not in data/keyboards yet, with the
 // switches and brands they need, validates everything with the seed's Zod schemas, appends it to
@@ -53,11 +55,15 @@ if (command === 'prices') {
   await refreshPrices(dataDir, Object.values(sources), dry)
   process.exit(0)
 }
+if (command === 'photos') {
+  await pickPhotos(dataDir, dry)
+  process.exit(0)
+}
 
 const source = sources[command]
 if (!source) {
   throw new Error(
-    `Unknown source "${command}" (available: ${Object.keys(sources).join(', ')}, prices)`,
+    `Unknown source "${command}" (available: ${Object.keys(sources).join(', ')}, prices, photos)`,
   )
 }
 const wanted = Number(values.next)

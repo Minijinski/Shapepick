@@ -196,7 +196,7 @@ type Item = {
   dim: Channel
   /** The field copies: shown (1), or handed over to the short list (0). */
   field: Channel
-  /** Position among the kept products, best first. */
+  /** Position among the kept products, best first; null for a lone one. */
   rank: number | null
   /** Its match (0 … 1) while it is kept. */
   score: number | null
@@ -771,7 +771,8 @@ export class SceneRenderer {
     if (!world.items.length) return
     const now = performance.now()
     const fast = animate ? 240 : 0
-    const rankOf = new Map(t?.order.map((slug, i) => [slug, i]) ?? [])
+    // A lone product has no rank to show: its badge would follow it on every copy of the field.
+    const rankOf = new Map(t && t.order.length > 1 ? t.order.map((slug, i) => [slug, i]) : [])
     for (const item of world.items) {
       const hot = !!t?.hot?.has(item.slug)
       aim(item.hot, hot ? 1 : 0, now, fast)

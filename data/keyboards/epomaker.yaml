@@ -199,7 +199,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/Glyph_Badge.png?v=1787561107, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERGlyph_V2_03.png?v=1773374781, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/Glyph_Badge.png?v=1787561107, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERGlyph_V2_04.png?v=1773374781, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-glyph

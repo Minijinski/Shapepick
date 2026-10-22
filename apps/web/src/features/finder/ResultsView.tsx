@@ -1,22 +1,23 @@
 import type { CatalogItem, Locale, Ranked } from "@choose/catalog";
-import { useRef } from "react";
+import { type RefObject, useLayoutEffect, useRef, useState } from "react";
 import { css } from "styled-system/css";
 import { button } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
-import { AnnotatedHero } from "../product/AnnotatedHero";
 import { Match } from "../product/Match";
 import { MatchBreakdown } from "../product/MatchBreakdown";
+import { ProductHero } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, keySpecs } from "../product/specs";
 import { useDockHeight } from "./DockPanel";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
-// out of it. The best match annotated like a spec drawing, with what its match is made of, the
-// next two beside it, every other match in a list below. Leader lines draw themselves in when the
-// view opens. Every product opens its sheet: the best match from its button, the others from
-// anywhere on their card or row.
+// out of it. The best match with its key specs and what its match is made of, the next two beside
+// it, every other match in a list below. Every product opens its sheet: the best match from its
+// button, the others from anywhere on their card or row. The list can hold the whole catalogue:
+// only the rows in view (and a few around them) are rendered, each the same height, so opening
+// the results costs the same for 5 products as for 500.
 
 type Props = {
   ranked: Ranked<CatalogItem>[];
@@ -29,6 +30,64 @@ type Props = {
   onReset: () => void;
   onOpen: (slug: string) => void;
 };
+
+/** Height of a row of the list (px), which places every row without measuring any. */
+const ROW = 56;
+/** Rows rendered beyond those in view, above and below, for a scroll to never reveal a gap. */
+const OVERSCAN = 8;
+
+const useIsoLayoutEffect =
+  typeof window === "undefined" ? () => {} : useLayoutEffect;
+
+/**
+ * Which rows of a list of `count` rows of `ROW` px are in view in `scroller`, with `OVERSCAN` on
+ * either side: followed on scroll and resize, once per frame.
+ */
+function useRowsInView(
+  scroller: RefObject<HTMLElement | null>,
+  list: RefObject<HTMLElement | null>,
+  count: number,
+) {
+  const [range, setRange] = useState({ start: 0, end: Math.min(count, 24) });
+  useIsoLayoutEffect(() => {
+    const box = scroller.current;
+    const el = list.current;
+    if (!box || !el) return;
+    let frame = 0;
+    const measure = () => {
+      frame = 0;
+      // Where the list starts in the scrolled content, from the layout rather than the screen:
+      // the panel opens with a 3D tilt that would skew any on-screen measure.
+      const top =
+        el.offsetParent === box
+          ? el.offsetTop
+          : el.getBoundingClientRect().top -
+            box.getBoundingClientRect().top +
+            box.scrollTop;
+      const first = Math.floor((box.scrollTop - top) / ROW) - OVERSCAN;
+      const last =
+        Math.ceil((box.scrollTop + box.clientHeight - top) / ROW) + OVERSCAN;
+      const start = Math.max(0, Math.min(count, first));
+      const end = Math.max(start, Math.min(count, last));
+      setRange((r) =>
+        r.start === start && r.end === end ? r : { start, end },
+      );
+    };
+    const schedule = () => {
+      if (!frame) frame = requestAnimationFrame(measure);
+    };
+    measure();
+    box.addEventListener("scroll", schedule, { passive: true });
+    const resized = new ResizeObserver(schedule);
+    resized.observe(box);
+    return () => {
+      cancelAnimationFrame(frame);
+      box.removeEventListener("scroll", schedule);
+      resized.disconnect();
+    };
+  }, [count]);
+  return range;
+}
 
 /** A card or row that opens its product's sheet: a button stretched over the whole of it. */
 const opener = css({
@@ -71,10 +130,12 @@ export function ResultsView({
   onOpen,
 }: Props) {
   const root = useRef<HTMLElement>(null);
+  const list = useRef<HTMLOListElement>(null);
   const leaving = useRef(false);
   const [first, ...others] = ranked;
   const runnersUp = others.slice(0, 2);
   const rest = others.slice(2);
+  const rows = useRowsInView(root, list, rest.length);
 
   useGSAP(
     () => {
@@ -83,24 +144,9 @@ export function ResultsView({
       // The panel grows into the results: they fade in as it opens.
       tl.from(root.current, { opacity: 0, duration: motion.base, delay: 0.08 });
       tl.from(
-        "[data-leader-dot]",
-        { scale: 0, duration: motion.base, stagger: 0.08 },
-        "-=0.4",
-      );
-      tl.from(
-        "[data-leader]",
-        {
-          attr: { "stroke-dashoffset": 1 },
-          duration: motion.base,
-          ease: "none",
-          stagger: 0.12,
-        },
-        "<0.1",
-      );
-      tl.from(
-        "[data-callout]",
-        { opacity: 0, y: 6, duration: motion.base, stagger: 0.08 },
-        "<0.2",
+        "[data-spec]",
+        { opacity: 0, y: 6, duration: motion.base, stagger: 0.06 },
+        "-=0.3",
       );
       tl.from(
         "[data-result]",
@@ -138,6 +184,8 @@ export function ResultsView({
       ref={root}
       aria-labelledby="results-title"
       className={css({
+        // The list's rows are placed from it (offsetTop).
+        position: "relative",
         flexShrink: "0",
         // Room above for the counter, below for the journey bar.
         maxH: "calc(100dvh - 290px)",
@@ -202,7 +250,10 @@ export function ResultsView({
             gap: "8",
           })}
         >
-          <article className={css({ display: "grid", gap: "4" })}>
+          {/* The best match can be selected and copied (its name, a spec), like a sheet. */}
+          <article
+            className={css({ display: "grid", gap: "4", userSelect: "text" })}
+          >
             <div
               className={css({
                 display: "flex",
@@ -265,7 +316,7 @@ export function ResultsView({
                 </button>
               </div>
             </div>
-            <AnnotatedHero item={first.item} locale={locale} />
+            <ProductHero item={first.item} locale={locale} />
             <div className={scored ? heroNotesScored : heroNotes}>
               {scored && (
                 <div>
@@ -470,102 +521,119 @@ export function ResultsView({
               >
                 {m.allResults[locale]} · {rest.length}
               </h4>
-              <ol className={css({ display: "grid" })}>
-                {rest.map((entry, i) => (
-                  <li
-                    key={entry.item.slug}
-                    data-result
-                    className={css({
-                      position: "relative",
-                      display: "grid",
-                      gridTemplateColumns: {
-                        base: "28px 56px 1fr auto",
-                        md: "28px 72px 1.2fr 2fr auto",
-                      },
-                      alignItems: "center",
-                      gap: "3",
-                      py: "3",
-                      px: "2",
-                      mx: "-2",
-                      borderTopWidth: "1px",
-                      borderColor: "line",
-                      transition: "background 160ms",
-                      _hover: { bg: "surface" },
-                    })}
-                  >
-                    <span
+              <ol
+                ref={list}
+                className={css({ position: "relative" })}
+                style={{ height: rest.length * ROW }}
+              >
+                {rest.slice(rows.start, rows.end).map((entry, offset) => {
+                  const i = rows.start + offset;
+                  return (
+                    <li
+                      key={entry.item.slug}
+                      data-result
+                      aria-posinset={i + 1}
+                      aria-setsize={rest.length}
                       className={css({
-                        fontFamily: "mono",
-                        fontSize: "xs",
-                        color: "ink.faint",
+                        position: "absolute",
+                        insetInline: "-2",
+                        display: "grid",
+                        gridTemplateColumns: {
+                          base: "28px 56px 1fr auto",
+                          md: "28px 72px 1.2fr 2fr auto",
+                        },
+                        alignItems: "center",
+                        gap: "3",
+                        px: "2",
+                        borderTopWidth: "1px",
+                        borderColor: "line",
+                        transition: "background 160ms",
+                        _hover: { bg: "surface" },
                       })}
-                    >
-                      {String(i + 4).padStart(2, "0")}
-                    </span>
-                    <ProductPicture
-                      item={entry.item}
-                      className={css({ h: "8", w: "auto", maxW: "72px" })}
-                    />
-                    <span
-                      className={css({ fontWeight: "600", fontSize: "sm" })}
+                      style={{ top: i * ROW, height: ROW }}
                     >
                       <span
                         className={css({
-                          color: "ink.muted",
-                          fontWeight: "500",
+                          fontFamily: "mono",
+                          fontSize: "xs",
+                          color: "ink.faint",
                         })}
                       >
-                        {entry.item.brand.name}
-                      </span>{" "}
-                      {entry.item.name}
-                    </span>
-                    <span
-                      className={css({
-                        display: { base: "none", md: "block" },
-                        fontSize: "xs",
-                        color: "ink.muted",
-                        truncate: true,
-                      })}
-                    >
-                      {keySpecs(entry.item, locale)
-                        .map((s) => s.value)
-                        .join(" · ")}
-                    </span>
-                    <span
-                      className={css({
-                        display: "grid",
-                        justifyItems: "end",
-                        gap: "0.5",
-                      })}
-                    >
-                      <span
-                        className={css({ fontFamily: "mono", fontSize: "sm" })}
-                      >
-                        {formatPrice(entry.item.priceEur, locale)}
+                        {String(i + 4).padStart(2, "0")}
                       </span>
-                      {scored && (
+                      <ProductPicture
+                        item={entry.item}
+                        className={css({ h: "8", w: "auto", maxW: "72px" })}
+                      />
+                      <span
+                        className={css({
+                          minW: "0",
+                          fontWeight: "600",
+                          fontSize: "sm",
+                          truncate: true,
+                        })}
+                      >
+                        <span
+                          className={css({
+                            color: "ink.muted",
+                            fontWeight: "500",
+                          })}
+                        >
+                          {entry.item.brand.name}
+                        </span>{" "}
+                        {entry.item.name}
+                      </span>
+                      <span
+                        className={css({
+                          display: { base: "none", md: "block" },
+                          fontSize: "xs",
+                          color: "ink.muted",
+                          truncate: true,
+                        })}
+                      >
+                        {keySpecs(entry.item, locale)
+                          .map((s) => s.value)
+                          .join(" · ")}
+                      </span>
+                      <span
+                        className={css({
+                          display: "grid",
+                          justifyItems: "end",
+                          gap: "0.5",
+                        })}
+                      >
                         <span
                           className={css({
                             fontFamily: "mono",
-                            fontSize: "2xs",
-                            color: "ink.faint",
+                            fontSize: "sm",
                           })}
                         >
-                          {Math.round(entry.score * 100)}%
+                          {formatPrice(entry.item.priceEur, locale)}
                         </span>
-                      )}
-                    </span>
-                    <button
-                      type="button"
-                      className={opener}
-                      aria-label={m.sheetOf(
-                        `${entry.item.brand.name} ${entry.item.name}`,
-                        locale,
-                      )}
-                      onClick={() => onOpen(entry.item.slug)}
-                    />
-                  </li>
-                ))}
+                        {scored && (
+                          <span
+                            className={css({
+                              fontFamily: "mono",
+                              fontSize: "2xs",
+                              color: "ink.faint",
+                            })}
+                          >
+                            {Math.round(entry.score * 100)}%
+                          </span>
+                        )}
+                      </span>
+                      <button
+                        type="button"
+                        className={opener}
+                        aria-label={m.sheetOf(
+                          `${entry.item.brand.name} ${entry.item.name}`,
+                          locale,
+                        )}
+                        onClick={() => onOpen(entry.item.slug)}
+                      />
+                    </li>
+                  );
+                })}
               </ol>
             </div>
           )}

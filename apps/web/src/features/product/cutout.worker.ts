@@ -7,7 +7,15 @@ import { isolate } from '@choose/catalog/media'
 export type CutoutAsk = { id: number; url: string }
 
 export type CutoutAnswer =
-  | { id: number; status: 'ok'; image: ImageBitmap; source: number; fill: number }
+  | {
+      id: number
+      status: 'ok'
+      image: ImageBitmap
+      source: number
+      fill: number
+      parts: number
+      detail: number
+    }
   /** Read, but nothing to cut out (shot in a scene, on a colour). */
   | { id: number; status: 'none' }
   /** The server answered with an error status. */
@@ -44,6 +52,8 @@ async function cut({ id, url }: CutoutAsk): Promise<CutoutAnswer> {
     image: out.transferToImageBitmap(),
     source: w,
     fill: box.area / (box.w * box.h),
+    parts: box.parts,
+    detail: box.detail,
   }
 }
 

@@ -27,6 +27,11 @@ type StepCommon<I> = {
   weightOnly?: boolean
   /** No "no preference" tile: everyone can make this decision. */
   required?: boolean
+  /**
+   * Never asked: answered from its own control (the brand filter). It narrows the catalogue like
+   * any answer, but takes no place in the questionnaire, its progress or the match.
+   */
+  aside?: boolean
   // Phantom field so steps stay tied to their item type.
   readonly _item?: I
 }
@@ -52,6 +57,13 @@ export type Criterion<I> = {
   label: Text
   /** 0 (worst) … 1 (best) for this item. */
   score: (item: I) => number
+  /**
+   * Whether the item's sheet gives what the score reads. One that does not counts as the median
+   * of its peers that do: a missing figure is neither a flaw nor a strength.
+   */
+  known?: (item: I) => boolean
+  /** Which items an item with a missing figure is compared with (default: all of them). */
+  peers?: (item: I) => string
 }
 
 export type FinderDefinition<I> = {
@@ -65,6 +77,8 @@ export type FinderDefinition<I> = {
   price: (item: I) => number
   /** 0 … 1 prior (editorial score, popularity) that settles near-ties between equal fits. */
   prior: (item: I) => number
+  /** Who makes the item: among items with the same match, the ranking takes makers in turn. */
+  maker?: (item: I) => string
 }
 
 export type Ranked<I> = {

@@ -34,8 +34,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4011-I96JC-Barocco-White.jpg?v=1713295662, kind: cutout_top, width: 1000, height: 1000, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4013-KC4NI-Mistel-Barocco-White-RGB.jpg?v=1770301689, kind: cutout_top, width: 2400, height: 1126 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4013-KC4NI-Mistel-Barocco-White-RGB.jpg?v=1770301689, kind: cutout_top, width: 2400, height: 1126, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4011-I96JC-Barocco-White.jpg?v=1713295662, kind: cutout_top, width: 1000, height: 1000 }
   sources:
     - https://mechanicalkeyboards.com/products/mistel-barocco-white
     - https://mechanicalkeyboards.com/products/mistel-barocco-white-rgb
@@ -73,8 +73,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4012-KAXDK-Mistel-Barocco-Black-60-Split-RGB-Keyboard.jpg?v=1757084948, kind: cutout_top, width: 1497, height: 775, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4010-KZQPC-Barocco-Black.jpg?v=1751570647, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4010-KZQPC-Barocco-Black.jpg?v=1751570647, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4012-KAXDK-Mistel-Barocco-Black-60-Split-RGB-Keyboard.jpg?v=1757084948, kind: cutout_top, width: 1497, height: 775 }
   sources:
     - https://mechanicalkeyboards.com/products/mistel-barocco-black-60-split-rgb-keyboard
     - https://mechanicalkeyboards.com/products/mistel-barocco-black-60-split-keyboard

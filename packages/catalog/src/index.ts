@@ -1,6 +1,7 @@
 export * from './domain/enums'
 export * from './domain/items'
 export * from './domain/schemas'
+export * from './finder/brands'
 export * from './finder/engine'
 export { keyboardFinder } from './finder/keyboards'
 export { monitorFinder } from './finder/monitors'

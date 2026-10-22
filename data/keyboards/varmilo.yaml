@@ -57,8 +57,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14474_63ae0518309d0_Minilo-VXB67-Wireless-Mendozae.jpg?v=1731595451, kind: cutout_top, width: 2400, height: 1038, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14509_633f18a263332_Minilo-VXB67-Wireless-Graptopetalum-Varmilo-EC-Daisy-V2.jpg?v=1731595451, kind: cutout_top, width: 1031, height: 408 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14509_633f18a263332_Minilo-VXB67-Wireless-Graptopetalum-Varmilo-EC-Daisy-V2.jpg?v=1731595451, kind: cutout_top, width: 1031, height: 408, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14474_63ae0518309d0_Minilo-VXB67-Wireless-Mendozae.jpg?v=1731595451, kind: cutout_top, width: 2400, height: 1038 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14710_636ac874e300e_Minilo-VXT67-Graptopetalum.jpg?v=1707271627, kind: cutout_top, width: 2400, height: 1038 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25216-I784W-Varmilo-Minilo-VXT67-Latte-65-Wireless-Keyboard.png?v=1764365967, kind: cutout_top, width: 1511, height: 629 }
   sources:
@@ -84,9 +84,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5706-97SFZ-Sword-2-87-Pacific-Blue.jpg?v=1707269708, kind: cutout_top, width: 1477, height: 779, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8529_63ae02b57d57a_Sword-2-87-Sakura.png?v=1707270726, kind: cutout_top, width: 2400, height: 1002, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5706-97SFZ-Sword-2-87-Pacific-Blue.jpg?v=1707269708, kind: cutout_top, width: 1477, height: 779 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5708-9MWEB-Sword-2-87-Flying-Tigers.jpg?v=1707269710, kind: cutout_top, width: 2400, height: 1157 }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8529_63ae02b57d57a_Sword-2-87-Sakura.png?v=1707270726, kind: cutout_top, width: 2400, height: 1002 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5705-Z3ND3-Sword-2-87-Twilight-Green.jpg?v=1707269708, kind: cutout_top, width: 2094, height: 862 }
   sources:
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-pacific-blue
@@ -138,8 +138,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8307_63ae0238b8a91_VEM108-Love-Birds-Yuan-You.jpg?v=1707270607, kind: cutout_top, width: 2400, height: 801, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8458_62a3d610320e8_VEM108-Love-Birds-Yuan-You-Varmilo-EC-Sakura-V2.jpg?v=1707270606, kind: cutout_top, width: 717, height: 298 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8458_62a3d610320e8_VEM108-Love-Birds-Yuan-You-Varmilo-EC-Sakura-V2.jpg?v=1707270606, kind: cutout_top, width: 717, height: 298, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8307_63ae0238b8a91_VEM108-Love-Birds-Yuan-You.jpg?v=1707270607, kind: cutout_top, width: 2400, height: 801 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15399_6387d682c6ce1_VEM108-Warrior-Soar.jpg?v=1707272175, kind: cutout_top, width: 2400, height: 872 }
   sources:
     - https://mechanicalkeyboards.com/products/varmilo-vem108-love-birds-yuan-you
@@ -199,11 +199,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5709-HKJY4-Sword-2-68-Twilight-Green.jpg?v=1707269711, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8528_63ae02b47486f_Sword-2-68-Sakura.png?v=1707270725, kind: cutout_top, width: 2400, height: 850, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5709-HKJY4-Sword-2-68-Twilight-Green.jpg?v=1707269711, kind: cutout_top, width: 2400, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5710-UGLK3-Sword-2-68-Pacific-Blue.jpg?v=1707269764, kind: cutout_top, width: 1577, height: 859 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5711-N8K8J-Sword-2-68-Moonlight.jpg?v=1707269765, kind: cutout_top, width: 2000, height: 1333 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5712-YQQ9U-Sword-2-68-Flying-Tigers.jpg?v=1707269768, kind: cutout_top, width: 2400, height: 1082 }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8528_63ae02b47486f_Sword-2-68-Sakura.png?v=1707270725, kind: cutout_top, width: 2400, height: 850 }
   sources:
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-twilight-green
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-pacific-blue

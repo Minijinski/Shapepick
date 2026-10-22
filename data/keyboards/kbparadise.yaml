@@ -57,8 +57,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3360-V6Q37-V60-Type-R-Polestar-Deep-Ocean.jpg?v=1707268632, kind: cutout_top, width: 2400, height: 1599, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1902-X2IPS-V60-Type-R-Polestar-Vintage.jpg?v=1751573526, kind: cutout_top, width: 2032, height: 808 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1902-X2IPS-V60-Type-R-Polestar-Vintage.jpg?v=1751573526, kind: cutout_top, width: 2032, height: 808, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3360-V6Q37-V60-Type-R-Polestar-Deep-Ocean.jpg?v=1707268632, kind: cutout_top, width: 2400, height: 1599 }
   sources:
     - https://mechanicalkeyboards.com/products/kbparadise-v60-type-r-polestar-deep-ocean
     - https://mechanicalkeyboards.com/products/kbparadise-v60-type-r-polestar-vintage

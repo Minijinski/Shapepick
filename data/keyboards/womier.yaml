@@ -225,7 +225,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-8161256.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-3201979.jpg?v=1773137717, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-8161256.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-9619268.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-8252642.jpg?v=1773137717, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-1568572.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000 }
@@ -428,10 +429,10 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-era75-75-via-support-wireless-aluminum-mechanical-keyboard-1242196.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-8928948.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-era75-75-via-support-wireless-aluminum-mechanical-keyboard-1242196.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-era75-75-via-support-wireless-aluminum-mechanical-keyboard-4379844.jpg?v=1773585351, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-2580463.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000 }
-    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-8928948.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-era75
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: via, batteryMah: 8000 }

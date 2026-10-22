@@ -12,15 +12,15 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/pages/galleon/Gallery/ww/GALLEON_ELGATO_FR-M.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/pages/galleon/Gallery/ww/GALLEON_ELGATO_FR-M.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/v1790877407/Content%20Syndication/Universal%20HTML%20Image%20Assets/Keyboards/Galleon%20100%20SD/white/regional/Galleon_TOP_Palmrest_FR.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/pages/galleon/Gallery/ww/GALLEON_ELGATO_FR-M.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/pages/galleon/Gallery/ww/GALLEON_ELGATO_FR-M.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/v1790877406/Content%20Syndication/Universal%20HTML%20Image%20Assets/Keyboards/Galleon%20100%20SD/white/regional/Galleon_TOP_Palmrest_UK.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/v1790877406/Content%20Syndication/Universal%20HTML%20Image%20Assets/Keyboards/Galleon%20100%20SD/white/regional/Galleon_TOP_Palmrest_UK.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-912a31i-fr/galleon-100-sd-stream-deck-integrated-mechanical-keyboard-fr-ch-912a31i-fr
     - https://www.corsair.com/fr/fr/p/keyboards/ch-912a41i-uk/galleon-100-sd-stream-deck-integrated-mechanical-keyboard-uk-white-ch-912a41i-uk
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1392 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1392 }
   variants:
     - { sku: CH-912A41I-FR, colorName: White, colorFamily: white, layout: iso_fr }
     - { sku: CH-912A31I-FR, colorName: Black, colorFamily: black, layout: iso_fr }
@@ -35,13 +35,13 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-9109C1E/K70_CORE_CHERRY_BLOSSOM_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-9109E1E-NA/K70_CORE_SE_DKCHERRY_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-9109C1E/K70_CORE_SE_CHERRY_BLOSSOM_FR_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/K70_CORE_DARK_CHERRY_FR.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-9109C1E/K70_CORE_CHERRY_BLOSSOM_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-9109E1E-NA/K70_CORE_SE_DKCHERRY_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-9109C1E/K70_CORE_SE_CHERRY_BLOSSOM_FR_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/K70_CORE_DARK_CHERRY_FR.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9109c1e-na/k70-core-se-rgb-mechanical-gaming-keyboard-cherry-blossom-ch-9109c1e-na
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
   variants:
     - { sku: CH-9109E1E-NA, colorName: Dark Cherry Blossom, colorFamily: black, layout: ansi_us }
     - { sku: CH-9109C1E-FR, colorName: Cherry Blossom, colorFamily: color, layout: iso_fr }
@@ -56,13 +56,13 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/white/ww/FR_Top_White.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/FR_Top_Black.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/white/ww/FR_Top_White.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/FR_Top_Black.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-979101j-uk/clipper-pro-mini-60-hall-effect-gaming-keyboard-uk-ch-979101j-uk
-  specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 414 }
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 414 }
   variants:
     - { sku: CH-979101J-UK, colorName: Black, colorFamily: black, layout: iso_uk }
     - { sku: CH-979111J-FR, colorName: White, colorFamily: white, layout: iso_fr }
@@ -77,13 +77,13 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911911G-NA/K70_PRO_TKL_BLACK_RENDER_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911921G-NA/K70_PRO_TKL_WHITE_RENDER_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911961G-NA/K70_PRO_TKL_PBT_WHITE_RENDER_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911951G-NA/K70_PRO_TKL_PBT_BLACK_RENDER_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911911G-NA/K70_PRO_TKL_BLACK_RENDER_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911921G-NA/K70_PRO_TKL_WHITE_RENDER_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911961G-NA/K70_PRO_TKL_PBT_WHITE_RENDER_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911951G-NA/K70_PRO_TKL_PBT_BLACK_RENDER_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-911911g-na/k70-pro-tkl-hall-effect-programmable-keyboard-ch-911911g-na
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 972 }
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 972 }
   variants:
     - { sku: CH-911921G-NA, colorName: White, colorFamily: white, layout: ansi_us }
     - { sku: CH-911911G-NA, colorName: Black, colorFamily: black, layout: ansi_us }
@@ -96,10 +96,10 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-NA/K55_CORE_BLK_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k55-core/gallery/CH-9226D65-FR/K55_CORE_GRY_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-FR/K55_CORE_BLK_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-NA/K55_CORE_BLK_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-NA/K55_CORE_BLK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226D65-FR/K55_CORE_GRY_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-FR/K55_CORE_BLK_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-NA/K55_CORE_BLK_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9226c65-na/k55-core-rgb-gaming-keyboard-black-ch-9226c65-na
   specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 752 }
@@ -115,9 +115,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-FR_ON_ozeyow.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-FR_ON_ozeyow.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-UK_ON.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-FR_ON_ozeyow.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-FR_ON_ozeyow.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100-plus/gallery/ww/skiff_100_plus_WW-UK_ON.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9226i65-fr/skiff-100-plus-gaming-keyboard-fr-ch-9226i65-fr
   specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, macSupport: true, weightG: 715 }
@@ -133,11 +133,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91f901e-fr/vanguard-96-wireless-mechanical-gaming-keyboard-fr-ch-91f901e-fr
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, pollingHzWired: 8, pollingHzWireless: 8, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1170 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1170 }
   variants:
     - { sku: CH-91F901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
@@ -149,13 +149,13 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-910991E-FR_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-910991E-FR_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-910981E-FR_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/k70-core/Gallery/CH-910971E-FR_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910981E-FR_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910991E-FR_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910991E-FR_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910971E-FR_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-910991e-fr/k70-core-rgb-mechanical-gaming-keyboard-steel-grey-fr-ch-910991e-fr​
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
   variants:
     - { sku: CH-910991E-FR, colorName: Steel Gray, colorFamily: black, layout: iso_fr }
     - { sku: CH-910971E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
@@ -167,8 +167,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9216065-fr/k55-core-tkl-rgb-gaming-keyboard-fr-ch-9216065-fr
   specs: { formFactor: tkl, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 617 }
@@ -183,12 +183,12 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96/black/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96/black/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91e921e-fr/vanguard-96-mechanical-gaming-keyboard-corsair-mlx-plasma-ch-91e921e-fr
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 994 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 994 }
   variants:
     - { sku: CH-91E921E-FR, colorName: Dual Tone, colorFamily: color, layout: iso_fr }
     - { sku: CH-91E901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
@@ -201,12 +201,12 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/white/ww/vanguard-air-Top_FR_iCue.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/white/ww/vanguard-air-Top_FR_iCue.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91ha01b-fr/vanguard-air-99-wireless-optical-mechanical-gaming-keyboard-black-fr-ch-91ha01b-fr
-  specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8, pollingHzWireless: 8, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 928 }
+  specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 928 }
   variants:
     - { sku: CH-91HA01B-FR, colorName: Black, colorFamily: black, layout: iso_fr }
     - { sku: CH-91H901B-FR, colorName: White, colorFamily: white, layout: iso_fr }
@@ -218,9 +218,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-UK_ON_v3.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-UK_ON_v3.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9226h65-fr/skiff-100-gaming-keyboard-fr-ch-9226h65-fr
   specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, macSupport: true, weightG: 710 }
@@ -236,11 +236,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-914901e-fr/k70-core-tkl-wireless-rgb-mechanical-gaming-keyboard-fr-ch-914901e-fr
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1, pollingHzWireless: 1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 804 }
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 804 }
   variants:
     - { sku: CH-914901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
@@ -252,11 +252,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91e911g-fr/vanguard-pro-96-hall-effect-gaming-keyboard-ch-91e911g-fr
-  specs: { formFactor: f96, technology: magnetic, hotSwap: none, pollingHzWired: 8, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1097 }
+  specs: { formFactor: f96, technology: magnetic, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1097 }
   variants:
     - { sku: CH-91E911G-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
@@ -268,11 +268,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-911911e-fr/k70-core-tkl-rgb-mechanical-gaming-keyboard-fr-ch-911911e-fr
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 743 }
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 743 }
   variants:
     - { sku: CH-911911E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
@@ -284,12 +284,12 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194010-FR/FR_K65_RGB_MINI_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194010-FR/FR_K65_RGB_MINI_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9194110-fr/k65-rgb-mini-60-mechanical-gaming-keyboard-cherry-mx-red-fr-white-ch-9194110-fr
-  specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 8, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 570 }
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 570 }
   variants:
     - { sku: CH-9194010-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
@@ -301,12 +301,12 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top, primary: true }
-    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
-    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-913a01u-fr/k100-air-wireless-rgb-ultra-thin-mechanical-gaming-keyboard-cherry-mx-ultra-low-profile-tactile-ch-913a01u-fr
-  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8, pollingHzWireless: 8, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 773 }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 773 }
   variants:
     - { sku: CH-913A01U-FR, colorName: Black, colorFamily: black, layout: iso_fr }
     - { sku: CH-913A01U-NA, colorName: Black, colorFamily: black, layout: ansi_us }
@@ -318,11 +318,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top, primary: true }
-    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top }
-    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_96/products/Gaming-Keyboards/CH-9226765-NA/Gallery/K55_RGB_PRO_01.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9226765-NA/Gallery/K55_RGB_PRO_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9226765-fr/k55-rgb-pro-gaming-keyboard-fr-ch-9226765-fr
-  specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 800 }
+  specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 800 }
   variants:
     - { sku: CH-9226765-FR, colorName: Black, colorFamily: black, layout: iso_fr }

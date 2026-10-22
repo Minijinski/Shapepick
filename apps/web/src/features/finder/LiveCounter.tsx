@@ -1,10 +1,11 @@
-import { useRef, useState } from 'react'
+import { type ReactNode, useRef, useState } from 'react'
 import { css } from 'styled-system/css'
 import { gsap, prefersReducedMotion, useGSAP } from '../motion/gsap'
 import { motion } from '../motion/tokens'
 
 // The signature readout: how many products are left, ticking down with every answer. React
-// renders the first value (server HTML), GSAP rolls the digits after that.
+// renders the first value (server HTML), GSAP rolls the digits after that. What it says the
+// products are can be followed by a control of what is counted (the brands).
 
 const digits = (n: number) => {
   const s = String(Math.max(0, Math.round(n))).padStart(4, '0')
@@ -18,9 +19,19 @@ type Props = {
   preview: number | null
   previewLabel: string
   ofLabel: string
+  /** Beside the label: what narrows the count without being a question (the brand filter). */
+  children?: ReactNode
 }
 
-export function LiveCounter({ value, total, label, preview, previewLabel, ofLabel }: Props) {
+export function LiveCounter({
+  value,
+  total,
+  label,
+  preview,
+  previewLabel,
+  ofLabel,
+  children,
+}: Props) {
   const number = useRef<HTMLSpanElement>(null)
   const [initial] = useState(value)
   const shown = useRef({ v: value })
@@ -71,14 +82,17 @@ export function LiveCounter({ value, total, label, preview, previewLabel, ofLabe
       <div
         className={css({
           display: 'flex',
+          flexWrap: 'wrap',
           alignItems: 'center',
-          gap: '3',
+          columnGap: '3',
+          rowGap: '1.5',
           fontSize: 'sm',
           color: 'ink.muted',
           minH: '5',
         })}
       >
         <span>{label}</span>
+        {children}
         {preview != null && preview !== value && (
           <span className={css({ fontFamily: 'mono', fontSize: 'xs', color: 'signal' })}>
             → {preview} {previewLabel}

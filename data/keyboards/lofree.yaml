@@ -38,8 +38,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27569-2MNDF-Lofree-Flow-2-84-Mac-Keyboard.jpg?v=1781632628, kind: cutout_top, width: 1092, height: 1003, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27572-MZ8B5-Lofree-Flow-2-84-Mac-Keyboard-Nebula.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27572-MZ8B5-Lofree-Flow-2-84-Mac-Keyboard-Nebula.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27569-2MNDF-Lofree-Flow-2-84-Mac-Keyboard.jpg?v=1781632628, kind: cutout_top, width: 1092, height: 1003 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27570-7LXWB-Lofree-Flow-2-84-Mac-Keyboard-Volt.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27571-VJL7M-Lofree-Flow-2-84-Mac-Keyboard-Petal.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27565-BNPZI-Lofree-Flow-2-84-Keyboard.jpg?v=1781632398, kind: cutout_top, width: 2400, height: 1493 }
@@ -84,8 +84,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27574-WE5LQ-Lofree-Flow-2-100-Keyboard.jpg?v=1781632501, kind: cutout_top, width: 2200, height: 1369, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27575-A82BT-Lofree-Flow-2-100-Keyboard-Black-Kailh-Pulse.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 912 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27575-A82BT-Lofree-Flow-2-100-Keyboard-Black-Kailh-Pulse.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 912, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27574-WE5LQ-Lofree-Flow-2-100-Keyboard.jpg?v=1781632501, kind: cutout_top, width: 2200, height: 1369 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27576-W2QGK-Lofree-Flow-2-100-Keyboard-White-Kailh-Surfer.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 820 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27576-PZMAI-Lofree-Flow-2-100-Keyboard-White-Kailh-Surfer.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 892 }
   sources:
@@ -122,8 +122,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27583-D7AKR-Lofree-1970s-Keyboard.jpg?v=1781713628, kind: cutout_top, width: 2300, height: 1035, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27584-KL18W-Lofree-1970s-Keyboard-Milkshake.jpg?v=1781713628, kind: cutout_top, width: 2400, height: 1205 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27584-KL18W-Lofree-1970s-Keyboard-Milkshake.jpg?v=1781713628, kind: cutout_top, width: 2400, height: 1205, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27583-D7AKR-Lofree-1970s-Keyboard.jpg?v=1781713628, kind: cutout_top, width: 2300, height: 1035 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27585-N5AIU-Lofree-1970s-Keyboard-Olive-Green.jpg?v=1781713628, kind: cutout_top, width: 2400, height: 1247 }
   sources:
     - https://mechanicalkeyboards.com/products/lofree-1970s-keyboard
@@ -144,8 +144,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27558-V2R5S-Lofree-Flow-2-68-Keyboard.jpg?v=1781101321, kind: cutout_top, width: 2400, height: 1493, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27561-WQ9L1-Lofree-Flow-2-68-Keyboard-Grey-Kailh-Pulse.jpg?v=1781101321, kind: cutout_top, width: 1728, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27561-WQ9L1-Lofree-Flow-2-68-Keyboard-Grey-Kailh-Pulse.jpg?v=1781101321, kind: cutout_top, width: 1728, height: 900, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27558-V2R5S-Lofree-Flow-2-68-Keyboard.jpg?v=1781101321, kind: cutout_top, width: 2400, height: 1493 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27563-24NMS-Lofree-Flow-2-68-Keyboard-Silver-Kailh-Surfer.jpg?v=1781101321, kind: cutout_top, width: 1776, height: 784 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27564-22PFG-Lofree-Flow-2-68-Keyboard-Silver-Kailh-Void.jpg?v=1781101321, kind: cutout_top, width: 2400, height: 1078 }
   sources:

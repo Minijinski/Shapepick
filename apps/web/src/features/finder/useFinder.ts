@@ -2,6 +2,7 @@ import {
   ANY,
   type Answers,
   askedSteps,
+  BRAND_STEP,
   type CatalogItem,
   type Category,
   type ChoiceStep,
@@ -23,6 +24,7 @@ import {
   sanitizeAnswers,
   type Text,
   withAnswer,
+  withBrands,
   withDraft,
   withOrder,
 } from "@choose/catalog";
@@ -34,7 +36,8 @@ import type { JourneyStop } from "./JourneyBar";
 // Everything a finder screen shows is derived here from three inputs: the catalogue, the answers
 // in the URL, and what the visitor is doing right now (a draft pick, a hovered tile). Committed
 // answers live in the URL, with the order the visitor chose for the questions (`order`); the
-// draft lives in state until "Continue".
+// draft lives in state until "Continue". The brands are an answer of their own (`brand=`), set
+// from the brand control rather than asked: they apply as soon as they are picked.
 
 export const DONE = "done";
 
@@ -72,15 +75,15 @@ export function useFinder(
   const sequence = search.order;
   const def = useMemo(() => {
     const base = finderOf(category);
-    return withOrder(base, readOrder(base, sequence));
-  }, [category, sequence]);
+    return withBrands(withOrder(base, readOrder(base, sequence)), items);
+  }, [category, sequence, items]);
   const navigate = useNavigate();
   const answers = useMemo(() => sanitizeAnswers(def, search), [def, search]);
   const at = search.at;
 
   const currentKey = useMemo(() => {
     if (at === DONE) return null;
-    const explicit = def.steps.find((s) => s.key === at);
+    const explicit = def.steps.find((s) => s.key === at && !s.aside);
     if (explicit && (explicit.applies?.(answers) ?? true)) return explicit.key;
     return firstPending(def, items, answers);
   }, [def, items, answers, at]);
@@ -100,11 +103,14 @@ export function useFinder(
     else letGo.current = setTimeout(() => setHoveredNow(null), HOVER_GRACE_MS);
   }, []);
   useEffect(() => () => clearTimeout(letGo.current), []);
+  // A new question, or a new answer to this one, starts from what is committed. Other answers
+  // changing meanwhile (the brands) leave the picks on screen alone.
+  const committed = currentKey ? answers[currentKey] : undefined;
   useEffect(() => {
-    setDraft(currentKey ? answers[currentKey] : undefined);
+    setDraft(committed);
     clearTimeout(letGo.current);
     setHoveredNow(null);
-  }, [currentKey, answers]);
+  }, [currentKey, committed]);
 
   const effective = useMemo(
     () =>
@@ -170,12 +176,39 @@ export function useFinder(
     },
     [answers, currentKey, go],
   );
+  // ---- Brands -------------------------------------------------------------------------------
+  /** The brand control's panel, opened from its chip or from a tile the brands leave empty. */
+  const [brandsOpen, setBrandsOpen] = useState(false);
+  /** A brand under the pointer in that panel: its products ring on the canvas. */
+  const [hoveredBrand, setHoveredBrand] = useState<string | null>(null);
+  /**
+   * Brands to keep (null: every brand). Applied at once, in place in the history, without
+   * touching the question on screen or its picks.
+   */
+  const setBrands = useCallback(
+    (ids: string[] | null) =>
+      navigate({
+        to: ".",
+        search: (prev: FinderSearch) => {
+          const next: FinderSearch = { ...prev };
+          if (ids) next[BRAND_STEP] = ids.join(",");
+          else delete next[BRAND_STEP];
+          return next;
+        },
+        replace: true,
+        resetScroll: false,
+      }),
+    [navigate],
+  );
+
   /**
    * An answered question reopened, from a chip of the rail or a tile's "Change". Like a stop of
    * the journey bar, it commits the picks on screen first, as "Continue" would; Back drops them.
+   * The brands are no question: their panel opens instead.
    */
   const goTo = useCallback(
     (key: string) => {
+      if (key === BRAND_STEP) return setBrandsOpen(true);
       if (key !== currentKey) go(withDraft(answers, currentKey, draft), key);
     },
     [answers, currentKey, draft, go],
@@ -190,7 +223,7 @@ export function useFinder(
       const next = withDraft(answers, currentKey, draft);
       if (next[key] != null) return go(next, key);
       const answered = def.steps
-        .filter((s) => s.key !== key && next[s.key] != null)
+        .filter((s) => s.key !== key && !s.aside && next[s.key] != null)
         .map((s) => s.key);
       go(next, undefined, undefined, [...answered, key].join(","));
     },
@@ -299,8 +332,32 @@ export function useFinder(
   const order = useMemo(() => ranked.map((r) => def.id(r.item)), [def, ranked]);
   const scores = useMemo(() => ranked.map((r) => r.score), [ranked]);
 
+  /** The brands offered, A to Z, with what each keeps given the other answers, and those picked. */
+  const brands = useMemo(() => {
+    const brandStep = def.steps.find((s) => s.key === BRAND_STEP);
+    if (!brandStep || brandStep.kind === "range") return null;
+    const { counts: kept } = optionCounts(def, items, effective, BRAND_STEP);
+    const picked = readChoice(brandStep, answers[BRAND_STEP]);
+    return {
+      options: brandStep.options.map((o) => ({
+        id: o.id,
+        name: o.label[locale],
+        count: kept[o.id] ?? 0,
+      })),
+      selected: picked && picked !== ANY ? new Set(picked) : null,
+    };
+  }, [def, items, effective, answers, locale]);
+
   /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
   const hotIds = useMemo(() => {
+    if (hoveredBrand) {
+      // A brand hovered in its panel: its products among those on the canvas, if it has any
+      // there (none would only dim the others).
+      const theirs = filter(def, items, effective).filter(
+        (i) => i.brand.slug === hoveredBrand,
+      );
+      return theirs.length ? new Set(theirs.map(def.id)) : null;
+    }
     if (!step || !hovered || step.weightOnly || step.kind === "range")
       return null;
     const option = step.options.find((o) => o.id === hovered);
@@ -309,7 +366,7 @@ export function useFinder(
     // A must-have adds to the ones already picked, so those stay applied.
     const pool = step.kind === "musts" ? filter(def, base, effective) : base;
     return new Set(pool.filter(option.match).map(def.id));
-  }, [def, items, answers, effective, step, hovered]);
+  }, [def, items, answers, effective, step, hovered, hoveredBrand]);
 
   /** What the product popup prints: rank and match for a kept product, the blocking answer otherwise. */
   const details = useMemo(() => {
@@ -408,6 +465,11 @@ export function useFinder(
     editAnswers,
     blockerOf,
     sheetOf,
+    brands,
+    setBrands,
+    brandsOpen,
+    setBrandsOpen,
+    setHoveredBrand,
   };
 }
 

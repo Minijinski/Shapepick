@@ -105,8 +105,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17518-HAI9W-One-2-Pro-Classic.jpg?v=1708447629, kind: cutout_top, width: 2400, height: 744, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/19052-ANMBX-Ducky-One-2-Pro-Pudding-Edition.jpg?v=1713366240, kind: cutout_top, width: 2400, height: 988 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/19052-ANMBX-Ducky-One-2-Pro-Pudding-Edition.jpg?v=1713366240, kind: cutout_top, width: 2400, height: 988, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17518-HAI9W-One-2-Pro-Classic.jpg?v=1708447629, kind: cutout_top, width: 2400, height: 744 }
   sources:
     - https://mechanicalkeyboards.com/products/ducky-one-2-pro-classic
     - https://mechanicalkeyboards.com/products/ducky-one-2-pro-pudding-edition
@@ -201,8 +201,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2737-D1CYS-One-2-SF-RGB.jpg?v=1707267968, kind: cutout_top, width: 2000, height: 666, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3128_62a3c32708eb4_One-2-SF-RGB-Pure-White.jpg?v=1707268632, kind: cutout_top, width: 2270, height: 760 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3128_62a3c32708eb4_One-2-SF-RGB-Pure-White.jpg?v=1707268632, kind: cutout_top, width: 2270, height: 760, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2737-D1CYS-One-2-SF-RGB.jpg?v=1707267968, kind: cutout_top, width: 2000, height: 666 }
   sources:
     - https://mechanicalkeyboards.com/products/ducky-one-2-sf-rgb
     - https://mechanicalkeyboards.com/products/ducky-one-2-sf-rgb-pure-white
@@ -364,8 +364,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14686_63ae05fcb3f41_One-3-Mini-Aura-White.jpg?v=1708570224, kind: cutout_top, width: 1980, height: 1107, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13591_63dac2f683383_One-3-Mini-Classic.jpg?v=1708367774, kind: cutout_top, width: 2400, height: 1072 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13591_63dac2f683383_One-3-Mini-Classic.jpg?v=1708367774, kind: cutout_top, width: 2400, height: 1072, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14686_63ae05fcb3f41_One-3-Mini-Aura-White.jpg?v=1708570224, kind: cutout_top, width: 1980, height: 1107 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15455_643f62cb4890f_One-3-Mini-Cosmic.jpg?v=1708569730, kind: cutout_top, width: 2400, height: 1141 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14650_63ae05debdf7c_One-3-Mini-Aura-Black.png?v=1708569302, kind: cutout_top, width: 2400, height: 932 }
   sources:
@@ -398,8 +398,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16655-AP3LL-Tinker65-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1029, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16661-XVN33-ProjectD-by-Ducky-Tinker-65-Barebones-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1068 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16661-XVN33-ProjectD-by-Ducky-Tinker-65-Barebones-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1068, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16655-AP3LL-Tinker65-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1029 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17324-YT8SL-Tinker65-POM-Edition.png?v=1707408232, kind: cutout_top, width: 2400, height: 964 }
   sources:
     - https://mechanicalkeyboards.com/products/ducky-tinker-65-keyboard
@@ -535,7 +535,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1985-5IUHW-One-2-Mini-v2-RGB.png?v=1707268451, kind: cutout_top, width: 2000, height: 616, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1985-C9ALH-One-2-Mini-v2-RGB.png?v=1707268450, kind: cutout_top, width: 2000, height: 799, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1985-5IUHW-One-2-Mini-v2-RGB.png?v=1707268451, kind: cutout_top, width: 2000, height: 616 }
   sources:
     - https://mechanicalkeyboards.com/products/ducky-one-2-mini-v2-rgb
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary }

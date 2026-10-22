@@ -151,11 +151,17 @@ export function drawingBox(item: CatalogItem): { w: number; h: number } {
 /**
  * How far a photo's proportions may stray from its drawing's (photo over drawing). Measured on the
  * shops' photos: top views land within 0.7–1.15; shots from a low angle, or with a mouse alongside,
- * beyond. Split and Alice drawings only sketch their shape, so their proportions are not checked.
+ * beyond. A board that fills its box almost whole is seen from above whatever its proportions: it
+ * may come with its wrist rest (down to 0.5) or be a little shorter than its drawing (up to 1.35).
+ * Split and Alice drawings only sketch their shape, so their proportions are not checked.
  */
-const PROPORTIONS = { min: 0.7, max: 1.15 }
+const PROPORTIONS = { min: 0.7, max: 1.15, minFlat: 0.5, maxFlat: 1.35 }
 /** Share of its box a keyboard seen from above covers at least: a tilted one leaves its corners. */
 const MIN_FILL = 0.8
+/** From this share up (and this one, for a shorter board), only a flat top view fills its box. */
+const FLAT_FILL = { rest: 0.93, short: 0.9 }
+/** Below this detail, a board shows no keys: its underside, a plain case, a box. */
+const MIN_DETAIL = 0.035
 
 /**
  * Whether a cut-out photo shows its product as its drawing does, square on (a keyboard from
@@ -164,13 +170,19 @@ const MIN_FILL = 0.8
  */
 export function squareOn(
   item: CatalogItem,
-  cut: { width: number; height: number; fill: number },
+  cut: { width: number; height: number; fill: number; parts?: number; detail?: number },
 ): boolean {
-  if (item.category === 'keyboard') {
-    if (cut.fill < MIN_FILL) return false
-    if (item.specs.formFactor === 'split' || item.specs.formFactor === 'alice') return true
+  const keyboard = item.category === 'keyboard'
+  if (keyboard) {
+    if (cut.fill < MIN_FILL || (cut.detail ?? 1) < MIN_DETAIL) return false
+    const split = item.specs.formFactor === 'split' || item.specs.formFactor === 'alice'
+    // Three shapes and more: several boards, or a board among its parts.
+    if ((cut.parts ?? 1) > 2) return false
+    if (split) return true
   }
   const box = drawingBox(item)
   const ratio = cut.width / cut.height / (box.w / box.h)
-  return ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max
+  const min = keyboard && cut.fill >= FLAT_FILL.rest ? PROPORTIONS.minFlat : PROPORTIONS.min
+  const max = keyboard && cut.fill >= FLAT_FILL.short ? PROPORTIONS.maxFlat : PROPORTIONS.max
+  return ratio >= min && ratio <= max
 }

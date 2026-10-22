@@ -3,14 +3,26 @@
 //
 // Shops shoot a product on white or a light grey (some publish it already cut out), often with
 // company (the switch it ships with, spare keycaps). The ground reaching the photo's edges becomes
-// transparent, the largest shape left is the product (with any shape nearly as large: the other
-// half of a split board), and the photo is cropped to it.
+// transparent, the largest shape left is the product (with any shape nearly as large beside it:
+// the other half of a split board), and the photo is cropped to it, less the cable trailing off it.
 
 /** RGBA pixels, row by row: a canvas's ImageData, or a decoded image's raw buffer. */
 export type Pixels = { data: Uint8ClampedArray; width: number; height: number }
 
-/** Where the product is in the photo, and how many pixels it covers. */
-export type Box = { x: number; y: number; w: number; h: number; area: number }
+/**
+ * Where the product is in the photo, how many pixels it covers, how many separate shapes make it
+ * (two for a split board; more is several products side by side), and how much detail it shows:
+ * the share of its pixels on a sharp edge (keycaps give plenty, the bottom of a case hardly any).
+ */
+export type Box = {
+  x: number
+  y: number
+  w: number
+  h: number
+  area: number
+  parts: number
+  detail: number
+}
 
 type Rgb = [number, number, number]
 
@@ -18,10 +30,23 @@ type Rgb = [number, number, number]
 const TOLERANCE = 14
 /** What passes for photo paper: every channel at least `light`, all within `tint` of each other. */
 const PAPER = { light: 215, tint: 16 }
-/** A shape at least this share of the largest one's area belongs to the product too. */
+/**
+ * A shape at least this share of the largest one's area, beside it, belongs to the product too
+ * (the other half of a split board). Above or below it, it is something shown with the product: a
+ * lid, a wrist rest set apart, a set of keycaps.
+ */
 const PART = 0.35
 /** Below this share of the photo, the largest shape is a speck: nothing to cut out. */
 const MIN_SHARE = 0.01
+/**
+ * A row or column of the product's box covered less than this is a cable or a strap trailing
+ * off the product: the box is trimmed from its edges in, past every such line.
+ */
+const THIN = 0.08
+/** Change in brightness between two neighbouring points that makes an edge (0 … 510). */
+const EDGE = 30
+/** Points across the product its detail is read on: the same reading whatever the photo's size. */
+const DETAIL_GRID = 400
 
 /**
  * What the photo was shot on, read on its edges: transparency (it comes cut out), a light neutral
@@ -60,7 +85,7 @@ function paperOf(data: Uint8ClampedArray, w: number, h: number): Rgb | 'clear' |
 /**
  * Makes everything but the product transparent and returns its box (null: nothing to cut out).
  * The ground is what the photo was shot on, where it reaches the edges; the product, the largest
- * shape left and any shape nearly as large. Pixels on the product's rim are a blend of it and the
+ * shape left and any shape nearly as large beside it. Pixels on the product's rim are a blend of it and the
  * paper: the paper is taken back out of them, so the edge stays smooth on ours.
  */
 export function isolate({ data, width: w, height: h }: Pixels): Box | null {
@@ -140,18 +165,25 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
     }
     shapes.push(shape)
   }
-  const largest = Math.max(0, ...shapes.map((s) => s.size))
-  if (largest < n * MIN_SHARE) return null
+  const main = shapes.reduce<(typeof shapes)[number] | null>(
+    (best, s) => (!best || s.size > best.size ? s : best),
+    null,
+  )
+  if (!main || main.size < n * MIN_SHARE) return null
+  /** Whether a shape stands beside the largest one: their rows overlap by half the shorter. */
+  const beside = (s: (typeof shapes)[number]) =>
+    Math.min(s.y1, main.y1) - Math.max(s.y0, main.y0) >=
+    0.5 * Math.min(s.y1 - s.y0, main.y1 - main.y0)
   const kept = new Uint8Array(shapes.length + 1)
   let x0 = w
   let y0 = h
   let x1 = 0
   let y1 = 0
-  let area = 0
+  let parts = 0
   shapes.forEach((s, k) => {
-    if (s.size < largest * PART) return
+    if (s !== main && (s.size < main.size * PART || !beside(s))) return
     kept[k + 1] = 1
-    area += s.size
+    parts++
     x0 = Math.min(x0, s.x0)
     y0 = Math.min(y0, s.y0)
     x1 = Math.max(x1, s.x1)
@@ -159,6 +191,28 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
   })
 
   const product = (i: number) => kept[label[i] ?? 0] === 1
+  // The USB cable most shops leave trailing off the board would stretch its box: the box is
+  // trimmed back to the product's body (twice, for a cable that leaves from a corner).
+  const across = (y: number) => {
+    let count = 0
+    for (let x = x0; x <= x1; x++) if (product(y * w + x)) count++
+    return count
+  }
+  const down = (x: number) => {
+    let count = 0
+    for (let y = y0; y <= y1; y++) if (product(y * w + x)) count++
+    return count
+  }
+  for (let pass = 0; pass < 2; pass++) {
+    const row = THIN * (x1 - x0 + 1)
+    while (y0 < y1 && across(y0) < row) y0++
+    while (y1 > y0 && across(y1) < row) y1--
+    const column = THIN * (y1 - y0 + 1)
+    while (x0 < x1 && down(x0) < column) x0++
+    while (x1 > x0 && down(x1) < column) x1--
+  }
+
+  let area = 0
   for (let y = y0; y <= y1; y++) {
     for (let x = x0; x <= x1; x++) {
       const i = y * w + x
@@ -167,6 +221,7 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
         data[o + 3] = 0
         continue
       }
+      area++
       const rim =
         (x > 0 && !product(i - 1)) ||
         (x < w - 1 && !product(i + 1)) ||
@@ -189,5 +244,29 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
       }
     }
   }
-  return { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1, area }
+  return { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1, area, parts, detail: detailOf() }
+
+  /**
+   * Share of the product's points on an edge with their right or lower neighbour, read on a grid
+   * of about `DETAIL_GRID` points across, so that a photo's size does not change the reading.
+   */
+  function detailOf() {
+    const step = Math.max(1, Math.round(Math.max(x1 - x0, y1 - y0) / DETAIL_GRID))
+    const light = (i: number) =>
+      0.3 * channel(i * 4) + 0.59 * channel(i * 4 + 1) + 0.11 * channel(i * 4 + 2)
+    let edges = 0
+    let seen = 0
+    for (let y = y0; y + step <= y1; y += step) {
+      for (let x = x0; x + step <= x1; x += step) {
+        const i = y * w + x
+        const right = i + step
+        const below = i + step * w
+        if (!product(i) || !product(right) || !product(below)) continue
+        seen++
+        const here = light(i)
+        if (Math.abs(here - light(right)) + Math.abs(here - light(below)) > EDGE) edges++
+      }
+    }
+    return seen ? edges / seen : 0
+  }
 }

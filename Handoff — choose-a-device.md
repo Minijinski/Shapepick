@@ -6,11 +6,11 @@ Oct 22, 2026 · @Eddy
 
 choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, résultats annotés, fiche produit (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
-- **Données** : 523 vrais claviers (34 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. 369 claviers montrent leur photo détourée sur le canvas, les autres leur dessin.
-- **Qualité** : 36 tests du moteur et typecheck des 4 paquets au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `f54dc9b` « Updating performances », poussé et déployé le 22 octobre. Cinq correctifs faits après ce commit sont dans le dossier local, à pousser, dont celui du magasin de dessins (voir « Retours du 22 octobre »).
+- **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
+- **Qualité** : 42 tests du moteur, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` = `f54dc9b` « Updating performances », poussé et déployé le 22 octobre. Dans le dossier local, à pousser : cinq correctifs faits après ce commit (dont celui du magasin de dessins) et tous les « Retours du 22 octobre (soir) ». La base Neon de production n'a pas encore les nouvelles données (photos principales, polling Corsair) : seed à faire avec l'accord de l'utilisateur.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -131,7 +131,9 @@ La base compte 9 tables et 25 enums Postgres. Tout ce qui sert à filtrer ou cla
 
 Le moteur (`packages/catalog/src/finder/engine.ts`) est un ensemble de fonctions pures : il ne lit que le catalogue et les réponses de l'URL, sans état caché. Le même code calcule la première page sur le serveur, puis chaque réponse dans le navigateur.
 
-Les réponses restent des chaînes, telles que l'URL les porte : `size=f75,f65` (plusieurs choix), `budget=0-150` (plage), `budget=200-` (sans plafond), `any` (peu importe). Chaque étape a un type : `single` (un choix), `multi` (OU), `musts` (ET) ou `range` (plage). Trois options modifient son comportement : `weightOnly` (ne filtre jamais, choisit le profil de classement), `required` (pas de « Peu importe ») et `applies` (étape conditionnelle).
+Les réponses restent des chaînes, telles que l'URL les porte : `size=f75,f65` (plusieurs choix), `budget=0-150` (plage), `budget=200-` (sans plafond), `any` (peu importe). Chaque étape a un type : `single` (un choix), `multi` (OU), `musts` (ET) ou `range` (plage). Quatre options modifient son comportement : `weightOnly` (ne filtre jamais, choisit le profil de classement), `required` (pas de « Peu importe »), `applies` (étape conditionnelle) et `aside` (jamais posée comme question : les marques, voir ci-dessous).
+
+Les marques sont une étape « à part » construite depuis le catalogue (`withBrands`, `packages/catalog/src/finder/brands.ts`) : `brand=keychron,logitech` dans l'URL, toutes les marques en son absence. Elle filtre, compte et peut bloquer une tuile comme toute réponse, compte comme réponse antérieure pour chaque question (`priorAnswers`), mais n'entre ni dans la progression, ni dans le parcours, ni dans l'ordre (`order=`), ni dans le % (`met`, `isInformed`).
 
 | Fonction | Rôle |
 | --- | --- |
@@ -145,7 +147,7 @@ Les réponses restent des chaînes, telles que l'URL les porte : `size=f75,f65` 
 | `histogram` | Répartition des prix pour l'étape budget |
 | `describeAnswer` | Libellé des puces du rail : « 75 % · 65 % », « ≤ 150 € » |
 
-Le classement mêle l'adéquation au profil (75 %) et un a priori (25 %). L'adéquation est une moyenne géométrique pondérée des critères du profil, plancher 0,05 : un critère catastrophique fait chuter tout le score au lieu d'être noyé dans la moyenne. L'a priori combine note éditoriale (e) et popularité (p) ; les égalités se départagent par slug. Depuis le 21 octobre, le % affiché ajoute les réponses : chaque réponse qui filtre (n) est un critère que tout produit classé respecte, donc le % part de l'adéquation et monte à chaque réponse, sans changer l'ordre.
+Le classement mêle l'adéquation au profil (75 %) et un a priori (25 %). L'adéquation est une moyenne géométrique pondérée des critères du profil, plancher 0,05 : un critère catastrophique fait chuter tout le score au lieu d'être noyé dans la moyenne. Un critère peut dire qu'une fiche ne donne pas sa valeur (`known`) : elle compte alors comme la médiane de ses pairs qui la donnent (`peers` : Bluetooth avec Bluetooth, même format pour le poids…) et n'est jamais citée en point fort ou faible. L'a priori combine note éditoriale (e) et popularité (p), toutes deux à 0,5 pour l'instant. À % affiché égal, les marques passent à tour de rôle (`maker`), sinon par slug. Depuis le 21 octobre, le % affiché ajoute les réponses : chaque réponse qui filtre (n) est un critère que tout produit classé respecte, donc le % part de l'adéquation et monte à chaque réponse, sans changer l'ordre.
 
 ```latex
 \text{fit} = 0{,}75 \cdot \exp\left(\frac{\sum_k w_k \ln \max(0{,}05,\ s_k)}{\sum_k w_k}\right) + 0{,}25 \cdot (0{,}6\,e + 0{,}4\,p) \qquad \text{score} = \frac{3\,\text{fit} + n}{3 + n}
@@ -313,6 +315,33 @@ Cinq retours sur le site avec les vraies données ont donné un canvas qui déma
 - Diagnostic des 165 claviers sans photo : 28 Razer bloqués par le CORS (13 récupérés), 33 photos sur fond non clair, 104 vues de biais ; 24 ont une meilleure image secondaire (à choisir à l'ingest).
 - Pas encore vu en mouvement : la recomposition et le preloader ont été vérifiés par mesures et captures, panneau du navigateur masqué.
 
+## Retours du 22 octobre (soir)
+
+Sept retours : des claviers encore en dessin (canvas, accueil, fiche), un filtre par marque, la pertinence du classement (trop de Keychron), la liste « Voir les N résultats » lente, des images floues et du texte impossible à copier, la pastille « 1 » répétée sur le canvas, les traits de rappel devenus inutiles. Fait dans le dossier local, vérifié sur une base locale (port 3001), pas encore poussé ni semé en production.
+
+| Mesure | Avant | Après |
+| --- | --- | --- |
+| Claviers avec une vraie vue de dessus sur le canvas | 366 sur 523 (70 %) | 479 (92 %) ; 19 autres ont une photo détourée de biais et 22 une photo non détourable, montrées dans la fiche ; 1 sans photo |
+| Part de Keychron (+ Lemokey) dans le top 10, usage « Nomade » | 10 sur 10 | 3 sur 10 (7 marques) |
+| Idem, « Bureau & frappe » / « Bureau + TKL » | 8 / 8 sur 10 | 5 / 6 sur 10 |
+| Idem, « Jeu compétitif » / « Jeu polyvalent » | 4 / 8 sur 10 | 3 / 7 sur 10 |
+| Ouvrir les 523 résultats | 520 lignes rendues, chacune télécharge et détoure sa photo | \~25 lignes rendues, aucune tâche longue |
+| Photo Corsair (Vanguard Air 99…) | vignette de 96 px agrandie | demandée à la largeur affichée |
+
+| Retour | Ce qui a changé | Où |
+| --- | --- | --- |
+| Des claviers restent en dessin | Détourage : le câble USB qui dépasse est rogné ; une forme posée au-dessus ou en dessous du clavier (couvercle, repose-poignets à part, keycaps) n'est plus prise pour la moitié d'un split ; on mesure le détail (touches) sur une grille fixe. Contrôle « vue de dessus » : un clavier qui remplit presque tout son cadre passe avec son repose-poignets (proportions 0,5–1,35), une photo sans détail (dessous d'un boîtier) ou faite de 3 formes et plus est refusée. `pnpm ingest photos` juge toutes les images de chaque clavier (celles de `data/`, puis la galerie Shopify du cache) avec ce même code et met la meilleure vue de dessus en photo principale ; `photos:` dans `data/excluded.yaml` liste les sosies écartés à la revue (collage, bannière, schéma) et les claviers à laisser tels quels. Fiche, podium et résultats montrent la photo non détourée quand le détourage échoue, au lieu du dessin | `catalog/src/media/`, `ingest/src/photos.ts`, `product/ProductPicture.tsx`, `data/` |
+| Affiner par marque | Pastille « Marques · Toutes » à côté du compteur : liste de A à Z avec recherche, nombre de produits par marque selon les autres réponses, cases à décocher, « Seulement », « Tout afficher », bouton × ; chaque changement s'applique tout de suite (URL remplacée, question et brouillon gardés). Survoler une marque entoure ses produits sur le canvas. « Bloqué par Marques · Changer → » ouvre la liste | `finder/BrandFilter.tsx`, `useFinder.ts`, `LiveCounter.tsx`, `catalog/src/finder/brands.ts`, `engine.ts` |
+| Trop de Keychron | Audit sur les vraies données : Keychron fait 33 % du catalogue (35 % avec Lemokey) mais 80 à 100 % du top 10 de 4 usages sur 5. Causes : les fiches incomplètes des autres marques notées comme le pire cas (Bluetooth sans nombre d'appareils = 1, batterie et poids inconnus), le polling Corsair lu « 8 Hz » au lieu de 8 000, les dizaines de variantes Keychron à égalité. Correctifs : valeurs manquantes à la médiane des pairs, marques à tour de rôle à % égal, parseur `hzOf` corrigé (`8,000Hz`) et 18 valeurs Corsair. Reste « Code » (10 sur 10) : le profil donne beaucoup au confort, qui récompense les dispositions Alice, et Keychron est presque seul à en vendre en QMK | `engine.ts`, `keyboards.ts`, `ingest/src/mapping.ts`, `data/keyboards/corsair.yaml` |
+| « Voir les N résultats » met des secondes | La liste n'était pas virtualisée. Désormais seules les lignes à l'écran (+8 de chaque côté) sont rendues, toutes de 56 px, placées depuis la mise en page (`offsetTop`, pas l'écran : le panneau s'ouvre incliné en 3D) | `finder/ResultsView.tsx` |
+| Images floues, texte non copiable | Les URL Cloudinary de Corsair (`w_96`) sont demandées à la largeur affichée, au vol et en 2 000 px dans `data/`. La fiche produit et le meilleur résultat se sélectionnent (`user-select: text`) ; les cartes et lignes cliquables restent des boutons | `product/photo.ts`, `ProductDrawer.tsx`, `ResultsView.tsx` |
+| La pastille « 1 » suit le produit partout | Un produit seul n'a plus de rang sur le canvas | `scene/renderer.ts` |
+| Traits de rappel et points numérotés | Supprimés : `ProductHero` (la photo, puis ses 4 specs clés en grille) remplace `AnnotatedHero` dans la fiche et les résultats | `product/ProductHero.tsx` |
+
+- Vérifié dans le navigateur sur la base locale (`web-local-db`, port 3001, `NETLIFY_DEV=1`) : sur ce serveur sans Image CDN, les photos Razer sont bloquées par le CORS (en production elles passent par `/.netlify/images`).
+- Les photos principales choisies et le polling Corsair sont dans `data/` : il faut un seed pour que le site les voie. La réécriture des URL Corsair, elle, marche dès le déploiement.
+- Restent en dessin sur le canvas : 22 claviers sans photo détourable (SteelSeries et Vortex photographiés en scène ou sur fond noir, Varmilo Sword 2 108…) et 19 sans vue de dessus (Womier, Wobkey Rainy 75, Chilkey Foxy 65…). Leur fiche montre la photo.
+
 ## SEO et i18n
 
 Chaque page est rendue côté serveur avec son titre, sa description, une URL canonique et les liens `hreflang` FR/EN. Les chemins sont traduits ; les clés des paramètres restent en anglais dans les deux langues.
@@ -350,14 +379,16 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 | `pnpm dev` | Serveur de dev du site, port 3000 |
 | `pnpm build` | Build de production dans `apps/web/.output` |
 | `pnpm --filter @choose/web start` | Lance le build de production avec le `.env` racine |
-| `pnpm test` | 28 tests du moteur (Vitest) |
+| `pnpm test` | 42 tests du moteur (Vitest) |
 | `pnpm typecheck` | `tsc` sur `catalog`, `db` et `web` |
 | `pnpm lint`, `pnpm format` | Biome : vérification, puis correction automatique |
 | `pnpm pg:local` (ou `stop`, `status`) | Postgres local : port 54329, données dans `.pgdata` |
 | `pnpm db:generate`, `db:migrate`, `db:seed`, `db:studio` | Migrations Drizzle, seed YAML, interface de la base |
+| `pnpm ingest photos [--dry-run]` | Choisit la photo principale de chaque clavier (vue de dessus) et écrit `data/` |
 
 - Si `apps/web/styled-system/` manque (dossier généré, non versionné) : `pnpm --filter @choose/web exec panda codegen`.
-- Dans l'app Claude, le serveur de prévisualisation « web » est décrit dans `.claude/launch.json`.
+- Dans l'app Claude, le serveur de prévisualisation « web » est décrit dans `.claude/launch.json` ; « web-local-db » tourne sur le port 3001 avec le Postgres local.
+- Semer la base locale alors que le `.env` vise Neon : passer `DATABASE_URL` **et** `DATABASE_URL_UNPOOLED` (le seed et drizzle-kit lisent l'URL directe en premier) ; les variables passées à la commande l'emportent sur le `.env`.
 
 ## Mise en ligne : Netlify + Neon
 
@@ -437,12 +468,16 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 * **Jamais de flushSync depuis un effet** : le magasin de dessins rend chaque SVG avec `flushSync` ; appelé depuis un effet React, il ne rend rien et le dessin manque pour la session. `pump()` et `dispose()` passent donc par une microtâche. Le commit `f54dc9b` n'a pas encore ce correctif : en production, 3 dessins sur 98 manquent et le preloader attend son délai maximal.
 * **Image CDN en dev** : `/.netlify/images` n'existe qu'avec l'émulation Netlify (serveur sur le port 3000) ; avec `NETLIFY_DEV=1`, les photos repassent par l'URL de la boutique (Razer illisible). `netlify.toml` liste les hôtes autorisés : un nouvel hôte de photos doit y être ajouté.
 * **Panneau masqué, pas d'images** : masqué, le panneau du navigateur ne dessine qu'à chaque capture ; le preloader et les animations ne s'y jugent pas.
+* **Mesurer sous une animation 3D** : à l'ouverture des résultats, le panneau est encore incliné et réduit ; `getBoundingClientRect` y donne des positions faussées. Placer ce qui dépend de la mise en page avec `offsetTop` (la liste virtualisée le fait).
+* **Mesures de photo et résolution** : le « détail » d'une photo (part de ses points sur une arête) se lit sur une grille d'environ 400 points, sinon une même photo en 3 840 px (Logitech en direct) passe pour « sans détail » alors qu'elle en a en 800 px (via l'Image CDN).
+* **Revue des photos choisies** : `pnpm ingest photos` peut prendre une bannière, un schéma ou un collage pour une vue de dessus ; après chaque passage, regarder les photos principales changées (planche contact) et compléter `photos:` dans `data/excluded.yaml`.
 
 ## Limites connues et dette technique
 
 La principale limite tient aux données : avec 25 produits fictifs par catégorie, le motif du canvas se répète vite et plusieurs étapes se sautent. Le reste est une dette assumée pour cette première version.
 
-- **Données** : les écrans sont encore les 25 de démonstration ; environ 128 claviers n'ont pas de photo vue de dessus sur fond clair et gardent leur dessin sur le canvas.
+- **Données** : les écrans sont encore les 25 de démonstration ; 41 claviers n'ont aucune vue de dessus détourable chez leur boutique et gardent leur dessin sur le canvas (leur fiche montre la photo). Les photos Razer font 500 px : un peu justes dans la fiche sur écran Retina.
+- **Classement** : popularité et note éditoriale valent 0,5 partout, donc l'a priori ne départage rien ; le firmware « propriétaire » est la valeur par défaut de l'ingest quand une page ne cite ni QMK ni VIA, ce qui avantage Keychron sur « Code ».
 - **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; les retenus restent alors serrés sur le canvas.
 - **Canvas 2D** : à l'aise avec des centaines de produits depuis les dessins partagés (45 Mo en DPR 2) et le budget des photos (64 Mo au plus) ; WebGL n'est plus nécessaire à cette échelle.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu, soit 724 Ko bruts (68 Ko en brotli) avec 523 claviers ; l'API en fait 909 Ko, dont 235 Ko de switchs recopiés dans chaque variante. Format compact à prévoir (switchs et marques en dictionnaire).
@@ -476,5 +511,9 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 * [ ] **Branche Neon de développement** (`npx neon@latest checkout dev --create`) pour que `pnpm dev` et le seed ne touchent plus `production`.
 * [ ] **Pousser les cinq correctifs** faits après `f54dc9b` (`scene/sprites.tsx` surtout, plus `renderer.ts`, `routes/$lang.tsx`, `routes/__root.tsx`, `catalog/src/media/drawing.ts`).
 * [ ] **Voir en mouvement** la recomposition du canvas et le preloader, panneau du navigateur affiché, et régler si besoin.
-* [ ] **`pnpm ingest photos`** : choisir à l'ingest la meilleure vue de dessus (+24 photos) et remplacer les vignettes Corsair `w_96`, puis reseed (production avec accord).
+* [x] **`pnpm ingest photos`** : fait le 22 octobre au soir (479 vues de dessus, vignettes Corsair en 2 000 px).
+* [ ] **Semer la production** avec les nouvelles données (photos principales, polling Corsair), avec l'accord de l'utilisateur, puis commiter et pousser les retours du 22 octobre au soir.
+* [ ] **Popularité** : une source (avis, ventes) pour que l'a priori départage vraiment les égalités.
+* [ ] **Firmware** : croiser avec la liste des claviers pris en charge par VIA pour ne plus noter « propriétaire » par défaut.
+* [ ] **Profil « Code »** : décider si le bonus de confort des dispositions Alice doit peser autant.
 * [ ] **Netlify** : suivre les crédits de l'Image CDN ; corriger « Données de démonstration » sur l'accueil.

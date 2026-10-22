@@ -38,6 +38,7 @@ export const monitorFinder: FinderDefinition<M> = {
   id: (m) => m.slug,
   price: (m) => m.priceEur,
   prior: (m) => 0.6 * m.editorialScore + 0.4 * m.popularity,
+  maker: (m) => m.brand.slug,
   steps: [
     {
       key: 'use',

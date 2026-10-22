@@ -17,8 +17,8 @@ export function familyOf(color: string): Variant['colorFamily'] {
 
 /** "1000 Hz", "8K", "8 kHz" → Hz. */
 export function hzOf(s: string) {
-  // "1,000Hz" and "8 000 Hz" are thousands, not decimals.
-  const plain = s.replace(/(\d)[,\s](?=\d{3}\b)/g, '$1')
+  // "1,000Hz" and "8 000 Hz" are thousands, not decimals (a unit may follow without a space).
+  const plain = s.replace(/(\d)[,\s](?=\d{3}(?!\d))/g, '$1')
   const m = /(\d+(?:[.,]\d+)?)\s*(k)?\s*hz/i.exec(plain) ?? /\b(\d+)(k)\b/i.exec(plain)
   if (!m?.[1]) return undefined
   return Number(m[1].replace(',', '.')) * (m[2] ? 1000 : 1)

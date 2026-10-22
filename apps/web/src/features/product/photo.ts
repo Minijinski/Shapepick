@@ -22,6 +22,10 @@ export type Cutout = {
   source: number
   /** Share of its box the product covers: close to 1 seen square on, much less at an angle. */
   fill: number
+  /** Separate shapes that make it: two for a split board, more for several products. */
+  parts: number
+  /** Share of its pixels on an edge: keycaps give plenty, the underside of a case hardly any. */
+  detail: number
 }
 
 /** A cut-out as an image URL, for an `<img>`. */
@@ -33,8 +37,13 @@ export class PhotoUnavailable extends Error {}
 /** Whether the image CDN answers here (not on a second dev server without Netlify's emulation). */
 let proxied = true
 
-/** The photo straight from the shop, resized by its CDN where it can be (Shopify). */
+/** A Cloudinary URL (Corsair's photos) and the width step of its transformation. */
+const CLOUDINARY = /^https:\/\/(assets\.corsair\.com|res\.cloudinary\.com)\//
+const CLOUDINARY_WIDTH = /(w_)\d+(?=,|%2C|\/)/i
+
+/** The photo straight from the shop, resized by its CDN where it can be (Shopify, Cloudinary). */
 function direct(photo: Photo, width: number) {
+  if (CLOUDINARY.test(photo.url)) return sized(photo.url, width)
   const url = new URL(photo.url)
   if (url.hostname !== 'cdn.shopify.com') return photo.url
   url.searchParams.set('width', String(width))
@@ -42,10 +51,19 @@ function direct(photo: Photo, width: number) {
 }
 
 /**
- * The shop's original photo where its CDN wraps it in its own URL (Razer's resizer carries the
- * original, encoded, in its path): the image CDN fetches the original directly.
+ * Cloudinary serves the width its URL names: a thumbnail's URL (`w_96`) asked for at the width
+ * shown, or the photo stays a blur however large it is drawn.
  */
-function original(url: string) {
+const sized = (url: string, width: number) =>
+  url.replace(CLOUDINARY_WIDTH, (_, step: string) => `${step}${width}`)
+
+/**
+ * The shop's original photo where its CDN wraps it in its own URL (Razer's resizer carries the
+ * original, encoded, in its path): the image CDN fetches the original directly. Cloudinary's are
+ * asked for at the width wanted.
+ */
+function original(url: string, width: number) {
+  if (CLOUDINARY.test(url)) return sized(url, width)
   const wrapped = /^https:\/\/assets3\.razerzone\.com\/[^/]+\/\d+x\d+\/(https%3A%2F%2F.+)$/.exec(
     url,
   )
@@ -56,7 +74,7 @@ function original(url: string) {
 export function photoSrc(photo: Photo, width: number, through = proxied) {
   const w = Math.min(width, photo.width ?? width)
   if (!through) return direct(photo, w)
-  return `/.netlify/images?url=${encodeURIComponent(original(photo.url))}&w=${w}&fm=webp&q=90`
+  return `/.netlify/images?url=${encodeURIComponent(original(photo.url, w))}&w=${w}&fm=webp&q=90`
 }
 
 /**
@@ -72,7 +90,15 @@ export function photoWidthFor(photo: Photo, px: number) {
 
 type Answer =
   | CutoutAnswer
-  | { id: number; status: 'ok'; image: HTMLCanvasElement; source: number; fill: number }
+  | {
+      id: number
+      status: 'ok'
+      image: HTMLCanvasElement
+      source: number
+      fill: number
+      parts: number
+      detail: number
+    }
 
 let worker: Worker | null | undefined
 let asked = 0
@@ -163,7 +189,15 @@ async function cutHere(src: string): Promise<Answer> {
   out.width = box.w
   out.height = box.h
   out.getContext('2d')?.putImageData(pixels, -box.x, -box.y, box.x, box.y, box.w, box.h)
-  return { id: 0, status: 'ok', image: out, source: w, fill: box.area / (box.w * box.h) }
+  return {
+    id: 0,
+    status: 'ok',
+    image: out,
+    source: w,
+    fill: box.area / (box.w * box.h),
+    parts: box.parts,
+    detail: box.detail,
+  }
 }
 
 // ---- Cut-outs ----------------------------------------------------------------------------------
@@ -176,8 +210,8 @@ const unusable = new Set<string>()
 async function cutFrom(photo: Photo, width: number, through: boolean): Promise<Cutout | null> {
   const answer = await ask(photoSrc(photo, width, through))
   if (answer.status === 'ok') {
-    const { image, source, fill } = answer
-    return { image, width: image.width, height: image.height, source, fill }
+    const { image, source, fill, parts, detail } = answer
+    return { image, width: image.width, height: image.height, source, fill, parts, detail }
   }
   if (answer.status === 'none') {
     unusable.add(photo.url)

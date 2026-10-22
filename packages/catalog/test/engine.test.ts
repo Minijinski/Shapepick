@@ -1,5 +1,7 @@
 import { describe, expect, it } from 'vitest'
 import {
+  askedSteps,
+  BRAND_STEP,
   deadEnd,
   describeAnswer,
   filter,
@@ -8,18 +10,22 @@ import {
   isInformed,
   isTrivial,
   journeyStates,
+  keyboardFinder,
   optionCounts,
   previousStep,
+  priorAnswers,
   rank,
   readOrder,
   readRange,
   sanitizeAnswers,
   stepOf,
+  withBrands,
   withDraft,
   withOrder,
 } from '../src'
 import type { FinderDefinition } from '../src/finder/types'
 import { text } from '../src/i18n'
+import { keyboards } from './fixtures'
 
 // A tiny catalogue whose answers can be checked by hand.
 type Toy = {
@@ -305,5 +311,96 @@ describe('budget and wording', () => {
       '≤ 150 €',
     )
     expect(describeAnswer(stepOf(def, 'budget'), 'any', 'en')).toBe('No preference')
+  })
+})
+
+describe('missing figures and ties', () => {
+  // Wi-Fi range: known for a, b and d only, compared among items that have Wi-Fi at all.
+  const range: Record<string, number> = { a: 0.9, b: 0.3, d: 0.5 }
+  const sparse: FinderDefinition<Toy> = {
+    ...def,
+    criteria: [
+      ...def.criteria,
+      {
+        key: 'range',
+        label: t('Long range'),
+        score: (x) => range[x.id] ?? 0,
+        known: (x) => !x.wifi || x.id in range,
+        peers: (x) => (x.wifi ? 'wifi' : 'none'),
+      },
+    ],
+    profiles: { ...def.profiles, range: { range: 1 } },
+  }
+  it('counts a figure the sheet leaves out as the median of its peers, never as a strength', () => {
+    const extra = { ...toys[1], id: 'f' } as Toy
+    const ranked = rank(sparse, [...toys, extra], { use: 'range' })
+    const f = ranked.find((r) => r.item.id === 'f')
+    const d = ranked.find((r) => r.item.id === 'd')
+    // f has Wi-Fi but no figure: it reads as the median of a, b and d (d's 0.5), not as 0.
+    expect(f?.fit).toBeCloseTo(d?.fit ?? 0)
+    expect(f?.pros).toEqual([])
+    expect(f?.cons).toEqual([])
+    // Without Wi-Fi, the score itself says so.
+    expect(ranked.at(-1)?.item.wifi).toBe(false)
+  })
+  it('takes makers in turn among items printed with the same match', () => {
+    const twins: Toy[] = ['a1', 'a2', 'a3', 'b1', 'b2'].map((id) => ({ ...toys[0], id }) as Toy)
+    const turns = rank({ ...def, maker: (x) => x.id[0] ?? '' }, twins, { use: 'quality' })
+    expect(turns.map((r) => r.item.id)).toEqual(['a1', 'b1', 'a2', 'b2', 'a3'])
+    // Different matches keep their order.
+    const mixed = rank({ ...def, maker: (x) => x.color }, toys, { use: 'quality' })
+    expect(mixed.map((r) => r.item.id)).toEqual(['a', 'c', 'e', 'b', 'd'])
+  })
+})
+
+describe('brands, answered aside', () => {
+  const branded = withBrands(keyboardFinder, keyboards)
+  const step = stepOf(branded, BRAND_STEP)
+  const [first, second] = step.kind === 'range' ? [] : step.options
+  const picked = `${first?.id},${second?.id}`
+  it('offers every brand of the catalogue, from A to Z', () => {
+    expect(step.kind).toBe('multi')
+    const names = step.kind === 'range' ? [] : step.options.map((o) => o.label.en)
+    expect(names).toEqual([...new Set(keyboards.map((k) => k.brand.name))].sort())
+  })
+  it('narrows the catalogue and counts each brand against the other answers', () => {
+    const kept = filter(branded, keyboards, { brand: picked })
+    expect(kept.length).toBeGreaterThan(0)
+    expect(kept.every((k) => [first?.id, second?.id].includes(k.brand.slug))).toBe(true)
+    const counts = optionCounts(branded, keyboards, { brand: picked, size: 'full' }, BRAND_STEP)
+    const fullBoards = keyboards.filter((k) => k.specs.formFactor === 'full')
+    expect(counts.counts[first?.id ?? '']).toBe(
+      fullBoards.filter((k) => k.brand.slug === first?.id).length,
+    )
+  })
+  it('is never asked, counted in the progress, put on the journey or in the match', () => {
+    const answers = { brand: picked }
+    expect(firstPending(branded, keyboards, answers)).toBe('use')
+    expect(firstPending(branded, keyboards, {})).toBe('use')
+    expect(askedSteps(branded, keyboards, answers)).not.toContain(BRAND_STEP)
+    expect(previousStep(branded, keyboards, answers, 'use')).toBeNull()
+    expect(Object.keys(journeyStates(branded, keyboards, answers, 'use', undefined))).not.toContain(
+      BRAND_STEP,
+    )
+    expect(readOrder(branded, `${BRAND_STEP},size`)).toEqual(['size'])
+    expect(isInformed(branded, answers)).toBe(false)
+    const ranked = rank(branded, keyboards, { ...answers, use: 'office' })
+    expect(ranked.every((r) => r.met === 0)).toBe(true)
+  })
+  it('weighs on every question as an earlier answer, and can be what blocks a tile', () => {
+    expect(priorAnswers(branded, { brand: picked, use: 'office' }, 'use')).toEqual({
+      brand: picked,
+    })
+    const brand = first?.id ?? ''
+    const theirs = keyboards.filter((k) => k.brand.slug === brand)
+    const missing = keyboards.find(
+      (k) => !theirs.some((own) => own.specs.formFactor === k.specs.formFactor),
+    )
+    if (!missing) return
+    const size = stepOf(branded, 'size')
+    const option = size.kind === 'range' ? undefined : size.options.find((o) => o.match(missing))
+    expect(deadEnd(branded, keyboards, { brand }, 'size', option?.id ?? '')?.blockedBy).toBe(
+      BRAND_STEP,
+    )
   })
 })

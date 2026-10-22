@@ -44,3 +44,26 @@ slugs:
   - keychron-k3-version-2
   - keychron-k4-version-2
   - keychron-k3-non-backlight-version-2
+
+# Photos que pnpm ingest photos ne doit jamais choisir comme photo principale : des images de la
+# galerie d'une boutique qui ressemblent à une vue de dessus sans en être une (collage, bannière,
+# schéma). Adresse sans le « ?v= » de Shopify.
+photos:
+  # QwertyKeys QK100 Mk2 : collage de quatre photos de détail.
+  - https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27647-EFGIP-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard.jpg
+  # Wobkey Zen 65 : bannière des switchs Kailh Luna.
+  - https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26258-SFHTD-WOBKEY-Zen-65-Aluminum-Wireless-Keyboard.jpg
+  # Varmilo Minilo75 HE : schéma des capteurs à effet Hall.
+  - https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24624-EPRUI-Varmilo-Minilo75-HE-Mendozae-Keyboard.jpg
+  # QwertyKeys QK100 Mk2 : gros plan des touches, de biais.
+  - https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27647-W7PFJ-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard.jpg
+  # Chilkey ND104 : vue éclatée de biais (la photo d'origine montre mieux le clavier).
+  - https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26691-8JVRJ-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Lunar-W.jpg
+  # Womier SK80 : deux claviers et un tapis de bureau.
+  - https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-gasket-mounted-75-mechanical-keyboard-with-multimedia-display-1364788.jpg
+  # Womier ERA75 : un jeu de keycaps, pas le clavier.
+  - https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-2580463.jpg
+  # Galeries sans vraie vue de dessus (gros plans, compositions) : photo principale laissée telle quelle.
+  - qwertykeys-qk100-mk2
+  - womier-sk80
+  - wobkey-zen-65

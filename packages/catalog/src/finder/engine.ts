@@ -84,9 +84,11 @@ export const withAnswer = (answers: Answers, key: string, value: string | null):
 
 // ==== Order ====================================================================================
 
-/** Step keys from a comma-separated list (`order=use,tech`): known keys only, each once. */
+/** Step keys from a comma-separated list (`order=use,tech`): known questions only, each once. */
 export const readOrder = <I>(def: FinderDefinition<I>, raw: string | undefined): string[] =>
-  [...new Set(raw?.split(',') ?? [])].filter((key) => def.steps.some((s) => s.key === key))
+  [...new Set(raw?.split(',') ?? [])].filter((key) =>
+    def.steps.some((s) => s.key === key && !s.aside),
+  )
 
 /**
  * The definition with its steps in the visitor's order: the `first` keys in that order, then every
@@ -138,14 +140,17 @@ export function filter<I>(
   return tests.length ? items.filter((item) => tests.every((t) => t(item))) : items
 }
 
-/** Answers of the steps that come before `key`: what a screen is allowed to know about. */
+/**
+ * Answers of the steps that come before `key`: what a screen is allowed to know about. An answer
+ * given aside (the brands) comes before every question.
+ */
 export function priorAnswers<I>(def: FinderDefinition<I>, answers: Answers, key: string): Answers {
   const index = def.steps.findIndex((s) => s.key === key)
   const prior: Answers = {}
-  for (const step of def.steps.slice(0, index)) {
+  def.steps.forEach((step, i) => {
     const value = answers[step.key]
-    if (value != null) prior[step.key] = value
-  }
+    if (value != null && (i < index || step.aside)) prior[step.key] = value
+  })
   return prior
 }
 
@@ -194,8 +199,9 @@ export function isTrivial<I>(def: FinderDefinition<I>, items: I[], answers: Answ
   return step.options.every((o) => counts[o.id] === 0 || counts[o.id] === base.length)
 }
 
+/** Whether the questionnaire puts this step to the visitor: never one answered aside. */
 const asked = <I>(def: FinderDefinition<I>, items: I[], answers: Answers, step: Step<I>) =>
-  applies(step, answers) && !isTrivial(def, items, answers, step.key)
+  !step.aside && applies(step, answers) && !isTrivial(def, items, answers, step.key)
 
 /** The next screen: the first applicable, non-trivial, unanswered step. null when done. */
 export function firstPending<I>(
@@ -204,7 +210,7 @@ export function firstPending<I>(
   answers: Answers,
 ): string | null {
   for (const step of def.steps) {
-    if (isAnswered(step, answers)) continue
+    if (step.aside || isAnswered(step, answers)) continue
     if (asked(def, items, answers, step)) return step.key
   }
   return null
@@ -264,7 +270,7 @@ export function journeyStates<I>(
     if (isAnswered(step, answers)) return applies(step, effective) ? 'done' : 'skipped'
     return ahead.has(step.key) ? 'ahead' : 'skipped'
   }
-  return Object.fromEntries(def.steps.map((s) => [s.key, stateOf(s)]))
+  return Object.fromEntries(def.steps.filter((s) => !s.aside).map((s) => [s.key, stateOf(s)]))
 }
 
 /**
@@ -299,27 +305,80 @@ const FIT_WEIGHT = 3
 /** Whether the answers say anything to rank on: the use, or an answer that narrows the catalogue. */
 export const isInformed = <I>(def: FinderDefinition<I>, answers: Answers) =>
   (answers[def.profileStep] ?? ANY) !== ANY ||
-  def.steps.some((s) => predicateOf(s, answers) != null)
+  def.steps.some((s) => !s.aside && predicateOf(s, answers) != null)
+
+type Typical = Map<string, Map<string, number>>
+
+/** Per catalogue, what each criterion reads on an item whose sheet does not say. */
+const typicalCache = new WeakMap<object, WeakMap<object, Typical>>()
+
+/**
+ * For every criterion that a sheet may leave blank, the median score of each group of peers over
+ * the items whose sheet gives it: what a blank counts as.
+ */
+function typicalScores<I>(def: FinderDefinition<I>, items: I[]): Typical {
+  let byCriteria = typicalCache.get(items)
+  if (!byCriteria) {
+    byCriteria = new WeakMap()
+    typicalCache.set(items, byCriteria)
+  }
+  let typical = byCriteria.get(def.criteria)
+  if (!typical) {
+    typical = new Map()
+    for (const c of def.criteria) {
+      if (!c.known) continue
+      const groups = new Map<string, number[]>()
+      for (const item of items) {
+        if (!c.known(item)) continue
+        const peer = c.peers?.(item) ?? ''
+        const list = groups.get(peer)
+        if (list) list.push(clamp(c.score(item)))
+        else groups.set(peer, [clamp(c.score(item))])
+      }
+      const medians = new Map<string, number>()
+      for (const [peer, list] of groups) {
+        list.sort((a, b) => a - b)
+        medians.set(peer, list[list.length >> 1] ?? 0.5)
+      }
+      typical.set(c.key, medians)
+    }
+    byCriteria.set(def.criteria, typical)
+  }
+  return typical
+}
 
 /**
  * Scores the items that pass every filter. The fit is a weighted geometric mean of the profile's
- * criteria, so one catastrophic axis drags the whole score down instead of being averaged away.
- * A prior from the editorial score and popularity settles near-ties between equally fitting items.
- * The match printed adds the answers: each one that narrows the catalogue is a criterion every
- * ranked item meets, so the match starts at the fit and fills up as the visitor answers, without
- * changing the order.
+ * criteria, so one catastrophic axis drags the whole score down instead of being averaged away. A
+ * figure the item's sheet does not give counts as the catalogue's typical one (median), so a
+ * sparse sheet is never ranked as a poor product, and it is never named as a strength or a
+ * weakness. A prior from the editorial score and popularity settles near-ties between equally
+ * fitting items. The match printed adds the answers: each one that narrows the catalogue is a
+ * criterion every ranked item meets, so the match starts at the fit and fills up as the visitor
+ * answers, without changing the order. Among items with the same match, makers take turns: a
+ * brand that sells ten variants of one board cannot fill a podium on a tie.
  */
 export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers): Ranked<I>[] {
   const pool = filter(def, items, answers)
-  const met = def.steps.filter((s) => predicateOf(s, answers) != null).length
+  const met = def.steps.filter((s) => !s.aside && predicateOf(s, answers) != null).length
   const profileId = answers[def.profileStep]
   const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
   const criteria = def.criteria.filter((c) => (weights[c.key] ?? 0) > 0)
   const total = criteria.reduce((sum, c) => sum + (weights[c.key] ?? 0), 0)
   const heavy = [...criteria].sort((a, b) => (weights[b.key] ?? 0) - (weights[a.key] ?? 0))
+  const typical = typicalScores(def, items)
 
   const ranked = pool.map((item) => {
-    const scores = new Map(criteria.map((c) => [c.key, clamp(c.score(item))]))
+    const scores = new Map<string, number>()
+    const guessed = new Set<string>()
+    for (const c of criteria) {
+      if (c.known && !c.known(item)) {
+        guessed.add(c.key)
+        scores.set(c.key, typical.get(c.key)?.get(c.peers?.(item) ?? '') ?? 0.5)
+      } else {
+        scores.set(c.key, clamp(c.score(item)))
+      }
+    }
     const profileFit = total
       ? Math.exp(
           criteria.reduce(
@@ -330,10 +389,11 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
         )
       : 0.5
     const prior = clamp(def.prior(item))
-    const pros = heavy.filter((c) => (scores.get(c.key) ?? 0) >= 0.75).slice(0, 3)
+    const said = heavy.filter((c) => !guessed.has(c.key))
+    const pros = said.filter((c) => (scores.get(c.key) ?? 0) >= 0.75).slice(0, 3)
     const cons = heavy
       .slice(0, Math.max(3, Math.ceil(heavy.length / 2)))
-      .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
+      .filter((c) => !guessed.has(c.key) && (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
     const fit = FIT_SHARE * profileFit + (1 - FIT_SHARE) * prior
     return {
@@ -345,7 +405,40 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       cons: cons.map((c) => c.label),
     }
   })
-  return ranked.sort((a, b) => b.score - a.score || def.id(a.item).localeCompare(def.id(b.item)))
+  ranked.sort((a, b) => b.score - a.score || def.id(a.item).localeCompare(def.id(b.item)))
+  return def.maker ? takeTurns(ranked, def.maker) : ranked
+}
+
+/** The match as printed: a whole percentage. */
+export const matchPercent = (score: number) => Math.round(score * 100)
+
+/**
+ * Among ranked items printed with the same match, one per maker in turn (makers in the order
+ * their best item came), each maker's items in their own order. Different matches keep their
+ * order: only what reads as a tie is reshuffled.
+ */
+function takeTurns<I>(ranked: Ranked<I>[], maker: (item: I) => string): Ranked<I>[] {
+  const out: Ranked<I>[] = []
+  for (let start = 0; start < ranked.length; ) {
+    const percent = matchPercent(ranked[start]?.score ?? 0)
+    let end = start
+    while (end < ranked.length && matchPercent(ranked[end]?.score ?? 0) === percent) end++
+    const queues = new Map<string, Ranked<I>[]>()
+    for (const entry of ranked.slice(start, end)) {
+      const key = maker(entry.item)
+      const queue = queues.get(key)
+      if (queue) queue.push(entry)
+      else queues.set(key, [entry])
+    }
+    while (out.length < end) {
+      for (const queue of queues.values()) {
+        const next = queue.shift()
+        if (next) out.push(next)
+      }
+    }
+    start = end
+  }
+  return out
 }
 
 const clamp = (v: number) => (Number.isFinite(v) ? Math.min(1, Math.max(0, v)) : 0)

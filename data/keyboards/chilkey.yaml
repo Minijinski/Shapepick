@@ -84,11 +84,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18946-CQFV4-Chilkey-ND75-12mm-Flex-Cut-PCB-Black-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23655-NLUYS-Chilkey-ND75-Aluminum-Hotswap-Wireless-RGB-Low-Profile.jpg?v=1774963706, kind: cutout_top, width: 1310, height: 620, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18946-CQFV4-Chilkey-ND75-12mm-Flex-Cut-PCB-Black-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18948-YJ3TN-Chilkey-ND75-12mm-Flex-Cut-PCB-Purple-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18947-X66IF-Chilkey-ND75-12mm-Flex-Cut-PCB-Teal-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18945-TBF4G-Chilkey-ND75-12mm-Flex-Cut-PCB-White-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23655-NLUYS-Chilkey-ND75-Aluminum-Hotswap-Wireless-RGB-Low-Profile.jpg?v=1774963706, kind: cutout_top, width: 1310, height: 620 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23658-5554P-Chilkey-ND75-LP-Baby-Blue-Aluminum-Hotswap-Wireless-RGB-Low.jpg?v=1774963706, kind: cutout_top, width: 2160, height: 2160 }
   sources:
     - https://mechanicalkeyboards.com/products/chilkey-nd75-12mm-flex-cut-pcb

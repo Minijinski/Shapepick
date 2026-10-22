@@ -15,8 +15,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27402-V442E-LUMINKEY-Luminkey98-V2-Wireless-Keyboard.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27405-885J1-LUMINKEY-Luminkey98-V2-Wireless-Keyboard-E-White.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27405-885J1-LUMINKEY-Luminkey98-V2-Wireless-Keyboard-E-White.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27402-V442E-LUMINKEY-Luminkey98-V2-Wireless-Keyboard.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27403-4BY8G-LUMINKEY-Luminkey98-V2-Wireless-Keyboard-Grey.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27404-RYH42-LUMINKEY-Luminkey98-V2-Wireless-Keyboard-Silver.jpg?v=1776442747, kind: cutout_top, width: 1080, height: 1080 }
   sources:
@@ -38,7 +38,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27746-587WY-LUMINKEY-Lumino75-Mechanical-Keyboard.jpg?v=1787339060, kind: cutout_top, width: 2600, height: 1463, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27750-S8QSE-LUMINKEY-Lumino75-Mechanical-Keyboard-Mint-Breeze.jpg?v=1787339059, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27746-587WY-LUMINKEY-Lumino75-Mechanical-Keyboard.jpg?v=1787339060, kind: cutout_top, width: 2600, height: 1463 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27748-49AVJ-LUMINKEY-Lumino75-Mechanical-Keyboard-Blush-Pink.jpg?v=1787339059, kind: cutout_top, width: 2600, height: 1463 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27747-S8YF5-LUMINKEY-Lumino75-Mechanical-Keyboard-Retro-Grey.jpg?v=1787339060, kind: cutout_top, width: 2600, height: 1463 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27750-HG1AH-LUMINKEY-Lumino75-Mechanical-Keyboard-Mint-Breeze.jpg?v=1787339059, kind: cutout_top, width: 2600, height: 1463 }

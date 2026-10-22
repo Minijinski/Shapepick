@@ -1409,7 +1409,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/B33-and-BM25-Wireless-Combo.jpg?v=1754281792, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-B33-Wireless-Keyboard---Deep-Black.jpg?v=1751944639, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/B33-and-BM25-Wireless-Combo.jpg?v=1754281792, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://www.keychron.com/products/keychron-b33-keyboard-and-bm25-mouse-wireless-combo
     - https://www.keychron.com/products/keychron-b33-wireless-keyboard

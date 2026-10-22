@@ -11,6 +11,7 @@ import {
   usePageExit,
 } from "../scene/navigation";
 import { AnswerRail } from "./AnswerRail";
+import { BrandFilter } from "./BrandFilter";
 import { Console } from "./Console";
 import { DockPanel } from "./DockPanel";
 import { JourneyBar } from "./JourneyBar";
@@ -20,8 +21,8 @@ import { ProductDrawer } from "./ProductDrawer";
 import { ResultsView } from "./ResultsView";
 import { type FinderSearch, useFinder } from "./useFinder";
 
-// The finder over its category's canvas: the live counter and the answer rail top-left, the
-// podium on the right, the question console docked at the bottom over the journey bar, where the
+// The finder over its category's canvas: the live counter (with the brand filter) and the answer
+// rail top-left, the podium on the right, the question console docked at the bottom over the journey bar, where the
 // visitor can take the questions in any order; at the end the console's panel grows into the
 // results, and shrinks back when the visitor edits an answer. The
 // canvas itself is the layout's scene: the finder only tells it which products the answers keep,
@@ -357,7 +358,19 @@ export function Finder({ category, items, search, locale }: Props) {
           preview={finder.preview}
           previewLabel={m.ifPicked[locale]}
           ofLabel={m.of[locale]}
-        />
+        >
+          {finder.brands && finder.brands.options.length > 1 && (
+            <BrandFilter
+              options={finder.brands.options}
+              selected={finder.brands.selected}
+              open={finder.brandsOpen}
+              locale={locale}
+              onOpenChange={finder.setBrandsOpen}
+              onChange={finder.setBrands}
+              onHover={finder.setHoveredBrand}
+            />
+          )}
+        </LiveCounter>
         <AnswerRail
           items={finder.rail}
           current={finder.currentKey}

@@ -5,17 +5,18 @@ import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
-import { AnnotatedHero } from '../product/AnnotatedHero'
 import { Match } from '../product/Match'
 import { MatchBreakdown } from '../product/MatchBreakdown'
+import { ProductHero } from '../product/ProductHero'
 import { formatPrice, sheetSpecs } from '../product/specs'
 import type { ProductSheet } from './useFinder'
 
 // One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
-// It reads like the results' best match (annotated drawing, strengths, caveats), says what its match
-// is made of, adds the full spec sheet, and ends where buying will happen. A side panel on wide screens, a bottom sheet on
-// phones; Escape, the backdrop and the close button fold it away, the arrows step through the
-// ranking.
+// It reads like the results' best match (the product and its key specs, strengths, caveats), says
+// what its match is made of, adds the full spec sheet, and ends where buying will happen. A side
+// panel on wide screens, a bottom sheet on phones; Escape, the backdrop and the close button fold
+// it away, the arrows step through the ranking. Its text can be selected and copied (a name, a
+// spec), unlike the rest of the site, where a press and drag browses the canvas.
 
 type Props = {
   sheet: ProductSheet
@@ -233,6 +234,7 @@ export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }:
             overflowY: 'auto',
             overscrollBehavior: 'contain',
             scrollbarWidth: 'thin',
+            userSelect: 'text',
           })}
         >
           <div
@@ -301,7 +303,7 @@ export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }:
                 backgroundSize: '14px 14px',
               })}
             >
-              <AnnotatedHero item={item} locale={locale} />
+              <ProductHero item={item} locale={locale} />
             </div>
 
             {(sheet.pros.length > 0 || sheet.cons.length > 0) && (

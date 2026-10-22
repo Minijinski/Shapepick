@@ -145,6 +145,21 @@ export const messages = {
     "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",
   ),
   loadingCatalogue: text("Chargement du catalogue", "Loading the catalogue"),
+  brands: text("Marques", "Brands"),
+  allBrands: text("Toutes", "All"),
+  brandCount: (n: number, locale: Locale) =>
+    locale === "fr" ? `${n} marques` : `${n} brands`,
+  allBut: (what: string, locale: Locale) =>
+    locale === "fr" ? `Sauf ${what}` : `All but ${what}`,
+  showAllBrands: text("Tout afficher", "Show all"),
+  allBrandsAgain: text("Revenir à toutes les marques", "Back to every brand"),
+  onlyBrand: text("Seulement", "Only"),
+  onlyBrandOf: (name: string, locale: Locale) =>
+    locale === "fr" ? `Seulement ${name}` : `Only ${name}`,
+  findBrand: text("Chercher une marque", "Find a brand"),
+  noBrandFound: text("Aucune marque à ce nom", "No brand by that name"),
+  brandsShown: (n: number, total: number, locale: Locale) =>
+    locale === "fr" ? `${n} sur ${total}` : `${n} of ${total}`,
 } as const;
 
 export const formatCount = count;

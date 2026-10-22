@@ -546,9 +546,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_59ab4cb3-6876-482e-b7a2-752f7a1dc68f.jpg?v=1706781347, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_24e11f55-80f0-4278-bb7d-0d05f2f05cf7.jpg?v=1706782027, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_59ab4cb3-6876-482e-b7a2-752f7a1dc68f.jpg?v=1706781347, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_78c095a7-afa2-468b-bf59-3f7e73360aa7.jpg?v=1706782027, kind: cutout_top, width: 1600, height: 1600 }
-    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_24e11f55-80f0-4278-bb7d-0d05f2f05cf7.jpg?v=1706782027, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://yunzii.com/products/yunzii-c68
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, weightG: 1591, widthMm: 380, depthMm: 181 }

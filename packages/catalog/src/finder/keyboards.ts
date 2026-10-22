@@ -41,6 +41,7 @@ export const keyboardFinder: FinderDefinition<K> = {
   id: (k) => k.slug,
   price: (k) => k.priceEur,
   prior: (k) => 0.6 * k.editorialScore + 0.4 * k.popularity,
+  maker: (k) => k.brand.slug,
   steps: [
     {
       key: "use",
@@ -455,6 +456,8 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "polling",
       label: text("Polling élevé", "High polling rate"),
+      known: (k) => k.specs.pollingHzWired != null,
+      peers: (k) => k.specs.technology,
       score: (k) =>
         Math.min(
           1,
@@ -502,6 +505,9 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Multi-appareils en Bluetooth",
         "Multi-device over Bluetooth",
       ),
+      // A Bluetooth board whose sheet does not say how many devices it pairs with.
+      known: (k) => !k.specs.connBt || k.specs.btDevices != null,
+      peers: (k) => (k.specs.connBt ? "bluetooth" : "none"),
       score: (k) =>
         k.specs.connBt
           ? Math.min(1, 0.6 + 0.15 * ((k.specs.btDevices ?? 1) - 1))
@@ -576,6 +582,9 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "light",
       label: text("Léger, facile à emporter", "Light, easy to carry"),
+      known: (k) => k.specs.weightG != null,
+      // A full-size board weighs more than a 60 % one: compared within its size.
+      peers: (k) => k.specs.formFactor,
       score: (k) =>
         k.specs.weightG
           ? Math.min(1, Math.max(0, (1400 - k.specs.weightG) / 1000))
@@ -584,6 +593,8 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "battery",
       label: text("Grande autonomie", "Long battery life"),
+      known: (k) => !wireless(k) || k.specs.batteryMah != null,
+      peers: (k) => (wireless(k) ? "wireless" : "wired"),
       score: (k) =>
         k.specs.batteryMah
           ? Math.min(1, k.specs.batteryMah / 4000)

@@ -15,8 +15,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26722-1TFX6-Wooting-60HE-V2-Keyboard.jpg?v=1765480865, kind: cutout_top, width: 2400, height: 786, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26725-VXLF9-Wooting-60HE-V2-Keyboard-625u-Spacebar-Black-ABS.jpg?v=1765480865, kind: cutout_top, width: 1341, height: 651 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26725-VXLF9-Wooting-60HE-V2-Keyboard-625u-Spacebar-Black-ABS.jpg?v=1765480865, kind: cutout_top, width: 1341, height: 651, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26722-1TFX6-Wooting-60HE-V2-Keyboard.jpg?v=1765480865, kind: cutout_top, width: 2400, height: 786 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26723-EG7SU-Wooting-60HE-V2-Keyboard-Split-Spacebar-Black-Aluminum.jpg?v=1765480865, kind: cutout_top, width: 2400, height: 956 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26724-XYTR6-Wooting-60HE-V2-Keyboard-Split-Spacebar-Silver-Aluminum.jpg?v=1765480866, kind: cutout_top, width: 2400, height: 1017 }
   sources:

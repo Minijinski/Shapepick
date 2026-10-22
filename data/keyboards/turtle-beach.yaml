@@ -16,10 +16,10 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIXPAirUSHeroshot.png?v=1790003864, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-BLK-US_31f2f2f7-6f18-4c2a-85f4-8f52b74df495.png?v=1711929965, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIXPAirUSHeroshot.png?v=1790003864, kind: cutout_top, width: 1106, height: 840 }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/Vulcan_II_XP_US_Heroshot_1.png?v=1787342244, kind: cutout_top, width: 1106, height: 840 }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/Vulcan_II_XP_US_White_Heroshot_1.png?v=1787342264, kind: cutout_top, width: 1106, height: 840 }
-    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-BLK-US_31f2f2f7-6f18-4c2a-85f4-8f52b74df495.png?v=1711929965, kind: cutout_top, width: 1106, height: 840 }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-WHT-US.png?v=1711929965, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/vulcan-ii-xp-air-keyboard

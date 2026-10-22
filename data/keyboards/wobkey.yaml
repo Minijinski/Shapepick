@@ -15,7 +15,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18744-MGIG3-WOBKEY-RAINY-75-Pro.jpg?v=1757600053, kind: cutout_top, width: 1624, height: 1400, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18745-QMFCS-WOBKEY-RAINY-75-Pro-RGB-White.jpg?v=1757600053, kind: cutout_top, width: 1300, height: 789, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18744-MGIG3-WOBKEY-RAINY-75-Pro.jpg?v=1757600053, kind: cutout_top, width: 1624, height: 1400 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18746-YEAXX-WOBKEY-RAINY-75-Pro-Blue.jpg?v=1757600053, kind: cutout_top, width: 1624, height: 1400 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18747-EIYGL-WOBKEY-RAINY-75-Pro-Pink.jpg?v=1757600053, kind: cutout_top, width: 1624, height: 1400 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18748-1GI6W-WOBKEY-RAINY-75-Pro-Purple.jpg?v=1757600053, kind: cutout_top, width: 1624, height: 1400 }

@@ -298,7 +298,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1882-UP43Q-Cypher-Split-Spacebar-US2.jpg?v=1707268389, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1882-58QN5-Cypher-Split-Spacebar-US2.jpg?v=1707268389, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1882-UP43Q-Cypher-Split-Spacebar-US2.jpg?v=1707268389, kind: cutout_top, width: 2400, height: 1600 }
   sources:
     - https://mechanicalkeyboards.com/products/vortex-cypher-split-spacebar-us2-65-mechanical-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: proprietary, macSupport: true }
@@ -314,7 +315,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2222-D3YFD-Tab-60.jpg?v=1707268564, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2222-TJBI2-Tab-60.jpg?v=1707268564, kind: cutout_top, width: 1080, height: 720, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2222-D3YFD-Tab-60.jpg?v=1707268564, kind: cutout_top, width: 2400, height: 1600 }
   sources:
     - https://mechanicalkeyboards.com/products/vortex-tab-60
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
@@ -330,7 +332,8 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1881-313N9-Cypher-Single-Spacebar-US1_2d6c0aea-a383-470e-a841-d2847d8dad8f.jpg?v=1714401907, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1881-XRQ7A-Cypher-Single-Spacebar-US1_4b3faf2f-e207-4a9e-aa33-07e2cb7fcaae.jpg?v=1714401905, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1881-313N9-Cypher-Single-Spacebar-US1_2d6c0aea-a383-470e-a841-d2847d8dad8f.jpg?v=1714401907, kind: cutout_top, width: 2400, height: 1600 }
   sources:
     - https://mechanicalkeyboards.com/products/vortex-cypher-625u-us1-60-mechanical-keyboard
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: proprietary, macSupport: true }

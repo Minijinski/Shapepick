@@ -2,12 +2,13 @@ import type { CatalogItem, Photo } from '@choose/catalog'
 import { useEffect, useRef, useState } from 'react'
 import { css, cx } from 'styled-system/css'
 import { ProductGlyph } from './glyphs'
-import { type Picture, photoWidthFor, picture, readyPicture } from './photo'
+import { type Picture, photoSrc, photoWidthFor, picture, readyPicture } from './photo'
 
-// A product as the visitor should see it: its photo, cut out, when it has one; its drawing
-// otherwise, sketched while the photo is on its way, in colour if the photo cannot be read. One
-// element either way, sized by the same classes and centred at the largest size that fits, so any
-// place that showed the drawing can show the photo.
+// A product as the visitor should see it: its photo, cut out, when it has one; the photo as the
+// shop shot it when it cannot be cut out (a scene, a coloured backdrop): the product itself still
+// beats its drawing. The drawing otherwise: sketched while the photo is on its way, in colour if
+// the photo cannot be read at all. One element either way, sized by the same classes and centred
+// at the largest size that fits, so any place that showed the drawing can show the photo.
 
 type Props = {
   item: CatalogItem
@@ -41,7 +42,8 @@ function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo
   const [shown, setShown] = useState<Picture | null>(() =>
     typeof window === 'undefined' ? null : (readyPicture(photo) ?? null),
   )
-  const [failed, setFailed] = useState(false)
+  /** The photo uncut, once it turns out it cannot be cut out; '' if even that fails to load. */
+  const [plain, setPlain] = useState<string | null>(null)
 
   // The photo is fetched at the size it is shown, once it is shown (a hidden one has no size yet).
   useEffect(() => {
@@ -56,7 +58,7 @@ function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo
       void picture(photo, width).then((made) => {
         if (!live) return
         if (made) setShown(made)
-        else if (!best) setFailed(true)
+        else if (!best) setPlain(photoSrc(photo, width))
       })
     }
     const sized = new ResizeObserver(([entry]) => {
@@ -72,7 +74,26 @@ function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo
     }
   }, [photo])
 
-  if (!shown) return <ProductGlyph ref={box} item={item} ghost={!failed} className={className} />
+  if (!shown && plain)
+    return (
+      <img
+        src={plain}
+        alt={`${item.brand.name} ${item.name}`}
+        draggable={false}
+        onError={() => setPlain('')}
+        className={cx(
+          className,
+          shadows[shadow],
+          css({
+            objectFit: 'contain',
+            animation: 'fadeIn 0.4s ease backwards',
+            _motionReduce: { animation: 'none' },
+          }),
+        )}
+      />
+    )
+  if (!shown)
+    return <ProductGlyph ref={box} item={item} ghost={plain === null} className={className} />
   return (
     <img
       ref={box}
