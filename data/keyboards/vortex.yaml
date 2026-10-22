@@ -1,0 +1,339 @@
+# Vortex : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 13 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: vortex-new-pok3r
+  brand: vortex
+  name: New POK3R
+  releaseYear: 2023
+  msrpEur: 75
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13414_62a3ce4ad2f11_New-POK3R-White-Case-Blue-LED.jpg?v=1707270910, kind: cutout_top, width: 2400, height: 948, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13437_62a3ce54c73ad_New-POK3R-Black-Case-White-LED.jpg?v=1707270965, kind: cutout_top, width: 2400, height: 1067 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13436_62a3ce533464b_New-POK3R-Black-Case-RGB.jpg?v=1775143459, kind: cutout_top, width: 2400, height: 1045 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13412_62a3ce494619e_New-POK3R-White-Case-RGB.jpg?v=1707270907, kind: cutout_top, width: 2400, height: 950 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13393_62a3cd6394752_New-POK3R-Black-Case.jpg?v=1707270906, kind: cutout_top, width: 1639, height: 782 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13438_62a3ce568638c_New-POK3R-Black-Case-Blue-LED.jpg?v=1707270965, kind: cutout_top, width: 2399, height: 898 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-white-case-blue-led
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-black-case-white-led
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-black-case-rgb
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-white-case-rgb
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-black-aluminum-60-double-shot-pbt-mechanical-keyboard
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-black-case-blue-led
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-white-case
+    - https://mechanicalkeyboards.com/products/vortex-new-pok3r-white-case-white-led
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: VTK61WHEUSBKB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-black, msrpEur: 50 }
+    - { sku: VTK61WHEUSBEB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 50 }
+    - { sku: VTK61WHEUSBNB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 50 }
+    - { sku: VTK61WHEUSRDB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red, msrpEur: 50 }
+    - { sku: VTK61WHEUSCRB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-clear, msrpEur: 45 }
+    - { sku: VTK61WHEUSGNB, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-green, msrpEur: 50 }
+    - { sku: VTK61BLKUSBKW, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTK61BLKUSBEN, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 65 }
+    - { sku: VTK61BLKUSBNB, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 55 }
+    - { sku: VTK61BLKUSRDW, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: VTK61BLKUSCRW, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: VTK61BLKUSGNW, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-green }
+    - { sku: VTK61BLKUSSVW, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: VTK61BLKUSSRN, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: VTK61BLKUSNWR, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-nature-white }
+    - { sku: VTK61WHEUSSRN, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: VTK61WHEUSNWR, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-nature-white, msrpEur: 95 }
+    - { sku: VTK61WHEUSSKR, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-black, msrpEur: 95 }
+    - { sku: VTK61BLKUSWEN, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-white, msrpEur: 85 }
+    - { sku: VTK61BLKUSSKB, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-black, msrpEur: 90 }
+    - { sku: VTK61WHEUSSVW, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 85 }
+    - { sku: VTK61WHEUSWEN, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-white, msrpEur: 85 }
+
+# à vérifier : switch « Gateron Low Profile Blue » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-blue)
+# à vérifier : switch « Gateron Low Profile Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-brown)
+# à vérifier : switch « Gateron Low Profile Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-red)
+- slug: vortex-core-plus
+  brand: vortex
+  name: Core Plus
+  releaseYear: 2025
+  msrpEur: 155
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24110-PTUAB-Vortex-Core-Plus-Aluminum-40-Wireless-Low-Profile-Keyboard.png?v=1757427622, kind: cutout_top, width: 2400, height: 1008, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24111-YU5F1-Vortex-Core-Plus-Aluminum-40-Wireless-Low-Profile-Keyboard-B.jpg?v=1757427622, kind: cutout_top, width: 2400, height: 1120 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24114-5US2I-Vortex-Core-Plus-Aluminum-40-Wireless-Low-Profile-Keyboard-W.jpg?v=1757427622, kind: cutout_top, width: 2400, height: 1018 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24117-T5BHI-Vortex-Core-Plus-Aluminum-40-Wireless-Low-Profile-Keyboard-R.jpg?v=1757427622, kind: cutout_top, width: 2400, height: 1070 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-core-plus-aluminum-40-wireless-low-profile-keyboard
+  specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: via, macSupport: true, soundDampening: true, typingAngleDeg: 5 }
+  variants:
+    - { sku: AC240ACWBK-GLBR, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: AC240ACWWH-GLBE, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: AC240ACWRG-GLRD, colorName: Retro Grey, colorFamily: black, layout: ansi_us }
+
+- slug: vortex-pc66-68-key
+  brand: vortex
+  name: PC66 68-Key
+  releaseYear: 2023
+  msrpEur: 175
+  msrpUsd: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15079_63742675a784e_PC66-68-Key-Dark-Grey.jpg?v=1707271686, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14517_63ae052327715_PC66-68-Key-Barebones-Dark-Grey-None.jpg?v=1707271685, kind: cutout_top, width: 1920, height: 1920 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-pc66-68-key-dark-grey-65-hotswap-wireless-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: white, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: VTK68PSCMLKUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-white }
+    - { sku: VTK68PSCSRDUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: vortex-type-v2
+  brand: vortex
+  name: TYPE V2
+  releaseYear: 2026
+  msrpEur: 145
+  msrpUsd: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27850-SH9SV-Vortex-TYPE-V2-Wireless-Hotswap-Keyboard.jpg?v=1790601364, kind: cutout_top, width: 1280, height: 1280, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-type-v2-wireless-hotswap-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 1000, soundDampening: true }
+  variants:
+    - { sku: ATV104V2PGY-USCBE, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: ATV104V2PGY-USCBR, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: ATV104V2PGY-USCSR, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-silent-red, msrpEur: 160 }
+
+# à vérifier : switch « Gateron G Pro 2.0 Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-red)
+# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
+# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
+# à vérifier : switch « Gateron G Pro 2.0 Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-brown)
+# à vérifier : switch « Gateron G Pro 2.0 Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-silver)
+- slug: vortex-m0110
+  brand: vortex
+  name: M0110
+  releaseYear: 2024
+  msrpEur: 145
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15589_63cef767b913e_M0110-625-Wireless.png?v=1712685597, kind: cutout_top, width: 2400, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15591_63cef76deeb61_M0110-QMK.png?v=1712770651, kind: cutout_top, width: 2400, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15592_643f6320d5088_M0110-Wireless.png?v=1708445124, kind: cutout_top, width: 2400, height: 1500 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-m0110-625u-wireless
+    - https://mechanicalkeyboards.com/products/vortex-m0110-7u-qmk
+    - https://mechanicalkeyboards.com/products/vortex-m0110-7u-wireless
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: AAM60GRD03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, msrpEur: 130 }
+    - { sku: AAM60CBE03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: AAM60CCL03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: AAM60CMK03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-white }
+    - { sku: AAM60GRD03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, msrpEur: 125 }
+    - { sku: AAM60CBR03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: AAM60CRD03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+
+- slug: vortex-pc66-66-key
+  brand: vortex
+  name: PC66 66-Key
+  releaseYear: 2023
+  msrpEur: 135
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15160_6374269c13fa3_PC66-66-Key-Dark-Grey.jpg?v=1707271806, kind: cutout_top, width: 1280, height: 1280, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14520_633f18a4b650e_PC66-66-Key-Barebones-Dark-Gray-None.jpg?v=1707271805, kind: cutout_top, width: 1920, height: 1920 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15161_6374269d895ad_PC66-66-Key-Beige.jpg?v=1707271807, kind: cutout_top, width: 1280, height: 1280 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14519_633f18a487057_PC66-66-Key-Barebones-Beige-None.jpg?v=1707271806, kind: cutout_top, width: 1920, height: 1920 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-pc66-66-key-dark-grey-65-hotswap-wireless-mechanical-keyboard
+    - https://mechanicalkeyboards.com/products/vortex-pc66-66-key-beige-65-hotswap-wireless-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: abs, backlight: white, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: VTK66PSCBLKUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTK66PSCBLEUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 165 }
+    - { sku: VTK66PSCBRNUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: VTK66PSCREDUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: VTK66PSCCLRUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: VTK66PSCMLKUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-white }
+    - { sku: VTK66PSCSVRUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: VTK66PSCSBKUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-black, msrpEur: 175 }
+    - { sku: VTK66PSCSRDUSBK, colorName: Dark Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: VTK66PSCBLKUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTK66PSCBLEUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: VTK66PSCCLRUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: VTK66PSCMLKUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-white }
+    - { sku: VTK66PSCSVRUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: VTK66PSCSRDUS, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red, msrpEur: 165 }
+
+- slug: vortex-pok3r
+  brand: vortex
+  name: POK3R
+  releaseYear: 2023
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4033-E27KB-POK3R-Black-LE-Black-Border.jpg?v=1707268810, kind: cutout_top, width: 1200, height: 801, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4031-R65VJ-POK3R-Silver-LE-Frosted-White-Border.jpg?v=1707268808, kind: cutout_top, width: 1600, height: 1066 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4034-KXZJZ-POK3R-Silver-LE-Blue-Border.jpg?v=1707268811, kind: cutout_top, width: 1200, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4030-P7ARG-POK3R-Silver-LE-Black-Border.jpg?v=1707268805, kind: cutout_top, width: 1200, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4032-NLAFN-POK3R-Black-LE-Frosted-White-Border.jpg?v=1707268809, kind: cutout_top, width: 1200, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4035-HPUKN-POK3R-Black-LE-Blue-Border.jpg?v=1751761281, kind: cutout_top, width: 1200, height: 800 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-black-le-black-border
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-silver-le-frosted-white-border
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-silver-le-blue-border
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-silver-le-black-border
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-black-le-frosted-white-border
+    - https://mechanicalkeyboards.com/products/vortex-pok3r-black-le-blue-border
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: VTG61USACBBBLK, colorName: Black LE, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTG61USACBBBRN, colorName: Black LE, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 70 }
+    - { sku: VTG61USACBBRED, colorName: Black LE, colorFamily: black, layout: ansi_us, switch: cherry-mx-red, msrpEur: 70 }
+    - { sku: VTG61USACBBNWE, colorName: Black LE, colorFamily: black, layout: ansi_us, switch: cherry-mx-nature-white, msrpEur: 70 }
+    - { sku: VTG61USACBBSLV, colorName: Black LE, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 70 }
+    - { sku: VTG61USACSWBLE, colorName: Silver LE Frosted White Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 75 }
+    - { sku: VTG61USACSWBRN, colorName: Silver LE Frosted White Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 70 }
+    - { sku: VTG61USACSBEBLK, colorName: Silver LE Blue Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTG61USACSBEBLE, colorName: Silver LE Blue Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: VTG61USACSBEBRN, colorName: Silver LE Blue Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: VTG61USACSBERED, colorName: Silver LE Blue Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: VTG61USACSBESLV, colorName: Silver LE Blue Border, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: VTG61USACSBBLK, colorName: Silver LE Black Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-black, msrpEur: 135 }
+    - { sku: VTG61USACSBBLE, colorName: Silver LE Black Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 135 }
+    - { sku: VTG61USACSBBRN, colorName: Silver LE Black Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 135 }
+    - { sku: VTG61USACSBRED, colorName: Silver LE Black Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-red, msrpEur: 135 }
+    - { sku: VTG61USACSBSLV, colorName: Silver LE Black Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 135 }
+    - { sku: VTG61USACBWBLK, colorName: Black LE Frosted White Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-black, msrpEur: 130 }
+    - { sku: VTG61USACBWBRN, colorName: Black LE Frosted White Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 130 }
+    - { sku: VTG61USACBWRED, colorName: Black LE Frosted White Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-red, msrpEur: 130 }
+    - { sku: VTG61USACBWSLV, colorName: Black LE Frosted White Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 130 }
+    - { sku: VTG61USACBBEBLK, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: VTG61USACBBEBRN, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 60 }
+    - { sku: VTG61USACBBERED, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: VTG61USACBBENWE, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-nature-white }
+
+# à vérifier : switch « Gateron G Pro 2.0 Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-brown)
+# à vérifier : switch « Gateron G Pro 2.0 Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-red)
+# à vérifier : switch « Gateron G Pro 2.0 Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-silver)
+# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
+# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
+- slug: vortex-m0110-6-25
+  brand: vortex
+  name: M0110 6.25
+  releaseYear: 2024
+  msrpEur: 135
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15590_63cef76ab7acf_M0110-625-QMK.png?v=1708471226, kind: cutout_top, width: 2400, height: 1500, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-m0110-625-qmk
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: AAM60CRD03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: AAM60CBE03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: AAM60CCL03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: AAM60CMK03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-white }
+    - { sku: AAM60GBR03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us }
+
+- slug: vortex-kbt-re-66
+  brand: vortex
+  name: "KBt RE: 66"
+  releaseYear: 2024
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13727_62f170bf53372_KBT-Re-66.jpg?v=1708444550, kind: cutout_top, width: 1329, height: 759, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-kbt-re-66
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: VTK66KECREDUS, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+
+- slug: vortex-model
+  brand: vortex
+  name: Model
+  releaseYear: 2025
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26223-5BTR6-Vortex-Model-M-68-Wireless-Keyboard.jpg?v=1756992426, kind: cutout_top, width: 2400, height: 1380, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26233-49NEA-Vortex-Model-M-68-Wireless-Keyboard-Barebones.jpg?v=1756992426, kind: cutout_top, width: 2400, height: 1406 }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-model-m-68-wireless-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: via, macSupport: true, soundDampening: true, typingAngleDeg: 6 }
+  variants:
+    - { sku: AMMC68PUS-CBE, colorName: M 65, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: AMMC68PUS-CCL, colorName: M 65, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: AMMC68PUS-CSR, colorName: M 65, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: vortex-cypher-65
+  brand: vortex
+  name: Cypher 65%
+  releaseYear: 2023
+  msrpEur: 60
+  msrpUsd: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1882-UP43Q-Cypher-Split-Spacebar-US2.jpg?v=1707268389, kind: cutout_top, width: 2400, height: 1600, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-cypher-split-spacebar-us2-65-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: VTG69BLELBK, colorName: Split Spacebar US2, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+
+- slug: vortex-tab-60
+  brand: vortex
+  name: Tab 60
+  releaseYear: 2023
+  msrpEur: 80
+  msrpUsd: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2222-D3YFD-Tab-60.jpg?v=1707268564, kind: cutout_top, width: 2400, height: 1600, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-tab-60
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: VTG61SVRTBK, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: vortex-cypher-60
+  brand: vortex
+  name: Cypher 60%
+  releaseYear: 2024
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1881-313N9-Cypher-Single-Spacebar-US1_2d6c0aea-a383-470e-a841-d2847d8dad8f.jpg?v=1714401907, kind: cutout_top, width: 2400, height: 1600, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/vortex-cypher-625u-us1-60-mechanical-keyboard
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: VTG68BLELBK, colorName: 6.25u US1, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: VTG68REDLBK, colorName: 6.25u US1, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }

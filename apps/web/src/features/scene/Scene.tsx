@@ -6,7 +6,7 @@ import { scene } from './controller'
 import { markHydrated, readViewport } from './navigation'
 import { PopupCard } from './PopupCard'
 import { type Hit, SceneRenderer, sameHit, spriteResolution } from './renderer'
-import { buildSprites } from './sprites'
+import { buildSprites, photoLoader, type Sprite } from './sprites'
 
 // The canvas behind the pages of a locale, mounted once by the layout so it survives every
 // navigation between the home page and the categories. It owns the pointer on the open canvas
@@ -108,14 +108,31 @@ export function Scene({ catalogs, locale }: Props) {
     const current = scene.current
     const first = current?.mode === 'canvas' ? current.category : null
     const order = [...categories].sort((a, b) => Number(b === first) - Number(a === first))
+    const resolution = spriteResolution(readViewport(), dpr())
+    const drawings = new Map<Category, Map<string, Sprite>>()
     void (async () => {
-      const resolution = spriteResolution(readViewport(), dpr())
       for (const category of order) {
         const sprites = await buildSprites(category, catalogs[category], resolution)
         if (cancelled) return
         renderer.setSprites(category, sprites)
+        drawings.set(category, sprites)
       }
     })()
+
+    // ---- Photos: fetched for the products the canvas draws, as it draws them ----------------
+    const photos = photoLoader(resolution, (category, slug, sprite) =>
+      renderer.setSprite(category, slug, sprite),
+    )
+    const items = new Map(categories.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
+    const askForPhotos = window.setInterval(() => {
+      for (const [category, slugs] of renderer.takeDrawn()) {
+        for (const slug of slugs) {
+          const item = items.get(category)?.get(slug)
+          const drawing = drawings.get(category)?.get(slug)
+          if (item && drawing) photos.want(category, item, drawing)
+        }
+      }
+    }, 250)
 
     // ---- Pointer on the open canvas ----------------------------------------------------------
     let drag: Drag | null = null
@@ -193,6 +210,8 @@ export function Scene({ catalogs, locale }: Props) {
 
     return () => {
       cancelled = true
+      window.clearInterval(askForPhotos)
+      photos.dispose()
       window.removeEventListener('resize', fit)
       canvas.removeEventListener('pointerdown', down)
       canvas.removeEventListener('pointermove', move)

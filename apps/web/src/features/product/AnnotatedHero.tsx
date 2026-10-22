@@ -1,13 +1,13 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
 import { css } from 'styled-system/css'
-import { ProductGlyph } from './glyphs'
+import { ProductPicture } from './ProductPicture'
 import { keySpecs } from './specs'
 
-// A product drawn like a spec drawing. Given room (40rem and more), its key specs sit on either
-// side, joined to points on the drawing by leader lines; narrower (a phone, the product sheet),
-// the points are numbered and the specs follow as a numbered legend. The width that counts is
-// the hero's own, not the screen's. Dots, lines and callouts carry data attributes so the parent
-// can draw them in.
+// A product, photographed or drawn, annotated like a spec drawing. Given room (40rem and more),
+// its key specs sit on either side, joined to points on the product by leader lines; narrower (a
+// phone, the product sheet), the points are numbered and the specs follow as a numbered legend.
+// The width that counts is the hero's own, not the screen's. Dots, lines and callouts carry data
+// attributes so the parent can draw them in.
 
 /** Anchor points on the drawing (in % of its box) and the side their callout sits on. */
 const anchors = [
@@ -75,11 +75,14 @@ export function AnnotatedHero({ item, locale }: { item: CatalogItem; locale: Loc
                 position: 'absolute',
                 inset: '0',
                 display: 'grid',
+                // One cell the size of the box: a photo fills it rather than growing the row.
+                gridTemplateColumns: 'minmax(0, 1fr)',
+                gridTemplateRows: 'minmax(0, 1fr)',
                 placeItems: 'center',
                 p: '4',
               })}
             >
-              <ProductGlyph item={item} className={css({ w: '100%', h: '100%' })} />
+              <ProductPicture item={item} shadow="lg" className={css({ w: '100%', h: '100%' })} />
             </div>
             {/* Percent coordinates without a viewBox keep the strokes one pixel wide at any size. */}
             <svg

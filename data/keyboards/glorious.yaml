@@ -1,0 +1,60 @@
+# Glorious : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 3 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « 5280 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug 5280)
+- slug: glorious-gmmk
+  brand: glorious
+  name: GMMK
+  releaseYear: 2023
+  msrpEur: 100
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2539-37Q9C-GMMK-Prebuilt-Compact-Gateron-Brown.jpg?v=1707256102, kind: cutout_top, width: 2048, height: 1368, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/glorious-pc-gmmk-prebuilt-compact-gateron-brown
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: GMMK-COMPACT-BRN, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Glorious Fox » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug glorious-fox)
+- slug: glorious-gmmk-v2-65
+  brand: glorious
+  name: GMMK V2 65%
+  releaseYear: 2024
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16597-9WGT1-Glorious-PC-GMMK-V2-65.jpg?v=1708027532, kind: cutout_top, width: 1698, height: 668, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16589-CCXE5-GMMK-V2-65-Pink-Glorious-Fox.jpg?v=1708027534, kind: cutout_top, width: 1463, height: 651 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16588-EBNQF-GMMK-V2-65-White-Glorious-Fox.jpg?v=1708027533, kind: cutout_top, width: 1695, height: 663 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16597-W4Q8L-GMMK-V2-65-Barebones-Black.jpg?v=1708027533, kind: cutout_top, width: 1065, height: 423 }
+  sources:
+    - https://mechanicalkeyboards.com/products/glorious-pc-gmmk-v2-65
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, mount: tray, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, typingAngleDeg: 14 }
+  variants:
+    - { sku: GLO-GMMK2-65-FOX-B, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: GLO-GMMK2-65-FOX-W, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: glorious-gmmk-white-ice
+  brand: glorious
+  name: GMMK White Ice
+  releaseYear: 2023
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6051_62a3d0fb37b1e_GMMK-White-Ice-Compact.jpg?v=1707269886, kind: cutout_top, width: 2400, height: 1129, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/glorious-pc-gmmk-white-ice-compact
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: GLO-GMMK-COM-BRN-W, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-brown }

@@ -1,0 +1,316 @@
+# SteelSeries : importés de steelseries.com (site français) par `pnpm ingest steelseries`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-22 : 15 modèles, steelseries.com/fr-fr (prix € et langues du site français)
+# à vérifier : switch « Commutateurs hypermagnétiques réglables OmniPoint 3.0 (capteur magnétique analogique à effet Hall) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetiques-reglables-omnipoint-3-0)
+- slug: steelseries-apex-pro-gen-3
+  brand: steelseries
+  name: Apex Pro Gen 3
+  msrpEur: 225
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2qRjmq8sglugWCZZQVCgPx/48adf4a522bdee3cd98c3e3ba4784c8c/apex_pro_tkl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3764.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2qRjmq8sglugWCZZQVCgPx/48adf4a522bdee3cd98c3e3ba4784c8c/apex_pro_tkl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3764.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=fullSize&connectivityType=wired&color=black&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=tkl&connectivityType=wired&color=cyber&keyboardLanguage=french
+  specs: { formFactor: full, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 1403, widthMm: 437, depthMm: 139 }
+  variants:
+    - { sku: 64664:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64664:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64664:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64664:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64664:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « Commutateurs hypermagnétiques réglables OmniPoint 3.0 (capteur magnétique analogique à effet Hall) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetiques-reglables-omnipoint-3-0)
+- slug: steelseries-apex-pro-tkl-wireless-gen-3
+  brand: steelseries
+  name: Apex Pro TKL Wireless Gen 3
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/10Ha85UPT5m40kjCWNdEfl/e02775f70a9cdbaa5cea5f93655e6ba4/apex_pro_tkl_wl_gen_3_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3770.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=tkl&connectivityType=wireless&color=black&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, conn24ghz: true, rapidTrigger: true, adjustableActuation: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 1038, widthMm: 355, depthMm: 129 }
+  variants:
+    - { sku: 64875:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64875:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64875:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64875:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64875:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « Commutateurs HyperMagnetic réglables OmniPoint 3.0 (capteur magnétique analogique à effet Hall) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetic-reglables-omnipoint-3-0)
+- slug: steelseries-apex-pro-mini-gen-3
+  brand: steelseries
+  name: Apex Pro Mini Gen 3
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2UIStESejunfxZeIQAzt7Y/be7e33df1bf54d5600adf1937b837343/apex_pro_tkl_gen_3_black_img_buy_01_fr.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=mini&connectivityType=wired&color=black&keyboardLanguage=french
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 543, widthMm: 293, depthMm: 103 }
+  variants:
+    - { sku: 64917:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64917:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64917:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64917:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64917:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « Commutateurs hypermagnétiques réglables OmniPoint 3.0 (capteur magnétique analogique à effet Hall) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetiques-reglables-omnipoint-3-0)
+- slug: steelseries-apex-pro-tkl-gen-3
+  brand: steelseries
+  name: Apex Pro TKL Gen 3
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4T4kjArCcSjZYJXt20hT5S/57e228037e771e8a75f5af151c03b421/apex_pro_tkl_gen_3_white_img_buy_01_fr.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4JowI26eF16rzKZ2fMJpI7/30f8b3e7ee6f957b5a927f526ada0185/apex_pro_tkl_gen_3_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3759.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=tkl&connectivityType=wired&color=white&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=tkl&connectivityType=wired&color=black&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 974, widthMm: 355, depthMm: 129 }
+  variants:
+    - { sku: 64902:english, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: 64902:french, colorName: White, colorFamily: white, layout: iso_fr }
+    - { sku: 64902:german, colorName: White, colorFamily: white, layout: iso_de }
+    - { sku: 64902:nordic, colorName: White, colorFamily: white, layout: iso_nordic }
+    - { sku: 64902:uk-english, colorName: White, colorFamily: white, layout: iso_uk }
+    - { sku: 64744:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64744:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64744:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64744:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64744:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « Commutateurs hypermagnétiques réglables OmniPoint 3.0 (capteur magnétique analogique à effet Hall) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetiques-reglables-omnipoint-3-0)
+- slug: steelseries-apex-pro-tkl-gen-3-steel
+  brand: steelseries
+  name: Apex Pro TKL Gen 3 Steel
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1QjTNY3DrrTW0K9wV4AEfD/46c66711490ff7c981c5913ac7e4d142/apex_pro_tkl_gen_3_steel_pdp_img_buy_01.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=tkl&connectivityType=wired&color=steel&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 974, widthMm: 355, depthMm: 129 }
+  variants:
+    - { sku: 64983:english, colorName: Steel, colorFamily: color, layout: ansi_us }
+    - { sku: 64983:french, colorName: Steel, colorFamily: color, layout: iso_fr }
+    - { sku: 64983:german, colorName: Steel, colorFamily: color, layout: iso_de }
+    - { sku: 64983:nordic, colorName: Steel, colorFamily: color, layout: iso_nordic }
+    - { sku: 64983:uk-english, colorName: Steel, colorFamily: color, layout: iso_uk }
+
+- slug: steelseries-apex-3
+  brand: steelseries
+  name: Apex 3
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4CWpyzRjEqQO2vV2EHfFnO/b69b628734979de2eac42c2fb37e478b/buyimg_apex3_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2852.jpg, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=fullSize&keyboardLanguage=french
+  specs: { formFactor: full, technology: membrane, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 816, widthMm: 445, depthMm: 152 }
+  variants:
+    - { sku: 64799:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64799:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64799:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64799:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64799:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+- slug: steelseries-apex-3-tkl
+  brand: steelseries
+  name: Apex 3 TKL
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3fr1xIH3Us0yH8PqVQzcdP/e520e3085a4af78c5a94b604436da014/buyimg_apex3_tkl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2831.jpg, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/op29mwQ8SzMLM7RpFyA56/dcea225e5cf37fd1818c9bb32f8e6cd6/apex_3_tkl_white_img_buy_1.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/4YHkRZLYAWqI0mRUCuikS8/67642f8d5652cac63ee27117cecca038/apex_3_tkl_aqua_img_buy_1_fr.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/2uix5zhmda6n3gb8yMcbg8/b1db1fe5f60fc9e526d748b5ef5c4eee/apex_3_tkl_lavender_img_buy_1_fr.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/4aI2ysmqrHHqgbNxtIl6Rm/2d7ae42ff659b209dbf3d18a5dd37dc0/apex_3_tkl_white_img_buy_1.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=black&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=white&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=aqua&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=lavender&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=amethyst&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: membrane, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 639, widthMm: 364, depthMm: 150 }
+  variants:
+    - { sku: 64832:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64832:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64832:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64832:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64832:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64908:english, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: 64908:french, colorName: White, colorFamily: white, layout: iso_fr }
+    - { sku: 64908:german, colorName: White, colorFamily: white, layout: iso_de }
+    - { sku: 64908:nordic, colorName: White, colorFamily: white, layout: iso_nordic }
+    - { sku: 64908:uk-english, colorName: White, colorFamily: white, layout: iso_uk }
+    - { sku: 64937:english, colorName: Aqua, colorFamily: color, layout: ansi_us }
+    - { sku: 64937:french, colorName: Aqua, colorFamily: color, layout: iso_fr }
+    - { sku: 64937:german, colorName: Aqua, colorFamily: color, layout: iso_de }
+    - { sku: 64937:nordic, colorName: Aqua, colorFamily: color, layout: iso_nordic }
+    - { sku: 64937:uk-english, colorName: Aqua, colorFamily: color, layout: iso_uk }
+    - { sku: 64944:english, colorName: Lavender, colorFamily: color, layout: ansi_us }
+    - { sku: 64944:french, colorName: Lavender, colorFamily: color, layout: iso_fr }
+    - { sku: 64944:german, colorName: Lavender, colorFamily: color, layout: iso_de }
+    - { sku: 64944:nordic, colorName: Lavender, colorFamily: color, layout: iso_nordic }
+    - { sku: 64944:uk-english, colorName: Lavender, colorFamily: color, layout: iso_uk }
+    - { sku: 64952:english, colorName: Amethyst, colorFamily: color, layout: ansi_us, msrpEur: 60 }
+    - { sku: 64952:french, colorName: Amethyst, colorFamily: color, layout: iso_fr, msrpEur: 60 }
+    - { sku: 64952:german, colorName: Amethyst, colorFamily: color, layout: iso_de, msrpEur: 60 }
+    - { sku: 64952:nordic, colorName: Amethyst, colorFamily: color, layout: iso_nordic, msrpEur: 60 }
+    - { sku: 64952:uk-english, colorName: Amethyst, colorFamily: color, layout: iso_uk, msrpEur: 60 }
+
+# à vérifier : switch « omnipoint-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug omnipoint-omnipoint)
+- slug: steelseries-apex-pro
+  brand: steelseries
+  name: Apex Pro
+  msrpEur: 185
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2Em8bILdMi2vgiHf4Z4aWW/b401920e12b1cb33d8752c657f048004/buyimg_apexpro_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2117.jpg, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=fullSize&connectivityType=wired&keyboardLanguage=french
+  specs: { formFactor: full, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 971, widthMm: 437, depthMm: 139 }
+  variants:
+    - { sku: 64628:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64628:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64628:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64628:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64628:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « Commutateurs HyperMagnetic réglables OmniPoint 2.0 (capteur magnétique à effet Hall analogique) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetic-reglables-omnipoint-2-0)
+- slug: steelseries-apex-pro-mini
+  brand: steelseries
+  name: Apex Pro Mini
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2jGyXpgwHFrgkyHHxGpT0F/8ce43829ef6cbcca8a857a7c81380857/apex_pro_mini_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2022.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2jGyXpgwHFrgkyHHxGpT0F/8ce43829ef6cbcca8a857a7c81380857/apex_pro_mini_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2022.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wired&keyboardLanguage=french
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=tkl&connectivityType=wired&keyboardLanguage=french
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 610, widthMm: 293, depthMm: 103 }
+  variants:
+    - { sku: 64823:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64823:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64823:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64823:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64823:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « omnipoint-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug omnipoint-omnipoint)
+- slug: steelseries-apex-pro-mini-wireless
+  brand: steelseries
+  name: Apex Pro Mini Wireless
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1dUWLXyR0dNU4ieBmpNzfL/3a74d997f07db18a24c367bac80ff2a6/apex_pro_mini_wl_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2132.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wireless&keyboardLanguage=french
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 543, widthMm: 293, depthMm: 103 }
+  variants:
+    - { sku: 64845:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64845:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64845:german, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: 64845:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64845:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « SteelSeries Linear OptiPoint Optical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug steelseries-linear-optipoint-optical)
+- slug: steelseries-apex-9-mini
+  brand: steelseries
+  name: Apex 9 Mini
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/YoSfTqjuP7OmL0yMcYbs5/4135b8fd4e35d5a102fa02993daaf9b4/imgbuy_apex_9_mini_01.png__1920x1080_crop-fit_optimize_subsampling-2-3202.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-9?keyboardSize=mini&keyboardLanguage=french
+  specs: { formFactor: f60, technology: optical, hotSwap: none, caseMaterial: steel, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 676, widthMm: 293, depthMm: 103 }
+  variants:
+    - { sku: 64840:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64840:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64840:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « SteelSeries Linear OptiPoint Optical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug steelseries-linear-optipoint-optical)
+- slug: steelseries-apex-9-tkl
+  brand: steelseries
+  name: Apex 9 TKL
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6Sf2oGi3Vina11Oe93Wq6/d8e5dd0fabead87ec1bbed3394b8c8d2/imgbuy_apex_9_tkl_01.png__1920x1080_crop-fit_optimize_subsampling-2-3216.png, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-9?keyboardSize=tkl&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, caseMaterial: steel, keycapMaterial: pbt, backlight: none, firmware: proprietary, weightG: 635, widthMm: 355, depthMm: 128 }
+  variants:
+    - { sku: 64851:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64851:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64851:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+
+# à vérifier : switch « hybrid-blue-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hybrid-blue-hybrid-blue)
+- slug: steelseries-apex-5
+  brand: steelseries
+  name: Apex 5
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3w9vDiEZFAqw4Ut7zxG84J/4db5258d3e31607ba87aee3a4a1cf36b/buyimg_apex5_001-fix.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1000.jpg, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-5?keyboardLanguage=french
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 925, widthMm: 443, depthMm: 139 }
+  variants:
+    - { sku: 64536:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64536:french, colorName: Black, colorFamily: black, layout: iso_fr }
+
+# à vérifier : switch « red-qx2-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red-qx2-red-qx2)
+- slug: steelseries-apex-7-red-switch
+  brand: steelseries
+  name: Apex 7 (Red Switch)
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4nsAjRPVID6YqTP6kftq67/7616fa67a4252a339221fb45b17300b4/buyimg_apex7_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3104.jpg, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=fullSize&keyboardLanguage=french
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 953, widthMm: 437, depthMm: 139 }
+  variants:
+    - { sku: 64638:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64638:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64638:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+
+# à vérifier : switch « red-qx2-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red-qx2-red-qx2)
+- slug: steelseries-apex-7-tkl-red-switch
+  brand: steelseries
+  name: Apex 7 TKL (Red Switch)
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5UlU8464ekMy0uPRlF2snp/6a892cda4c545534c9c545eced1c0657/buyimg_apex7tkl_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3132.jpg, kind: cutout_top, primary: true }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=tkl&keyboardLanguage=french
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 771, widthMm: 355, depthMm: 139 }
+  variants:
+    - { sku: 64648:english, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 64648:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64648:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }

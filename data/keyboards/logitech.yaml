@@ -1,0 +1,762 @@
+# Logitech : importés de logitech.com et logitechg.com (sites français) par `pnpm ingest logitech` et `logitechg`.
+# Taille et technologie des claviers bureautiques déduites du nom : la fiche Logitech ne les donne pas.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-22 : 12 modèles, www.logitech.com/fr-fr (prix € et dispositions du site français)
+- slug: logitech-signature-slim-solar-wireless-keyboard-k980
+  brand: logitech
+  name: Signature Slim Solar+ wireless keyboard K980
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/fra/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/ch/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/nlb/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-nlb.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/deu/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/signature-slim-solar-plus.920-013758
+  specs: { formFactor: full, technology: scissor, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 700, widthMm: 431, depthMm: 143 }
+  variants:
+    - { sku: 920-013757, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-013758, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-013763, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-013762, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-013764, colorName: Graphite, colorFamily: black, layout: ansi_us }
+
+- slug: logitech-mx-keys-s
+  brand: logitech
+  name: MX Keys S
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-ukr.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/product-gallery/graphite-palm-rest/mx-keys-s-keyboard-palm-rest-top-view-graphite-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s-for-mac/buy/gallery/mx-key-s-for-mac-pale-grey-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s-for-mac/buy/gallery/mx-key-s-for-mac-pale-grey-gallery-1-uk.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-keys-s
+    - https://www.logitech.com/fr-fr/shop/p/mx-keys-s-for-mac.920-011626
+  specs: { formFactor: full, technology: scissor, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 500, weightG: 810, widthMm: 430, depthMm: 132 }
+  variants:
+    - { sku: 920-011565, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-011568, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-011581, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-011584, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-011587, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-011566, colorName: Pale Gray, colorFamily: black, layout: iso_de }
+    - { sku: 920-011582, colorName: Pale Gray, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-011585, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-011588, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
+    - { sku: 920-011638, colorName: Pale Grey, colorFamily: black, layout: ansi_us }
+    - { sku: 920-011626, colorName: Pale Grey, colorFamily: black, layout: iso_fr }
+    - { sku: 920-011635, colorName: Space Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-011637, colorName: Space Gray, colorFamily: black, layout: ansi_us }
+    - { sku: 920-011625, colorName: Space Gray, colorFamily: black, layout: iso_fr }
+    - { sku: 920-011623, colorName: Space Gray, colorFamily: black, layout: iso_de }
+
+- slug: logitech-mx-mechanical
+  brand: logitech
+  name: MX Mechanical
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-mechanical.920-010751
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 828, widthMm: 434, depthMm: 132 }
+  variants:
+    - { sku: 920-010748, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-010751, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010757, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010753, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-010756, colorName: Graphite, colorFamily: black, layout: iso_uk }
+
+- slug: logitech-mx-mechanical-mini
+  brand: logitech
+  name: MX Mechanical Mini
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical-mini-mac/gallery/space-gray/mx-mechanical-mini-for-mac-keyboard-top-view-space-grey-fr.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical-mini-mac/gallery/space-gray/mx-mechanical-mini-for-mac-keyboard-top-view-space-grey-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-mechanical-mini.920-010774
+    - https://www.logitech.com/fr-fr/shop/p/mx-mechanical-mini-mac
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 500, weightG: 612, widthMm: 313, depthMm: 26 }
+  variants:
+    - { sku: 920-010771, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-010774, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010780, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010776, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-010837, colorName: Space Gray, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010794, colorName: Pale Gray, colorFamily: black, layout: iso_de }
+    - { sku: 920-010795, colorName: Pale Gray, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010798, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-010799, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
+
+- slug: logitech-mx-keys-mini
+  brand: logitech
+  name: MX Keys Mini
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/fra/mx-keys-mini-top-graphite-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/deu/mx-keys-mini-top-graphite-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/fra/mx-keys-mini-top-graphite-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/ch/mx-keys-mini-top-graphite-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini-for-mac/gallery/fra/mx-keys-mini-top-mac-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini-for-mac/gallery/deu/mx-keys-mini-top-mac-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-keys-mini.920-010482
+    - https://www.logitech.com/fr-fr/shop/p/mx-keys-mini-for-mac.920-010520
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 500, weightG: 506, widthMm: 296, depthMm: 132 }
+  variants:
+    - { sku: 920-010479, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-010482, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010492, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-010498, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010495, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-010481, colorName: Rose, colorFamily: color, layout: iso_de }
+    - { sku: 920-010494, colorName: Rose, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-010480, colorName: Pale Gray, colorFamily: black, layout: iso_de }
+    - { sku: 920-010483, colorName: Pale Gray, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010493, colorName: Pale Gray, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-010499, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010496, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-012645, colorName: Space Gray, colorFamily: black, layout: iso_de }
+    - { sku: 920-012646, colorName: Space Gray, colorFamily: black, layout: iso_fr }
+    - { sku: 920-012651, colorName: Space Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-012652, colorName: Space Gray, colorFamily: black, layout: ansi_us }
+
+- slug: logitech-wave-keys
+  brand: logitech
+  name: Wave Keys
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-graphite-gallery-1-fr.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-offwhite-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-offwhite-gallery-1-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-offwhite-gallery-1-ita.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/wave-keys-ergonomic-wireless
+  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 750 }
+  variants:
+    - { sku: 920-012284, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+    - { sku: 920-012299, colorName: Blanc cassé, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012283, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-012286, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-012298, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-012301, colorName: Graphite, colorFamily: black, layout: iso_uk }
+
+- slug: logitech-ergo-k860
+  brand: logitech
+  name: ERGO K860
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-fra-new.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-uk-new.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-nor-new.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-deu-new.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/k860-split-ergonomic.920-010104
+  specs: { formFactor: split, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 1160, widthMm: 456, depthMm: 233 }
+  variants:
+    - { sku: 920-010107, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-009168, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-009167, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-010108, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010104, colorName: Graphite, colorFamily: black, layout: iso_fr }
+
+- slug: logitech-pop-icon-keys
+  brand: logitech
+  name: POP Icon Keys
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/graphite-green/pop-icon-keys-top-angle-graphite-green-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/rose-off-white/pop-icon-keys-top-angle-rose-off-white-gallery-1-us-intl.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/rose-off-white/pop-icon-keys-top-angle-rose-off-white-gallery-1-uk.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/off-white-orange/pop-icon-keys-top-angle-off-white-orange-gallery-1-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/pop-icon-keys
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 530, widthMm: 325, depthMm: 137 }
+  variants:
+    - { sku: 920-013152, colorName: Rose et blanc cassé, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013060, colorName: Blanc cassé et orange, colorFamily: color, layout: iso_de }
+    - { sku: 920-013072, colorName: Blanc cassé et orange, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013151, colorName: Blanc cassé et orange, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013059, colorName: Graphite et vert, colorFamily: black, layout: iso_de }
+    - { sku: 920-013062, colorName: Graphite et vert, colorFamily: black, layout: iso_fr }
+    - { sku: 920-013071, colorName: Graphite et vert, colorFamily: black, layout: ansi_us }
+    - { sku: 920-013150, colorName: Graphite et vert, colorFamily: black, layout: iso_uk }
+    - { sku: 920-013273, colorName: Graphite et vert, colorFamily: black, layout: iso_nordic }
+
+- slug: logitech-signature-slim-keyboard-k950
+  brand: logitech
+  name: Signature Slim Keyboard K950
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-uk.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-intl.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/signature-slim-k950-keyboard.920-012453
+  specs: { formFactor: full, technology: scissor, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 685, widthMm: 434, depthMm: 135 }
+  variants:
+    - { sku: 920-012463, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-012453, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-012465, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-012451, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-012459, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-012464, colorName: Blanc cassé, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012454, colorName: Blanc cassé, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012466, colorName: Blanc cassé, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012452, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+
+- slug: logitech-signature-k650
+  brand: logitech
+  name: Signature K650
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-us-intl.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-uk.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-ch.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/k650-signature-wireless-keyboard
+  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 700, widthMm: 457, depthMm: 194 }
+  variants:
+    - { sku: 920-010967, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+    - { sku: 920-010918, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-010945, colorName: Graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010951, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-010914, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-010913, colorName: Graphite, colorFamily: black, layout: iso_de }
+
+- slug: logitech-pebble-keys-2-k380s
+  brand: logitech
+  name: Pebble Keys 2 K380s
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-uk.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-us-intl.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/pebble-keys-2.920-011805
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: 920-011845, colorName: Tons de rose, colorFamily: color, layout: iso_uk }
+    - { sku: 920-011797, colorName: Tons de rose, colorFamily: color, layout: iso_de }
+    - { sku: 920-011853, colorName: Tons de rose, colorFamily: color, layout: ansi_us }
+    - { sku: 920-011805, colorName: Tons de rose, colorFamily: color, layout: iso_fr }
+    - { sku: 920-011843, colorName: Tons de graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-011795, colorName: Tons de graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-011851, colorName: Tons de graphite, colorFamily: black, layout: ansi_us }
+    - { sku: 920-011803, colorName: Tons de graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-011879, colorName: Tons de graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-011844, colorName: Tons de blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-011796, colorName: Tons de blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-011852, colorName: Tons de blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-011804, colorName: Tons de blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-011880, colorName: Tons de blanc, colorFamily: color, layout: iso_nordic }
+
+- slug: logitech-keys-to-go-2
+  brand: logitech
+  name: Keys-To-Go 2
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-ch.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/keys-to-go2-universal.920-012969
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, widthMm: 250, depthMm: 105 }
+  variants:
+    - { sku: 920-012966, colorName: Lilac, colorFamily: color, layout: iso_de }
+    - { sku: 920-012969, colorName: Lilac, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012917, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-012964, colorName: Graphite, colorFamily: black, layout: iso_de }
+    - { sku: 920-012967, colorName: Graphite, colorFamily: black, layout: iso_fr }
+    - { sku: 920-012979, colorName: Graphite, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-012982, colorName: Blanc cassé, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012965, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+    - { sku: 920-012968, colorName: Blanc cassé, colorFamily: color, layout: iso_fr }
+
+# Lot du 2026-10-22 : 18 modèles, www.logitechg.com/fr-fr (prix € et dispositions du site français)
+- slug: logitech-pro-x2-rapid
+  brand: logitech
+  name: PRO X2 RAPID
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-us-intl.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x2-rapid.920-014080
+  specs: { formFactor: full, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, widthMm: 363, depthMm: 38 }
+  variants:
+    - { sku: 920-014080, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014078, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-014081, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014082, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014094, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014093, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-014095, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014096, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014110, colorName: Magenta, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014109, colorName: Magenta, colorFamily: color, layout: iso_uk }
+
+- slug: logitech-g316-x-75
+  brand: logitech
+  name: G316 X 75
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-75-pdp/gallery/black/g316-x-75-gaming-keyboard-top-angle-black-gallery-1-fr.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-75-pdp/gallery/black/g316-x-75-gaming-keyboard-top-angle-black-gallery-1-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-75-pdp/gallery/black/g316-x-75-gaming-keyboard-top-angle-black-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-75-pdp/gallery/black/g316-x-75-gaming-keyboard-top-angle-black-gallery-1-de.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g316-x-75-gaming-keyboard.920-014290
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 740 }
+  variants:
+    - { sku: 920-014275, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-014276, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014278, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014279, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014281, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014314, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-014315, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014317, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014318, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014319, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g316-x-98
+  brand: logitech
+  name: G316 X 98
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g316-x-98-gaming-keyboard.920-014190
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 880, widthMm: 140, depthMm: 40 }
+  variants:
+    - { sku: 920-014190, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014193, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014195, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014192, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014189, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-014227, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014230, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014231, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014229, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-014272, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-014253, colorName: Lilas, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014256, colorName: Lilas, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014257, colorName: Lilas, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014274, colorName: Lilas, colorFamily: color, layout: iso_de }
+
+- slug: logitech-g512-x-98
+  brand: logitech
+  name: G512 X 98
+  msrpEur: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-uk.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g512-x-98-gaming-keyboard.920-014000
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000 }
+  variants:
+    - { sku: 920-013998, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-014000, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-014002, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014003, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013974, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-013976, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013977, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013979, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013980, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g512-x-75
+  brand: logitech
+  name: G512 X 75
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-pan.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-75/gallery/g512-x-75-black-top-angle-gallery-1-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard.920-013930
+    - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 850 }
+  variants:
+    - { sku: 920-013928, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-013930, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013931, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013933, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013934, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013950, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-013952, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013953, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013954, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013955, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-pro-x-tkl
+  brand: logitech
+  name: PRO X TKL
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-pan.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x-tkl-wireless-keyboard.920-012156
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, widthMm: 352, depthMm: 38 }
+  variants:
+    - { sku: 920-012155, colorName: Magenta, colorFamily: color, layout: iso_de }
+    - { sku: 920-012156, colorName: Magenta, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012157, colorName: Magenta, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012158, colorName: Magenta, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012159, colorName: Magenta, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012130, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012131, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012134, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012135, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012136, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012144, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-012145, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012146, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012147, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012148, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-pro-x-tkl-rapid
+  brand: logitech
+  name: PRO X TKL RAPID
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-ch.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x-tkl-rapid.920-013229
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: 920-013228, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-013229, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013232, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013233, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013240, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-013241, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013287, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013288, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013242, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013248, colorName: Magenta, colorFamily: color, layout: iso_de }
+    - { sku: 920-013249, colorName: Magenta, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013251, colorName: Magenta, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013252, colorName: Magenta, colorFamily: color, layout: iso_uk, msrpEur: 190 }
+    - { sku: 920-013253, colorName: Magenta, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g915-x-lightspeed
+  brand: logitech
+  name: G915 X LIGHTSPEED
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g915-x-wireless-mechanical-gaming-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: 920-012697, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012706, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012707, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012708, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012698, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012686, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-012687, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012688, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012689, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012690, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g915-x-lightspeed-tkl
+  brand: logitech
+  name: G915 X LIGHTSPEED TKL
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-deu.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g915-x-tkl-wireless
+  specs: { formFactor: tkl, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: 920-012744, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012745, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012746, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012747, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012720, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012733, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-012734, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012735, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012737, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012736, colorName: Blanc, colorFamily: color, layout: iso_uk }
+
+- slug: logitech-g915-x
+  brand: logitech
+  name: G915 X
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-fra.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g915-x-mechanical-gaming-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 1040, widthMm: 150, depthMm: 23 }
+  variants:
+    - { sku: 920-012938, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012939, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012940, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012941, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012942, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g515-rapid-tkl
+  brand: logitech
+  name: G515 RAPID TKL
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g515-rapid-tkl.920-013858
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 800, widthMm: 146, depthMm: 22 }
+  variants:
+    - { sku: 920-013856, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-013858, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013859, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-013860, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013861, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-pro-x-60
+  brand: logitech
+  name: PRO X 60
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-fra.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-deu.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-fra.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-ch.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x-60-wireless-keyboard.920-011925
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, widthMm: 290, depthMm: 103 }
+  variants:
+    - { sku: 920-011925, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-011928, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-011929, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-011930, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-011905, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-011906, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-011909, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-011910, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-011911, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g515-lightspeed-tkl
+  brand: logitech
+  name: G515 LIGHTSPEED TKL
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-fr.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-esp.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-ita.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-us.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g515-tkl-wireless-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 880, widthMm: 150, depthMm: 22 }
+  variants:
+    - { sku: 920-012542, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012546, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012550, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012538, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012555, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012543, colorName: Blanc, colorFamily: color, layout: iso_de }
+    - { sku: 920-012547, colorName: Blanc, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012551, colorName: Blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012539, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-g515-tkl
+  brand: logitech
+  name: G515 TKL
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-fr.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-ch.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-esp.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-us.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g515-tkl-gaming-keyboard.920-012880
+  specs: { formFactor: tkl, technology: mechanical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 840, widthMm: 150, depthMm: 22 }
+  variants:
+    - { sku: 920-012876, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-012880, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012884, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012889, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012872, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: logitech-pro-keyboard
+  brand: logitech
+  name: PRO Keyboard
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/uk-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/uk-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/us-int-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/deu-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-mechanical-gaming-keyboard.920-009390
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, widthMm: 361, depthMm: 200 }
+  variants:
+    - { sku: 920-009426, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-009392, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-009389, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-009390, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-009391, colorName: Noir, colorFamily: color, layout: iso_nordic }
+
+- slug: logitech-g413-tkl-se
+  brand: logitech
+  name: G413 TKL SE
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-3qtr-right-angle-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-3qtr-right-angle-gallery-5.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g413-tkl-se-gaming-keyboard.920-010444
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 650 }
+  variants:
+    - { sku: 920-010446, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-010443, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-010444, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-010445, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-010563, colorName: Noir, colorFamily: color, layout: iso_uk }
+
+- slug: logitech-g413-se
+  brand: logitech
+  name: G413 SE
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g413-se-gaming-keyboard.920-010435
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, weightG: 780, widthMm: 127, depthMm: 36 }
+  variants:
+    - { sku: 920-010437, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-010434, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-010435, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-010436, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-010555, colorName: Noir, colorFamily: color, layout: iso_uk }
+
+- slug: logitech-g213-prodigy
+  brand: logitech
+  name: G213 Prodigy
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g213-rgb-gaming-keyboard.920-008088
+  specs: { formFactor: full, technology: membrane, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000, widthMm: 452, depthMm: 33 }
+  variants:
+    - { sku: 920-008091, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-008090, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-008088, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: 920-008087, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: 920-008093, colorName: Noir, colorFamily: color, layout: ansi_us }

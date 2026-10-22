@@ -163,6 +163,9 @@ function aim(c: Channel, to: number, now: number, dur: number, ripple = false) {
 type Item = {
   slug: string
   sprite: Sprite
+  /** The bitmaps it had before its photo came in, faded out over `swap` (0 → 1). */
+  previous: Sprite | null
+  swap: Channel
   /** 1 kept by the answers (drawn in colour), 0 ruled out (drawn as a sketch). */
   on: Channel
   /** Opacity of the sketch: fainter the more answers the product fails. */
@@ -288,6 +291,8 @@ export class SceneRenderer {
   private dragging = false
   private ripple: Pt = { x: 0, y: 0 }
   private last = performance.now()
+  /** Products drawn since `takeDrawn` last ran, by category: the photos worth fetching first. */
+  private drawn = new Map<Category, Set<string>>()
   private readonly reduce: boolean
   /** Called after every frame, for overlays that follow a product (the popup). */
   onFrame: (() => void) | null = null
@@ -341,6 +346,8 @@ export class SceneRenderer {
     world.items = [...sprites].map(([slug, sprite]) => ({
       slug,
       sprite,
+      previous: null,
+      swap: channel(1),
       on: channel(1),
       faint: channel(1),
       hot: channel(0),
@@ -365,6 +372,23 @@ export class SceneRenderer {
     world.spot = []
     this.applyTargets(band, this.targets.get(category) ?? null, false)
     gsap.to(world, { alpha: 1, duration: this.reduce ? 0 : 0.9, ease: 'power2.out' })
+  }
+
+  /** The products drawn (on screen or about to be) since the last call, by category. */
+  takeDrawn() {
+    const drawn = this.drawn
+    this.drawn = new Map()
+    return drawn
+  }
+
+  /** Gives a product new bitmaps (its photo in place of its drawing), crossfading on screen. */
+  setSprite(category: Category, slug: string, sprite: Sprite) {
+    const item = this.band(category)?.world.bySlug.get(slug)
+    if (!item) return
+    item.previous = item.sprite
+    item.sprite = sprite
+    item.swap = channel(0)
+    aim(item.swap, 1, performance.now(), this.reduce ? 0 : 600)
   }
 
   dispose() {
@@ -1094,6 +1118,7 @@ export class SceneRenderer {
     const focusIn = this.focusIn(now)
     // With a short list on show, the podium badges ride on it rather than on the field.
     const ranked = open && !world.spot.some((s) => !s.leaving)
+    const drawn = this.drawnIn(band.category)
 
     world.slots.forEach((slot, index) => {
       const { item } = slot
@@ -1111,6 +1136,7 @@ export class SceneRenderer {
           const delay = this.rippleDelay(sx, sy)
           const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
           if (presence <= 0.002) continue
+          drawn.add(item.slug)
           const focused =
             !!focus && focus.hit.slot === index && focus.hit.kx === kx && focus.hit.ky === ky
           this.drawProduct(
@@ -1135,7 +1161,9 @@ export class SceneRenderer {
     const alpha = bandAlpha * world.alpha
     const focus = this.activeBand() === band && this.focus?.hit.spot ? this.focus : null
     const focusIn = this.focusIn(now)
+    const drawn = this.drawnIn(band.category)
     for (const s of world.spot) {
+      drawn.add(s.item.slug)
       const pose = this.spotPose(band, s, now)
       const delay = this.rippleDelay(pose.x, pose.y)
       const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
@@ -1183,7 +1211,18 @@ export class SceneRenderer {
       ctx.drawImage(s.ghost, x - dw / 2, y - dh / 2, dw, dh)
     }
     if (on > 0.001) {
-      ctx.globalAlpha = a * on
+      const swap = read(item.swap, now)
+      const before = item.previous
+      if (before && swap < 1) {
+        const bw = (before.w + before.pad * 2) * scale
+        const bh = (before.h + before.pad * 2) * scale
+        // Held whole for the first half, so the paper never shows through the crossfade.
+        ctx.globalAlpha = a * on * Math.min(1, 2 * (1 - swap))
+        ctx.drawImage(before.color, x - bw / 2, y - bh / 2, bw, bh)
+      } else if (before) {
+        item.previous = null
+      }
+      ctx.globalAlpha = a * on * swap
       ctx.drawImage(s.color, x - dw / 2, y - dh / 2, dw, dh)
     }
     const w = s.w * rest
@@ -1313,6 +1352,15 @@ export class SceneRenderer {
 
   private band(category: Category) {
     return this.bands.find((b) => b.category === category)
+  }
+
+  private drawnIn(category: Category) {
+    let drawn = this.drawn.get(category)
+    if (!drawn) {
+      drawn = new Set()
+      this.drawn.set(category, drawn)
+    }
+    return drawn
   }
 
   /** The panel that fills the screen on a category page, once it has finished opening. */

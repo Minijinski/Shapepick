@@ -1,10 +1,53 @@
-# Marques FICTIVES pour le développement. Les vraies données remplaceront ces fichiers.
-- { slug: northkey, name: Northkey, country: SE }
-- { slug: atelier, name: Atelier Clavier, country: FR }
-- { slug: pulse, name: Pulse Dynamics, country: US }
-- { slug: hexa, name: Hexa Works, country: KR }
+# Marques FICTIVES des écrans de démo : elles partiront avec eux, quand les vrais écrans arriveront.
 - { slug: kestrel, name: Kestrel, country: CN }
 - { slug: lumen, name: Lumen Display, country: DE }
 - { slug: vanta, name: Vanta, country: TW }
 - { slug: prism, name: Prism, country: CN }
 - { slug: halcyon, name: Halcyon, country: JP }
+
+# Marques importées (pnpm ingest keychron, 2026-10-21)
+- { slug: keychron, name: Keychron, website: https://www.keychron.com }
+- { slug: lemokey, name: Lemokey, website: https://www.lemokey.com }
+- { slug: ducky, name: Ducky }
+- { slug: realforce, name: Realforce }
+- { slug: lofree, name: Lofree }
+- { slug: wobkey, name: Wobkey }
+- { slug: vortex, name: Vortex }
+- { slug: wooting, name: Wooting }
+- { slug: qwertykeys, name: Qwertykeys }
+- { slug: chilkey, name: Chilkey }
+- { slug: filco, name: Filco }
+- { slug: hhkb, name: HHKB }
+- { slug: luminkey, name: Luminkey }
+- { slug: leopold, name: Leopold }
+- { slug: varmilo, name: Varmilo }
+- { slug: mistel, name: Mistel }
+- { slug: glorious, name: Glorious }
+- { slug: kbparadise, name: KBParadise }
+
+# Marques importées (pnpm ingest epomaker, 2026-10-21)
+- { slug: epomaker, name: Epomaker }
+- { slug: aula, name: Aula }
+- { slug: ajazz, name: Ajazz }
+- { slug: womier, name: Womier }
+
+# Marques importées (pnpm ingest yunzii, 2026-10-21)
+- { slug: yunzii, name: Yunzii }
+
+# Marques importées (pnpm ingest logitech, 2026-10-22)
+- { slug: logitech, name: Logitech, website: https://www.logitech.com }
+
+# Marques importées (pnpm ingest corsair, 2026-10-22)
+- { slug: corsair, name: Corsair, website: https://www.corsair.com }
+
+# Marques importées (pnpm ingest razer, 2026-10-22)
+- { slug: razer, name: Razer, website: https://www.razer.com }
+
+# Marques importées (pnpm ingest hyperx, 2026-10-22)
+- { slug: hyperx, name: HyperX }
+
+# Marques importées (pnpm ingest turtlebeach, 2026-10-22)
+- { slug: turtle-beach, name: Turtle Beach }
+
+# Marques importées (pnpm ingest steelseries, 2026-10-22)
+- { slug: steelseries, name: SteelSeries, website: https://steelseries.com }

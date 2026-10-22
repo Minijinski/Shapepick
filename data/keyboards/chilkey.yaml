@@ -1,0 +1,116 @@
+# Chilkey : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « WS White Silent » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ws-white-silent)
+# à vérifier : switch « Wuque Studio Breeze » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug wuque-studio-breeze)
+- slug: chilkey-nd104
+  brand: chilkey
+  name: ND104
+  releaseYear: 2025
+  msrpEur: 260
+  msrpUsd: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26683-F5VQ5-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard.jpg?v=1782330801, kind: cutout_top, width: 2226, height: 2411, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26690-C423P-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Gunmeta.jpg?v=1782330801, kind: cutout_top, width: 1080, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26689-TCTDE-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Shadow.jpg?v=1782330801, kind: cutout_top, width: 2244, height: 2418 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26691-8JVRJ-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Lunar-W.jpg?v=1782330801, kind: cutout_top, width: 2040, height: 2315 }
+  sources:
+    - https://mechanicalkeyboards.com/products/chilkey-nd104-cnc-aluminum-hotswap-wireless-rgb-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: via, macSupport: true, batteryMah: 4000, soundDampening: true }
+  variants:
+    - { sku: CK-ND104_GGS12, colorName: Gunmetal Grey, colorFamily: black, layout: ansi_us }
+    - { sku: CK-ND104_BKB12, colorName: Shadow Black, colorFamily: black, layout: ansi_us }
+    - { sku: CK-ND104_LWB12, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: CK-ND104_SPB12, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: CK-ND104_LYB12, colorName: Yellow, colorFamily: color, layout: ansi_us }
+    - { sku: CK-ND104_SBB12, colorName: Sky Blue, colorFamily: color, layout: ansi_us }
+    - { sku: CK-ND104_CBKB16, colorName: Classic Black, colorFamily: black, layout: ansi_us, msrpEur: 225 }
+
+# à vérifier : switch « Durock Green Bean » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug durock-green-bean)
+- slug: chilkey-foxy-65
+  brand: chilkey
+  name: Foxy 65
+  releaseYear: 2025
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25224-NH9FJ-Chilkey-Foxy-65-Aluminum-Wireless-Keyboard-Dark-Blush-Flex-C.jpg?v=1746807128, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25225-UNHJK-Chilkey-Foxy-65-Aluminum-Wireless-Keyboard-Wild-Rose-Flex-Cu.jpg?v=1746807128, kind: cutout_top, width: 1080, height: 1080 }
+  sources:
+    - https://mechanicalkeyboards.com/products/chilkey-foxy-65-aluminum-wireless-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 2250, soundDampening: true }
+  variants:
+    - { sku: CK-FX65WR-NFT, colorName: Wild Rose, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Wuque Studio Flux Poseidon Linear Plate Mount Magnetic HE Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug wuque-studio-flux-poseidon-linear-magnetic-he)
+- slug: chilkey-sf60
+  brand: chilkey
+  name: SF60
+  releaseYear: 2026
+  msrpEur: 235
+  msrpUsd: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27539-IK39H-Chilkey-SF60-Magnetic-HE-Keyboard.jpg?v=1780948258, kind: cutout_top, width: 2400, height: 1166, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27541-EHFL1-Chilkey-SF60-Magnetic-HE-Keyboard-Stellar-Silver.jpg?v=1780948258, kind: cutout_top, width: 2400, height: 1119 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27542-MAVR3-Chilkey-SF60-Magnetic-HE-Keyboard-Starlit-Black.jpg?v=1780948258, kind: cutout_top, width: 1379, height: 576 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27544-9YERX-Chilkey-SF60-Magnetic-HE-Keyboard-Stardust-Pink.jpg?v=1780948258, kind: cutout_top, width: 2400, height: 1124 }
+  sources:
+    - https://mechanicalkeyboards.com/products/chilkey-sf60-he-keyboard
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pom, backlight: rgb, southFacing: true, firmware: proprietary, soundDampening: true, heightFrontMm: 17.4, typingAngleDeg: 6.5 }
+  variants:
+    - { sku: CK-SF60-StbWht, colorName: Starbeam White, colorFamily: white, layout: ansi_us }
+    - { sku: CK-SF60-StSilv, colorName: Stellar Silver, colorFamily: white, layout: ansi_us }
+    - { sku: CK-SF60-StrBlk, colorName: Starlit Black, colorFamily: black, layout: ansi_us }
+    - { sku: CK-SF60-StdPnk, colorName: Stardust Pink, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Gateron EF Dopamine Blue 45g Linear PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-ef-dopamine-blue-linear)
+# à vérifier : switch « Chilkey Aster 45g Linear Low Profile PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug chilkey-aster-linear-low-profile)
+- slug: chilkey-nd75
+  brand: chilkey
+  name: ND75
+  releaseYear: 2024
+  msrpEur: 140
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18946-CQFV4-Chilkey-ND75-12mm-Flex-Cut-PCB-Black-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18948-YJ3TN-Chilkey-ND75-12mm-Flex-Cut-PCB-Purple-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18947-X66IF-Chilkey-ND75-12mm-Flex-Cut-PCB-Teal-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18945-TBF4G-Chilkey-ND75-12mm-Flex-Cut-PCB-White-Aluminum-TKL-RGB.png?v=1774963783, kind: cutout_top, width: 1620, height: 1620 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23655-NLUYS-Chilkey-ND75-Aluminum-Hotswap-Wireless-RGB-Low-Profile.jpg?v=1774963706, kind: cutout_top, width: 1310, height: 620 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23658-5554P-Chilkey-ND75-LP-Baby-Blue-Aluminum-Hotswap-Wireless-RGB-Low.jpg?v=1774963706, kind: cutout_top, width: 2160, height: 2160 }
+  sources:
+    - https://mechanicalkeyboards.com/products/chilkey-nd75-12mm-flex-cut-pcb
+    - https://mechanicalkeyboards.com/products/chilkey-nd75-lp-aluminum-hotswap-wireless-rgb-low-profile
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 1800, soundDampening: true, typingAngleDeg: 6.5 }
+  variants:
+    - { sku: CK-ND75-12F_3, colorName: Mountain Blue, colorFamily: color, layout: ansi_us }
+    - { sku: CK-ND75LP-PWHT, colorName: Pure White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Kailh Blue Lotus » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-blue-lotus)
+- slug: chilkey-nd65
+  brand: chilkey
+  name: ND65
+  releaseYear: 2024
+  msrpEur: 100
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23024-2GFZN-Chilkey-ND65-Jet-Black-Aluminum-Hotswap-Keyboard.jpg?v=1727733628, kind: cutout_top, width: 1282, height: 477, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/chilkey-nd65-jet-black-aluminum-hotswap-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 3000 }
+  variants:
+    - { sku: CK-ND65WD, colorName: Jet Black, colorFamily: black, layout: ansi_us }

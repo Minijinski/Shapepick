@@ -9,6 +9,24 @@
         "cd apps/web && PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vite dev --port 3000 --strictPort"
       ],
       "port": 3000
+    },
+    {
+      "name": "web-local-db",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd apps/web && NETLIFY_DEV=1 DATABASE_URL=postgres://choose@localhost:54329/choose_a_device PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vite dev --port 3001 --strictPort"
+      ],
+      "port": 3001
+    },
+    {
+      "name": "web-local-db-2",
+      "runtimeExecutable": "sh",
+      "runtimeArgs": [
+        "-c",
+        "cd apps/web && NETLIFY_DEV=1 DATABASE_URL=postgres://choose@localhost:54329/choose_a_device PATH=/opt/homebrew/opt/node@24/bin:$PATH pnpm exec vite dev --port 3002 --strictPort"
+      ],
+      "port": 3002
     }
   ]
 }

@@ -1,0 +1,46 @@
+# Modèles et marques que pnpm ingest ne doit pas (ré)importer. Curation du 2026-10-22, validée par
+# l'utilisateur : un catalogue resserré (~500) plutôt qu'exhaustif. Retirer une ligne pour la laisser revenir.
+
+# Marques de niche, 1 à 3 modèles chez mechanicalkeyboards.com ou Womier.
+brands:
+  - 0-01
+  - click-inc
+  - endgame-gear
+  - evoworks
+  - hexgears
+  - hkfos
+  - keebwerk
+  - keycool
+  - machina
+  - mechanicalkeyboards
+  - meko
+  - melgeek
+  - neo
+  - obinslab
+  - oneofzero
+  - pmokey
+  - pulsar
+  - ticktype
+  - typone
+
+slugs:
+  # Éditions limitées ou spéciales (bois, cuivre, béton, résine, séries régionales).
+  - keychron-q1-he-copper-edition
+  - keychron-k2-he-all-wood-special-edition
+  - keychron-k3-max-all-wood-special-edition
+  - keychron-k2-he-concrete-edition
+  - keychron-k2-he-resin-edition
+  - keychron-v6-he-limited-edition-to-specific-region
+  - keychron-v1-he-limited-edition-to-specific-region
+  - keychron-k8-he-all-wood-special-edition
+  # Keychron « Version 1/2 », remplacés par des générations plus récentes du même modèle.
+  - keychron-q1-version-2
+  - keychron-k10-version-2
+  - keychron-k5-version-2
+  - keychron-q1-version-1
+  - keychron-k8-version-2
+  - keychron-k2-version-2
+  - keychron-k2-hot-swappable-version-2
+  - keychron-k3-version-2
+  - keychron-k4-version-2
+  - keychron-k3-non-backlight-version-2

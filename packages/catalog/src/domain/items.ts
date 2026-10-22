@@ -6,6 +6,7 @@ import {
   type KeyboardSpecs,
   type MonitorInput,
   type MonitorSpecs,
+  type ProductImage,
   ppiOf,
   type Switch,
 } from './schemas'
@@ -13,6 +14,9 @@ import {
 // What the finder works on: one record per product, brand and switches resolved, nothing nested
 // deeper than the variants. The snapshot route serves exactly this shape, and the engine never sees
 // anything else, so the same predicates run on the server (SSR) and in the browser.
+
+/** A product photo, cut out on white. */
+export type Photo = Pick<ProductImage, 'url' | 'width' | 'height'>
 
 type ItemBase = {
   slug: string
@@ -23,6 +27,11 @@ type ItemBase = {
   popularity: number
   editorialScore: number
   tagline?: Text
+  /**
+   * The product seen the way its silhouette is drawn: a keyboard from above, a monitor from the
+   * front. Without one, the silhouette stands in for it.
+   */
+  photo?: Photo
 }
 
 export type KeyboardItem = ItemBase & {
@@ -54,6 +63,13 @@ const brandOf = (brands: Map<string, Brand>, slug: string, product: string) => {
 // A product's price is its cheapest variant, which is what a budget answer should be read against.
 const cheapest = (prices: number[]) => Math.min(...prices)
 
+/** The primary photo of a view, else the first one of that view. */
+function photoOf(images: ProductImage[] | undefined, kind: ProductImage['kind']) {
+  const views = images?.filter((image) => image.kind === kind) ?? []
+  const main = views.find((image) => image.primary) ?? views[0]
+  return main && { url: main.url, width: main.width, height: main.height }
+}
+
 export function toKeyboardItems(
   inputs: KeyboardInput[],
   brandList: Brand[],
@@ -83,6 +99,7 @@ export function toKeyboardItems(
       popularity: k.popularity,
       editorialScore: k.editorialScore,
       tagline: k.tagline,
+      photo: photoOf(k.images, 'cutout_top'),
       specs: k.specs,
       variants,
     }
@@ -107,6 +124,7 @@ export function toMonitorItems(inputs: MonitorInput[], brandList: Brand[]): Moni
       popularity: m.popularity,
       editorialScore: m.editorialScore,
       tagline: m.tagline,
+      photo: photoOf(m.images, 'cutout_front'),
       specs: { ...m.specs, ppi: ppiOf(m.specs) },
       variants,
     }

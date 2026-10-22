@@ -1,0 +1,106 @@
+# KBParadise : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Gateron G Pro Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-brown)
+# à vérifier : switch « Gateron G Pro Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-red)
+- slug: kbparadise-v80-v2
+  brand: kbparadise
+  name: V80 V2
+  releaseYear: 2023
+  msrpEur: 110
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16376-I44Z5-V80-V2-Black-Crystal-White-LED.png?v=1707272766, kind: cutout_top, width: 2400, height: 1350, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/kbparadise-v80-v2-black-crystal-white-led
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: KBP-V80W-BC-GTR, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us }
+    - { sku: KBP-V80W-BC-KLBW, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us, switch: kailh-box-white, msrpEur: 125 }
+
+# à vérifier : switch « Matias Standard Clicky » : specs non publiées en texte, à saisir dans data/switches.yaml (slug matias-standard)
+# à vérifier : switch « Matias Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug matias-linear)
+# à vérifier : switch « Gateron Milky Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-milky-red)
+- slug: kbparadise-v60
+  brand: kbparadise
+  name: V60
+  releaseYear: 2024
+  msrpEur: 105
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4003-FBUJH-V60-Vintage.jpg?v=1751566931, kind: cutout_top, width: 1200, height: 473, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4005-6QJYA-V60-GTR.jpg?v=1713292257, kind: cutout_top, width: 1084, height: 405 }
+  sources:
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-vintage-60-keyboard
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-gtr
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: KBP-V60-MTSC-VIN, colorName: Vintage, colorFamily: color, layout: ansi_us }
+    - { sku: KBP-V60GTR-R, colorName: GTR, colorFamily: color, layout: ansi_us }
+    - { sku: KBP-V60GTR-G, colorName: GTR, colorFamily: color, layout: ansi_us, switch: gateron-milky-green }
+
+# à vérifier : switch « Matias Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug matias-linear)
+- slug: kbparadise-v60-type-r
+  brand: kbparadise
+  name: V60 Type R
+  releaseYear: 2023
+  msrpEur: 100
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3360-V6Q37-V60-Type-R-Polestar-Deep-Ocean.jpg?v=1707268632, kind: cutout_top, width: 2400, height: 1599, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1902-X2IPS-V60-Type-R-Polestar-Vintage.jpg?v=1751573526, kind: cutout_top, width: 2032, height: 808 }
+  sources:
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-type-r-polestar-deep-ocean
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-type-r-polestar-vintage
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: KBP-V60R-PS-B-DO, colorName: Polestar Deep Ocean, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: KBP-V60R-PS-W-DO, colorName: Polestar Deep Ocean, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: V60R-MTSQL-PS-VIN, colorName: Polestar Vintage, colorFamily: color, layout: ansi_us, msrpEur: 130 }
+
+- slug: kbparadise-v60-the-2
+  brand: kbparadise
+  name: V60 The 2
+  releaseYear: 2023
+  msrpEur: 95
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5242-TFYAX-V60-The-2-White.png?v=1707269407, kind: cutout_top, width: 2048, height: 860, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5241-3AWTR-V60-The-2-Black.png?v=1707269406, kind: cutout_top, width: 2048, height: 1317 }
+  sources:
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-the-2-white
+    - https://mechanicalkeyboards.com/products/kbparadise-v60-the-2-black
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: qmk, macSupport: true, widthMm: 290, depthMm: 100 }
+  variants:
+    - { sku: KBP-V60T2-KLBW-WH, colorName: White, colorFamily: white, layout: ansi_us, switch: kailh-box-white, msrpEur: 105 }
+    - { sku: KBP-V60T2-KLBB-WH, colorName: White, colorFamily: white, layout: ansi_us, switch: kailh-box-brown, msrpEur: 105 }
+    - { sku: KBP-V60T2-GTG-WH, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-milky-green }
+    - { sku: KBP-V60T2-B-BK, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 85 }
+
+- slug: kbparadise-v80
+  brand: kbparadise
+  name: V80
+  releaseYear: 2024
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4074-G58DE-V80-Front-Print.jpg?v=1713293446, kind: cutout_top, width: 1072, height: 560, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/kbparadise-v80-front-print
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: KBP-V80-SS-BK-FP, colorName: Front Print TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }

@@ -36,12 +36,18 @@ const panelName: Record<string, string> = {
 const pick = (pair: [string, string] | undefined, locale: Locale) =>
   pair ? pair[locale === "fr" ? 0 : 1] : "";
 
-export const formatPrice = (value: number, locale: Locale) =>
+/** An amount in euros, as typed: budget bounds and the like. */
+export const formatAmount = (value: number, locale: Locale) =>
   new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-IE", {
     style: "currency",
     currency: "EUR",
     maximumFractionDigits: 0,
   }).format(value);
+
+/** A product's price: indicative (typical regular price, rounded, refreshed weekly), never today's
+ * shop price, so it always reads as an approximation. Shop offers will carry the exact prices. */
+export const formatPrice = (value: number, locale: Locale) =>
+  `≈\u00a0${formatAmount(value, locale)}`;
 
 const num = (value: number, locale: Locale) =>
   new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-GB").format(value);

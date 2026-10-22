@@ -1,0 +1,596 @@
+# Yunzii : importés de yunzii.com par `pnpm ingest yunzii`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 22 modèles, yunzii.com (prix € estimés depuis les prix US)
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+- slug: yunzii-b98-pro
+  brand: yunzii
+  name: B98 PRO
+  releaseYear: 2026
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-pink-de.jpg?v=1792054385, kind: cutout_top, width: 3840, height: 3840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-beige-de.jpg?v=1792054385, kind: cutout_top, width: 3840, height: 3840 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-green-de.jpg?v=1792054385, kind: cutout_top, width: 3840, height: 3840 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-pink-fr.jpg?v=1792054385, kind: cutout_top, width: 3840, height: 3840 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-main-1.jpg?v=1784108580, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b98-pro-main-5.jpg?v=1784108580, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-b98-pro-qmk-via-wireless-mechanical-keyboard-iso-layout
+    - https://yunzii.com/products/yunzii-b98-pro-qmk-via-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true, widthMm: 414, depthMm: 142 }
+  variants:
+    - { sku: b98-pro-pink-milk-v2-de, colorName: Pink, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-pink-candy-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
+    - { sku: b98-pro-beige-milk-v2-de, colorName: Beige, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-beige-candy-de, colorName: Beige, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
+    - { sku: b98-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-matcha-green-candy-de, colorName: Matcha Green, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
+    - { sku: b98-pro-pink-milk-v2-fr, colorName: Pink, colorFamily: color, layout: iso_fr }
+    - { sku: b98-pro-pink-candy-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
+    - { sku: b98-pro-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-pink-candy, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-blue-milk-v2, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-blue-candy, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: b98-pro-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-matcha-green-milk-v2, colorName: Matcha Green, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-matcha-green-candy, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-coffee-brown-milk-v2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-coffee-brown-candy, colorName: Coffee Brown, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b98-pro-purple-milk-v2, colorName: Lilac Purple, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-purple-candy, colorName: Lilac Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+
+- slug: yunzii-if75
+  brand: yunzii
+  name: IF75
+  releaseYear: 2026
+  msrpEur: 100
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if75-main-1.jpg?v=1789547515, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if75-main-3.jpg?v=1789547515, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if75-main-7.jpg?v=1789547515, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if75-main-11.jpg?v=1789547515, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-if75-qmk-via-wireless-mechanical-gaming-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, macSupport: true, batteryMah: 8000, soundDampening: true, widthMm: 333, depthMm: 137 }
+  variants:
+    - { sku: if75-pink-candy, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if75-pink-onyx-gray, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
+    - { sku: if75-purple-candy, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if75-purple-onyx-gray, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
+    - { sku: if75-white-candy, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if75-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if75-black-onyx-gray, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
+
+# à vérifier : switch « YUNZII Cocoa V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-cocoa-v2-linear)
+- slug: yunzii-al98-pro
+  brand: yunzii
+  name: AL98 PRO
+  releaseYear: 2026
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98pro-main-1.jpg?v=1788779399, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98pro-main-10.jpg?v=1788779399, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98pro-main-5.jpg?v=1788779399, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98pro-main-15.jpg?v=1788779399, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-al98-pro-dual-8k-wireless-aluminum-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, wristRestIncluded: true, widthMm: 404, depthMm: 136 }
+  variants:
+    - { sku: al98pro-white-cocoa-v2, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: al98pro-white-candy, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: al98pro-pink-cocoa-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: al98pro-black-cocoa-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: al98pro-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+- slug: yunzii-if68
+  brand: yunzii
+  name: IF68
+  releaseYear: 2026
+  msrpEur: 100
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if68-main-1.jpg?v=1784295684, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if68-main-3.jpg?v=1784295684, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if68-main-6.jpg?v=1784295685, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/if68-main-9.jpg?v=1784295684, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-if68-qmk-via-wireless-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, macSupport: true, batteryMah: 8000, soundDampening: true, widthMm: 327, depthMm: 117 }
+  variants:
+    - { sku: if68-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: if68-pink-candy, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if68-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: if68-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: if68-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: if68-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+- slug: yunzii-c75
+  brand: yunzii
+  name: C75
+  releaseYear: 2025
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-mao-main-1.jpg?v=1784296054, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-mao-main-3.jpg?v=1784296054, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-mao-main-6.jpg?v=1784296054, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-main-1.jpg?v=1758681285, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-main-29.jpg?v=1775699914, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c75-main-30.jpg?v=1775699914, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-c75-mao-cake-kitten-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-c75-cake-meow-wireless-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 5500, weightG: 1008, widthMm: 336, depthMm: 162 }
+  variants:
+    - { sku: c75-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: c75-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us }
+    - { sku: c75-purple-mao-candy-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c75-pink-candy-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c75-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: c75-beige-candy-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c75-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us }
+    - { sku: c75-choco-candy-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c75-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: c75-blue-candy-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « YUNZII Milk V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2)
+# à vérifier : switch « YUNZII Cocoa Cream V2 Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
+# à vérifier : switch « Cocoa Cream V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2)
+# à vérifier : switch « Milk Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk)
+# à vérifier : switch « Blue Grey Tactile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug blue-grey-tactile)
+- slug: yunzii-b75-pro
+  brand: yunzii
+  name: B75 Pro
+  releaseYear: 2024
+  msrpEur: 95
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-coffee-brown-main-1.jpg?v=1784108106, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-coffee-brown-main-3.jpg?v=1784108106, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-olivia-green-main-1.jpg?v=1784107986, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-olivia-green-main-2.jpg?v=1784107986, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75pro-black-main-de1.jpg?v=1790158023, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75pro-pink-main-de4.jpg?v=1790158024, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-b75-pro-coffee-brown-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b75-pro-olive-green-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b75-pro-wireless-mechanical-keyboard-iso-layout
+    - https://yunzii.com/products/yunzii-b75-pro-green-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b75-pro-heart-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b75-pro-dark-gray-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b75-pro-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 907, widthMm: 334, depthMm: 144 }
+  variants:
+    - { sku: B75-PRO-Coffee-Brown-MilkV2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us }
+    - { sku: B75-PRO-Olive-Green-MilkV2, colorName: Olive Green, colorFamily: color, layout: ansi_us }
+    - { sku: b75-pro-pink-heart-milk-v2-de, colorName: Pink Heart, colorFamily: color, layout: iso_de }
+    - { sku: b75-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de }
+    - { sku: b75-pro-black-purple-milk-v2-de, colorName: Black Purple, colorFamily: black, layout: iso_de }
+    - { sku: b75-pro-pink-heart-milk-v2-fr, colorName: Pink Heart, colorFamily: color, layout: iso_fr }
+    - { sku: b75-pro-matcha-green-milk-v2-fr, colorName: Matcha Green, colorFamily: color, layout: iso_fr }
+    - { sku: b75-pro-black-purple-milk-v2-fr, colorName: Black Purple, colorFamily: black, layout: iso_fr }
+    - { sku: B75-PRO-Matcha-Green-MilkV2, colorName: Matcha Green, colorFamily: color, layout: ansi_us }
+    - { sku: B75 PRO Pink Milk V2 Switch, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: B75-PRO-White-Heart-MilkV2, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: B75-PRO-Black-Heart-MilkV2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: B75 PRO Dark Grey Cocoa Cream V2 Switch, colorName: Dark Gray, colorFamily: black, layout: ansi_us }
+    - { sku: B75 PRO Purple Milk Switch, colorName: Purple, colorFamily: color, layout: ansi_us }
+    - { sku: B75 PRO Grey Milk Switch, colorName: Grey, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+- slug: yunzii-c98
+  brand: yunzii
+  name: C98
+  releaseYear: 2026
+  msrpEur: 145
+  msrpUsd: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509_dbf4fc5d-ef16-4df9-93a8-a51d47b534c6.jpg?v=1780397400, kind: cutout_top, width: 3000, height: 3000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509.jpg?v=1780397400, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509_2587d1cd-ecf8-4332-8512-1e33e6c9697b.jpg?v=1780397400, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509_3b51cd0a-28a2-482b-9512-ac37889f6e6e.jpg?v=1780397401, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c98-mao-main-1.jpg?v=1784532060, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/c98-mao-main-6.jpg?v=1784532060, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-c98-cake-meow-wireless-mechanical-keyboard-iso-layout
+    - https://yunzii.com/products/yunzii-c98-mao-cake-kitten-wireless-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-c98-cake-meow-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1332, widthMm: 406, depthMm: 168 }
+  variants:
+    - { sku: c98-pink-milk-v2-linear-de, colorName: Pink, colorFamily: color, layout: iso_de }
+    - { sku: c98-pink-candy-linear-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
+    - { sku: c98-beige-milk-v2-linear-de, colorName: Beige, colorFamily: color, layout: iso_de }
+    - { sku: c98-pink-milk-v2-linear-fr, colorName: Pink, colorFamily: color, layout: iso_fr }
+    - { sku: c98-pink-candy-linear-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
+    - { sku: c98-beige-milk-v2-linear-fr, colorName: Beige, colorFamily: color, layout: iso_fr }
+    - { sku: c98-beige-candy-linear-fr, colorName: Beige, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
+    - { sku: c98-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: c98-pink-mao-candy-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c98-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us }
+    - { sku: c98-purple-mao-candy-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c98-green-mao-milk-v2-linear, colorName: Green, colorFamily: color, layout: ansi_us }
+    - { sku: c98-green-mao-candy-linear, colorName: Green, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c98-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: c98-beige-candy-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c98-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us }
+    - { sku: c98-choco-candy-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: c98-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: c98-blue-candy-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « Snow Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug snow-linear)
+- slug: yunzii-x98
+  brand: yunzii
+  name: X98
+  releaseYear: 2025
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-solid-main-1.jpg?v=1788939209, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-solid-main-4.jpg?v=1788939209, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-main-3.jpg?v=1787119990, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-main-4.jpg?v=1787119990, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-main-8.jpg?v=1787119998, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/x98-main-12.jpg?v=1787119991, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-x98-solid-qmk-via-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-x98-transparent-qmk-via-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true, weightG: 1270, widthMm: 391, depthMm: 142 }
+  variants:
+    - { sku: x98-milky-white-snow-switch, colorName: Milky White, colorFamily: white, layout: ansi_us }
+    - { sku: x98-milky-white-crystal-switch, colorName: Milky White, colorFamily: white, layout: ansi_us, switch: yunzii-crystal-linear }
+    - { sku: x98-white-snow-switch, colorName: Transparent White, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-white-crystal-switch, colorName: Transparent White, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
+    - { sku: x98-pink-snow-switch, colorName: Transparent Pink, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-pink-crystal-switch, colorName: Transparent Pink, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
+    - { sku: x98-purple-snow-switch, colorName: Transparent Purple, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-purple-crystal-switch, colorName: Transparent Purple, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
+    - { sku: x98-transparent-black-snow-switch, colorName: Transparent Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-transparent-black-crystal-switch, colorName: Transparent Black, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
+
+- slug: yunzii-wood84
+  brand: yunzii
+  name: WOOD84
+  releaseYear: 2026
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/wood84-main-1.jpg?v=1776911361, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/wood84-main-6.jpg?v=1776911360, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-wood84-wireless-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: tray, caseMaterial: wood, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true, widthMm: 325, depthMm: 135 }
+  variants:
+    - { sku: wood84-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
+- slug: yunzii-b75-pro-max
+  brand: yunzii
+  name: B75 PRO MAX
+  releaseYear: 2025
+  msrpEur: 100
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-max-main-1.jpg?v=1763620227, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-max-main-6.jpg?v=1763620951, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-max-main-3.jpg?v=1763620951, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-max-main-9.jpg?v=1763620975, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://yunzii.com/products/yunzii-b75-pro-max-qmk-via-knob-tft-screen-wireless-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, batteryMah: 8000, soundDampening: true, weightG: 993, widthMm: 334, depthMm: 144 }
+  variants:
+    - { sku: b75-pro-max-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: b75-pro-max-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b75-pro-max-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: b75-pro-max-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b75-pro-max-white-heart-milk-v2, colorName: White Heart, colorFamily: white, layout: ansi_us }
+    - { sku: b75-pro-max-white-heart-candy, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-candy-linear }
+    - { sku: b75-pro-max-pink-heart-milk-v2, colorName: Pink Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b75-pro-max-pink-heart-candy, colorName: Pink Heart, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
+
+# à vérifier : switch « Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk-v2-linear)
+# à vérifier : switch « Cocoa Cream V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2)
+- slug: yunzii-b87
+  brand: yunzii
+  name: B87
+  releaseYear: 2024
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-green-heart-main-1.jpg?v=1761790617, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-green-heart-main-2.jpg?v=1761790616, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-brown-heart-main-1.jpg?v=1761790244, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-brown-heart-main-2.jpg?v=1761790244, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-purple-heart-main-1.jpg?v=1761115513, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b87-purple-heart-main-2.jpg?v=1761115638, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-b87-matcha-heart-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-brown-heart-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-purple-heart-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-blue-heart-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-white-heart-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-pink-qmk-via-custom-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-b87-qmk-via-custom-mechanical-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1128, widthMm: 373, depthMm: 147 }
+  variants:
+    - { sku: b87-matcha-heart-milk-v2-wrist-rest, colorName: Matcha Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b87-brown-heart-milk-v2-wrist-rest, colorName: Brown Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b87-purple-heart-milk-v2-wrist-rest, colorName: Purple Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b87-blue-heart-milk-v2-wrist-rest, colorName: Blue Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b87-white-heart-milk-v2-wrist-rest, colorName: White Heart, colorFamily: white, layout: ansi_us }
+    - { sku: b87 pink milk v2 linear wrist rest, colorName: Pink, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Outemu Magnetic Red Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-magnetic-red)
+- slug: yunzii-rt75-pro
+  brand: yunzii
+  name: RT75 PRO
+  releaseYear: 2025
+  msrpEur: 95
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/rt75-pro-main-7.jpg?v=1780393596, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/rt75-pro-main-12.jpg?v=1780393597, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/rt75-pro-main-25.jpg?v=1780393597, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/rt75-pro-main-6.jpg?v=1780393597, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-rt75-pro-dual-8k-rapid-trigger-wireless-gaming-magnetic-keyboard
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1129, widthMm: 332, depthMm: 137 }
+  variants:
+    - { sku: rt75-pro-black-magnetic-red, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: rt75-pro-white-magnetic-red, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: rt75-pro-pink-magnetic-red, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: rt75-pro-gradient-black-magnetic-red, colorName: Gradient Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
+# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
+- slug: yunzii-mikiby
+  brand: yunzii
+  name: MIKIBY
+  releaseYear: 2025
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/k98-main-1.jpg?v=1758187358, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/k98-main-7.jpg?v=1758679802, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/k98-main-8.jpg?v=1758679802, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/k98-main-13.jpg?v=1758679802, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/mikiby-k98-full-size-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 1144, widthMm: 385, depthMm: 146 }
+  variants:
+    - { sku: k98-white-red-milk-v2, colorName: White Red, colorFamily: white, layout: ansi_us }
+    - { sku: k98-white-blue-milk-v2, colorName: White Blue, colorFamily: white, layout: ansi_us }
+
+- slug: yunzii-ql108
+  brand: yunzii
+  name: QL108
+  releaseYear: 2025
+  msrpEur: 80
+  msrpUsd: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql108-main-1.jpg?v=1784107622, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql108-main-4.jpg?v=1784107621, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql108-main-8.jpg?v=1784107621, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql108-main-13.jpg?v=1784107622, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-ql108-full-size-wired-typewriter-style-custom-mechanical-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: tray, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, weightG: 1250, widthMm: 436, depthMm: 130 }
+  variants:
+    - { sku: ql108-pink-onyx-gray-tactile-wired, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
+
+# à vérifier : switch « Onyx Tactile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug onyx-tactile)
+# à vérifier : switch « Cocoa Cream V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2-linear)
+- slug: yunzii-ql75
+  brand: yunzii
+  name: QL75
+  releaseYear: 2025
+  msrpEur: 140
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-01-2.jpg?v=1753839333, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-01.jpg?v=1753839333, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-01-1.jpg?v=1753839333, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-gr-1.jpg?v=1747808729, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-gr-4.jpg?v=1747808813, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-pk-4.jpg?v=1747808813, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-ql75-vintage-retro-typewriter-qmk-via-mechanical-keyboard
+    - https://yunzii.com/products/yunzii-ql75-retro-typewriter-qmk-via-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 4000, weightG: 1462, widthMm: 328, depthMm: 215 }
+  variants:
+    - { sku: ql75-white-onyx-tactile, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: ql75-wood-onyx-tactile, colorName: Wood, colorFamily: color, layout: ansi_us }
+    - { sku: pre-order-ql75-wood-cocoa-cream-v2-linear, colorName: PRE-ORDER Wood, colorFamily: color, layout: ansi_us }
+    - { sku: ql75-green-onyx-tactile, colorName: Green, colorFamily: color, layout: ansi_us }
+    - { sku: ql75-pink-onyx-tactile, colorName: Pink, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
+# à vérifier : switch « Gateron Zero Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-zero-linear)
+- slug: yunzii-if99
+  brand: yunzii
+  name: IF99
+  releaseYear: 2025
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_e5bb5aff-275e-4718-8add-043ba656902d.jpg?v=1737023713, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_4f19bf43-e641-40c2-9e3c-ee1f10a1a75c.jpg?v=1737024177, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-if99-qmk-via-full-size-lcd-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, screen: true, firmware: qmk, macSupport: true, batteryMah: 8000, weightG: 1239, widthMm: 385, depthMm: 143 }
+  variants:
+    - { sku: if99 white cocoa cream v2 linear, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: if99 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
+# à vérifier : switch « Gateron Zero Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-zero-linear)
+- slug: yunzii-al80
+  brand: yunzii
+  name: AL80
+  releaseYear: 2025
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_6d5f03f3-a7e6-4952-9846-e974a3b8e8bc.jpg?v=1736934479, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_ce938024-87eb-49c3-8c5d-b5cc0d707dba.jpg?v=1736934520, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_0c1ed85a-5ffa-4301-87fc-8654862a071a.jpg?v=1736934521, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-al80-qmk-via-aluminum-lcd-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, batteryMah: 6000, weightG: 1439, widthMm: 314, depthMm: 138 }
+  variants:
+    - { sku: AL80 silver cocoa cream v2 linear, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: AL80 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: yunzii-actto-75
+  brand: yunzii
+  name: ACTTO 75%
+  releaseYear: 2022
+  msrpEur: 65
+  msrpUsd: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ea1809cbd788a494639fafa729384a56_1a7e6c7d-9dda-429b-8c24-16a464a00a1b.jpg?v=1700820653, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/17_f47fa803-63f9-487c-b852-d2c20eb4be2d.jpg?v=1700820653, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/18_ff90b7b6-4428-4713-bacd-920e2c9555ff.jpg?v=1700820653, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/16_91a16fd8-c7bc-4046-b390-2b7dbed2cc62.jpg?v=1700820653, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_6645fda7-a44f-4cd8-a360-3d870be774e7.jpg?v=1701828885, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/10_4ae46c15-229a-4716-90d6-bc700e91c22c.jpg?v=1701828885, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-actto-b305-wireless-keyboard-baby-pink
+    - https://yunzii.com/products/yunzii-actto-b309-upgraded-rechargeable-wireless-retro-typewriter-keyboard
+    - https://yunzii.com/products/yunzii-actto-b305-wireless-keyboard-mint
+    - https://yunzii.com/products/yunzii-actto-b303-wireless-keyboard-mint-green
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 366, depthMm: 200 }
+  variants:
+    - { sku: b305 white, colorName: Snow White, colorFamily: white, layout: ansi_us }
+    - { sku: fbm b305 midnight, colorName: Midnight Navy, colorFamily: black, layout: ansi_us }
+    - { sku: B305 pink, colorName: Baby Pink, colorFamily: color, layout: ansi_us }
+    - { sku: b309 sand beige, colorName: Sand Beige, colorFamily: color, layout: ansi_us }
+    - { sku: B303-BLUE-ENGLISH, colorName: B303, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Crystal Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug crystal)
+- slug: yunzii-x71
+  brand: yunzii
+  name: X71
+  releaseYear: 2023
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_89b08858-8a84-4303-8ebc-8800dd4339e7.jpg?v=1701340524, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_1_6633dc7e-af5a-4678-8204-a9785c6a1952.jpg?v=1701340532, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_1_f4229cae-a04a-46d6-87d1-897c8b30b112.jpg?v=1701340540, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-x71-transparent-wireless-gasket-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4600, soundDampening: true, weightG: 990, widthMm: 348, depthMm: 113 }
+  variants:
+    - { sku: x71 white crystal ice, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: x71 pink crystal ice, colorName: Pink, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Cocoa Cream V2-Early Bottoming » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2-early-bottoming)
+# à vérifier : switch « Milk-Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk-linear)
+- slug: yunzii-c68
+  brand: yunzii
+  name: C68
+  releaseYear: 2023
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_59ab4cb3-6876-482e-b7a2-752f7a1dc68f.jpg?v=1706781347, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_78c095a7-afa2-468b-bf59-3f7e73360aa7.jpg?v=1706782027, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_24e11f55-80f0-4278-bb7d-0d05f2f05cf7.jpg?v=1706782027, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-c68
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, weightG: 1591, widthMm: 380, depthMm: 181 }
+  variants:
+    - { sku: c68 keyboard pink cocoa cream v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: c68 keyboard coffee cocoa cream v2, colorName: Coffee, colorFamily: color, layout: ansi_us }
+
+- slug: yunzii-actto-65
+  brand: yunzii
+  name: ACTTO 65%
+  releaseYear: 2023
+  msrpEur: 70
+  msrpUsd: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_b6b1ba6a-dfb6-4af7-9369-f7d27400a009.jpg?v=1701424644, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4_0ffe9334-037e-4ca7-9074-4ce3fa887ec5.jpg?v=1701424799, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_3850c4c1-42ed-4e21-a46a-dfd5e776b78b.jpg?v=1701424799, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_89fe5b03-3e41-4654-a80a-756c6a242106.jpg?v=1701424799, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-actto-b307-baby-pink-upgraded-rechargeable-wireless-retro-typewriter-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 500, weightG: 800, widthMm: 344, depthMm: 180 }
+  variants:
+    - { sku: b307 pink, colorName: Baby Pink, colorFamily: color, layout: ansi_us }
+    - { sku: b307 white, colorName: Snow White, colorFamily: white, layout: ansi_us }
+
+- slug: yunzii-actto
+  brand: yunzii
+  name: ACTTO
+  releaseYear: 2023
+  msrpEur: 65
+  msrpUsd: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/er8h48.jpg?v=1701422876, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/12_fc8085ac-8c60-4ae8-84e5-e79b869a3b0b.jpg?v=1701422876, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/15_6ee910eb-f41f-4ece-b729-35369a532f09.jpg?v=1701422876, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/13_d1e7cb09-5be6-406a-a56a-475cf1d33d7c.jpg?v=1701422876, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://yunzii.com/products/yunzii-actto-b503-wireless-keyboard-baby-pink
+  specs: { formFactor: full, technology: membrane, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 486, depthMm: 218 }
+  variants:
+    - { sku: b503 snow white, colorName: Snow White, colorFamily: white, layout: ansi_us }

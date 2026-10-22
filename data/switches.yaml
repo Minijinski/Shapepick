@@ -1,17 +1,80 @@
-# Switchs FICTIFS (démo). Forces en grammes, courses en millimètres.
-- { slug: ember-linear, brand: Northkey, name: Ember Linear, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 55, preTravelMm: 2, totalTravelMm: 3.8, factoryLubed: true, soundProfile: deep }
-- { slug: ember-tactile, brand: Northkey, name: Ember Tactile, feel: tactile, tech: mechanical, actuationForceG: 55, bottomOutG: 63, preTravelMm: 2, totalTravelMm: 3.8, factoryLubed: true, soundProfile: poppy }
-- { slug: ember-clicky, brand: Northkey, name: Ember Clicky, feel: clicky, tech: mechanical, actuationForceG: 60, bottomOutG: 70, preTravelMm: 2.2, totalTravelMm: 4, soundProfile: clacky }
-- { slug: soie, brand: Atelier, name: Soie, feel: linear, silent: true, tech: mechanical, actuationForceG: 40, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true, soundProfile: muted }
-- { slug: brise, brand: Atelier, name: Brise, feel: tactile, silent: true, tech: mechanical, actuationForceG: 62, bottomOutG: 67, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true, soundProfile: muted }
-- { slug: flux-he, brand: Pulse, name: Flux HE, feel: linear, tech: magnetic, actuationForceG: 40, bottomOutG: 50, preTravelMm: 0.1, totalTravelMm: 4, factoryLubed: true, soundProfile: crisp }
-- { slug: flux-he-lite, brand: Pulse, name: Flux HE Lite, feel: linear, tech: magnetic, actuationForceG: 35, bottomOutG: 45, preTravelMm: 0.1, totalTravelMm: 3.5, soundProfile: crisp }
-- { slug: photon-linear, brand: Pulse, name: Photon Linear, feel: linear, tech: optical, actuationForceG: 45, preTravelMm: 1.5, totalTravelMm: 3.5, soundProfile: clacky }
-- { slug: photon-clicky, brand: Pulse, name: Photon Clicky, feel: clicky, tech: optical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 3.6, soundProfile: clacky }
-- { slug: cream, brand: Kestrel, name: Cream, feel: linear, tech: mechanical, actuationForceG: 55, bottomOutG: 62, preTravelMm: 2, totalTravelMm: 4, soundProfile: poppy }
-- { slug: latte, brand: Kestrel, name: Latte, feel: tactile, tech: mechanical, actuationForceG: 67, bottomOutG: 72, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true, soundProfile: deep }
-- { slug: classic-red, brand: Generic, name: Classic Red, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 4, soundProfile: clacky }
-- { slug: classic-brown, brand: Generic, name: Classic Brown, feel: tactile, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 4, soundProfile: clacky }
-- { slug: classic-blue, brand: Generic, name: Classic Blue, feel: clicky, tech: mechanical, actuationForceG: 50, bottomOutG: 60, preTravelMm: 2.2, totalTravelMm: 4, soundProfile: clacky }
-- { slug: low-red, brand: Kestrel, name: Low Red, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.2, totalTravelMm: 3.2, soundProfile: crisp }
-- { slug: low-brown, brand: Kestrel, name: Low Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 1.3, totalTravelMm: 3.2, soundProfile: crisp }
+# Switchs réels, ajoutés par pnpm ingest (specs lues sur les fiches des boutiques) ou à la main.
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest keychron, 2026-10-21)
+- { slug: gateron-jupiter-brown, brand: Gateron, name: Jupiter Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: gateron-jupiter-banana, brand: Gateron, name: Jupiter Banana, feel: tactile, tech: mechanical, actuationForceG: 59, preTravelMm: 2, totalTravelMm: 3.4 }
+- { slug: gateron-jupiter-red, brand: Gateron, name: Jupiter Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-low-profile-red, brand: Keychron, name: Low Profile Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.3, totalTravelMm: 3.1 }
+- { slug: keychron-super-red, brand: Keychron, name: Super Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-super-brown, brand: Keychron, name: Super Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-super-banana, brand: Keychron, name: Super Banana, feel: tactile, tech: mechanical, actuationForceG: 57, preTravelMm: 2, totalTravelMm: 3.4 }
+- { slug: keychron-k-pro-brown, brand: Keychron, name: K Pro Brown, feel: tactile, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: keychron-k-pro-banana, brand: Keychron, name: K Pro Banana, feel: tactile, tech: mechanical, actuationForceG: 57, preTravelMm: 2.2, totalTravelMm: 3.3 }
+- { slug: keychron-milk-pom-low-profile-red, brand: Keychron, name: Milk POM Low Profile Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.3, totalTravelMm: 3.1 }
+- { slug: keychron-k-pro-mint, brand: Keychron, name: K Pro Mint, feel: tactile, tech: mechanical, actuationForceG: 67, preTravelMm: 2.2, totalTravelMm: 3.3 }
+- { slug: gateron-baby-kangaroo, brand: Gateron, name: Baby Kangaroo, feel: tactile, tech: mechanical, actuationForceG: 59, preTravelMm: 2, totalTravelMm: 3.4 }
+- { slug: gateron-baby-raccoon, brand: Gateron, name: Baby Raccoon, feel: linear, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 3.6 }
+- { slug: keychron-silk-pom-red, brand: Keychron, name: Silk POM Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-silk-pom-brown, brand: Keychron, name: Silk POM Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-silk-pom-banana, brand: Keychron, name: Silk POM Banana, feel: tactile, tech: mechanical, actuationForceG: 57, preTravelMm: 2, totalTravelMm: 3.4 }
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest mk, 2026-10-21)
+- { slug: keygeek-neo-oat, brand: Keygeek, name: Neo Oat, feel: linear, tech: mechanical, actuationForceG: 36, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+- { slug: hmx-azure, brand: HMX, name: Azure, feel: linear, tech: mechanical, actuationForceG: 40, preTravelMm: 2, totalTravelMm: 3.5, factoryLubed: true }
+- { slug: cherry-mx-blue, brand: Cherry, name: MX Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2.2, totalTravelMm: 4 }
+- { slug: cherry-mx-brown, brand: Cherry, name: MX Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx-red, brand: Cherry, name: MX Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx-black, brand: Cherry, name: MX Black, feel: linear, tech: mechanical, actuationForceG: 60, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx-speed-silver, brand: Cherry, name: MX Speed Silver, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.2, totalTravelMm: 3.4 }
+- { slug: cherry-mx-silent-red, brand: Cherry, name: MX Silent Red, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 3.7 }
+- { slug: cherry-mx2a-brown, brand: Cherry, name: MX2A Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: cherry-mx2a-red, brand: Cherry, name: MX2A Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: cherry-mx2a-speed-silver, brand: Cherry, name: MX2A Speed Silver, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.2, totalTravelMm: 3.4 }
+- { slug: keygeek-rye, brand: Keygeek, name: Rye, feel: linear, tech: mechanical, actuationForceG: 36, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 3.6 }
+- { slug: cherry-mx-clear, brand: Cherry, name: MX Clear, feel: tactile, tech: mechanical, actuationForceG: 65, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx-green, brand: Cherry, name: MX Green, feel: clicky, tech: mechanical, actuationForceG: 80, preTravelMm: 2.2, totalTravelMm: 4 }
+# à vérifier : courses absentes de la fiche : standard MX supposé (2 / 4 mm)
+- { slug: cherry-mx-nature-white, brand: Cherry, name: MX Nature White, feel: linear, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx-silent-black, brand: Cherry, name: MX Silent Black, feel: linear, silent: true, tech: mechanical, actuationForceG: 60, preTravelMm: 1.9, totalTravelMm: 3.7 }
+# à vérifier : courses absentes de la fiche : standard MX supposé (2 / 4 mm)
+- { slug: cherry-mx-white, brand: Cherry, name: MX White, feel: clicky, tech: mechanical, actuationForceG: 80, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: ktt-baby-blue, brand: KTT, name: Baby Blue, feel: tactile, tech: mechanical, actuationForceG: 38, preTravelMm: 2, totalTravelMm: 3.5 }
+- { slug: ktt-red-wine, brand: KTT, name: Red Wine, feel: linear, tech: mechanical, actuationForceG: 43, preTravelMm: 1.9, totalTravelMm: 4 }
+- { slug: cherry-mx2a-blue, brand: Cherry, name: MX2A Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2.2, totalTravelMm: 4 }
+- { slug: owlab-london-fog-v2, brand: Owlab, name: London Fog V2, feel: linear, tech: mechanical, actuationForceG: 43, bottomOutG: 49, preTravelMm: 1.9, totalTravelMm: 3.6 }
+- { slug: kailh-box-brown, brand: Kailh, name: Box Brown, feel: tactile, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 3.6 }
+- { slug: kailh-box-red, brand: Kailh, name: Box Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.8, totalTravelMm: 3.6 }
+- { slug: kailh-box-white, brand: Kailh, name: Box White, feel: clicky, tech: mechanical, actuationForceG: 45, preTravelMm: 1.8, totalTravelMm: 3.6 }
+- { slug: kailh-box-silent-pink, brand: Kailh, name: BOX Silent Pink, feel: linear, silent: true, tech: mechanical, actuationForceG: 35, preTravelMm: 1.8, totalTravelMm: 3.6 }
+- { slug: gateron-yellow, brand: Gateron, name: Yellow, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: kailh-box-jade, brand: Kailh, name: Box Jade, feel: clicky, tech: mechanical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 3.6 }
+- { slug: gateron-silent-brown, brand: Gateron, name: Silent Brown, feel: tactile, silent: true, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: kailh-polia, brand: Kailh, name: Polia, feel: tactile, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 3.8 }
+- { slug: kailh-box-cream-pro, brand: Kailh, name: Box Cream Pro, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.7, totalTravelMm: 4 }
+- { slug: kailh-choc-red-low-profile, brand: Kailh, name: Choc Red Low Profile, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.5, totalTravelMm: 3 }
+- { slug: kailh-choc-white-low-profile, brand: Kailh, name: Choc White Low Profile, feel: clicky, tech: mechanical, actuationForceG: 50, preTravelMm: 1.5, totalTravelMm: 3 }
+- { slug: kailh-choc-brown-low-profile, brand: Kailh, name: Choc Brown Low Profile, feel: tactile, tech: mechanical, actuationForceG: 60, preTravelMm: 1.5, totalTravelMm: 3 }
+# à vérifier : courses absentes de la fiche : standard MX supposé (2 / 4 mm)
+- { slug: mk-dose, brand: MK, name: Dose, feel: tactile, tech: mechanical, actuationForceG: 65, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: cherry-mx2a-silent-red, brand: Cherry, name: MX2A Silent Red, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 3.7, factoryLubed: true }
+- { slug: kailh-prestige-voice, brand: Kailh, name: Prestige Voice, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: ttc-gold-pink, brand: TTC, name: Gold Pink, feel: linear, tech: mechanical, actuationForceG: 37, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: ttc-quick-silver, brand: TTC, name: Quick Silver, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.08, totalTravelMm: 3.4, factoryLubed: true }
+- { slug: cherry-mx2a-black, brand: Cherry, name: MX2A Black, feel: linear, tech: mechanical, actuationForceG: 60, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: gateron-milky-green, brand: Gateron, name: Milky Green, feel: clicky, tech: mechanical, actuationForceG: 80, preTravelMm: 2.3, totalTravelMm: 4 }
+- { slug: gateron-brown, brand: Gateron, name: Brown, feel: tactile, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: kailh-blue, brand: Kailh, name: Blue, feel: clicky, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: gateron-milky-blue, brand: Gateron, name: Milky Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2.3, totalTravelMm: 4 }
+- { slug: gateron-blue, brand: Gateron, name: Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2.3, totalTravelMm: 4 }
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest epomaker, 2026-10-21)
+- { slug: epomaker-wisteria, brand: Epomaker, name: Wisteria, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2.2, totalTravelMm: 3.6 }
+- { slug: epomaker-flamingo, brand: Epomaker, name: Flamingo, feel: linear, tech: mechanical, actuationForceG: 47, preTravelMm: 1.5, totalTravelMm: 3.8 }
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest womier, 2026-10-21)
+- { slug: womier-mint-blizzard-pom, brand: Womier, name: Mint Blizzard POM, feel: linear, tech: mechanical, actuationForceG: 42, preTravelMm: 2, totalTravelMm: 3.8, factoryLubed: true }
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest yunzii, 2026-10-21)
+- { slug: yunzii-candy-linear, brand: Yunzii, name: Candy Linear, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.3, factoryLubed: true }
+- { slug: yunzii-onyx-gray-tactile-clicky, brand: Yunzii, name: Onyx Gray Tactile Clicky, feel: clicky, tech: mechanical, actuationForceG: 43, preTravelMm: 2, totalTravelMm: 3.9, factoryLubed: true }
+- { slug: yunzii-crystal-linear, brand: Yunzii, name: Crystal Linear, feel: linear, tech: mechanical, actuationForceG: 40, preTravelMm: 1.5, totalTravelMm: 3.3, factoryLubed: true }

@@ -4,8 +4,8 @@ import { css, cx } from "styled-system/css";
 import { messages as m } from "~/i18n/messages";
 import { Flip, gsap, prefersReducedMotion } from "../motion/gsap";
 import { motion } from "../motion/tokens";
-import { ProductGlyph } from "../product/glyphs";
 import { Match } from "../product/Match";
+import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice } from "../product/specs";
 
 // The best matches for the answers so far, under a header that says what the numbers are: the
@@ -412,7 +412,7 @@ export function Podium({
                         css({ display: "grid", placeItems: "center" }),
                       )}
                     >
-                      <ProductGlyph
+                      <ProductPicture
                         item={entry.item}
                         className={css({
                           maxH: { base: "9", md: "10" },
@@ -516,7 +516,7 @@ export function Podium({
                       css({ display: "grid", placeItems: "center", h: "6" }),
                     )}
                   >
-                    <ProductGlyph
+                    <ProductPicture
                       item={entry.item}
                       className={css({
                         maxH: "6",

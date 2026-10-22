@@ -1,0 +1,205 @@
+# Lofree : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 10 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Lofree x Kailh Nexus Mechanical Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-nexus-magnetic)
+- slug: lofree-hyzen67
+  brand: lofree
+  name: Hyzen67
+  releaseYear: 2026
+  msrpEur: 350
+  msrpUsd: 310
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27552-T6B36-Lofree-Hyzen67-Keyboard.jpg?v=1784305364, kind: cutout_top, width: 2400, height: 1098, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27553-8IAJX-Lofree-Hyzen67-Tri-mode-Keyboard-Space-Grey.jpg?v=1784305364, kind: cutout_top, width: 2400, height: 1129 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27556-LIJQ1-Lofree-Hyzen67-Wired-Keyboard-Space-Grey.jpg?v=1784305363, kind: cutout_top, width: 2400, height: 1129 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-hyzen67-keyboard
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.01, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true }
+  variants:
+    - { sku: LF-Hyzen67WD-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: LF-Hyzen67WD-GRY, colorName: Space Grey, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Lofree x Kailh Surfer 40g Linear Plate Mount Low Profile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer-linear-low-profile)
+# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
+# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
+# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
+- slug: lofree-flow-2-84
+  brand: lofree
+  name: Flow 2 84
+  releaseYear: 2026
+  msrpEur: 195
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27569-2MNDF-Lofree-Flow-2-84-Mac-Keyboard.jpg?v=1781632628, kind: cutout_top, width: 1092, height: 1003, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27572-MZ8B5-Lofree-Flow-2-84-Mac-Keyboard-Nebula.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27570-7LXWB-Lofree-Flow-2-84-Mac-Keyboard-Volt.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27571-VJL7M-Lofree-Flow-2-84-Mac-Keyboard-Petal.jpg?v=1781632628, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27565-BNPZI-Lofree-Flow-2-84-Keyboard.jpg?v=1781632398, kind: cutout_top, width: 2400, height: 1493 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27565-MSDEJ-Lofree-Flow-2-84-Keyboard.jpg?v=1781632398, kind: cutout_top, width: 1892, height: 936 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-flow-2-84-mac-keyboard
+    - https://mechanicalkeyboards.com/products/lofree-flow-2-84-keyboard
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: via, macSupport: true, batteryMah: 2000, soundDampening: true }
+  variants:
+    - { sku: LF-Flow284MAC-BLU, colorName: Nebula, colorFamily: color, layout: ansi_us }
+    - { sku: LF-Flow284MAC-YLW, colorName: Volt, colorFamily: color, layout: ansi_us }
+    - { sku: LF-Flow284MAC-PNK, colorName: Petal, colorFamily: color, layout: ansi_us }
+    - { sku: LF-Flow284MAC-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: LF-Flow284-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Gateron Tofu 45g Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-tofu-linear)
+- slug: lofree-tofu-100
+  brand: lofree
+  name: Tofu 100
+  releaseYear: 2026
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27587-BBI4Y-Lofree-Tofu-100-Keyboard.jpg?v=1781812145, kind: cutout_top, width: 2000, height: 936, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-tofu-100-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: LF-TOFU100TOUCH, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
+# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
+# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
+- slug: lofree-flow-2-100
+  brand: lofree
+  name: Flow 2 100
+  releaseYear: 2026
+  msrpEur: 205
+  msrpUsd: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27574-WE5LQ-Lofree-Flow-2-100-Keyboard.jpg?v=1781632501, kind: cutout_top, width: 2200, height: 1369, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27575-A82BT-Lofree-Flow-2-100-Keyboard-Black-Kailh-Pulse.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 912 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27576-W2QGK-Lofree-Flow-2-100-Keyboard-White-Kailh-Surfer.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 820 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27576-PZMAI-Lofree-Flow-2-100-Keyboard-White-Kailh-Surfer.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 892 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-flow-2-100-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 3000, soundDampening: true }
+  variants:
+    - { sku: LF-Flow2100-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: LF-Flow2100-WHTSUF, colorName: Silver, colorFamily: white, layout: ansi_us }
+
+- slug: lofree-lipstick
+  brand: lofree
+  name: Lipstick
+  releaseYear: 2026
+  msrpEur: 240
+  msrpUsd: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27580-4XQMW-Lofree-Lipstick-Keyboard.jpg?v=1781801345, kind: cutout_top, width: 1500, height: 843, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27581-NDC1M-Lofree-Lipstick-Keyboard-Silver.jpg?v=1781801345, kind: cutout_top, width: 1500, height: 828 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-lipstick-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
+  variants:
+    - { sku: LF-LPSTKDOT-BLK, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: LF-LPSTKDOT-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
+
+- slug: lofree-1970s
+  brand: lofree
+  name: 1970s
+  releaseYear: 2026
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27583-D7AKR-Lofree-1970s-Keyboard.jpg?v=1781713628, kind: cutout_top, width: 2300, height: 1035, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27584-KL18W-Lofree-1970s-Keyboard-Milkshake.jpg?v=1781713628, kind: cutout_top, width: 2400, height: 1205 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27585-N5AIU-Lofree-1970s-Keyboard-Olive-Green.jpg?v=1781713628, kind: cutout_top, width: 2400, height: 1247 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-1970s-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
+  variants:
+    - { sku: LF-1970SDOT-MKSHK, colorName: Milkshake, colorFamily: color, layout: ansi_us }
+    - { sku: LF-1970SDOT-OLV, colorName: Olive Green, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
+# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
+# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
+- slug: lofree-flow-2-68
+  brand: lofree
+  name: Flow 2 68
+  releaseYear: 2026
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27558-V2R5S-Lofree-Flow-2-68-Keyboard.jpg?v=1781101321, kind: cutout_top, width: 2400, height: 1493, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27561-WQ9L1-Lofree-Flow-2-68-Keyboard-Grey-Kailh-Pulse.jpg?v=1781101321, kind: cutout_top, width: 1728, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27563-24NMS-Lofree-Flow-2-68-Keyboard-Silver-Kailh-Surfer.jpg?v=1781101321, kind: cutout_top, width: 1776, height: 784 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27564-22PFG-Lofree-Flow-2-68-Keyboard-Silver-Kailh-Void.jpg?v=1781101321, kind: cutout_top, width: 2400, height: 1078 }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-flow-2-68-keyboard
+  specs: { formFactor: f65, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 2000, soundDampening: true }
+  variants:
+    - { sku: LF-Flow268-GRYPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: LF-Flow268-SLVSUF, colorName: Silver, colorFamily: white, layout: ansi_us }
+
+- slug: lofree-foundation
+  brand: lofree
+  name: Foundation
+  releaseYear: 2026
+  msrpEur: 235
+  msrpUsd: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27578-F3F4N-Lofree-Foundation-Keyboard.jpg?v=1781729712, kind: cutout_top, width: 1419, height: 780, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-foundation-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true }
+  variants:
+    - { sku: LF-FNDNDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us }
+
+- slug: lofree-sugar
+  brand: lofree
+  name: Sugar
+  releaseYear: 2026
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27579-H68WP-Lofree-Sugar-Keyboard.jpg?v=1781806541, kind: cutout_top, width: 1500, height: 804, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-sugar-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
+  variants:
+    - { sku: LF-SUGARDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us }
+
+# à vérifier : switch « Gateron Tofu 45g Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-tofu-linear)
+- slug: lofree-tofu-68
+  brand: lofree
+  name: Tofu 68
+  releaseYear: 2026
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27586-SVJ7L-Lofree-Tofu-68-Keyboard.jpg?v=1781811305, kind: cutout_top, width: 1720, height: 764, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/lofree-tofu-68-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: LF-TOFU68TOUCH, colorName: Beige, colorFamily: color, layout: ansi_us }

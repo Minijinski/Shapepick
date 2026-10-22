@@ -1,0 +1,555 @@
+# Womier : importés de womierkeyboard.com par `pnpm ingest womier`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 27 modèles, womierkeyboard.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Womier Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-magnetic)
+- slug: womier-wd75
+  brand: womier
+  name: WD75
+  releaseYear: 2025
+  msrpEur: 175
+  msrpUsd: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-he-75-wireless-hall-effect-wooden-keyboard-4227636.jpg?v=1788002725, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-he-75-wireless-hall-effect-wooden-keyboard-9637791.jpg?v=1788002725, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-75-via-support-wireless-wooden-keyboard-5532417.jpg?v=1773137602, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-75-via-support-wireless-wooden-keyboard-3987478.jpg?v=1773137603, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-75-via-support-wireless-wooden-keyboard-9286322.jpg?v=1773137602, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd75-75-via-support-wireless-wooden-keyboard-3729019.jpg?v=1773137652, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-wd75-he-magnetic-keyboard
+    - https://womierkeyboard.com/products/womier-wd75-75-via-support-wireless-wooden-keyboard
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: tray, caseMaterial: wood, plateMaterial: fr4, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: via, macSupport: true, batteryMah: 8000, weightG: 990, widthMm: 324, depthMm: 132 }
+  variants:
+    - { sku: JP-WD75HE-shiseduantanhei-CZ-SM, colorName: Walnut Black, colorFamily: black, layout: ansi_us }
+    - { sku: Womier WD75 V2 Keyboard, colorName: WD75 V2, colorFamily: color, layout: ansi_us, switch: womier-mint-blizzard-pom }
+    - { sku: Womier WD75 V2-Ukiyoe, colorName: WD75 V2 Ukiyoe, colorFamily: color, layout: ansi_us, switch: womier-mint-blizzard-pom }
+    - { sku: Womier WD75 V2-Retro, colorName: WD75 V2 Retro, colorFamily: color, layout: ansi_us, switch: womier-mint-blizzard-pom }
+    - { sku: Womier WD75 V2-Siamese, colorName: WD75 V2 Siamese, colorFamily: color, layout: ansi_us, switch: womier-mint-blizzard-pom }
+
+- slug: womier-wd99
+  brand: womier
+  name: WD99
+  releaseYear: 2026
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wd99-full-size-via-support-wireless-wooden-keyboard-6028492.jpg?v=1786064478, kind: cutout_top, width: 2000, height: 2000, primary: true }
+  sources:
+    - https://womierkeyboard.com/products/womier-wd99-full-size-via-support-wireless-wooden-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: tray, caseMaterial: wood, plateMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: mda, backlight: none, firmware: via, batteryMah: 8000, widthMm: 407, depthMm: 178 }
+  variants:
+    - { sku: JP-Womier-WD99-HLTM-huizhou-SM, colorName: Grey-Blue (Shine Through), colorFamily: black, layout: ansi_us, switch: womier-mint-blizzard-pom }
+
+# à vérifier : switch « Womier Full POM Grey SwitchTactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-full-pom-grey-switchtactile)
+- slug: womier-l80
+  brand: womier
+  name: L80
+  releaseYear: 2026
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l80-75-wireless-mechanical-keyboard-with-tft-screen-knob-5392813.jpg?v=1783743616, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l80-75-wireless-mechanical-keyboard-with-tft-screen-knob-2040217.jpg?v=1783743616, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://womierkeyboard.com/products/womier-l80-75-wireless-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1470, widthMm: 451, depthMm: 192 }
+  variants:
+    - { sku: JP-Womier-L80-fen-shanhuhai-huizhou-SM, colorName: Coral Sea Pink, colorFamily: color, layout: ansi_us }
+    - { sku: JP-Womier-L80-hei-huizhou-SM, colorName: Coral  Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « POM Creamy Linear Switch (pre-installed) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug pom-creamy-linear)
+- slug: womier-l98
+  brand: womier
+  name: L98
+  releaseYear: 2026
+  msrpEur: 130
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors-2863897.png?v=1783163649, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l98-themed-98-wireless-mechanical-keyboard-with-tft-screen-knob-1814027.jpg?v=1789079886, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors-4790007.jpg?v=1783163648, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1439 }
+  variants:
+    - { sku: JP-womoer-L98-hei-heishanhuhai-OG-SM-XN-DP, colorName: Coral Sea Black, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womoer-L98-mingyueye-HZ-SM-XN-DP, colorName: Moon Night, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
+- slug: womier-vk66-pro
+  brand: womier
+  name: VK66 Pro
+  releaseYear: 2025
+  msrpEur: 85
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-vk66-pro-via-support-66-key-gasket-mechanical-keyboard-with-knob-1837261.jpg?v=1773137596, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-vk66-pro-via-support-66-key-gasket-mechanical-keyboard-with-knob-6896619.jpg?v=1773137597, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-vk66-pro-via-support-66-key-gasket-mechanical-keyboard-with-knob-6253176.jpg?v=1779766386, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-vk66-pro
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: xda, backlight: none, knob: true, firmware: via, widthMm: 322, depthMm: 113 }
+  variants:
+    - { sku: Womier VK66 PRO-Pink Frosty, colorName: Pink Frosty Jello, colorFamily: white, layout: ansi_us }
+    - { sku: Womier VK66 PRO-Green, colorName: Green, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
+- slug: womier-sk30-mini
+  brand: womier
+  name: SK30 Mini
+  releaseYear: 2026
+  msrpEur: 75
+  msrpUsd: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk30-mini-wireless-keyboard-with-multimedia-knob-screen-1184777.jpg?v=1773717546, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk30-mini-wireless-keyboard-with-multimedia-knob-screen-1860535.jpg?v=1773717546, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-sk30-mini-wireless-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, batteryMah: 3000, weightG: 760, widthMm: 156, depthMm: 143 }
+  variants:
+    - { sku: Womier SK30-BL, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
+    - { sku: Womier SK30-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us }
+
+- slug: womier-m68he-pro
+  brand: womier
+  name: M68HE PRO
+  releaseYear: 2026
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68he-pro-60-mechanical-gaming-keyboard-8421728.jpg?v=1781672113, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68he-pro-60-mechanical-gaming-keyboard-3959317.jpg?v=1781672114, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-m68he-pro-60-mechanical-gaming-keyboard
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: JP-womier-M68HEPro-xiantiaobutouguang-bai-cizhou-1, colorName: White (Shine-Through), colorFamily: white, layout: ansi_us }
+    - { sku: JP-womier-M68HEPro-xiantiaobutouguang-hei-cizhou-1, colorName: Black (Non Shine-Through), colorFamily: black, layout: ansi_us }
+
+- slug: womier-vk75
+  brand: womier
+  name: VK75
+  releaseYear: 2025
+  msrpEur: 50
+  msrpUsd: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-vk75-75-wired-gasket-mechanical-keyboard-2649731.jpg?v=1781340915, kind: cutout_top, width: 2000, height: 2000, primary: true }
+  sources:
+    - https://womierkeyboard.com/products/womier-vk75-75-wired-gasket-mechanical-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: JP-Womier-VK75-fense-YX-XN-WJ, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: womier-wk75
+  brand: womier
+  name: WK75
+  releaseYear: 2025
+  msrpEur: 75
+  msrpUsd: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk75-75-hot-swappable-wireless-keyboard-with-multimedia-knob-6047651.png?v=1773137546, kind: cutout_top, width: 1200, height: 900, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk75-75-hot-swappable-wireless-keyboard-with-multimedia-knob-1473453.jpg?v=1773137590, kind: cutout_top, width: 1200, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk75-75-hot-swappable-wireless-keyboard-with-multimedia-knob-3060617.jpg?v=1773137590, kind: cutout_top, width: 1200, height: 900 }
+  sources:
+    - https://womierkeyboard.com/products/womier-wk75-75-wireless-hot-swap-keyboard-with-knob
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
+  variants:
+    - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us }
+    - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom)
+- slug: womier-duo87
+  brand: womier
+  name: DUO87
+  releaseYear: 2026
+  msrpEur: 190
+  msrpUsd: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/pre-order-womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac-2373094.jpg?v=1781009235, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/pre-order-womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac-2815136.webp?v=1781092147, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/pre-order-womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac-8125514.jpg?v=1781009236, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/pre-order-womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac-6832020.webp?v=1781092148, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, screen: true, firmware: via, macSupport: true, weightG: 1102, widthMm: 368, depthMm: 144 }
+  variants:
+    - { sku: JP-DUO87-hui-mibaizhou-DM-1, colorName: Oatmeal Latte, colorFamily: color, layout: ansi_us }
+
+- slug: womier-sk61
+  brand: womier
+  name: SK61
+  releaseYear: 2026
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk61-he-wireless-magnetic-switch-60-aluminum-hollow-design-gaming-keyboard-5288314.jpg?v=1780926370, kind: cutout_top, width: 2048, height: 2048, primary: true }
+  sources:
+    - https://womierkeyboard.com/products/womier-sk61-he-wireless-magnetic-keyboard
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: JP-Womier-SK60HE-hei-guangying-cizhou-SM-1, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Womier Void Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-void-magnetic)
+- slug: womier-sk75
+  brand: womier
+  name: SK75
+  releaseYear: 2024
+  msrpEur: 175
+  msrpUsd: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-8161256.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-9619268.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-8252642.jpg?v=1773137717, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-75-via-support-wireless-aluminum-custom-keyboard-ansiiso-1568572.jpg?v=1773137716, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-tmr-wireless-magnetic-switch-aluminum-keyboard-1844411.jpg?v=1773137549, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk75-tmr-wireless-magnetic-switch-aluminum-keyboard-2739358.jpg?v=1773137587, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-sk75-ansi-iso-via-wireless-aluminum-keyboard
+    - https://womierkeyboard.com/products/womier-sk75-tmr-magnetic-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: via, macSupport: true, batteryMah: 4000, soundDampening: true, widthMm: 321, depthMm: 140 }
+  variants:
+    - { sku: Womier SK75-Black, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: Womier SK75-White, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: Womier SK75-Beige, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: Womier SK75-ISO-Black, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: Womier SK75-ISO-White, colorName: White, colorFamily: white, layout: iso_de }
+
+- slug: womier-sk80
+  brand: womier
+  name: SK80
+  releaseYear: 2024
+  msrpEur: 100
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-gasket-mounted-75-mechanical-keyboard-with-multimedia-display-2853147.jpg?v=1773137773, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-gasket-mounted-75-mechanical-keyboard-with-multimedia-display-1364788.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-gasket-mounted-75-mechanical-keyboard-with-multimedia-display-3790184.jpg?v=1773137773, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-gasket-mounted-75-mechanical-keyboard-with-multimedia-display-3407596.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-s-k80
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: plastic, keycapMaterial: pom, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, weightG: 680 }
+  variants:
+    - { sku: Womier SK80-Foundation, colorName: "[New] Foundation", colorFamily: color, layout: ansi_us }
+    - { sku: XVX SK80-Kanagawa-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us }
+    - { sku: XVX-SK80-Kanagawa, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
+    - { sku: Womier S-K80 White Topographic 4.0, colorName: White Topographic, colorFamily: white, layout: ansi_us }
+    - { sku: Womier SK80-Coffee Cat, colorName: Coffee Cat, colorFamily: color, layout: ansi_us }
+
+- slug: womier-k80
+  brand: womier
+  name: K80
+  releaseYear: 2026
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-k80-smart-screen-media-knob-mechanical-keyboard-9843056.webp?v=1778026512, kind: cutout_top, width: 2048, height: 2048, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-k80-smart-screen-media-knob-mechanical-keyboard-1677792.webp?v=1778026513, kind: cutout_top, width: 2048, height: 2048 }
+  sources:
+    - https://womierkeyboard.com/products/womier-k80-mechanical-keyboard-smart-screen-media-knob-rgb-light-box
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: via, macSupport: true, batteryMah: 8000, weightG: 1268, widthMm: 324, depthMm: 140 }
+  variants:
+    - { sku: JP-Womier-K80-fen-baifenjianb-FZ-SM-DP-XN-1, colorName: Sakura Pink, colorFamily: color, layout: ansi_us }
+    - { sku: JP-Womier-K80-bai-naibaika-BZ-SM-DP-XN-1, colorName: Creamy Coffee, colorFamily: white, layout: ansi_us }
+
+- slug: womier-mt75
+  brand: womier
+  name: MT75
+  releaseYear: 2025
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-mt75-tri-mode-keyboard-with-dot-matrix-screen-and-volume-knob-9454241.jpg?v=1773137544, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-mt75-tri-mode-keyboard-with-dot-matrix-screen-and-volume-knob-3046502.jpg?v=1773137586, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-mt75-tri-mode-keyboard-with-dot-matrix-screen-and-volume-knob-6272316.jpg?v=1773137546, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-mt75-tri-mode-keyboard-with-dot-matrix-screen-and-volume-knob-8116400.jpg?v=1773137546, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/mt75-tri-mode-keyboard-with-matrix-screen-and-volume-knob
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 1010, widthMm: 317, depthMm: 141 }
+  variants:
+    - { sku: Womier MT75-Black, colorName: Obsidian, colorFamily: color, layout: ansi_us }
+    - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us }
+    - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
+- slug: womier-m99
+  brand: womier
+  name: M99
+  releaseYear: 2026
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m99-98-via-support-wireless-mechanical-keyboard-4579714.jpg?v=1773137536, kind: cutout_top, width: 2000, height: 2000, primary: true }
+  sources:
+    - https://womierkeyboard.com/products/womier-m99-via-support-wireless-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: via, batteryMah: 8000, weightG: 1606, widthMm: 403, depthMm: 140 }
+  variants:
+    - { sku: Womier M99 Keyboard, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: womier-m87-pro-tkl
+  brand: womier
+  name: M87 Pro TKL
+  releaseYear: 2024
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m87-pro-tkl-wireless-mechanical-keyboard-with-multimedia-display-1763394.jpg?v=1773137606, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m87-pro-tkl-wireless-mechanical-keyboard-with-multimedia-display-9251578.jpg?v=1773137605, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m87-pro-tkl-wireless-mechanical-keyboard-with-multimedia-display-9784414.jpg?v=1788914106, kind: cutout_top, width: 2048, height: 1638 }
+  sources:
+    - https://womierkeyboard.com/products/womier-m87-pro
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, batteryMah: 3000, widthMm: 370, depthMm: 146 }
+  variants:
+    - { sku: Womier M87 PRO-Carbon, colorName: Carbon, colorFamily: black, layout: ansi_us }
+    - { sku: Womier M87 PRO-Gery, colorName: grey, colorFamily: black, layout: ansi_us }
+    - { colorName: Retro Grey, colorFamily: black, layout: ansi_us }
+
+- slug: womier-l65
+  brand: womier
+  name: L65
+  releaseYear: 2025
+  msrpEur: 75
+  msrpUsd: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l65-65-gaming-mechanical-keyboard-wireless-with-knob-2524342.jpg?v=1773137544, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l65-65-gaming-mechanical-keyboard-wireless-with-knob-6298995.jpg?v=1773137586, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-l65-60-gaming-mechanical-keyboard-wireless-with-knob
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1020, widthMm: 363, depthMm: 161 }
+  variants:
+    - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us }
+    - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Beige pre-lubed linear switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige-pre-lubed-linear)
+- slug: womier-l75
+  brand: womier
+  name: L75
+  releaseYear: 2025
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l75-75-wireless-rgb-gasket-mounted-mechanical-keyboard-with-knob-3827808.jpg?v=1773137544, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l75-75-wireless-rgb-gasket-mounted-mechanical-keyboard-with-knob-4040193.jpg?v=1785152228, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l75-75-wireless-rgb-gasket-mounted-mechanical-keyboard-with-knob-8078726.jpg?v=1785152227, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-l75
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000 }
+  variants:
+    - { sku: JP-Womier-L75-bailvlv-baizhou, colorName: Mix White-Green, colorFamily: white, layout: ansi_us }
+    - { sku: JP-Womier-L75-baizilan-baizhou, colorName: Mix White-Pink-Blue, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Beige Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige-linear)
+- slug: womier-q61-v2
+  brand: womier
+  name: Q61 V2
+  releaseYear: 2025
+  msrpEur: 85
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-q61-v2-via-support-65-wireless-mechanical-keyboard-with-knob-5840475.jpg?v=1773137544, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-q61-v2-via-support-65-wireless-mechanical-keyboard-with-knob-6950016.jpg?v=1781755088, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-q61-v2-via-support-65-wireless-mechanical-keyboard-with-knob-8044286.jpg?v=1781755089, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-q61-v2-via-support-65-wireless-mechanical-keyboard-with-knob-3111539.jpg?v=1781755089, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-q61-v2-wireless-via-mechanical-keyboard-with-knob
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: xda, backlight: none, knob: true, firmware: via, batteryMah: 4000 }
+  variants:
+    - { sku: JP-womier-Q61-xiantiaowutoubai-1, colorName: Frost White Line-Print, colorFamily: white, layout: ansi_us }
+    - { sku: JP-womier-Q61-V2-ckwutoubai-SM-QMK-1, colorName: Frost White Side-Print, colorFamily: white, layout: ansi_us }
+    - { sku: JP-womier-Q61-V2-xiantiao-SM-QMK-1, colorName: White Line Black Legends, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womier-Q61-V2-baiheihui-BTG-SM-RCB-xuanniu-QMK-1, colorName: Black Grey Solid Legends, colorFamily: black, layout: ansi_us }
+
+- slug: womier-x98
+  brand: womier
+  name: X98
+  releaseYear: 2025
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-x98-wireless-mechanical-keyboard-rgb-gaming-keyboard-5272671.png?v=1773137545, kind: cutout_top, width: 1200, height: 1201, primary: true }
+  sources:
+    - https://womierkeyboard.com/products/womier-x98-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 10000 }
+  variants:
+    - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
+- slug: womier-era75
+  brand: womier
+  name: ERA75
+  releaseYear: 2025
+  msrpEur: 190
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-era75-75-via-support-wireless-aluminum-mechanical-keyboard-1242196.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-era75-75-via-support-wireless-aluminum-mechanical-keyboard-4379844.jpg?v=1773585351, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-2580463.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-eravolution-cherry-profile-dye-sublimation-pbt-keycap-set-8928948.jpg?v=1773584791, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-era75
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: via, batteryMah: 8000 }
+  variants:
+    - { colorName: Cyberpunk, colorFamily: color, layout: ansi_us }
+    - { colorName: Black Gold, colorFamily: black, layout: ansi_us }
+    - { colorName: Doomsday, colorFamily: color, layout: ansi_us }
+    - { colorName: Bronze, colorFamily: color, layout: ansi_us }
+    - { colorName: Ice, colorFamily: color, layout: ansi_us }
+    - { colorName: Interstella, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM Beige Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige)
+- slug: womier-qk87-tkl
+  brand: womier
+  name: QK87 TKL
+  releaseYear: 2024
+  msrpEur: 95
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-qk87-tkl-qmkvia-support-wireless-keyboard-with-multimedia-display-6544894.jpg?v=1773137656, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-qk87-tkl-qmkvia-support-wireless-keyboard-with-multimedia-display-5989564.jpg?v=1773137706, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-qk87-tkl-qmk-via-support-multimedia-display-wireless-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, widthMm: 363, depthMm: 134 }
+  variants:
+    - { sku: Womier K87 VIA-Brown, colorName: Brown, colorFamily: color, layout: ansi_us }
+    - { sku: Womier K87 VIA-Green, colorName: Green, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Haimu Ice Jade Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug haimu-ice-jade-magnetic)
+# à vérifier : switch « Outemu Magnetic Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-magnetic)
+- slug: womier-m68
+  brand: womier
+  name: M68
+  releaseYear: 2024
+  msrpEur: 70
+  msrpUsd: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68-he-v2-65-themed-hall-effect-wired-gaming-keyboard-5028753.jpg?v=1773137658, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68-he-v2-65-themed-hall-effect-wired-gaming-keyboard-5159472.jpg?v=1773137658, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68-he-v2-65-themed-hall-effect-wired-gaming-keyboard-4381233.jpg?v=1784157907, kind: cutout_top, width: 1499, height: 963 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68-he-65-topographic-themed-hall-effect-wired-gaming-keyboard-5976844.jpg?v=1773137709, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68-he-65-topographic-themed-hall-effect-wired-gaming-keyboard-8537475.jpg?v=1773137709, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-m68-he-v2
+    - https://womierkeyboard.com/products/womier-m68-he-65-hall-effect-wired-gaming-keyboard
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.3, mount: tray, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 580, widthMm: 329, depthMm: 116 }
+  variants:
+    - { sku: JP-womier-M68HE-Ultra-tg-h, colorName: Black Topographic, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womier-M68HE-xianliangban-bai, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: JP-womier-M68HE-Ultra-btgxc-bai, colorName: Colorful White, colorFamily: white, layout: ansi_us }
+    - { sku: Womier M68 HE-Black, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 100 }
+
+- slug: womier-rd75-pro
+  brand: womier
+  name: RD75 Pro
+  releaseYear: 2024
+  msrpEur: 190
+  msrpUsd: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-rd75-pro-75-wireless-mechanical-keyboard-qmkvia-aluminum-custom-keyboard-8693697.jpg?v=1773137651, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-rd75-pro-75-wireless-mechanical-keyboard-qmkvia-aluminum-custom-keyboard-6150143.jpg?v=1773137652, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-rd75-pro-75-wireless-mechanical-keyboard-qmkvia-aluminum-custom-keyboard-3837178.jpg?v=1773137652, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-rd75-pro-75-wireless-mechanical-keyboard-qmkvia-aluminum-custom-keyboard-2289682.jpg?v=1773137651, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-rd75-pro-wireless-mechanical-aluminum-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 8000, widthMm: 320, depthMm: 136 }
+  variants:
+    - { sku: Womier RD75 Blue Pro, colorName: Anodized Blue, colorFamily: color, layout: ansi_us }
+    - { sku: Womier RD75 Black Pro, colorName: Anodized Black, colorFamily: black, layout: ansi_us }
+    - { sku: Womier RD75 Silver Pro, colorName: Anodized Silver, colorFamily: white, layout: ansi_us }
+    - { sku: Womier RD75 Beige Pro, colorName: Powder-Coated Beige, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Womier POM pre-lubed linear switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-pre-lubed-linear)
+- slug: womier-sk80-pro
+  brand: womier
+  name: SK80 Pro
+  releaseYear: 2024
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-pro-themed-75-wireless-mechanical-keyboard-with-multimedia-display-6698792.jpg?v=1773137667, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-pro-themed-75-wireless-mechanical-keyboard-with-multimedia-display-5412389.jpg?v=1779937628, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-pro-themed-75-wireless-mechanical-keyboard-with-multimedia-display-8231590.jpg?v=1773137668, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-pro-themed-75-wireless-mechanical-keyboard-with-multimedia-display-6840527.jpg?v=1779937628, kind: cutout_top, width: 720, height: 720 }
+  sources:
+    - https://womierkeyboard.com/products/womier-sk80-pro
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 793, widthMm: 348, depthMm: 134 }
+  variants:
+    - { sku: Womier SK80 PRO-Pink, colorName: Sakura Pink, colorFamily: color, layout: ansi_us }
+    - { sku: Womier SK80 PRO-Kanagawa, colorName: Kanagawa, colorFamily: color, layout: ansi_us }
+    - { sku: Womier SK80 PRO-Plum Bossom, colorName: Plum Bossom, colorFamily: color, layout: ansi_us }
+    - { sku: JP-Womier-S-K80pro-bai-zheying-DP-baizhou, colorName: White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Outemu Red switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-red)
+- slug: womier-wk61-v2
+  brand: womier
+  name: WK61 V2
+  releaseYear: 2024
+  msrpEur: 60
+  msrpUsd: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk61-v2-60-hot-swappable-rgb-mechanical-wired-gaming-keyboard-4-colors-6570523.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk61-v2-60-hot-swappable-rgb-mechanical-wired-gaming-keyboard-4-colors-8795944.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk61-v2-60-hot-swappable-rgb-mechanical-wired-gaming-keyboard-4-colors-9053202.jpg?v=1773137775, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk61-v2-60-hot-swappable-rgb-mechanical-wired-gaming-keyboard-4-colors-9058001.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://womierkeyboard.com/products/womier-wk61-v2
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 3000, widthMm: 310, depthMm: 130 }
+  variants:
+    - { sku: Womier WK61-Black Kanagawa-RD, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
+    - { sku: Womier WK61-Kanagawa-RD, colorName: Coral Sea, colorFamily: color, layout: ansi_us }

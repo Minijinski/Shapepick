@@ -13,3 +13,6 @@ apps/web/styled-system
 apps/web/src/paraglide
 apps/web/src/routeTree.gen.ts
 .neon
+
+# pnpm ingest: cached shop pages
+packages/ingest/.cache

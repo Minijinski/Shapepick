@@ -1,0 +1,61 @@
+# Wooting : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 3 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Wooting Lekker Tikken Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug wooting-lekker-tikken-magnetic)
+- slug: wooting-60he-v2
+  brand: wooting
+  name: 60HE V2
+  releaseYear: 2025
+  msrpEur: 285
+  msrpUsd: 240
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26722-1TFX6-Wooting-60HE-V2-Keyboard.jpg?v=1765480865, kind: cutout_top, width: 2400, height: 786, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26725-VXLF9-Wooting-60HE-V2-Keyboard-625u-Spacebar-Black-ABS.jpg?v=1765480865, kind: cutout_top, width: 1341, height: 651 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26723-EG7SU-Wooting-60HE-V2-Keyboard-Split-Spacebar-Black-Aluminum.jpg?v=1765480865, kind: cutout_top, width: 2400, height: 956 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26724-XYTR6-Wooting-60HE-V2-Keyboard-Split-Spacebar-Silver-Aluminum.jpg?v=1765480866, kind: cutout_top, width: 2400, height: 1017 }
+  sources:
+    - https://mechanicalkeyboards.com/products/wooting-60he-v2-magnetic-8k-keyboard
+  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, soundDampening: true, heightFrontMm: 28.6, typingAngleDeg: 6 }
+  variants:
+    - { sku: WK3C-US1-TIK-BK1, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 245 }
+    - { sku: WK3C-US1-TIK-ASV1, colorName: Silver, colorFamily: white, layout: ansi_us, msrpEur: 325 }
+
+# à vérifier : switch « Lekker Linear60 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug lekker-linear60)
+- slug: wooting-60he
+  brand: wooting
+  name: 60HE+
+  releaseYear: 2024
+  msrpEur: 245
+  msrpUsd: 205
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/22138-4RAS5-Wooting-60HE.png?v=1721058249, kind: cutout_top, width: 1000, height: 500, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/wooting-60he
+  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: tray, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: WT-60HEC, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Lekker Linear60 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug lekker-linear60)
+- slug: wooting-two-he
+  brand: wooting
+  name: Two HE
+  releaseYear: 2024
+  msrpEur: 265
+  msrpUsd: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/22141-KCT17-Wooting-Two-HE.jpg?v=1721058304, kind: cutout_top, width: 800, height: 282, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/wooting-two-he
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: WT-TWOHEC, colorName: Black, colorFamily: black, layout: ansi_us }

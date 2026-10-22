@@ -1,0 +1,226 @@
+# Leopold : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 10 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: leopold-fc650mds
+  brand: leopold
+  name: FC650MDS
+  releaseYear: 2024
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5169_63adfe97f0c58_FC650MDS-White-Blue-Star-PD.jpg?v=1775143576, kind: cutout_top, width: 708, height: 518, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6158-JEZI9-Leopold-FC650MDS-WhitePink-PD.jpg?v=1717174924, kind: cutout_top, width: 2000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6157-4XSCP-Leopold-FC650MDS-BlueGrey-PD.jpg?v=1717178344, kind: cutout_top, width: 1900, height: 1000 }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc650mds-white-blue-star-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc650mds-whitepink-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc650mds-bluegrey-pd
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FC650MDSN/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC650MDSC/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC650MDSS/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: FC650MDSW/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-clear }
+    - { sku: FC650MDSV/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: FC650MDSR/EWBPDR, colorName: White Blue Star PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC650MDSN/ELPPD, colorName: White/Pink PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC650MDSC/ELPPD, colorName: White/Pink PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC650MDSR/ELPPD, colorName: White/Pink PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC650MDSS/ELPPD, colorName: White/Pink PD, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: FC650MDSC/EGBPD, colorName: Blue/Grey PD, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 125 }
+    - { sku: FC650MDSR/EGBPD, colorName: Blue/Grey PD, colorFamily: black, layout: ansi_us, switch: cherry-mx-red, msrpEur: 125 }
+    - { sku: FC650MDSS/EGBPD, colorName: Blue/Grey PD, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: FC650MDSV/EGBPD, colorName: Blue/Grey PD, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 125 }
+
+- slug: leopold-fc650mdsbt
+  brand: leopold
+  name: FC650MDSBT
+  releaseYear: 2023
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6163_63ae00b8db66d_FC650MDSBT-Bluetooth-BlueGrey-PD.jpg?v=1717178222, kind: cutout_top, width: 906, height: 443, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc650mdsbt-bluetooth-bluegrey-pd
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FC650MDSBTN/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC650MDSBTC/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC650MDSBTR/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC650MDSBTS/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: FC650MDSBTV/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: leopold-fc750rbt
+  brand: leopold
+  name: FC750RBT
+  releaseYear: 2023
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15263_63ae06dbc0d3c_FC750RBT-Bluetooth-PurpleGrey-PD.jpg?v=1707272104, kind: cutout_top, width: 872, height: 534, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6162_62a3d1ca32231_FC750RBT-Bluetooth-GrayBlue-PD.jpg?v=1707269949, kind: cutout_top, width: 2400, height: 1037 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15254_63ae06d86b116_FC750RBT-Bluetooth-WhitePink-PD.jpg?v=1707271991, kind: cutout_top, width: 880, height: 554 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15256_63ae06d999438_FC750RBT-Bluetooth-WhiteMint-PD.jpg?v=1707272046, kind: cutout_top, width: 1000, height: 570 }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc750rbt-bluetooth-purplegrey-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc750rbt-bluetooth-greyblue-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc750rbt-bluetooth-whitepink-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc750rbt-bluetooth-whitemint-pd
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: FC750RBTC/EGPPD(B), colorName: Purple/Grey TKL, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC750RBTR/EGPPD(B), colorName: Purple/Grey TKL, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC750RBTN/EGPPD(B), colorName: Purple/Grey TKL, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC750RBTS/EGPPD(B), colorName: Purple/Grey TKL, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: FC750RBTL/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: FC750RBTN/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC750RBTC/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC750RBTR/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC750RBTS/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red, msrpEur: 195 }
+    - { sku: FC750RBTN/ELPPD, colorName: White/Pink TKL, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FC750RBTR/EWMPD, colorName: White/Mint TKL, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+
+# à vérifier : switch « Leopold Mage Sakura Silent » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leopold-mage-sakura-silent)
+- slug: leopold-alchemie
+  brand: leopold
+  name: Alchemie
+  releaseYear: 2026
+  msrpEur: 210
+  msrpUsd: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27925-2B6MT-Leopold-Alchemie-Ash-White-Aluminum-Wireless-RGB-Keyboard.jpg?v=1790615947, kind: cutout_top, width: 2400, height: 951, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-alchemie-ash-white-aluminum-wireless-rgb-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: top, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, batteryMah: 4000 }
+  variants:
+    - { sku: ALHS-EAWPD, colorName: Ash White, colorFamily: white, layout: ansi_us }
+
+- slug: leopold-fc630mbt
+  brand: leopold
+  name: FC630MBT
+  releaseYear: 2024
+  msrpEur: 135
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18821-TZE6N-Leopold-FC630MBT-Blue-Grey-with-MX2A-Switches.jpg?v=1730919364, kind: cutout_top, width: 546, height: 246, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18818-S9SD1-Leopold-FC630MBT-Coral-Blue-with-MX2A-Switches.jpg?v=1713970526, kind: cutout_top, width: 546, height: 246 }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc630mbt-blue-grey-60-bluetooth
+    - https://mechanicalkeyboards.com/products/leopold-fc630mbt-coral-blue-60-bluetooth
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: qmk, soundDampening: true }
+  variants:
+    - { sku: FC630MBTN2/EGBPD, colorName: Blue / Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: FC630MBTC2/EGBPD, colorName: Blue / Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-blue }
+    - { sku: FC630MBTR2/EGBPD, colorName: Blue / Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-red, msrpEur: 115 }
+    - { sku: FC630MBTL2/ERBPD(W), colorName: Coral / Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-black }
+    - { sku: FC630MBTS2/ERBPD(W), colorName: Coral / Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-silent-red }
+    - { sku: FC630MBTV2/ERBPD(W), colorName: Coral / Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-speed-silver }
+
+- slug: leopold-fc660mbt
+  brand: leopold
+  name: FC660MBT
+  releaseYear: 2023
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16238_643eeffaa8695_FC660MBT-Ash-Yellow.jpg?v=1707272647, kind: cutout_top, width: 930, height: 486, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc660mbt-ash-yellow
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FC660MBTC/EGDPD(YF), colorName: Ash Yellow, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+
+- slug: leopold-np750rbt
+  brand: leopold
+  name: NP750RBT
+  releaseYear: 2026
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27199-4JZNI-Leopold-NP750RBT-Grey-Blue-Bluetooth-PD-Double-Shot-PBT-Mech.jpg?v=1772488679, kind: cutout_top, width: 1000, height: 524, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-np750rbt-grey-blue-wireless-mechanical-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, connBt: true, mount: plateless, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: NP750RBTC/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: NP750RBTN/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: NP750RBTR/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: NP750RBTS/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: leopold-np900rbt
+  brand: leopold
+  name: NP900RBT
+  releaseYear: 2024
+  msrpEur: 195
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15259_63795d0e83e67_NP900RBT-Bluetooth-Charcoal-Blue-PD.jpg?v=1708440367, kind: cutout_top, width: 1000, height: 520, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27194-E5I1E-Leopold-NP900RBT-Grey-Blue-Bluetooth-PD-Double-Shot-PBT-Mech.jpg?v=1772488773, kind: cutout_top, width: 954, height: 404 }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-np900rbt-bluetooth-charcoal-blue-pd
+    - https://mechanicalkeyboards.com/products/leopold-np900rbt-grey-blue-wireless-mechanical-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, connBt: true, mount: plateless, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: NP900RBTS/EBBPD, colorName: Charcoal Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: NP900RBTC/EBBPD, colorName: Charcoal Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 175 }
+    - { sku: NP900RBTC/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: NP900RBTN/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: NP900RBTR/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: NP900RBTS/EGBPD, colorName: Grey / Blue, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: leopold-fc730mbt-v2
+  brand: leopold
+  name: FC730MBT V2
+  releaseYear: 2024
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/21527-4MI3C-Leopold-FC730MBT-V2-Coral-Blue-Bluetooth.jpg?v=1723534531, kind: cutout_top, width: 800, height: 234, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc730mbt-v2-coral-blue-bluetooth
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, soundDampening: true }
+  variants:
+    - { sku: FC730MBTC2_ERBPDW, colorName: Coral / Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-blue }
+
+- slug: leopold-fc900rbt
+  brand: leopold
+  name: FC900RBT
+  releaseYear: 2023
+  msrpEur: 195
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6164_63ae00b97369f_FC900RBT-Bluetooth-BlueGrey-PD.jpg?v=1707269951, kind: cutout_top, width: 932, height: 526, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6203_62a3d21b815c6_FC900RBT-Bluetooth-BlueGrey-PD-Cherry-MX-Black.jpg?v=1707269951, kind: cutout_top, width: 2400, height: 881 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15262_63ae06db6a51a_FC900RBT-Bluetooth-PurpleGrey-PD.jpg?v=1707272049, kind: cutout_top, width: 1000, height: 496 }
+  sources:
+    - https://mechanicalkeyboards.com/products/leopold-fc900rbt-bluetooth-bluegrey-pd
+    - https://mechanicalkeyboards.com/products/leopold-fc900rbt-bluetooth-purplegrey-pd
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: FC900RBTC/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: FC900RBTR/EGBPD, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FC900RBTN/EGPPDB, colorName: Purple/Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }

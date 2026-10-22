@@ -135,7 +135,7 @@ export const messages = {
   next: text("Suivant", "Next"),
   specSheet: text("Fiche technique", "Spec sheet"),
   whereToBuy: text("Où l’acheter", "Where to buy"),
-  listPrice: text("Prix conseillé", "List price"),
+  listPrice: text("Prix indicatif", "Typical price"),
   offersSoon: text(
     "Les offres des marchands arrivent bientôt : prix du jour, stock et livraison, au même endroit.",
     "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",

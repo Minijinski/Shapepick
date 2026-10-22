@@ -1,0 +1,160 @@
+# Realforce : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 9 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: realforce-r3s-tkl
+  brand: realforce
+  name: R3S TKL
+  releaseYear: 2024
+  msrpEur: 205
+  msrpUsd: 185
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/21544-DY9ZA-Topre-Realforce-R3S-TKL-Wired.jpg?v=1719328988, kind: cutout_top, width: 1393, height: 604, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-r3s-tkl-wired
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-R3SD31, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: realforce-r3s
+  brand: realforce
+  name: R3S
+  releaseYear: 2024
+  msrpEur: 205
+  msrpUsd: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/21540-8TEPK-Topre-Realforce-R3S-Wired.jpg?v=1719326914, kind: cutout_top, width: 1780, height: 675, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-r3s-wired
+  specs: { formFactor: full, technology: topre, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-R3SB31, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: realforce-r4
+  brand: realforce
+  name: R4
+  releaseYear: 2025
+  msrpEur: 340
+  msrpUsd: 280
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26476-S28DW-Topre-Realforce-R4-45g-Wireless-Keyboard.jpg?v=1779133928, kind: cutout_top, width: 2000, height: 860, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26478-PF5LX-Topre-Realforce-R4-45g-Wireless-Keyboard-White.jpg?v=1779133929, kind: cutout_top, width: 2000, height: 860 }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-r4-45g-wireless-keyboard
+  specs: { formFactor: full, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-R4HB11, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RF-R4HB21, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: realforce-rc1
+  brand: realforce
+  name: RC1
+  releaseYear: 2025
+  msrpEur: 310
+  msrpUsd: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23055-MTNXH-Topre-Realforce-RC1-75.jpg?v=1740167949, kind: cutout_top, width: 2400, height: 1191, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23058-E38KK-Topre-Realforce-RC1-75-Bluetooth-Keyboard-Topre-Silent-30g.jpg?v=1740167949, kind: cutout_top, width: 2400, height: 1375 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24413-LF5D4-Topre-Realforce-RC1-White-75-30g-Bluetooth-Keyboard.jpg?v=1740167949, kind: cutout_top, width: 1431, height: 736 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24413-RL2DK-Topre-Realforce-RC1-White-75-30g-Bluetooth-Keyboard.jpg?v=1740167948, kind: cutout_top, width: 1218, height: 667 }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-rc1-75-bluetooth-keyboard
+  specs: { formFactor: f75, technology: topre, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-C1HK13, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RF-C1HK21, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: realforce-r4-tkl
+  brand: realforce
+  name: R4 TKL
+  releaseYear: 2025
+  msrpEur: 330
+  msrpUsd: 275
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26479-35142-Topre-Realforce-R4-45g-TKL-Wireless-Keyboard.jpg?v=1779134106, kind: cutout_top, width: 2000, height: 860, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26480-U1D8I-Topre-Realforce-R4-45g-TKL-Wireless-Keyboard-Black.jpg?v=1779134105, kind: cutout_top, width: 2000, height: 860 }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-r4-tkl-wireless-keyboard
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-R4HD11, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RF-R4HD21, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: realforce-gx1-plus
+  brand: realforce
+  name: GX1 Plus
+  releaseYear: 2026
+  msrpEur: 365
+  msrpUsd: 305
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27230-PP9JN-Topre-Realforce-GX1-Plus-TKL-RGB-Keyboard.jpg?v=1775146247, kind: cutout_top, width: 1516, height: 692, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-gx1-plus-8k-tkl-rgb-keyboard
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, pollingHzWired: 8000, caseMaterial: steel, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: X1PD13, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: realforce-gx1-tkl
+  brand: realforce
+  name: GX1 TKL
+  releaseYear: 2025
+  msrpEur: 305
+  msrpUsd: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17285-GRYQ2-Realforce-GX1-Black-TKL-RGB-Mechanical-Keyboard.jpg?v=1741785916, kind: cutout_top, width: 1788, height: 787, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24410-YJU4J-Topre-Realforce-GX1-White-TKL-RGB-Mechanical-Keyboard.jpg?v=1741785916, kind: cutout_top, width: 1553, height: 693 }
+  sources:
+    - https://mechanicalkeyboards.com/products/topre-realforce-gx1-tkl-rgb
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-X1UD13, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RF-X1UD23, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: realforce-r3
+  brand: realforce
+  name: R3
+  releaseYear: 2024
+  msrpEur: 345
+  msrpUsd: 290
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23949-QDWW2-Realforce-R3-Grey-Blue-TKL-Wireless-Dye-Sub-PBT-Keyboard.jpg?v=1733166553, kind: cutout_top, width: 1000, height: 520, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/realforce-r3-grey-blue-tkl-wireless-dye-sub-pbt-keyboard
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: RF-R3HDL3, colorName: Grey / Blue TKL, colorFamily: black, layout: ansi_us }
+
+- slug: realforce-gx1
+  brand: realforce
+  name: GX1
+  releaseYear: 2024
+  msrpEur: 425
+  msrpUsd: 355
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24004-EUWBU-hololive-x-Realforce-GX1-Laplace-Darkness-Keyboard.jpg?v=1743599570, kind: cutout_top, width: 2400, height: 1200, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/hololive-x-realforce-gx1-la-darknesss-keyboard
+  specs: { formFactor: tkl, technology: topre, hotSwap: none, caseMaterial: steel, plateMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RF-X1UDL1, colorName: La+ Darknesss, colorFamily: black, layout: ansi_us }

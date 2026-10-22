@@ -234,14 +234,22 @@ export const keyboardFinder: FinderDefinition<K> = {
           "linear",
           "Linéaire",
           "Linear",
-          (k) => hasSwitch(k, (s) => s.feel === "linear"),
+          // Hall-effect switches are linear almost without exception: a magnetic board whose switch
+          // sheet could not be read still answers "linear".
+          (k) =>
+            hasSwitch(k, (s) => s.feel === "linear") ||
+            (k.specs.technology === "magnetic" &&
+              !k.variants.some((v) => v.switch != null)),
           ["Lisse, sans bosse", "Smooth, no bump"],
         ),
         opt(
           "tactile",
           "Tactile",
           "Tactile",
-          (k) => hasSwitch(k, (s) => s.feel === "tactile"),
+          // Topre boards have no switch record, but their rubber dome under a spring is tactile.
+          (k) =>
+            k.specs.technology === "topre" ||
+            hasSwitch(k, (s) => s.feel === "tactile"),
           ["Une bosse perceptible", "A bump you can feel"],
         ),
         opt(

@@ -289,7 +289,7 @@ export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }:
               )}
             </div>
 
-            {/* The drawing on the canvas's dotted paper. */}
+            {/* The product (its photo, or its drawing) on the canvas's dotted paper. */}
             <div
               className={css({
                 p: '4',

@@ -1,0 +1,106 @@
+# Mistel : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Gateron G Pro Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-red)
+# à vérifier : switch « Gateron G Pro Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-yellow)
+# à vérifier : switch « Gateron G Pro Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-silver)
+- slug: mistel-md600-alpha
+  brand: mistel
+  name: MD600 Alpha
+  releaseYear: 2023
+  msrpEur: 165
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15874_63ed168bbe019_MD600-Alpha-RGB-Black.jpg?v=1707272411, kind: cutout_top, width: 1752, height: 980, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/mistel-md600-alpha-rgb-black
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 2000, soundDampening: true }
+  variants:
+    - { sku: MD600A-RUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: MD600A-PUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: mistel-barocco-60
+  brand: mistel
+  name: Barocco 60%
+  releaseYear: 2024
+  msrpEur: 150
+  msrpUsd: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4011-I96JC-Barocco-White.jpg?v=1713295662, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4013-KC4NI-Mistel-Barocco-White-RGB.jpg?v=1770301689, kind: cutout_top, width: 2400, height: 1126 }
+  sources:
+    - https://mechanicalkeyboards.com/products/mistel-barocco-white
+    - https://mechanicalkeyboards.com/products/mistel-barocco-white-rgb
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: MD600-BUSPLWWA1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: MD600-CUSPLWWA1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: MD600-RUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red, msrpEur: 130 }
+    - { sku: MD600-NUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-nature-white }
+
+# à vérifier : switch « Cherry MX Ultra Low Profile Clicky » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cherry-mx-ultra-low-profile-clicky)
+- slug: mistel-air-one
+  brand: mistel
+  name: Air One
+  releaseYear: 2023
+  msrpEur: 165
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16508-3LB4Y-Air-One-Grey.png?v=1707272946, kind: cutout_top, width: 2400, height: 923, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16509-EX1ZA-Air-One-Black.png?v=1707272946, kind: cutout_top, width: 2400, height: 910 }
+  sources:
+    - https://mechanicalkeyboards.com/products/mistel-air-one
+  specs: { formFactor: f65, technology: mechanical, lowProfile: true, hotSwap: none, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 295, widthMm: 308, depthMm: 100 }
+  variants:
+    - { sku: MD68-CUSBLGRA1, colorName: Grey, colorFamily: black, layout: ansi_us }
+
+- slug: mistel-barocco-split
+  brand: mistel
+  name: Barocco Split
+  releaseYear: 2025
+  msrpEur: 150
+  msrpUsd: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4012-KAXDK-Mistel-Barocco-Black-60-Split-RGB-Keyboard.jpg?v=1757084948, kind: cutout_top, width: 1497, height: 775, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4010-KZQPC-Barocco-Black.jpg?v=1751570647, kind: cutout_top, width: 1000, height: 1000 }
+  sources:
+    - https://mechanicalkeyboards.com/products/mistel-barocco-black-60-split-rgb-keyboard
+    - https://mechanicalkeyboards.com/products/mistel-barocco-black-60-split-keyboard
+  specs: { formFactor: split, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: MD600-AUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: MD600-CUSPLGAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: MD600-RUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: MD600-NUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-nature-white }
+    - { sku: MD600-SUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: MD600-SRUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: MD600-BUSPLGAA2, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+
+- slug: mistel-sleeker
+  brand: mistel
+  name: Sleeker
+  releaseYear: 2024
+  msrpEur: 190
+  msrpUsd: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4014_63adf72809eb5_Sleeker-Black.png?v=1708444097, kind: cutout_top, width: 1752, height: 980, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/mistel-sleeker-black
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: MD870-BUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: MD870-RUSPDAAT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }

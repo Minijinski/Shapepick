@@ -1,0 +1,105 @@
+# Filco : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 6 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: filco-majestouch-2ss
+  brand: filco
+  name: Majestouch 2SS
+  releaseYear: 2023
+  msrpEur: 95
+  msrpUsd: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13304_62915ca190678_Majestouch-2SS.jpg?v=1707270788, kind: cutout_top, width: 1600, height: 1200, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-2ss
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FKBN104MSS/ECSP2B, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: filco-majestouch-2ss-tkl
+  brand: filco
+  name: Majestouch 2SS TKL
+  releaseYear: 2023
+  msrpEur: 115
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13305_62915ca411932_Majestouch-2SS-TKL.jpg?v=1707270789, kind: cutout_top, width: 1600, height: 1200, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-2ss-tkl
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FKBN87MSS/ECSP2B, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: filco-majestouch-convertible-3-tkl
+  brand: filco
+  name: Majestouch Convertible 3 TKL
+  releaseYear: 2023
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15556_63cef70a60901_Majestouch-Convertible-3-TKL.jpg?v=1707272292, kind: cutout_top, width: 1600, height: 1200, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-convertible-3-tkl
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FKBC87MC/EB3, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+
+- slug: filco-majestouch
+  brand: filco
+  name: Majestouch
+  releaseYear: 2025
+  msrpEur: 105
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25374-I2349-Filco-Majestouch-Lumi-S-Keyboard.jpg?v=1747670048, kind: cutout_top, width: 1800, height: 644, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-lumi-s-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: FKBN104M/ECSP2LS, colorName: Lumi S, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: FKBN104MRL/ECSP2LS, colorName: Lumi S, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+
+- slug: filco-majestouch-xacro
+  brand: filco
+  name: Majestouch Xacro
+  releaseYear: 2023
+  msrpEur: 75
+  msrpUsd: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14767_636ac88b08e9c_Majestouch-Xacro-M3A.jpg?v=1707271632, kind: cutout_top, width: 1396, height: 652, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-xacro-m3a
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: FKBX67MSS/EB, colorName: M3A, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: filco-majestouch-60
+  brand: filco
+  name: Majestouch 60%
+  releaseYear: 2025
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25611-YGJLB-Filco-Majestouch-Luce60-Keyboard.jpg?v=1757604654, kind: cutout_top, width: 2400, height: 1350, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25611-DJDEG-Filco-Majestouch-Luce60-Keyboard.jpg?v=1757604654, kind: cutout_top, width: 2400, height: 1350 }
+  sources:
+    - https://mechanicalkeyboards.com/products/filco-majestouch-luce60-hotswap-rgb-keyboard
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: sandwich, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: FKBL61MRL-SG, colorName: Luce60, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: FKBL61MSS-SG, colorName: Luce60, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }

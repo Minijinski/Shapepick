@@ -1,0 +1,180 @@
+# HyperX : importés de hyperx.com par `pnpm ingest hyperx`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-22 : 10 modèles, hyperx.com (prix € estimés depuis les prix US)
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-origins-2-pro-65
+  brand: hyperx
+  name: Origins 2 Pro 65
+  releaseYear: 2026
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_origins_2_pro_65_us_bn7s3aa_main_1.jpg?v=1787066269, kind: cutout_top, width: 1500, height: 1500, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-origins-2-pro-65-gaming-keyboard
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, weightG: 2268 }
+  variants:
+    - { sku: BN7S3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-origins-2-65
+  brand: hyperx
+  name: Origins 2 65
+  releaseYear: 2025
+  msrpEur: 145
+  msrpUsd: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_origins_2_65_us_b4qs3aa_main_1.jpg?v=1787066255, kind: cutout_top, width: 1500, height: 1500, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-origins-2-65-gaming-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pom, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 2268 }
+  variants:
+    - { sku: B4QS3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-origins-2-1800
+  brand: hyperx
+  name: Origins 2 1800
+  releaseYear: 2025
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_origins_2_1800_us_b4qs4aa_main_1.jpg?v=1787066263, kind: cutout_top, width: 1500, height: 1500, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-origins-2-1800-gaming-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pom, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 953 }
+  variants:
+    - { sku: B4QS4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Membrane » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug membrane)
+- slug: hyperx-eve-1800
+  brand: hyperx
+  name: Eve 1800
+  releaseYear: 2025
+  msrpEur: 60
+  msrpUsd: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_eve_1800_us_b7je0a6_23aba_main_1.jpg?v=1765578394, kind: cutout_top, width: 1500, height: 1500, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-eve-1800-gaming-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 653 }
+  variants:
+    - { sku: B7JE0AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-alloy-rise
+  brand: hyperx
+  name: Alloy Rise
+  releaseYear: 2024
+  msrpEur: 240
+  msrpUsd: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_rise_us_7g7a3aa_23aba_main_1.jpg?v=1784821569, kind: cutout_top, width: 4000, height: 4000, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-rise-mechanical-gaming-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, weightG: 1311 }
+  variants:
+    - { sku: 7G7A3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-alloy-rise-75
+  brand: hyperx
+  name: Alloy Rise 75
+  releaseYear: 2024
+  msrpEur: 205
+  msrpUsd: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_rise_75_us_7g7a4aa_23aba_main_1.jpg?v=1771417802, kind: cutout_top, width: 4000, height: 4000, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-rise-75-mechanical-gaming-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, weightG: 943 }
+  variants:
+    - { sku: 7G7A4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: hyperx-alloy-core-rgb
+  brand: hyperx
+  name: Alloy Core RGB
+  releaseYear: 2021
+  msrpEur: 65
+  msrpUsd: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_core_rgb_us_1_main.jpg?v=1784821560, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_core_rgb_us_1_main_renamed_0.jpg?v=1784821560, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-core-rgb-gaming-keyboard
+  specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1120 }
+  variants:
+    - { sku: 4P4F5AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-aqua-tactile)
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+- slug: hyperx-alloy-origins-65
+  brand: hyperx
+  name: Alloy Origins 65
+  releaseYear: 2022
+  msrpEur: 120
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_65_english_us_aqua_1_top_down.jpg?v=1763563176, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_65_english_us_1_top_down.jpg?v=1763563176, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-origins-65
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 826 }
+  variants:
+    - { sku: 56R64AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+# à vérifier : switch « HyperX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-aqua-tactile)
+- slug: hyperx-alloy-origins-60
+  brand: hyperx
+  name: Alloy Origins 60
+  releaseYear: 2022
+  msrpEur: 120
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_60_us_1_top_down_renamed_6_4ad0353b-41b4-45c9-8ef5-8ee2889bb384.jpg?v=1763563190, kind: cutout_top, width: 1600, height: 1600, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-origins-60-mechanical-gaming-keyboard
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 780 }
+  variants:
+    - { sku: 56R61AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
+# à vérifier : switch « HX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hx-aqua-tactile)
+- slug: hyperx-alloy-origins-core
+  brand: hyperx
+  name: Alloy Origins Core
+  releaseYear: 2021
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_core_us_1_top_down_renamed_0.jpg?v=1774442094, kind: cutout_top, width: 1600, height: 1600, primary: true }
+  sources:
+    - https://hyperx.com/products/hyperx-alloy-origins-core-mechanical-gaming-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 898 }
+  variants:
+    - { sku: 4P5P3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }

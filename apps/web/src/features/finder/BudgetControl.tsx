@@ -7,7 +7,7 @@ import {
   writeRange,
 } from "@choose/catalog";
 import { css } from "styled-system/css";
-import { formatPrice } from "../product/specs";
+import { formatAmount } from "../product/specs";
 
 // Two thumbs on one rail, under the price histogram of what the other answers leave: the bars in
 // the range turn ink as the thumbs move. The top of the rail means "no ceiling", so the answer
@@ -123,13 +123,13 @@ export function BudgetControl({
           <span className={css({ color: "ink.faint", mr: "2" })}>
             {labels.min}
           </span>
-          {formatPrice(min, locale)}
+          {formatAmount(min, locale)}
         </span>
         <span>
           <span className={css({ color: "ink.faint", mr: "2" })}>
             {labels.max}
           </span>
-          {max >= hi ? labels.noLimit : formatPrice(max, locale)}
+          {max >= hi ? labels.noLimit : formatAmount(max, locale)}
         </span>
       </div>
       <div className={css({ position: "relative", h: "6" })}>

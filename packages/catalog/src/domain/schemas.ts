@@ -34,6 +34,15 @@ export const switchSchema = z.object({
 })
 export type Switch = z.infer<typeof switchSchema>
 
+export const productImageSchema = z.object({
+  url: z.url(),
+  kind: z.enum(E.imageKinds),
+  width: positiveInt.optional(),
+  height: positiveInt.optional(),
+  primary: z.boolean().optional(),
+})
+export type ProductImage = z.infer<typeof productImageSchema>
+
 const productBase = z.object({
   slug,
   brand: slug,
@@ -47,6 +56,9 @@ const productBase = z.object({
   editorialScore: unit.default(0.5),
   tagline: text.optional(),
   description: text.optional(),
+  images: z.array(productImageSchema).optional(),
+  /** Pages the record was imported from (pnpm ingest), to re-check or refresh it later. */
+  sources: z.array(z.url()).optional(),
 })
 
 export const keyboardSpecsSchema = z.object({

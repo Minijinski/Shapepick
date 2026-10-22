@@ -1,0 +1,90 @@
+# HHKB : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 4 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: hhkb-hybrid-type-s
+  brand: hhkb
+  name: Hybrid Type-S
+  releaseYear: 2023
+  msrpEur: 390
+  msrpUsd: 325
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3442-AX52Q-Hybrid-Type-S-White.jpg?v=1764685453, kind: cutout_top, width: 1228, height: 500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3445-BZ4N2-Hybrid-Type-S-Charcoal-Topre-Silent-45g.jpg?v=1764685453, kind: cutout_top, width: 1236, height: 497 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3449-535KA-Hybrid-Type-S-Charcoal-Blank-Topre-Silent-45g.jpg?v=1764685453, kind: cutout_top, width: 1230, height: 506 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3447-83NHS-Hybrid-Type-S-White-Blank-Topre-Silent-45g.jpg?v=1764685453, kind: cutout_top, width: 1217, height: 492 }
+  sources:
+    - https://mechanicalkeyboards.com/products/hhkb-hybrid-type-s
+  specs: { formFactor: f60, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: CG01000-297201, colorName: Charcoal, colorFamily: black, layout: ansi_us, msrpEur: 345 }
+    - { sku: CG01000-297001, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: CG01000-307201, colorName: Snow, colorFamily: white, layout: ansi_us }
+
+- slug: hhkb-classic
+  brand: hhkb
+  name: Classic
+  releaseYear: 2023
+  msrpEur: 310
+  msrpUsd: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3426-Q5ZB1-Classic-White.jpg?v=1765230849, kind: cutout_top, width: 1212, height: 451, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3429-VYNNB-Classic-Charcoal-Topre-45g.jpg?v=1765230849, kind: cutout_top, width: 1183, height: 442 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3433-QDPW7-Classic-Charcoal-Blank-Topre-45g.jpg?v=1765230849, kind: cutout_top, width: 1211, height: 450 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3431-I2UH3-Classic-White-Blank-Topre-45g.jpg?v=1765230849, kind: cutout_top, width: 1221, height: 462 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26494-74SU1-HHKB-Classic-Topre-Silent-45g-60-PBT-Mechanical-Keyboard.jpg?v=1774964124, kind: cutout_top, width: 2400, height: 1106 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26496-BP27F-HHKB-Classic-Topre-Silent-45g-60-PBT-Mechanical-Keyboard-Bla.jpg?v=1774964124, kind: cutout_top, width: 2400, height: 1079 }
+  sources:
+    - https://mechanicalkeyboards.com/products/hhkb-classic
+    - https://mechanicalkeyboards.com/products/hhkb-classic-topre-silent-45g-60-pbt-mechanical-keyboard
+  specs: { formFactor: f60, technology: topre, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: CG01000-296401, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 265 }
+    - { sku: CG01000-296201, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: CG01000-399207, colorName: Charcoal, colorFamily: black, layout: ansi_us }
+    - { sku: CG01000-399208, colorName: Snow, colorFamily: white, layout: ansi_us, msrpEur: 350 }
+
+- slug: hhkb-hybrid
+  brand: hhkb
+  name: Hybrid
+  releaseYear: 2023
+  msrpEur: 350
+  msrpUsd: 290
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3434-EUHZ5-Hybrid-White.jpg?v=1765230751, kind: cutout_top, width: 1203, height: 500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3437-TDTC3-Hybrid-Charcoal-Topre-45g.jpg?v=1765230751, kind: cutout_top, width: 1232, height: 500 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3441-7CDBH-Hybrid-Charcoal-Blank-Topre-45g.jpg?v=1765230751, kind: cutout_top, width: 1218, height: 502 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3439-LXXST-Hybrid-White-Blank-Topre-45g.jpg?v=1765230751, kind: cutout_top, width: 1222, height: 505 }
+  sources:
+    - https://mechanicalkeyboards.com/products/hhkb-hybrid
+  specs: { formFactor: f60, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: CG01000-296601, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: CG01000-296901, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: hhkb-studio
+  brand: hhkb
+  name: Studio
+  releaseYear: 2024
+  msrpEur: 405
+  msrpUsd: 340
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17294-9FM1N-HHKB-Studio-Charcoal-60-Hotswap-Bluetooth-Dye-Sub-PBT-Mechan.png?v=1767988988, kind: cutout_top, width: 2112, height: 1005, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23017-1IA7X-HHKB-Studio-Snow-45g-Silent-Linear.png?v=1767988988, kind: cutout_top, width: 2148, height: 1057 }
+  sources:
+    - https://mechanicalkeyboards.com/products/hhkb-studio
+  specs: { formFactor: f60, technology: topre, hotSwap: 5pin, connBt: true, btDevices: 4, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: CG01000-310002, colorName: Charcoal, colorFamily: black, layout: ansi_us }
+    - { sku: CG01000-310287, colorName: Snow, colorFamily: white, layout: ansi_us }

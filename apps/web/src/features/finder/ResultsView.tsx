@@ -6,9 +6,9 @@ import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
 import { AnnotatedHero } from "../product/AnnotatedHero";
-import { ProductGlyph } from "../product/glyphs";
 import { Match } from "../product/Match";
 import { MatchBreakdown } from "../product/MatchBreakdown";
+import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, keySpecs } from "../product/specs";
 import { useDockHeight } from "./DockPanel";
 
@@ -383,7 +383,7 @@ export function ResultsView({
                       placeItems: "center",
                     })}
                   >
-                    <ProductGlyph
+                    <ProductPicture
                       item={entry.item}
                       className={css({ maxH: "24", w: "80%", h: "auto" })}
                     />
@@ -502,7 +502,7 @@ export function ResultsView({
                     >
                       {String(i + 4).padStart(2, "0")}
                     </span>
-                    <ProductGlyph
+                    <ProductPicture
                       item={entry.item}
                       className={css({ h: "8", w: "auto", maxW: "72px" })}
                     />

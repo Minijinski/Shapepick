@@ -37,13 +37,19 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
   const version = `${ids.length}-${stamp?.updated?.getTime() ?? 0}`
   if (!ids.length) return { version, items: [] }
 
-  const [translations, variants] = await Promise.all([
+  const [translations, variants, images] = await Promise.all([
     db.select().from(t.productTranslations).where(inArray(t.productTranslations.productId, ids)),
     db
       .select({ variant: t.productVariants, switch: t.switches })
       .from(t.productVariants)
       .leftJoin(t.switches, eq(t.productVariants.switchId, t.switches.id))
       .where(inArray(t.productVariants.productId, ids)),
+    // In the seed's order, which the ids follow.
+    db
+      .select()
+      .from(t.productImages)
+      .where(inArray(t.productImages.productId, ids))
+      .orderBy(t.productImages.id),
   ])
 
   const brands = new Map<string, Brand>()
@@ -64,6 +70,17 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
       const en = own.find((tr) => tr.locale === 'en')?.[field]
       return fr || en ? { fr: fr ?? en ?? '', en: en ?? fr ?? '' } : undefined
     }
+    const ownImages = images
+      .filter((img) => img.productId === product.id)
+      .map((img) =>
+        compact({
+          url: img.url,
+          kind: img.kind,
+          width: img.width,
+          height: img.height,
+          primary: img.isPrimary,
+        }),
+      )
     return {
       id: product.id,
       input: compact({
@@ -79,6 +96,7 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
         editorialScore: product.editorialScore,
         tagline: localized('tagline'),
         description: localized('description'),
+        images: ownImages.length ? ownImages : undefined,
       }),
       variants: variants
         .filter((v) => v.variant.productId === product.id)

@@ -1,0 +1,376 @@
+# Varmilo : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 15 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
+# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
+# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
+# à vérifier : switch « Varmilo EC Iris V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-iris-v2)
+- slug: varmilo-ma-tkl
+  brand: varmilo
+  name: MA TKL
+  releaseYear: 2023
+  msrpEur: 165
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5539_63adff32d1e48_VEM87-Summit-R2.jpg?v=1707269531, kind: cutout_top, width: 2400, height: 985, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8311_63ae023ee35bd_VEM87-Love-Birds-Yang-I.png?v=1707270611, kind: cutout_top, width: 1875, height: 805 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8310_63ae023d36a03_VEM87-Love-Birds-Yuan-You.png?v=1707270610, kind: cutout_top, width: 1893, height: 820 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15397_6387d6822e5e3_VEM87-Warrior-Soar.jpg?v=1707272173, kind: cutout_top, width: 2400, height: 1093 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5588_62a3ce1256834_VEM87-Moonlight.jpg?v=1707269590, kind: cutout_top, width: 1317, height: 551 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vem87-summit-r2
+    - https://mechanicalkeyboards.com/products/varmilo-vem87-love-birds-yang-i
+    - https://mechanicalkeyboards.com/products/varmilo-vem87-love-birds-yuan-you
+    - https://mechanicalkeyboards.com/products/varmilo-vem87-warrior-soar
+    - https://mechanicalkeyboards.com/products/varmilo-vem87-moonlight
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A33A022A9A3A01A007, colorName: Series V2 Summit R2 White, colorFamily: white, layout: ansi_us }
+    - { sku: A33A002A9A3A01A003, colorName: Series V2 Love Birds Yang (I) White, colorFamily: white, layout: ansi_us }
+    - { sku: A33A001B0A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us }
+    - { sku: A33A036A9A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, msrpEur: 200 }
+    - { sku: A33A023B1A3A01A007, colorName: Series V2 Moonlight White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
+# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
+# à vérifier : switch « Varmilo EC Iris V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-iris-v2)
+# à vérifier : switch « Varmilo EC Moxa » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-moxa)
+# à vérifier : switch « Varmilo EC Jasmine V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-jasmine-v2)
+# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
+# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
+# à vérifier : switch « Varmilo MX Daisy L » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-mx-daisy-l)
+- slug: varmilo-minilo
+  brand: varmilo
+  name: Minilo
+  releaseYear: 2023
+  msrpEur: 125
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14474_63ae0518309d0_Minilo-VXB67-Wireless-Mendozae.jpg?v=1731595451, kind: cutout_top, width: 2400, height: 1038, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14509_633f18a263332_Minilo-VXB67-Wireless-Graptopetalum-Varmilo-EC-Daisy-V2.jpg?v=1731595451, kind: cutout_top, width: 1031, height: 408 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14710_636ac874e300e_Minilo-VXT67-Graptopetalum.jpg?v=1707271627, kind: cutout_top, width: 2400, height: 1038 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25216-I784W-Varmilo-Minilo-VXT67-Latte-65-Wireless-Keyboard.png?v=1764365967, kind: cutout_top, width: 1511, height: 629 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-minilo-vxb67-wireless-mendozae
+    - https://mechanicalkeyboards.com/products/varmilo-minilo-vxt67-mendozae
+    - https://mechanicalkeyboards.com/products/varmilo-minilo-vxt67-latte-65-wireless-hotswap-rgb-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, btDevices: 3, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A40A062B0A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, msrpEur: 105 }
+    - { sku: A42A062E4A5A01A039, colorName: VXT67 Mendozae, colorFamily: color, layout: ansi_us }
+    - { sku: A42A081F9A5A01A039, colorName: VXT67 Latte, colorFamily: color, layout: ansi_us, msrpEur: 155 }
+
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
+# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
+# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
+- slug: varmilo-sword-2-87
+  brand: varmilo
+  name: Sword 2-87
+  releaseYear: 2023
+  msrpEur: 345
+  msrpUsd: 320
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5706-97SFZ-Sword-2-87-Pacific-Blue.jpg?v=1707269708, kind: cutout_top, width: 1477, height: 779, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5708-9MWEB-Sword-2-87-Flying-Tigers.jpg?v=1707269710, kind: cutout_top, width: 2400, height: 1157 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8529_63ae02b57d57a_Sword-2-87-Sakura.png?v=1707270726, kind: cutout_top, width: 2400, height: 1002 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5705-Z3ND3-Sword-2-87-Twilight-Green.jpg?v=1707269708, kind: cutout_top, width: 2094, height: 862 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-pacific-blue
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-flying-tigers
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-sakura
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-twilight-green
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: A09A017A8A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us }
+    - { sku: A09A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us }
+    - { sku: A09A027A8A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, msrpEur: 415 }
+    - { sku: A09A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, msrpEur: 310 }
+
+# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
+# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
+# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+- slug: varmilo-lure
+  brand: varmilo
+  name: Lure
+  releaseYear: 2023
+  msrpEur: 175
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5044_62a3cb04625b1_VBM108-Lure-Bot-Awake.jpg?v=1707269289, kind: cutout_top, width: 2000, height: 1333, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5045_62a3cb084c80e_VBM108-Lure-Bot-Lie.jpg?v=1751761463, kind: cutout_top, width: 2000, height: 1333 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5047_62a3cb10d85d7_VBS108-Lure-Bot-Lie.jpg?v=1751761472, kind: cutout_top, width: 2000, height: 1333 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vbm108-lure-bot-awake
+    - https://mechanicalkeyboards.com/products/varmilo-vbm108-lure-bot-lie
+    - https://mechanicalkeyboards.com/products/varmilo-vbs108-lure-bot-lie
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: A01A004A8A4A01A006, colorName: Series Awake White, colorFamily: white, layout: ansi_us, msrpEur: 150 }
+    - { sku: A01A003B1A4A01A005, colorName: Series Lie White, colorFamily: white, layout: ansi_us, msrpEur: 155 }
+    - { sku: A03A003A2A0A01A005, colorName: Series Lie, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: A03A003A3A0A01A005, colorName: Series Lie, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 200 }
+
+# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+- slug: varmilo-ma
+  brand: varmilo
+  name: MA
+  releaseYear: 2023
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8307_63ae0238b8a91_VEM108-Love-Birds-Yuan-You.jpg?v=1707270607, kind: cutout_top, width: 2400, height: 801, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8458_62a3d610320e8_VEM108-Love-Birds-Yuan-You-Varmilo-EC-Sakura-V2.jpg?v=1707270606, kind: cutout_top, width: 717, height: 298 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15399_6387d682c6ce1_VEM108-Warrior-Soar.jpg?v=1707272175, kind: cutout_top, width: 2400, height: 872 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vem108-love-birds-yuan-you
+    - https://mechanicalkeyboards.com/products/varmilo-vem108-warrior-soar
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A36A001C2A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us }
+    - { sku: A36A036B0A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Gateron KS-20 White Magnetic HE » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-ks-20-white-magnetic-he)
+- slug: varmilo-muse65
+  brand: varmilo
+  name: Muse65
+  releaseYear: 2024
+  msrpEur: 190
+  msrpUsd: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/21933-AUSQX-Varmilo-VYU67-Muse-65-Summit.jpg?v=1722952916, kind: cutout_top, width: 2587, height: 980, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vyu67-muse-65-summit-keyboard
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A88A110H0A5A01A073, colorName: White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Varmilo MX Daisy L » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-mx-daisy-l)
+- slug: varmilo-sword68
+  brand: varmilo
+  name: Sword68
+  releaseYear: 2024
+  msrpEur: 235
+  msrpUsd: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17300-J9JSY-Varmilo-Sword-68-Classic-Black-Aluminum-65-Hotswap-Bluetooth.jpg?v=1708382923, kind: cutout_top, width: 2400, height: 1001, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17302-ESLZ9-Varmilo-Sword-68-Ariel-Aluminum-65-Hotswap-Bluetooth-24-GHz.png?v=1708380813, kind: cutout_top, width: 2400, height: 979 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-sword68-classic-black-aluminum-65-bluetooth-mechanical-keyboard
+    - https://mechanicalkeyboards.com/products/varmilo-sword68-ariel
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true }
+  variants:
+    - { sku: A68A091G6A8A01A064, colorName: Classic Black, colorFamily: black, layout: ansi_us, switch: kailh-prestige-voice }
+    - { sku: A68A089F9A8A01A063, colorName: Ariel, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
+# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
+# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
+- slug: varmilo-sword-2-68
+  brand: varmilo
+  name: Sword 2-68
+  releaseYear: 2023
+  msrpEur: 320
+  msrpUsd: 270
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5709-HKJY4-Sword-2-68-Twilight-Green.jpg?v=1707269711, kind: cutout_top, width: 2400, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5710-UGLK3-Sword-2-68-Pacific-Blue.jpg?v=1707269764, kind: cutout_top, width: 1577, height: 859 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5711-N8K8J-Sword-2-68-Moonlight.jpg?v=1707269765, kind: cutout_top, width: 2000, height: 1333 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5712-YQQ9U-Sword-2-68-Flying-Tigers.jpg?v=1707269768, kind: cutout_top, width: 2400, height: 1082 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8528_63ae02b47486f_Sword-2-68-Sakura.png?v=1707270725, kind: cutout_top, width: 2400, height: 850 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-twilight-green
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-pacific-blue
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-moonlight
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-flying-tigers
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-sakura
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: A07A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us }
+    - { sku: A07A017B0A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, msrpEur: 285 }
+    - { sku: A07A016A8A3A01A017, colorName: Moonlight White, colorFamily: white, layout: ansi_us }
+    - { sku: A07A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us }
+    - { sku: A07A027B1A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, msrpEur: 365 }
+
+# à vérifier : switch « TTC Speed Gold » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ttc-speed-gold)
+- slug: varmilo-va-tkl
+  brand: varmilo
+  name: VA TKL
+  releaseYear: 2023
+  msrpEur: 170
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8299_63ae0222e0a14_VED87-Love-Birds-Yuan-You.png?v=1707270491, kind: cutout_top, width: 1893, height: 820, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8300_63ae02244d44a_VED87-Love-Birds-Yang-I.png?v=1707270544, kind: cutout_top, width: 1875, height: 805 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13518_63ae03938e744_VEA87-Love-Birds-Yuan-You.png?v=1707271092, kind: cutout_top, width: 1893, height: 820 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15396_63ae0718df65b_VEA87-Warrior-Soar.jpg?v=1707272173, kind: cutout_top, width: 2400, height: 1093 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15400_6387d68308298_VEA87-Warrior-Soar-TTC-Gold-Pink.jpg?v=1707272172, kind: cutout_top, width: 2400, height: 1093 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8295_63ae021e1c66e_VED87-Summit-R2.jpg?v=1707270487, kind: cutout_top, width: 2400, height: 985 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-ved87-love-birds-yuan-you
+    - https://mechanicalkeyboards.com/products/varmilo-ved87-love-birds-yang-i
+    - https://mechanicalkeyboards.com/products/varmilo-vea87-love-birds-yuan-you
+    - https://mechanicalkeyboards.com/products/varmilo-vea87-warrior-soar
+    - https://mechanicalkeyboards.com/products/varmilo-ved87-summit-r2
+    - https://mechanicalkeyboards.com/products/varmilo-vea87-love-birds-yang-i
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A29A001A1A0A01A001, colorName: Series V2 Love Birds Yuan (You) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 150 }
+    - { sku: A29A001A2A0A01A001, colorName: Series V2 Love Birds Yuan (You) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 150 }
+    - { sku: A29A001A3A0A01A001, colorName: Series V2 Love Birds Yuan (You) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 150 }
+    - { sku: A23A001A6A0A01A001, colorName: Series V2 Love Birds Yuan (You) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: A23A002A1A0A01A003, colorName: Series V2 Love Birds Yang (I) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: A29A002A2A0A01A003, colorName: Series V2 Love Birds Yang (I) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 200 }
+    - { sku: A23A002A3A0A01A003, colorName: Series V2 Love Birds Yang (I) TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: A23A036C0A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, switch: ttc-gold-pink }
+    - { sku: A23A036D6A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, switch: ttc-quick-silver }
+    - { sku: A23A036D8A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, msrpEur: 130 }
+    - { sku: A23A036A1A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: A23A036A6A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: A23A036A3A0A01A032, colorName: Series V2 Warrior Soar TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: A29A022A1A0A01A007, colorName: Series V2 Summit R2 TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: A29A022A3A0A01A007, colorName: Series V2 Summit R2 TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 200 }
+
+# à vérifier : switch « Varmilo EC Ivy » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy)
+# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
+- slug: varmilo-ma87m
+  brand: varmilo
+  name: MA87M
+  releaseYear: 2023
+  msrpEur: 165
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4971_62a3ca5ed4fb0_MA87M-Lovebirds-You.jpg?v=1713288502, kind: cutout_top, width: 2398, height: 1032, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5538_62a3cd671f5ae_MA87M-Summit-R2.jpg?v=1707269530, kind: cutout_top, width: 2000, height: 1333 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-ma87m-lovebirds-you
+    - https://mechanicalkeyboards.com/products/varmilo-ma87m-summit-r2
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: MA87MA001B1A4A01A001, colorName: Love Birds You White, colorFamily: white, layout: ansi_us }
+    - { sku: MA87MA022B0A4A01A007, colorName: Summit R2 White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « TTC Speed Gold » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ttc-speed-gold)
+- slug: varmilo-va
+  brand: varmilo
+  name: VA
+  releaseYear: 2023
+  msrpEur: 220
+  msrpUsd: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15398_63ae071c840c9_VEA108-Warrior-Soar.jpg?v=1707272176, kind: cutout_top, width: 2400, height: 872, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15412_6387d6854b5ed_VEA108-Warrior-Soar-TTC-Gold-Pink.jpg?v=1707272174, kind: cutout_top, width: 2400, height: 872 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8302_63ae0227731c7_VED108-Love-Birds-Yuan-You.jpg?v=1707270547, kind: cutout_top, width: 2400, height: 801 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/8420_62a3d5d59ae17_VED108-Love-Birds-Yuan-You-Cherry-MX-Blue.jpg?v=1707270545, kind: cutout_top, width: 717, height: 298 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vea108-warrior-soar
+    - https://mechanicalkeyboards.com/products/varmilo-ved108-love-birds-yuan-you
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A26A036C0A0A01A032, colorName: Series V2 Warrior Soar, colorFamily: color, layout: ansi_us, switch: ttc-gold-pink }
+    - { sku: A26A036D6A0A01A032, colorName: Series V2 Warrior Soar, colorFamily: color, layout: ansi_us, switch: ttc-quick-silver, msrpEur: 175 }
+    - { sku: A26A036D8A0A01A032, colorName: Series V2 Warrior Soar, colorFamily: color, layout: ansi_us, msrpEur: 190 }
+    - { sku: A26A036A3A0A01A032, colorName: Series V2 Warrior Soar, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: A31A001A1A0A01A001, colorName: Series V2 Love Birds Yuan (You), colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: A31A001A2A0A01A001, colorName: Series V2 Love Birds Yuan (You), colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: A31A001A3A0A01A001, colorName: Series V2 Love Birds Yuan (You), colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: A31A001A6A0A01A001, colorName: Series V2 Love Birds Yuan (You), colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: varmilo-va87m
+  brand: varmilo
+  name: VA87M
+  releaseYear: 2024
+  msrpEur: 130
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3950-74AKS-VA87M-Chicken-Dinner.png?v=1713289507, kind: cutout_top, width: 1600, height: 634, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-va87m-chicken-dinner
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: VA87MS2W/LLPbQW/A, colorName: Chicken Dinner TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+- slug: varmilo-cliff
+  brand: varmilo
+  name: Cliff
+  releaseYear: 2023
+  msrpEur: 175
+  msrpUsd: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/5049_62a3cb18093b2_VCS87-Cliff-Bot-Lie.jpg?v=1751761503, kind: cutout_top, width: 2000, height: 1333, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-vcs87-cliff-bot-lie-tkl
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: A05A005A1A0A01A005, colorName: Bot Lie TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+
+# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
+- slug: varmilo-sword-2-108
+  brand: varmilo
+  name: Sword 2-108
+  releaseYear: 2023
+  msrpEur: 495
+  msrpUsd: 410
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/11399_63ae03367b3f9_Sword-2-108-Warrior-Soar.jpg?v=1707270735, kind: cutout_top, width: 2400, height: 799, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/11402_62a3d8b1e3ec2_Sword-2-108-Warrior-Soar-Varmilo-EC-Sakura-V2.png?v=1707270735, kind: cutout_top, width: 2399, height: 760 }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-sword-2-108-warrior-soar
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: A12A036A9A3A01A017, colorName: Warrior Soar, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Grain Gold Magnetic White » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug grain-gold-magnetic-white)
+- slug: varmilo-minilo75
+  brand: varmilo
+  name: Minilo75
+  releaseYear: 2025
+  msrpEur: 200
+  msrpUsd: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24624-H5F5E-Varmilo-Minilo75-HE-Mendozae-Keyboard.jpg?v=1745243704, kind: cutout_top, width: 800, height: 800, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/varmilo-minilo75-he-mendozae-keyboard
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, mount: tray, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: A99A121K2A5A01A081, colorName: Black, colorFamily: black, layout: ansi_us }

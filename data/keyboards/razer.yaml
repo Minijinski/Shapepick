@@ -1,0 +1,559 @@
+# Razer : importés de razer.com (site français) par `pnpm ingest razer`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-22 : 28 modèles, razer.com/fr-fr (prix € et dispositions du site français)
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
+- slug: razer-huntsman-mini
+  brand: razer
+  name: Huntsman Mini
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/krZoqlMj7RgVMeu6_G5hGproAMg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh5f%2F9533910253598%2Fhuntsman-mini-black-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/krZoqlMj7RgVMeu6_G5hGproAMg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh5f%2F9533910253598%2Fhuntsman-mini-black-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/krZoqlMj7RgVMeu6_G5hGproAMg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh5f%2F9533910253598%2Fhuntsman-mini-black-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/kfjGJRANCsxxLIvGhKDWoHxAy3o=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb2%2Fh9f%2F9533909958686%2Fhuntsman-mini-mercury-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-mini/RZ03-03390100-R3M1
+  specs: { formFactor: f60, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03390100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-03390300-R3M1, colorName: Mercury, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-03390700-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: RZ03-03391400-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-03391700-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-03392700-R3G1, colorName: Mercury, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-03393600-R3F1, colorName: Mercury, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+- slug: razer-blackwidow-v3-mini-hyperspeed
+  brand: razer
+  name: BlackWidow V3 Mini HyperSpeed
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/fsYVUWlAS7d0EiONMAHZfATb1M8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8e%2Fh5c%2F9533910155294%2Fblackwidow-v3-mini-hyperspeed-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/fsYVUWlAS7d0EiONMAHZfATb1M8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8e%2Fh5c%2F9533910155294%2Fblackwidow-v3-mini-hyperspeed-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/JDJpdD2uMiX5zO5ZCDAJoVB8wd0=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb0%2Fha2%2F9533909893150%2Fblackwidow-v3-mini-hyperspeed-phantom-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/JDJpdD2uMiX5zO5ZCDAJoVB8wd0=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb0%2Fha2%2F9533909893150%2Fblackwidow-v3-mini-hyperspeed-phantom-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3-mini-hyperspeed/RZ03-03890100-R3M1
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, conn24ghz: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03890100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+- slug: razer-huntsman-v2-tenkeyless
+  brand: razer
+  name: Huntsman V2 Tenkeyless
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/t5tbytvVK8X-ql7-u39feFUfQkI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh84%2Fh6d%2F9533910646814%2Fhuntsman-v2-tkl-black-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/t5tbytvVK8X-ql7-u39feFUfQkI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh84%2Fh6d%2F9533910646814%2Fhuntsman-v2-tkl-black-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/t5tbytvVK8X-ql7-u39feFUfQkI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh84%2Fh6d%2F9533910646814%2Fhuntsman-v2-tkl-black-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2-tenkeyless/RZ03-03941100-R3G1
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03941100-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-03941200-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+- slug: razer-deathstalker-v2-pro
+  brand: razer
+  name: DeathStalker V2 Pro
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/H4-taO9catZxOm8BDk5adVCYhno=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh48%2Fh9f%2F9533909991454%2Fdeathstalker-v2-pro-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/H4-taO9catZxOm8BDk5adVCYhno=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh48%2Fh9f%2F9533909991454%2Fdeathstalker-v2-pro-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2-pro/RZ03-04361800-R3M1
+  specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04361800-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+# à vérifier : switch « Switchs mécaniques orange Razer™ - Tactile et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-orange-tactile-et-silencieuse)
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+- slug: razer-blackwidow-v4-low-profile-hyperspeed
+  brand: razer
+  name: BlackWidow V4 Low-Profile HyperSpeed
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/I7WgApD0GI8vIBLa2bGwplgfwHM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh4f%2F9946834731038%2Fbw-v4-low-hyperspeed-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/I7WgApD0GI8vIBLa2bGwplgfwHM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh4f%2F9946834731038%2Fbw-v4-low-hyperspeed-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/I7WgApD0GI8vIBLa2bGwplgfwHM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh4f%2F9946834731038%2Fbw-v4-low-hyperspeed-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/I7WgApD0GI8vIBLa2bGwplgfwHM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf6%2Fh4f%2F9946834731038%2Fbw-v4-low-hyperspeed-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-low-profile-hyperspeed/RZ03-05270100-R3M1
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05450100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05450900-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-05451100-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-05451900-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+
+# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
+- slug: razer-huntsman-v3-pro-8khz
+  brand: razer
+  name: Huntsman V3 Pro 8KHz
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/lAZq2SPUeGaeDA88nhfhLlrPoxU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb9%2Fh24%2F9980311076894%2Fhuntsman-v3-pro-tkl-8khz-b-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/lAZq2SPUeGaeDA88nhfhLlrPoxU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb9%2Fh24%2F9980311076894%2Fhuntsman-v3-pro-tkl-8khz-b-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/lAZq2SPUeGaeDA88nhfhLlrPoxU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb9%2Fh24%2F9980311076894%2Fhuntsman-v3-pro-tkl-8khz-b-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/lAZq2SPUeGaeDA88nhfhLlrPoxU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb9%2Fh24%2F9980311076894%2Fhuntsman-v3-pro-tkl-8khz-b-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro-8khz/RZ03-05521500-R3M1
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05740100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us, msrpEur: 190 }
+    - { sku: RZ03-05740500-R3G1, colorName: Noir, colorFamily: color, layout: iso_de, msrpEur: 190 }
+    - { sku: RZ03-05520500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-05521000-R3M1, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05521300-R3M1, colorName: Esports Green Edition, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05521500-R3M1, colorName: NiKo Edition, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05521700-R3M1, colorName: Sentinels Edition, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switches ultra low-profile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ultra-low-profile)
+- slug: razer-joro
+  brand: razer
+  name: Joro
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/_gxRoI-iKUbEa8cMG0iPnXscTGk=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6c%2Fh92%2F9904339288094%2Fjoro-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/_gxRoI-iKUbEa8cMG0iPnXscTGk=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6c%2Fh92%2F9904339288094%2Fjoro-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/_gxRoI-iKUbEa8cMG0iPnXscTGk=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6c%2Fh92%2F9904339288094%2Fjoro-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/74RehFNmTW3FoMuQTmTHCwneY7Q=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3f%2Fh66%2F10416606248990%2Fjoro-folio-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-joro/RZ03-02360400-R3F1
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, widthMm: 298, depthMm: 112 }
+  variants:
+    - { sku: RZ03-02360100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-02360400-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+- slug: razer-blackwidow-v4
+  brand: razer
+  name: BlackWidow V4
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/4VeppnBPnufbXFEUZqgOX3lf81g=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/4VeppnBPnufbXFEUZqgOX3lf81g=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/4VeppnBPnufbXFEUZqgOX3lf81g=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/4VeppnBPnufbXFEUZqgOX3lf81g=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh36%2Fh5a%2F9640099184670%2Fblackwidow-v4-2-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4/RZ03-04690300-R3W1
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04690100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04690400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-04690500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+- slug: razer-deathstalker-v2-pro-tenkeyless
+  brand: razer
+  name: DeathStalker V2 Pro Tenkeyless
+  msrpEur: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/UroAeVqpKy568NI4CXjUefBoxrg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7d%2Fh59%2F9533910089758%2Fdeathstalker-v2-pro-tkl-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/UroAeVqpKy568NI4CXjUefBoxrg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7d%2Fh59%2F9533910089758%2Fdeathstalker-v2-pro-tkl-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/UroAeVqpKy568NI4CXjUefBoxrg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7d%2Fh59%2F9533910089758%2Fdeathstalker-v2-pro-tkl-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/deBf9vS3ttONjCbHkiBtN_PEZs8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0a%2Fha0%2F9533909925918%2Fdeathstalker-v2-pro-tkl-white-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2-pro-tenkeyless/RZ03-04370600-R3N1
+  specs: { formFactor: tkl, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04370600-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: RZ03-04371800-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Mécanique orange » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mecanique-orange)
+- slug: razer-blackwidow-v4-tenkeyless-hyperspeed
+  brand: razer
+  name: BlackWidow V4 Tenkeyless HyperSpeed
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/5X3616c-KmqnNcUbY3P9wKPbvRw=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf4%2F9923675586590%2Fbw-v4-tkl-hyperspeed-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/5X3616c-KmqnNcUbY3P9wKPbvRw=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf4%2F9923675586590%2Fbw-v4-tkl-hyperspeed-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/5X3616c-KmqnNcUbY3P9wKPbvRw=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf4%2F9923675586590%2Fbw-v4-tkl-hyperspeed-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/5X3616c-KmqnNcUbY3P9wKPbvRw=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf4%2F9923675586590%2Fbw-v4-tkl-hyperspeed-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-tenkeyless-hyperspeed/RZ03-05480100-R3M1
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05480100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05480400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-05480500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-05481200-R3M1, colorName: Wuthering Waves Edition, colorFamily: color, layout: ansi_us, msrpEur: 210 }
+
+- slug: razer-pro-type-ergo
+  brand: razer
+  name: Pro Type Ergo
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/EUE3cqKE-wKF7TuNjmqYpnHJxhM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh61%2Fh07%2F10040128012318%2Fpro-type-ergo-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/EUE3cqKE-wKF7TuNjmqYpnHJxhM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh61%2Fh07%2F10040128012318%2Fpro-type-ergo-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/EUE3cqKE-wKF7TuNjmqYpnHJxhM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh61%2Fh07%2F10040128012318%2Fpro-type-ergo-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/EUE3cqKE-wKF7TuNjmqYpnHJxhM=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh61%2Fh07%2F10040128012318%2Fpro-type-ergo-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-pro-type-ergo/RZ03-05440100-R3M1
+  specs: { formFactor: full, technology: scissor, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05440100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05440300-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-05440400-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+- slug: razer-ornata-v3
+  brand: razer
+  name: Ornata V3
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/xp_XhkB68NUcGek2X-oPN_SXhs8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfd%2Fh73%2F9533910810654%2Fornata-v3-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/xp_XhkB68NUcGek2X-oPN_SXhs8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfd%2Fh73%2F9533910810654%2Fornata-v3-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/xp_XhkB68NUcGek2X-oPN_SXhs8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfd%2Fh73%2F9533910810654%2Fornata-v3-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/xp_XhkB68NUcGek2X-oPN_SXhs8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfd%2Fh73%2F9533910810654%2Fornata-v3-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-ornata-v3/RZ03-04882300-RUEA
+  specs: { formFactor: tkl, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04880100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04880400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-04880500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-04460600-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: RZ03-04882300-RUEA, colorName: Espeon & Umbreon Edition, colorFamily: color, layout: ansi_us, msrpEur: 150 }
+    - { sku: RZ03-04882400-RUEA, colorName: Pikachu & Eevee Edition, colorFamily: color, layout: ansi_us, msrpEur: 150 }
+
+# à vérifier : switch « Switch optique analogique low-profile Razer™ » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-optique-analogique-low-profile)
+- slug: razer-huntsman-v3-pro-low-profile-tenkeyless-8khz
+  brand: razer
+  name: Huntsman V3 Pro Low-profile Tenkeyless 8KHz
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/s5HhL_aqYXvAqFxfEl_WDam8uc8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh81%2Fh8d%2F10300516040734%2Fhmv3pro-lowpro-tkl-8k-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/s5HhL_aqYXvAqFxfEl_WDam8uc8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh81%2Fh8d%2F10300516040734%2Fhmv3pro-lowpro-tkl-8k-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/s5HhL_aqYXvAqFxfEl_WDam8uc8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh81%2Fh8d%2F10300516040734%2Fhmv3pro-lowpro-tkl-8k-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/s5HhL_aqYXvAqFxfEl_WDam8uc8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh81%2Fh8d%2F10300516040734%2Fhmv3pro-lowpro-tkl-8k-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro-low-profile-tenkeyless-8khz/RZ03-05850100-R3M1
+  specs: { formFactor: tkl, technology: optical, lowProfile: true, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05850100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05850300-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-05850400-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
+- slug: razer-huntsman-v2-analog
+  brand: razer
+  name: Huntsman V2 Analog
+  msrpEur: 270
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/yf0lwghEcvAHVG3iRhW3ipS_HLs=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdb%2Fh6d%2F9533910679582%2Fhuntsman-v2-analog-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/yf0lwghEcvAHVG3iRhW3ipS_HLs=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdb%2Fh6d%2F9533910679582%2Fhuntsman-v2-analog-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/yf0lwghEcvAHVG3iRhW3ipS_HLs=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdb%2Fh6d%2F9533910679582%2Fhuntsman-v2-analog-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2-analog/RZ03-03610500-R3F1
+  specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03610500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-03610600-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+# à vérifier : switch « Switchs mécaniques orange Razer™ - Tactile et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-orange-tactile-et-silencieuse)
+- slug: razer-blackwidow-v4-pro
+  brand: razer
+  name: BlackWidow V4 Pro
+  msrpEur: 270
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/KFyW1pJmVw2YQfU3iiXZ9sbpmj8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2a%2Fhd3%2F9538807103518%2Fblackwidow-v3-black-5-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/KFyW1pJmVw2YQfU3iiXZ9sbpmj8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2a%2Fhd3%2F9538807103518%2Fblackwidow-v3-black-5-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/KFyW1pJmVw2YQfU3iiXZ9sbpmj8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2a%2Fhd3%2F9538807103518%2Fblackwidow-v3-black-5-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/KFyW1pJmVw2YQfU3iiXZ9sbpmj8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2a%2Fhd3%2F9538807103518%2Fblackwidow-v3-black-5-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-pro/RZ03-04683600-R3U1
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04680100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04680400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-04682200-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-04683600-R3U1, colorName: Blanc, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+- slug: razer-huntsman-v2
+  brand: razer
+  name: Huntsman V2
+  msrpEur: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/w1gE_9Joq9Rd_Kywb5lAaeM2XHU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2d%2Fh6d%2F9533910614046%2Fhuntsman-v2-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/w1gE_9Joq9Rd_Kywb5lAaeM2XHU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2d%2Fh6d%2F9533910614046%2Fhuntsman-v2-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/w1gE_9Joq9Rd_Kywb5lAaeM2XHU=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2d%2Fh6d%2F9533910614046%2Fhuntsman-v2-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2/RZ03-03931200-R3N1
+  specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03931200-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+- slug: razer-blackwidow-v4-x
+  brand: razer
+  name: BlackWidow V4 X
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/9pjbKWz7sL95jh0O0r390M7KpyY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8f%2Fh57%2F9640099217438%2Fblackwidow-v4-black-x-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/9pjbKWz7sL95jh0O0r390M7KpyY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8f%2Fh57%2F9640099217438%2Fblackwidow-v4-black-x-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/9pjbKWz7sL95jh0O0r390M7KpyY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8f%2Fh57%2F9640099217438%2Fblackwidow-v4-black-x-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/9pjbKWz7sL95jh0O0r390M7KpyY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8f%2Fh57%2F9640099217438%2Fblackwidow-v4-black-x-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-x/RZ03-04704200-R3M1
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04700100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04700400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-04700500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-04700600-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: RZ03-04704100-R3M1, colorName: Minecraft Edition, colorFamily: color, layout: ansi_us, msrpEur: 200 }
+    - { sku: RZ03-04704200-R3M1, colorName: Pokémon Edition, colorFamily: color, layout: ansi_us, msrpEur: 190 }
+    - { sku: RZ03-04704300-R3M1, colorName: Zenless Zone Zero Edition, colorFamily: color, layout: ansi_us, msrpEur: 190 }
+
+# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
+- slug: razer-huntsman-v3-pro
+  brand: razer
+  name: Huntsman V3 Pro
+  msrpEur: 210
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/G7BVL66bQtEs7i0SunCDrNIaD2U=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh66%2F9705254125598%2Fhuntsman-v3-pro-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/G7BVL66bQtEs7i0SunCDrNIaD2U=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh66%2F9705254125598%2Fhuntsman-v3-pro-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/G7BVL66bQtEs7i0SunCDrNIaD2U=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh66%2F9705254125598%2Fhuntsman-v3-pro-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/G7BVL66bQtEs7i0SunCDrNIaD2U=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh66%2F9705254125598%2Fhuntsman-v3-pro-2-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro/RZ03-04982100-R3M1
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 1000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04990100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04990400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-04990500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+    - { sku: RZ03-04990600-R3N1, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: RZ03-04991700-R3M1, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-04982100-R3M1, colorName: Counter-Strike 2 Edition, colorFamily: color, layout: ansi_us, msrpEur: 290 }
+    - { sku: RZ03-04992000-R3G1, colorName: Blanc, colorFamily: color, layout: iso_de }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
+- slug: razer-blackwidow-v3-tenkeyless
+  brand: razer
+  name: BlackWidow V3 Tenkeyless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/tzfCT0H26jsmDX1ung7I8IVr1r8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh07%2Fha3%2F9533909860382%2Fblackwidow-v3-tkl-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/tzfCT0H26jsmDX1ung7I8IVr1r8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh07%2Fha3%2F9533909860382%2Fblackwidow-v3-tkl-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tzfCT0H26jsmDX1ung7I8IVr1r8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh07%2Fha3%2F9533909860382%2Fblackwidow-v3-tkl-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tzfCT0H26jsmDX1ung7I8IVr1r8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh07%2Fha3%2F9533909860382%2Fblackwidow-v3-tkl-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3-tenkeyless/RZ03-03490100-R3M1
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03490100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-03490400-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-03490500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
+- slug: razer-huntsman-v3-tenkeyless-8khz
+  brand: razer
+  name: Huntsman V3 Tenkeyless 8KHz
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/7bxSaLZ_wG2bUI3X41_l9-5p9WQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh96%2Fh06%2F10061741654046%2Fhuntsman-v3-tkl-8khz-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/7bxSaLZ_wG2bUI3X41_l9-5p9WQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh96%2Fh06%2F10061741654046%2Fhuntsman-v3-tkl-8khz-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/7bxSaLZ_wG2bUI3X41_l9-5p9WQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh96%2Fh06%2F10061741654046%2Fhuntsman-v3-tkl-8khz-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/7bxSaLZ_wG2bUI3X41_l9-5p9WQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh96%2Fh06%2F10061741654046%2Fhuntsman-v3-tkl-8khz-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-tenkeyless-8khz/RZ03-05750300-R3G1
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05750100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05750300-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+
+# à vérifier : switch « Switches magnétiques à effet Hall Razer™ » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-magnetiques-a-effet-hall)
+- slug: razer-huntsman-v3-he-magnetic-8khz
+  brand: razer
+  name: Huntsman V3 HE Magnetic 8KHz
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/maBstlAwpuHeKkGBF7WIauFpwck=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh31%2Fh01%2F10240652869662%2Fhuntsman-v3-he-mag-tkl-8k-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/maBstlAwpuHeKkGBF7WIauFpwck=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh31%2Fh01%2F10240652869662%2Fhuntsman-v3-he-mag-tkl-8k-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/maBstlAwpuHeKkGBF7WIauFpwck=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh31%2Fh01%2F10240652869662%2Fhuntsman-v3-he-mag-tkl-8k-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/maBstlAwpuHeKkGBF7WIauFpwck=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh31%2Fh01%2F10240652869662%2Fhuntsman-v3-he-mag-tkl-8k-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-he-magnetic-8khz/RZ03-05920100-R3M1
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05930100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05930300-R3G1, colorName: Noir, colorFamily: color, layout: iso_de }
+    - { sku: RZ03-05930400-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
+- slug: razer-deathstalker-v2
+  brand: razer
+  name: DeathStalker V2
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/JFI1ycp6bG9dkrZm4MqgEV16XC4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcf%2Fh58%2F9533910024222%2Fdeathstalker-v2-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/JFI1ycp6bG9dkrZm4MqgEV16XC4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcf%2Fh58%2F9533910024222%2Fdeathstalker-v2-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2/RZ03-04501800-R3M1
+  specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04501800-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
+- slug: razer-huntsman-v3-x-tenkeyless
+  brand: razer
+  name: Huntsman V3 X Tenkeyless
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/sYMg_AT3Zxo7VK5ocEaiGlouwt8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha9%2Fh94%2F9775114780702%2Fhuntsman-v3-x-tenkeyless-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/sYMg_AT3Zxo7VK5ocEaiGlouwt8=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha9%2Fh94%2F9775114780702%2Fhuntsman-v3-x-tenkeyless-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-x-tenkeyless/RZ03-05020500-R3F1
+  specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05020500-R3F1, colorName: Noir, colorFamily: color, layout: iso_fr }
+
+# à vérifier : switch « Switchs mécaniques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug switchs-mecaniques)
+- slug: razer-blackwidow-v4-pro-75
+  brand: razer
+  name: BlackWidow V4 Pro 75
+  msrpEur: 350
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/7_iccdb3b3NJnXtoBdwcOPw8dHI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe7%2Fh76%2F9815507599390%2Fbw-v4-pro-75-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/7_iccdb3b3NJnXtoBdwcOPw8dHI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe7%2Fh76%2F9815507599390%2Fbw-v4-pro-75-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/7_iccdb3b3NJnXtoBdwcOPw8dHI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe7%2Fh76%2F9815507599390%2Fbw-v4-pro-75-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-pro-75/RZ03-05130100-R3M1
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, connBt: true, pollingHzWired: 4000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05130100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
+- slug: razer-blackwidow-v3
+  brand: razer
+  name: BlackWidow V3
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/uoW6ex5Rglx5rAmwNFWs-ynnkbE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh37%2Fh5c%2F9533910122526%2Fblackwidow-v3-black-4-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/uoW6ex5Rglx5rAmwNFWs-ynnkbE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh37%2Fh5c%2F9533910122526%2Fblackwidow-v3-black-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/16u9GwTvlxau-pSmUi-ZuCn03dk=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh72%2Fha3%2F9533909827614%2Fblackwidow-v3-quartz-4-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3/RZ03-03540100-R3M1
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-03540100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-03541800-R3M1, colorName: Quartz, colorFamily: color, layout: ansi_us }
+
+# à vérifier : switch « Switchs mécaniques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug switchs-mecaniques)
+- slug: razer-blackwidow-v4-75
+  brand: razer
+  name: BlackWidow V4 75
+  msrpEur: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/tidA2NvROUjp5s5Pz22Orr2BW7I=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fh5a%2F9640099119134%2Fblackwidow-v4-75-black-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/tidA2NvROUjp5s5Pz22Orr2BW7I=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fh5a%2F9640099119134%2Fblackwidow-v4-75-black-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tidA2NvROUjp5s5Pz22Orr2BW7I=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fh5a%2F9640099119134%2Fblackwidow-v4-75-black-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/XNpQJ5UQLW9WgdLkSOMrTdWja-M=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh24%2Fh57%2F9640099250206%2Fblackwidow-v4-75-white-2-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-75/RZ03-05003500-R3M1
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05003900-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us, msrpEur: 150 }
+    - { sku: RZ03-05004100-R3M1, colorName: Blanc, colorFamily: color, layout: ansi_us, msrpEur: 160 }
+    - { sku: RZ03-05003300-R3M1, colorName: Phantom Green Edition, colorFamily: color, layout: ansi_us, msrpEur: 230 }
+    - { sku: RZ03-05003500-R3M1, colorName: Phantom White Edition, colorFamily: white, layout: ansi_us, msrpEur: 230 }
+
+# à vérifier : switch « Mécanique orange » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mecanique-orange)
+- slug: razer-reclusa-x-mini-65
+  brand: razer
+  name: Reclusa X Mini 65
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/tzKLk4_V4fwMrk6KTDKz6TShX6k=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fhc2%2F10362438942750%2Freclusa-x-mini-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/tzKLk4_V4fwMrk6KTDKz6TShX6k=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fhc2%2F10362438942750%2Freclusa-x-mini-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tzKLk4_V4fwMrk6KTDKz6TShX6k=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fhc2%2F10362438942750%2Freclusa-x-mini-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tzKLk4_V4fwMrk6KTDKz6TShX6k=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fhc2%2F10362438942750%2Freclusa-x-mini-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-reclusa-x-mini-65/RZ03-05980100-R3M1
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-05980100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }
+
+- slug: razer-ornata-v3-x
+  brand: razer
+  name: Ornata V3 X
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/VO9j3pb5ibDHiQNXPMqwzAnOTM0=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd8%2Fh69%2F9502654332958%2Fornata-v3-2-x-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/VO9j3pb5ibDHiQNXPMqwzAnOTM0=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd8%2Fh69%2F9502654332958%2Fornata-v3-2-x-500x500.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-keyboards/razer-ornata-v3-x/RZ03-04470100-R3M1
+  specs: { formFactor: full, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: RZ03-04470100-R3M1, colorName: Noir, colorFamily: color, layout: ansi_us }

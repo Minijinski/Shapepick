@@ -1,0 +1,157 @@
+# Turtle Beach : importés de turtlebeach.com par `pnpm ingest turtlebeach`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-22 : 8 modèles, turtlebeach.com (prix € estimés depuis les prix US)
+# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
+# à vérifier : switch « Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug tactile)
+- slug: turtle-beach-vulcan-ii
+  brand: turtle-beach
+  name: Vulcan II
+  releaseYear: 2024
+  msrpEur: 120
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIXPAirUSHeroshot.png?v=1790003864, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/Vulcan_II_XP_US_Heroshot_1.png?v=1787342244, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/Vulcan_II_XP_US_White_Heroshot_1.png?v=1787342264, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-BLK-US_31f2f2f7-6f18-4c2a-85f4-8f52b74df495.png?v=1711929965, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-WHT-US.png?v=1711929965, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/vulcan-ii-xp-air-keyboard
+    - https://turtlebeach.com/products/vulcan-ii-xp-keyboard
+    - https://turtlebeach.com/products/vulcan-ii-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 949, widthMm: 462, depthMm: 153 }
+  variants:
+    - { sku: TBK-1101-01-US, colorName: XP Air, colorFamily: color, layout: ansi_us, msrpEur: 240 }
+    - { sku: TBK-1002-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-1002-11-US, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: turtle-beach-command
+  brand: turtle-beach
+  name: Command
+  releaseYear: 2026
+  msrpEur: 150
+  msrpUsd: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB5_TopDown_1106x840_ecf8b09f-f3f1-4cd2-9498-0037706a2345.png?v=1777669193, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KP7_TopDown_1106x840_c3cbb046-eb8e-47d3-8ce5-5810ffd69d2a.png?v=1777669377, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/command-series-kb5-keyboard
+    - https://turtlebeach.com/products/command-series-kp7-keypad
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: TBK-1005-01-US, colorName: Series KB5, colorFamily: color, layout: ansi_us, msrpEur: 180 }
+    - { sku: TBK-7001-05, colorName: Series KP7 Keypad, colorFamily: color, layout: ansi_us, msrpEur: 120 }
+
+- slug: turtle-beach-command-tkl
+  brand: turtle-beach
+  name: Command TKL
+  releaseYear: 2026
+  msrpEur: 240
+  msrpUsd: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB7_TopDownTransparent_1106x840_8ee4ea3c-1de0-43a1-8552-7298f6992b28.png?v=1779471488, kind: cutout_top, width: 1106, height: 840, primary: true }
+  sources:
+    - https://turtlebeach.com/products/command-series-kb7-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: TBK-2004-01-US, colorName: Series KB7, colorFamily: color, layout: ansi_us }
+
+- slug: turtle-beach-vulcan-ii-tkl
+  brand: turtle-beach
+  name: Vulcan II TKL
+  releaseYear: 2025
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulkanIITKL_US_front_1106x840_dd92a39d-5f76-4dd7-8bce-e9447dc14064.png?v=1755714020, kind: cutout_top, width: 1106, height: 840, primary: true }
+  sources:
+    - https://turtlebeach.com/products/vulcan-ii-tkl-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: TBK-2003-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+
+# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
+- slug: turtle-beach-vulcan-ii-mini
+  brand: turtle-beach
+  name: Vulcan II Mini
+  releaseYear: 2024
+  msrpEur: 145
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLVariantImage_VulcanIIMini_Black.png?v=1721844770, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMiniAir-BLK-US_895dffd1-16c5-483b-bdcf-6bbebaf294ee.png?v=1709819867, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMiniAir-WHT-US.png?v=1709819867, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/vulcan-ii-mini-keyboard
+    - https://turtlebeach.com/products/vulcan-ii-mini-air-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 542, widthMm: 325, depthMm: 124 }
+  variants:
+    - { sku: TBK-3001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: turtle-beach-vulcan-tkl
+  brand: turtle-beach
+  name: Vulcan TKL
+  releaseYear: 2024
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanTKL-BLK-US.png?v=1709736276, kind: cutout_top, width: 1106, height: 840, primary: true }
+  sources:
+    - https://turtlebeach.com/products/vulcan-tkl-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: proprietary, weightG: 660 }
+  variants:
+    - { sku: TBK-2001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: turtle-beach-vulcan-ii-tkl-pro
+  brand: turtle-beach
+  name: Vulcan II TKL Pro
+  releaseYear: 2024
+  msrpEur: 180
+  msrpUsd: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-BLK-US.png?v=1711848080, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-BLK-US_bab3b9fa-8003-403b-9970-d3601372b04f.png?v=1713207676, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-WHT-US_a00c45f3-6547-4e3e-8a44-daad9da5a1fb.png?v=1713207927, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/vulcan-ii-tkl-pro-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  variants:
+    - { sku: TBK-2002-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-2002-11-US, colorName: White, colorFamily: white, layout: ansi_us }
+
+# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
+- slug: turtle-beach-vulcan-ii-max
+  brand: turtle-beach
+  name: Vulcan II Max
+  releaseYear: 2024
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMax-BLK-US.png?v=1709734298, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMax-WHT-US.png?v=1709774505, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/vulcan-ii-max-keyboard
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 1040, widthMm: 463, depthMm: 236 }
+  variants:
+    - { sku: TBK-1001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-1001-11-US, colorName: White, colorFamily: white, layout: ansi_us }

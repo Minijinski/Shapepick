@@ -1,0 +1,578 @@
+# Ducky : importés de mechanicalkeyboards.com par `pnpm ingest mk`.
+# Boutique américaine : dispositions US seulement, prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-21 : 23 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
+- slug: ducky-origin
+  brand: ducky
+  name: Origin
+  releaseYear: 2024
+  msrpEur: 105
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17173-SWCS4-Ducky-Origin-Vintage.jpg?v=1728311476, kind: cutout_top, width: 2400, height: 780, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17174-KTENS-Origin-Black.jpg?v=1708368015, kind: cutout_top, width: 2400, height: 1472 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-origin-vintage
+    - https://mechanicalkeyboards.com/products/ducky-origin-black
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: white, southFacing: true, firmware: qmk, macSupport: true }
+  variants:
+    - { sku: DKOR2308A-CCUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKOR2308A-CBUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKOR2308A-CRUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKOR2308A-CAUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKOR2308A-CPUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKOR2308A-CSUSPDOEVINHH1, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKOR2308A-CBUSPDOECLAAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKOR2308A-CCUSPDOECLAAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKOR2308A-CRUSPDOECLAAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKOR2308A-CAUSPDOECLAAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKOR2308A-CPUSPDOECLAAA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+# à vérifier : switchs inductifs (analogiques) rangés en magnétique
+# à vérifier : switch « Ducky Analog Inductive Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ducky-analog-inductive)
+- slug: ducky-one-x
+  brand: ducky
+  name: One X
+  releaseYear: 2025
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23112-H4H3M-Ducky-One-X-Full-Size-Inductive-Keyboard.jpg?v=1774904472, kind: cutout_top, width: 2400, height: 1350, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/23052-7B119-Ducky-One-X-Analog-Inductive-Wireless-Keyboard-White.png?v=1774904472, kind: cutout_top, width: 2400, height: 1350 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-x-full-size-inductive-keyboard
+  specs: { formFactor: full, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 4, pollingHzWired: 1000, pollingHzWireless: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, mount: gasket, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, batteryMah: 2500, soundDampening: true }
+  variants:
+    - { sku: DKON2408AST3-DAUSPDOECL1AS1, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: DKON2408AST3-DAUSPDOECL2WW1, colorName: White, colorFamily: white, layout: ansi_us }
+
+- slug: ducky-zero-6108
+  brand: ducky
+  name: Zero 6108
+  releaseYear: 2024
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18639-HJA75-Ducky-Zero-6108-Classic.jpg?v=1715781655, kind: cutout_top, width: 2000, height: 657, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18640-YFKAR-Ducky-Zero-6108-White.jpg?v=1715781684, kind: cutout_top, width: 2600, height: 927 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18640-96LMH-Ducky-Zero-6108-White.jpg?v=1715781679, kind: cutout_top, width: 2000, height: 680 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-zero-6108-classic
+    - https://mechanicalkeyboards.com/products/ducky-zero-6108-white
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: qmk, batteryMah: 2500, soundDampening: true }
+  variants:
+    - { sku: DKZE2408ST3-CBUSPDOECL1AW1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: DKZE2408ST3-CRUSPDOECL1AW1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-red }
+    - { sku: DKZE2408ST3-CPUSPDOECL1AW1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-speed-silver }
+    - { sku: DKZE2408ST3-CBUSPDOECL2WW1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: DKZE2408ST3-CRUSPDOECL2WW1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx2a-red }
+
+- slug: ducky-ok-m-75
+  brand: ducky
+  name: OK-M 75
+  releaseYear: 2026
+  msrpEur: 90
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26766-JKVJS-Ducky-OK-M-75-75-Hotswap-Wireless-RGB-Keyboard.jpg?v=1767818651, kind: cutout_top, width: 2400, height: 1223, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26767-RF3RL-Ducky-OK-M-75-Black-with-KTT-Red-Wine-75-Hotswap-Wireless-RG.jpg?v=1767818651, kind: cutout_top, width: 2400, height: 1238 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26767-7TQ2P-Ducky-OK-M-75-Black-with-KTT-Red-Wine-75-Hotswap-Wireless-RG.jpg?v=1767818651, kind: cutout_top, width: 2400, height: 1240 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26783-IURHP-Ducky-OK-M-75-Black-and-Blue-with-KTT-Baby-Blue-75-Hotswap-W.jpg?v=1767818651, kind: cutout_top, width: 2400, height: 1202 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-ok-m-75-75-hotswap-wireless-rgb-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: via, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKOKM2583-KYUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-baby-blue }
+    - { sku: DKOKM2583-KWUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-red-wine }
+
+- slug: ducky-one-2-pro
+  brand: ducky
+  name: One 2 Pro
+  releaseYear: 2024
+  msrpEur: 130
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17518-HAI9W-One-2-Pro-Classic.jpg?v=1708447629, kind: cutout_top, width: 2400, height: 744, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/19052-ANMBX-Ducky-One-2-Pro-Pudding-Edition.jpg?v=1713366240, kind: cutout_top, width: 2400, height: 988 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-pro-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-2-pro-pudding-edition
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON1808ST-BUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: DKON1808ST-CUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-blue }
+    - { sku: DKON1808ST-RUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-red }
+    - { sku: DKON1808ST-PUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-speed-silver }
+    - { sku: DKON1808ST-RUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON1808ST-AUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKON1808ST-SUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON1808ST-PUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+
+# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
+- slug: ducky-one-3
+  brand: ducky
+  name: One 3
+  releaseYear: 2023
+  msrpEur: 170
+  msrpUsd: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13597_62a3da4babe64_One-3-Classic.jpg?v=1708570221, kind: cutout_top, width: 2400, height: 911, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6296-S5MVU-One-3-Matcha.jpg?v=1707861551, kind: cutout_top, width: 2364, height: 898 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16001-UT6QJ-One-3-Aura-White.jpg?v=1708569912, kind: cutout_top, width: 2400, height: 936 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13598_62a3da4d9e349_One-3-Pure-White.jpg?v=1708558951, kind: cutout_top, width: 2400, height: 911 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17517-USLYB-Ducky-One-3-Carbon-Black.jpg?v=1727280136, kind: cutout_top, width: 2400, height: 949 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17517-HCVS4-Ducky-One-3-Carbon-Black.jpg?v=1727280136, kind: cutout_top, width: 2400, height: 868 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-3-matcha
+    - https://mechanicalkeyboards.com/products/ducky-one-3-aura-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-pure-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-carbon-black
+    - https://mechanicalkeyboards.com/products/ducky-one-3-aura-black
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON2108ST-CUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2108ST-AUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKON2108ST-PUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2108ST-SUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2108-AUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKON2108-BUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2108-RUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 150 }
+    - { sku: DKON2108-PUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2108-SUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2108ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2108ST-RUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2108ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2108ST-SUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2108ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
+    - { sku: DKON2108ST-RUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2108ST-AUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKON2108ST-PUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2108ST-SUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2108-CUSPDCBAASC1, colorName: Carbon Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 140 }
+    - { sku: DKON2108-SUSPDCBAASC1, colorName: Carbon Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red, msrpEur: 150 }
+    - { sku: DKON2108ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2108ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
+
+# à vérifier : switch « Ducky Shush Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ducky-shush-linear)
+# à vérifier : switch « Ducky Shush Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ducky-shush-tactile)
+- slug: ducky-cushion-98
+  brand: ducky
+  name: Cushion 98
+  releaseYear: 2026
+  msrpEur: 195
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27418-7I8AJ-Ducky-Cushion98-98-Wireless-Keyboard.jpg?v=1787762092, kind: cutout_top, width: 2400, height: 1350, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27423-UC73U-Ducky-Cushion98-98-Wireless-Keyboard-Black-Ducky-Shush-Linea.jpg?v=1787762092, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27419-BQWJY-Ducky-Cushion98-98-Wireless-Keyboard-Nickel-Ducky-Shush-Line.jpg?v=1787762092, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27421-E2KCL-Ducky-Cushion98-98-Wireless-Keyboard-Silver-Ducky-Shush-Line.jpg?v=1787762092, kind: cutout_top, width: 2400, height: 1195 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-cushion98-wireless-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: via, batteryMah: 4200 }
+  variants:
+    - { sku: DKCUS2598-DSUSPMCBSA1, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: DKCUS2598-DSUSPHCC3H1, colorName: Nickel, colorFamily: color, layout: ansi_us }
+    - { sku: DKCUS2598-DSUSPHCC4S1, colorName: Silver, colorFamily: white, layout: ansi_us }
+
+- slug: ducky-one-2-sf
+  brand: ducky
+  name: One 2 SF
+  releaseYear: 2023
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2737-D1CYS-One-2-SF-RGB.jpg?v=1707267968, kind: cutout_top, width: 2000, height: 666, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3128_62a3c32708eb4_One-2-SF-RGB-Pure-White.jpg?v=1707268632, kind: cutout_top, width: 2270, height: 760 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-sf-rgb
+    - https://mechanicalkeyboards.com/products/ducky-one-2-sf-rgb-pure-white
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: DKON1967ST-AUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-black, msrpEur: 130 }
+    - { sku: DKON1967ST-BUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 125 }
+    - { sku: DKON1967ST-PUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 95 }
+    - { sku: DKON1967ST-KUSPDAZTK, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-brown, msrpEur: 70 }
+    - { sku: DKON1967ST-KUSPDAZTR, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-red, msrpEur: 95 }
+    - { sku: DKON1967ST-KUSPDAZTW, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-white }
+    - { sku: DKON1967ST-KUSPDAZTI, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-silent-pink }
+    - { sku: DKON1967ST-KUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-black, msrpEur: 140 }
+    - { sku: DKON1967ST-BUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON1967ST-CUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON1967ST-KUSPDWWTR, colorName: White, colorFamily: white, layout: ansi_us, switch: kailh-box-red }
+
+- slug: ducky-one-3-pro
+  brand: ducky
+  name: One 3 Pro
+  releaseYear: 2024
+  msrpEur: 195
+  msrpUsd: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18714-8A38N-Ducky-One-3-Pro-Nazca-RGB.jpg?v=1721023205, kind: cutout_top, width: 2074, height: 784, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18714-VRQZN-Ducky-One-3-Pro-Nazca-RGB.jpg?v=1721023205, kind: cutout_top, width: 2106, height: 1396 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-pro-nazca-rgb
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: qmk, soundDampening: true }
+  variants:
+    - { sku: DKON2308ST-CBUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-brown }
+    - { sku: DKON2308ST-CRUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-red }
+    - { sku: DKON2308ST-CPUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-speed-silver }
+
+# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
+- slug: ducky-one-3-tkl
+  brand: ducky
+  name: One 3 TKL
+  releaseYear: 2023
+  msrpEur: 155
+  msrpUsd: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6297-RQSVG-One-3-TKL-Matcha.jpg?v=1707352375, kind: cutout_top, width: 1908, height: 894, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13596_62a3da49af107_One-3-TKL-Pure-White.jpg?v=1707273191, kind: cutout_top, width: 2399, height: 1124 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13595_62a3da4784241_One-3-TKL-Classic.jpg?v=1708367792, kind: cutout_top, width: 2399, height: 1124 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16000-F7E71-One-3-TKL-Aura-White.jpg?v=1707272589, kind: cutout_top, width: 2400, height: 1106 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14670_63ae05f4eb252_One-3-TKL-Aura-Black.png?v=1707271514, kind: cutout_top, width: 2400, height: 964 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-tkl-matcha
+    - https://mechanicalkeyboards.com/products/ducky-one-3-tkl-pure-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-tkl-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-3-tkl-aura-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-tkl-aura-black
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON2187-BUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2187-CUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 135 }
+    - { sku: DKON2187-RUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 135 }
+    - { sku: DKON2187-PUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2187-SUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2187ST-CUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2187ST-RUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2187ST-SUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2187ST-SUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2187ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2187ST-CUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2187ST-RUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2187ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
+    - { sku: DKON2187ST-PUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2187ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2187ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2187ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: ducky-one-2-mini-pro
+  brand: ducky
+  name: One 2 Mini Pro
+  releaseYear: 2023
+  msrpEur: 105
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13821-4J8X5-Ducky-One-2-Mini-Pro-Classic.jpg?v=1708713521, kind: cutout_top, width: 1974, height: 710, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13822_63ae04b173aff_One-2-Pro-Mini-Pure-White.jpg?v=1707271274, kind: cutout_top, width: 2400, height: 962 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13828_62f17380a0d93_One-2-Pro-Mini-Pure-White-Kailh-BOX-Brown.png?v=1707271274, kind: cutout_top, width: 2400, height: 894 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-mini-pro-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-2-mini-pro-pure-white
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
+  variants:
+    - { sku: DKON2061ST-KUSPDAZTW2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: kailh-box-white, msrpEur: 90 }
+    - { sku: DKON2061ST-KUSPDAZTR2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: kailh-box-red, msrpEur: 85 }
+    - { sku: DKON2061ST-CUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 90 }
+    - { sku: DKON2061ST-GUSPDAZTY2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: gateron-yellow, msrpEur: 90 }
+    - { sku: DKON2061ST-KUSPDAZTJ2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: kailh-box-jade }
+    - { sku: DKON2061ST-BUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2061ST-PUSPDAZT2, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2061ST-KUSPDWWTR2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: kailh-box-red }
+    - { sku: DKON2061ST-GUSPDWWTS2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: gateron-silent-brown }
+    - { sku: DKON2061ST-KUSPDWWTP2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: kailh-polia }
+    - { sku: DKON2061ST-BUSPDWWT2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2061ST-CUSPDWWT2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2061ST-KUSPDWWTK2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: kailh-box-brown }
+    - { sku: DKON2061ST-KUSPDWWTW2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: kailh-box-white }
+    - { sku: DKON2061ST-GUSPDWWTY2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: gateron-yellow }
+    - { sku: DKON2061ST-SUSPDWWT2, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: ducky-ok-m-98
+  brand: ducky
+  name: OK-M 98
+  releaseYear: 2026
+  msrpEur: 105
+  msrpUsd: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26762-G2SVQ-Ducky-OK-M-98-Hotswap-Wireless-RGB-Keyboard.jpg?v=1774643754, kind: cutout_top, width: 2400, height: 1020, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26764-WH47F-Ducky-OK-M-98-Hotswap-Wireless-RGB-Keyboard-Black-with-KTT-R.jpg?v=1774643754, kind: cutout_top, width: 2400, height: 1103 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26764-XYGGX-Ducky-OK-M-98-Hotswap-Wireless-RGB-Keyboard-Black-with-KTT-R.jpg?v=1774643754, kind: cutout_top, width: 2400, height: 1117 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26762-1JFEB-Ducky-OK-M-98-Hotswap-Wireless-RGB-Keyboard.jpg?v=1774643754, kind: cutout_top, width: 2400, height: 1066 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-ok-m-98-hotswap-wireless-rgb-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: via, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKOKM2598-KYUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-baby-blue }
+    - { sku: DKOKM2598-KWUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-red-wine }
+
+- slug: ducky-ok-m-65
+  brand: ducky
+  name: OK-M 65
+  releaseYear: 2026
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26769-5P465-Ducky-OK-M-65-65-Hotswap-Wireless-RGB-Keyboard.jpg?v=1767818648, kind: cutout_top, width: 2400, height: 1048, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26771-H13B7-Ducky-OK-M-65-65-Hotswap-Wireless-RGB-Keyboard-Black-with-KT.jpg?v=1767818648, kind: cutout_top, width: 2400, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26770-VFMSG-Ducky-OK-M-65-65-Hotswap-Wireless-RGB-Keyboard-Black-with-KT.jpg?v=1767818648, kind: cutout_top, width: 2400, height: 1095 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26781-CAMNW-Ducky-OK-M-65-65-Hotswap-Wireless-RGB-Keyboard-Black-and-Blu.jpg?v=1767818648, kind: cutout_top, width: 2400, height: 1063 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-ok-m-65-65-hotswap-wireless-rgb-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: via, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKOKM2567-KYUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-baby-blue }
+    - { sku: DKOKM2567-KWUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-red-wine }
+
+# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
+- slug: ducky-one-3-mini
+  brand: ducky
+  name: One 3 Mini
+  releaseYear: 2023
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14686_63ae05fcb3f41_One-3-Mini-Aura-White.jpg?v=1708570224, kind: cutout_top, width: 1980, height: 1107, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13591_63dac2f683383_One-3-Mini-Classic.jpg?v=1708367774, kind: cutout_top, width: 2400, height: 1072 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15455_643f62cb4890f_One-3-Mini-Cosmic.jpg?v=1708569730, kind: cutout_top, width: 2400, height: 1141 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14650_63ae05debdf7c_One-3-Mini-Aura-Black.png?v=1708569302, kind: cutout_top, width: 2400, height: 932 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-mini-aura-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-mini-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-3-mini-cosmic
+    - https://mechanicalkeyboards.com/products/ducky-one-3-mini-aura-black
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON2161ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2161ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2161ST-PUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2161ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
+    - { sku: DKON2161ST-PUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 150 }
+    - { sku: DKON2161ST-CUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2161ST-BUSPDCOVVVC2, colorName: Cosmic Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2161ST-BUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2161ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2161ST-PUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2161ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: DKON2161ST-CUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 110 }
+    - { sku: DKON2161ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+
+- slug: ducky-projectd-65
+  brand: ducky
+  name: ProjectD 65%
+  releaseYear: 2023
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16655-AP3LL-Tinker65-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1029, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/16661-XVN33-ProjectD-by-Ducky-Tinker-65-Barebones-Black.jpg?v=1710652052, kind: cutout_top, width: 2400, height: 1068 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17324-YT8SL-Tinker65-POM-Edition.png?v=1707408232, kind: cutout_top, width: 2400, height: 964 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-tinker-65-keyboard
+    - https://mechanicalkeyboards.com/products/ducky-tinker-65-pom-edition-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: PKTI2367AST-CRUSPDOECLAAW1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red, msrpEur: 75 }
+    - { sku: PKTI2367AST-CBUSPDOECLAAW1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: PKTI2367AST-CCUSPDOECLAAW1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: PKTI2367AST-KCUSPMCHWBGWW1, colorName: White, colorFamily: white, layout: ansi_us, switch: kailh-box-cream-pro, msrpEur: 150 }
+
+- slug: ducky-one-2-tkl
+  brand: ducky
+  name: One 2 TKL
+  releaseYear: 2023
+  msrpEur: 165
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1935-GJFKP-One-2-RGB-TKL.jpg?v=1707268446, kind: cutout_top, width: 1347, height: 545, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3129_62a3c328cf7e6_One-2-RGB-TKL-Pure-White.jpg?v=1718397636, kind: cutout_top, width: 1920, height: 846 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-tkl
+    - https://mechanicalkeyboards.com/products/ducky-one-2-tkl-rgb-pure-white
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: DKON1787ST-RUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON1787ST-BUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON1787ST-PUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON1787ST-KUSPDAZTR, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-red }
+    - { sku: DKON1787ST-KUSPDAZTW, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-white, msrpEur: 120 }
+    - { sku: DKON1787ST-KUSPDAZTI, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-silent-pink }
+    - { sku: DKON1787ST-CUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON1787ST-PUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON1787ST-BUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
+
+- slug: ducky-one-2
+  brand: ducky
+  name: One 2
+  releaseYear: 2023
+  msrpEur: 150
+  msrpUsd: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3457-RIELD-One-2-RGB-TKL-Pudding-Edition.jpg?v=1707268750, kind: cutout_top, width: 1992, height: 1328, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-rgb-tkl-pudding-edition
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true }
+  variants:
+    - { sku: DKON1787ST-BUSPDAZTP, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 120 }
+    - { sku: DKON1787ST-CUSPDAZTP, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 120 }
+    - { sku: DKON1787ST-SUSPDAZTP, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red, msrpEur: 175 }
+    - { sku: DKON1787ST-PUSPDAZTP, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 175 }
+
+- slug: ducky-one-3-sf
+  brand: ducky
+  name: One 3 SF
+  releaseYear: 2023
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13594_62a3da451c5e3_One-3-SF-Pure-White.jpg?v=1707273191, kind: cutout_top, width: 2399, height: 1050, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13593_62a3da42729f4_One-3-SF-Classic.jpg?v=1707273191, kind: cutout_top, width: 2399, height: 1050 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14658_643f619f631d9_One-3-SF-Aura-Black.png?v=1707271513, kind: cutout_top, width: 2400, height: 917 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14659_63ae05e3ab912_One-3-SF-Aura-Black-Cherry-MX-Brown.png?v=1707271510, kind: cutout_top, width: 2400, height: 917 }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14694_63ae05fed4a52_One-3-SF-Aura-White.jpg?v=1707271567, kind: cutout_top, width: 2400, height: 1600 }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-sf-pure-white
+    - https://mechanicalkeyboards.com/products/ducky-one-3-sf-classic
+    - https://mechanicalkeyboards.com/products/ducky-one-3-sf-aura-black
+    - https://mechanicalkeyboards.com/products/ducky-one-3-sf-aura-white
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON2167ST-CUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2167ST-RUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2167ST-PUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 115 }
+    - { sku: DKON2167ST-PUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2167ST-BUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2167ST-BUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown, msrpEur: 115 }
+    - { sku: DKON2167ST-CUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2167ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2167ST-PUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2167ST-CUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-blue }
+    - { sku: DKON2167ST-RUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKON2167ST-PUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2167ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
+    - { sku: DKON2167ST-SUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: ducky-one-3-mini-pro
+  brand: ducky
+  name: One 3 Mini Pro
+  releaseYear: 2024
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18719-4HPVQ-Ducky-One-3-Mini-Pro-Nazca-RGB.jpg?v=1715781304, kind: cutout_top, width: 2600, height: 1027, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-mini-pro-nazca-rgb
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: qmk, soundDampening: true }
+  variants:
+    - { sku: DKON2361ST-CCUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-blue }
+    - { sku: DKON2361ST-CRUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-red, msrpEur: 110 }
+
+- slug: ducky-one-3-65
+  brand: ducky
+  name: One 3 65%
+  releaseYear: 2023
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6293_62a3d2fbb21e3_One-3-SF-Daybreak.jpg?v=1708568426, kind: cutout_top, width: 2399, height: 1050, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-3-sf-daybreak
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKON2167ST-AUSPDDBBHHC1, colorName: Daybreak SF, colorFamily: color, layout: ansi_us, switch: cherry-mx-black }
+    - { sku: DKON2167ST-CUSPDDBBHHC1, colorName: Daybreak SF, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
+
+- slug: ducky-one-2-mini-v2
+  brand: ducky
+  name: One 2 Mini v2
+  releaseYear: 2023
+  msrpEur: 130
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/1985-5IUHW-One-2-Mini-v2-RGB.png?v=1707268451, kind: cutout_top, width: 2000, height: 616, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-2-mini-v2-rgb
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary }
+  variants:
+    - { sku: DKON2061ST-PUSPDAZT1, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-speed-silver }
+    - { sku: DKON2061ST-GUSPDAZTY, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-yellow }
+    - { sku: DKON2061ST-KUSPDAZTR, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-red }
+
+- slug: ducky-mecha-sf-pro
+  brand: ducky
+  name: Mecha SF Pro
+  releaseYear: 2024
+  msrpEur: 160
+  msrpUsd: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/17175-ATM24-Ducky-Mecha-Pro-SF-Black.jpg?v=1708368038, kind: cutout_top, width: 2400, height: 978, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-mecha-sf-pro-black
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { sku: DKME2167ST-RUSPDAAT2, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: DKME2167ST-SUSPDAAT2, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+
+- slug: ducky-one-mini
+  brand: ducky
+  name: One Mini
+  releaseYear: 2025
+  msrpEur: 90
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/25947-D3MKL-Ducky-One-Mini-Multi-LED-60-Keyboard.jpg?v=1751560505, kind: cutout_top, width: 2400, height: 1351, primary: true }
+  sources:
+    - https://mechanicalkeyboards.com/products/ducky-one-mini-purple-and-orange-led-60-keyboard
+  specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary }
+  variants:
+    - { sku: DK141SD-RUSALASZ2, colorName: Purple and Orange, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
