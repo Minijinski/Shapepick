@@ -32,6 +32,9 @@ export type ItemDetail = {
  */
 export type Arrival = 'intro' | 'open' | 'swap' | 'close'
 
+/** How far the products of the scene's first screen are: their drawings and photos, 0 … 1. */
+export type FirstScreen = { drawings: number; photos: number }
+
 export const sameTarget = (a: SceneTarget | null, b: SceneTarget) =>
   !!a &&
   a.mode === b.mode &&
@@ -51,6 +54,7 @@ class SceneController {
   private readonly listeners = new Set<() => void>()
   private readonly openers = new Set<(category: Category, slug: string) => void>()
   private version = 0
+  private firstScreen: (() => FirstScreen) | null = null
 
   attach(renderer: SceneRenderer) {
     this.renderer = renderer
@@ -159,6 +163,18 @@ class SceneController {
     if (this.target?.mode !== 'canvas' || this.target.category !== category) return
     this.stage = stage
     this.renderer?.setStage(stage)
+  }
+
+  // ---- The first screen, for the preloader -----------------------------------------------------
+
+  /** The canvas says how to read how ready its first screen is (null: gone). */
+  provideFirstScreen(probe: (() => FirstScreen) | null) {
+    this.firstScreen = probe
+  }
+
+  /** How ready the scene's first screen is; null until the canvas exists. */
+  firstScreenProgress(): FirstScreen | null {
+    return this.firstScreen?.() ?? null
   }
 
   // ---- Products picked on the canvas -----------------------------------------------------------

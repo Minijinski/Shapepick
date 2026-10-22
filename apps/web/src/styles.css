@@ -2,3 +2,83 @@
 @import "@fontsource-variable/geist-mono";
 
 @layer reset, base, tokens, recipes, utilities;
+
+/* ---- Preloader (features/scene/Preloader.tsx) ------------------------------------------------ */
+
+/* While a visit's first page loads, its own entrances wait under the preloader, which moves alone. */
+html[data-loading] *,
+html[data-loading] *::before,
+html[data-loading] *::after {
+  animation-play-state: paused !important;
+}
+html[data-loading] [data-preloader],
+html[data-loading] [data-preloader] *,
+html[data-loading] [data-preloader] *::after {
+  animation-play-state: running !important;
+}
+
+/* A page that never wakes up is not held: the preloader leaves on its own. */
+[data-preloader] {
+  animation: preloaderGone 0.4s ease 4.6s forwards;
+}
+@keyframes preloaderGone {
+  to {
+    opacity: 0;
+    visibility: hidden;
+    pointer-events: none;
+  }
+}
+
+/* The keys ink in: about half in CSS before the page wakes up, the rest with the real progress. */
+[data-preloader] [data-key] {
+  fill: transparent;
+  stroke: #c9c5bb;
+  stroke-width: 0.04;
+  transition: fill 140ms, stroke 140ms;
+}
+[data-preloader] [data-key][data-css] {
+  animation: preloaderKey 140ms linear both;
+}
+[data-preloader] [data-key][data-on] {
+  fill: #141414;
+  stroke: #141414;
+}
+[data-preloader] [data-key][data-enter] {
+  fill: #ff5a1f !important;
+  stroke: #ff5a1f !important;
+  transition-duration: 260ms;
+}
+@keyframes preloaderKey {
+  to {
+    fill: #141414;
+    stroke: #141414;
+  }
+}
+
+/* The count, before the page wakes up: 000 → 050 % alongside the keys. */
+@property --pre {
+  syntax: "<integer>";
+  inherits: false;
+  initial-value: 0;
+}
+@counter-style preloader-pad {
+  system: extends decimal;
+  pad: 3 "0";
+}
+@keyframes preloaderCount {
+  to {
+    --pre: 50;
+  }
+}
+[data-preloader] [data-count]:not([data-live])::after {
+  counter-reset: pre var(--pre);
+  content: counter(pre, preloader-pad) " %";
+  animation: preloaderCount 924ms linear 200ms both;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-preloader] [data-key][data-css],
+  [data-preloader] [data-count]::after {
+    animation: none !important;
+  }
+}

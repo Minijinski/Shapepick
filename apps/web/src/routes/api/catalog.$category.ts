@@ -16,7 +16,13 @@ export const Route = createFileRoute('/api/catalog/$category')({
         if (request.headers.get('if-none-match') === etag)
           return new Response(null, { status: 304 })
         return Response.json(snapshot, {
-          headers: { etag, 'cache-control': 'public, max-age=60, stale-while-revalidate=600' },
+          headers: {
+            etag,
+            'cache-control': 'public, max-age=60, stale-while-revalidate=600',
+            // Netlify's CDN keeps it longer and refreshes it in the background; a deploy empties it.
+            'netlify-cdn-cache-control':
+              'public, durable, s-maxage=300, stale-while-revalidate=604800',
+          },
         })
       },
     },

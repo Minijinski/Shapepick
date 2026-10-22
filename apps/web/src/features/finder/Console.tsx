@@ -6,7 +6,7 @@ import {
   type Locale,
   readChoice,
 } from "@choose/catalog";
-import { useRef, useState } from "react";
+import { useId, useRef, useState } from "react";
 import { css, cx } from "styled-system/css";
 import { button, optionTile } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
@@ -72,7 +72,9 @@ const tileGrid = css({
     base: "repeat(2, minmax(0, 1fr))",
     md: "repeat(5, minmax(0, 1fr))",
   },
-  gridAutoRows: { base: "4.75rem", md: "6.25rem" },
+  // A dead tile that needs one more line to say what blocks it grows its row rather than
+  // overflowing it.
+  gridAutoRows: { base: "minmax(4.75rem, auto)", md: "minmax(6.25rem, auto)" },
   gap: "2.5",
 });
 
@@ -124,6 +126,7 @@ export function Console({
   const { step, counts, draft } = finder;
   const root = useRef<HTMLElement>(null);
   const [helpOpen, setHelpOpen] = useState(false);
+  const uid = useId();
   const leaving = useRef(false);
   const first = useRef(true);
 
@@ -342,41 +345,75 @@ export function Console({
                   const selected = pickedIds.has(option.id);
                   const count = counts?.counts[option.id] ?? 0;
                   const dead = count === 0 && !selected && !step.weightOnly;
-                  const blocker = dead ? finder.blockerOf(option.id) : null;
                   const tile = optionTile();
+                  const art = visual && (
+                    <span className={tile.visual}>
+                      <OptionVisual
+                        category={category}
+                        stepKey={step.key}
+                        optionId={option.id}
+                      />
+                    </span>
+                  );
+                  if (dead) {
+                    // Nothing to pick: not a button, the tile says which earlier answer leaves it
+                    // empty and leads back to that question.
+                    const blocker = finder.blockerOf(option.id);
+                    const why = `${uid}${option.id}`;
+                    return (
+                      <div
+                        key={option.id}
+                        data-tile
+                        data-dead
+                        className={tile.root}
+                      >
+                        {art}
+                        <span className={css({ display: "grid", gap: "1" })}>
+                          <span id={`${why}-label`} className={tile.label}>
+                            {option.label[locale]}
+                          </span>
+                          <span className={tile.blocked}>
+                            <span id={why}>
+                              {blocker
+                                ? `${m.blockedBy[locale]} ${blocker.label}`
+                                : m.noMatch[locale]}
+                            </span>
+                            {blocker && (
+                              <button
+                                type="button"
+                                className={tile.change}
+                                aria-describedby={`${why}-label ${why}`}
+                                onClick={() => finder.goTo(blocker.key)}
+                              >
+                                {m.change[locale]} →
+                              </button>
+                            )}
+                          </span>
+                        </span>
+                      </div>
+                    );
+                  }
                   return (
                     <div
                       key={option.id}
                       data-tile
-                      className={css({ position: "relative", display: "grid" })}
+                      className={css({ display: "grid" })}
                     >
                       <button
                         type="button"
                         className={tile.root}
                         aria-pressed={isMulti ? selected : undefined}
-                        aria-disabled={dead || undefined}
-                        onPointerEnter={() =>
-                          !dead && finder.setHovered(option.id)
-                        }
+                        onPointerEnter={() => finder.setHovered(option.id)}
                         onPointerLeave={() => finder.setHovered(null)}
-                        onFocus={() => !dead && finder.setHovered(option.id)}
+                        onFocus={() => finder.setHovered(option.id)}
                         onBlur={() => finder.setHovered(null)}
                         onClick={() => {
-                          if (dead) return;
                           if (isMulti)
                             finder.setDraft(toggled(step, draft, option.id));
                           else leave(() => finder.commit(option.id));
                         }}
                       >
-                        {visual && (
-                          <span className={tile.visual}>
-                            <OptionVisual
-                              category={category}
-                              stepKey={step.key}
-                              optionId={option.id}
-                            />
-                          </span>
-                        )}
+                        {art}
                         <span
                           className={css({
                             display: "grid",
@@ -387,20 +424,13 @@ export function Console({
                           <span className={tile.label}>
                             {option.label[locale]}
                           </span>
-                          {option.hint && !dead && (
+                          {option.hint && (
                             <span className={tile.hint}>
                               {option.hint[locale]}
                             </span>
                           )}
-                          {dead && (
-                            <span className={tile.blocked}>
-                              {blocker
-                                ? `${m.blockedBy[locale]} ${blocker.label}`
-                                : m.noMatch[locale]}
-                            </span>
-                          )}
                         </span>
-                        {!step.weightOnly && !dead && (
+                        {!step.weightOnly && (
                           <span className={tile.count}>
                             {String(count).padStart(3, "0")}
                           </span>
@@ -423,25 +453,6 @@ export function Console({
                           </span>
                         )}
                       </button>
-                      {blocker && (
-                        <button
-                          type="button"
-                          onClick={() => finder.goTo(blocker.key)}
-                          className={css({
-                            position: "absolute",
-                            right: "2.5",
-                            bottom: "2.5",
-                            fontSize: "2xs",
-                            fontFamily: "mono",
-                            color: "signal",
-                            textDecoration: "underline",
-                            textUnderlineOffset: "3px",
-                            cursor: "pointer",
-                          })}
-                        >
-                          {m.change[locale]} →
-                        </button>
-                      )}
                     </div>
                   );
                 })}

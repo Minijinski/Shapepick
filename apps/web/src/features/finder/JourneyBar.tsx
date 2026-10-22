@@ -1,4 +1,4 @@
-import type { Locale } from '@choose/catalog'
+import type { JourneyState, Locale } from '@choose/catalog'
 import { useEffect, useLayoutEffect, useRef } from 'react'
 import { css } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
@@ -6,11 +6,12 @@ import { Flip, gsap, prefersReducedMotion } from '../motion/gsap'
 import { motion } from '../motion/tokens'
 
 // The whole questionnaire under the console, as a map that never reorders: every question in its
-// usual place, answered ones ticked, those still ahead dashed. The question being answered is
-// lifted out of the map into the "In progress" slot at the start of the bar (the results take that
-// slot once they are open). Picking a stop moves it up into the slot and the question it replaces
-// back to its place, so the visitor takes the questions in any order without anything else
-// moving: GSAP Flip carries the stops between the slot and the map.
+// usual place, answered ones ticked, those still ahead dashed, those the answers leave nothing to
+// decide greyed out until the answers widen. The question being answered is lifted out of the map
+// into the "In progress" slot at the start of the bar (the results take that slot once they are
+// open). Picking a stop moves it up into the slot and the question it replaces back to its place,
+// so the visitor takes the questions in any order without anything else moving: GSAP Flip carries
+// the stops between the slot and the map.
 
 const useIsoLayoutEffect = typeof window === 'undefined' ? () => {} : useLayoutEffect
 
@@ -19,11 +20,11 @@ export type JourneyStop = {
   label: string
   /** The answer, for an answered stop. */
   value: string | null
-  state: 'done' | 'current' | 'ahead'
+  state: JourneyState
 }
 
 type Props = {
-  /** Every question asked, in the questionnaire's own order. */
+  /** Every question, in the questionnaire's own order. */
   stops: JourneyStop[]
   /** The results are on screen: they hold the slot instead of a question. */
   done: boolean
@@ -120,6 +121,14 @@ const stop = css({
     _hover: { borderStyle: 'solid', borderColor: 'ink', bg: 'transparent' },
   },
   '&:is(:hover, :focus-visible) [data-lift]': { opacity: 1, transform: 'scale(1)' },
+  // Nothing left to decide: still in its place, faded out of reach.
+  '&[data-state=skipped]': {
+    color: 'ink.faint',
+    borderStyle: 'dashed',
+    borderColor: 'line',
+    cursor: 'default',
+    _hover: { color: 'ink.faint', bg: 'transparent' },
+  },
   '&[data-state=current]': {
     bg: 'ink',
     color: 'paper',
@@ -329,7 +338,14 @@ export function JourneyBar({
                 type="button"
                 className={stop}
                 data-state={s.state}
-                title={s.state === 'ahead' ? m.answerNow[locale] : (s.value ?? undefined)}
+                disabled={s.state === 'skipped'}
+                title={
+                  s.state === 'ahead'
+                    ? m.answerNow[locale]
+                    : s.state === 'skipped'
+                      ? m.nothingToDecide[locale]
+                      : (s.value ?? undefined)
+                }
                 onClick={() => onPick(s.key)}
               >
                 {s.state === 'done' && <Tick />}

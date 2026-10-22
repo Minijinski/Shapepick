@@ -17,7 +17,8 @@ import {
   traceRounded,
   type Viewport,
 } from './geometry'
-import type { Sprite } from './sprites'
+import type { Drawings, Shape, Sprite } from './sprites'
+import { frame, mark } from './stats'
 
 // The scene behind every page of a locale, drawn on one canvas. On the home page it is one tilted
 // panel per category, each a window onto that category's world drifting along the panel. On a
@@ -25,16 +26,18 @@ import type { Sprite } from './sprites'
 // is the canvas the visitor browses. Both are the same drawing with different numbers, which is
 // why going from one to the other cannot flicker.
 //
-// On the canvas every product keeps its places. The answers grade it: kept products are drawn in
-// colour, ruled-out ones as sketches, fainter the more answers they miss. Once only a short list
-// is left, those products leave the field and gather in front of it, each shown once.
+// The canvas shows the products the answers keep, repeated in a tile: an answer that rules some
+// out makes them fade away and the others close ranks, so the field is never left with holes.
+// Once only a short list is left, those products leave the field and gather in front of it, each
+// shown once. Products are laid out from their shape alone and drawn from bitmaps shared by every
+// product drawn alike, made when the canvas first needs them.
 
 export type SceneTarget = { mode: 'bands' } | { mode: 'canvas'; category: Category }
 
 /** What the finder wants each product of its category to look like. */
 export type ItemTargets = {
-  /** How many answers each product fails (0: kept); null while nothing filters yet. */
-  misses: Map<string, number> | null
+  /** The products the answers keep; null while nothing filters (the whole catalogue). */
+  kept: Set<string> | null
   /** Products the hovered option keeps, highlighted. */
   hot: Set<string> | null
   /** Kept products, best match first. */
@@ -107,8 +110,21 @@ const SPOT_ZOOM = { max: 1, maxCompact: 0.72, min: 0.42 }
 const BADGE = { h: 18, inset: 8 }
 /** Room left between the badge and the ring it interrupts. */
 const BADGE_GAP = 5
-/** Opacity of a sketch by the number of answers its product fails (1, 2, 3 or more). */
-const FAINT = [1, 0.75, 0.5, 0.3] as const
+/**
+ * The field regrouping after an answer (ms): it waits for the answers to settle (a budget slider
+ * sends one per notch), the products ruled out fade where they are, then the kept ones glide to
+ * their new places while the newcomers fade in, all in a wave from the console.
+ */
+const REGROUP = {
+  settle: 160,
+  leave: 360,
+  glideAfter: 140,
+  glide: 760,
+  enterAfter: 260,
+  enter: 420,
+}
+/** A drawing (or a plate standing in for it) fading in once its bitmap exists. */
+const APPEAR_MS = 280
 
 const PAPER = [243, 241, 236] as const
 const PANEL = [234, 231, 224] as const
@@ -116,6 +132,8 @@ const PANEL_HOVER = [248, 247, 244] as const
 const SIGNAL = '#FF5A1F'
 const INK = '#141414'
 const INK_MUTED = '#625E56'
+/** The plate a product shows while its drawing is on its way: a faint print of its shape. */
+const PLATE = 'rgba(20, 20, 20, 0.055)'
 const MONO = '"Geist Mono Variable", "Geist Mono", ui-monospace, monospace'
 
 /** Device px per world px the sprites need: the pixel ratio times the largest zoom drawn. */
@@ -127,10 +145,10 @@ export const spriteResolution = (vp: Viewport, dpr: number) =>
 
 // ==== Animation channels =======================================================================
 
-// Products change state in bulk (an answer can grey out half the canvas), so they are not GSAP
+// Products change state in bulk (an answer can rule out half the canvas), so they are not GSAP
 // tweens: each channel stores where it comes from, where it goes and when it started, and the
-// drawing reads it. That also lets every on-screen copy start late by its distance from the
-// console, which makes a new answer ripple across the canvas.
+// drawing reads it. Changes that ripple across the canvas start late by their distance from the
+// console instead.
 
 type Channel = { from: number; to: number; start: number; dur: number; ripple: boolean }
 
@@ -159,17 +177,19 @@ function aim(c: Channel, to: number, now: number, dur: number, ripple = false) {
 
 // ==== Model ====================================================================================
 
-/** One product: its bitmaps and its state, shared by every place it has in the tile. */
+/** One product: its shape, bitmaps and state, shared by every place it has in the tile. */
 type Item = {
   slug: string
-  sprite: Sprite
-  /** The bitmaps it had before its photo came in, faded out over `swap` (0 → 1). */
+  /** Size of its drawing in world px, known from its specs before any bitmap exists. */
+  w: number
+  h: number
+  /** Its drawing, shared with every product drawn alike. */
+  key: string
+  /** Its photo, cut out, once the canvas has it: drawn in place of the drawing. */
+  photo: Sprite | null
+  /** The bitmap shown before the current one, faded out over `swap` (0 → 1). */
   previous: Sprite | null
   swap: Channel
-  /** 1 kept by the answers (drawn in colour), 0 ruled out (drawn as a sketch). */
-  on: Channel
-  /** Opacity of the sketch: fainter the more answers the product fails. */
-  faint: Channel
   /** 1 kept by the option under the pointer. */
   hot: Channel
   /** 1 while another option is previewed. */
@@ -187,6 +207,12 @@ type Slot = { cx: number; cy: number; jx: number; jy: number; item: Item }
 
 /** One copy on the field: a slot of the tile and which repetition of the tile. */
 type Copy = { slot: number; kx: number; ky: number }
+
+/** A copy of the field gliding from where it was to its place in a new tile (world px). */
+type Glide = Copy & { fromX: number; fromY: number; start: number; dur: number }
+
+/** A copy of a product an answer ruled out, fading where it was (world px). */
+type Leaver = { item: Item; x: number; y: number; alpha: number; start: number; dur: number }
 
 /** A product of the short list, flying between the field and its place in front. */
 type SpotItem = {
@@ -219,10 +245,26 @@ type Badge = {
   right: number
 }
 
+const copyKey = (c: Copy) => `${c.slot}:${c.kx}:${c.ky}`
+
+/** Notes that a product was drawn at `scale`, keeping the largest. */
+const seen = (drawn: Map<string, number>, slug: string, scale: number) => {
+  if ((drawn.get(slug) ?? 0) < scale) drawn.set(slug, scale)
+}
+
 class World {
   items: Item[] = []
   slots: Slot[] = []
   bySlug = new Map<string, Item>()
+  /** The products laid out in the tile (null: all of them). */
+  kept: Set<string> | null = null
+  /** A new set of products waiting to be laid out (the answers may still be changing). */
+  pending: { kept: Set<string> | null; order: string[] | null; at: number } | null = null
+  /** The regrouping under way: copies gliding to the new tile, copies fading out. */
+  glides = new Map<string, Glide>()
+  leaving: Leaver[] = []
+  /** When the current tile started fading in (copies that do not glide); -1 once shown. */
+  entered = -1
   cell = { w: 1, h: 1 }
   tile = { w: 1, h: 1 }
   /** World point at the viewport centre. */
@@ -233,7 +275,7 @@ class World {
   speed = SPEED.band
   /** Drift multiplier: eased to 0 while a product is looked at or the canvas dragged. */
   pause = 1
-  /** Fades the products in once their sprites exist. */
+  /** Fades the products in once they are laid out. */
   alpha = 0
   /** Fades a whole category out and in when the visitor switches categories. */
   presence = channel(1)
@@ -271,6 +313,15 @@ const mix = (a: readonly number[], b: readonly number[], t: number) =>
   a.map((v, i) => Math.round(v + ((b[i] ?? v) - v) * t))
 const rgb = (c: readonly number[]) => `rgb(${c.join(',')})`
 
+/** Two kept sets lay out the same products (null: all `total` of them). */
+function sameKept(a: Set<string> | null, b: Set<string> | null, total: number) {
+  if (a === b) return true
+  if ((a?.size ?? total) !== (b?.size ?? total)) return false
+  if (!a || !b) return true
+  for (const slug of a) if (!b.has(slug)) return false
+  return true
+}
+
 // ==== Renderer =================================================================================
 
 export class SceneRenderer {
@@ -291,8 +342,14 @@ export class SceneRenderer {
   private dragging = false
   private ripple: Pt = { x: 0, y: 0 }
   private last = performance.now()
-  /** Products drawn since `takeDrawn` last ran, by category: the photos worth fetching first. */
-  private drawn = new Map<Category, Set<string>>()
+  /**
+   * Products drawn since `takeDrawn` last ran, by category, with the largest scale each was drawn
+   * at (screen px per world px): the photos worth fetching, and how sharp.
+   */
+  private drawn = new Map<Category, Map<string, number>>()
+  /** Plates drawn this frame (products whose drawing is not ready yet), for the stats. */
+  private plates = 0
+  private products = 0
   private readonly reduce: boolean
   /** Called after every frame, for overlays that follow a product (the popup). */
   onFrame: (() => void) | null = null
@@ -300,6 +357,7 @@ export class SceneRenderer {
   constructor(
     private readonly canvas: HTMLCanvasElement,
     categories: readonly Category[],
+    private readonly drawings: Drawings,
   ) {
     const ctx = canvas.getContext('2d')
     if (!ctx) throw new Error('Canvas 2D is not available')
@@ -338,18 +396,19 @@ export class SceneRenderer {
     }
   }
 
-  /** Lays a category's products out in its tile once their bitmaps exist. */
-  setSprites(category: Category, sprites: Map<string, Sprite>) {
+  /** A category's products, from their shapes: laid out at once, drawn as their bitmaps come. */
+  setItems(category: Category, shapes: Shape[]) {
     const band = this.band(category)
     if (!band) return
     const world = band.world
-    world.items = [...sprites].map(([slug, sprite]) => ({
-      slug,
-      sprite,
+    world.items = shapes.map((shape) => ({
+      slug: shape.slug,
+      w: shape.w,
+      h: shape.h,
+      key: shape.key,
+      photo: null,
       previous: null,
       swap: channel(1),
-      on: channel(1),
-      faint: channel(1),
       hot: channel(0),
       dim: channel(0),
       field: channel(1),
@@ -357,21 +416,14 @@ export class SceneRenderer {
       score: null,
     }))
     world.bySlug = new Map(world.items.map((item) => [item.slug, item]))
-    const copies = Math.max(1, Math.ceil(MIN_SLOTS / Math.max(world.items.length, 1)))
-    const layout = tileLayout(
-      world.items.map((item) => item.slug),
-      CELL[category],
-      copies,
-    )
     world.cell = CELL[category]
-    world.tile = { w: layout.w, h: layout.h }
-    world.slots = layout.cells.flatMap((c) => {
-      const item = world.bySlug.get(c.id)
-      return item ? [{ cx: c.cx, cy: c.cy, jx: c.jx, jy: c.jy, item }] : []
-    })
+    world.kept = null
+    world.slots = []
     world.spot = []
+    this.layOut(band, this.targets.get(category)?.kept ?? null)
     this.applyTargets(band, this.targets.get(category) ?? null, false)
     gsap.to(world, { alpha: 1, duration: this.reduce ? 0 : 0.9, ease: 'power2.out' })
+    mark(`items-${category}`)
   }
 
   /** The products drawn (on screen or about to be) since the last call, by category. */
@@ -381,14 +433,86 @@ export class SceneRenderer {
     return drawn
   }
 
-  /** Gives a product new bitmaps (its photo in place of its drawing), crossfading on screen. */
-  setSprite(category: Category, slug: string, sprite: Sprite) {
+  /**
+   * Gives a product its photo (null: back to its drawing), crossfading on screen; without `fade`
+   * (a photo let go out of sight), at once, keeping no hold on the old bitmap.
+   */
+  setPhoto(category: Category, slug: string, photo: Sprite | null, fade = true) {
     const item = this.band(category)?.world.bySlug.get(slug)
-    if (!item) return
-    item.previous = item.sprite
-    item.sprite = sprite
+    if (!item || item.photo === photo) return
+    if (!fade) {
+      item.photo = photo
+      item.previous = null
+      item.swap = channel(1)
+      return
+    }
+    item.previous = item.photo ?? this.drawings.get(item.key)?.sprite ?? null
+    item.photo = photo
     item.swap = channel(0)
     aim(item.swap, 1, performance.now(), this.reduce ? 0 : 600)
+  }
+
+  /**
+   * The products the scene shows once it has made its entrance (the home page's panels, or the
+   * open canvas and its short list), with the scale each is drawn at: what the preloader waits
+   * for. Read from the panels' resting places, so it holds while the entrance has not started.
+   */
+  firstScreen() {
+    const out = new Map<string, { category: Category; slug: string; key: string; scale: number }>()
+    const add = (category: Category, item: Item, scale: number) => {
+      const id = `${category}:${item.slug}`
+      const known = out.get(id)
+      if (!known || known.scale < scale)
+        out.set(id, { category, slug: item.slug, key: item.key, scale })
+    }
+    for (const band of this.bands) {
+      const base = this.quads[band.index]
+      if (!base || (this.target.mode === 'canvas' && !this.isOpen(band))) continue
+      const world = band.world
+      for (const s of world.spot) if (!s.leaving) add(band.category, s.item, s.scale)
+      if (!world.slots.length || world.spot.some((s) => !s.leaving)) continue
+      const b = boundsOf(this.target.mode === 'canvas' ? fullQuad(this.vp) : base)
+      const t = this.transformOf(band)
+      const { w: tw, h: th } = world.tile
+      world.slots.forEach((slot) => {
+        const at = this.placeIn(world, slot)
+        const half = { w: slot.item.w / 2, h: slot.item.h / 2 }
+        const kx0 = Math.ceil(((b.x0 - t.ox) / t.scale - half.w - at.x) / tw)
+        const kx1 = Math.floor(((b.x1 - t.ox) / t.scale + half.w - at.x) / tw)
+        const ky0 = Math.ceil(((b.y0 - t.oy) / t.scale - half.h - at.y) / th)
+        const ky1 = Math.floor(((b.y1 - t.oy) / t.scale + half.h - at.y) / th)
+        if (kx0 <= kx1 && ky0 <= ky1) add(band.category, slot.item, t.scale)
+      })
+    }
+    return [...out.values()]
+  }
+
+  /** What the scene holds, for `__scene.stats()`. */
+  stats() {
+    let photos = 0
+    let photoBytes = 0
+    const categories: Record<string, unknown> = {}
+    for (const band of this.bands) {
+      const world = band.world
+      for (const item of world.items) {
+        if (!item.photo) continue
+        photos++
+        photoBytes += item.photo.bytes
+      }
+      categories[band.category] = {
+        items: world.items.length,
+        laidOut: world.kept?.size ?? world.items.length,
+        slots: world.slots.length,
+        spot: world.spot.length,
+      }
+    }
+    const drawings = this.drawings.stats
+    return {
+      categories,
+      drawings,
+      photos: { count: photos, bytes: photoBytes },
+      bitmapMB: Math.round(((drawings.bytes + photoBytes) / 1e6) * 10) / 10,
+    }
   }
 
   dispose() {
@@ -555,6 +679,9 @@ export class SceneRenderer {
     Object.assign(old, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 1 })
     Object.assign(old.world, { zoom: this.zoomForCanvas(), pause: 1, anchor: null })
     gsap.killTweensOf(band.world, MOTION)
+    const pending = band.world.pending
+    band.world.pending = null
+    if (pending) this.layOut(band, pending.kept)
     Object.assign(band, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 0 })
     // Same camera, zoom and drift as the old world: the dots run on without a seam.
     Object.assign(band.world, {
@@ -566,7 +693,10 @@ export class SceneRenderer {
       velocity: { ...old.world.velocity },
       anchor: null,
       spot: [],
+      leaving: [],
+      entered: -1,
     })
+    band.world.glides.clear()
     for (const item of band.world.items) aim(item.field, 1, now, 0)
     this.stack = [from, to]
     const settle = () => {
@@ -627,38 +757,228 @@ export class SceneRenderer {
     if (this.target.mode !== 'canvas') return
     const band = this.band(this.target.category)
     const t = band && this.targets.get(band.category)
-    if (band) this.updateSpot(band, t?.misses ? t.order : null, performance.now(), true)
+    if (band && !band.world.pending) {
+      this.updateSpot(band, t?.kept ? t.order : null, performance.now(), true)
+    }
   }
 
   private applyTargets(band: Band, t: ItemTargets | null, animate: boolean) {
+    const world = band.world
+    if (!world.items.length) return
     const now = performance.now()
-    const slow = animate ? 560 : 0
     const fast = animate ? 240 : 0
     const rankOf = new Map(t?.order.map((slug, i) => [slug, i]) ?? [])
-    for (const item of band.world.items) {
-      const misses = t?.misses?.get(item.slug) ?? 0
+    for (const item of world.items) {
       const hot = !!t?.hot?.has(item.slug)
-      aim(item.on, misses === 0 ? 1 : 0, now, slow, true)
-      aim(item.faint, FAINT[Math.min(misses, FAINT.length - 1)] ?? 1, now, slow, true)
       aim(item.hot, hot ? 1 : 0, now, fast)
       aim(item.dim, t?.hot && !hot ? 1 : 0, now, fast)
       item.rank = rankOf.get(item.slug) ?? null
       item.score = item.rank != null ? (t?.scores?.[item.rank] ?? null) : null
     }
-    this.updateSpot(band, t?.misses ? t.order : null, now, animate)
+    const kept = t?.kept ?? null
+    const order = kept ? (t?.order ?? null) : null
+    if (sameKept(kept, world.kept, world.items.length)) {
+      // Back to what is laid out (an answer undone before the field moved): nothing to regroup.
+      world.pending = null
+      this.updateSpot(band, order, now, animate)
+      return
+    }
+    if (animate && this.regroups(band, now) !== 'cut') {
+      // The answers may still be moving (a slider, several picks): the field waits for them.
+      world.pending = { kept, order, at: now + REGROUP.settle }
+      return
+    }
+    world.pending = null
+    this.layOut(band, kept)
+    this.updateSpot(band, order, now, false)
+  }
+
+  /**
+   * How the field of a band moves to a new set of products: the open canvas glides, a panel in
+   * sight (opening, closing, the home page) crossfades, one out of sight just changes.
+   */
+  private regroups(band: Band, now: number): 'glide' | 'fade' | 'cut' {
+    if (this.reduce || band.enter <= 0) return 'cut'
+    const presence = band.world.presence
+    const arriving = presence.dur > 0 && now < presence.start + presence.dur + 420
+    if (this.activeBand() === band && !arriving) return 'glide'
+    const inSight =
+      this.target.mode === 'bands' || this.isOpen(band) || this.stack.includes(band.category)
+    return inSight ? 'fade' : 'cut'
+  }
+
+  /** Lays the products `kept` (null: all) out in the tile, at once. */
+  private layOut(band: Band, kept: Set<string> | null) {
+    const world = band.world
+    const items = kept ? world.items.filter((item) => kept.has(item.slug)) : world.items
+    const copies = Math.max(1, Math.ceil(MIN_SLOTS / Math.max(items.length, 1)))
+    const layout = tileLayout(
+      items.map((item) => item.slug),
+      CELL[band.category],
+      copies,
+    )
+    world.tile = { w: layout.w, h: layout.h }
+    world.slots = layout.cells.flatMap((c) => {
+      const item = world.bySlug.get(c.id)
+      return item ? [{ cx: c.cx, cy: c.cy, jx: c.jx, jy: c.jy, item }] : []
+    })
+    world.kept = kept
+    world.glides.clear()
+    world.leaving = []
+    world.entered = -1
+  }
+
+  /**
+   * The field takes a new set of products. On the open canvas, the copies on screen of products
+   * still kept glide to their nearest place in the new tile; the others fade where they are; the
+   * new tile's other copies fade in, all in a wave from the console. Products about to join the
+   * short list (`spot`) leave their copies behind: the short list takes off from where they were.
+   * Returns where each product was on screen, for the short list to take off from.
+   */
+  private regroup(band: Band, kept: Set<string> | null, spot: Set<string>, now: number) {
+    const world = band.world
+    const mode = this.regroups(band, now)
+    const shown = mode === 'cut' ? [] : this.shownCopies(band, now)
+    const before = world.leaving.filter((l) => now < l.start + l.dur)
+    this.layOut(band, kept)
+    if (mode === 'cut') return new Map<string, Pt[]>()
+    const t = this.transformOf(band)
+    const taken = new Set<string>()
+    const at = new Map<string, Pt[]>()
+    for (const c of shown) {
+      const sx = c.x * t.scale + t.ox
+      const sy = c.y * t.scale + t.oy
+      const delay = this.rippleDelay(sx, sy)
+      let list = at.get(c.item.slug)
+      if (!list) {
+        list = []
+        at.set(c.item.slug, list)
+      }
+      list.push({ x: sx, y: sy })
+      const stays =
+        mode === 'glide' && !spot.has(c.item.slug) && (world.kept?.has(c.item.slug) ?? true)
+      const to = stays ? this.freeCopyNear(band, c.item, c.x, c.y, taken) : null
+      if (to) {
+        taken.add(copyKey(to))
+        world.glides.set(copyKey(to), {
+          ...to,
+          fromX: c.x,
+          fromY: c.y,
+          start: now + REGROUP.glideAfter + delay * 0.6,
+          dur: REGROUP.glide,
+        })
+      } else {
+        before.push({
+          item: c.item,
+          x: c.x,
+          y: c.y,
+          alpha: c.alpha,
+          start: now + delay,
+          dur: REGROUP.leave,
+        })
+      }
+    }
+    world.leaving = before
+    world.entered = now
+    return at
+  }
+
+  /** The field's copies on screen (and a cell around it), where they are drawn now (world px). */
+  private shownCopies(band: Band, now: number) {
+    const world = band.world
+    const out: { item: Item; x: number; y: number; alpha: number }[] = []
+    if (!world.slots.length) return out
+    const t = this.transformOf(band)
+    const { w: tw, h: th } = world.tile
+    const { w: cw, h: ch } = world.cell
+    const wx0 = -t.ox / t.scale - cw
+    const wx1 = (this.vp.w - t.ox) / t.scale + cw
+    const wy0 = -t.oy / t.scale - ch
+    const wy1 = (this.vp.h - t.oy) / t.scale + ch
+    world.slots.forEach((slot, index) => {
+      const field = read(slot.item.field, now)
+      if (field <= 0.05) return
+      const at = this.placeIn(world, slot)
+      for (let kx = Math.ceil((wx0 - at.x) / tw); kx <= Math.floor((wx1 - at.x) / tw); kx++) {
+        for (let ky = Math.ceil((wy0 - at.y) / th); ky <= Math.floor((wy1 - at.y) / th); ky++) {
+          if (world.glides.has(copyKey({ slot: index, kx, ky }))) continue
+          const x = at.x + kx * tw
+          const y = at.y + ky * th
+          const enter = this.enterOf(world, x * t.scale + t.ox, y * t.scale + t.oy, now)
+          if (enter <= 0.05) continue
+          out.push({ item: slot.item, x, y, alpha: field * enter })
+        }
+      }
+    })
+    for (const glide of world.glides.values()) {
+      const slot = world.slots[glide.slot]
+      if (!slot) continue
+      const p = this.glideAt(world, glide, now)
+      out.push({ item: slot.item, x: p.x, y: p.y, alpha: read(slot.item.field, now) })
+    }
+    return out
+  }
+
+  /** The copy of a product in the tile nearest a world point that no other copy has claimed. */
+  private freeCopyNear(band: Band, item: Item, wx: number, wy: number, taken: Set<string>) {
+    const world = band.world
+    let best: Copy | null = null
+    let bestDistance = Number.POSITIVE_INFINITY
+    for (let index = 0; index < world.slots.length; index++) {
+      const slot = world.slots[index]
+      if (!slot || slot.item !== item) continue
+      const at = this.placeIn(world, slot)
+      const kx0 = Math.round((wx - at.x) / world.tile.w)
+      const ky0 = Math.round((wy - at.y) / world.tile.h)
+      for (let kx = kx0 - 1; kx <= kx0 + 1; kx++) {
+        for (let ky = ky0 - 1; ky <= ky0 + 1; ky++) {
+          const copy = { slot: index, kx, ky }
+          if (taken.has(copyKey(copy))) continue
+          const d = Math.hypot(at.x + kx * world.tile.w - wx, at.y + ky * world.tile.h - wy)
+          if (d < bestDistance) {
+            bestDistance = d
+            best = copy
+          }
+        }
+      }
+    }
+    return best
+  }
+
+  /** Where a gliding copy is now (world px). */
+  private glideAt(world: World, g: Glide, now: number): Pt {
+    const slot = world.slots[g.slot]
+    const p = easeInOut(clamp01((now - g.start) / g.dur))
+    if (!slot) return { x: g.fromX, y: g.fromY }
+    const at = this.placeIn(world, slot)
+    return {
+      x: lerp(g.fromX, at.x + g.kx * world.tile.w, p),
+      y: lerp(g.fromY, at.y + g.ky * world.tile.h, p),
+    }
+  }
+
+  /** How far a copy of the tile has faded in after a regrouping (screen px, for the wave). */
+  private enterOf(world: World, sx: number, sy: number, now: number) {
+    if (world.entered < 0) return 1
+    const t = (now - world.entered - REGROUP.enterAfter - this.rippleDelay(sx, sy)) / REGROUP.enter
+    return easeOut(clamp01(t))
   }
 
   /**
    * The short list: when few products are left, they fly out of the field to a grid in the free
-   * space, each shown once; the ones dropped fly back (or fade into their sketches).
+   * space, each shown once; the ones dropped fly back (or fade away). `from`: where the products
+   * were on screen just before the field regrouped, to take off from.
    */
-  private updateSpot(band: Band, order: string[] | null, now: number, animate: boolean) {
+  private updateSpot(
+    band: Band,
+    order: string[] | null,
+    now: number,
+    animate: boolean,
+    from?: Map<string, Pt[]>,
+  ) {
     const world = band.world
     if (!world.items.length) return
-    const wanted =
-      order && order.length > 0 && order.length <= SPOT_MAX && this.target.mode === 'canvas'
-        ? order
-        : []
+    const wanted = this.spotWanted(order)
     const layout = wanted.length ? this.spotLayout(world, wanted) : null
     const keep = layout ? wanted : []
 
@@ -672,13 +992,13 @@ export class SceneRenderer {
         start: now,
         dur: animate ? 820 : 0,
       })
-      if (s.item.on.to === 1) {
+      if (world.kept?.has(s.item.slug) ?? true) {
         // Still kept (the list just grew too long): back to the nearest copy on the field.
         s.land = this.nearestCopy(band, s.item, pose)
       } else {
-        // Ruled out: it fades where it is while its sketches come back on the field.
+        // Ruled out: it fades where it is.
         s.land = null
-        aim(s.item.field, 1, now, animate ? 420 : 0)
+        aim(s.item.field, 1, now, 0)
       }
     }
 
@@ -706,9 +1026,9 @@ export class SceneRenderer {
         aim(item.field, 0, now, animate ? 250 : 0)
         return
       }
-      // Entering: it takes off from its nearest copy on the field, which hands over to it.
-      const copy = this.nearestCopy(band, item, to)
-      const pose = copy ? this.copyPose(band, copy) : { x: to.x, y: to.y + 40, scale: layout.zoom }
+      // Entering: it takes off from where it was on screen (or its nearest copy on the field),
+      // which hands over to it.
+      const pose = this.takeOff(band, item, to, layout.zoom, from?.get(slug))
       world.spot.push({
         item,
         to,
@@ -724,6 +1044,27 @@ export class SceneRenderer {
       })
       aim(item.field, 0, now, animate ? 250 : 0)
     })
+  }
+
+  /** The products the short list should hold: few enough, on the open canvas. */
+  private spotWanted(order: string[] | null) {
+    return order && order.length > 0 && order.length <= SPOT_MAX && this.target.mode === 'canvas'
+      ? order
+      : []
+  }
+
+  /** Where a product joining the short list takes off from. */
+  private takeOff(band: Band, item: Item, to: Pt, zoom: number, shown: Pt[] | undefined) {
+    const t = this.transformOf(band)
+    if (shown?.length) {
+      let best = shown[0] as Pt
+      for (const p of shown) {
+        if (Math.hypot(p.x - to.x, p.y - to.y) < Math.hypot(best.x - to.x, best.y - to.y)) best = p
+      }
+      return { x: best.x, y: best.y, scale: t.scale }
+    }
+    const copy = this.nearestCopy(band, item, to)
+    return copy ? this.copyPose(band, copy) : { x: to.x, y: to.y + 40, scale: zoom }
   }
 
   /**
@@ -751,8 +1092,8 @@ export class SceneRenderer {
   private gridIn(stage: Rect, items: Item[]) {
     if (stage.w < 120 || stage.h < 80) return null
     const n = items.length
-    const maxW = Math.max(...items.map((i) => i.sprite.w))
-    const maxH = Math.max(...items.map((i) => i.sprite.h))
+    const maxW = Math.max(...items.map((i) => i.w))
+    const maxH = Math.max(...items.map((i) => Math.max(i.h, i.photo?.h ?? 0)))
     const compact = isCompact(this.vp)
     const pad = this.ringPad()
     const reach = pad + BADGE.h / 2
@@ -821,25 +1162,14 @@ export class SceneRenderer {
 
   /** The copy of a product on the field closest to a screen point. */
   private nearestCopy(band: Band, item: Item, near: Pt): Copy | null {
-    const world = band.world
     const t = this.transformOf(band)
-    const wx = (near.x - t.ox) / t.scale
-    const wy = (near.y - t.oy) / t.scale
-    let best: Copy | null = null
-    let bestDistance = Number.POSITIVE_INFINITY
-    for (let index = 0; index < world.slots.length; index++) {
-      const slot = world.slots[index]
-      if (!slot || slot.item !== item) continue
-      const at = this.placeIn(world, slot)
-      const kx = Math.round((wx - at.x) / world.tile.w)
-      const ky = Math.round((wy - at.y) / world.tile.h)
-      const distance = Math.hypot(at.x + kx * world.tile.w - wx, at.y + ky * world.tile.h - wy)
-      if (distance < bestDistance) {
-        bestDistance = distance
-        best = { slot: index, kx, ky }
-      }
-    }
-    return best
+    return this.freeCopyNear(
+      band,
+      item,
+      (near.x - t.ox) / t.scale,
+      (near.y - t.oy) / t.scale,
+      new Set(),
+    )
   }
 
   /** Screen position and scale of one copy on the field. */
@@ -858,10 +1188,10 @@ export class SceneRenderer {
 
   /** Where a slot's product sits: its cell centre, nudged as far as its size allows. */
   private placeIn(world: World, slot: Slot): Pt {
-    const { sprite } = slot.item
+    const { item } = slot
     return {
-      x: slot.cx + slot.jx * Math.max(0, world.cell.w - sprite.w) * JITTER,
-      y: slot.cy + slot.jy * Math.max(0, world.cell.h - sprite.h) * JITTER,
+      x: slot.cx + slot.jx * Math.max(0, world.cell.w - item.w) * JITTER,
+      y: slot.cy + slot.jy * Math.max(0, world.cell.h - item.h) * JITTER,
     }
   }
 
@@ -878,7 +1208,7 @@ export class SceneRenderer {
       const s = world.spot[i]
       if (!s || s.leaving) continue
       const pose = this.spotPose(band, s, now)
-      const { w, h } = s.item.sprite
+      const { w, h } = this.sizeOf(s.item)
       if (Math.abs(p.x - pose.x) <= (w * pose.scale) / 2 + 6) {
         if (Math.abs(p.y - pose.y) <= (h * pose.scale) / 2 + 6) {
           return { category: band.category, slug: s.item.slug, spot: true, slot: -1, kx: 0, ky: 0 }
@@ -898,12 +1228,15 @@ export class SceneRenderer {
       const slot = world.slots[index]
       if (!slot || slot.item.field.to < 1) continue
       const { item } = slot
+      const { w, h } = this.sizeOf(item)
       const at = this.placeIn(world, slot)
       const kx = Math.round((wx - at.x) / tw)
       const ky = Math.round((wy - at.y) / th)
       const dx = wx - (at.x + kx * tw)
       const dy = wy - (at.y + ky * th)
-      if (Math.abs(dx) > item.sprite.w / 2 + 6 || Math.abs(dy) > item.sprite.h / 2 + 6) continue
+      if (Math.abs(dx) > w / 2 + 6 || Math.abs(dy) > h / 2 + 6) continue
+      // A copy still gliding to its place takes the pointer once it is there.
+      if (world.glides.has(copyKey({ slot: index, kx, ky }))) continue
       const distance = dx * dx + dy * dy
       if (distance < bestDistance) {
         bestDistance = distance
@@ -943,16 +1276,18 @@ export class SceneRenderer {
       const s = world.spot.find((x) => x.item.slug === focus.hit.slug && !x.leaving)
       if (!s) return null
       const pose = this.spotPose(band, s, performance.now())
-      const w = s.item.sprite.w * pose.scale
-      const h = s.item.sprite.h * pose.scale
+      const { w: iw, h: ih } = this.sizeOf(s.item)
+      const w = iw * pose.scale
+      const h = ih * pose.scale
       return { x: pose.x - w / 2, y: pose.y - h / 2, w, h }
     }
     const slot = world.slots[focus.hit.slot]
-    // A product that just left the field for the short list no longer has its popup here.
+    // A product that just left the field (for the short list, or ruled out) has no popup here.
     if (!slot || slot.item.slug !== focus.hit.slug || slot.item.field.to < 1) return null
     const pose = this.copyPose(band, focus.hit)
-    const w = slot.item.sprite.w * pose.scale
-    const h = slot.item.sprite.h * pose.scale
+    const { w: iw, h: ih } = this.sizeOf(slot.item)
+    const w = iw * pose.scale
+    const h = ih * pose.scale
     return { x: pose.x - w / 2, y: pose.y - h / 2, w, h }
   }
 
@@ -991,13 +1326,18 @@ export class SceneRenderer {
 
   tick = () => {
     const now = performance.now()
+    frame(now - this.last)
     const dt = Math.min(0.05, (now - this.last) / 1000)
     this.last = now
     for (const band of this.bands) {
       this.step(band, dt)
-      this.settleSpot(band, now)
+      this.settle(band, now)
     }
+    this.plates = 0
+    this.products = 0
     this.draw(now)
+    if (this.products > 0 && this.plates === 0) mark('first-full-frame')
+    this.drawings.pump()
     this.onFrame?.()
   }
 
@@ -1025,10 +1365,26 @@ export class SceneRenderer {
     }
   }
 
-  /** Lands the products flying back to the field, then lets them go. */
-  private settleSpot(band: Band, now: number) {
+  /** Runs the regrouping the answers asked for, and ends what has finished moving. */
+  private settle(band: Band, now: number) {
     const world = band.world
+    const pending = world.pending
+    if (pending && now >= pending.at) {
+      world.pending = null
+      if (this.focus && !this.focus.hit.spot && this.activeBand() === band) this.setFocus(null)
+      const spot = new Set(this.spotWanted(pending.order))
+      const from = this.regroup(band, pending.kept, spot, now)
+      this.updateSpot(band, pending.order, now, true, from)
+    }
+    if (world.leaving.length) world.leaving = world.leaving.filter((l) => now < l.start + l.dur)
+    for (const [key, glide] of world.glides) {
+      if (now >= glide.start + glide.dur) world.glides.delete(key)
+    }
+    if (world.entered >= 0 && now > world.entered + REGROUP.enterAfter + 420 + REGROUP.enter) {
+      world.entered = -1
+    }
     if (!world.spot.length) return
+    // Products flying back to the field land, then let go.
     world.spot = world.spot.filter((s) => {
       if (!s.leaving || now < s.start + s.dur) return true
       if (!s.land) return false
@@ -1104,7 +1460,22 @@ export class SceneRenderer {
 
   private drawField(band: Band, t: Transform, quad: Quad, now: number, bandAlpha: number) {
     const world = band.world
-    if (!world.slots.length || world.alpha <= 0) return
+    if (world.alpha <= 0) return
+    const alpha = bandAlpha * world.alpha
+    const presenceAt = (sx: number, sy: number) =>
+      read(world.presence, now, world.presence.ripple ? this.rippleDelay(sx, sy) : 0)
+
+    // Copies of products an answer ruled out, fading where they were.
+    for (const l of world.leaving) {
+      const p = easeOut(clamp01((now - l.start) / l.dur))
+      const sx = l.x * t.scale + t.ox
+      const sy = l.y * t.scale + t.oy
+      const a = alpha * l.alpha * (1 - p) * presenceAt(sx, sy)
+      if (a <= 0.002) continue
+      this.drawProduct(l.item, sx, sy, t.scale * (1 - 0.06 * p), a, now, 0, false, false)
+    }
+    if (!world.slots.length) return
+
     const b = boundsOf(quad)
     const wx0 = (b.x0 - t.ox) / t.scale
     const wx1 = (b.x1 - t.ox) / t.scale
@@ -1112,7 +1483,6 @@ export class SceneRenderer {
     const wy1 = (b.y1 - t.oy) / t.scale
     const { w: tw, h: th } = world.tile
     const { w: cw, h: ch } = world.cell
-    const alpha = bandAlpha * world.alpha
     const open = this.activeBand() === band
     const focus = open && this.focus && !this.focus.hit.spot ? this.focus : null
     const focusIn = this.focusIn(now)
@@ -1131,28 +1501,44 @@ export class SceneRenderer {
       const ky1 = Math.floor((wy1 + ch - at.y) / th)
       for (let kx = kx0; kx <= kx1; kx++) {
         for (let ky = ky0; ky <= ky1; ky++) {
+          if (world.glides.size && world.glides.has(copyKey({ slot: index, kx, ky }))) continue
           const sx = (at.x + kx * tw) * t.scale + t.ox
           const sy = (at.y + ky * th) * t.scale + t.oy
-          const delay = this.rippleDelay(sx, sy)
-          const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
+          const presence = presenceAt(sx, sy)
           if (presence <= 0.002) continue
-          drawn.add(item.slug)
+          const enter = this.enterOf(world, sx, sy, now)
+          if (enter <= 0.002) continue
+          seen(drawn, item.slug, t.scale)
           const focused =
             !!focus && focus.hit.slot === index && focus.hit.kx === kx && focus.hit.ky === ky
           this.drawProduct(
             item,
             sx,
             sy,
-            t.scale * (0.9 + 0.1 * presence),
-            alpha * field * presence,
+            t.scale * (0.9 + 0.1 * presence) * (0.94 + 0.06 * enter),
+            alpha * field * presence * enter,
             now,
-            delay,
             focused ? focusIn : 0,
             ranked,
+            true,
           )
         }
       }
     })
+
+    // Copies gliding to their new places, drawn wherever they are on their way.
+    for (const glide of world.glides.values()) {
+      const slot = world.slots[glide.slot]
+      if (!slot) continue
+      const field = read(slot.item.field, now)
+      if (field <= 0.002) continue
+      const p = this.glideAt(world, glide, now)
+      const sx = p.x * t.scale + t.ox
+      const sy = p.y * t.scale + t.oy
+      seen(drawn, slot.item.slug, t.scale)
+      const a = alpha * field * presenceAt(sx, sy)
+      this.drawProduct(slot.item, sx, sy, t.scale, a, now, 0, ranked, true)
+    }
   }
 
   private drawSpot(band: Band, now: number, bandAlpha: number) {
@@ -1163,8 +1549,8 @@ export class SceneRenderer {
     const focusIn = this.focusIn(now)
     const drawn = this.drawnIn(band.category)
     for (const s of world.spot) {
-      drawn.add(s.item.slug)
       const pose = this.spotPose(band, s, now)
+      seen(drawn, s.item.slug, pose.scale)
       const delay = this.rippleDelay(pose.x, pose.y)
       const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
       const focused = !!focus && !s.leaving && focus.hit.slug === s.item.slug
@@ -1175,13 +1561,17 @@ export class SceneRenderer {
         pose.scale,
         alpha * pose.alpha * presence,
         now,
-        0,
         focused ? focusIn : 0,
+        !s.leaving,
         !s.leaving,
       )
     }
   }
 
+  /**
+   * One product: its photo or its drawing (a plate of its shape while the drawing is on its way),
+   * and, when `decorated`, its ring, rank badge and focus marks.
+   */
   private drawProduct(
     item: Item,
     x: number,
@@ -1189,51 +1579,72 @@ export class SceneRenderer {
     base: number,
     alpha: number,
     now: number,
-    delay: number,
     focus: number,
     ranked: boolean,
+    decorated: boolean,
   ) {
     const { ctx } = this
-    const s = item.sprite
-    const on = read(item.on, now, item.on.ripple ? delay : 0)
-    const faint = read(item.faint, now, item.faint.ripple ? delay : 0)
     const hot = read(item.hot, now)
     const dim = read(item.dim, now)
     // The ring and the badge hold to the product's resting size; only the drawing breathes.
-    const rest = base * (0.88 + 0.12 * on)
-    const scale = rest * (1 + HOT_LIFT * hot) * (1 + 0.05 * focus)
-    const dw = (s.w + s.pad * 2) * scale
-    const dh = (s.h + s.pad * 2) * scale
+    const scale = base * (1 + HOT_LIFT * hot) * (1 + 0.05 * focus)
     const a = alpha * (1 - 0.5 * dim)
     if (a <= 0.002) return
-    if (on < 0.999) {
-      ctx.globalAlpha = a * (1 - on) * faint
-      ctx.drawImage(s.ghost, x - dw / 2, y - dh / 2, dw, dh)
+    this.products++
+    const drawing = this.drawings.get(item.key)
+    if (!drawing) this.drawings.want(item.key)
+    const appear = drawing ? easeOut(clamp01((now - drawing.at) / APPEAR_MS)) : 0
+    if (!item.photo && appear < 1) {
+      this.plates++
+      this.drawPlate(item, x, y, scale, a * (1 - appear))
     }
-    if (on > 0.001) {
-      const swap = read(item.swap, now)
-      const before = item.previous
-      if (before && swap < 1) {
-        const bw = (before.w + before.pad * 2) * scale
-        const bh = (before.h + before.pad * 2) * scale
-        // Held whole for the first half, so the paper never shows through the crossfade.
-        ctx.globalAlpha = a * on * Math.min(1, 2 * (1 - swap))
-        ctx.drawImage(before.color, x - bw / 2, y - bh / 2, bw, bh)
-      } else if (before) {
-        item.previous = null
-      }
-      ctx.globalAlpha = a * on * swap
-      ctx.drawImage(s.color, x - dw / 2, y - dh / 2, dw, dh)
+    const current = item.photo ?? drawing?.sprite ?? null
+    const swap = read(item.swap, now)
+    const before = item.previous
+    if (before && swap < 1) {
+      const bw = (before.w + before.pad * 2) * scale
+      const bh = (before.h + before.pad * 2) * scale
+      // Held whole for the first half, so the paper never shows through the crossfade.
+      ctx.globalAlpha = a * Math.min(1, 2 * (1 - swap))
+      ctx.drawImage(before.image, x - bw / 2, y - bh / 2, bw, bh)
+    } else if (before) {
+      item.previous = null
     }
-    const w = s.w * rest
-    const h = s.h * rest
+    if (current) {
+      const dw = (current.w + current.pad * 2) * scale
+      const dh = (current.h + current.pad * 2) * scale
+      ctx.globalAlpha = a * swap * (item.photo ? 1 : appear)
+      ctx.drawImage(current.image, x - dw / 2, y - dh / 2, dw, dh)
+    }
+    if (!decorated) return
+    const size = this.sizeOf(item)
+    const w = size.w * base
+    const h = size.h * base
     const badge =
-      ranked && item.rank != null && item.rank < 3 && on > 0.5
+      ranked && item.rank != null && item.rank < 3
         ? this.badgeOf(item.rank, item.score, x, y, w, h)
         : null
-    if (hot > 0.01) this.drawRing(x, y, w, h, a * hot * Math.max(on, faint), badge)
-    if (badge) this.drawBadge(badge, a * on)
-    if (focus > 0) this.drawBrackets(x, y, s.w * scale, s.h * scale, a * focus)
+    if (hot > 0.01) this.drawRing(x, y, w, h, a * hot, badge)
+    if (badge) this.drawBadge(badge, a)
+    if (focus > 0) this.drawBrackets(x, y, size.w * scale, size.h * scale, a * focus)
+  }
+
+  /** A faint print of a product's shape, holding its place until its drawing is ready. */
+  private drawPlate(item: Item, x: number, y: number, scale: number, alpha: number) {
+    if (alpha <= 0.002) return
+    const { ctx } = this
+    const w = item.w * scale
+    const h = item.h * scale
+    ctx.globalAlpha = alpha
+    ctx.fillStyle = PLATE
+    ctx.beginPath()
+    ctx.roundRect(x - w / 2, y - h / 2, w, h, Math.min(h * 0.12, 7 * scale))
+    ctx.fill()
+  }
+
+  /** The size a product is drawn at (world px): its photo's, once it has one. */
+  private sizeOf(item: Item) {
+    return { w: item.w, h: item.photo?.h ?? item.h }
   }
 
   /** Room between a product and the ring that highlights it, in screen px. */
@@ -1357,7 +1768,7 @@ export class SceneRenderer {
   private drawnIn(category: Category) {
     let drawn = this.drawn.get(category)
     if (!drawn) {
-      drawn = new Set()
+      drawn = new Map()
       this.drawn.set(category, drawn)
     }
     return drawn
@@ -1396,6 +1807,10 @@ export class SceneRenderer {
   private rest(band: Band) {
     const world = band.world
     gsap.killTweensOf(world, MOTION)
+    // A regrouping still waiting for the answers to settle happens at once: nobody watches.
+    const pending = world.pending
+    world.pending = null
+    if (pending) this.layOut(band, pending.kept)
     Object.assign(world, {
       zoom: this.zoomFor(band),
       angle: this.angleFor(band),
@@ -1405,7 +1820,10 @@ export class SceneRenderer {
       velocity: { x: 0, y: 0 },
       presence: channel(1),
       spot: [],
+      leaving: [],
+      entered: -1,
     })
+    world.glides.clear()
     const now = performance.now()
     for (const item of world.items) aim(item.field, 1, now, 0)
   }

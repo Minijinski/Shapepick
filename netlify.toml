@@ -5,3 +5,18 @@
 
 [build.environment]
   NODE_VERSION = "24"
+
+# Product photos go through Netlify's image CDN (`/.netlify/images`, see
+# apps/web/src/features/product/photo.ts): resized to the size shown and served from our own domain,
+# so the browser can cut them out whatever the shop's CDN allows. Only these shops may be fetched.
+[images]
+  remote_images = [
+    'https://cdn\.shopify\.com/.*',
+    'https://assets3\.razerzone\.com/.*',
+    'https://medias-p1\.phoenix\.razer\.com/.*',
+    'https://assets\.corsair\.com/.*',
+    'https://res\.cloudinary\.com/.*',
+    'https://resource\.logitech\.com/.*',
+    'https://resource\.logitechg\.com/.*',
+    'https://images\.ctfassets\.net/.*',
+  ]

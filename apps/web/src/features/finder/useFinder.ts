@@ -11,6 +11,7 @@ import {
   finderOf,
   firstPending,
   isInformed,
+  journeyStates,
   type Locale,
   optionCounts,
   predicateOf,
@@ -22,6 +23,7 @@ import {
   sanitizeAnswers,
   type Text,
   withAnswer,
+  withDraft,
   withOrder,
 } from "@choose/catalog";
 import { useNavigate } from "@tanstack/react-router";
@@ -168,7 +170,16 @@ export function useFinder(
     },
     [answers, currentKey, go],
   );
-  const goTo = useCallback((key: string) => go(answers, key), [answers, go]);
+  /**
+   * An answered question reopened, from a chip of the rail or a tile's "Change". Like a stop of
+   * the journey bar, it commits the picks on screen first, as "Continue" would; Back drops them.
+   */
+  const goTo = useCallback(
+    (key: string) => {
+      if (key !== currentKey) go(withDraft(answers, currentKey, draft), key);
+    },
+    [answers, currentKey, draft, go],
+  );
   /**
    * A question picked on the journey bar. An answered one reopens, like a chip of the rail; one
    * still ahead moves up to be the next answered, and the others keep their order behind it.
@@ -176,13 +187,14 @@ export function useFinder(
   const pickStep = useCallback(
     (key: string) => {
       if (key === currentKey) return;
-      if (answers[key] != null) return go(answers, key);
+      const next = withDraft(answers, currentKey, draft);
+      if (next[key] != null) return go(next, key);
       const answered = def.steps
-        .filter((s) => s.key !== key && answers[s.key] != null)
+        .filter((s) => s.key !== key && next[s.key] != null)
         .map((s) => s.key);
-      go(answers, undefined, undefined, [...answered, key].join(","));
+      go(next, undefined, undefined, [...answered, key].join(","));
     },
-    [def, answers, currentKey, go],
+    [def, answers, currentKey, draft, go],
   );
   const back = useCallback(() => {
     const previous = previousStep(def, items, answers, currentKey);
@@ -239,28 +251,23 @@ export function useFinder(
 
   // ---- Journey bar ---------------------------------------------------------------------------
   /**
-   * Every question the visitor will see, answered, on screen or still ahead, in the
-   * questionnaire's own order: the bar is a map that stays put whatever order they answer in.
+   * Every question, answered, on screen or still ahead, in the questionnaire's own order: the bar
+   * is a map that stays put whatever order they answer in. One that the answers, the draft on
+   * screen included, leave nothing to decide stays in its place, greyed out.
    */
+  const stops = useMemo(
+    () => journeyStates(def, items, answers, currentKey, draft),
+    [def, items, answers, currentKey, draft],
+  );
   const journey = useMemo(
     () =>
-      finderOf(category)
-        .steps.filter((s) => asked.includes(s.key))
-        .map((s) => {
-          const state: JourneyStop["state"] =
-            s.key === currentKey
-              ? "current"
-              : answers[s.key] != null
-                ? "done"
-                : "ahead";
-          return {
-            key: s.key,
-            label: s.label[locale],
-            value: describeAnswer(s, answers[s.key], locale),
-            state,
-          };
-        }),
-    [category, asked, answers, currentKey, locale],
+      finderOf(category).steps.map((s): JourneyStop => ({
+        key: s.key,
+        label: s.label[locale],
+        value: describeAnswer(s, answers[s.key], locale),
+        state: stops[s.key] ?? "skipped",
+      })),
+    [category, stops, answers, locale],
   );
 
   // ---- Canvas --------------------------------------------------------------------------------

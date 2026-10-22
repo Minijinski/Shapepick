@@ -98,6 +98,10 @@ export const messages = {
   ),
   journey: text("Parcours", "Journey"),
   answerNow: text("Y répondre maintenant", "Answer it now"),
+  nothingToDecide: text(
+    "Plus rien à départager avec tes réponses",
+    "Nothing left to decide with your answers",
+  ),
   inProgress: text("En cours", "Now"),
   results: text("Résultats", "Results"),
   journeyHint: text(
@@ -140,6 +144,7 @@ export const messages = {
     "Les offres des marchands arrivent bientôt : prix du jour, stock et livraison, au même endroit.",
     "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",
   ),
+  loadingCatalogue: text("Chargement du catalogue", "Loading the catalogue"),
 } as const;
 
 export const formatCount = count;

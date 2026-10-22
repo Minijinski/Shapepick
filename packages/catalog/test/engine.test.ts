@@ -7,6 +7,7 @@ import {
   histogram,
   isInformed,
   isTrivial,
+  journeyStates,
   optionCounts,
   previousStep,
   rank,
@@ -14,6 +15,7 @@ import {
   readRange,
   sanitizeAnswers,
   stepOf,
+  withDraft,
   withOrder,
 } from '../src'
 import type { FinderDefinition } from '../src/finder/types'
@@ -242,6 +244,53 @@ describe('order', () => {
     expect(firstPending(ordered, toys, { use: 'quality', musts: 'wifi' })).toBe('color')
     expect(previousStep(ordered, toys, { use: 'quality', musts: 'wifi' }, 'color')).toBe('musts')
     expect(withOrder(def, [])).toBe(def)
+  })
+})
+
+describe('journey', () => {
+  it('commits the draft on screen, unless nothing is picked', () => {
+    const answers = { use: 'quality' }
+    expect(withDraft(answers, 'color', 'red,blue')).toEqual({ use: 'quality', color: 'red,blue' })
+    expect(withDraft(answers, 'color', '')).toBe(answers)
+    expect(withDraft(answers, 'color', undefined)).toBe(answers)
+    expect(withDraft(answers, null, 'red')).toBe(answers)
+  })
+  it('skips a question the draft leaves nothing to decide, until the draft widens', () => {
+    // Size taken first: every large board is blue, so the colour cannot change anything.
+    const sizeFirst = withOrder(def, ['use', 'size'])
+    const answers = { use: 'quality' }
+    expect(journeyStates(sizeFirst, toys, answers, 'size', 'l')).toEqual({
+      use: 'done',
+      size: 'current',
+      color: 'skipped',
+      budget: 'ahead',
+      musts: 'ahead',
+    })
+    expect(journeyStates(sizeFirst, toys, answers, 'size', 'm,l').color).toBe('ahead')
+    // Nothing picked: the committed answers decide.
+    expect(journeyStates(sizeFirst, toys, answers, 'size', '').color).toBe('ahead')
+  })
+  it('skips a question the draft makes irrelevant', () => {
+    expect(journeyStates(def, toys, {}, 'color', 'red').size).toBe('skipped')
+    expect(journeyStates(def, toys, {}, 'color', 'red,blue').size).toBe('ahead')
+  })
+  it('keeps an answered question open to editing while it applies', () => {
+    // The colour was answered: large boards being all blue does not take it off the map.
+    const sizeFirst = withOrder(def, ['use', 'size'])
+    const answers = { use: 'quality', color: 'blue' }
+    expect(journeyStates(sizeFirst, toys, answers, 'size', 'l').color).toBe('done')
+    // An answered size no longer counts once red is picked.
+    const sizeOnly = withOrder(def, ['size'])
+    expect(journeyStates(sizeOnly, toys, { size: 'l' }, 'color', 'red').size).toBe('skipped')
+    expect(journeyStates(sizeOnly, toys, { size: 'l' }, 'color', 'blue').size).toBe('done')
+    // On the results, no question is on screen.
+    expect(journeyStates(def, toys, answers, null, undefined)).toEqual({
+      use: 'done',
+      color: 'done',
+      size: 'ahead',
+      budget: 'ahead',
+      musts: 'ahead',
+    })
   })
 })
 

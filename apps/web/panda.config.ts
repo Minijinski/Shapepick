@@ -47,7 +47,16 @@ const button = defineRecipe({
 
 const optionTile = defineSlotRecipe({
   className: "option-tile",
-  slots: ["root", "visual", "label", "hint", "count", "tick", "blocked"],
+  slots: [
+    "root",
+    "visual",
+    "label",
+    "hint",
+    "count",
+    "tick",
+    "blocked",
+    "change",
+  ],
   base: {
     root: {
       position: "relative",
@@ -75,7 +84,8 @@ const optionTile = defineSlotRecipe({
         borderColor: "ink",
         boxShadow: "inset 0 0 0 1px token(colors.ink)",
       },
-      "&[aria-disabled=true]": {
+      // A tile that would leave nothing: a block rather than a button, it only says why.
+      "&[aria-disabled=true], &[data-dead]": {
         cursor: "help",
         bg: "transparent",
         borderStyle: "dashed",
@@ -126,11 +136,33 @@ const optionTile = defineSlotRecipe({
       display: "grid",
       placeItems: "center",
     },
+    // What blocks a dead tile, then the way back to that question: one line when the tile is
+    // wide enough, the link wraps below when it is not (the tile's row grows).
     blocked: {
+      display: "flex",
+      flexWrap: "wrap",
+      alignItems: "baseline",
+      columnGap: "2",
+      rowGap: "0.5",
       fontSize: "2xs",
       color: "ink.muted",
       fontFamily: "mono",
       lineHeight: "1.35",
+    },
+    change: {
+      ml: "auto",
+      fontFamily: "mono",
+      fontSize: "2xs",
+      color: "signal",
+      textDecoration: "underline",
+      textUnderlineOffset: "3px",
+      borderRadius: "pill",
+      cursor: "pointer",
+      _focusVisible: {
+        outline: "2px solid",
+        outlineColor: "signal",
+        outlineOffset: "2px",
+      },
     },
   },
 });

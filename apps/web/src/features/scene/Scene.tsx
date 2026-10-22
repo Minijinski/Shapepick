@@ -3,10 +3,12 @@ import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { css } from 'styled-system/css'
 import { gsap } from '../motion/gsap'
 import { scene } from './controller'
+import { isCompact } from './geometry'
 import { markHydrated, readViewport } from './navigation'
 import { PopupCard } from './PopupCard'
 import { type Hit, SceneRenderer, sameHit, spriteResolution } from './renderer'
-import { buildSprites, photoLoader, type Sprite } from './sprites'
+import { Drawings, Photos, photoBudget, type Shape } from './sprites'
+import { exposeStats, mark } from './stats'
 
 // The canvas behind the pages of a locale, mounted once by the layout so it survives every
 // navigation between the home page and the categories. It owns the pointer on the open canvas
@@ -42,8 +44,11 @@ export function Scene({ catalogs, locale }: Props) {
   useEffect(() => {
     const canvas = canvasRef.current
     if (!canvas) return
-    const renderer = new SceneRenderer(canvas, categories)
     const dpr = () => Math.min(2, window.devicePixelRatio || 1)
+    const resolution = spriteResolution(readViewport(), dpr())
+    const drawings = new Drawings(resolution)
+    const renderer = new SceneRenderer(canvas, categories, drawings)
+    mark('scene')
     const fit = () => {
       const vp = readViewport()
       renderer.resize(vp.w, vp.h, dpr())
@@ -103,36 +108,59 @@ export function Scene({ catalogs, locale }: Props) {
     }
     gsap.ticker.add(renderer.tick)
 
-    // ---- Sprites: the open category first, the others right after ---------------------------
-    let cancelled = false
-    const current = scene.current
-    const first = current?.mode === 'canvas' ? current.category : null
-    const order = [...categories].sort((a, b) => Number(b === first) - Number(a === first))
-    const resolution = spriteResolution(readViewport(), dpr())
-    const drawings = new Map<Category, Map<string, Sprite>>()
-    void (async () => {
-      for (const category of order) {
-        const sprites = await buildSprites(category, catalogs[category], resolution)
-        if (cancelled) return
-        renderer.setSprites(category, sprites)
-        drawings.set(category, sprites)
-      }
-    })()
+    // ---- Products: laid out at once from their shapes; drawings come as the canvas needs them --
+    const shapes = new Map<Category, Map<string, Shape>>()
+    for (const category of categories) {
+      const list = drawings.register(catalogs[category])
+      renderer.setItems(category, list)
+      shapes.set(category, new Map(list.map((shape) => [shape.slug, shape])))
+    }
 
-    // ---- Photos: fetched for the products the canvas draws, as it draws them ----------------
-    const photos = photoLoader(resolution, (category, slug, sprite) =>
-      renderer.setSprite(category, slug, sprite),
+    // ---- Photos: fetched for the products the canvas draws, as sharp as it draws them --------
+    const photos = new Photos(
+      resolution,
+      dpr(),
+      photoBudget(isCompact(readViewport()), dpr()),
+      (category, slug, sprite) => renderer.setPhoto(category, slug, sprite, sprite != null),
     )
     const items = new Map(categories.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
     const askForPhotos = window.setInterval(() => {
-      for (const [category, slugs] of renderer.takeDrawn()) {
-        for (const slug of slugs) {
+      for (const [category, drawn] of renderer.takeDrawn()) {
+        for (const [slug, scale] of drawn) {
           const item = items.get(category)?.get(slug)
-          const drawing = drawings.get(category)?.get(slug)
-          if (item && drawing) photos.want(category, item, drawing)
+          const shape = shapes.get(category)?.get(slug)
+          if (item && shape) photos.see(category, item, shape, scale)
         }
       }
+      photos.pump()
     }, 250)
+    const unexpose = exposeStats(() => ({ ...renderer.stats(), photoStore: photos.stats }))
+
+    // ---- The first screen: asked for at once, and what the preloader waits for ---------------
+    const first = renderer.firstScreen()
+    for (const f of first) {
+      drawings.want(f.key)
+      const item = items.get(f.category)?.get(f.slug)
+      const shape = shapes.get(f.category)?.get(f.slug)
+      if (item && shape) photos.see(f.category, item, shape, f.scale)
+    }
+    drawings.pump()
+    photos.pump()
+    scene.provideFirstScreen(() => {
+      let drawn = 0
+      let withPhoto = 0
+      let photographed = 0
+      for (const f of first) {
+        if (drawings.get(f.key)) drawn++
+        if (!items.get(f.category)?.get(f.slug)?.photo) continue
+        withPhoto++
+        if (photos.settled(f.category, f.slug)) photographed++
+      }
+      return {
+        drawings: first.length ? drawn / first.length : 1,
+        photos: withPhoto ? photographed / withPhoto : 1,
+      }
+    })
 
     // ---- Pointer on the open canvas ----------------------------------------------------------
     let drag: Drag | null = null
@@ -209,9 +237,11 @@ export function Scene({ catalogs, locale }: Props) {
     canvas.addEventListener('wheel', wheel, { passive: false })
 
     return () => {
-      cancelled = true
       window.clearInterval(askForPhotos)
+      scene.provideFirstScreen(null)
       photos.dispose()
+      drawings.dispose()
+      unexpose()
       window.removeEventListener('resize', fit)
       canvas.removeEventListener('pointerdown', down)
       canvas.removeEventListener('pointermove', move)

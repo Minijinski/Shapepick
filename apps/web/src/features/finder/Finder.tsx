@@ -157,14 +157,15 @@ export function Finder({ category, items, search, locale }: Props) {
     saveJourney(category, search);
   }, [category, search]);
 
-  // The canvas mirrors the answers; a new answer ripples out from the console. Ranks only show
-  // once there is something to rank on.
+  // The canvas shows what the answers keep; a new answer ripples out from the console. Ranks only
+  // show once there is something to rank on.
   useEffect(() => {
     const box = dock.current?.getBoundingClientRect();
     scene.setTargets(
       category,
       {
-        misses: finder.misses,
+        // Once an answer filters, the canvas keeps only the products ranked: the others leave it.
+        kept: finder.misses ? new Set(finder.order) : null,
         hot: finder.hotIds,
         order: finder.informed ? finder.order : [],
         scores: finder.informed ? finder.scores : [],

@@ -230,6 +230,43 @@ export function askedSteps<I>(def: FinderDefinition<I>, items: I[], answers: Ans
   return def.steps.filter((s) => asked(def, items, answers, s)).map((s) => s.key)
 }
 
+// ==== Journey ==================================================================================
+
+/**
+ * A question on the journey bar: answered, on screen, still ahead, or skipped when the answers
+ * leave it nothing to decide (it no longer applies, or every option would keep all or nothing).
+ */
+export type JourneyState = 'done' | 'current' | 'ahead' | 'skipped'
+
+/**
+ * The answers once the question on screen (`key`, null on the results) is committed as "Continue"
+ * would commit it: with its draft, the picks not confirmed yet. An empty draft commits nothing.
+ */
+export const withDraft = (answers: Answers, key: string | null, draft: string | undefined) =>
+  key != null && draft ? withAnswer(answers, key, draft) : answers
+
+/**
+ * Where each question stands, the draft on screen included, so that the journey bar greys out
+ * live a question that picking the draft would skip, and brings it back once the answers widen.
+ * An answered question stays open to editing, unless its question no longer applies at all.
+ */
+export function journeyStates<I>(
+  def: FinderDefinition<I>,
+  items: I[],
+  answers: Answers,
+  current: string | null,
+  draft: string | undefined,
+): Record<string, JourneyState> {
+  const effective = withDraft(answers, current, draft)
+  const ahead = new Set(askedSteps(def, items, effective))
+  const stateOf = (step: Step<I>): JourneyState => {
+    if (step.key === current) return 'current'
+    if (isAnswered(step, answers)) return applies(step, effective) ? 'done' : 'skipped'
+    return ahead.has(step.key) ? 'ahead' : 'skipped'
+  }
+  return Object.fromEntries(def.steps.map((s) => [s.key, stateOf(s)]))
+}
+
 /**
  * For an option that leaves nothing: the single earlier answer that, removed, would bring items
  * back. The tile then offers to change that answer instead of just being greyed out.

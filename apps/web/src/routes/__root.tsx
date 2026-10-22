@@ -21,12 +21,29 @@ export const Route = createRootRoute({
   component: Outlet,
 })
 
+// A locale's pages open under the preloader (features/scene/Preloader.tsx), with their entrances
+// on hold until it lifts. Should the page never wake up, the hold ends anyway; without JavaScript,
+// there is no preloader and no hold at all.
+const HOLD_GUARD =
+  "setTimeout(function(){document.documentElement.removeAttribute('data-loading')},5000)"
+const NO_HOLD =
+  '<style>html[data-loading] *{animation-play-state:running!important}[data-preloader]{display:none!important}</style>'
+
 function RootDocument({ children }: { children: ReactNode }) {
   const { lang } = useParams({ strict: false }) as { lang?: string }
+  const localized = isLocale(lang)
   return (
-    <html lang={isLocale(lang) ? lang : 'fr'}>
+    <html lang={localized ? lang : 'fr'} data-loading={localized ? '' : undefined}>
       <head>
         <HeadContent />
+        {localized && (
+          <>
+            {/* biome-ignore lint/security/noDangerouslySetInnerHtml: a fixed line of our own */}
+            <script dangerouslySetInnerHTML={{ __html: HOLD_GUARD }} />
+            {/* biome-ignore lint/security/noDangerouslySetInnerHtml: a fixed rule of our own */}
+            <noscript dangerouslySetInnerHTML={{ __html: NO_HOLD }} />
+          </>
+        )}
       </head>
       <body>
         {children}

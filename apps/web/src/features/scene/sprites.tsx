@@ -1,15 +1,18 @@
 import type { CatalogItem, Category, Photo } from '@choose/catalog'
 import { flushSync } from 'react-dom'
-import { createRoot } from 'react-dom/client'
-import { ProductGlyph } from '../product/glyphs'
-import { type Cutout, cutout, photoWidthFor } from '../product/photo'
+import { createRoot, type Root } from 'react-dom/client'
+import { drawingBox, squareOn } from '@choose/catalog/media'
+import { glyphKey, ProductGlyph } from '../product/glyphs'
+import { cutout, photoWidthFor } from '../product/photo'
 
-// Products as bitmaps for the canvas. Every glyph is rendered once in a detached React root,
-// serialised and rasterised at the size the canvas will draw it (device pixels included): in
-// colour with a soft contact shadow, and as an outline "ghost" for products the answers rule out.
-// Products that have a photo get it once the canvas draws them, cut out, in place of the coloured
-// drawing, if it shows them the way the canvas draws them. Drawing a bitmap per frame is what keeps
-// a field of moving products cheap.
+// Products as bitmaps for the canvas. The canvas lays products out from their shape alone (the
+// size their specs give their drawing), so it can place hundreds of them at once and draw only
+// what the camera sees. Drawings are made from a handful of specs, so products drawn alike share
+// one bitmap: 523 keyboards make 77 drawings. Each is rendered once in a detached React root,
+// serialised and rasterised at the size the canvas draws it (device pixels included), with a soft
+// contact shadow, when the canvas first needs it. Products that have a photo get it once the
+// canvas draws them, cut out, in place of the drawing, if it shows them the way the canvas draws
+// them. Drawing a bitmap per frame is what keeps a field of moving products cheap.
 
 export type Sprite = {
   /** Size of the product itself in world px (CSS px at zoom 1), shadow padding excluded. */
@@ -17,8 +20,19 @@ export type Sprite = {
   h: number
   /** Padding baked around the product for its shadow, in world px. */
   pad: number
-  color: HTMLCanvasElement
-  ghost: HTMLCanvasElement
+  image: HTMLCanvasElement
+  /** What the bitmap weighs in memory. */
+  bytes: number
+}
+
+/** What the canvas knows of a product before any bitmap: its size and the drawing it shares. */
+export type Shape = {
+  slug: string
+  /** Size of the drawing in world px. */
+  w: number
+  h: number
+  /** The drawing, shared by every product drawn alike. */
+  key: string
 }
 
 /**
@@ -27,18 +41,16 @@ export type Sprite = {
  */
 const PX_PER_UNIT: Record<Category, number> = { keyboard: 11, monitor: 7.4 }
 const PAD = 16
+/** Drawings being rasterised at once: enough to fill a screen in a few frames. */
+const DRAWING_LOADS = 3
 /** Photos loading at once: enough to fill the canvas fast, few enough to spread the cutting out. */
 const PHOTO_LOADS = 4
-/**
- * How far a photo's proportions may stray from its drawing's (photo over drawing). Measured on the
- * shops' photos: top views land within 0.7–1.15; shots from a low angle, or with a mouse alongside,
- * beyond. Split and Alice drawings only sketch their shape, so their proportions are not checked.
- */
-const PROPORTIONS = { min: 0.7, max: 1.15 }
-/** Share of its box a keyboard seen from above covers at least: a tilted one leaves its corners. */
-const MIN_FILL = 0.8
 
-const nextTask = () => new Promise<void>((resolve) => setTimeout(resolve, 0))
+export const shapeOf = (item: CatalogItem): Shape => {
+  const box = drawingBox(item)
+  const unit = PX_PER_UNIT[item.category]
+  return { slug: item.slug, w: box.w * unit, h: box.h * unit, key: glyphKey(item) }
+}
 
 type Size = { w: number; h: number; pad: number }
 
@@ -60,138 +72,339 @@ function bake(source: CanvasImageSource, size: Size, shadow: boolean) {
   return canvas
 }
 
-function renderGlyphs(items: CatalogItem[]) {
-  const host = document.createElement('div')
-  const root = createRoot(host)
-  flushSync(() => {
-    root.render(
-      items.map((item) => (
-        <div key={item.slug} data-slug={item.slug}>
-          <ProductGlyph item={item} />
-          <ProductGlyph item={item} ghost />
-        </div>
-      )),
-    )
-  })
-  const glyphs = new Map<string, [SVGSVGElement, SVGSVGElement]>()
-  for (const div of Array.from(host.children)) {
-    const [color, ghost] = Array.from(div.querySelectorAll('svg'))
-    const slug = (div as HTMLElement).dataset.slug
-    if (slug && color && ghost) glyphs.set(slug, [color, ghost])
-  }
-  return { glyphs, dispose: () => root.unmount() }
-}
+const spriteOf = (w: number, h: number, pad: number, image: HTMLCanvasElement): Sprite => ({
+  w,
+  h,
+  pad,
+  image,
+  bytes: image.width * image.height * 4,
+})
 
-async function rasterize(svg: SVGSVGElement, size: Size, shadow: boolean) {
-  svg.setAttribute('width', String(size.w))
-  svg.setAttribute('height', String(size.h))
-  const markup = new XMLSerializer().serializeToString(svg)
-  const url = URL.createObjectURL(new Blob([markup], { type: 'image/svg+xml' }))
-  try {
+// The load event rather than decode(): a page that is not being drawn (a background tab) can leave
+// decode() pending for good.
+function loadImage(src: string) {
+  return new Promise<HTMLImageElement>((resolve, reject) => {
     const img = new Image()
-    img.src = url
-    await img.decode()
-    return bake(img, size, shadow)
-  } finally {
-    URL.revokeObjectURL(url)
-  }
+    img.onload = () => resolve(img)
+    img.onerror = () => reject(new Error('Cannot load a drawing'))
+    img.src = src
+  })
 }
 
 /**
- * Rasterises a category's products. `resolution` is device px per world px: the device pixel
- * ratio times the largest zoom the canvas will draw them at.
+ * The canvas's drawings: one bitmap per drawing, shared by every product drawn alike, rasterised
+ * when the canvas first draws one of them (two at a time, from the frame loop), then the rest
+ * while the page is idle. `resolution` is device px per world px: the device pixel ratio times
+ * the largest zoom the canvas draws them at.
  */
-export async function buildSprites(
-  category: Category,
-  items: CatalogItem[],
-  resolution: number,
-): Promise<Map<string, Sprite>> {
-  await nextTask()
-  const { glyphs, dispose } = renderGlyphs(items)
-  const sprites = new Map<string, Sprite>()
-  try {
-    await Promise.all(
-      [...glyphs].map(async ([slug, [color, ghost]]) => {
-        const [, , vw = 1, vh = 1] = (color.getAttribute('viewBox') ?? '0 0 1 1')
-          .split(/\s+/)
-          .map(Number)
-        const w = vw * PX_PER_UNIT[category]
-        const h = vh * PX_PER_UNIT[category]
-        const size = { w: w * resolution, h: h * resolution, pad: PAD * resolution }
-        const [colorBitmap, ghostBitmap] = await Promise.all([
-          rasterize(color, size, true),
-          rasterize(ghost, size, false),
-        ])
-        sprites.set(slug, { w, h, pad: PAD, color: colorBitmap, ghost: ghostBitmap })
-      }),
-    )
-  } finally {
-    dispose()
+export class Drawings {
+  private readonly ready = new Map<string, { sprite: Sprite; at: number }>()
+  /** A product to draw for each drawing, and its shape. */
+  private readonly models = new Map<string, { item: CatalogItem; shape: Shape }>()
+  private readonly queue: string[] = []
+  private readonly asked = new Set<string>()
+  private running = 0
+  private idle: number | null = null
+  private host: { div: HTMLDivElement; root: Root } | null = null
+  private disposed = false
+
+  constructor(private readonly resolution: number) {}
+
+  /** Makes a catalogue's drawings available, and shapes its products. */
+  register(items: CatalogItem[]): Shape[] {
+    return items.map((item) => {
+      const shape = shapeOf(item)
+      if (!this.models.has(shape.key)) this.models.set(shape.key, { item, shape })
+      return shape
+    })
   }
-  return sprites
-}
 
-/**
- * Whether a photo shows its product as the canvas draws products, square on (a keyboard from above,
- * a monitor from the front), with nothing alongside. Other shots keep the drawing.
- */
-function squareOn(item: CatalogItem, cut: Cutout, drawn: Sprite) {
-  if (item.category === 'keyboard') {
-    if (cut.fill < MIN_FILL) return false
-    if (item.specs.formFactor === 'split' || item.specs.formFactor === 'alice') return true
+  /** The drawing and when it became ready, if it is. */
+  get(key: string) {
+    return this.ready.get(key)
   }
-  const ratio = cut.canvas.width / cut.canvas.height / (drawn.w / drawn.h)
-  return ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max
-}
 
-export type PhotoLoader = {
-  /** Asks for a product's photo (once; a product without one is ignored). */
-  want: (category: Category, item: CatalogItem, drawn: Sprite) => void
-  dispose: () => void
-}
+  /** Asks for a drawing (once): the canvas is about to draw it. */
+  want(key: string) {
+    if (this.asked.has(key) || !this.models.has(key)) return
+    this.asked.add(key)
+    this.queue.push(key)
+  }
 
-/**
- * Fetches photos as the canvas asks for them, a few at a time, in the order asked. Each product's
- * photo becomes a bitmap, cut out, as wide as its drawing and as tall as the photo says, handed
- * over through `onSprite` to replace the drawing. A ruled-out product keeps its drawing's outline
- * as its sketch; without a readable, square-on photo, the drawing stays.
- */
-export function photoLoader(
-  resolution: number,
-  onSprite: (category: Category, slug: string, sprite: Sprite) => void,
-): PhotoLoader {
-  const asked = new Set<string>()
-  const queue: { category: Category; item: CatalogItem; photo: Photo; drawn: Sprite }[] = []
-  let running = 0
-  let disposed = false
-  const pump = () => {
-    while (!disposed && running < PHOTO_LOADS) {
-      const job = queue.shift()
-      if (!job) return
-      running++
-      const { category, item, photo, drawn } = job
-      void cutout(photo, photoWidthFor(photo, drawn.w * resolution)).then((cut) => {
-        running--
-        if (cut && !disposed && squareOn(item, cut, drawn)) {
-          const h = (drawn.w * cut.canvas.height) / cut.canvas.width
-          const size = { w: drawn.w * resolution, h: h * resolution, pad: drawn.pad * resolution }
-          onSprite(category, item.slug, { ...drawn, h, color: bake(cut.canvas, size, true) })
-        }
-        pump()
+  /**
+   * Starts the next rasterisations: called every frame, and as each one ends, so the queue never
+   * waits on a frame. Between asks, the rest fills in while the page is idle.
+   */
+  pump() {
+    if (this.disposed) return
+    while (this.running < DRAWING_LOADS) {
+      const key = this.queue.shift()
+      if (!key) break
+      this.start(key)
+    }
+    if (!this.queue.length && !this.running) this.prefetch()
+  }
+
+  get stats() {
+    let bytes = 0
+    for (const { sprite } of this.ready.values()) bytes += sprite.bytes
+    return { drawings: this.ready.size, of: this.models.size, bytes, queued: this.queue.length }
+  }
+
+  /** Every asked drawing is ready. */
+  get settled() {
+    return !this.queue.length && !this.running
+  }
+
+  dispose() {
+    this.disposed = true
+    if (this.idle != null) cancelIdle(this.idle)
+    this.host?.root.unmount()
+    this.host = null
+  }
+
+  /** Drawings nobody asked for yet, one at a time, while the page has nothing else to do. */
+  private prefetch() {
+    if (this.idle != null || this.asked.size >= this.models.size) return
+    this.idle = onIdle(() => {
+      this.idle = null
+      for (const key of this.models.keys()) {
+        if (this.asked.has(key)) continue
+        this.want(key)
+        break
+      }
+      this.pump()
+    })
+  }
+
+  private start(key: string) {
+    const model = this.models.get(key)
+    if (!model) return
+    this.running++
+    const { shape } = model
+    const markup = this.markup(model.item, shape)
+    const url = URL.createObjectURL(new Blob([markup], { type: 'image/svg+xml' }))
+    const r = this.resolution
+    void loadImage(url)
+      .then((img) => {
+        if (this.disposed) return
+        const image = bake(img, { w: shape.w * r, h: shape.h * r, pad: PAD * r }, true)
+        this.ready.set(key, {
+          sprite: spriteOf(shape.w, shape.h, PAD, image),
+          at: performance.now(),
+        })
       })
+      .catch(() => {})
+      .finally(() => {
+        URL.revokeObjectURL(url)
+        this.running--
+        this.pump()
+      })
+  }
+
+  /** The drawing as SVG markup, sized in device px. */
+  private markup(item: CatalogItem, shape: Shape) {
+    if (!this.host) {
+      const div = document.createElement('div')
+      this.host = { div, root: createRoot(div) }
+    }
+    const { div, root } = this.host
+    const r = this.resolution
+    flushSync(() => {
+      root.render(<ProductGlyph item={item} width={shape.w * r} height={shape.h * r} />)
+    })
+    const svg = div.querySelector('svg')
+    return svg ? new XMLSerializer().serializeToString(svg) : ''
+  }
+}
+
+const onIdle = (run: () => void): number =>
+  typeof window.requestIdleCallback === 'function'
+    ? window.requestIdleCallback(run, { timeout: 1500 })
+    : window.setTimeout(run, 120)
+
+const cancelIdle = (id: number) => {
+  if (typeof window.cancelIdleCallback === 'function') window.cancelIdleCallback(id)
+  else window.clearTimeout(id)
+}
+
+/** Bytes of photo bitmaps the canvas may hold: phones and plain screens get less. */
+export const photoBudget = (compact: boolean, dpr: number) => (compact || dpr < 1.5 ? 32e6 : 64e6)
+
+/** How long a photo stays wanted after the canvas last drew its product (ms). */
+const WANTED_MS = 4000
+/** A photo the canvas has not drawn for this long may be let go when memory runs short (ms). */
+const UNSEEN_MS = 2000
+
+type PhotoJob = {
+  category: Category
+  item: CatalogItem
+  photo: Photo
+  shape: Shape
+  /** The photo width to ask for: the sharpest any drawing of the product needs. */
+  width: number
+  seen: number
+  running: boolean
+  attempts: number
+  notBefore: number
+}
+
+type Held = { category: Category; slug: string; sprite: Sprite; width: number; seen: number }
+
+/**
+ * The canvas's photos: fetched only for the products it draws (on screen, or a cell away), the
+ * ones drawn most recently first, at the sharpness they are drawn at (half on the home panels,
+ * whole on a canvas), cut out and handed over through `onPhoto` in place of the drawing. Those
+ * the canvas has stopped drawing are let go once they weigh more than the budget: their product
+ * falls back to its drawing and asks again when it comes back. A photo that cannot be fetched is
+ * tried twice more; one that is not a square-on cut-out is never asked for again.
+ */
+export class Photos {
+  private readonly jobs = new Map<string, PhotoJob>()
+  private readonly held = new Map<string, Held>()
+  private readonly unusable = new Set<string>()
+  private running = 0
+  private bytes = 0
+  private disposed = false
+
+  constructor(
+    private readonly resolution: number,
+    private readonly dpr: number,
+    private readonly budget: number,
+    private readonly onPhoto: (category: Category, slug: string, sprite: Sprite | null) => void,
+  ) {}
+
+  /** The canvas drew a product at `scale` screen px per world px: its photo is worth having. */
+  see(category: Category, item: CatalogItem, shape: Shape, scale: number) {
+    if (!item.photo) return
+    const key = `${category}:${item.slug}`
+    if (this.unusable.has(key)) return
+    const now = performance.now()
+    const width = photoWidthFor(item.photo, shape.w * scale * this.dpr)
+    const held = this.held.get(key)
+    if (held) {
+      held.seen = now
+      if (held.width >= width) return
+    }
+    const job = this.jobs.get(key)
+    if (job) {
+      job.seen = now
+      if (!job.running) job.width = Math.max(job.width, width)
+      return
+    }
+    this.jobs.set(key, {
+      category,
+      item,
+      photo: item.photo,
+      shape,
+      width,
+      seen: now,
+      running: false,
+      attempts: 0,
+      notBefore: 0,
+    })
+  }
+
+  /** Starts the next photos, the ones drawn most recently first; lets old ones go if needed. */
+  pump() {
+    if (this.disposed) return
+    const now = performance.now()
+    for (const [key, job] of this.jobs) {
+      if (!job.running && now - job.seen > WANTED_MS) this.jobs.delete(key)
+    }
+    while (this.running < PHOTO_LOADS) {
+      let next: [string, PhotoJob] | null = null
+      for (const entry of this.jobs) {
+        const job = entry[1]
+        if (job.running || job.notBefore > now) continue
+        if (!next || job.seen > next[1].seen) next = entry
+      }
+      if (!next) break
+      void this.run(next[0], next[1])
+    }
+    this.evict(now)
+  }
+
+  /** A product's photo is in, or will not come (none, not square on, unreachable, not wanted). */
+  settled(category: Category, slug: string) {
+    const key = `${category}:${slug}`
+    return this.held.has(key) || this.unusable.has(key) || !this.jobs.has(key)
+  }
+
+  get stats() {
+    return {
+      held: this.held.size,
+      bytes: this.bytes,
+      budget: this.budget,
+      queued: this.jobs.size,
+      running: this.running,
+      unusable: this.unusable.size,
     }
   }
-  return {
-    want(category, item, drawn) {
-      const key = `${category}:${item.slug}`
-      if (!item.photo || asked.has(key)) return
-      asked.add(key)
-      queue.push({ category, item, photo: item.photo, drawn })
-      pump()
-    },
-    dispose() {
-      disposed = true
-      queue.length = 0
-    },
+
+  dispose() {
+    this.disposed = true
+    this.jobs.clear()
+  }
+
+  private async run(key: string, job: PhotoJob) {
+    job.running = true
+    this.running++
+    try {
+      const cut = await cutout(job.photo, job.width)
+      this.jobs.delete(key)
+      if (this.disposed) return
+      if (!cut || !squareOn(job.item, cut)) {
+        this.unusable.add(key)
+        return
+      }
+      const { shape } = job
+      const h = (shape.w * cut.height) / cut.width
+      // No more pixels than the photo has: a photo asked for the home panels stays light.
+      const density = Math.min(this.resolution, cut.width / shape.w)
+      const size = { w: shape.w * density, h: h * density, pad: PAD * density }
+      const sprite = spriteOf(shape.w, h, PAD, bake(cut.image, size, true))
+      const before = this.held.get(key)
+      this.bytes += sprite.bytes - (before?.sprite.bytes ?? 0)
+      this.held.set(key, {
+        category: job.category,
+        slug: job.item.slug,
+        sprite,
+        width: job.width,
+        seen: job.seen,
+      })
+      this.onPhoto(job.category, job.item.slug, sprite)
+    } catch {
+      // Not reachable this time: again a little later, twice at most.
+      job.running = false
+      job.attempts++
+      if (job.attempts > 2) {
+        this.jobs.delete(key)
+        this.unusable.add(key)
+      } else {
+        job.notBefore = performance.now() + 2000 * job.attempts
+      }
+    } finally {
+      this.running--
+      this.pump()
+    }
+  }
+
+  /** Over budget: the photos drawn longest ago go, and their products show their drawing. */
+  private evict(now: number) {
+    if (this.bytes <= this.budget) return
+    const victims = [...this.held.entries()]
+      .filter(([, held]) => now - held.seen > UNSEEN_MS)
+      .sort((a, b) => a[1].seen - b[1].seen)
+    for (const [key, held] of victims) {
+      if (this.bytes <= this.budget * 0.85) break
+      this.held.delete(key)
+      this.bytes -= held.sprite.bytes
+      this.onPhoto(held.category, held.slug, null)
+      // Out of sight, so nothing crossfades from it: its memory goes now rather than at the next
+      // garbage collection.
+      held.sprite.image.width = 0
+      held.sprite.image.height = 0
+    }
   }
 }

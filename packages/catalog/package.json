@@ -5,6 +5,7 @@
   "sideEffects": false,
   "exports": {
     ".": "./src/index.ts",
+    "./media": "./src/media/index.ts",
     "./node": "./src/node/load-data.ts"
   },
   "scripts": {
