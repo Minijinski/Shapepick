@@ -25,10 +25,11 @@ export const switchSchema = z.object({
   feel: z.enum(E.switchFeels),
   silent: z.boolean().default(false),
   tech: z.enum(E.switchTechs),
-  actuationForceG: positive,
+  // A brand switch whose maker only names its feel ("GL Tactile") has no figures: none is guessed.
+  actuationForceG: positive.optional(),
   bottomOutG: positive.optional(),
-  preTravelMm: positive,
-  totalTravelMm: positive,
+  preTravelMm: positive.optional(),
+  totalTravelMm: positive.optional(),
   factoryLubed: z.boolean().default(false),
   soundProfile: z.enum(E.soundProfiles).optional(),
 })

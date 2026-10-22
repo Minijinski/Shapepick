@@ -156,7 +156,12 @@ export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
       ...new Set(
         item.variants.flatMap((v) =>
           v.switch
-            ? [`${v.switch.name} · ${num(v.switch.actuationForceG, locale)} g`]
+            ? [
+                // A switch known by its feel alone has no force to print.
+                v.switch.actuationForceG != null
+                  ? `${v.switch.name} · ${num(v.switch.actuationForceG, locale)} g`
+                  : v.switch.name,
+              ]
             : [],
         ),
       ),

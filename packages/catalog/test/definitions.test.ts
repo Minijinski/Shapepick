@@ -1,5 +1,5 @@
 import { describe, expect, it } from 'vitest'
-import { filter, firstPending, keyboardFinder, monitorFinder, rank } from '../src'
+import { filter, firstPending, keyboardFinder, monitorFinder, rank, switchSchema } from '../src'
 import type { FinderDefinition } from '../src/finder/types'
 import { keyboards, monitors } from './fixtures'
 
@@ -40,6 +40,38 @@ describe('keyboard finder', () => {
   it('favours quiet boards for the office', () => {
     const [first] = rank(keyboardFinder, keyboards, { use: 'office', size: 'full,f96' })
     expect(first?.item.slug).toBe('atelier-silence-96')
+  })
+  it('reads the feel of a switch known by its feel alone', () => {
+    // Logitech names its switches by their feel ("GL Tactile") and publishes no figures.
+    const glTactile = switchSchema.parse({
+      slug: 'logitech-gl-tactile',
+      brand: 'Logitech',
+      name: 'GL Tactile',
+      feel: 'tactile',
+      tech: 'mechanical',
+    })
+    const board = keyboards.find((k) => k.specs.technology === 'mechanical')
+    const feel = keyboardFinder.steps.find((s) => s.key === 'feel')
+    if (!board || !feel || feel.kind === 'range') throw new Error('demo board or feel step missing')
+    const sold = { ...board, variants: board.variants.map((v) => ({ ...v, switch: glTactile })) }
+    const matches = (id: string) => feel.options.find((o) => o.id === id)?.match(sold)
+    expect(matches('tactile')).toBe(true)
+    expect(matches('linear')).toBe(false)
+  })
+  it('scores a board by its quietest version', () => {
+    const quiet = keyboardFinder.criteria.find((c) => c.key === 'quiet')
+    const switchOf = (feel: string) =>
+      keyboards.flatMap((k) => k.variants).find((v) => v.switch?.feel === feel && !v.switch.silent)
+        ?.switch
+    const board = keyboards.find(
+      (k) => k.specs.technology === 'mechanical' && !k.specs.soundDampening,
+    )
+    const [variant] = board?.variants ?? []
+    if (!quiet || !board || !variant) throw new Error('demo board or quiet criterion missing')
+    const clicky = { ...variant, switch: switchOf('clicky') ?? null }
+    const tactile = { ...variant, switch: switchOf('tactile') ?? null }
+    expect(quiet.score({ ...board, variants: [clicky] })).toBe(0.15)
+    expect(quiet.score({ ...board, variants: [clicky, tactile] })).toBe(0.5)
   })
 })
 

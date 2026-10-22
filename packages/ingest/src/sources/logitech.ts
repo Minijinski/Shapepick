@@ -16,6 +16,10 @@ import {
 // - The category page links every keyboard; "for Mac" pages are the same model.
 // - A product page's schema.org Product lists every colour × layout SKU in `model`, with its euro
 //   price and stock ("MX Keys S - Graphite - Français (AZERTY)").
+// - Each SKU also has its own record in the page's serialized state: a subtitle and a description
+//   ("Clavier gaming sans fil à profil bas", "… commutateurs mécaniques GL et LIGHTSYNC RVB") and
+//   the facets its selectors pick, among them the switch ("style": tactile, linear, clicky,
+//   tactile-quiet), which the JSON-LD names leave out.
 // - The spec sheet is serialized in the page (facet:"Poids",value:"810 g"…); what it does not state
 //   (size, key technology for office boards) comes from the name and description, and is flagged.
 
@@ -95,6 +99,48 @@ function variantOf(name: string, color: string | undefined): Omit<OfficialVarian
 
 const pick = (pairs: Fact[], label: RegExp) => pairs.find((p) => label.test(p.label))?.value
 
+type SkuState = { subtitle: string; description: string; style?: string }
+
+/** Every SKU's record in the serialized state: `"920-012716":{name:"…",subtitle:"…",…,facets:{…}}`. */
+function skuStates(html: string) {
+  const states = new Map<string, SkuState>()
+  const starts = [...html.matchAll(/"(\d{3}-\d{6})":\{name:"/g)]
+  starts.forEach((m, i) => {
+    const sku = m[1] ?? ''
+    if (states.has(sku)) return
+    const chunk = html.slice(m.index, starts[i + 1]?.index ?? m.index + 20_000)
+    const str = (key: string) =>
+      decodeJs(new RegExp(`\\b${key}:"((?:[^"\\\\]|\\\\.)*)"`).exec(chunk)?.[1] ?? '')
+    const facets = /facets:\{((?:\w+:\{[^{}]*\},?)*)\}/.exec(chunk)?.[1] ?? ''
+    states.set(sku, {
+      subtitle: str('subtitle'),
+      description: str('description'),
+      style: /\bstyle:\{label:"[^"]*",value:"([^"]*)"\}/.exec(facets)?.[1],
+    })
+  })
+  return states
+}
+
+/**
+ * The switch a SKU's style picks, named after the family the page gives ("GL" for the low-profile
+ * range, optical switches) and in English like the other switches: "Logitech GL Tactile",
+ * "Logitech Tactile Quiet". The switch resolver reads the feel from that name.
+ */
+function switchOf(style: string, about: string, optical: boolean) {
+  const feel = style
+    .split('-')
+    .map((w) => (w[0]?.toUpperCase() ?? '') + w.slice(1))
+    .join(' ')
+  const family = /\bGL\b/.test(about)
+    ? 'GL '
+    : /\bGX\b/.test(about)
+      ? 'GX '
+      : optical
+        ? 'Optical '
+        : ''
+  return `Logitech ${family}${feel}`
+}
+
 export function read(
   url: string,
   html: string,
@@ -109,6 +155,25 @@ export function read(
   // The 2019 "PRO" keyboard is a tenkeyless board the page names in one word.
   const proTkl = name === 'PRO'
   if (proTkl) name = 'PRO Keyboard'
+
+  const { pairs, names } = facets(html)
+  const meta = /<meta name="description" content="([^"]*)"/.exec(html)?.[1] ?? ''
+  const states = skuStates(html)
+  // The SKUs' own words, where the meta description and the sheet are often silent ("à profil
+  // bas", "LIGHTSYNC RVB", "TKL filaire 8K avec écran OLED").
+  const own = [...new Set([...states.values()].flatMap((s) => [s.subtitle, s.description]))]
+  const subtitles = [...new Set([...states.values()].map((s) => s.subtitle))].join(' ')
+  const about = `${name} ${meta} ${own.join(' ')} ${pairs.map((p) => `${p.label} ${p.value}`).join(' ')}`
+  const text = `${meta}\n${own.join('\n')}\n${names.join(' ; ')}`
+  const optical = /(switchs?|interrupteurs?|commutateurs?) optiques?|optical switch/i.test(about)
+  // A board sold with one switch says it in words only ("switchs mécaniques tactiles").
+  const statedStyle = [...states.values()].some((s) => s.style)
+    ? undefined
+    : /(?:switchs?|commutateurs?|interrupteurs?) m[ée]caniques? (tactile|lin[ée]aire|clicky)/i
+        .exec(about)?.[1]
+        ?.toLowerCase()
+        .replace(/lin[ée]aire/, 'linear')
+
   const models = (product.model as Record<string, unknown>[] | undefined) ?? []
   const variants: OfficialVariant[] = models.map((m) => {
     const offer = (m.offers ?? {}) as {
@@ -119,8 +184,11 @@ export function read(
     // A promotion shows as the offer price plus a struck-through regular price.
     const strike = offer.priceSpecification
     const image = (m.image as string[] | undefined)?.[0]
+    const variant = variantOf(String(m.name ?? ''), m.color ? String(m.color) : undefined)
+    const style = (m.sku ? states.get(String(m.sku))?.style : undefined) ?? statedStyle
     return {
-      ...variantOf(String(m.name ?? ''), m.color ? String(m.color) : undefined),
+      ...variant,
+      switchName: variant.switchName ?? (style ? switchOf(style, about, optical) : undefined),
       sku: m.sku ? String(m.sku) : undefined,
       price: Number(offer.price) || undefined,
       regularPrice: /Strikethrough/i.test(strike?.priceType ?? '')
@@ -135,16 +203,13 @@ export function read(
   const french = images.filter((i) => /-fra\b|-fr\b|azerty/i.test(i.src))
   const pictures = [...french, ...images.filter((i) => !french.includes(i))].slice(0, 6)
 
-  const { pairs, names } = facets(html)
-  const meta = /<meta name="description" content="([^"]*)"/.exec(html)?.[1] ?? ''
-  const about = `${name} ${meta} ${pairs.map((p) => `${p.label} ${p.value}`).join(' ')}`
-  const text = `${meta}\n${names.join(' ; ')}`
   const tags: string[] = []
 
-  // Size: Logitech states it in names ("G512 X 75", "PRO X TKL", "MX Keys Mini"), not in the sheet.
+  // Size: Logitech states it in names ("G512 X 75", "PRO X TKL", "MX Keys Mini") or subtitles
+  // ("Clavier gaming analogique TKL filaire"), not in the sheet.
   const n = name.toLowerCase()
   if (/\bsplit\b|ergo k860/.test(n)) tags.push('split')
-  else if (/\btkl\b|\bg7[01]\d\b/.test(n) || proTkl) tags.push('80%')
+  else if (/\btkl\b|\bg7[01]\d\b/.test(n) || proTkl || /\bTKL\b/.test(subtitles)) tags.push('80%')
   else if (/\b60\b/.test(n)) tags.push('60%')
   else if (/\b9[68]\b/.test(n)) tags.push('98%')
   else if (/\b75\b|\bmini\b|keys-to-go|pebble|k380|\bpop\b/.test(n)) tags.push('75%')
@@ -157,14 +222,20 @@ export function read(
   // G213 ("Mech-Dome") and the K/MK office ranges are membrane boards, which their pages do not say.
   const membrane =
     /membrane|mech-dome/i.test(about) || /\bg213\b|\bk120\b|\bk270\b|\bmk\d{3}\b/.test(n)
-  if (/\bTMR\b|magn[ée]tique|analogique/i.test(about)) tags.push('magnetic', 'rapid trigger')
-  else if (membrane) tags.push('membrane')
+  // The G512 X takes mechanical and analog (TMR) switches alike in its "Dual Swap" sockets: it
+  // stays a mechanical, hot-swappable board.
+  const hybrid = /analogique\s*\/\s*m[ée]canique|dual swap/i.test(about)
+  if (!hybrid && /\bTMR\b|magn[ée]tique|analogique/i.test(about)) {
+    tags.push('magnetic', 'rapid trigger')
+  } else if (membrane) tags.push('membrane')
+  else if (optical) tags.push('optical')
   else if (!mechanical && !gaming) {
     tags.push(/mx keys|pebble|keys-to-go|slim|pop icon|k380|k780/i.test(n) ? 'scissor' : 'membrane')
   }
   if (/scissor/.test(tags.join(' ')) || /profil bas|low[- ]profile|ultra-?plat/i.test(about)) {
     tags.push('low profile')
   }
+  if (/interchangeables? à chaud|hot-?swap|dual swap/i.test(about)) tags.push('hot-swap')
 
   const wireless: string[] = []
   const links = `${text} ${about}`
@@ -174,7 +245,7 @@ export function read(
   if (/easy-switch/i.test(links)) wireless.push('up to 3 devices')
   const backlight = /lightsync|rvb|rgb/i.test(about)
     ? 'RGB'
-    : /r[ée]tro[ée]clair|backlit/i.test(about)
+    : /r[ée]tro-?[ée]clair|backlit|[ée]clairage (intelligent|led|blanc)/i.test(about)
       ? 'White LED'
       : 'None'
   const width = pick(pairs, /^largeur$/i)
@@ -229,6 +300,7 @@ const sourceFor = (id: keyof typeof SITES) => {
     intro: (brand) => [
       `# ${brand.name} : importés de logitech.com et logitechg.com (sites français) par \`pnpm ingest logitech\` et \`logitechg\`.`,
       '# Taille et technologie des claviers bureautiques déduites du nom : la fiche Logitech ne les donne pas.',
+      '# Switchs : le ressenti choisi sur chaque référence (Tactile, Linéaire, Clicky…) ; Logitech ne publie ni force ni course.',
     ],
     models: () => models(site),
     read: (url, html) => read(url, html, site.gaming),

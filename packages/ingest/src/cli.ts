@@ -153,9 +153,11 @@ if (withNotes.length) {
 if (switches.length) {
   console.info('\nNouveaux switchs :')
   for (const s of switches) {
-    console.info(
-      `  ${s.slug} · ${s.feel} ${s.actuationForceG} gf, ${s.preTravelMm}/${s.totalTravelMm} mm`,
-    )
+    const figures =
+      s.actuationForceG != null
+        ? ` ${s.actuationForceG} gf, ${s.preTravelMm}/${s.totalTravelMm} mm`
+        : ', ressenti seul'
+    console.info(`  ${s.slug} · ${s.feel}${figures}`)
   }
 }
 if (skipped.length) console.info(`\nIgnorés :\n${skipped.map((s) => `  ${s}`).join('\n')}`)

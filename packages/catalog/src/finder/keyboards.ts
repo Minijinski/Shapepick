@@ -494,8 +494,14 @@ export const keyboardFinder: FinderDefinition<K> = {
           k.specs.technology === "scissor"
         )
           return 0.9;
-        if (k.variants.some((v) => v.switch?.silent)) return 1;
-        if (k.variants.some((v) => v.switch?.feel === "clicky")) return 0.15;
+        // The quietest version on sale counts: a board also sold with tactile or linear switches
+        // is no loud board.
+        const switches = k.variants.flatMap((v) =>
+          v.switch ? [v.switch] : [],
+        );
+        if (switches.some((s) => s.silent)) return 1;
+        if (switches.length && switches.every((s) => s.feel === "clicky"))
+          return 0.15;
         return k.specs.soundDampening ? 0.65 : 0.5;
       },
     },

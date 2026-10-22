@@ -6,7 +6,9 @@ import { slugify } from './text'
 // Keyboard listings name their switches ("Gateron Jupiter Brown", "Cherry MX Silent Red"); the
 // same shops sell those switches with a spec sheet. This resolves a name to an existing switch
 // slug, or builds the switch from that sheet. Nothing is guessed: a switch without a readable sheet
-// stays unresolved, the keyboard variant goes without a switch and the entry is flagged for review.
+// is kept with its feel alone when its name states it ("Logitech GL Tactile"), without figures;
+// otherwise it stays unresolved, the keyboard variant goes without a switch and the entry is
+// flagged for review.
 //
 // Catalogues, tried together, the best match winning:
 // - keychron.com: one product per family, one option per colour, one spec table per colour;
@@ -89,9 +91,30 @@ const feelOf = (s: string) =>
     ? 'clicky'
     : /tactile/i.test(s)
       ? 'tactile'
-      : /linear/i.test(s)
+      : /lin(ear|[ée]aire)/i.test(s)
         ? 'linear'
         : undefined
+
+/**
+ * A switch whose name states its feel ("Logitech GL Tactile") while its maker publishes no figures:
+ * the feel alone, which the name says, rather than no switch at all. A name that does not state it
+ * ("Gateron G Pro Brown") still gives nothing: a colour is no feel.
+ */
+function feelOnly(name: string): Specs | undefined {
+  const feel = feelOf(name)
+  if (!feel) return undefined
+  return {
+    feel,
+    silent: /silent/i.test(name),
+    tech: /magnetic|hall/i.test(name)
+      ? 'magnetic'
+      : /optical/i.test(name)
+        ? 'optical'
+        : 'mechanical',
+    factoryLubed: false,
+    notes: ['ressenti seul : la marque ne publie ni force ni course'],
+  }
+}
 
 /** A switch name without what never tells switches apart: weight, mount,
  * "Switch" ("HMX Frost 45g Linear PCB Mount" → HMX Frost Linear). */
@@ -290,6 +313,13 @@ export function switchResolver(existing: Switch[]) {
       .sort((a, b) => a.score - b.score)
   }
 
+  function create({ brand, short, slug }: ReturnType<typeof split>, specs: Specs) {
+    const { notes: specNotes, ...rest } = specs
+    created.set(slug, { slug, brand, name: short, ...rest })
+    if (specNotes?.length) notes.set(slug, specNotes)
+    return { slug }
+  }
+
   async function resolve(raw: string): Promise<SwitchResolution> {
     const name = wantedName(raw)
     if (!name || /^(none|n\/a|no switch(es)?)$/i.test(name)) return {}
@@ -303,21 +333,18 @@ export function switchResolver(existing: Switch[]) {
     const direct = split(name)
     if (!best || (second && second.score === best.score && second.slug !== best.slug)) {
       if (known.has(direct.slug) || created.has(direct.slug)) return { slug: direct.slug }
+      const stated = feelOnly(raw)
+      if (stated) return create(direct, stated)
       return {
         note: `switch « ${raw} » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ${direct.slug})`,
       }
     }
-    const { brand, short, slug } = split(best.c.name)
-    if (known.has(slug) || created.has(slug)) return { slug }
+    const found = split(best.c.name)
+    if (known.has(found.slug) || created.has(found.slug)) return { slug: found.slug }
     // The same switch may be on both shops: the first readable sheet wins.
-    for (const { c } of ranked.filter((r) => r.slug === slug)) {
+    for (const { c } of ranked.filter((r) => r.slug === found.slug)) {
       const specs = await c.specs()
-      if (specs) {
-        const { notes: specNotes, ...rest } = specs
-        created.set(slug, { slug, brand, name: short, ...rest })
-        if (specNotes?.length) notes.set(slug, specNotes)
-        return { slug }
-      }
+      if (specs) return create(found, specs)
     }
     // No readable sheet for this exact name, but a close one we already have ("Cherry MX RGB Red" →
     // Cherry MX Red, the same switch in a clear housing).
@@ -325,8 +352,10 @@ export function switchResolver(existing: Switch[]) {
       (r) => r.score <= best.score + 1 && (known.has(r.slug) || created.has(r.slug)),
     )
     if (close) return { slug: close.slug }
+    const stated = feelOnly(raw)
+    if (stated) return create(found, stated)
     return {
-      note: `switch « ${raw} » : specs non publiées en texte, à saisir dans data/switches.yaml (slug ${slug})`,
+      note: `switch « ${raw} » : specs non publiées en texte, à saisir dans data/switches.yaml (slug ${found.slug})`,
     }
   }
 

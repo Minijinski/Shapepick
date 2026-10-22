@@ -126,10 +126,11 @@ export const switches = pgTable('switches', {
   feel: switchFeel().notNull(),
   silent: boolean().notNull().default(false),
   tech: switchTech().notNull(),
-  actuationForceG: real().notNull(),
+  /** Null for a switch known by its feel alone (the maker publishes no figures). */
+  actuationForceG: real(),
   bottomOutG: real(),
-  preTravelMm: real().notNull(),
-  totalTravelMm: real().notNull(),
+  preTravelMm: real(),
+  totalTravelMm: real(),
   factoryLubed: boolean().notNull().default(false),
   soundProfile: soundProfile(),
 })

@@ -7,11 +7,21 @@ type Variant = KeyboardInput['variants'][number]
 
 export const joined = (xs: (string | undefined)[]) => xs.filter(Boolean).join(' ; ')
 
+/** Hues that make a two-colour name a colourful board ("Graphite et vert", "Black & Pink"). */
+const HUE =
+  /\b(red|rouge|pink|rose|orange|yellow|jaune|green|vert|blue|bleu|purple|violet|lilac|lilas|lavender|lavande|mint|menthe|magenta|coral|corail|turquoise)\b/i
+
+const BLACK = /black|noir|carbon|graphite|anthracite|space|dark|charcoal|midnight|onyx/i
+const WHITE =
+  /white|blanc|silver|argent|ivory|ivoire|light|cream|cr[eè]me|shell|snow|frost|p[aâ]le|mercury/i
+
+/** English and French colour names ("Noir", "Blanc cassé", "Pale Gray") → the colour question. */
 export function familyOf(color: string): Variant['colorFamily'] {
-  if (/transparent|clear|translucent|crystal/i.test(color)) return 'transparent'
-  if (/black|carbon|graphite|space|dark|charcoal|midnight|onyx/i.test(color)) return 'black'
-  if (/white|silver|ivory|light|cream|shell|snow|frost/i.test(color)) return 'white'
-  if (/gr[ae]y/i.test(color)) return 'black'
+  if (/transparent|clear|translucen|crystal|cristal/i.test(color)) return 'transparent'
+  if (/\s(et|and|&|\+|\/)\s/i.test(color) && HUE.test(color)) return 'color'
+  if (BLACK.test(color)) return 'black'
+  if (WHITE.test(color)) return 'white'
+  if (/gr[ae]y|gris/i.test(color)) return 'black'
   return 'color'
 }
 

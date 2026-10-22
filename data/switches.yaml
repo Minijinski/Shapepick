@@ -78,3 +78,15 @@
 - { slug: yunzii-candy-linear, brand: Yunzii, name: Candy Linear, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.3, factoryLubed: true }
 - { slug: yunzii-onyx-gray-tactile-clicky, brand: Yunzii, name: Onyx Gray Tactile Clicky, feel: clicky, tech: mechanical, actuationForceG: 43, preTravelMm: 2, totalTravelMm: 3.9, factoryLubed: true }
 - { slug: yunzii-crystal-linear, brand: Yunzii, name: Crystal Linear, feel: linear, tech: mechanical, actuationForceG: 40, preTravelMm: 1.5, totalTravelMm: 3.3, factoryLubed: true }
+
+# Switchs Logitech connus par leur seul ressenti, lu sur le sélecteur de chaque référence (pnpm ingest logitech et logitechg, 2026-10-22) : Logitech ne publie ni force ni course.
+- { slug: logitech-clicky, brand: Logitech, name: Clicky, feel: clicky, tech: mechanical }
+- { slug: logitech-gl-clicky, brand: Logitech, name: GL Clicky, feel: clicky, tech: mechanical }
+- { slug: logitech-gl-linear, brand: Logitech, name: GL Linear, feel: linear, tech: mechanical }
+- { slug: logitech-gl-tactile, brand: Logitech, name: GL Tactile, feel: tactile, tech: mechanical }
+- { slug: logitech-gx-clicky, brand: Logitech, name: GX Clicky, feel: clicky, tech: mechanical }
+- { slug: logitech-linear, brand: Logitech, name: Linear, feel: linear, tech: mechanical }
+- { slug: logitech-optical-linear, brand: Logitech, name: Optical Linear, feel: linear, tech: optical }
+- { slug: logitech-optical-tactile, brand: Logitech, name: Optical Tactile, feel: tactile, tech: optical }
+- { slug: logitech-tactile, brand: Logitech, name: Tactile, feel: tactile, tech: mechanical }
+- { slug: logitech-tactile-quiet, brand: Logitech, name: Tactile Quiet, feel: tactile, tech: mechanical }

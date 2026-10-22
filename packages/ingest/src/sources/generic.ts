@@ -294,9 +294,10 @@ export async function mapListings(
         : 'none',
     southFacing: f.all(LABEL.direction).some((d) => /south/i.test(d)) || tags.has('south-facing'),
     knob: /\bknob\b|rotary|\bdial\b/i.test(all),
-    screen: /\b(lcd|tft)\b|built-in (screen|display)|\b(smart|color|oled) (screen|display)\b/i.test(
-      all,
-    ),
+    screen:
+      /\b(lcd|tft)\b|built-in (screen|display)|\b(smart|color|oled) (screen|display)\b|[ée]crans? (oled|lcd|tft|int[ée]gr[ée])/i.test(
+        all,
+      ),
     firmware: /\bZMK\b/.test(all)
       ? 'zmk'
       : /\bVIAL\b/i.test(all)
@@ -311,7 +312,8 @@ export async function mapListings(
     batteryMah: battery || undefined,
     wristRestIncluded:
       /^(yes|oui|included|inclus)/i.test(f.first(LABEL.wristRest) ?? '') ||
-      /(includes?|with)\s+(a\s+)?(magnetic\s+)?(wrist|palm)\s+rest/i.test(all),
+      /(includes?|with)\s+(a\s+)?(magnetic\s+)?(wrist|palm)\s+rest/i.test(all) ||
+      /repose-?(poignets?|paumes?)\b[^.;]{0,30}?(int[ée]gr[ée]|inclus|rembourr[ée])/i.test(all),
     soundDampening: /foam|dampen|poron|silicone pad|sound absorb/i.test(all),
     weightG: weight ? Math.round(weight) : undefined,
     widthMm: dims ? Math.round(Math.max(Number(dims[1]), Number(dims[2]))) : undefined,

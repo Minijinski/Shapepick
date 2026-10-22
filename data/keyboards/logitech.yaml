@@ -1,5 +1,7 @@
 # Logitech : importés de logitech.com et logitechg.com (sites français) par `pnpm ingest logitech` et `logitechg`.
 # Taille et technologie des claviers bureautiques déduites du nom : la fiche Logitech ne les donne pas.
+# Switchs : le ressenti choisi sur chaque référence (Tactile, Linéaire, Clicky…) ; Logitech ne publie ni force ni course.
+# Fiches relues le 2026-10-22 (switchs, couleurs, profil bas, éclairage, repose-poignets, hot-swap) d’après le sous-titre et la description de chaque référence.
 # Le script ajoute seulement les modèles absents : les corrections faites ici restent.
 # Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
@@ -49,12 +51,12 @@
     - { sku: 920-011581, colorName: Graphite, colorFamily: black, layout: iso_nordic }
     - { sku: 920-011584, colorName: Graphite, colorFamily: black, layout: iso_uk }
     - { sku: 920-011587, colorName: Graphite, colorFamily: black, layout: ansi_us }
-    - { sku: 920-011566, colorName: Pale Gray, colorFamily: black, layout: iso_de }
-    - { sku: 920-011582, colorName: Pale Gray, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-011585, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
-    - { sku: 920-011588, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
-    - { sku: 920-011638, colorName: Pale Grey, colorFamily: black, layout: ansi_us }
-    - { sku: 920-011626, colorName: Pale Grey, colorFamily: black, layout: iso_fr }
+    - { sku: 920-011566, colorName: Pale Gray, colorFamily: white, layout: iso_de }
+    - { sku: 920-011582, colorName: Pale Gray, colorFamily: white, layout: iso_nordic }
+    - { sku: 920-011585, colorName: Pale Gray, colorFamily: white, layout: iso_uk }
+    - { sku: 920-011588, colorName: Pale Gray, colorFamily: white, layout: ansi_us }
+    - { sku: 920-011638, colorName: Pale Grey, colorFamily: white, layout: ansi_us }
+    - { sku: 920-011626, colorName: Pale Grey, colorFamily: white, layout: iso_fr }
     - { sku: 920-011635, colorName: Space Gray, colorFamily: black, layout: iso_uk }
     - { sku: 920-011637, colorName: Space Gray, colorFamily: black, layout: ansi_us }
     - { sku: 920-011625, colorName: Space Gray, colorFamily: black, layout: iso_fr }
@@ -73,13 +75,19 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-deu.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-mechanical.920-010751
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 828, widthMm: 434, depthMm: 132 }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, weightG: 828, widthMm: 434, depthMm: 132 }
   variants:
-    - { sku: 920-010748, colorName: Graphite, colorFamily: black, layout: iso_de }
-    - { sku: 920-010751, colorName: Graphite, colorFamily: black, layout: iso_fr }
-    - { sku: 920-010757, colorName: Graphite, colorFamily: black, layout: ansi_us }
-    - { sku: 920-010753, colorName: Graphite, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-010756, colorName: Graphite, colorFamily: black, layout: iso_uk }
+    - { sku: 920-010748, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-tactile-quiet }
+    - { sku: 920-010750, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-clicky }
+    - { sku: 920-010749, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-linear }
+    - { sku: 920-010751, colorName: Graphite, colorFamily: black, layout: iso_fr, switch: logitech-tactile-quiet }
+    - { sku: 920-010757, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-tactile-quiet }
+    - { sku: 920-010759, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-clicky }
+    - { sku: 920-010758, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-linear }
+    - { sku: 920-010753, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-tactile-quiet }
+    - { sku: 920-010755, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-clicky }
+    - { sku: 920-010754, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-linear }
+    - { sku: 920-010756, colorName: Graphite, colorFamily: black, layout: iso_uk, switch: logitech-tactile-quiet }
 
 - slug: logitech-mx-mechanical-mini
   brand: logitech
@@ -99,15 +107,21 @@
     - https://www.logitech.com/fr-fr/shop/p/mx-mechanical-mini-mac
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 500, weightG: 612, widthMm: 313, depthMm: 26 }
   variants:
-    - { sku: 920-010771, colorName: Graphite, colorFamily: black, layout: iso_de }
-    - { sku: 920-010774, colorName: Graphite, colorFamily: black, layout: iso_fr }
-    - { sku: 920-010780, colorName: Graphite, colorFamily: black, layout: ansi_us }
-    - { sku: 920-010776, colorName: Graphite, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-010837, colorName: Space Gray, colorFamily: black, layout: ansi_us }
-    - { sku: 920-010794, colorName: Pale Gray, colorFamily: black, layout: iso_de }
-    - { sku: 920-010795, colorName: Pale Gray, colorFamily: black, layout: iso_fr }
-    - { sku: 920-010798, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
-    - { sku: 920-010799, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
+    - { sku: 920-010771, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-tactile-quiet }
+    - { sku: 920-010773, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-clicky }
+    - { sku: 920-010772, colorName: Graphite, colorFamily: black, layout: iso_de, switch: logitech-linear }
+    - { sku: 920-010774, colorName: Graphite, colorFamily: black, layout: iso_fr, switch: logitech-tactile-quiet }
+    - { sku: 920-010780, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-tactile-quiet }
+    - { sku: 920-010782, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-clicky }
+    - { sku: 920-010781, colorName: Graphite, colorFamily: black, layout: ansi_us, switch: logitech-linear }
+    - { sku: 920-010776, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-tactile-quiet }
+    - { sku: 920-010778, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-clicky }
+    - { sku: 920-010777, colorName: Graphite, colorFamily: black, layout: iso_nordic, switch: logitech-linear }
+    - { sku: 920-010837, colorName: Space Gray, colorFamily: black, layout: ansi_us, switch: logitech-tactile-quiet }
+    - { sku: 920-010794, colorName: Pale Gray, colorFamily: white, layout: iso_de, switch: logitech-tactile-quiet }
+    - { sku: 920-010795, colorName: Pale Gray, colorFamily: white, layout: iso_fr, switch: logitech-tactile-quiet }
+    - { sku: 920-010798, colorName: Pale Gray, colorFamily: white, layout: iso_uk, switch: logitech-tactile-quiet }
+    - { sku: 920-010799, colorName: Pale Gray, colorFamily: white, layout: ansi_us, switch: logitech-tactile-quiet }
 
 - slug: logitech-mx-keys-mini
   brand: logitech
@@ -134,11 +148,11 @@
     - { sku: 920-010495, colorName: Graphite, colorFamily: black, layout: iso_uk }
     - { sku: 920-010481, colorName: Rose, colorFamily: color, layout: iso_de }
     - { sku: 920-010494, colorName: Rose, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-010480, colorName: Pale Gray, colorFamily: black, layout: iso_de }
-    - { sku: 920-010483, colorName: Pale Gray, colorFamily: black, layout: iso_fr }
-    - { sku: 920-010493, colorName: Pale Gray, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-010499, colorName: Pale Gray, colorFamily: black, layout: ansi_us }
-    - { sku: 920-010496, colorName: Pale Gray, colorFamily: black, layout: iso_uk }
+    - { sku: 920-010480, colorName: Pale Gray, colorFamily: white, layout: iso_de }
+    - { sku: 920-010483, colorName: Pale Gray, colorFamily: white, layout: iso_fr }
+    - { sku: 920-010493, colorName: Pale Gray, colorFamily: white, layout: iso_nordic }
+    - { sku: 920-010499, colorName: Pale Gray, colorFamily: white, layout: ansi_us }
+    - { sku: 920-010496, colorName: Pale Gray, colorFamily: white, layout: iso_uk }
     - { sku: 920-012645, colorName: Space Gray, colorFamily: black, layout: iso_de }
     - { sku: 920-012646, colorName: Space Gray, colorFamily: black, layout: iso_fr }
     - { sku: 920-012651, colorName: Space Gray, colorFamily: black, layout: iso_uk }
@@ -157,10 +171,10 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-offwhite-gallery-1-ita.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/wave-keys-ergonomic-wireless
-  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 750 }
+  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 750 }
   variants:
-    - { sku: 920-012284, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
-    - { sku: 920-012299, colorName: Blanc cassé, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-012284, colorName: Blanc cassé, colorFamily: white, layout: iso_de }
+    - { sku: 920-012299, colorName: Blanc cassé, colorFamily: white, layout: iso_nordic }
     - { sku: 920-012283, colorName: Graphite, colorFamily: black, layout: iso_de }
     - { sku: 920-012286, colorName: Graphite, colorFamily: black, layout: iso_fr }
     - { sku: 920-012298, colorName: Graphite, colorFamily: black, layout: iso_nordic }
@@ -179,7 +193,7 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-deu-new.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/k860-split-ergonomic.920-010104
-  specs: { formFactor: split, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 1160, widthMm: 456, depthMm: 233 }
+  specs: { formFactor: split, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 1160, widthMm: 456, depthMm: 233 }
   variants:
     - { sku: 920-010107, colorName: Graphite, colorFamily: black, layout: iso_uk }
     - { sku: 920-009168, colorName: Graphite, colorFamily: black, layout: iso_nordic }
@@ -206,11 +220,11 @@
     - { sku: 920-013060, colorName: Blanc cassé et orange, colorFamily: color, layout: iso_de }
     - { sku: 920-013072, colorName: Blanc cassé et orange, colorFamily: color, layout: ansi_us }
     - { sku: 920-013151, colorName: Blanc cassé et orange, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013059, colorName: Graphite et vert, colorFamily: black, layout: iso_de }
-    - { sku: 920-013062, colorName: Graphite et vert, colorFamily: black, layout: iso_fr }
-    - { sku: 920-013071, colorName: Graphite et vert, colorFamily: black, layout: ansi_us }
-    - { sku: 920-013150, colorName: Graphite et vert, colorFamily: black, layout: iso_uk }
-    - { sku: 920-013273, colorName: Graphite et vert, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-013059, colorName: Graphite et vert, colorFamily: color, layout: iso_de }
+    - { sku: 920-013062, colorName: Graphite et vert, colorFamily: color, layout: iso_fr }
+    - { sku: 920-013071, colorName: Graphite et vert, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013150, colorName: Graphite et vert, colorFamily: color, layout: iso_uk }
+    - { sku: 920-013273, colorName: Graphite et vert, colorFamily: color, layout: iso_nordic }
 
 - slug: logitech-signature-slim-keyboard-k950
   brand: logitech
@@ -232,10 +246,10 @@
     - { sku: 920-012465, colorName: Graphite, colorFamily: black, layout: ansi_us }
     - { sku: 920-012451, colorName: Graphite, colorFamily: black, layout: iso_de }
     - { sku: 920-012459, colorName: Graphite, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-012464, colorName: Blanc cassé, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012454, colorName: Blanc cassé, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012466, colorName: Blanc cassé, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012452, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+    - { sku: 920-012464, colorName: Blanc cassé, colorFamily: white, layout: iso_uk }
+    - { sku: 920-012454, colorName: Blanc cassé, colorFamily: white, layout: iso_fr }
+    - { sku: 920-012466, colorName: Blanc cassé, colorFamily: white, layout: ansi_us }
+    - { sku: 920-012452, colorName: Blanc cassé, colorFamily: white, layout: iso_de }
 
 - slug: logitech-signature-k650
   brand: logitech
@@ -250,9 +264,9 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-ch.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/k650-signature-wireless-keyboard
-  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 700, widthMm: 457, depthMm: 194 }
+  specs: { formFactor: full, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 700, widthMm: 457, depthMm: 194 }
   variants:
-    - { sku: 920-010967, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
+    - { sku: 920-010967, colorName: Blanc cassé, colorFamily: white, layout: iso_de }
     - { sku: 920-010918, colorName: Graphite, colorFamily: black, layout: iso_uk }
     - { sku: 920-010945, colorName: Graphite, colorFamily: black, layout: ansi_us }
     - { sku: 920-010951, colorName: Graphite, colorFamily: black, layout: iso_nordic }
@@ -283,11 +297,11 @@
     - { sku: 920-011851, colorName: Tons de graphite, colorFamily: black, layout: ansi_us }
     - { sku: 920-011803, colorName: Tons de graphite, colorFamily: black, layout: iso_fr }
     - { sku: 920-011879, colorName: Tons de graphite, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-011844, colorName: Tons de blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-011796, colorName: Tons de blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-011852, colorName: Tons de blanc, colorFamily: color, layout: ansi_us }
-    - { sku: 920-011804, colorName: Tons de blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-011880, colorName: Tons de blanc, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-011844, colorName: Tons de blanc, colorFamily: white, layout: iso_uk }
+    - { sku: 920-011796, colorName: Tons de blanc, colorFamily: white, layout: iso_de }
+    - { sku: 920-011852, colorName: Tons de blanc, colorFamily: white, layout: ansi_us }
+    - { sku: 920-011804, colorName: Tons de blanc, colorFamily: white, layout: iso_fr }
+    - { sku: 920-011880, colorName: Tons de blanc, colorFamily: white, layout: iso_nordic }
 
 - slug: logitech-keys-to-go-2
   brand: logitech
@@ -310,9 +324,9 @@
     - { sku: 920-012964, colorName: Graphite, colorFamily: black, layout: iso_de }
     - { sku: 920-012967, colorName: Graphite, colorFamily: black, layout: iso_fr }
     - { sku: 920-012979, colorName: Graphite, colorFamily: black, layout: iso_nordic }
-    - { sku: 920-012982, colorName: Blanc cassé, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012965, colorName: Blanc cassé, colorFamily: color, layout: iso_de }
-    - { sku: 920-012968, colorName: Blanc cassé, colorFamily: color, layout: iso_fr }
+    - { sku: 920-012982, colorName: Blanc cassé, colorFamily: white, layout: iso_uk }
+    - { sku: 920-012965, colorName: Blanc cassé, colorFamily: white, layout: iso_de }
+    - { sku: 920-012968, colorName: Blanc cassé, colorFamily: white, layout: iso_fr }
 
 # Lot du 2026-10-22 : 18 modèles, www.logitechg.com/fr-fr (prix € et dispositions du site français)
 - slug: logitech-pro-x2-rapid
@@ -328,16 +342,16 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-us-intl.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x2-rapid.920-014080
-  specs: { formFactor: full, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, widthMm: 363, depthMm: 38 }
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, widthMm: 363, depthMm: 38 }
   variants:
-    - { sku: 920-014080, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014078, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-014081, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014082, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014094, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014093, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-014095, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014096, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-014080, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: 920-014078, colorName: Noir, colorFamily: black, layout: iso_de }
+    - { sku: 920-014081, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-014082, colorName: Noir, colorFamily: black, layout: iso_uk }
+    - { sku: 920-014094, colorName: Blanc, colorFamily: white, layout: iso_fr }
+    - { sku: 920-014093, colorName: Blanc, colorFamily: white, layout: iso_de }
+    - { sku: 920-014095, colorName: Blanc, colorFamily: white, layout: iso_nordic }
+    - { sku: 920-014096, colorName: Blanc, colorFamily: white, layout: iso_uk }
     - { sku: 920-014110, colorName: Magenta, colorFamily: color, layout: ansi_us }
     - { sku: 920-014109, colorName: Magenta, colorFamily: color, layout: iso_uk }
 
@@ -354,18 +368,18 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-75-pdp/gallery/black/g316-x-75-gaming-keyboard-top-angle-black-gallery-1-de.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g316-x-75-gaming-keyboard.920-014290
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 740 }
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 740 }
   variants:
-    - { sku: 920-014275, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-014276, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014278, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014279, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014281, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-014314, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-014315, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014317, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014318, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014319, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-014275, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-014276, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014278, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-014279, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014281, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-014314, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-014315, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014317, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-014318, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014319, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-tactile }
 
 - slug: logitech-g316-x-98
   brand: logitech
@@ -380,23 +394,24 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g316-x-98-gaming-keyboard.920-014190
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 880, widthMm: 140, depthMm: 40 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 880, widthMm: 140, depthMm: 40 }
   variants:
-    - { sku: 920-014190, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014193, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014195, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-014192, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014189, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-014227, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014230, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014231, colorName: Blanc, colorFamily: color, layout: ansi_us }
-    - { sku: 920-014229, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-014272, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-014253, colorName: Lilas, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014256, colorName: Lilas, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014257, colorName: Lilas, colorFamily: color, layout: ansi_us }
-    - { sku: 920-014274, colorName: Lilas, colorFamily: color, layout: iso_de }
+    - { sku: 920-014190, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014193, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014195, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-014192, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-014189, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-014227, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014230, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014231, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-014229, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-014272, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-014253, colorName: Lilas, colorFamily: color, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014256, colorName: Lilas, colorFamily: color, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014257, colorName: Lilas, colorFamily: color, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-014274, colorName: Lilas, colorFamily: color, layout: iso_de, switch: logitech-tactile }
 
+# à vérifier : hybride (bases Dual Swap, switchs mécaniques ou analogiques TMR) : rangé en mécanique, sans rapid trigger
 - slug: logitech-g512-x-98
   brand: logitech
   name: G512 X 98
@@ -410,18 +425,20 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-uk.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-98-gaming-keyboard.920-014000
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000 }
   variants:
-    - { sku: 920-013998, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-014000, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-014002, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-014003, colorName: Blanc, colorFamily: color, layout: ansi_us }
-    - { sku: 920-013974, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-013976, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013977, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-013979, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013980, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013998, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-014000, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-014002, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-014003, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-013974, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-013976, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-013977, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-013979, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-013980, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-013981, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-linear }
 
+# à vérifier : hybride (bases Dual Swap, switchs mécaniques ou analogiques TMR) : rangé en mécanique, sans rapid trigger
 - slug: logitech-g512-x-75
   brand: logitech
   name: G512 X 75
@@ -438,18 +455,20 @@
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard.920-013930
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 850 }
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 850 }
   variants:
-    - { sku: 920-013928, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-013930, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013931, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-013933, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013934, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-013950, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-013952, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013953, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-013954, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013955, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013928, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-013930, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-013931, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-013932, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-linear }
+    - { sku: 920-013933, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-013934, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-013935, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-linear }
+    - { sku: 920-013950, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-013952, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-013953, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-013954, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-013955, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-tactile }
 
 - slug: logitech-pro-x-tkl
   brand: logitech
@@ -466,21 +485,23 @@
     - https://www.logitechg.com/fr-fr/shop/p/pro-x-tkl-wireless-keyboard.920-012156
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, widthMm: 352, depthMm: 38 }
   variants:
-    - { sku: 920-012155, colorName: Magenta, colorFamily: color, layout: iso_de }
-    - { sku: 920-012156, colorName: Magenta, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012157, colorName: Magenta, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012158, colorName: Magenta, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012159, colorName: Magenta, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012130, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012131, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012134, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012135, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012136, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012144, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-012145, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012146, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012147, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012148, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012155, colorName: Magenta, colorFamily: color, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-012156, colorName: Magenta, colorFamily: color, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-012157, colorName: Magenta, colorFamily: color, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-012158, colorName: Magenta, colorFamily: color, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-012159, colorName: Magenta, colorFamily: color, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-012130, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-012131, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-012134, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-012422, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-linear }
+    - { sku: 920-012135, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-012136, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-012123, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-linear }
+    - { sku: 920-012144, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-012145, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-012146, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-012147, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-tactile }
+    - { sku: 920-012148, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-tactile }
 
 - slug: logitech-pro-x-tkl-rapid
   brand: logitech
@@ -495,17 +516,17 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-ch.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x-tkl-rapid.920-013229
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: 920-013228, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-013229, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013232, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013233, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-013240, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-013241, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013287, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-013288, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013242, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013228, colorName: Noir, colorFamily: black, layout: iso_de }
+    - { sku: 920-013229, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: 920-013232, colorName: Noir, colorFamily: black, layout: iso_uk }
+    - { sku: 920-013233, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: 920-013240, colorName: Blanc, colorFamily: white, layout: iso_de }
+    - { sku: 920-013241, colorName: Blanc, colorFamily: white, layout: iso_fr }
+    - { sku: 920-013287, colorName: Blanc, colorFamily: white, layout: iso_nordic }
+    - { sku: 920-013288, colorName: Blanc, colorFamily: white, layout: iso_uk }
+    - { sku: 920-013242, colorName: Blanc, colorFamily: white, layout: ansi_us }
     - { sku: 920-013248, colorName: Magenta, colorFamily: color, layout: iso_de }
     - { sku: 920-013249, colorName: Magenta, colorFamily: color, layout: iso_fr }
     - { sku: 920-013251, colorName: Magenta, colorFamily: color, layout: iso_nordic }
@@ -525,18 +546,25 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-deu.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g915-x-wireless-mechanical-gaming-keyboard
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: 920-012697, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012706, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012707, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012708, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012698, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012686, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-012687, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012688, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012689, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012690, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012697, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-linear }
+    - { sku: 920-012705, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-clicky }
+    - { sku: 920-012671, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012706, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-clicky }
+    - { sku: 920-012672, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012707, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-clicky }
+    - { sku: 920-012674, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012708, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-clicky }
+    - { sku: 920-012675, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012698, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-linear }
+    - { sku: 920-012709, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-clicky }
+    - { sku: 920-012676, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-tactile }
+    - { sku: 920-012686, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012687, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012688, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012689, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012690, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-gl-tactile }
 
 - slug: logitech-g915-x-lightspeed-tkl
   brand: logitech
@@ -553,16 +581,24 @@
     - https://www.logitechg.com/fr-fr/shop/p/g915-x-tkl-wireless
   specs: { formFactor: tkl, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: 920-012744, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012745, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012746, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012747, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012720, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012733, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-012734, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012735, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012737, colorName: Blanc, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012736, colorName: Blanc, colorFamily: color, layout: iso_uk }
+    - { sku: 920-012744, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-linear }
+    - { sku: 920-012716, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012754, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-clicky }
+    - { sku: 920-012745, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-linear }
+    - { sku: 920-012717, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012755, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-clicky }
+    - { sku: 920-012746, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-linear }
+    - { sku: 920-012719, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012756, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-clicky }
+    - { sku: 920-012747, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-linear }
+    - { sku: 920-012721, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-tactile }
+    - { sku: 920-012757, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-clicky }
+    - { sku: 920-012720, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012733, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012734, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012735, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012737, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-gl-tactile }
+    - { sku: 920-012736, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-gl-tactile }
 
 - slug: logitech-g915-x
   brand: logitech
@@ -577,13 +613,18 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-fra.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g915-x-mechanical-gaming-keyboard
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 1040, widthMm: 150, depthMm: 23 }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 1040, widthMm: 150, depthMm: 23 }
   variants:
-    - { sku: 920-012938, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012939, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012940, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012941, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012942, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012938, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012951, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-linear }
+    - { sku: 920-012939, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012952, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-linear }
+    - { sku: 920-012940, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012953, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-linear }
+    - { sku: 920-012941, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012954, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-linear }
+    - { sku: 920-012942, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-tactile }
+    - { sku: 920-012955, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-linear }
 
 - slug: logitech-g515-rapid-tkl
   brand: logitech
@@ -598,13 +639,13 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g515-rapid-tkl.920-013858
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 800, widthMm: 146, depthMm: 22 }
+  specs: { formFactor: tkl, technology: magnetic, lowProfile: true, hotSwap: none, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 800, widthMm: 146, depthMm: 22 }
   variants:
-    - { sku: 920-013856, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-013858, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-013859, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-013860, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-013861, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-013856, colorName: Noir, colorFamily: black, layout: iso_de }
+    - { sku: 920-013858, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: 920-013859, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-013860, colorName: Noir, colorFamily: black, layout: iso_uk }
+    - { sku: 920-013861, colorName: Noir, colorFamily: black, layout: ansi_us }
 
 - slug: logitech-pro-x-60
   brand: logitech
@@ -619,17 +660,19 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-ch.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x-60-wireless-keyboard.920-011925
-  specs: { formFactor: f60, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, widthMm: 290, depthMm: 103 }
+  specs: { formFactor: f60, technology: optical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, widthMm: 290, depthMm: 103 }
   variants:
-    - { sku: 920-011925, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-011928, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-011929, colorName: Blanc, colorFamily: color, layout: iso_uk }
-    - { sku: 920-011930, colorName: Blanc, colorFamily: color, layout: ansi_us }
-    - { sku: 920-011905, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-011906, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-011909, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-011910, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-011911, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-011925, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-optical-tactile }
+    - { sku: 920-011928, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-optical-tactile }
+    - { sku: 920-011929, colorName: Blanc, colorFamily: white, layout: iso_uk, switch: logitech-optical-tactile }
+    - { sku: 920-011930, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-optical-tactile }
+    - { sku: 920-011905, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-optical-tactile }
+    - { sku: 920-011906, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-optical-tactile }
+    - { sku: 920-011909, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-optical-tactile }
+    - { sku: 920-012167, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-optical-linear }
+    - { sku: 920-011910, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-optical-tactile }
+    - { sku: 920-011911, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-optical-tactile }
+    - { sku: 920-012168, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-optical-linear }
 
 - slug: logitech-g515-lightspeed-tkl
   brand: logitech
@@ -644,17 +687,20 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-us.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g515-tkl-wireless-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 880, widthMm: 150, depthMm: 22 }
+  specs: { formFactor: tkl, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 880, widthMm: 150, depthMm: 22 }
   variants:
-    - { sku: 920-012542, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012546, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012550, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012538, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-012555, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012543, colorName: Blanc, colorFamily: color, layout: iso_de }
-    - { sku: 920-012547, colorName: Blanc, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012551, colorName: Blanc, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012539, colorName: Blanc, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012542, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012544, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-linear }
+    - { sku: 920-012546, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012548, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-linear }
+    - { sku: 920-012550, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012552, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-linear }
+    - { sku: 920-012538, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-tactile }
+    - { sku: 920-012555, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012543, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012547, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012551, colorName: Blanc, colorFamily: white, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012539, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: logitech-gl-tactile }
 
 - slug: logitech-g515-tkl
   brand: logitech
@@ -671,11 +717,11 @@
     - https://www.logitechg.com/fr-fr/shop/p/g515-tkl-gaming-keyboard.920-012880
   specs: { formFactor: tkl, technology: mechanical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 840, widthMm: 150, depthMm: 22 }
   variants:
-    - { sku: 920-012876, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-012880, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-012884, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-012889, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-012872, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-012876, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gl-tactile }
+    - { sku: 920-012880, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gl-tactile }
+    - { sku: 920-012884, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gl-tactile }
+    - { sku: 920-012889, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gl-tactile }
+    - { sku: 920-012872, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gl-tactile }
 
 - slug: logitech-pro-keyboard
   brand: logitech
@@ -692,11 +738,11 @@
     - https://www.logitechg.com/fr-fr/shop/p/pro-mechanical-gaming-keyboard.920-009390
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, widthMm: 361, depthMm: 200 }
   variants:
-    - { sku: 920-009426, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-009392, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-009389, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-009390, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-009391, colorName: Noir, colorFamily: color, layout: iso_nordic }
+    - { sku: 920-009426, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-gx-clicky }
+    - { sku: 920-009392, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-gx-clicky }
+    - { sku: 920-009389, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-gx-clicky }
+    - { sku: 920-009390, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-gx-clicky }
+    - { sku: 920-009391, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-gx-clicky }
 
 - slug: logitech-g413-tkl-se
   brand: logitech
@@ -711,13 +757,13 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-3qtr-right-angle-gallery-5.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g413-tkl-se-gaming-keyboard.920-010444
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 650 }
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, weightG: 650 }
   variants:
-    - { sku: 920-010446, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-010443, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-010444, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-010445, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-010563, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-010446, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-010443, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-010444, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-010445, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-010563, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
 
 - slug: logitech-g413-se
   brand: logitech
@@ -732,13 +778,13 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g413-se-gaming-keyboard.920-010435
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, weightG: 780, widthMm: 127, depthMm: 36 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, weightG: 780, widthMm: 127, depthMm: 36 }
   variants:
-    - { sku: 920-010437, colorName: Noir, colorFamily: color, layout: ansi_us }
-    - { sku: 920-010434, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-010435, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-010436, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-010555, colorName: Noir, colorFamily: color, layout: iso_uk }
+    - { sku: 920-010437, colorName: Noir, colorFamily: black, layout: ansi_us, switch: logitech-tactile }
+    - { sku: 920-010434, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
+    - { sku: 920-010435, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }
+    - { sku: 920-010436, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: logitech-tactile }
+    - { sku: 920-010555, colorName: Noir, colorFamily: black, layout: iso_uk, switch: logitech-tactile }
 
 - slug: logitech-g213-prodigy
   brand: logitech
@@ -753,10 +799,10 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g213-rgb-gaming-keyboard.920-008088
-  specs: { formFactor: full, technology: membrane, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000, widthMm: 452, depthMm: 33 }
+  specs: { formFactor: full, technology: membrane, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 1000, widthMm: 452, depthMm: 33 }
   variants:
-    - { sku: 920-008091, colorName: Noir, colorFamily: color, layout: iso_uk }
-    - { sku: 920-008090, colorName: Noir, colorFamily: color, layout: iso_nordic }
-    - { sku: 920-008088, colorName: Noir, colorFamily: color, layout: iso_fr }
-    - { sku: 920-008087, colorName: Noir, colorFamily: color, layout: iso_de }
-    - { sku: 920-008093, colorName: Noir, colorFamily: color, layout: ansi_us }
+    - { sku: 920-008091, colorName: Noir, colorFamily: black, layout: iso_uk }
+    - { sku: 920-008090, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: 920-008088, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: 920-008087, colorName: Noir, colorFamily: black, layout: iso_de }
+    - { sku: 920-008093, colorName: Noir, colorFamily: black, layout: ansi_us }
