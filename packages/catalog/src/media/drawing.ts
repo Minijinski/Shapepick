@@ -75,7 +75,10 @@ const layouts: Record<KeyboardSpecs['formFactor'], Block[]> = {
 /** The blocks of keys a board is drawn with (a split board's halves are two blocks). */
 export const keyboardBlocks = (formFactor: KeyboardSpecs['formFactor']) => layouts[formFactor]
 
-const keysCache = new Map<KeyboardSpecs['formFactor'], { keys: Key[]; width: number; height: number }>()
+const keysCache = new Map<
+  KeyboardSpecs['formFactor'],
+  { keys: Key[]; width: number; height: number }
+>()
 
 /** The keys of a board, in key units, in reading order, and the area they span. */
 export function keyboardKeys(formFactor: KeyboardSpecs['formFactor']) {
@@ -90,8 +93,7 @@ export function keyboardKeys(formFactor: KeyboardSpecs['formFactor']) {
       row.forEach((w, i) => {
         if (w > 0) {
           const accent =
-            (r === 0 && i === 0 && block.y === 0 && block.x === 0) ||
-            (w >= 2 && w < 2.5 && r === 2)
+            (r === 0 && i === 0 && block.y === 0 && block.x === 0) || (w >= 2 && w < 2.5 && r === 2)
           keys.push({ x, y: block.y + r, w, accent })
         }
         x += Math.abs(w)

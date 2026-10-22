@@ -15,6 +15,16 @@ export const Route = createFileRoute("/$lang")({
   // A page is the same for every visitor (answers live in the URL, the journey in the browser):
   // Netlify's CDN keeps it five minutes, then serves it while it fetches a fresh one, so most
   // visits never wait for a function or the database. A deploy empties the cache.
+  // The preloader holds the page's entrances (html[data-loading]): should the page never wake up,
+  // the hold ends after five seconds anyway.
+  head: () => ({
+    scripts: [
+      {
+        children:
+          "setTimeout(function(){document.documentElement.removeAttribute('data-loading')},5000)",
+      },
+    ],
+  }),
   headers: () => ({
     "Cache-Control": "public, max-age=0, must-revalidate",
     "Netlify-CDN-Cache-Control":

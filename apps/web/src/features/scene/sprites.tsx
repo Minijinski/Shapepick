@@ -1,7 +1,7 @@
 import type { CatalogItem, Category, Photo } from '@choose/catalog'
+import { drawingBox, squareOn } from '@choose/catalog/media'
 import { flushSync } from 'react-dom'
 import { createRoot, type Root } from 'react-dom/client'
-import { drawingBox, squareOn } from '@choose/catalog/media'
 import { glyphKey, ProductGlyph } from '../product/glyphs'
 import { cutout, photoWidthFor } from '../product/photo'
 
@@ -106,6 +106,7 @@ export class Drawings {
   private running = 0
   private idle: number | null = null
   private host: { div: HTMLDivElement; root: Root } | null = null
+  private pumping = false
   private disposed = false
 
   constructor(private readonly resolution: number) {}
@@ -136,13 +137,20 @@ export class Drawings {
    * waits on a frame. Between asks, the rest fills in while the page is idle.
    */
   pump() {
-    if (this.disposed) return
-    while (this.running < DRAWING_LOADS) {
-      const key = this.queue.shift()
-      if (!key) break
-      this.start(key)
-    }
-    if (!this.queue.length && !this.running) this.prefetch()
+    // In a microtask: a drawing is rendered with flushSync, which React refuses from inside its
+    // own work (an effect may be what asks).
+    if (this.disposed || this.pumping) return
+    this.pumping = true
+    queueMicrotask(() => {
+      this.pumping = false
+      if (this.disposed) return
+      while (this.running < DRAWING_LOADS) {
+        const key = this.queue.shift()
+        if (!key) break
+        this.start(key)
+      }
+      if (!this.queue.length && !this.running) this.prefetch()
+    })
   }
 
   get stats() {
@@ -159,8 +167,10 @@ export class Drawings {
   dispose() {
     this.disposed = true
     if (this.idle != null) cancelIdle(this.idle)
-    this.host?.root.unmount()
+    // Unmounted after React's current work: the canvas goes away inside an effect's cleanup.
+    const host = this.host
     this.host = null
+    if (host) queueMicrotask(() => host.root.unmount())
   }
 
   /** Drawings nobody asked for yet, one at a time, while the page has nothing else to do. */

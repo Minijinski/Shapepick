@@ -1,6 +1,6 @@
 # Handoff — choose-a-device
 
-Oct 21, 2026 · @Eddy
+Oct 22, 2026 · @Eddy
 
 ## En bref
 
@@ -8,9 +8,9 @@ choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapef
 
 - **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, résultats annotés, fiche produit (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
-- **Données** : 25 claviers et 25 écrans fictifs (marques inventées) pour développer. Les vraies données viendront plus tard.
-- **Qualité** : 32 tests du moteur, typecheck et build de production au vert ; le lint Biome n'a pas bougé (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `1a4c627` (Neon), poussé et déployé. Les deux tours de retours du 21 octobre (« Retours du 21 octobre ») sont dans le dossier local, pas encore commités.
+- **Données** : 523 vrais claviers (34 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. 369 claviers montrent leur photo détourée sur le canvas, les autres leur dessin.
+- **Qualité** : 36 tests du moteur et typecheck des 4 paquets au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` = `f54dc9b` « Updating performances », poussé et déployé le 22 octobre. Cinq correctifs faits après ce commit sont dans le dossier local, à pousser, dont celui du magasin de dessins (voir « Retours du 22 octobre »).
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -120,7 +120,7 @@ La base compte 9 tables et 25 enums Postgres. Tout ce qui sert à filtrer ou cla
 | `switches` | Ressenti, silencieux, techno, forces (g), courses (mm), lubrification, son | Référentiel partagé entre claviers |
 | `keyboard_specs` | 34 colonnes : format, techno, hot-swap, connexions, polling, rapid trigger, matériaux, firmware, mesures | Une ligne par clavier |
 | `monitor_specs` | 37 colonnes : diagonale, ratio, définition, dalle, fréquence, HDR, connectique, pied | `ppi` calculé par Postgres (colonne générée) |
-| `product_images` | URL, type de visuel, dimensions, couleur dominante | Vide : pas encore de photos |
+| `product_images` | URL, type de visuel, dimensions, couleur dominante | 1 353 vues de dessus des claviers ; le site lit la principale |
 | `offers` | Boutique, pays, URL, prix, stock, date | Vide : prévu pour les prix et l'affiliation |
 
 - **Seed** (`pnpm db:seed`) : lit `data/`, valide chaque fichier avec Zod (l'erreur cite le fichier et le slug), fait un upsert par slug, puis remplace traductions, variantes et specs. Relancé deux fois sans écart. Il ne supprime pas un produit retiré des YAML.
@@ -217,7 +217,7 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 | --- | --- | --- |
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
-| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol, fiche produit au clic | Dérive en diagonale, drag avec inertie, molette ; une réponse change les écartés en esquisses graduées, en vague depuis la console ; une liste courte se regroupe devant le canvas |
+| Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol, fiche produit au clic | Dérive en diagonale, drag avec inertie, molette ; une réponse retire les écartés et resserre les retenus, en vague depuis la console ; une liste courte se regroupe devant le canvas |
 | Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide en surimpression (en clair au-dessus des tuiles quand elles tiennent sur une rangée), tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
 | Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Panneau qui monte, traits de rapport qui se dessinent |
@@ -238,8 +238,8 @@ Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule
 - **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée. Cette étiquette est posée à côté du lien, donc jamais coupée par sa découpe ; elle penche avec le bord gauche de sa bande et prend la largeur que la bande lui laisse, si bien qu'elle y tient quel que soit le nombre de catégories.
 - **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
 - **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel. Un clic (ou un tap) ouvre la fiche produit complète ; le curseur devient une main au survol d'un produit.
-- **Filtres** : chaque produit garde ses places. Un produit retenu est dessiné en couleur ; un produit écarté devient une esquisse (contours pointillés, comme les lignes cachées d'un dessin technique), d'autant plus pâle qu'il rate de réponses (1, 2, 3 et plus). Le changement part en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
-- **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge. La grille se centre sur l'axe de la console quand elle y tient (sinon sur tout l'espace libre) ; sous elle, à 32 px près, les esquisses du canvas ne réagissent plus au survol.
+- **Filtres** : depuis le 22 octobre, le canvas ne montre que les produits retenus. Un produit écarté s'efface, les retenus glissent vers leur place dans un motif recomposé sans trous, le tout en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
+- **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge. La grille se centre sur l'axe de la console quand elle y tient (sinon sur tout l'espace libre) ; derrière elle, le canvas n'a plus que son papier pointillé.
 - **Changement de catégorie** (header, depuis un canvas) : le canvas reste en place, les anciens produits se dissolvent et les nouveaux apparaissent en vague depuis le lien cliqué. La console ne bouge pas : seule sa question change. Chaque catégorie mémorise son parcours dans le stockage du navigateur (`choose-a-device:journey:<catégorie>`) et le reprend au retour ; « Recommencer » le remet à zéro.
 - **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale et affiche son aide en clair au-dessus), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
 
@@ -249,12 +249,12 @@ Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule
 | `features/scene/renderer.ts` | Dessin, dérive, transitions (`go`), états des produits (`setTargets`), pointeur (`pick`, drag) |
 | `features/scene/controller.ts` | Pont routes ↔ scène (`scene.showBands`, `scene.showCanvas`, `scene.setStage`), type de transition à l'arrivée, délais d'entrée |
 | `features/scene/navigation.ts` | Sortie de page puis navigation (`useSceneNavigation`), parcours mémorisés par catégorie, délai d'entrée des pages |
-| `features/scene/sprites.tsx` | Silhouettes rendues hors écran puis converties en images (couleur et esquisse) |
+| `features/scene/sprites.tsx` | Dessins partagés par signature, rastérisés à la demande, et magasin de photos (worker, budget mémoire) |
 | `features/scene/Scene.tsx`, `PopupCard.tsx` | Le canvas, la gestion du pointeur, la fiche produit |
 
 ## Retours du 21 octobre
 
-Deux tours de retours sur le site en ligne ont retouché le finder ; tout est vérifié dans le navigateur (typecheck, 32 tests et build au vert), mais rien n'est encore commité.
+Deux tours de retours sur le site en ligne ont retouché le finder ; tout est vérifié dans le navigateur (typecheck, 32 tests et build au vert), puis commités et déployés avec la suite.
 
 | Retour | Ce qui a changé | Où |
 | --- | --- | --- |
@@ -270,6 +270,48 @@ Deux tours de retours sur le site en ligne ont retouché le finder ; tout est v�
 | « Voir les N résultats » devrait prolonger le module du bas | La console s'efface, le même panneau s'étire jusqu'aux résultats et revient pour « Modifier mes réponses » ; le podium s'efface au lieu de disparaître | `DockPanel.tsx`, `ResultsView.tsx`, `Finder.tsx` |
 
 Les animations ont été vérifiées par mesures (bord bas fixe, hauteur finale égale à la cible, survols enchaînés), pas regardées en temps réel : le panneau du navigateur les ralentit trop.
+
+## Vraies données et photos (21–22 octobre)
+
+Le catalogue de démo a laissé place à 523 vrais claviers de 34 marques, en base Neon depuis le seed du 22 octobre ; les écrans restent les 25 de démonstration.
+
+| Sujet | État |
+| --- | --- |
+| Ingest | `packages/ingest`, `pnpm ingest <source> [--next N] [--dry-run] [--refresh]`. 12 sources : Keychron, mechanicalkeyboards.com, boutiques Shopify (Epomaker, Womier, Yunzii, Ajazz, HyperX, Turtle Beach), sites officiels (Logitech, Logitech G, Corsair, Razer, SteelSeries). Ajoute à `data/keyboards/<marque>.yaml` sans jamais réécrire une fiche ; `# à vérifier` marque les déductions |
+| Curation | `data/excluded.yaml` liste les modèles et marques écartés exprès (éditions spéciales, marques à 1–3 modèles) ; le seed retire ce que `data/` ne liste plus, avec un garde-fou (`SEED_PRUNE=force` au-delà de max(30, la moitié du catalogue)) |
+| Prix | Indicatifs, pas de promo : prix habituel, médiane des variantes, arrondi à 5 € ; boutiques US : € = $ × 1,2. Rafraîchissement hebdomadaire `pnpm ingest prices` |
+| Switchs | Specs lues seulement sur des fiches texte ; les switchs maison (Razer, Corsair MLX, Logitech GX…) restent non résolus, donc ces claviers sortent à la question du ressenti |
+| Photos | `product_images` rempli (1 353 vues `cutout_top`) ; le snapshot envoie la vue principale. Le navigateur la détoure et ne l'utilise sur le canvas que vue de dessus (remplissage ≥ 0,8, proportions 0,7–1,15 du dessin) ; la fiche produit, le podium et les résultats l'utilisent toujours (`ProductPicture`) |
+
+- Pas fait : Cherry (page anti-bot, à ne pas contourner), NuPhy (429), ASUS ROG, Akko/MonsGeek, Apple, Microsoft. LDLC donnerait les prix € et l'AZERTY mais pose une question de droit des bases de données.
+- Un seed de production se fait seulement avec l'accord explicite de l'utilisateur.
+
+## Retours du 22 octobre
+
+Cinq retours sur le site avec les vraies données ont donné un canvas qui démarre sans bloquer et tient en mémoire, des écartés qui quittent le canvas, plus de photos et un preloader. Tout est dans le commit `f54dc9b`, sauf cinq correctifs à pousser.
+
+| Mesure | Avant | Après |
+| --- | --- | --- |
+| Blocage du fil principal au démarrage | 530 ms + \~800 ms de rastérisation (prod, DPR 1) | 0 ms de blocage, aucune frame longue (prod) |
+| Bitmaps des dessins | 1 096 (couleur + esquisse par produit) : \~116 Mo en DPR 1, \~463 Mo en Retina | 98 partagés (77 dessins pour 523 claviers) : 45 Mo en Retina |
+| Photos sur le canvas | 357 sur 522 | 369 sur 522 (Razer 0 → 13) |
+| Photos Logitech | PNG 3840 × 2160 de \~4 Mo, \~200 ms de détourage chacune sur le fil principal | \~20 Ko en WebP, détourage dans un worker |
+| Réponse du serveur | 0,6 s à chaud, 3 s à froid, `no-cache` | \~0,45 s depuis le cache durable Netlify |
+
+| Retour | Ce qui a changé | Où |
+| --- | --- | --- |
+| « Bloqué par X » chevauche « Changer → » | Une tuile en impasse est un bloc `data-dead`, plus un bouton ; « Changer → » est un vrai bouton dans le flux, qui passe à la ligne si besoin ; les rangées grandissent (`minmax`) | `finder/Console.tsx`, recette `optionTile` |
+| Une pastille de la frise oubliait le brouillon | Une pastille, une puce du rail ou « Changer → » valident le brouillon comme « Continuer » ; « Retour » l'abandonne. Les questions qui ne départagent plus rien restent à leur place, grisées et désactivées (`withDraft`, `journeyStates`) | `engine.ts`, `useFinder.ts`, `JourneyBar.tsx` |
+| Le chargement initial rame | Dessins partagés par signature (`glyphKey`) et créés à la demande ; plaque discrète le temps d'un dessin ; plus d'esquisses | `scene/sprites.tsx`, `renderer.ts` |
+| Zones vides en affinant | Les écartés quittent le canvas : ils s'effacent en vague, les retenus glissent vers leur place dans un motif recomposé (`regroup`, 160 ms d'attente pour le curseur du budget). Derrière une liste courte, le canvas n'a plus que son papier | `scene/renderer.ts`, `Finder.tsx` |
+| Des photos ne remplacent jamais le dessin | Magasin de photos : visibles d'abord, deux finesses, nouvelles tentatives, budget 32/64 Mo ; détourage dans un Web Worker ; passage par Netlify Image CDN (Razer refusait le CORS ; ses URL sont déballées vers `medias-p1.phoenix.razer.com`) | `scene/sprites.tsx`, `product/photo.ts`, `product/cutout.worker.ts`, `netlify.toml` |
+| Un preloader | « Clavier qui se remplit » : clavier 75 % en trait, touches encrées au fil du vrai chargement, Entrée orange à 100 %, rideau incliné à 16°. Visible dès le HTML ; `html[data-loading]` met les entrées CSS en pause et la timeline GSAP attend ; 0,65 s minimum, 2,6 s maximum, garde de 5 s | `scene/Preloader.tsx`, `styles.css`, `routes/$lang.tsx`, `routes/__root.tsx` |
+| Chargement côté serveur | `Netlify-CDN-Cache-Control: public, durable, s-maxage=300, stale-while-revalidate=604800` sur les pages `/$lang` et l'API ; `/` (redirection par langue) reste sans cache | `routes/$lang.tsx`, `routes/api/catalog.$category.ts` |
+
+- Mesurer : `__scene.stats()` dans la console en dev (en production après `localStorage['choose-a-device:stats'] = '1'`) donne bitmaps et octets, magasin de photos, temps de frame, frames longues et repères `scene:*`.
+- Géométrie des dessins, détourage et garde-fou « vue de dessus » vivent dans `@choose/catalog/media`, partagés entre le site et l'ingest.
+- Diagnostic des 165 claviers sans photo : 28 Razer bloqués par le CORS (13 récupérés), 33 photos sur fond non clair, 104 vues de biais ; 24 ont une meilleure image secondaire (à choisir à l'ingest).
+- Pas encore vu en mouvement : la recomposition et le preloader ont été vérifiés par mesures et captures, panneau du navigateur masqué.
 
 ## SEO et i18n
 
@@ -392,21 +434,24 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 * **Second serveur de dev** : si une autre session tient déjà le port 3000, lancer `cd apps/web && NETLIFY_DEV=1 pnpm exec vite dev --port 3001 --strictPort` ; sans `NETLIFY_DEV`, les deux émulations Netlify se disputent la base locale de `apps/web/.netlify/db`.
 * **`fieldset` et débordement** : un `fieldset` ne coupe pas ce qui dépasse, même avec `overflow: auto` ; le défilement des tuiles est porté par un `div` autour.
 * **Hauteur animée** : viser la hauteur du contenu plus les bordures du cadre, sinon il saute à la fin quand la hauteur repasse en `auto`.
+* **Jamais de flushSync depuis un effet** : le magasin de dessins rend chaque SVG avec `flushSync` ; appelé depuis un effet React, il ne rend rien et le dessin manque pour la session. `pump()` et `dispose()` passent donc par une microtâche. Le commit `f54dc9b` n'a pas encore ce correctif : en production, 3 dessins sur 98 manquent et le preloader attend son délai maximal.
+* **Image CDN en dev** : `/.netlify/images` n'existe qu'avec l'émulation Netlify (serveur sur le port 3000) ; avec `NETLIFY_DEV=1`, les photos repassent par l'URL de la boutique (Razer illisible). `netlify.toml` liste les hôtes autorisés : un nouvel hôte de photos doit y être ajouté.
+* **Panneau masqué, pas d'images** : masqué, le panneau du navigateur ne dessine qu'à chaque capture ; le preloader et les animations ne s'y jugent pas.
 
 ## Limites connues et dette technique
 
 La principale limite tient aux données : avec 25 produits fictifs par catégorie, le motif du canvas se répète vite et plusieurs étapes se sautent. Le reste est une dette assumée pour cette première version.
 
-- **Données** : la liste courte arrive dès la 2e question (« 75 % » ne garde que 4 claviers). Après « 40 % », il ne reste qu'un clavier et le parcours va directement aux résultats.
-- **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; le canvas garde alors les esquisses graduées.
-- **Canvas 2D** : à l'aise avec quelques centaines de produits ; les sprites coûtent environ 50 Mo de mémoire sur un écran DPR 2. Au-delà, passer la scène en WebGL.
-- **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu. Correct à 50 produits ; à 2 000, rendre seulement le top côté serveur et charger le reste ensuite.
+- **Données** : les écrans sont encore les 25 de démonstration ; environ 128 claviers n'ont pas de photo vue de dessus sur fond clair et gardent leur dessin sur le canvas.
+- **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; les retenus restent alors serrés sur le canvas.
+- **Canvas 2D** : à l'aise avec des centaines de produits depuis les dessins partagés (45 Mo en DPR 2) et le budget des photos (64 Mo au plus) ; WebGL n'est plus nécessaire à cette échelle.
+- **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu, soit 724 Ko bruts (68 Ko en brotli) avec 523 claviers ; l'API en fait 909 Ko, dont 235 Ko de switchs recopiés dans chaque variante. Format compact à prévoir (switchs et marques en dictionnaire).
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
-- **Ni photos, ni prix boutiques** : les visuels sont des silhouettes SVG, la table `offers` est vide : la section « Où l'acheter » de la fiche produit n'affiche encore qu'un message d'attente.
+- **Pas de prix boutiques** : la table `offers` est vide : la section « Où l'acheter » de la fiche produit n'affiche encore qu'un message d'attente.
 - **Seuils de format** : « Grand format 42"+ » prend les écrans 16:9 dès 36". Les seuils sont à recaler sur les vraies données.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
-- **Le seed ne supprime rien** : un produit retiré des YAML reste en base.
+- **Le seed supprime** ce que data/ ne liste plus, avec un garde-fou (SEED\_PRUNE=force au-delà de max(30, la moitié du catalogue)).
 - **Ni tests d'interface ni CI.**
 - **Prévu mais pas encore utilisé** : ScrollTrigger, three et React Three Fiber.
 
@@ -420,12 +465,16 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiche produit `/fr/claviers/<slug>` (héros annoté, fiche technique, JSON-LD), pages collections (« 75 % sans fil », « OLED 27" 240 Hz »), `sitemap.xml`, `robots.txt`, `noindex` des combinaisons, images OG, prérendu.
-- [ ] **Vraies données** : rechercher les claviers et écrans, écrire les scripts d'ingestion (TS, ou Python qui écrit dans Postgres), ajouter photos détourées, prix (`offers`) et liens d'affiliation.
+- [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») ; restent les vrais écrans, les prix boutiques (`offers`) et liens d'affiliation.
 - [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres dans « Où l'acheter » de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
 - [ ] **Idées en attente** : spécimen 3D procédural (accueil, tuiles), sons et courbes de force des switchs, démo de fréquence et loupe PPI dans les tuiles, vue éclatée, thème sombre, analytics, back-office (interface interne ou Directus).
 
-* [ ] **Commiter et pousser** les retours du 21 octobre sur `main` (Netlify déploie `main`).
+* [x] **Commiter et pousser** les retours du 21 octobre sur `main` (Netlify déploie `main`).
 * [ ] **Reformuler « À savoir »** avec un libellé négatif par critère (`keyboards.ts`, `monitors.ts`).
 * [ ] **Région des fonctions Netlify** sur eu-central-1, près de la base Neon, si l'offre le permet.
 * [ ] **Branche Neon de développement** (`npx neon@latest checkout dev --create`) pour que `pnpm dev` et le seed ne touchent plus `production`.
+* [ ] **Pousser les cinq correctifs** faits après `f54dc9b` (`scene/sprites.tsx` surtout, plus `renderer.ts`, `routes/$lang.tsx`, `routes/__root.tsx`, `catalog/src/media/drawing.ts`).
+* [ ] **Voir en mouvement** la recomposition du canvas et le preloader, panneau du navigateur affiché, et régler si besoin.
+* [ ] **`pnpm ingest photos`** : choisir à l'ingest la meilleure vue de dessus (+24 photos) et remplacer les vignettes Corsair `w_96`, puis reseed (production avec accord).
+* [ ] **Netlify** : suivre les crédits de l'Image CDN ; corriger « Données de démonstration » sur l'accueil.

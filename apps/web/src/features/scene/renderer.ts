@@ -504,6 +504,10 @@ export class SceneRenderer {
         laidOut: world.kept?.size ?? world.items.length,
         slots: world.slots.length,
         spot: world.spot.length,
+        // A regrouping under way: copies gliding, copies fading out, answers waiting to settle.
+        glides: world.glides.size,
+        leaving: world.leaving.length,
+        pending: !!world.pending,
       }
     }
     const drawings = this.drawings.stats
