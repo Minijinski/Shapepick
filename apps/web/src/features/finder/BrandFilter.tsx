@@ -5,9 +5,9 @@ import { messages as m } from '~/i18n/messages'
 
 // The brands, beside the counter: a chip that says which brands the finder shows (every one until
 // told otherwise) and opens a list of them, A to Z, each with how many of its products the other
-// answers leave. Unticking a brand hides it, "Only" keeps one alone, "Show all" undoes it all; each
-// change applies at once, the canvas and the counter follow. A brand under the pointer rings its
-// products on the canvas.
+// answers leave. Unticking a brand hides it, "Only" (beside the count, under the pointer) keeps one
+// alone, "Show all" undoes it all; each change applies at once, the canvas and the counter follow.
+// A brand under the pointer rings its products on the canvas.
 
 type Option = { id: string; name: string; count: number }
 
@@ -86,7 +86,9 @@ const panel = css({
 const row = css({
   position: 'relative',
   display: 'grid',
-  gridTemplateColumns: 'minmax(0, 1fr) auto',
+  // Name, "Only", count: "Only" keeps its own column, so it never covers the count, nor the count
+  // its click.
+  gridTemplateColumns: 'minmax(0, 1fr) auto auto',
   alignItems: 'center',
   gap: '2.5',
   h: '9',
@@ -96,9 +98,9 @@ const row = css({
   _hover: { bg: 'ink/4' },
   '&:has(input:focus-visible)': { outline: '2px solid', outlineColor: 'signal' },
   '&[data-empty]': { color: 'ink.faint' },
-  // "Only" takes the count's place under the pointer.
-  '&:is(:hover, :focus-within) [data-count]': { opacity: 0 },
   '&:is(:hover, :focus-within) [data-only]': { opacity: 1, pointerEvents: 'auto' },
+  // No pointer to hover with (a phone): "Only" stays in view.
+  '@media (hover: none)': { '& [data-only]': { opacity: 1, pointerEvents: 'auto' } },
 })
 
 /** A square tick box, ink when ticked. */
@@ -129,13 +131,17 @@ const box = css({
 })
 
 const only = css({
-  gridArea: '1 / 2',
-  justifySelf: 'end',
+  // A taller target than its line of text, within the row.
+  alignSelf: 'stretch',
+  display: 'grid',
+  placeItems: 'center',
+  px: '1',
   fontFamily: 'mono',
   fontSize: '2xs',
   color: 'signal',
   textDecoration: 'underline',
   textUnderlineOffset: '3px',
+  borderRadius: '6px',
   cursor: 'pointer',
   opacity: 0,
   pointerEvents: 'none',
@@ -386,20 +392,6 @@ export function BrandFilter({
                     />
                     <span className={css({ truncate: true })}>{o.name}</span>
                   </label>
-                  <span
-                    data-count
-                    className={css({
-                      gridArea: '1 / 2',
-                      justifySelf: 'end',
-                      fontFamily: 'mono',
-                      fontSize: '2xs',
-                      color: 'ink.faint',
-                      fontVariantNumeric: 'tabular-nums',
-                      transition: 'opacity 140ms',
-                    })}
-                  >
-                    {String(o.count).padStart(3, '0')}
-                  </span>
                   <button
                     type="button"
                     data-only
@@ -409,6 +401,16 @@ export function BrandFilter({
                   >
                     {m.onlyBrand[locale]}
                   </button>
+                  <span
+                    className={css({
+                      fontFamily: 'mono',
+                      fontSize: '2xs',
+                      color: 'ink.faint',
+                      fontVariantNumeric: 'tabular-nums',
+                    })}
+                  >
+                    {String(o.count).padStart(3, '0')}
+                  </span>
                 </li>
               )
             })}

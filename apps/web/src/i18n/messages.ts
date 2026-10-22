@@ -144,6 +144,15 @@ export const messages = {
     "Les offres des marchands arrivent bientôt : prix du jour, stock et livraison, au même endroit.",
     "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",
   ),
+  searchOnAmazon: text("Chercher sur Amazon", "Search on Amazon"),
+  amazonQuery: (query: string, locale: Locale) =>
+    locale === "fr"
+      ? `Recherche « ${query} » sur Amazon.fr`
+      : `Searches Amazon.fr for “${query}”`,
+  amazonNotice: text(
+    "En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",
+    "As an Amazon Associate I earn from qualifying purchases.",
+  ),
   loadingCatalogue: text("Chargement du catalogue", "Loading the catalogue"),
   brands: text("Marques", "Brands"),
   allBrands: text("Toutes", "All"),

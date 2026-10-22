@@ -110,9 +110,9 @@ const optionTile = defineSlotRecipe({
       fontSize: "xs",
       color: "ink.muted",
       lineHeight: "1.25",
-      // One line, always: the console keeps the same height whatever the options say. The count
-      // sits at the end of this line.
-      truncate: true,
+      // Two lines at most, which a tile holds without growing (one beside a drawing, whose hints
+      // are kept short). The count sits at the end of the last line.
+      lineClamp: "2",
       pr: "7",
     },
     count: {

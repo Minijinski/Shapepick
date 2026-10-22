@@ -15,6 +15,36 @@ const label = css({
   letterSpacing: '0.04em',
 })
 
+/** The key specs alone, label over value: two columns, four from 40rem of their own width. */
+export function KeySpecs({ item, locale }: { item: CatalogItem; locale: Locale }) {
+  return (
+    <div className={css({ containerType: 'inline-size' })}>
+      <dl
+        className={css({
+          display: 'grid',
+          gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+          columnGap: '4',
+          rowGap: '3',
+          '@container (min-width: 40rem)': { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
+        })}
+      >
+        {keySpecs(item, locale).map((spec) => (
+          <div
+            key={spec.label}
+            data-spec
+            className={css({ display: 'grid', gap: '0.5', alignContent: 'start' })}
+          >
+            <dt className={label}>{spec.label}</dt>
+            <dd className={css({ fontSize: 'sm', fontWeight: '600', lineHeight: '1.3' })}>
+              {spec.value}
+            </dd>
+          </div>
+        ))}
+      </dl>
+    </div>
+  )
+}
+
 export function ProductHero({ item, locale }: { item: CatalogItem; locale: Locale }) {
   return (
     <div className={css({ containerType: 'inline-size' })}>
@@ -41,28 +71,7 @@ export function ProductHero({ item, locale }: { item: CatalogItem; locale: Local
             <ProductPicture item={item} shadow="lg" className={css({ w: '100%', h: '100%' })} />
           </div>
         </figure>
-        <dl
-          className={css({
-            display: 'grid',
-            gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
-            columnGap: '4',
-            rowGap: '3',
-            '@container (min-width: 40rem)': { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
-          })}
-        >
-          {keySpecs(item, locale).map((spec) => (
-            <div
-              key={spec.label}
-              data-spec
-              className={css({ display: 'grid', gap: '0.5', alignContent: 'start' })}
-            >
-              <dt className={label}>{spec.label}</dt>
-              <dd className={css({ fontSize: 'sm', fontWeight: '600', lineHeight: '1.3' })}>
-                {spec.value}
-              </dd>
-            </div>
-          ))}
-        </dl>
+        <KeySpecs item={item} locale={locale} />
       </div>
     </div>
   )

@@ -1,23 +1,25 @@
 import type { CatalogItem, Locale, Ranked } from "@choose/catalog";
 import { type RefObject, useLayoutEffect, useRef, useState } from "react";
-import { css } from "styled-system/css";
+import { css, cx } from "styled-system/css";
 import { button } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
+import { KeyFigures } from "../product/KeyFigures";
 import { Match } from "../product/Match";
 import { MatchBreakdown } from "../product/MatchBreakdown";
-import { ProductHero } from "../product/ProductHero";
+import { KeySpecs } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, keySpecs } from "../product/specs";
 import { useDockHeight } from "./DockPanel";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
-// out of it. The best match with its key specs and what its match is made of, the next two beside
-// it, every other match in a list below. Every product opens its sheet: the best match from its
-// button, the others from anywhere on their card or row. The list can hold the whole catalogue:
-// only the rows in view (and a few around them) are rendered, each the same height, so opening
-// the results costs the same for 5 products as for 500.
+// out of it. The best match as a product card (its photo beside its name, price, match and key
+// specs, then what its match is made of), the next two below it, every other match in a list.
+// Every product opens its sheet: the best match from its photo or its button, the others from
+// anywhere on their card or row. The list can hold the whole catalogue: only the rows in view (and
+// a few around them) are rendered, each the same height, so opening the results costs the same
+// for 5 products as for 500.
 
 type Props = {
   ranked: Ranked<CatalogItem>[];
@@ -109,15 +111,57 @@ const caption = css({
   textTransform: "uppercase",
   mb: "2",
 });
+/** What the best match's match is made of, its strengths and caveats, under a hairline. */
 const heroNotes = css({
   display: "grid",
   gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
   gap: "4",
+  pt: "5",
+  borderTopWidth: "1px",
+  borderColor: "line",
 });
 const heroNotesScored = css({
   display: "grid",
   gridTemplateColumns: { base: "1fr", md: "1.15fr 1fr 1fr" },
   gap: { base: "4", md: "6" },
+  pt: "5",
+  borderTopWidth: "1px",
+  borderColor: "line",
+});
+
+/** The best match's photo, on the canvas's dotted paper, as in its sheet: it opens the sheet. */
+const photoCard = css({
+  position: "relative",
+  display: "block",
+  h: { base: "44", md: "auto" },
+  minH: { md: "64" },
+  borderRadius: "card",
+  borderWidth: "1px",
+  borderColor: "line",
+  bg: "paper",
+  backgroundImage: "radial-gradient(#CFCBC2 1.1px, transparent 1.3px)",
+  backgroundSize: "14px 14px",
+  cursor: "pointer",
+  transition: "border-color 160ms",
+  _hover: { borderColor: "line.strong" },
+  _focusVisible: {
+    outline: "2px solid",
+    outlineColor: "signal",
+    outlineOffset: "2px",
+  },
+});
+/** One cell the size of the card: the photo fills it rather than growing the row. */
+const photoFrame = css({
+  position: "absolute",
+  inset: "0",
+  display: "grid",
+  gridTemplateColumns: "minmax(0, 1fr)",
+  gridTemplateRows: "minmax(0, 1fr)",
+  placeItems: "center",
+  p: { base: "4", md: "6" },
+  transition: "transform 450ms token(easings.signal)",
+  _groupHover: { transform: "translateY(-3px) scale(1.02)" },
+  _motionReduce: { transition: "none" },
 });
 
 export function ResultsView({
@@ -199,9 +243,12 @@ export function ResultsView({
           top: "0",
           zIndex: "1",
           display: "flex",
+          // A phone puts the buttons under the title rather than breaking their words.
+          flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "space-between",
-          gap: "3",
+          columnGap: "3",
+          rowGap: "2",
           px: { base: "4", md: "6" },
           py: "4",
           bg: "surface.raised/90",
@@ -220,7 +267,9 @@ export function ResultsView({
         >
           {m.resultsTitle[locale]}
         </h2>
-        <div className={css({ display: "flex", gap: "2" })}>
+        <div
+          className={css({ display: "flex", gap: "2", whiteSpace: "nowrap" })}
+        >
           <button
             type="button"
             className={button({ tone: "line", size: "sm" })}
@@ -250,73 +299,100 @@ export function ResultsView({
             gap: "8",
           })}
         >
-          {/* The best match can be selected and copied (its name, a spec), like a sheet. */}
+          {/* The best match: a product card whose name, figures and specs can be selected and
+              copied, like a sheet. */}
           <article
-            className={css({ display: "grid", gap: "4", userSelect: "text" })}
+            className={css({ display: "grid", gap: "6", userSelect: "text" })}
           >
             <div
               className={css({
-                display: "flex",
-                flexWrap: "wrap",
-                alignItems: "baseline",
-                justifyContent: "space-between",
-                gap: "3",
+                display: "grid",
+                gridTemplateColumns: {
+                  base: "minmax(0, 1fr)",
+                  md: "minmax(0, 1fr) minmax(0, 1.1fr)",
+                },
+                gap: { base: "4", md: "8" },
               })}
             >
-              <div>
-                <span
-                  className={css({
-                    fontFamily: "mono",
-                    fontSize: "xs",
-                    color: "signal",
-                  })}
-                >
-                  01
-                </span>
-                <h3
-                  className={css({
-                    fontSize: { base: "2xl", md: "4xl" },
-                    fontWeight: "650",
-                    letterSpacing: "-0.04em",
-                    lineHeight: "1",
-                  })}
-                >
-                  <span
-                    className={css({ color: "ink.muted", fontWeight: "500" })}
-                  >
-                    {first.item.brand.name}
-                  </span>{" "}
-                  {first.item.name}
-                </h3>
-                {first.item.tagline && (
-                  <p className={css({ mt: "2", color: "ink.muted" })}>
-                    {first.item.tagline[locale]}
-                  </p>
+              <button
+                type="button"
+                className={cx("group", photoCard)}
+                aria-label={m.sheetOf(
+                  `${first.item.brand.name} ${first.item.name}`,
+                  locale,
                 )}
-              </div>
+                onClick={() => onOpen(first.item.slug)}
+              >
+                <span className={photoFrame}>
+                  <ProductPicture
+                    item={first.item}
+                    shadow="lg"
+                    className={css({ w: "100%", h: "100%" })}
+                  />
+                </span>
+              </button>
               <div
                 className={css({
                   display: "grid",
-                  justifyItems: "end",
-                  gap: "2",
+                  alignContent: "center",
+                  gap: "5",
                 })}
               >
-                <span className={css({ fontFamily: "mono", fontSize: "2xl" })}>
-                  {formatPrice(first.item.priceEur, locale)}
-                </span>
-                {scored && (
-                  <Match score={first.score} locale={locale} size="lg" accent />
-                )}
-                <button
-                  type="button"
-                  className={button({ tone: "ink", size: "sm" })}
-                  onClick={() => onOpen(first.item.slug)}
-                >
-                  {m.viewSheet[locale]} →
-                </button>
+                <div className={css({ display: "grid", gap: "1.5" })}>
+                  <span
+                    className={css({
+                      fontFamily: "mono",
+                      fontSize: "xs",
+                      color: "signal",
+                    })}
+                  >
+                    01
+                  </span>
+                  <h3
+                    className={css({
+                      fontSize: { base: "2xl", md: "3xl" },
+                      fontWeight: "650",
+                      letterSpacing: "-0.04em",
+                      lineHeight: "1.05",
+                    })}
+                  >
+                    <span
+                      className={css({ color: "ink.muted", fontWeight: "500" })}
+                    >
+                      {first.item.brand.name}
+                    </span>{" "}
+                    {first.item.name}
+                  </h3>
+                  {first.item.tagline && (
+                    <p
+                      className={css({
+                        mt: "0.5",
+                        color: "ink.muted",
+                        lineHeight: "1.45",
+                      })}
+                    >
+                      {first.item.tagline[locale]}
+                    </p>
+                  )}
+                </div>
+                <KeyFigures
+                  price={first.item.priceEur}
+                  score={scored ? first.score : null}
+                  accent
+                  locale={locale}
+                  action={
+                    <button
+                      type="button"
+                      className={button({ tone: "ink", size: "md" })}
+                      onClick={() => onOpen(first.item.slug)}
+                    >
+                      {m.viewSheet[locale]} →
+                    </button>
+                  }
+                />
+                <KeySpecs item={first.item} locale={locale} />
               </div>
             </div>
-            <ProductHero item={first.item} locale={locale} />
             <div className={scored ? heroNotesScored : heroNotes}>
               {scored && (
                 <div>
@@ -416,6 +492,7 @@ export function ResultsView({
                   <div
                     className={css({
                       display: "flex",
+                      alignItems: "center",
                       justifyContent: "space-between",
                       fontFamily: "mono",
                       fontSize: "xs",

@@ -55,25 +55,27 @@ export const keyboardFinder: FinderDefinition<K> = {
         "This answer rules nothing out: it decides what matters most in the ranking (latency and rapid trigger for competitive play, quietness and multi-device for the office…).",
       ),
       options: [
+        // Each hint says what the ranking looks for first for this use. A hint wraps on a tile:
+        // "multi‑appareils" keeps its hyphen unbreakable.
         opt("competitive", "Jeu compétitif", "Competitive gaming", () => true, [
-          "FPS, réactivité",
-          "FPS, reaction time",
+          "Latence minimale, rapid trigger",
+          "Lowest latency, rapid trigger",
         ]),
         opt("gaming", "Jeu polyvalent", "All-round gaming", () => true, [
-          "Jeux et un peu de tout",
-          "Games and a bit of everything",
+          "Réactif, RGB, sans fil",
+          "Responsive, RGB, wireless",
         ]),
         opt("office", "Bureau & frappe", "Office & typing", () => true, [
-          "Confort, silence",
-          "Comfort, quietness",
+          "Silencieux, multi‑appareils",
+          "Quiet, multi-device",
         ]),
         opt("code", "Code", "Coding", () => true, [
-          "Programmable, précis",
-          "Programmable, precise",
+          "Programmable, confortable",
+          "Programmable, comfortable",
         ]),
         opt("travel", "Nomade", "On the go", () => true, [
-          "Léger, sans fil",
-          "Light, wireless",
+          "Léger, sans fil, autonome",
+          "Light, wireless, long battery",
         ]),
       ],
     },
@@ -87,40 +89,41 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Plus le clavier est compact, plus la souris a de place et plus il voyage facilement, au prix de touches regroupées sur des couches. Choisis-en plusieurs si tu hésites : un clavier passe s'il fait l'une d'elles.",
         "The more compact the board, the more room for the mouse and the easier it travels, at the cost of keys moved to layers. Pick several if unsure: a board passes if it is any of them.",
       ),
+      // The drawing shows the size: one short line each.
       options: [
         opt(
           "full",
           "100 %",
           "Full size",
           (k) => k.specs.formFactor === "full",
-          ["Pavé numérique complet", "Full numpad"],
+          ["Avec pavé numérique", "With numpad"],
         ),
         opt("f96", "96 %", "96%", (k) => k.specs.formFactor === "f96", [
-          "Pavé compact",
-          "Compact numpad",
+          "Pavé num. resserré",
+          "Tighter numpad",
         ]),
         opt("tkl", "TKL", "TKL", (k) => k.specs.formFactor === "tkl", [
           "Sans pavé numérique",
           "No numpad",
         ]),
         opt("f75", "75 %", "75%", (k) => k.specs.formFactor === "f75", [
-          "Garde les touches F",
-          "Keeps F-keys",
+          "Touches F et flèches",
+          "F-keys and arrows",
         ]),
         opt("f65", "65 %", "65%", (k) => k.specs.formFactor === "f65", [
-          "Garde les flèches",
-          "Keeps arrows",
+          "Flèches, sans F",
+          "Arrows, no F-keys",
         ]),
         opt("f60", "60 %", "60%", (k) => k.specs.formFactor === "f60", [
-          "Sans flèches",
-          "No arrows",
+          "Ni flèches ni F",
+          "No arrows, no F-keys",
         ]),
         opt(
           "f40",
           "40 % et moins",
           "40% and less",
           (k) => k.specs.formFactor === "f40",
-          ["Sans rangée de chiffres", "No number row"],
+          ["Sans les chiffres", "No number row"],
         ),
         opt(
           "ergo",
@@ -147,14 +150,14 @@ export const keyboardFinder: FinderDefinition<K> = {
           "AZERTY",
           "AZERTY (FR)",
           (k) => k.variants.some((v) => v.layout === "iso_fr"),
-          ["Français", "French"],
+          ["Vendu en touches françaises", "Sold with French legends"],
         ),
         opt(
           "ansi",
           "QWERTY US",
           "US QWERTY",
           (k) => k.variants.some((v) => v.layout === "ansi_us"),
-          ["ANSI, Entrée plate", "ANSI, flat Enter"],
+          ["Le plus répandu, Entrée plate", "Most common, flat Enter"],
         ),
         opt(
           "iso",
@@ -164,7 +167,7 @@ export const keyboardFinder: FinderDefinition<K> = {
             k.variants.some((v) =>
               ["iso_uk", "iso_de", "iso_nordic"].includes(v.layout),
             ),
-          ["UK, DE, nordique", "UK, DE, Nordic"],
+          ["UK, DE, nordique · Entrée en L", "UK, DE, Nordic · L-shaped Enter"],
         ),
       ],
     },
@@ -185,35 +188,38 @@ export const keyboardFinder: FinderDefinition<K> = {
           (k) =>
             k.specs.technology === "mechanical" ||
             k.specs.technology === "topre",
-          ["Switchs classiques", "Classic switches"],
+          ["Un switch par touche, durable", "One switch per key, durable"],
         ),
         opt(
           "magnetic",
           "Magnétique",
           "Magnetic",
           (k) => k.specs.technology === "magnetic",
-          ["Hall effect, rapid trigger", "Hall effect, rapid trigger"],
+          [
+            "Déclenchement réglable, rapid trigger",
+            "Adjustable actuation, rapid trigger",
+          ],
         ),
         opt(
           "optical",
           "Optique",
           "Optical",
           (k) => k.specs.technology === "optical",
-          ["Déclenchement lumineux", "Light-beam actuation"],
+          ["Faisceau lumineux, très rapide", "Light-beam actuation, very fast"],
         ),
         opt(
           "membrane",
           "Membrane",
           "Membrane",
           (k) => k.specs.technology === "membrane",
-          ["Silencieux, abordable", "Quiet, affordable"],
+          ["Silencieux, économique", "Quiet, affordable"],
         ),
         opt(
           "scissor",
           "Ciseaux",
           "Scissor",
           (k) => k.specs.technology === "scissor",
-          ["Extra-plat, type portable", "Very flat, laptop-like"],
+          ["Extra-plat, comme un portable", "Very flat, laptop-like"],
         ),
       ],
     },
@@ -241,7 +247,7 @@ export const keyboardFinder: FinderDefinition<K> = {
             hasSwitch(k, (s) => s.feel === "linear") ||
             (k.specs.technology === "magnetic" &&
               !k.variants.some((v) => v.switch != null)),
-          ["Lisse, sans bosse", "Smooth, no bump"],
+          ["Course lisse, sans bosse", "Smooth travel, no bump"],
         ),
         opt(
           "tactile",
@@ -251,21 +257,21 @@ export const keyboardFinder: FinderDefinition<K> = {
           (k) =>
             k.specs.technology === "topre" ||
             hasSwitch(k, (s) => s.feel === "tactile"),
-          ["Une bosse perceptible", "A bump you can feel"],
+          ["Une bosse marque la frappe", "A bump marks each press"],
         ),
         opt(
           "clicky",
           "Clicky",
           "Clicky",
           (k) => hasSwitch(k, (s) => s.feel === "clicky"),
-          ["Bosse et clic", "Bump and a click"],
+          ["Bosse et clic audible", "Bump and an audible click"],
         ),
         opt(
           "silent",
           "Silencieux",
           "Silent",
           (k) => hasSwitch(k, (s) => s.silent),
-          ["Amorti, discret", "Dampened, quiet"],
+          ["Amorti en haut et en bas", "Dampened top and bottom"],
         ),
       ],
     },
@@ -280,12 +286,12 @@ export const keyboardFinder: FinderDefinition<K> = {
       ),
       options: [
         opt("standard", "Standard", "Standard", (k) => !k.specs.lowProfile, [
-          "Hauteur classique",
-          "Classic height",
+          "Hauteur classique, course pleine",
+          "Classic height, full travel",
         ]),
         opt("low", "Extra-plat", "Low profile", (k) => k.specs.lowProfile, [
-          "Poignets à plat",
-          "Wrists flat",
+          "Course courte, poignets à plat",
+          "Short travel, wrists flat",
         ]),
       ],
     },
@@ -304,22 +310,25 @@ export const keyboardFinder: FinderDefinition<K> = {
           "Sans fil 2.4 GHz",
           "2.4 GHz wireless",
           (k) => k.specs.conn24ghz,
-          ["Dongle USB, faible latence", "USB dongle, low latency"],
+          ["Dongle USB, latence de jeu", "USB dongle, gaming latency"],
         ),
         opt("bluetooth", "Bluetooth", "Bluetooth", (k) => k.specs.connBt, [
-          "Multi-appareils",
-          "Multi-device",
+          "Bascule ordi, tablette, téléphone",
+          "Hops between computer, tablet, phone",
         ]),
         opt(
           "both",
           "2.4 GHz + Bluetooth",
           "2.4 GHz + Bluetooth",
           (k) => k.specs.conn24ghz && k.specs.connBt,
-          ["Le meilleur des deux", "Best of both"],
+          [
+            "Latence de jeu et multi‑appareils",
+            "Gaming latency and multi-device",
+          ],
         ),
         opt("wired", "Filaire uniquement", "Wired only", (k) => !wireless(k), [
-          "Pas de batterie",
-          "No battery",
+          "Sans batterie, souvent moins cher",
+          "No battery, often cheaper",
         ]),
       ],
     },
@@ -351,24 +360,28 @@ export const keyboardFinder: FinderDefinition<K> = {
           "Hot-swap",
           "Hot-swap",
           (k) => k.specs.hotSwap !== "none",
-          ["Switchs remplaçables", "Swappable switches"],
+          [
+            "Switchs remplaçables sans soudure",
+            "Swap switches without soldering",
+          ],
         ),
         opt(
           "rgb",
           "Rétroéclairage RGB",
           "RGB backlight",
           (k) => k.specs.backlight === "rgb",
+          ["Couleurs et effets réglables", "Adjustable colours and effects"],
         ),
         opt("knob", "Molette", "Knob", (k) => k.specs.knob, [
-          "Volume, médias",
-          "Volume, media",
+          "Volume et médias d’un geste",
+          "Volume and media in one turn",
         ]),
         opt(
           "programmable",
           "QMK / VIA",
           "QMK / VIA",
           (k) => ["qmk", "via", "vial", "zmk"].includes(k.specs.firmware),
-          ["Entièrement programmable", "Fully programmable"],
+          ["Firmware ouvert, tout se remappe", "Open firmware, remap anything"],
         ),
         opt("mac", "Compatible Mac", "Mac support", (k) => k.specs.macSupport, [
           "Touches et raccourcis Mac",
@@ -379,27 +392,34 @@ export const keyboardFinder: FinderDefinition<K> = {
           "Rapid trigger",
           "Rapid trigger",
           (k) => k.specs.rapidTrigger,
-          ["Réarmement instantané", "Instant reset"],
+          [
+            "Réarme la touche dès qu’elle remonte",
+            "Resets as soon as the key rises",
+          ],
         ),
         opt(
           "pbt",
           "Keycaps PBT",
           "PBT keycaps",
           (k) => k.specs.keycapMaterial !== "abs",
-          ["Ne brillent pas", "Do not shine"],
+          ["Ne brillent pas avec le temps", "Won’t shine with use"],
         ),
         opt(
           "wristrest",
           "Repose-poignets",
           "Wrist rest",
           (k) => k.specs.wristRestIncluded,
-          ["Inclus", "Included"],
+          ["Inclus dans la boîte", "In the box"],
         ),
         opt(
           "screen",
           "Écran intégré",
           "Built-in screen",
           (k) => k.specs.screen,
+          [
+            "Infos et réglages d’un coup d’œil",
+            "Info and settings at a glance",
+          ],
         ),
       ],
     },
@@ -412,18 +432,35 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Un clavier compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. Coloré : teintes vives ou pastel ; transparent : boîtier translucide.",
         "A board counts as soon as one of its versions comes in one of the picked colours. Colourful: bright or pastel finishes; transparent: see-through case.",
       ),
+      // What each family takes in (see familyOf at ingest), short beside its swatch.
       options: [
-        opt("black", "Noir", "Black", (k) =>
-          k.variants.some((v) => v.colorFamily === "black"),
+        opt(
+          "black",
+          "Noir",
+          "Black",
+          (k) => k.variants.some((v) => v.colorFamily === "black"),
+          ["Noir, gris, graphite", "Black, grey, graphite"],
         ),
-        opt("white", "Blanc", "White", (k) =>
-          k.variants.some((v) => v.colorFamily === "white"),
+        opt(
+          "white",
+          "Blanc",
+          "White",
+          (k) => k.variants.some((v) => v.colorFamily === "white"),
+          ["Blanc, argent, crème", "White, silver, cream"],
         ),
-        opt("color", "Coloré", "Colourful", (k) =>
-          k.variants.some((v) => v.colorFamily === "color"),
+        opt(
+          "color",
+          "Coloré",
+          "Colourful",
+          (k) => k.variants.some((v) => v.colorFamily === "color"),
+          ["Vif ou pastel", "Bright or pastel"],
         ),
-        opt("transparent", "Transparent", "Transparent", (k) =>
-          k.variants.some((v) => v.colorFamily === "transparent"),
+        opt(
+          "transparent",
+          "Transparent",
+          "Transparent",
+          (k) => k.variants.some((v) => v.colorFamily === "transparent"),
+          ["Boîtier translucide", "See-through case"],
         ),
       ],
     },

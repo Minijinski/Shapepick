@@ -100,3 +100,35 @@ export function Match({
     </span>
   )
 }
+
+/** The ring alone, for a figure that prints the number beside it (KeyFigures). */
+export function MatchRing({ score, accent = false }: { score: number; accent?: boolean }) {
+  const box = 20
+  const stroke = 3
+  const r = (box - stroke) / 2
+  const length = 2 * Math.PI * r
+  const pct = Math.round(Math.min(1, Math.max(0, score)) * 100)
+  return (
+    <svg width={box} height={box} viewBox={`0 0 ${box} ${box}`} aria-hidden>
+      <circle
+        cx={box / 2}
+        cy={box / 2}
+        r={r}
+        strokeWidth={stroke}
+        className={css({ fill: 'none', stroke: 'line' })}
+      />
+      <circle
+        cx={box / 2}
+        cy={box / 2}
+        r={r}
+        strokeWidth={stroke}
+        strokeDasharray={length}
+        strokeDashoffset={length * (1 - pct / 100)}
+        transform={`rotate(-90 ${box / 2} ${box / 2})`}
+        data-accent={accent || undefined}
+        className={arc}
+        style={{ '--ring': length } as CSSProperties}
+      />
+    </svg>
+  )
+}

@@ -51,30 +51,31 @@ export const monitorFinder: FinderDefinition<M> = {
         "Cette réponse n'écarte aucun écran : elle règle ce qui compte le plus dans le classement (fluidité pour l'e-sport, contraste et HDR pour l'immersion, fidélité des couleurs pour la création…).",
         'This answer rules nothing out: it decides what matters most in the ranking (motion clarity for esports, contrast and HDR for immersion, colour accuracy for creative work…).',
       ),
+      // Each hint says what the ranking looks for first for this use.
       options: [
         opt('fps', 'FPS compétitif', 'Competitive FPS', () => true, [
-          'Chaque milliseconde compte',
-          'Every millisecond counts',
+          'Fréquence et réactivité d’abord',
+          'Refresh and response first',
         ]),
         opt('immersive', 'Jeu immersif', 'Immersive gaming', () => true, [
-          'AAA, simulation, HDR',
-          'AAA, sim, HDR',
+          'Contraste, HDR, immersion',
+          'Contrast, HDR, immersion',
         ]),
         opt('console', 'Console', 'Console', () => true, [
-          'PS5, Xbox, Switch 2',
-          'PS5, Xbox, Switch 2',
+          'HDMI 2.1 et HDR pour PS5, Xbox',
+          'HDMI 2.1 and HDR for PS5, Xbox',
         ]),
         opt('creative', 'Création', 'Creative work', () => true, [
-          'Photo, vidéo, design',
-          'Photo, video, design',
+          'Couleurs fidèles, image nette',
+          'Accurate colour, sharp image',
         ]),
         opt('office', 'Bureau & code', 'Office & code', () => true, [
-          'Texte net, ergonomie',
-          'Sharp text, ergonomics',
+          'Texte net, pied réglable, USB-C',
+          'Sharp text, good stand, USB-C',
         ]),
         opt('mixed', 'Polyvalent', 'All-rounder', () => true, [
-          'Un peu de tout',
-          'A bit of everything',
+          'Un peu de tout, sans faiblesse',
+          'A bit of everything, no weak spot',
         ]),
       ],
     },
@@ -88,6 +89,7 @@ export const monitorFinder: FinderDefinition<M> = {
         'La diagonale se lit avec la distance : à 60–80 cm, un 27" remplit le champ de vision, un 32" demande de tourner la tête. Les ultra-larges (21:9, 32:9) remplacent deux écrans. Choisis-en plusieurs si tu hésites.',
         'Read the diagonal against the distance: at 60–80 cm a 27" fills your view, a 32" makes you turn your head. Ultrawides (21:9, 32:9) replace two screens. Pick several if unsure.',
       ),
+      // The drawing shows the size: one short line each.
       options: [
         opt('s24', '24"', '24"', (m) => wide(m) && m.specs.diagonalIn < 25.5, [
           'Compact, e-sport',
@@ -98,7 +100,7 @@ export const monitorFinder: FinderDefinition<M> = {
           'The all-rounder',
         ]),
         opt('s32', '32"', '32"', (m) => wide(m) && between(m.specs.diagonalIn, 29.5, 36), [
-          'Grand espace de travail',
+          'Grand espace',
           'Big workspace',
         ]),
         opt(
@@ -106,7 +108,7 @@ export const monitorFinder: FinderDefinition<M> = {
           'Ultra-large 34"',
           'Ultrawide 34"',
           (m) => m.specs.aspect === '21:9' && m.specs.diagonalIn < 36.5,
-          ['21:9', '21:9'],
+          ['21:9, panoramique', '21:9, panoramic'],
         ),
         opt(
           'uw38',
@@ -116,8 +118,8 @@ export const monitorFinder: FinderDefinition<M> = {
           ['21:9, très large', '21:9, very wide'],
         ),
         opt('suw', 'Super-ultra-large', 'Super ultrawide', (m) => m.specs.aspect === '32:9', [
-          '32:9, deux écrans en un',
-          '32:9, two screens in one',
+          '32:9, deux écrans',
+          '32:9, two screens',
         ]),
         opt('big', 'Grand format 42"+', 'Large 42"+', (m) => wide(m) && m.specs.diagonalIn >= 36, [
           'Comme une TV',
@@ -135,18 +137,21 @@ export const monitorFinder: FinderDefinition<M> = {
         'What really matters is pixel density (PPI): 1440p on a 27" is 109 PPI, 4K on the same size is 163 PPI, visibly finer text. 1080p is still ideal on a 24" for esports.',
       ),
       options: [
-        opt('fhd', '1080p', '1080p', (m) => m.specs.resH <= 1080, ['Full HD', 'Full HD']),
+        opt('fhd', '1080p', '1080p', (m) => m.specs.resH <= 1080, [
+          'Full HD, idéal en 24"',
+          'Full HD, ideal on a 24"',
+        ]),
         opt('qhd', '1440p', '1440p', (m) => between(m.specs.resH, 1081, 2160), [
-          'QHD, le bon équilibre',
-          'QHD, the sweet spot',
+          'QHD, l’équilibre en 27"',
+          'QHD, the 27" sweet spot',
         ]),
         opt('uhd', '4K', '4K', (m) => between(m.specs.resH, 2160, 2880), [
-          'Très net',
-          'Very sharp',
+          'Texte très fin, même en 32"',
+          'Very fine text, even at 32"',
         ]),
         opt('5k', '5K et plus', '5K and up', (m) => m.specs.resH >= 2880, [
-          'Type Retina',
-          'Retina-class',
+          'Type Retina, pour la création',
+          'Retina-class, for creative work',
         ]),
       ],
     },
@@ -180,7 +185,10 @@ export const monitorFinder: FinderDefinition<M> = {
         'The lowest refresh rate you accept. 60 Hz is fine for office work, 144 Hz transforms gaming, 240 Hz and up targets esports. Beyond the number, motion clarity also depends on the panel (OLED is the clearest).',
       ),
       options: [
-        opt('60', '60 Hz suffisent', '60 Hz is fine', atLeast(60), ['Bureautique', 'Office work']),
+        opt('60', '60 Hz suffisent', '60 Hz is fine', atLeast(60), [
+          'Assez pour la bureautique',
+          'Enough for office work',
+        ]),
         opt('100', '100 Hz et plus', '100 Hz and up', atLeast(100), [
           'Plus doux au quotidien',
           'Smoother everyday',
@@ -189,8 +197,14 @@ export const monitorFinder: FinderDefinition<M> = {
           'Le standard du jeu',
           'The gaming standard',
         ]),
-        opt('240', '240 Hz et plus', '240 Hz and up', atLeast(240), ['Jeu rapide', 'Fast games']),
-        opt('360', '360 Hz et plus', '360 Hz and up', atLeast(360), ['E-sport', 'Esports']),
+        opt('240', '240 Hz et plus', '240 Hz and up', atLeast(240), [
+          'Jeux rapides, e-sport',
+          'Fast games, esports',
+        ]),
+        opt('360', '360 Hz et plus', '360 Hz and up', atLeast(360), [
+          'E-sport compétitif',
+          'Competitive esports',
+        ]),
       ],
     },
     {
@@ -203,8 +217,14 @@ export const monitorFinder: FinderDefinition<M> = {
         'A curve keeps the edges at the same distance from your eyes: useful past 32" and on ultrawides, less so for retouching where straight lines must stay straight.',
       ),
       options: [
-        opt('flat', 'Plat', 'Flat', (m) => m.specs.curvatureR == null),
-        opt('curved', 'Incurvé', 'Curved', (m) => m.specs.curvatureR != null),
+        opt('flat', 'Plat', 'Flat', (m) => m.specs.curvatureR == null, [
+          'Lignes droites, retouche',
+          'Straight lines, retouching',
+        ]),
+        opt('curved', 'Incurvé', 'Curved', (m) => m.specs.curvatureR != null, [
+          'Bords à même distance des yeux',
+          'Edges stay at eye distance',
+        ]),
       ],
     },
     {
@@ -231,12 +251,12 @@ export const monitorFinder: FinderDefinition<M> = {
       ),
       options: [
         opt('usbc', 'USB-C 65 W+', 'USB-C 65 W+', (m) => m.specs.usbcPdW >= 65, [
-          'Un câble pour le portable',
-          'One cable for the laptop',
+          'Image et charge du portable, un câble',
+          'Picture and laptop charging, one cable',
         ]),
         opt('kvm', 'KVM', 'KVM', (m) => m.specs.kvm, [
-          'Clavier/souris partagés',
-          'Shared keyboard/mouse',
+          'Un clavier, une souris, deux ordis',
+          'One keyboard and mouse, two PCs',
         ]),
         opt('hdr', 'HDR véritable', 'True HDR', trueHdr, [
           'DisplayHDR 600+ ou True Black',
@@ -247,16 +267,25 @@ export const monitorFinder: FinderDefinition<M> = {
           '4K 120 Hz on console',
         ]),
         opt('height', 'Pied réglable', 'Height-adjustable', (m) => m.specs.standHeightMm >= 100, [
-          'En hauteur',
-          'In height',
+          '10 cm de réglage en hauteur ou plus',
+          '10 cm of height travel or more',
         ]),
-        opt('pivot', 'Rotation portrait', 'Portrait pivot', (m) => m.specs.pivot),
-        opt('speakers', 'Haut-parleurs', 'Speakers', (m) => m.specs.speakers),
+        opt('pivot', 'Rotation portrait', 'Portrait pivot', (m) => m.specs.pivot, [
+          'À la verticale pour lire, coder',
+          'Upright for reading, coding',
+        ]),
+        opt('speakers', 'Haut-parleurs', 'Speakers', (m) => m.specs.speakers, [
+          'Du son sans enceintes',
+          'Sound without speakers',
+        ]),
         opt('glossy', 'Brillant', 'Glossy', (m) => m.specs.coating === 'glossy', [
-          'Image plus éclatante',
-          'Punchier image',
+          'Plus éclatant, mais reflète',
+          'Punchier, but reflective',
         ]),
-        opt('calibrated', 'Calibré usine', 'Factory calibrated', (m) => m.specs.factoryCalibrated),
+        opt('calibrated', 'Calibré usine', 'Factory calibrated', (m) => m.specs.factoryCalibrated, [
+          'Couleurs justes dès le déballage',
+          'Accurate colour out of the box',
+        ]),
       ],
     },
   ],

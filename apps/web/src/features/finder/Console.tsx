@@ -6,7 +6,7 @@ import {
   type Locale,
   readChoice,
 } from "@choose/catalog";
-import { useId, useRef, useState } from "react";
+import { useId, useLayoutEffect, useRef, useState } from "react";
 import { css, cx } from "styled-system/css";
 import { button, optionTile } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
@@ -23,8 +23,11 @@ import { type Finder, toggled } from "./useFinder";
 // The console takes the height of its question: same header and footer for every question, tiles
 // of one height in between (a long list scrolls past a ceiling), the budget's histogram at a fixed
 // height. The panel eases from one height to the next, growing or shrinking upwards, so the footer
-// and its buttons never move under the visitor's pointer. A question whose tiles fit on one row
-// spends the room above them on its explanation.
+// and its buttons never move under the visitor's pointer. Each tile says in a few words what its
+// option means; the question's full explanation waits behind the help button.
+
+const useIsoLayoutEffect =
+  typeof window === "undefined" ? () => {} : useLayoutEffect;
 
 const content = css({
   flexShrink: "0",
@@ -43,9 +46,6 @@ const body = css({
   flexDirection: "column",
   gap: "3",
 });
-
-/** Columns of the tile grid on a wide console: up to this many tiles make a single row. */
-const WIDE_COLUMNS = 5;
 
 /**
  * The tiles' scroll box. A div rather than the fieldset itself, which does not clip what
@@ -76,15 +76,6 @@ const tileGrid = css({
   // overflowing it.
   gridAutoRows: { base: "minmax(4.75rem, auto)", md: "minmax(6.25rem, auto)" },
   gap: "2.5",
-});
-
-const lead = css({
-  display: { base: "none", md: "block" },
-  flexShrink: "0",
-  maxW: "46rem",
-  fontSize: "sm",
-  color: "ink.muted",
-  lineHeight: "1.55",
 });
 
 const iconButton = cx(
@@ -129,6 +120,9 @@ export function Console({
   const uid = useId();
   const leaving = useRef(false);
   const first = useRef(true);
+  // The question plays in when it changes or gets a new answer, not when other answers do: a
+  // brand picked or dropped only updates the counts on its tiles.
+  const committed = step ? finder.answers[step.key] : undefined;
 
   useGSAP(
     () => {
@@ -157,7 +151,7 @@ export function Console({
         stagger: 0.012,
         delay,
       });
-      gsap.from("[data-tile], [data-budget], [data-lead]", {
+      gsap.from("[data-tile], [data-budget]", {
         opacity: 0,
         y: 14,
         duration: motion.base,
@@ -167,10 +161,36 @@ export function Console({
       });
       return () => split.revert();
     },
-    { dependencies: [step?.key, finder.answers], scope: root },
+    { dependencies: [step?.key, committed], scope: root },
   );
   // Once the title is split into words (above), the panel eases to the question's height.
   useDockHeight();
+
+  // A brand picked or dropped can still add must-haves to the question on screen (or take some
+  // away): only the tiles that appear play in.
+  const tilesShown = useRef<{ key?: string; ids: Set<string> }>({
+    ids: new Set(),
+  });
+  useIsoLayoutEffect(() => {
+    const tiles = [
+      ...(root.current?.querySelectorAll<HTMLElement>("[data-option]") ?? []),
+    ];
+    const before = tilesShown.current;
+    tilesShown.current = {
+      key: step?.key,
+      ids: new Set(tiles.map((t) => t.dataset.option ?? "")),
+    };
+    if (before.key !== step?.key || prefersReducedMotion()) return;
+    const fresh = tiles.filter((t) => !before.ids.has(t.dataset.option ?? ""));
+    if (fresh.length)
+      gsap.from(fresh, {
+        opacity: 0,
+        y: 10,
+        duration: motion.base,
+        ease: motion.ease,
+        stagger: motion.stagger,
+      });
+  });
 
   /**
    * Plays the tiles out (the whole console when the results take its place), then runs the
@@ -189,7 +209,7 @@ export function Console({
     };
     const parts = whole
       ? "[data-console-part]"
-      : "[data-tile], [data-budget], [data-title], [data-lead]";
+      : "[data-tile], [data-budget], [data-title]";
     gsap.to(root.current?.querySelectorAll(parts) ?? [], {
       opacity: 0,
       y: -10,
@@ -222,10 +242,6 @@ export function Console({
         });
 
   const anyTile = !step.required && step.kind !== "range";
-  const oneRow =
-    step.kind !== "range" && options.length + (anyTile ? 1 : 0) <= WIDE_COLUMNS;
-  // Above a single row of tiles the explanation fits in the panel: no need for the help button.
-  const explained = oneRow && !!step.help;
   const visual = hasVisual(category, step.key);
   const bins =
     step.kind === "range"
@@ -296,10 +312,7 @@ export function Console({
         {step.help && (
           <button
             type="button"
-            className={cx(
-              iconButton,
-              explained && css({ md: { display: "none" } }),
-            )}
+            className={iconButton}
             aria-expanded={helpOpen}
             aria-label={m.help[locale]}
             onClick={() => setHelpOpen((v) => !v)}
@@ -330,15 +343,16 @@ export function Console({
           </div>
         ) : (
           <>
-            {explained && (
-              <p id="step-lead" data-lead className={lead}>
-                {step.help?.[locale]}
+            {/* The explanation shows behind the help button; screen readers get it with the tiles. */}
+            {step.help && (
+              <p id="step-lead" className={css({ srOnly: true })}>
+                {step.help[locale]}
               </p>
             )}
             <div className={tileScroll}>
               <fieldset
                 aria-labelledby="step-title"
-                aria-describedby={explained ? "step-lead" : undefined}
+                aria-describedby={step.help ? "step-lead" : undefined}
                 className={tileGrid}
               >
                 {options.map((option) => {
@@ -364,6 +378,7 @@ export function Console({
                       <div
                         key={option.id}
                         data-tile
+                        data-option={option.id}
                         data-dead
                         className={tile.root}
                       >
@@ -397,6 +412,7 @@ export function Console({
                     <div
                       key={option.id}
                       data-tile
+                      data-option={option.id}
                       className={css({ display: "grid" })}
                     >
                       <button

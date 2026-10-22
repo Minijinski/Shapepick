@@ -5,10 +5,11 @@ import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
-import { Match } from '../product/Match'
+import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
-import { formatPrice, sheetSpecs } from '../product/specs'
+import { amazonSearch } from '../product/shops'
+import { sheetSpecs } from '../product/specs'
 import type { ProductSheet } from './useFinder'
 
 // One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
@@ -22,6 +23,8 @@ type Props = {
   sheet: ProductSheet
   /** The use the visitor picked, which the match is measured against. */
   use: string | null
+  /** The visitor's layout answer (azerty, ansi, iso), which the shop search follows. */
+  layouts?: readonly string[]
   locale: Locale
   /** Place among the kept products, for stepping through them; null for a ruled-out product. */
   position: { index: number; total: number } | null
@@ -55,11 +58,13 @@ const Icon = ({ d }: { d: string }) => (
   </svg>
 )
 
-export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }: Props) {
+export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, onClose }: Props) {
   const panel = useRef<HTMLElement>(null)
   const backdrop = useRef<HTMLDivElement>(null)
   const closing = useRef(false)
   const { item } = sheet
+  // Keyboards are real products; the monitors are still a demo catalogue, with nothing to buy.
+  const amazon = item.category === 'keyboard' ? amazonSearch(item, locale, layouts) : null
 
   /** Plays the sheet out, then closes it. A timer backs the animation up in a hidden tab. */
   const close = useCallback(() => {
@@ -267,24 +272,13 @@ export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }:
                   {item.tagline[locale]}
                 </p>
               )}
-              <div
-                className={css({
-                  display: 'flex',
-                  flexWrap: 'wrap',
-                  alignItems: 'baseline',
-                  justifyContent: 'space-between',
-                  gap: '3',
-                })}
-              >
-                <span className={css({ display: 'grid', gap: '0.5' })}>
-                  <span className={sectionLabel}>{m.listPrice[locale]}</span>
-                  <span className={css({ fontFamily: 'mono', fontSize: '2xl', lineHeight: '1' })}>
-                    {formatPrice(item.priceEur, locale)}
-                  </span>
-                </span>
-                {sheet.score != null && (
-                  <Match score={sheet.score} locale={locale} accent={sheet.rank === 0} />
-                )}
+              <div className={css({ mt: '1' })}>
+                <KeyFigures
+                  price={item.priceEur}
+                  score={sheet.score}
+                  accent={sheet.rank === 0}
+                  locale={locale}
+                />
               </div>
               {sheet.fit != null && sheet.met != null && (
                 <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
@@ -367,23 +361,57 @@ export function ProductDrawer({ sheet, use, locale, position, onStep, onClose }:
               </dl>
             </section>
 
-            {/* Where shop offers (and affiliate links) will go once prices are collected. */}
+            {/* Where to buy: Amazon for now, as a search for the model (product/shops.ts). */}
             <section className={css({ display: 'grid', gap: '2' })}>
               <h3 className={sectionLabel}>{m.whereToBuy[locale]}</h3>
-              <p
-                className={css({
-                  p: '4',
-                  borderRadius: 'card',
-                  borderWidth: '1px',
-                  borderStyle: 'dashed',
-                  borderColor: 'line.strong',
-                  fontSize: 'sm',
-                  color: 'ink.muted',
-                  lineHeight: '1.5',
-                })}
-              >
-                {m.offersSoon[locale]}
-              </p>
+              {amazon ? (
+                <div
+                  className={css({
+                    display: 'grid',
+                    gap: '3',
+                    p: '4',
+                    borderRadius: 'card',
+                    borderWidth: '1px',
+                    borderColor: 'line',
+                  })}
+                >
+                  <p className={css({ fontSize: 'sm', color: 'ink.muted', lineHeight: '1.5' })}>
+                    {m.amazonQuery(amazon.query, locale)}
+                  </p>
+                  <a
+                    href={amazon.url}
+                    target="_blank"
+                    rel={amazon.affiliate ? 'sponsored nofollow noopener' : 'nofollow noopener'}
+                    className={cx(
+                      button({ tone: 'ink', size: 'md' }),
+                      css({ justifySelf: 'start' }),
+                    )}
+                  >
+                    {m.searchOnAmazon[locale]}
+                    <Icon d="M7 17 17 7M9 7h8v8" />
+                  </a>
+                  {amazon.affiliate && (
+                    <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.4' })}>
+                      {m.amazonNotice[locale]}
+                    </p>
+                  )}
+                </div>
+              ) : (
+                <p
+                  className={css({
+                    p: '4',
+                    borderRadius: 'card',
+                    borderWidth: '1px',
+                    borderStyle: 'dashed',
+                    borderColor: 'line.strong',
+                    fontSize: 'sm',
+                    color: 'ink.muted',
+                    lineHeight: '1.5',
+                  })}
+                >
+                  {m.offersSoon[locale]}
+                </p>
+              )}
             </section>
           </div>
         </div>

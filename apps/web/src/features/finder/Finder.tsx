@@ -426,9 +426,12 @@ export function Finder({ category, items, search, locale }: Props) {
             enterFade,
             css({
               position: "absolute",
-              left: "50%",
+              // Centred by its margins, not by a transform: the entrance animates the transform,
+              // which would hold the hint off-centre until it ends.
+              insetInline: "0",
+              mx: "auto",
+              w: "fit-content",
               bottom: "calc(var(--dock-h) + 40px)",
-              transform: "translateX(-50%)",
               fontFamily: "mono",
               fontSize: "2xs",
               color: "ink.muted",
@@ -533,6 +536,7 @@ export function Finder({ category, items, search, locale }: Props) {
         <ProductDrawer
           sheet={sheet}
           use={finder.useLabel}
+          layouts={finder.answers.layout?.split(",")}
           locale={locale}
           position={
             sheet.rank != null
