@@ -1,5 +1,11 @@
 import type { CatalogItem, Category, Locale } from "@choose/catalog";
-import { useCallback, useEffect, useRef, useState } from "react";
+import {
+  type CSSProperties,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from "react";
 import { css, cx } from "styled-system/css";
 import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion } from "../motion/gsap";
@@ -27,7 +33,10 @@ import { type FinderSearch, useFinder } from "./useFinder";
 // the answers given and lets the visitor take the questions in any order (in the layout under test,
 // layout.ts, the journey is a column at the left of the console instead); at the end the console's
 // panel grows into the results, up to the site header (the counter and the brands move into them),
-// and shrinks back when the visitor edits an answer. The canvas itself is the layout's scene: the finder only tells it which products the answers keep,
+// and shrinks back when the visitor edits an answer. Switching categories, what the next finder
+// shows in the same place stays on screen and only what it says changes: the console's panel, the
+// journey, the counter and the canvas hint, the podium when it ranks as many products. The canvas
+// itself is the layout's scene: the finder only tells it which products the answers keep,
 // which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
 // dragging anywhere else browses the canvas. Any product, on the canvas, the podium or the
 // results, opens its sheet over the page.
@@ -53,6 +62,22 @@ const markSeen = (key: string) => {
     localStorage.setItem(key, "1");
   } catch {}
 };
+
+/**
+ * What the last finder left on screen for the next category's as it went, and when (ms): the
+ * counter with the canvas hint, the podium, and the dock's height and the page's cramped state
+ * they were laid out for. The next finder takes them over instead of bringing its own in.
+ */
+let kept: {
+  category: Category;
+  hud: boolean;
+  podium: boolean;
+  dockH: string;
+  cramped: boolean;
+  at: number;
+} | null = null;
+/** Past this (ms), what the last finder left is stale: a page that late enters as usual. */
+const KEPT_MS = 3000;
 
 const enterLeft = css({
   animation: "slideInLeft 0.9s token(easings.signal) backwards",
@@ -97,6 +122,13 @@ export function Finder({ category, items, search, locale }: Props) {
   const arrival = useArrival(target);
   const swapped = arrival === "swap";
   const delay = useEnterDelay(target, swapped ? 0.3 : 0.92, 0.1);
+  const [carried] = useState(() =>
+    swapped &&
+    kept?.category === category &&
+    performance.now() - kept.at < KEPT_MS
+      ? kept
+      : null,
+  );
   // Back from the results, the console grows back in at once rather than with the page entrance.
   const wasDone = useRef(done);
   const backFromResults = !done && wasDone.current;
@@ -269,9 +301,29 @@ export function Finder({ category, items, search, locale }: Props) {
   );
 
   usePageExit(
-    (kind) =>
+    (kind, ahead) =>
       new Promise<void>((resolve) => {
         const el = stage.current;
+        // What the next category's finder shows in the same place stays: the counter and the
+        // canvas hint while its console shows, the podium when it ranks as many products.
+        const cards = (n: number) => Math.min(PODIUM_SIZE, n);
+        const hud = kind === "switch" && !done && !!ahead && !ahead.results;
+        const keepPodium =
+          kind === "switch" &&
+          ranking &&
+          ahead?.ranked != null &&
+          cards(ahead.ranked) === cards(finder.ranked.length);
+        kept =
+          el && ahead && kind === "switch"
+            ? {
+                category: ahead.category,
+                hud,
+                podium: keepPodium,
+                dockH: el.style.getPropertyValue("--dock-h"),
+                cramped: el.hasAttribute("data-cramped"),
+                at: performance.now(),
+              }
+            : null;
         if (!el || prefersReducedMotion()) return resolve();
         gsap.set(el.querySelectorAll("[data-enter]"), { animation: "none" });
         const tl = gsap.timeline({
@@ -289,13 +341,26 @@ export function Finder({ category, items, search, locale }: Props) {
             ),
             { opacity: 0, y: -10, duration: 0.26, stagger: 0.015 },
             0,
-          ).to(
-            el.querySelectorAll(
-              "[data-enter=hud], [data-enter=podium], [data-enter=hint]",
-            ),
-            { opacity: 0, duration: 0.22 },
-            0,
           );
+          // So do the counter's words and the podium cards' contents, last, as the page goes:
+          // the next category's come in right after, in frames that never stand empty long.
+          const parts = el.querySelectorAll("[data-swap-part]");
+          const out = 0.2 + 0.012 * Math.max(0, parts.length - 1);
+          tl.to(
+            parts,
+            { opacity: 0, y: -6, duration: 0.2, stagger: 0.012 },
+            Math.max(0, tl.duration() - out),
+          );
+          const going = [
+            !hud && "[data-enter=hud], [data-enter=hint]",
+            !keepPodium && "[data-enter=podium]",
+          ].filter(Boolean);
+          if (going.length)
+            tl.to(
+              el.querySelectorAll(going.join(", ")),
+              { opacity: 0, duration: 0.22 },
+              0,
+            );
           return;
         }
         tl.to(
@@ -323,6 +388,13 @@ export function Finder({ category, items, search, locale }: Props) {
     <main
       ref={stage}
       data-finder-layout={layout}
+      // Taking over from the last finder, the page starts laid out as that one was.
+      data-cramped={carried?.cramped || undefined}
+      style={
+        carried?.dockH
+          ? ({ "--dock-h": carried.dockH } as CSSProperties)
+          : undefined
+      }
       className={css({
         position: "relative",
         h: "100dvh",
@@ -338,7 +410,7 @@ export function Finder({ category, items, search, locale }: Props) {
       <div
         aria-hidden
         className={cx(
-          enterFade,
+          !swapped && enterFade,
           css({
             position: "absolute",
             insetInline: "0",
@@ -353,13 +425,14 @@ export function Finder({ category, items, search, locale }: Props) {
 
       {/* The results rise over its place, its counter and answers with them: it lifts away
           meanwhile and comes back after. The inner box fades, the outer one plays the entrance,
-          so results opened from a link never show it on the way in. */}
+          so results opened from a link never show it on the way in. Taken over from the last
+          category's, it plays none: its digits roll on. */}
       <div
         ref={hud}
         data-enter="hud"
         inert={done || undefined}
         className={cx(
-          swapped ? enterFade : enterLeft,
+          !carried?.hud && (swapped ? enterFade : enterLeft),
           css({
             position: "absolute",
             top: { base: "16", md: "20" },
@@ -377,6 +450,7 @@ export function Finder({ category, items, search, locale }: Props) {
             preview={finder.preview}
             previewLabel={m.ifPicked[locale]}
             ofLabel={m.of[locale]}
+            carryOver={!!carried?.hud}
           >
             {!done && brandFilter}
           </LiveCounter>
@@ -392,7 +466,7 @@ export function Finder({ category, items, search, locale }: Props) {
         aria-hidden={!ranking || undefined}
         inert={!ranking || undefined}
         className={cx(
-          swapped ? enterFade : enterRight,
+          !carried?.podium && (swapped ? enterFade : enterRight),
           css({
             position: "absolute",
             top: "20",
@@ -422,6 +496,7 @@ export function Finder({ category, items, search, locale }: Props) {
             informed={finder.informed}
             locale={locale}
             hint={hint}
+            carryOver={!!carried?.podium}
             onOpen={openSheet}
             onShowAll={finder.showResults}
           />
@@ -433,7 +508,7 @@ export function Finder({ category, items, search, locale }: Props) {
           data-enter="hint"
           aria-hidden
           className={cx(
-            enterFade,
+            !carried?.hud && enterFade,
             css({
               position: "absolute",
               // Centred by its margins, not by a transform: the entrance animates the transform,

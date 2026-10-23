@@ -10,6 +10,7 @@ import {
   describeAnswer,
   filter,
   finderOf,
+  type FinderDefinition,
   firstPending,
   isInformed,
   journeyStates,
@@ -51,6 +52,22 @@ const HOVER_GRACE_MS = 160;
 export type FinderSearch = Record<string, string | undefined>;
 
 /**
+ * The question on screen: the one the URL is at (`at`), else the first one left to answer; none
+ * once the results show.
+ */
+export function stepAt<I>(
+  def: FinderDefinition<I>,
+  items: I[],
+  answers: Answers,
+  at: string | undefined,
+): string | null {
+  if (at === DONE) return null;
+  const explicit = def.steps.find((s) => s.key === at && !s.aside);
+  if (explicit && (explicit.applies?.(answers) ?? true)) return explicit.key;
+  return firstPending(def, items, answers);
+}
+
+/**
  * What a product's sheet shows: its rank and match (with the fit and the answers met it is made
  * of) once there is something to rank on, what rules it out when the answers do.
  */
@@ -81,12 +98,10 @@ export function useFinder(
   const answers = useMemo(() => sanitizeAnswers(def, search), [def, search]);
   const at = search.at;
 
-  const currentKey = useMemo(() => {
-    if (at === DONE) return null;
-    const explicit = def.steps.find((s) => s.key === at && !s.aside);
-    if (explicit && (explicit.applies?.(answers) ?? true)) return explicit.key;
-    return firstPending(def, items, answers);
-  }, [def, items, answers, at]);
+  const currentKey = useMemo(
+    () => stepAt(def, items, answers, at),
+    [def, items, answers, at],
+  );
   const step = currentKey
     ? (def.steps.find((s) => s.key === currentKey) ?? null)
     : null;
@@ -126,10 +141,7 @@ export function useFinder(
     [def, items, effective],
   );
   /** Whether the answers give the ranking anything to go on: until then, no podium, rank or match. */
-  const informed = useMemo(
-    () => isInformed(def, effective),
-    [def, effective],
-  );
+  const informed = useMemo(() => isInformed(def, effective), [def, effective]);
   /** The use the visitor picked, which the match is measured against. */
   const useLabel = useMemo(() => {
     const profile = def.steps.find((s) => s.key === def.profileStep);
