@@ -128,22 +128,19 @@ const caption = css({
   textTransform: "uppercase",
   mb: "2",
 });
-/** What the best match's match is made of, its strengths and caveats, under a hairline. */
+/**
+ * What the best match's match is made of, its strengths and caveats: right under it, with no line
+ * between, so they read as its own. The hairline comes after them, before the products behind.
+ */
 const heroNotes = css({
   display: "grid",
   gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
   gap: "4",
-  pt: "5",
-  borderTopWidth: "1px",
-  borderColor: "line",
 });
 const heroNotesScored = css({
   display: "grid",
   gridTemplateColumns: { base: "1fr", md: "1.15fr 1fr 1fr" },
   gap: { base: "4", md: "6" },
-  pt: "5",
-  borderTopWidth: "1px",
-  borderColor: "line",
 });
 
 /** The best match's photo, on the canvas's dotted paper, as in its sheet: it opens the sheet. */
@@ -214,6 +211,17 @@ const specColumns = css({
   alignItems: "center",
   minW: "0",
 });
+
+/** In a row, a spec is one line: its value, and at most a short qualifier in grey. */
+const rowSpec = css({
+  minW: "0",
+  fontSize: "sm",
+  fontWeight: "500",
+  color: "ink",
+  fontVariantNumeric: "tabular-nums",
+  truncate: true,
+});
+const rowAside = css({ ml: "1.5", color: "ink.faint", fontWeight: "400" });
 
 const headLabel = css({
   fontFamily: "mono",
@@ -602,146 +610,160 @@ export function ResultsView({
           </article>
 
           {runnersUp.length > 0 && (
-            <div
+            <section
               className={css({
                 display: "grid",
-                gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
-                gap: "3",
+                gap: "1",
+                pt: "6",
+                borderTopWidth: "1px",
+                borderColor: "line",
               })}
             >
-              {runnersUp.map((entry, i) => (
-                <article
-                  key={entry.item.slug}
-                  data-result
-                  className={css({
-                    position: "relative",
-                    display: "grid",
-                    gap: "3",
-                    p: "4",
-                    borderRadius: "card",
-                    borderWidth: "1px",
-                    borderColor: "line",
-                    bg: "surface",
-                    transition: "border-color 160ms, background 160ms",
-                    _hover: {
-                      borderColor: "line.strong",
-                      bg: "surface.raised",
-                    },
-                  })}
-                >
-                  <div
+              <h4 className={caption}>{m.runnersUp[locale]}</h4>
+              <div
+                className={css({
+                  display: "grid",
+                  gridTemplateColumns: { base: "1fr", md: "1fr 1fr" },
+                  gap: "3",
+                })}
+              >
+                {runnersUp.map((entry, i) => (
+                  <article
+                    key={entry.item.slug}
+                    data-result
                     className={css({
-                      display: "flex",
-                      alignItems: "center",
-                      justifyContent: "space-between",
-                      fontFamily: "mono",
-                      fontSize: "xs",
-                      color: "ink.faint",
-                    })}
-                  >
-                    <span>{String(i + 2).padStart(2, "0")}</span>
-                    {scored && (
-                      <Match score={entry.score} locale={locale} size="sm" />
-                    )}
-                  </div>
-                  <div
-                    className={css({
-                      h: "24",
+                      position: "relative",
                       display: "grid",
-                      placeItems: "center",
-                    })}
-                  >
-                    <ProductPicture
-                      item={entry.item}
-                      className={css({ maxH: "24", w: "80%", h: "auto" })}
-                    />
-                  </div>
-                  <div
-                    className={css({
-                      display: "flex",
-                      justifyContent: "space-between",
-                      alignItems: "center",
                       gap: "3",
+                      p: "4",
+                      borderRadius: "card",
+                      borderWidth: "1px",
+                      borderColor: "line",
+                      bg: "surface",
+                      transition: "border-color 160ms, background 160ms",
+                      _hover: {
+                        borderColor: "line.strong",
+                        bg: "surface.raised",
+                      },
                     })}
                   >
-                    <h3
-                      className={css({
-                        fontWeight: "600",
-                        letterSpacing: "-0.02em",
-                      })}
-                    >
-                      <span
-                        className={css({
-                          color: "ink.muted",
-                          fontWeight: "500",
-                        })}
-                      >
-                        {entry.item.brand.name}
-                      </span>{" "}
-                      {entry.item.name}
-                    </h3>
-                    <span
+                    <div
                       className={css({
                         display: "flex",
                         alignItems: "center",
-                        gap: "2.5",
-                        flexShrink: "0",
+                        justifyContent: "space-between",
+                        fontFamily: "mono",
+                        fontSize: "xs",
+                        color: "ink.faint",
                       })}
                     >
-                      <span
-                        className={css({ fontFamily: "mono", fontSize: "sm" })}
-                      >
-                        {formatPrice(entry.item.priceEur, locale)}
-                      </span>
-                      <AmazonLink
+                      <span>{String(i + 2).padStart(2, "0")}</span>
+                      {scored && (
+                        <Match score={entry.score} locale={locale} size="sm" />
+                      )}
+                    </div>
+                    <div
+                      className={css({
+                        h: "24",
+                        display: "grid",
+                        placeItems: "center",
+                      })}
+                    >
+                      <ProductPicture
                         item={entry.item}
-                        locale={locale}
-                        layouts={layouts}
-                        variant="pill"
+                        className={css({ maxH: "24", w: "80%", h: "auto" })}
                       />
-                    </span>
-                  </div>
-                  <dl
-                    className={css({
-                      display: "grid",
-                      gridTemplateColumns: "auto minmax(0, 1fr)",
-                      alignItems: "center",
-                      columnGap: "4",
-                      rowGap: "2",
-                      fontSize: "xs",
-                    })}
-                  >
-                    {specCells(entry.item, locale).map((cell) => (
-                      <div
-                        key={cell.label}
-                        className={css({ display: "contents" })}
+                    </div>
+                    <div
+                      className={css({
+                        display: "flex",
+                        justifyContent: "space-between",
+                        alignItems: "center",
+                        gap: "3",
+                      })}
+                    >
+                      <h3
+                        className={css({
+                          fontWeight: "600",
+                          letterSpacing: "-0.02em",
+                        })}
                       >
-                        <dt
+                        <span
                           className={css({
-                            fontFamily: "mono",
-                            color: "ink.faint",
+                            color: "ink.muted",
+                            fontWeight: "500",
                           })}
                         >
-                          {cell.label}
-                        </dt>
-                        <dd className={css({ minW: "0" })}>
-                          <SpecValue cell={cell} layout="inline" />
-                        </dd>
-                      </div>
-                    ))}
-                  </dl>
-                  <button
-                    type="button"
-                    className={opener}
-                    aria-label={m.sheetOf(
-                      `${entry.item.brand.name} ${entry.item.name}`,
-                      locale,
-                    )}
-                    onClick={() => onOpen(entry.item.slug)}
-                  />
-                </article>
-              ))}
-            </div>
+                          {entry.item.brand.name}
+                        </span>{" "}
+                        {entry.item.name}
+                      </h3>
+                      <span
+                        className={css({
+                          display: "flex",
+                          alignItems: "center",
+                          gap: "2.5",
+                          flexShrink: "0",
+                        })}
+                      >
+                        <span
+                          className={css({
+                            fontFamily: "mono",
+                            fontSize: "sm",
+                          })}
+                        >
+                          {formatPrice(entry.item.priceEur, locale)}
+                        </span>
+                        <AmazonLink
+                          item={entry.item}
+                          locale={locale}
+                          layouts={layouts}
+                          variant="pill"
+                        />
+                      </span>
+                    </div>
+                    <dl
+                      className={css({
+                        display: "grid",
+                        gridTemplateColumns: "auto minmax(0, 1fr)",
+                        alignItems: "center",
+                        columnGap: "4",
+                        rowGap: "2",
+                        fontSize: "xs",
+                      })}
+                    >
+                      {specCells(entry.item, locale).map((cell) => (
+                        <div
+                          key={cell.label}
+                          className={css({ display: "contents" })}
+                        >
+                          <dt
+                            className={css({
+                              fontFamily: "mono",
+                              color: "ink.faint",
+                            })}
+                          >
+                            {cell.label}
+                          </dt>
+                          <dd className={css({ minW: "0" })}>
+                            <SpecValue cell={cell} layout="inline" />
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                    <button
+                      type="button"
+                      className={opener}
+                      aria-label={m.sheetOf(
+                        `${entry.item.brand.name} ${entry.item.name}`,
+                        locale,
+                      )}
+                      onClick={() => onOpen(entry.item.slug)}
+                    />
+                  </article>
+                ))}
+              </div>
+            </section>
           )}
 
           {rest.length > 0 && (
@@ -850,7 +872,12 @@ export function ResultsView({
                       </span>
                       <span className={specColumns}>
                         {specCells(entry.item, locale).map((cell) => (
-                          <SpecValue key={cell.label} cell={cell} />
+                          <span key={cell.label} className={rowSpec}>
+                            {cell.value || cell.details[0] || "—"}
+                            {cell.value && cell.aside && (
+                              <span className={rowAside}>{cell.aside}</span>
+                            )}
+                          </span>
                         ))}
                       </span>
                       <span

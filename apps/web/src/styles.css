@@ -314,42 +314,39 @@ html[data-loading] [data-preloader] *::after {
 
 /* ---- Finder layout under test (features/finder/layout.ts) -------------------------------------- */
 
-/* "side", from 80rem: the journey is a column at the left of the console, the console's buttons a
-   module of their own at the right under the podium, and the console keeps the question alone.
-   Narrower, or with ?layout=bar, the journey bar stays under the console with the buttons in it. */
-[data-journey-rail],
-[data-console-actions] {
+/* "side", from 80rem: the journey is a column at the left of the console, standing on the paper
+   like the counter above it, and the journey bar goes. The console stays as centred as the column
+   lets it. Narrower, or with ?layout=bar, the journey bar stays under the console. */
+[data-journey-rail] {
   display: none;
+}
+/* A stop's tick (or the bar's dot) pops in as the stop is answered (or reached). */
+@keyframes railPop {
+  from {
+    transform: scale(0);
+    opacity: 0;
+  }
 }
 @media (min-width: 80rem) {
   [data-finder-layout="side"] {
     --side-edge: 2rem;
-    --rail-w: 14rem;
-    --actions-w: 18rem;
+    --rail-w: 13rem;
     --side-gap: 1.5rem;
   }
-  [data-finder-layout="side"] [data-journey-rail],
-  [data-finder-layout="side"] [data-console-actions] {
+  [data-finder-layout="side"] [data-journey-rail] {
     display: block;
   }
-  [data-finder-layout="side"] [data-journey-bar],
-  [data-finder-layout="side"] [data-console-footer] {
+  [data-finder-layout="side"] [data-journey-bar] {
     display: none;
   }
-  /* The console between the two columns, never wider than it was. */
   [data-finder-layout="side"] [data-dock] {
-    left: calc(var(--side-edge) + var(--rail-w) + var(--side-gap));
-    right: calc(var(--side-edge) + var(--actions-w) + var(--side-gap));
-    width: auto;
+    --dock-left: max(
+      calc(var(--side-edge) + var(--rail-w) + var(--side-gap)),
+      calc(50% - 480px)
+    );
+    left: var(--dock-left);
+    width: min(960px, calc(100% - var(--dock-left) - var(--side-edge)));
     transform: none;
-  }
-  [data-finder-layout="side"] [data-dock] > * {
-    max-width: 960px;
-    margin-inline: auto;
-  }
-  /* The podium ends above the buttons' module rather than above the console. */
-  [data-finder-layout="side"] [data-enter="podium"] {
-    bottom: calc(var(--actions-h, 7rem) + 1.5rem + 1rem);
   }
 }
 

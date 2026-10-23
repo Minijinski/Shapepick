@@ -136,6 +136,7 @@ export const messages = {
   specSheet: text("Fiche technique", "Spec sheet"),
   listPrice: text("Prix indicatif", "Typical price"),
   price: text("Prix", "Price"),
+  runnersUp: text("Juste derrière", "Close behind"),
   searchOnAmazon: text("Chercher sur Amazon", "Search on Amazon"),
   viewOnAmazon: text("Voir sur Amazon", "View on Amazon"),
   amazon: text("Amazon", "Amazon"),

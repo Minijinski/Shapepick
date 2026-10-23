@@ -25,8 +25,7 @@ import { type FinderSearch, useFinder } from "./useFinder";
 // The finder over its category's canvas: the live counter (with the brand filter) top-left, the
 // podium on the right, the question console docked at the bottom over the journey bar, which holds
 // the answers given and lets the visitor take the questions in any order (in the layout under test,
-// layout.ts, the journey is a column at the left and the console's buttons a module at the right,
-// under the podium); at the end the console's
+// layout.ts, the journey is a column at the left of the console instead); at the end the console's
 // panel grows into the results, up to the site header (the counter and the brands move into them),
 // and shrinks back when the visitor edits an answer. The canvas itself is the layout's scene: the finder only tells it which products the answers keep,
 // which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
@@ -88,9 +87,6 @@ export function Finder({ category, items, search, locale }: Props) {
   const podium = useRef<HTMLElement>(null);
   const dock = useRef<HTMLDivElement>(null);
   const rail = useRef<HTMLDivElement>(null);
-  const actions = useRef<HTMLDivElement>(null);
-  /** Where the console puts its buttons in the layout under test. */
-  const [actionsSlot, setActionsSlot] = useState<HTMLElement | null>(null);
   const layout = useFinderLayout();
   const done = finder.step == null;
   /** The podium shows once there is something to rank on, and gives way to the results. */
@@ -213,8 +209,6 @@ export function Finder({ category, items, search, locale }: Props) {
           ? content.offsetHeight - panel.clientHeight
           : 0);
       main.style.setProperty("--dock-h", `${dockH}px`);
-      const a = actions.current;
-      if (a) main.style.setProperty("--actions-h", `${a.offsetHeight}px`);
       if (done) return scene.setStage(category, null);
       const p = podium.current;
       const r = rail.current;
@@ -230,7 +224,7 @@ export function Finder({ category, items, search, locale }: Props) {
       // No free space left above the dock (a phone): the canvas hint would sit on the counter.
       main.toggleAttribute("data-cramped", bottom < top);
       // Centred under the console when it fits, like everything else on the page's axis (the
-      // console is off-centre when the journey's column and the buttons' module flank it).
+      // console moves off-centre when the journey's column needs the room).
       const axis = r?.offsetWidth
         ? d.offsetLeft + d.offsetWidth / 2
         : main.clientWidth / 2;
@@ -249,7 +243,6 @@ export function Finder({ category, items, search, locale }: Props) {
       hud.current,
       podium.current,
       rail.current,
-      actions.current,
       contentOf(),
     ])
       if (el) observer.observe(el);
@@ -318,7 +311,7 @@ export function Finder({ category, items, search, locale }: Props) {
           0,
         ).to(
           el.querySelectorAll(
-            "[data-enter=hud], [data-enter=podium], [data-enter=hint], [data-enter=rail], [data-enter=actions]",
+            "[data-enter=hud], [data-enter=podium], [data-enter=hint], [data-enter=rail]",
           ),
           { opacity: 0, y: -10, duration: 0.3 },
           0,
@@ -460,8 +453,7 @@ export function Finder({ category, items, search, locale }: Props) {
               borderRadius: "pill",
               bg: "paper/80",
               backdropFilter: "blur(8px)",
-              transition:
-                "bottom 400ms token(easings.signal), opacity 300ms",
+              transition: "bottom 400ms token(easings.signal), opacity 300ms",
               "[data-cramped] &": { opacity: 0 },
             }),
           )}
@@ -481,19 +473,37 @@ export function Finder({ category, items, search, locale }: Props) {
       )}
 
       {/* The layout under test (layout.ts, styles.css): the journey as a column at the left of the
-          console, and the console's buttons in a module of their own under the podium. */}
+          console, standing on the paper like the counter above it. Switching categories it stays
+          on screen: only what it lists changes. */}
       <div
         ref={rail}
         data-enter="rail"
         data-journey-rail
         className={cx(
-          swapped ? enterFade : enterLeft,
+          !swapped && enterLeft,
           css({
             position: "absolute",
             left: "8",
             bottom: "6",
-            w: "56",
+            w: "52",
             pointerEvents: "auto",
+            isolation: "isolate",
+            // The canvas fades into frosted paper along the left edge, down to the bottom, so the
+            // steps stay legible over the products drifting behind (as the counter does under
+            // the top gradient).
+            _before: {
+              content: '""',
+              position: "absolute",
+              inset: "-3rem -5rem -1.5rem -2rem",
+              zIndex: "-1",
+              background:
+                "linear-gradient(to right, rgba(243,241,236,0.94) 55%, rgba(243,241,236,0))",
+              backdropFilter: "blur(8px)",
+              maskImage:
+                "linear-gradient(to bottom, transparent, #000 4rem), linear-gradient(to right, #000 60%, transparent)",
+              maskComposite: "intersect",
+              pointerEvents: "none",
+            },
           }),
         )}
         style={{ animationDelay: `${delay + 0.35}s` }}
@@ -505,44 +515,9 @@ export function Finder({ category, items, search, locale }: Props) {
           onPick={finder.pickStep}
           results={finder.matching}
           onResults={finder.showResults}
+          carryOver={swapped}
         />
       </div>
-      <div
-        ref={actions}
-        data-enter="actions"
-        data-console-actions
-        aria-hidden={done || undefined}
-        inert={done || undefined}
-        className={cx(
-          swapped ? enterFade : enterRight,
-          css({
-            position: "absolute",
-            right: "8",
-            bottom: "6",
-            w: "72",
-            pointerEvents: "auto",
-          }),
-        )}
-        style={{ animationDelay: `${delay + 0.35}s` }}
-      >
-        <div
-          ref={setActionsSlot}
-          data-off={done || undefined}
-          className={css({
-            p: "3",
-            bg: "surface.raised/80",
-            backdropFilter: "blur(10px)",
-            borderWidth: "1px",
-            borderColor: "line",
-            borderRadius: "panel",
-            boxShadow: "0 14px 32px -24px rgba(20,20,20,0.4)",
-            transition: "opacity 300ms, transform 450ms token(easings.signal)",
-            "&[data-off]": { opacity: 0, transform: "translateY(12px)" },
-            _motionReduce: { transition: "none" },
-          })}
-        />
-      </div>
-
       <div
         ref={dock}
         data-dock
@@ -606,7 +581,6 @@ export function Finder({ category, items, search, locale }: Props) {
                 finder={finder}
                 category={category}
                 locale={locale}
-                actionsSlot={actionsSlot}
                 enterDelay={backFromResults ? 0.12 : delay + 0.3}
                 morph={backFromResults || swapped}
               />

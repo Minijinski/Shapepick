@@ -14,7 +14,6 @@ import {
   useRef,
   useState,
 } from "react";
-import { createPortal } from "react-dom";
 import { css, cx } from "styled-system/css";
 import { button, optionTile } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
@@ -153,13 +152,6 @@ const skipOrGo = css({
   _motionReduce: { "& > span": { transition: "none" } },
 });
 
-/** The question's buttons in a module of their own, beside the console (the layout under test). */
-const sideActions = css({
-  display: "grid",
-  gap: "2",
-  "& > button": { w: "100%" },
-});
-
 const Icon = ({ d }: { d: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -182,16 +174,10 @@ export function Console({
   locale,
   enterDelay = 0,
   morph = false,
-  actionsSlot = null,
 }: {
   finder: Finder;
   category: Category;
   locale: Locale;
-  /**
-   * Where the question's buttons go in the layout under test (layout.ts): a module of their own
-   * beside the console. The console's own row of buttons then hides (styles.css).
-   */
-  actionsSlot?: HTMLElement | null;
   /** Seconds before the first question plays in, while the console itself rises. */
   enterDelay?: number;
   /**
@@ -684,7 +670,6 @@ export function Console({
 
       <div
         data-console-part
-        data-console-footer
         className={css({
           display: "flex",
           alignItems: "center",
@@ -711,23 +696,6 @@ export function Console({
         )}
         {primary}
       </div>
-      {actionsSlot &&
-        (primary || total > 0) &&
-        createPortal(
-          <div data-console-part className={sideActions}>
-            {primary}
-            {total > 0 && (
-              <button
-                type="button"
-                className={button({ tone: "line", size: "md" })}
-                onClick={seeResults}
-              >
-                {m.seeResults(total, locale)} →
-              </button>
-            )}
-          </div>,
-          actionsSlot,
-        )}
     </section>
   );
 }

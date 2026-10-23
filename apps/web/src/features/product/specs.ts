@@ -10,8 +10,16 @@ import {
 
 export type SpecLine = { label: string; value: string };
 
-/** A spec as the rows of the results line it up: its main value, then details as small tags. */
-export type SpecCell = { label: string; value: string; details: string[] };
+/**
+ * A spec as the results, the sheet and the popup show it: its main value, then details as small
+ * tags; a row of the results list keeps the value alone, with `aside` beside it when it has one.
+ */
+export type SpecCell = {
+  label: string;
+  value: string;
+  details: string[];
+  aside?: string;
+};
 
 const formFactorName: Record<string, [string, string]> = {
   full: ["100 %", "Full size"],
@@ -483,6 +491,8 @@ export function specCells(item: CatalogItem, locale: Locale): SpecCell[] {
     {
       label: fr ? "Taille" : "Size",
       value: `${num(s.diagonalIn, locale)}"`,
+      // A diagonal alone does not say whether the screen is wide: the ratio stays beside it.
+      aside: s.aspect,
       details: [
         s.aspect,
         s.curvatureR ? `${s.curvatureR}R` : fr ? "plat" : "flat",
