@@ -1,16 +1,16 @@
 # Handoff — choose-a-device
 
-Oct 22, 2026 · @Eddy
+Oct 23, 2026 · @Eddy
 
 ## En bref
 
 choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit avec lien Amazon.fr (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
 - **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
-- **Qualité** : 42 tests du moteur, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `f54dc9b` « Updating performances », poussé et déployé le 22 octobre. Dans le dossier local, à pousser : cinq correctifs faits après ce commit (dont celui du magasin de dessins) et tous les « Retours du 22 octobre (soir) ». La base Neon de production n'a pas encore les nouvelles données (photos principales, polling Corsair) : seed à faire avec l'accord de l'utilisateur.
+- **Qualité** : 44 tests du moteur, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` = `97439b1` « adding amazon links », poussé et déployé le 23 octobre, avec les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon et les « Retours du 23 octobre ». Dans le dossier local, non commités : le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n ») et les ASIN Amazon d'une autre session (migration `0002`, YAML). La base Neon de production a été semée après le correctif Logitech (16 claviers Logitech y ont un switch) ; la migration `0002` n'y est pas encore.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -220,10 +220,10 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
 | Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol, fiche produit au clic | Dérive en diagonale, drag avec inertie, molette ; une réponse retire les écartés et resserre les retenus, en vague depuis la console ; une liste courte se regroupe devant le canvas |
-| Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide en surimpression (en clair au-dessus des tuiles quand elles tiennent sur une rangée), tuiles avec compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade ; sortie jouée avant la navigation |
+| Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide derrière le bouton ⓘ, tuiles avec une indication de deux lignes au plus, compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade, rejoués seulement quand la question change ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
-| Résultats (`ResultsView`) | N°1 annoté comme un dessin technique, points forts et « à savoir », n°2 et n°3, liste des autres ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Panneau qui monte, traits de rapport qui se dessinent |
-| Fiche produit (`ProductDrawer`) | Rang et compatibilité, ou « Écarté par … » ; dessin annoté à légende numérotée, points forts, « à savoir », fiche technique, « Où l'acheter » (emplacement des offres affiliées) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer |
+| Résultats (`ResultsView`) | N°1 en carte produit (la photo ouvre la fiche ; prix, compatibilité et « Voir la fiche » sur une ligne ; 4 specs), détail du %, points forts et « à savoir », n°2 et n°3, liste des autres ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Le panneau de la console s'étire jusqu'aux résultats ; specs et lignes en fondu |
+| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Où l'acheter » (lien Amazon.fr) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer |
 | Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, double curseur ; tout en haut signifie sans plafond | Les barres de la plage passent à l'encre au fil du curseur |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
 | Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
@@ -243,7 +243,7 @@ Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule
 - **Filtres** : depuis le 22 octobre, le canvas ne montre que les produits retenus. Un produit écarté s'efface, les retenus glissent vers leur place dans un motif recomposé sans trous, le tout en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
 - **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge. La grille se centre sur l'axe de la console quand elle y tient (sinon sur tout l'espace libre) ; derrière elle, le canvas n'a plus que son papier pointillé.
 - **Changement de catégorie** (header, depuis un canvas) : le canvas reste en place, les anciens produits se dissolvent et les nouveaux apparaissent en vague depuis le lien cliqué. La console ne bouge pas : seule sa question change. Chaque catégorie mémorise son parcours dans le stockage du navigateur (`choose-a-device:journey:<catégorie>`) et le reprend au retour ; « Recommencer » le remet à zéro.
-- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale et affiche son aide en clair au-dessus), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
+- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
 
 | Fichier | Rôle |
 | --- | --- |
@@ -342,7 +342,31 @@ Sept retours : des claviers encore en dessin (canvas, accueil, fiche), un filtre
 - Les photos principales choisies et le polling Corsair sont dans `data/` : il faut un seed pour que le site les voie. La réécriture des URL Corsair, elle, marche dès le déploiement.
 - Restent en dessin sur le canvas : 22 claviers sans photo détourable (SteelSeries et Vortex photographiés en scène ou sur fond noir, Varmilo Sword 2 108…) et 19 sans vue de dessus (Womier, Wobkey Rainy 75, Chilkey Foxy 65…). Leur fiche montre la photo.
 
+## Retours du 23 octobre
+
+Six retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless (captures en haute définition, mesures) sur la base locale. Ils sont dans `97439b1` « adding amazon links », poussé et déployé avec le lien Amazon d'une autre session.
+
+| Mesure | Avant | Après |
+| --- | --- | --- |
+| Hauteur de la console, question à une rangée (1440 × 900) | ≈ 305 px, explication comprise | 250 px |
+| Centre de « Glisse pour explorer » pendant son entrée depuis l'accueil | Décalé d'une demi-largeur (≈ 157 px) à droite, puis saut au centre | 720 px sur les 166 images de l'entrée : centre exact |
+| Titre et tuiles rejoués par un changement de marque | À chaque changement | Aucun (2 changements mesurés) |
+
+| Retour | Ce qui a changé | Où |
+| --- | --- | --- |
+| « Seulement » chevauche le nombre et ne se clique plus quand on survole le nombre | « Seulement » a sa colonne entre le nom et le nombre, qui reste visible. Avant, le nombre masqué (opacité 0) restait par-dessus le bouton et prenait le clic. Toujours affiché sur écran tactile | `finder/BrandFilter.tsx` |
+| « Glisse pour explorer » arrive décalé à droite puis se recentre | L'animation `fadeUp` écrasait le `translateX(-50%)` qui centrait le texte ; il est centré par ses marges (`insetInline: 0`, `mx: auto`, `w: fit-content`) | `finder/Finder.tsx` |
+| Changer de marque rejoue l'apparition du texte de la console | L'entrée (titre lettre par lettre, tuiles en cascade) suit la question et sa réponse validée, plus toutes les réponses : une marque ne change que les compteurs. Les indispensables qu'une marque fait apparaître entrent seuls | `finder/Console.tsx` |
+| Enlever l'explication sous le titre, détailler les tuiles sans surcharger | L'explication reste derrière le bouton ⓘ, toujours affiché, et en `aria-describedby` pour les lecteurs d'écran. Indications des tuiles réécrites en FR et EN : deux lignes au plus (`lineClamp: 2`), une seule à côté d'un dessin ou d'une pastille | `finder/Console.tsx`, recette `optionTile`, `catalog/src/finder/keyboards.ts`, `monitors.ts` |
+| Fiche produit : aligner la compatibilité sur le nom ou le prix | `KeyFigures` : « Prix indicatif » et « Compatibilité » en paire, libellés sur une ligne, valeurs sur la suivante (mono 2xl, petit anneau `MatchRing`) | `product/KeyFigures.tsx`, `product/Match.tsx`, `finder/ProductDrawer.tsx` |
+| N° 1 de « Tes meilleurs choix » : bouton, prix et compatibilité mal agencés | Carte produit en deux colonnes : la photo sur papier pointillé ouvre la fiche ; à côté, rang, nom, `KeyFigures` avec « Voir la fiche → » sur la ligne des valeurs, `KeySpecs` en 2 × 2. Plus basse, elle laisse voir les n° 2 et 3 plus tôt. Sur téléphone, l'en-tête passe sur deux lignes au lieu de couper « Modifier mes réponses » | `finder/ResultsView.tsx`, `product/ProductHero.tsx` |
+
+- Vérifié : typecheck des 4 paquets, 44 tests, build, Biome et Prettier sur les fichiers touchés ; captures à 1440, 1024 et 390 px de large.
+- Les animations ont été mesurées en temps réel dans Chrome headless, pas encore regardées à l'œil.
+
 ## SEO et i18n
+
+Le site a les bases techniques du SEO mais n'est pas encore prêt à se classer : 6 pages indexables, aucune page produit, ni `robots.txt`, ni `sitemap.xml`, ni données structurées (audit du 23 octobre 2026, ci-dessous).
 
 Chaque page est rendue côté serveur avec son titre, sa description, une URL canonique et les liens `hreflang` FR/EN. Les chemins sont traduits ; les clés des paramètres restent en anglais dans les deux langues.
 
@@ -358,7 +382,45 @@ Chaque page est rendue côté serveur avec son titre, sa description, une URL ca
 - **Canonique** : une URL de parcours avec réponses pointe vers la page de catégorie, pour ne pas indexer chaque combinaison.
 - **Changement de langue** : garde la catégorie et les réponses (`/fr/claviers?…` ↔ `/en/keyboards?…`).
 - **Textes** : interface dans `apps/web/src/i18n/messages.ts` ; questions, options et critères dans `packages/catalog`, toujours sous la forme `{ fr, en }`.
-- **Pas encore fait (phase 5)** : fiches produit, pages collections, `sitemap.xml`, `robots.txt`, JSON-LD, images OG, `noindex` des combinaisons, prérendu.
+
+### Audit du 23 octobre
+
+Mesuré sur le site en ligne (`curl`, Chrome headless en mobile émulé) et sur la build de production lancée en local.
+
+| Point | Constat |
+| --- | --- |
+| En place | Rendu serveur, URL traduites, `lang`, un titre par page, canonical vers la catégorie pour les URL à réponses, 404 sur une URL inconnue, cache CDN Netlify |
+| Erreur d'hydratation | Sur `*.netlify.app`, Netlify ajoute un saut de ligne et un commentaire (« This site is hosted on Netlify… ») après la meta charset. React échouait à hydrater (erreur #418) et refaisait chaque page dans le navigateur. Corrigé dans le dossier local : un script de `routes/__root.tsx` retire ces nœuds avant l'hydratation (vérifié sur la build de production en local, pas encore poussé) |
+| `robots.txt`, `sitemap.xml` | 404 tous les deux |
+| `hreflang`, canonical | Relatifs (`/fr`, `/en/keyboards`) : Google ignore un `hreflang` sans URL complète. Pas de `x-default` |
+| Partage (Open Graph, Twitter) | Seul `og:title`, sur les pages catégorie : ni image, ni description, ni URL |
+| Meta description | La même sur l'accueil et les deux catégories |
+| Données structurées | Aucune |
+| Contenu indexable | 6 pages (accueil et 2 catégories, en FR et EN), de 500 à 1 100 caractères de texte. Les produits sont sur le canvas ou dans le tiroir : aucune URL produit, aucune `<img>` |
+| Vitesse | LCP 3,4 s sur mobile émulé, réseau non bridé (preloader, hydratation ratée). Réponse en 0,6 s depuis le cache, jusqu'à 4 s à froid |
+| Poids des pages | 740 Ko de HTML (≈ 70 Ko en Brotli), dont 715 Ko de catalogue en JSON dans chaque page |
+| Domaine | Sous-domaine `choose-a-device.netlify.app` |
+
+### À faire, par priorité
+
+**Priorité 1** : les bases techniques, avant de chercher du trafic.
+
+- [ ] Pousser le correctif d'hydratation, puis vérifier en ligne qu'aucune erreur #418 n'apparaît dans la console.
+- [ ] `robots.txt` (tout autoriser sauf `/api/`, lien vers le sitemap) et `sitemap.xml` (accueils et catégories FR/EN, puis les fiches produit), servis par des routes serveur.
+- [ ] `hreflang` et canonical en URL absolues, plus un `hreflang="x-default"`.
+- [ ] Open Graph et Twitter sur chaque page (titre, description, URL, image, `og:locale`) et une meta description propre à chaque page.
+
+**Priorité 2** : le contenu qui peut se classer.
+
+- [ ] Phase 5 : une fiche produit indexable par produit (`/fr/claviers/<slug>`, `/en/keyboards/<slug>`) avec la photo en `<img alt>`, les specs, un JSON-LD `Product` et des liens `<a href>` depuis le podium, les résultats et la fiche (proposée comme session séparée le 23 octobre).
+- [ ] Pages collections tirées des options du questionnaire (« Claviers 75 % sans fil », « OLED 27" 240 Hz »).
+- [ ] JSON-LD `WebSite` sur l'accueil, `ItemList` et `BreadcrumbList` sur les catégories.
+- [ ] LCP mobile sous 2,5 s : preloader plus court quand tout est en cache, premier écran sans attendre le catalogue entier.
+
+**Priorité 3** : à prévoir avant le lancement.
+
+- [ ] Un domaine propre, puis Google Search Console et envoi du sitemap.
+- [ ] Ne plus envoyer tout le catalogue dans chaque page : top produits rendu côté serveur, catalogue chargé ensuite.
 
 ## Lancer le projet
 
@@ -379,7 +441,7 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 | `pnpm dev` | Serveur de dev du site, port 3000 |
 | `pnpm build` | Build de production dans `apps/web/.output` |
 | `pnpm --filter @choose/web start` | Lance le build de production avec le `.env` racine |
-| `pnpm test` | 42 tests du moteur (Vitest) |
+| `pnpm test` | 44 tests du moteur (Vitest) |
 | `pnpm typecheck` | `tsc` sur `catalog`, `db` et `web` |
 | `pnpm lint`, `pnpm format` | Biome : vérification, puis correction automatique |
 | `pnpm pg:local` (ou `stop`, `status`) | Postgres local : port 54329, données dans `.pgdata` |
@@ -499,7 +561,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
-- [ ] **Phase 5, pages SEO** : fiche produit `/fr/claviers/<slug>` (héros annoté, fiche technique, JSON-LD), pages collections (« 75 % sans fil », « OLED 27" 240 Hz »), `sitemap.xml`, `robots.txt`, `noindex` des combinaisons, images OG, prérendu.
+- [ ] **Phase 5, pages SEO** : fiches produit `/fr/claviers/<slug>` avec JSON-LD, pages collections, `sitemap.xml`, `robots.txt`, images OG. Le détail et l'ordre sont dans « SEO et i18n » (audit du 23 octobre) ; les fiches produit sont proposées comme session séparée.
 - [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») ; restent les vrais écrans, les prix boutiques (`offers`) et liens d'affiliation.
 - [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres dans « Où l'acheter » de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
