@@ -65,6 +65,8 @@ const productBase = z.object({
     .optional(),
   /** Pages the record was imported from (pnpm ingest), to re-check or refresh it later. */
   sources: z.array(z.url()).optional(),
+  /** EAN/UPC codes the maker gives, kept in data/ only: they identify the product at a shop. */
+  gtins: z.array(z.string().regex(/^\d{8,14}$/, 'GTIN')).optional(),
 })
 
 export const keyboardSpecsSchema = z.object({
@@ -118,7 +120,7 @@ export const keyboardInputSchema = productBase.extend({
 })
 export type KeyboardInput = z.infer<typeof keyboardInputSchema>
 
-export const monitorSpecsSchema = z.object({
+const monitorSpecsShape = z.object({
   diagonalIn: positive,
   aspect: z.enum(E.aspects),
   resW: positiveInt,
@@ -148,13 +150,21 @@ export const monitorSpecsSchema = z.object({
   kvm: z.boolean().default(false),
   usbHub: z.boolean().default(false),
   speakers: z.boolean().default(false),
+  /** Height travel of the stand, when the sheet gives it (0: not given, or a fixed stand). */
   standHeightMm: z.number().int().min(0).default(0),
+  /** Whether the stand goes up and down: some sheets say so without giving the travel. */
+  heightAdjustable: z.boolean().default(false),
   tilt: z.boolean().default(true),
   swivel: z.boolean().default(false),
   pivot: z.boolean().default(false),
   vesa: z.boolean().default(true),
   weightG: positiveInt.optional(),
 })
+// A stand with a height travel is height-adjustable, whatever the record says.
+export const monitorSpecsSchema = monitorSpecsShape.transform((s) => ({
+  ...s,
+  heightAdjustable: s.heightAdjustable || s.standHeightMm > 0,
+}))
 export type MonitorSpecs = z.infer<typeof monitorSpecsSchema>
 
 export const monitorVariantSchema = z.object({

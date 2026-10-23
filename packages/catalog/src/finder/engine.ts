@@ -356,7 +356,8 @@ function typicalScores<I>(def: FinderDefinition<I>, items: I[]): Typical {
  * fitting items. The match printed adds the answers: each one that narrows the catalogue is a
  * criterion every ranked item meets, so the match starts at the fit and fills up as the visitor
  * answers, without changing the order. Among items with the same match, makers take turns: a
- * brand that sells ten variants of one board cannot fill a podium on a tie.
+ * brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses are said
+ * in their own words, and a caveat (an OLED's burn-in at the office) only ever as a weakness.
  */
 export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers): Ranked<I>[] {
   const pool = filter(def, items, answers)
@@ -366,6 +367,8 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
   const criteria = def.criteria.filter((c) => (weights[c.key] ?? 0) > 0)
   const total = criteria.reduce((sum, c) => sum + (weights[c.key] ?? 0), 0)
   const heavy = [...criteria].sort((a, b) => (weights[b.key] ?? 0) - (weights[a.key] ?? 0))
+  /** The criteria whose weakness is worth saying: the heaviest half, at least three. */
+  const weighty = new Set(heavy.slice(0, Math.max(3, Math.ceil(heavy.length / 2))))
   const typical = typicalScores(def, items)
 
   const ranked = pool.map((item) => {
@@ -390,10 +393,12 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       : 0.5
     const prior = clamp(def.prior(item))
     const said = heavy.filter((c) => !guessed.has(c.key))
-    const pros = said.filter((c) => (scores.get(c.key) ?? 0) >= 0.75).slice(0, 3)
-    const cons = heavy
-      .slice(0, Math.max(3, Math.ceil(heavy.length / 2)))
-      .filter((c) => !guessed.has(c.key) && (scores.get(c.key) ?? 1) < 0.35)
+    const pros = said.filter((c) => !c.caveat && (scores.get(c.key) ?? 0) >= 0.75).slice(0, 3)
+    const cons = [
+      ...said.filter((c) => c.caveat),
+      ...said.filter((c) => !c.caveat && weighty.has(c)),
+    ]
+      .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
     const fit = FIT_SHARE * profileFit + (1 - FIT_SHARE) * prior
     return {
@@ -402,7 +407,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       fit,
       met,
       pros: pros.map((c) => c.label),
-      cons: cons.map((c) => c.label),
+      cons: cons.map((c) => c.weakLabel ?? c.label),
     }
   })
   ranked.sort((a, b) => b.score - a.score || def.id(a.item).localeCompare(def.id(b.item)))

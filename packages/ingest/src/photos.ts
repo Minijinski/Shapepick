@@ -2,17 +2,22 @@ import { createHash } from 'node:crypto'
 import { mkdir, readdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { fileURLToPath } from 'node:url'
-import { type KeyboardItem, productImageSchema, toKeyboardItems } from '@choose/catalog'
-import { isolate, squareOn } from '@choose/catalog/media'
+import {
+  type CatalogItem,
+  productImageSchema,
+  toKeyboardItems,
+  toMonitorItems,
+} from '@choose/catalog'
+import { atWidth, isolate, squareOn } from '@choose/catalog/media'
 import { loadData } from '@choose/catalog/node'
 import sharp from 'sharp'
 import { type Document, isMap, isSeq, parse, parseDocument, type YAMLMap } from 'yaml'
 import type { ShopifyProduct } from './shopify'
 
-// pnpm ingest photos [--dry-run]: picks each keyboard's primary photo, the one the site shows. The
+// pnpm ingest photos [--dry-run]: picks each product's primary photo, the one the site shows. The
 // site cuts a photo out in the browser and lets it stand in for the drawing on its canvas only if
-// it shows the board from above (`squareOn`); a board whose primary photo is angled, shot on a
-// colour or in a scene keeps its drawing there. So every photo of a board is judged here with the
+// it shows the product as its drawing does (`squareOn`): a keyboard from above, a monitor from the
+// front; one whose primary photo is angled, shot on a colour or in a scene keeps its drawing there. So every photo of a board is judged here with the
 // site's own code: those already in data/, then the rest of its gallery on the shop (Shopify
 // galleries are in the import's cache). The first one seen from above becomes the primary; failing
 // that, the first one of data/ that can be cut out at all (the product sheet shows any cut-out).
@@ -42,21 +47,11 @@ export const fullSize = (url: string) =>
 
 /** The photo at the width it is judged at, from the shop's CDN. */
 function judgedAt(url: string) {
-  const u = new URL(url)
-  if (u.hostname === 'cdn.shopify.com') {
-    u.searchParams.set('width', String(WIDTH))
-    return u.toString()
-  }
-  if (CLOUDINARY.test(url)) return url.replace(CLOUDINARY_WIDTH, (_, step) => `${step}${WIDTH}`)
-  if (u.hostname === 'images.ctfassets.net') {
-    u.searchParams.set('w', String(WIDTH))
-    return u.toString()
-  }
   // Razer's resizer carries the original, encoded, in its path.
   const wrapped = /^https:\/\/assets3\.razerzone\.com\/[^/]+\/\d+x\d+\/(https%3A%2F%2F.+)$/.exec(
     url,
   )
-  return wrapped?.[1] ? decodeURIComponent(wrapped[1]) : url
+  return wrapped?.[1] ? decodeURIComponent(wrapped[1]) : atWidth(url, WIDTH)
 }
 
 /** The same photo whatever its cache-busting query (Shopify's `?v=`). */
@@ -96,7 +91,7 @@ async function bytesOf(url: string): Promise<Buffer | null> {
   return null
 }
 
-async function judge(item: KeyboardItem, url: string): Promise<Verdict> {
+async function judge(item: CatalogItem, url: string): Promise<Verdict> {
   const bytes = await bytesOf(judgedAt(url))
   if (!bytes) return 'unreadable'
   try {
@@ -113,7 +108,14 @@ async function judge(item: KeyboardItem, url: string): Promise<Verdict> {
     const box = isolate(pixels)
     if (!box) return 'none'
     const fill = box.area / (box.w * box.h)
-    const cut = { width: box.w, height: box.h, fill, parts: box.parts, detail: box.detail }
+    const cut = {
+      width: box.w,
+      height: box.h,
+      fill,
+      parts: box.parts,
+      detail: box.detail,
+      symmetry: box.symmetry,
+    }
     return squareOn(item, cut) ? 'square' : 'cutout'
   } catch {
     return 'unreadable'
@@ -143,35 +145,55 @@ const urlsOf = (node: YAMLMap<unknown, unknown>, key: string) => {
   return Array.isArray(list) ? list : []
 }
 
-export async function pickPhotos(dataDir: string, dry: boolean) {
+export async function pickPhotos(dataDir: string, dry: boolean, only?: string) {
   await mkdir(photoDir, { recursive: true })
   const data = await loadData(dataDir)
-  const items = new Map(
-    toKeyboardItems(data.keyboards, data.brands, data.switches).map((k) => [k.slug, k]),
-  )
+  const items = new Map<string, CatalogItem>([
+    ...toKeyboardItems(data.keyboards, data.brands, data.switches).map((k) => [k.slug, k] as const),
+    ...toMonitorItems(data.monitors, data.brands).map((m) => [m.slug, m] as const),
+  ])
   const pages = await galleries()
   const listed = await readFile(join(dataDir, 'excluded.yaml'), 'utf8')
     .then((text) => ((parse(text) ?? {}) as { photos?: string[] }).photos ?? [])
     .catch(() => [] as string[])
   const excluded = new Set(listed.filter((entry) => entry.startsWith('https://')))
   const kept = new Set(listed.filter((entry) => !entry.startsWith('https://')))
-  const dir = join(dataDir, 'keyboards')
-  const files = (await readdir(dir)).filter((f) => /\.ya?ml$/.test(f)).sort()
-  const docs = await Promise.all(
-    files.map(async (file) => {
-      const path = join(dir, file)
-      return { path, doc: parseDocument(await readFile(path, 'utf8')) }
-    }),
-  )
+  // A keyboard is shown from above, a monitor from the front.
+  const views = { keyboards: 'cutout_top', monitors: 'cutout_front' } as const
+  const docs = (
+    await Promise.all(
+      (Object.keys(views) as (keyof typeof views)[])
+        .filter((category) => !only || category === only)
+        .map(async (category) => {
+          const dir = join(dataDir, category)
+          const files = (await readdir(dir).catch(() => [] as string[]))
+            .filter((f) => /\.ya?ml$/.test(f))
+            .sort()
+          return Promise.all(
+            files.map(async (file) => {
+              const path = join(dir, file)
+              return {
+                path,
+                view: views[category],
+                doc: parseDocument(await readFile(path, 'utf8')),
+              }
+            }),
+          )
+        }),
+    )
+  ).flat()
 
   type Job = {
     doc: Document
     node: YAMLMap<unknown, unknown>
-    item: KeyboardItem
+    item: CatalogItem
+    view: string
+    /** The primary photo in data/, excluded or not. */
+    primary?: string
     candidates: Candidate[]
   }
   const jobs: (Job & { path: string })[] = []
-  for (const { path, doc } of docs) {
+  for (const { path, view, doc } of docs) {
     if (!isSeq(doc.contents)) continue
     for (const node of doc.contents.items) {
       if (!isMap(node)) continue
@@ -179,7 +201,7 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
       const item = items.get(String(entry.get('slug')))
       if (!item || kept.has(item.slug)) continue
       const own = (urlsOf(entry, 'images') as { url: string; kind: string; primary?: boolean }[])
-        .filter((img) => img.kind === 'cutout_top')
+        .filter((img) => img.kind === view)
         .sort((a, b) => Number(!!b.primary) - Number(!!a.primary))
         .map((img): Candidate => ({ url: img.url, fromGallery: false }))
       const seen = new Set([...own.map((c) => sameAs(c.url)), ...excluded])
@@ -196,6 +218,8 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
         doc,
         node: entry,
         item,
+        view,
+        primary: own[0]?.url,
         candidates: [
           ...own.filter((c) => !excluded.has(sameAs(c.url))),
           ...gallery.slice(0, GALLERY),
@@ -258,8 +282,8 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
       continue
     }
     if (pick.verdict === 'cutout') fallbacks.push(slug)
-    const current = job.candidates[0]
-    if (pick.chosen === current) continue
+    // Already the primary (an excluded primary is replaced, even by the next photo in data/).
+    if (job.primary && sameAs(fullSize(pick.chosen.url)) === sameAs(fullSize(job.primary))) continue
     if (!isSeq(images)) continue
     const target = sameAs(fullSize(pick.chosen.url))
     let entry = images.items.find(
@@ -273,7 +297,7 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
       const added = job.doc.createNode(
         productImageSchema.parse({
           url: fullSize(url),
-          kind: 'cutout_top',
+          kind: job.view,
           ...(width && { width }),
           ...(height && { height }),
         }),
@@ -286,7 +310,11 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
     edited.add(job.path)
     changed.push(
       `${slug} : ${pick.chosen.fromGallery ? 'galerie' : 'déjà en base'}${
-        pick.verdict === 'cutout' ? ' (détourable, pas vue de dessus)' : ''
+        pick.verdict === 'cutout'
+          ? job.view === 'cutout_top'
+            ? ' (détourable, pas vue de dessus)'
+            : ' (détourable, pas vue de face)'
+          : ''
       }`,
     )
   }
@@ -296,13 +324,24 @@ export async function pickPhotos(dataDir: string, dry: boolean) {
       if (edited.has(path)) await writeFile(path, doc.toString({ lineWidth: 0 }))
     }
   }
-  const square = jobs.filter((j) => picks.get(j)?.verdict === 'square').length
-  console.info(
-    `${jobs.length} claviers : ${square} vus de dessus, ${fallbacks.length} détourables seulement, ${none.length} sans photo utilisable`,
-  )
+  for (const [view, what, seen] of [
+    ['cutout_top', 'claviers', 'vus de dessus'],
+    ['cutout_front', 'écrans', 'vus de face'],
+  ] as const) {
+    const mine = jobs.filter((j) => j.view === view)
+    if (!mine.length) continue
+    const square = mine.filter((j) => picks.get(j)?.verdict === 'square').length
+    const cut = mine.filter((j) => picks.get(j)?.verdict === 'cutout').length
+    const lost = mine.filter((j) => !picks.get(j)?.chosen).length
+    console.info(
+      `${mine.length} ${what} : ${square} ${seen}, ${cut} détourables seulement, ${lost} sans photo utilisable`,
+    )
+  }
   console.info(`\nPhoto principale changée (${changed.length}) :`)
   for (const line of changed) console.info(`  ${line}`)
-  if (fallbacks.length) console.info(`\nDétourables, pas vus de dessus : ${fallbacks.join(', ')}`)
+  if (fallbacks.length) {
+    console.info(`\nDétourables, pas dans l'angle du dessin : ${fallbacks.join(', ')}`)
+  }
   if (none.length) console.info(`\nAucune photo détourable : ${none.join(', ')}`)
   if (dry) console.info('\n--dry-run : rien n’a été écrit.')
 }

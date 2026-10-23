@@ -229,3 +229,41 @@
   popularity: 0.5
   editorialScore: 0.62
   specs: { diagonalIn: 31.5, aspect: '16:9', resW: 3840, resH: 2160, panel: va, refreshHzMax: 60, responseGtgMs: 5, vrr: freesync, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 85, bitDepth: 10, hdmiPorts: 2, hdmiVersion: '2.0', dpVersion: '1.4', speakers: true, weightG: 6500 }
+
+# Cas relevés sur de vraies fiches (23 octobre 2026) : 1200p, ultra-large 29" et 45", pied réglable
+# sans course chiffrée, écran sans fixation VESA, fiche sans temps de réponse, DCI-P3 ni version HDMI.
+
+- slug: prism-p24-wuxga
+  brand: prism
+  name: P24 WUXGA
+  releaseYear: 2025
+  msrpEur: 229
+  specs: { diagonalIn: 24.1, aspect: '16:10', resW: 1920, resH: 1200, panel: ips, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 100, bitDepth: 8, hdmiPorts: 1, hdmiVersion: '1.4', dpVersion: '1.2', usbcPdW: 65, usbHub: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 5200 }
+
+- slug: kestrel-k29-uw
+  brand: kestrel
+  name: K29 Ultrawide
+  releaseYear: 2024
+  msrpEur: 199
+  specs: { diagonalIn: 29, aspect: '21:9', resW: 2560, resH: 1080, panel: ips, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, brightnessSdrNits: 250, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: '1.4', speakers: true, weightG: 5000 }
+
+- slug: vanta-v45-woled
+  brand: vanta
+  name: V45 WOLED Curve
+  releaseYear: 2025
+  msrpEur: 1299
+  specs: { diagonalIn: 44.5, aspect: '21:9', resW: 3440, resH: 1440, panel: woled, coating: matte, curvatureR: 800, refreshHzMax: 240, responseGtgMs: 0.03, vrr: gsync_compatible, hdrCert: true_black_400, brightnessSdrNits: 275, brightnessHdrPeakNits: 1000, dciP3Pct: 98, bitDepth: 10, hdmiPorts: 2, hdmiVersion: '2.1', dpVersion: '1.4', standHeightMm: 110, swivel: true, weightG: 11000 }
+
+- slug: lumen-l27-slim
+  brand: lumen
+  name: L27 Slim 4K
+  releaseYear: 2025
+  msrpEur: 399
+  specs: { diagonalIn: 27, aspect: '16:9', resW: 3840, resH: 2160, panel: ips, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: '2.0', usbcPdW: 65, speakers: true, vesa: false, weightG: 4500 }
+
+- slug: halcyon-h27-ergo
+  brand: halcyon
+  name: H27 Ergo
+  releaseYear: 2025
+  msrpEur: 249
+  specs: { diagonalIn: 27, aspect: '16:9', resW: 2560, resH: 1440, panel: ips, refreshHzMax: 180, vrr: freesync_premium, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, dpVersion: '1.4', heightAdjustable: true, swivel: true, pivot: true, weightG: 6000 }

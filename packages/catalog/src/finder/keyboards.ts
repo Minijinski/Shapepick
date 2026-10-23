@@ -474,6 +474,10 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Très réactif (magnétique ou optique)",
         "Very responsive (magnetic or optical)",
       ),
+      weakLabel: text(
+        "Moins réactif qu’un magnétique",
+        "Less responsive than a magnetic board",
+      ),
       score: (k) =>
         ({
           magnetic: 1,
@@ -487,12 +491,14 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "rapid",
       label: text("Rapid trigger", "Rapid trigger"),
+      weakLabel: text("Sans rapid trigger", "No rapid trigger"),
       score: (k) =>
         k.specs.rapidTrigger ? 1 : k.specs.adjustableActuation ? 0.5 : 0.15,
     },
     {
       key: "polling",
       label: text("Polling élevé", "High polling rate"),
+      weakLabel: text("Polling modeste", "Modest polling rate"),
       known: (k) => k.specs.pollingHzWired != null,
       peers: (k) => k.specs.technology,
       score: (k) =>
@@ -508,6 +514,7 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Laisse de la place à la souris",
         "Leaves room for the mouse",
       ),
+      weakLabel: text("Prend de la place sur le bureau", "Takes up desk space"),
       score: (k) =>
         ({
           f40: 0.9,
@@ -525,6 +532,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "quiet",
       label: text("Discret", "Quiet"),
+      weakLabel: text("Bruyant (switchs clicky)", "Loud (clicky switches)"),
       score: (k) => {
         if (
           k.specs.technology === "membrane" ||
@@ -548,6 +556,7 @@ export const keyboardFinder: FinderDefinition<K> = {
         "Multi-appareils en Bluetooth",
         "Multi-device over Bluetooth",
       ),
+      weakLabel: text("Un seul appareil à la fois", "One device at a time"),
       // A Bluetooth board whose sheet does not say how many devices it pairs with.
       known: (k) => !k.specs.connBt || k.specs.btDevices != null,
       peers: (k) => (k.specs.connBt ? "bluetooth" : "none"),
@@ -559,6 +568,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "wireless",
       label: text("Sans fil", "Wireless"),
+      weakLabel: text("Filaire uniquement", "Wired only"),
       score: (k) =>
         k.specs.conn24ghz && k.specs.connBt
           ? 1
@@ -569,6 +579,10 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "fullLayout",
       label: text("Toutes les touches", "Every key on board"),
+      weakLabel: text(
+        "Touches en moins (pavé, F…)",
+        "Missing keys (numpad, F row…)",
+      ),
       score: (k) =>
         ({
           full: 1,
@@ -586,6 +600,10 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "comfort",
       label: text("Confortable sur la durée", "Comfortable for long sessions"),
+      weakLabel: text(
+        "Moins confortable sur la durée",
+        "Less comfortable for long sessions",
+      ),
       score: (k) =>
         Math.min(
           1,
@@ -599,6 +617,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "programmable",
       label: text("Entièrement programmable", "Fully programmable"),
+      weakLabel: text("Peu programmable", "Limited remapping"),
       score: (k) =>
         ({ qmk: 1, via: 0.95, vial: 0.95, zmk: 0.9, proprietary: 0.35 })[
           k.specs.firmware
@@ -607,6 +626,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "build",
       label: text("Construction premium", "Premium build"),
+      weakLabel: text("Construction simple", "Basic build"),
       score: (k) =>
         Math.min(
           1,
@@ -625,6 +645,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "light",
       label: text("Léger, facile à emporter", "Light, easy to carry"),
+      weakLabel: text("Lourd à emporter", "Heavy to carry"),
       known: (k) => k.specs.weightG != null,
       // A full-size board weighs more than a 60 % one: compared within its size.
       peers: (k) => k.specs.formFactor,
@@ -636,6 +657,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "battery",
       label: text("Grande autonomie", "Long battery life"),
+      weakLabel: text("Autonomie courte", "Short battery life"),
       known: (k) => !wireless(k) || k.specs.batteryMah != null,
       peers: (k) => (wireless(k) ? "wireless" : "wired"),
       score: (k) =>
@@ -648,6 +670,7 @@ export const keyboardFinder: FinderDefinition<K> = {
     {
       key: "rgb",
       label: text("Éclairage RGB", "RGB lighting"),
+      weakLabel: text("Peu ou pas d’éclairage", "Little or no lighting"),
       score: (k) =>
         ({ rgb: k.specs.southFacing ? 1 : 0.85, white: 0.45, none: 0.15 })[
           k.specs.backlight

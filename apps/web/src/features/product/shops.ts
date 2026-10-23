@@ -12,13 +12,19 @@ export const AMAZON_PARTNER_TAG = ''
  * The Amazon.fr link of a product. Its ASIN, unless the visitor asked for another layout than the
  * AZERTY version it points to; otherwise a search for brand and model, plus "AZERTY" for a French
  * visitor when the board comes in that layout and the visitor's layout answer (if any) includes it.
+ * A monitor is searched by its maker's reference when it has one (LS27FG602SUXEN, 27GX790A-B):
+ * sellers list it under that code more surely than under the range's name.
  */
 export function amazonLink(item: CatalogItem, locale: Locale, layouts?: readonly string[]) {
   const french = item.category === 'keyboard' && item.variants.some((v) => v.layout === 'iso_fr')
   const wantsAzerty = !layouts?.length || layouts.includes('azerty')
-  const named = item.name.toLowerCase().startsWith(item.brand.name.toLowerCase())
-    ? item.name
-    : `${item.brand.name} ${item.name}`
+  const reference =
+    item.category === 'monitor' && item.modelNumber && !/\s/.test(item.modelNumber)
+      ? item.modelNumber
+      : item.name
+  const named = reference.toLowerCase().startsWith(item.brand.name.toLowerCase())
+    ? reference
+    : `${item.brand.name} ${reference}`
   const azerty = locale === 'fr' && french && wantsAzerty
   const query = `${named.replace(/[()]/g, ' ')}${azerty ? ' AZERTY' : ''}`
     .replace(/\s+/g, ' ')

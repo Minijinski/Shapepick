@@ -137,6 +137,7 @@ const hdrName: Record<string, string> = {
   hdr1400: "HDR 1400",
   true_black_400: "True Black 400",
   true_black_500: "True Black 500",
+  true_black_600: "True Black 600",
 };
 const coatingName: Record<string, [string, string]> = {
   matte: ["mat", "matte"],
@@ -189,6 +190,29 @@ export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
     s.hdmiVersion && `HDMI ${s.hdmiVersion}`,
     s.dpVersion && `DP ${s.dpVersion}`,
     s.usbcPdW > 0 && `USB-C ${s.usbcPdW} W`,
+    s.thunderbolt && "Thunderbolt",
+    s.kvm && "KVM",
+  ].filter(Boolean);
+  // What a buyer checks next: the stand, the colours, the light.
+  const stand = [
+    s.heightAdjustable &&
+      (s.standHeightMm
+        ? `${fr ? "hauteur" : "height"} ${s.standHeightMm} mm`
+        : fr
+          ? "réglable en hauteur"
+          : "height-adjustable"),
+    s.pivot && "pivot",
+    s.swivel && (fr ? "rotation" : "swivel"),
+  ].filter(Boolean);
+  const colours = [
+    s.dciP3Pct && `DCI-P3 ${num(s.dciP3Pct, locale)} %`,
+    s.bitDepth && `${s.bitDepth} bits`,
+    s.factoryCalibrated && (fr ? "calibré usine" : "factory calibrated"),
+  ].filter(Boolean);
+  const light = [
+    s.brightnessSdrNits && `${s.brightnessSdrNits} cd/m²`,
+    s.brightnessHdrPeakNits &&
+      `${fr ? "crête HDR" : "HDR peak"} ${s.brightnessHdrPeakNits} cd/m²`,
   ].filter(Boolean);
   return known([
     size,
@@ -204,6 +228,12 @@ export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
         : refresh.value,
     },
     { label: "HDR", value: hdrName[s.hdrCert] ?? "—" },
+    { label: fr ? "Luminosité" : "Brightness", value: light.join(" · ") },
+    { label: fr ? "Couleurs" : "Colour", value: colours.join(" · ") },
     { label: fr ? "Connectique" : "Ports", value: ports.join(" · ") || "—" },
+    {
+      label: fr ? "Pied" : "Stand",
+      value: stand.join(" · ") || (fr ? "fixe" : "fixed"),
+    },
   ]);
 }

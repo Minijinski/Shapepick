@@ -71,6 +71,7 @@ export const hdrCerts = [
   'hdr1400',
   'true_black_400',
   'true_black_500',
+  'true_black_600',
 ] as const
 export const hdmiVersions = ['1.4', '2.0', '2.1'] as const
 export const dpVersions = ['1.2', '1.4', '2.1'] as const

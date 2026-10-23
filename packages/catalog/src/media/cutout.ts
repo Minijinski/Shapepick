@@ -11,8 +11,9 @@ export type Pixels = { data: Uint8ClampedArray; width: number; height: number }
 
 /**
  * Where the product is in the photo, how many pixels it covers, how many separate shapes make it
- * (two for a split board; more is several products side by side), and how much detail it shows:
- * the share of its pixels on a sharp edge (keycaps give plenty, the bottom of a case hardly any).
+ * (two for a split board; more is several products side by side), how much detail it shows (the
+ * share of its pixels on a sharp edge: keycaps give plenty, the bottom of a case hardly any), and
+ * how symmetric its silhouette is left to right (a monitor seen from the front, not at an angle).
  */
 export type Box = {
   x: number
@@ -22,6 +23,7 @@ export type Box = {
   area: number
   parts: number
   detail: number
+  symmetry: number
 }
 
 type Rgb = [number, number, number]
@@ -244,7 +246,16 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
       }
     }
   }
-  return { x: x0, y: y0, w: x1 - x0 + 1, h: y1 - y0 + 1, area, parts, detail: detailOf() }
+  return {
+    x: x0,
+    y: y0,
+    w: x1 - x0 + 1,
+    h: y1 - y0 + 1,
+    area,
+    parts,
+    detail: detailOf(),
+    symmetry: symmetryOf(),
+  }
 
   /**
    * Share of the product's points on an edge with their right or lower neighbour, read on a grid
@@ -268,5 +279,24 @@ export function isolate({ data, width: w, height: h }: Pixels): Box | null {
       }
     }
     return seen ? edges / seen : 0
+  }
+
+  /**
+   * How much of the silhouette its mirror image covers (intersection over union), read on the
+   * same grid: about 1 for a monitor seen from the front, well under for a three-quarter view.
+   */
+  function symmetryOf() {
+    const step = Math.max(1, Math.round(Math.max(x1 - x0, y1 - y0) / DETAIL_GRID))
+    let both = 0
+    let either = 0
+    for (let y = y0; y <= y1; y += step) {
+      for (let x = x0; x <= x1; x += step) {
+        const here = product(y * w + x)
+        const mirrored = product(y * w + (x0 + x1 - x))
+        if (here && mirrored) both++
+        if (here || mirrored) either++
+      }
+    }
+    return either ? both / either : 0
   }
 }

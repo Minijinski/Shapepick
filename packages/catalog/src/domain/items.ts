@@ -22,6 +22,8 @@ type ItemBase = {
   slug: string
   brand: Pick<Brand, 'slug' | 'name'>
   name: string
+  /** The maker's reference (LS27DG600SUXEN, 27GR95QE-B): what a shop search finds it by. */
+  modelNumber?: string
   releaseYear?: number
   priceEur: number
   popularity: number
@@ -96,6 +98,7 @@ export function toKeyboardItems(
       slug: k.slug,
       brand: brandOf(brands, k.brand, k.slug),
       name: k.name,
+      modelNumber: k.modelNumber,
       releaseYear: k.releaseYear,
       priceEur: cheapest(variants.map((v) => v.priceEur)),
       popularity: k.popularity,
@@ -122,6 +125,7 @@ export function toMonitorItems(inputs: MonitorInput[], brandList: Brand[]): Moni
       slug: m.slug,
       brand: brandOf(brands, m.brand, m.slug),
       name: m.name,
+      modelNumber: m.modelNumber,
       releaseYear: m.releaseYear,
       priceEur: cheapest(variants.map((v) => v.priceEur)),
       popularity: m.popularity,

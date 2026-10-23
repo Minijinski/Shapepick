@@ -1,0 +1,1084 @@
+# Dell (et Alienware) : importés de dell.com (boutique française) par `pnpm ingest dell`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 50 modèles, dell.com/fr-fr (prix € de la boutique Dell)
+- slug: dell-u2725qe
+  brand: dell
+  name: UltraSharp U2725QE 27"
+  modelNumber: U2725QE
+  amazonAsin: B0F18Q2GPN
+  msrpEur: 730
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2725qe/media-gallery/monitor-ultrasharp-u2725qe-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-avec-hub-thunderbolt-dell-ultrasharp-27-u2725qe/u2725qe_monitor/-
+  gtins:
+    - "884116484578"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: hdr600, brightnessSdrNits: 450, brightnessHdrPeakNits: 600, contrastStatic: 3000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 7060 }
+  variants:
+    - { sku: u2725qe_monitor, colorName: Noir, colorFamily: black }
+
+# à vérifier : OLED sans précision : WOLED supposé
+- slug: dell-aw3926qw
+  brand: dell
+  name: Alienware AW3926QW 39"
+  modelNumber: AW3926QW
+  amazonAsin: B0HCX92WLV
+  msrpEur: 1150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-10.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3926qw/media-gallery/monitor-aw3926qw-black-gallery-11.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-gaming-oled-5k-alienware-39-aw3926qw/aw3926qw/-
+  gtins:
+    - "884116704362"
+  specs: { diagonalIn: 39, aspect: 21:9, resW: 5120, resH: 2160, panel: woled, curvatureR: 1500, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1300, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 100, kvm: true, usbHub: true, standHeightMm: 110, swivel: true }
+  variants:
+    - { sku: aw3926qw, colorName: Noir, colorFamily: black }
+
+- slug: dell-u4025qw
+  brand: dell
+  name: UltraSharp U4025QW 40"
+  modelNumber: U4025QW
+  amazonAsin: B0D1TX35MQ
+  msrpEur: 1805
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-40-avec-hub-thunderbolt-u4025qw/u4025qw_monitor/-
+  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: ips, curvatureR: 2500, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: hdr600, brightnessSdrNits: 450, brightnessHdrPeakNits: 600, contrastStatic: 2000, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 12220 }
+  variants:
+    - { sku: u4025qw_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2725qc
+  brand: dell
+  name: Plus S2725QC 27"
+  modelNumber: S2725QC
+  amazonAsin: B0F29RSLHP
+  msrpEur: 380
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qc/media-gallery/monitor-s2725qc-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-avec-port-usb-c-dell-27-plus-s2725qc/s2725qc_monitor/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6710 }
+  variants:
+    - { sku: s2725qc_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw3225qf
+  brand: dell
+  name: Alienware AW3225QF 32"
+  modelNumber: AW3225QF
+  amazonAsin: B0CVQGSRZ9
+  msrpEur: 1070
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-12.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/aw-series/aw3225qf/media-gallery/monitor-alienware-aw3225qf-white-gallery-11.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-gaming-alienware-32-4k-qd-oled-aw3225qf/aw3225qf_monitor/-
+  gtins:
+    - "884116709572"
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, curvatureR: 1700, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: gsync_compatible, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, weightG: 6000 }
+  variants:
+    - { sku: aw3225qf_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u4323qe
+  brand: dell
+  name: UltraSharp U4323QE 43"
+  modelNumber: U4323QE
+  amazonAsin: B0BR8X8D5Z
+  msrpEur: 1035
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4323qe/media-gallery/gray/monitor-u4323qe-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-ultrasharp-43-4k-avec-hub-usb-c-u4323qe/u4323qe_monitor/-
+  specs: { diagonalIn: 42.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 60, swivel: true, weightG: 18550 }
+  variants:
+    - { sku: u4323qe_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u3425we
+  brand: dell
+  name: UltraSharp U3425WE 34"
+  modelNumber: U3425WE
+  amazonAsin: B0D63Y6WYJ
+  msrpEur: 895
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3425we/media-gallery/monitor-ultrasharp-u3425we-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-34-thunderbolt-hub-u3425we/u3425we_monitor/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: ips, curvatureR: 1900, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 10810 }
+  variants:
+    - { sku: u3425we_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-p3425we
+  brand: dell
+  name: Pro Plus P3425WE 34"
+  modelNumber: P3425WE
+  amazonAsin: B0F95DHLML
+  msrpEur: 510
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3425we/mg/monitor-p3425we-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3425we/mg/monitor-p3425we-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3425we/mg/monitor-p3425we-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3425we/mg/monitor-p3425we-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3425we/mg/monitor-p3425we-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-avec-hub-usb-c-dell-pro-34-plus-p3425we/p3425we_monitor/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, weightG: 9910 }
+  variants:
+    - { sku: p3425we_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s3225qc
+  brand: dell
+  name: Plus S3225QC 32"
+  modelNumber: S3225QC
+  amazonAsin: B0F8NSBK82
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qc/media-gallery/monitor-s3225qc-c-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-dell-32-plus-qd-oled-s3225qc/s3225qc_monitor/-
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, speakers: true, standHeightMm: 110, swivel: true, weightG: 10000 }
+  variants:
+    - { sku: s3225qc_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s3225qs
+  brand: dell
+  name: Plus S3225QS 32"
+  modelNumber: S3225QS
+  amazonAsin: B0F29SKXFQ
+  msrpEur: 390
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3225qs/media-gallery/monitor-s3225qs-c-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-dell-32-plus-s3225qs/s3225qs_monitor/-
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: va, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 95, srgbPct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", speakers: true, standHeightMm: 100, weightG: 8770 }
+  variants:
+    - { sku: s3225qs_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s3425dw
+  brand: dell
+  name: Plus S3425DW 34"
+  modelNumber: S3425DW
+  amazonAsin: B0F29SWF25
+  msrpEur: 410
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s3425dw/media-gallery/monitor-s3425dw-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-avec-port-usb-c-dell-34-plus-s3425dw/s3425dw_monitor/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 120, responseGtgMs: 1, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 95, srgbPct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", usbcPdW: 100, usbHub: true, speakers: true, standHeightMm: 130, weightG: 9380 }
+  variants:
+    - { sku: s3425dw_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u2724d
+  brand: dell
+  name: UltraSharp U2724D 27"
+  modelNumber: U2724D
+  amazonAsin: B0CMXGDK5S
+  msrpEur: 395
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724d/media-gallery/monitor-ultrasharp-u2724d-qhd-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-ultrasharp-27-u2724d/u2724d_monitor/-
+  gtins:
+    - "884116452140"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6560 }
+  variants:
+    - { sku: u2724d_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2425hsm
+  brand: dell
+  name: Plus S2425HSM 24"
+  modelNumber: S2425HSM
+  amazonAsin: B0FQ5F2QSQ
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2425hsm/media-gallery/monitor-dell-plus-s2425hsm-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-24-plus-s2425hsm/s2425hsm/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 5010 }
+  variants:
+    - { sku: s2425hsm, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2725de
+  brand: dell
+  name: Pro Plus P2725DE 27"
+  modelNumber: P2725DE
+  amazonAsin: B0F3HP895V
+  msrpEur: 345
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725de/mg/monitor-p2725de-pro-plus-c-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-qhd-avec-hub-usb-c-dell-pro-27-plus-p2725de/p2725de_monitor/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6590 }
+  variants:
+    - { sku: p2725de_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u4924dw
+  brand: dell
+  name: UltraSharp U4924DW 49"
+  modelNumber: U4924DW
+  amazonAsin: B0BYW8MXKL
+  msrpEur: 1365
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4924dw/media-gallery/monitor-u4924dw-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-49-avec-hub-usb-c-u4924dw/u4924dw_monitor/-
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 16300 }
+  variants:
+    - { sku: u4924dw_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2725dc
+  brand: dell
+  name: Plus S2725DC 27"
+  modelNumber: S2725DC
+  amazonAsin: B0FQ5B9BB1
+  msrpEur: 280
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725dc/media-gallery/monitor-dell-plus-s2725dc-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-qhd-dell-27-plus-avec-port-usb-c-s2725dc/s2725dc/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6480 }
+  variants:
+    - { sku: s2725dc, colorName: Noir, colorFamily: black }
+
+- slug: dell-u2424he
+  brand: dell
+  name: UltraSharp U2424HE 24"
+  modelNumber: U2424HE
+  amazonAsin: B0CP18HHY1
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424he/media-gallery/monitor-ultrasharp-u2424he-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-hub-usb-c-dell-ultrasharp-24-u2424he/u2424he_monitor/-
+  gtins:
+    - "884116452133"
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 85, srgbPct: 85, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5380 }
+  variants:
+    - { sku: u2424he_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u2724de
+  brand: dell
+  name: UltraSharp U2724DE 27"
+  modelNumber: U2724DE
+  amazonAsin: B0CNJSX8N8
+  msrpEur: 510
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2724de/media-gallery/monitor-ultrasharp-u2724de-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-ultrasharp-27-avec-hub-thunderbolt-u2724de/u2724de_withstnd_mon/-
+  gtins:
+    - "884116452164"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 7370 }
+  variants:
+    - { sku: u2724de_withstnd_mon, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2725qs
+  brand: dell
+  name: Plus S2725QS 27"
+  modelNumber: S2725QS
+  amazonAsin: B0F29RH4RY
+  msrpEur: 330
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725qs/media-gallery/monitor-s2725qs-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-dell-27-plus-s2725qs/s2725qs_monitor/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6470 }
+  variants:
+    - { sku: s2725qs_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2424ht
+  brand: dell
+  name: Pro Plus P2424HT 24"
+  modelNumber: P2424HT
+  amazonAsin: B0CHCD9DNM
+  msrpEur: 385
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2424ht/media-gallery/monitor-p2424ht-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-tactile-avec-hub-usb-c-dell-pro-24-plus-p2424ht/p2424ht_monitor/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, dpVersion: "1.2", usbcPdW: 90, usbHub: true, speakers: true, standHeightMm: 110, swivel: true, weightG: 7860 }
+  variants:
+    - { sku: p2424ht_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw2725qf
+  brand: dell
+  name: Alienware AW2725QF 27"
+  modelNumber: AW2725QF
+  amazonAsin: B0DG9BWZHK
+  msrpEur: 530
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725qf/media-gallery/monitor-alienware-aw2725qf-bk-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-gaming-double-résolution-4k-alienware-27-aw2725qf/aw2725qf_monitor/-
+  gtins:
+    - "884116469711"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: gsync_compatible, hdrCert: hdr600, brightnessSdrNits: 400, brightnessHdrPeakNits: 600, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 7150 }
+  variants:
+    - { sku: aw2725qf_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2725hsm
+  brand: dell
+  name: Plus S2725HSM 27"
+  modelNumber: S2725HSM
+  amazonAsin: B0FQ5BKD63
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/s2725hsm/media-gallery/monitor-dell-plus-s2725hsm-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-27-plus-s2725hsm/s2725hsm/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 5730 }
+  variants:
+    - { sku: s2725hsm, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2725qe
+  brand: dell
+  name: Pro Plus P2725QE 27"
+  modelNumber: P2725QE
+  amazonAsin: B0F3SX7N6M
+  msrpEur: 480
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725qe/mg/monitor-p2725qe-pro-plus-c-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-avec-hub-usb-c-dell-pro-27-plus-p2725qe/p2725qe_monitor/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6600 }
+  variants:
+    - { sku: p2725qe_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u3225qe
+  brand: dell
+  name: UltraSharp U3225QE 32"
+  modelNumber: U3225QE
+  amazonAsin: B0F1YPNX2Y
+  msrpEur: 990
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3225qe/media-gallery/monitor-ultrasharp-u3225qe-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-avec-hub-thunderbolt-dell-ultrasharp-32-u3225qe/u3225qe_monitor/-
+  gtins:
+    - "884116484561"
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: hdr600, brightnessSdrNits: 600, contrastStatic: 3000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 9340 }
+  variants:
+    - { sku: u3225qe_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2725d
+  brand: dell
+  name: Pro Plus P2725D 27"
+  modelNumber: P2725D
+  amazonAsin: B0F8C6KJNM
+  msrpEur: 270
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2725d/mg/monitor-dell-pro-plus-p2725d-bk-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-27-plus-qhd-p2725d/p2725d_monitor/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6270 }
+  variants:
+    - { sku: p2725d_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-u2424h
+  brand: dell
+  name: UltraSharp U2424H 24"
+  modelNumber: U2424H
+  amazonAsin: B0CP188Q11
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424h/media-gallery/monitor-ultrasharp-u2424h-gy-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424h/media-gallery/monitor-ultrasharp-u2424h-gy-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424h/media-gallery/monitor-ultrasharp-u2424h-gy-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424h/media-gallery/monitor-ultrasharp-u2424h-gy-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u2424h/media-gallery/monitor-ultrasharp-u2424h-gy-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-ultrasharp-24-u2424h/u2424h_monitor/-
+  gtins:
+    - "884116452102"
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 85, srgbPct: 85, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", usbcPdW: 15, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5380 }
+  variants:
+    - { sku: u2424h_monitor, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2425de
+  brand: dell
+  name: Pro Plus P2425DE 24"
+  modelNumber: P2425DE
+  amazonAsin: B0F2GXYTWH
+  msrpEur: 290
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425de/mg/monitor-p2425de-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-qhd-avec-hub-usb-c-dell-pro-24-plus-p2425de/p2425de/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5610 }
+  variants:
+    - { sku: p2425de, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2426h
+  brand: dell
+  name: Pro P2426H 24"
+  modelNumber: P2426H
+  amazonAsin: B0GVRCKV8J
+  msrpEur: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2426h/mg/monitor-p2426h-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-p-24-p2426h/p2426h/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", usbcPdW: 15, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6660 }
+  variants:
+    - { sku: p2426h, colorName: Noir, colorFamily: black }
+
+- slug: dell-u3824dw
+  brand: dell
+  name: UltraSharp U3824DW 38"
+  modelNumber: U3824DW
+  amazonAsin: B0C95S4N7N
+  msrpEur: 1265
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-38-avec-hub-usb-c-u3824dw/u3824dw_withstand/-
+  specs: { diagonalIn: 38, aspect: 21:9, resW: 3840, resH: 1600, panel: ips, curvatureR: 2300, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 2, dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 13290 }
+  variants:
+    - { sku: u3824dw_withstand, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2425d
+  brand: dell
+  name: Pro Plus P2425D 24"
+  modelNumber: P2425D
+  amazonAsin: B0F4JQT1SY
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2425d/mg/monitor-p2425d-pro-plus-c-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-24-plus-qhd-p2425d/p2425d/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5080 }
+  variants:
+    - { sku: p2425d, colorName: Noir, colorFamily: black }
+
+- slug: dell-p3225qe
+  brand: dell
+  name: Pro Plus P3225QE 32"
+  modelNumber: P3225QE
+  amazonAsin: B0F2GVXC59
+  msrpEur: 605
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225qe/mg/monitor-p3225qe-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-4k-avec-hub-usb-c-dell-pro-32-plus-p3225qe/p3225qe/-
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 9550 }
+  variants:
+    - { sku: p3225qe, colorName: Noir, colorFamily: black }
+
+- slug: dell-e2726ds
+  brand: dell
+  name: Pro E2726DS 27"
+  modelNumber: E2726DS
+  amazonAsin: B0GHQ2ZNGJ
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726ds/media-gallery/monitor-dell-e2726ds-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-27-qhd-e2726ds/e2726ds/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 4920 }
+  variants:
+    - { sku: e2726ds, colorName: Noir, colorFamily: black }
+
+- slug: dell-s2426hs
+  brand: dell
+  name: Plus S2426HS 24"
+  modelNumber: S2426HS
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images: []
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-s-24-165-hz-s2426hs/s2426hs/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 165, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.1", speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6670 }
+  variants:
+    - { sku: s2426hs, colorName: Noir, colorFamily: black }
+
+- slug: dell-se3426dw
+  brand: dell
+  name: SE3426DW 34"
+  modelNumber: SE3426DW
+  msrpEur: 265
+  popularity: 0.5
+  editorialScore: 0.5
+  images: []
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-wqhd-dell-34-se3426dw/se3426dw/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 165, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", weightG: 11460 }
+  variants:
+    - { sku: se3426dw, colorName: Noir, colorFamily: black }
+
+- slug: dell-e2726hs
+  brand: dell
+  name: Pro E2726HS 27"
+  modelNumber: E2726HS
+  amazonAsin: B0GHPK9XY3
+  msrpEur: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2726hs/media-gallery/monitor-dell-pro-e2726hs-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-sur-socle-réglable-dell-pro-27-e2726hs/e2726hs/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 4830 }
+  variants:
+    - { sku: e2726hs, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2726h
+  brand: dell
+  name: Pro P2726H 27"
+  modelNumber: P2726H
+  amazonAsin: B0GWTQB1MX
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726h/mg/monitor-dell-pro-p2726h-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-p-27-p2726h/p2726h/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 8520 }
+  variants:
+    - { sku: p2726h, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw3426dw
+  brand: dell
+  name: Alienware AW3426DW 34"
+  modelNumber: AW3426DW
+  amazonAsin: B0HCDLB2P5
+  msrpEur: 830
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-10.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw3426dw/media-gallery/monitor-aw3426dw-black-gallery-11.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-gaming-qd-oled-280-hz-alienware-34-aw3426dw/aw3426dw/-
+  gtins:
+    - "884116692829"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1300, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, standHeightMm: 110, swivel: true, weightG: 12920 }
+  variants:
+    - { sku: aw3426dw, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw2725df
+  brand: dell
+  name: Alienware AW2725DF 27"
+  modelNumber: AW2725DF
+  amazonAsin: B0CVN8HWG7
+  msrpEur: 690
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-16.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-10.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-11.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-gaming-qd-oled-360-hz-alienware-27-aw2725df/aw2725df/-
+  gtins:
+    - "884116463283"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 360, responseGtgMs: 0.03, vrr: freesync, hdrCert: true_black_400, brightnessSdrNits: 400, brightnessHdrPeakNits: 1000, dciP3Pct: 99.3, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 4300 }
+  variants:
+    - { sku: aw2725df, colorName: Noir, colorFamily: black }
+
+- slug: dell-u5226kw
+  brand: dell
+  name: UltraSharp U5226KW 52"
+  modelNumber: U5226KW
+  amazonAsin: B0GHPM9FL2
+  msrpEur: 2795
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u5226kw/mg/monitor-ultrasharp-u5226kw-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u5226kw/mg/monitor-ultrasharp-u5226kw-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u5226kw/mg/monitor-ultrasharp-u5226kw-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u5226kw/mg/monitor-ultrasharp-u5226kw-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-avec-hub-thunderbolt-dell-ultrasharp-52-u5226kw/u5226kw/-
+  gtins:
+    - "884116691938"
+  specs: { diagonalIn: 52, aspect: 21:9, resW: 6144, resH: 2560, panel: ips, curvatureR: 4200, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 400, contrastStatic: 2000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 90, swivel: true, weightG: 18230 }
+  variants:
+    - { sku: u5226kw, colorName: Noir, colorFamily: black }
+
+- slug: dell-p3426web
+  brand: dell
+  name: Pro P3426WEB 34"
+  modelNumber: P3426WEB
+  msrpEur: 675
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426web/mg/monitor-p3426web-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-visioconférence-avec-hub-usb-c-dell-pro-p-34-p3426web/p3426web/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 14810 }
+  variants:
+    - { sku: p3426web, colorName: Noir, colorFamily: black }
+
+- slug: dell-se2225hm
+  brand: dell
+  name: SE2225HM 22"
+  modelNumber: SE2225HM
+  amazonAsin: B0F1N79TYM
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2225hm/media-gallery/monitor-se2225hm-c-port-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-22-se2225hm/se2225hm/-
+  specs: { diagonalIn: 22, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", weightG: 2960 }
+  variants:
+    - { sku: se2225hm, colorName: Noir, colorFamily: black }
+
+- slug: dell-e2426hs
+  brand: dell
+  name: Pro E2426HS 24"
+  modelNumber: E2426HS
+  msrpEur: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hs/mg/monitor-e2426hs-pro-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-avec-socle-réglable-dell-pro-24-et-haut-parleurs-e2426hs/e2426hs/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 4190 }
+  variants:
+    - { sku: e2426hs, colorName: Noir, colorFamily: black }
+
+- slug: dell-p3225de
+  brand: dell
+  name: Pro Plus P3225DE 32"
+  modelNumber: P3225DE
+  amazonAsin: B0F8VSW783
+  msrpEur: 430
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3225de/mg/monitor-p3225de-pro-plus-c-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-qhd-avec-hub-usb-c-dell-pro-32-plus-p3225de/p3225de/-
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 9490 }
+  variants:
+    - { sku: p3225de, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2226h
+  brand: dell
+  name: Pro P2226H 22"
+  modelNumber: P2226H
+  amazonAsin: B0GWTB9NPN
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2226h/mg/monitor-dell-pro-p2226h-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-pro-p-22-p2226h/p2226h/-
+  specs: { diagonalIn: 22, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", usbcPdW: 15, usbHub: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6120 }
+  variants:
+    - { sku: p2226h, colorName: Noir, colorFamily: black }
+
+- slug: dell-se2426h
+  brand: dell
+  name: SE2426H 24"
+  modelNumber: SE2426H
+  amazonAsin: B0GJ6MSDNX
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2426h/media-gallery/monitor-dell-se2426h-bk-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2426h/media-gallery/monitor-dell-se2426h-bk-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2426h/media-gallery/monitor-dell-se2426h-bk-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2426h/media-gallery/monitor-dell-se2426h-bk-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/s-series/se2426h/media-gallery/monitor-dell-se2426h-bk-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-24-se2426h/se2426h/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", weightG: 3370 }
+  variants:
+    - { sku: se2426h, colorName: Noir, colorFamily: black }
+
+- slug: dell-p2726deb
+  brand: dell
+  name: Pro P2726DEB 27"
+  modelNumber: P2726DEB
+  msrpEur: 415
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p2726deb/mg/monitor-p2726deb-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-visioconférence-avec-hub-usb-c-dell-pro-p-27-p2726deb/p2726deb/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 9900 }
+  variants:
+    - { sku: p2726deb, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw2726dm
+  brand: dell
+  name: Alienware AW2726DM 27"
+  modelNumber: AW2726DM
+  amazonAsin: B0GYG3VLMR
+  msrpEur: 430
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2726dm/media-gallery/monitor-aw2726dm-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-gaming-240-hz-alienware-27-qd-oled-aw2726dm/aw2726dm/-
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync, hdrCert: none, brightnessSdrNits: 200, brightnessHdrPeakNits: 400, dciP3Pct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 130, swivel: true, pivot: true, weightG: 8450 }
+  variants:
+    - { sku: aw2726dm, colorName: Noir, colorFamily: black }
+
+- slug: dell-p3426wev
+  brand: dell
+  name: Pro P3426WEV 34"
+  modelNumber: P3426WEV
+  amazonAsin: B0GR4WY573
+  msrpEur: 645
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/p-series/p3426wev/mg/monitor-p3426wev-pro-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-avec-webcam-et-hub-usb-c-dell-pro-p-34-p3426wev/p3426wev/-
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, kvm: true, usbHub: true, standHeightMm: 150, swivel: true, weightG: 14610 }
+  variants:
+    - { sku: p3426wev, colorName: Noir, colorFamily: black }
+
+- slug: dell-e2426hb
+  brand: dell
+  name: Pro E2426HB 24"
+  modelNumber: E2426HB
+  amazonAsin: B0GYG6RJBC
+  msrpEur: 210
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-2.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-5.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/e-series/e2426hb/media-gallery/monitor-e2426hb-black-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-visioconférence-dell-pro-24-e2426hb/e2426hb/-
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6710 }
+  variants:
+    - { sku: e2426hb, colorName: Noir, colorFamily: black }
+
+- slug: dell-aw2524hf
+  brand: dell
+  name: Alienware AW2524HF 25"
+  modelNumber: AW2524HF
+  amazonAsin: B0CJVHZLPD
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-1.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-12.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-11.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2524hf/media-gallery/monitor-aw2524hf-black-gallery-10.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
+  sources:
+    - https://www.dell.com/fr-fr/shop/monitors/apd/écran-de-gaming-alienware-500-hz-aw2524hf/aw2524hf/-
+  specs: { diagonalIn: 25, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 500, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 3650 }
+  variants:
+    - { sku: aw2524hf, colorName: Noir, colorFamily: black }

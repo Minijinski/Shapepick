@@ -1,0 +1,131 @@
+# Philips (et Evnia) : importés de philips.fr par `pnpm ingest philips`.
+# Prix : prix conseillé de data/msrp.yaml (Philips ne vend pas en direct et n’affiche aucun prix).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 7 modèles, philips.fr (prix conseillé de data/msrp.yaml : Philips ne vend pas en direct)
+- slug: philips-34b2u5900c
+  brand: philips
+  name: 34B2U5900C
+  modelNumber: 34B2U5900C
+  amazonAsin: B0H5K4J5X8
+  releaseYear: 2026
+  msrpEur: 580
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_174118?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/34B2U5900C_00/curved-business-monitor-ecran-a-double-mode-avec-usb-c
+    - https://www.cowcotland.com/news/102249/philips-devoile-le-34b2u5900c-un-ultrawide-dual-mode-pense-pour-le-travail.html
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 120, dualModeHz: 240, responseGtgMs: 2, vrr: freesync, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 450, contrastStatic: 3000, dciP3Pct: 95, srgbPct: 122, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, speakers: true, standHeightMm: 180, swivel: true, weightG: 10680 }
+  variants:
+    - { sku: 34B2U5900C, colorName: Noir, colorFamily: black }
+
+- slug: philips-27b2g5601
+  brand: philips
+  name: 27B2G5601
+  modelNumber: 27B2G5601
+  releaseYear: 2024
+  msrpEur: 390
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_174589?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/27B2G5601_00/business-monitor-moniteur-lcd
+    - https://www.hardwareluxx.de/index.php/news/hardware/monitore/65310-produktiv-arbeiten,-umwelt-schonen-philips-24b2g5301-und-27b2g5601-monitore.html
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 110, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 96, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 7190 }
+  variants:
+    - { sku: 27B2G5601, colorName: Noir, colorFamily: black }
+
+- slug: philips-24b2g5200
+  brand: philips
+  name: 24B2G5200
+  modelNumber: 24B2G5200
+  releaseYear: 2024
+  msrpEur: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_173299?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/24B2G5200_01/business-monitor-moniteur-lcd
+    - https://www.computerbase.de/news/monitore/sparsam-im-office-philips-praesentiert-monitore-mit-unter-10-watt-trotz-100-hz.90429/
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 110, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 5280 }
+  variants:
+    - { sku: 24B2G5200, colorName: Noir, colorFamily: black }
+
+- slug: philips-27m2c5200w
+  brand: philips
+  name: Evnia 27M2C5200W
+  modelNumber: 27M2C5200W
+  amazonAsin: B0DBLWH57V
+  releaseYear: 2024
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_183843?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/27M2C5200W_00/curved-fast-va-gaming-monitor-moniteur-gaming-full-hd
+    - https://www.hardwareluxx.de/index.php/news/hardware/monitore/64089-mg-philips-evnia-27m2c5200w-neuer-curved-monitor-mit-fast-va-panel.html
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 280, responseGtgMs: 1, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 92, srgbPct: 121, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, weightG: 5790 }
+  variants:
+    - { sku: 27M2C5200W, colorName: Ardoise foncée, colorFamily: color }
+
+- slug: philips-27m2c5501
+  brand: philips
+  name: Evnia 27M2C5501
+  modelNumber: 27M2C5501
+  amazonAsin: B0DF7K6VDM
+  releaseYear: 2024
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_184852?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/27M2C5501_01/curved-fast-va-gaming-monitor-moniteur-gaming-quad-hd
+    - https://www.hardwareluxx.de/index.php/news/hardware/monitore/64586-mg-evnia-27m2c5501-32m2c5501-philips-erweitert-gaming-monitor-serie.html
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, dciP3Pct: 93, srgbPct: 124, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, weightG: 6060 }
+  variants:
+    - { sku: 27M2C5501, colorName: Blanc, colorFamily: white }
+
+- slug: philips-49b2u6903ch
+  brand: philips
+  name: 49B2U6903CH
+  modelNumber: 49B2U6903CH
+  amazonAsin: B0D8WGQ4N1
+  releaseYear: 2024
+  msrpEur: 1340
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_169523?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/49B2U6903CH_00/curved-business-monitor-moniteur-thunderbolt-4-superwide-329
+    - https://www.hardwareluxx.de/index.php/news/hardware/monitore/63940-mg-philips-49b2u6903ch-49-mit-thunderbolt-4-busylight-und-webcam-auto-framing.html
+  specs: { diagonalIn: 48.8, aspect: 32:9, resW: 5120, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: hdr400, brightnessSdrNits: 450, contrastStatic: 3000, srgbPct: 119, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 100, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 15450 }
+  variants:
+    - { sku: 49B2U6903CH, colorName: Noir, colorFamily: black }
+
+- slug: philips-34b2u3600c
+  brand: philips
+  name: 34B2U3600C
+  modelNumber: 34B2U3600C
+  amazonAsin: B0DXL5GYNN
+  releaseYear: 2025
+  msrpEur: 440
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.philips.com/is/image/philipsconsumer/tpv_174025?wid=2000&hei=2000&fmt=png-alpha&fit=constrain, kind: cutout_front, primary: true }
+  sources:
+    - https://www.philips.fr/c-p/34B2U3600C_00/curved-business-monitor-wqhd-monitor-with-usb-c
+    - https://www.notebookcheck.com/Philips-bietet-Curved-Monitor-mit-guter-Ausstattung-und-langer-Garantie-an.969118.0.html
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3500, srgbPct: 120, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, usbHub: true, speakers: true, standHeightMm: 180, swivel: true, weightG: 10410 }
+  variants:
+    - { sku: 34B2U3600C, colorName: Noir, colorFamily: black }

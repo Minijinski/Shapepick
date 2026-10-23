@@ -25,7 +25,7 @@ const monitorFormats = {
   uw34: { aspect: "21:9", diagonalIn: 34, curvatureR: 1800 },
   uw38: { aspect: "21:9", diagonalIn: 38, curvatureR: 2300 },
   suw: { aspect: "32:9", diagonalIn: 49, curvatureR: 1800 },
-  big: { aspect: "16:9", diagonalIn: 42 },
+  big: { aspect: "16:9", diagonalIn: 37 },
 } as const;
 
 const swatches: Record<string, string> = {

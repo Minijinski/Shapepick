@@ -344,8 +344,12 @@ export function Console({
     step.kind === "range"
       ? []
       : step.options.filter((o) => {
+          if (pickedIds.has(o.id)) return true;
+          // An option nothing in the catalogue has (no TN monitor this season) is no choice: no
+          // earlier answer to change would make it one.
+          if (!step.weightOnly && !finder.items.some(o.match)) return false;
           // Must-haves every remaining item already has (or that nothing could add) are noise.
-          if (step.kind !== "musts" || pickedIds.has(o.id)) return true;
+          if (step.kind !== "musts") return true;
           const c = counts?.counts[o.id] ?? 0;
           return c > 0 && c < base;
         });

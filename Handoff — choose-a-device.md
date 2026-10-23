@@ -8,9 +8,9 @@ choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapef
 
 - **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
-- **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
-- **Qualité** : 44 tests du moteur, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `9637ec8` « Updating handoff », poussé et déployé le 23 octobre : les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon, les « Retours du 23 octobre », les ASIN Amazon (`65c326b`) et le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n »). La migration `0002` et les ASIN sont en production depuis le 23 octobre. Les « Retours du 23 octobre (2) » sont commités sur la branche feat/finder-retours-23-octobre, pas encore fusionnés dans main ni poussés.
+- **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
+- **Qualité** : 52 tests du moteur et des parcours, 15 du mapper écrans, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` = `9637ec8` « Updating handoff » sur origin, poussé et déployé le 23 octobre : les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon, les « Retours du 23 octobre », les ASIN Amazon (`65c326b`) et le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n »). La migration `0002` et les ASIN sont en production depuis le 23 octobre. Les « Retours du 23 octobre (2) » sont dans main en local (06057fa, fusionné en avance rapide), pas encore poussés ni déployés. Les vrais écrans du 23 octobre sont commités sur la branche feat/ecrans-vrais-modeles, pas encore dans main ni poussés ; en base locale seulement.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -119,8 +119,8 @@ La base compte 9 tables et 25 enums Postgres. Tout ce qui sert à filtrer ou cla
 | `product_variants` | Couleur, famille de couleur, disposition (`iso_fr`, `ansi_us`…), switch, prix | Un produit correspond si une de ses variantes correspond |
 | `switches` | Ressenti, silencieux, techno, forces (g), courses (mm), lubrification, son | Référentiel partagé entre claviers |
 | `keyboard_specs` | 34 colonnes : format, techno, hot-swap, connexions, polling, rapid trigger, matériaux, firmware, mesures | Une ligne par clavier |
-| `monitor_specs` | 37 colonnes : diagonale, ratio, définition, dalle, fréquence, HDR, connectique, pied | `ppi` calculé par Postgres (colonne générée) |
-| `product_images` | URL, type de visuel, dimensions, couleur dominante | 1 353 vues de dessus des claviers ; le site lit la principale |
+| `monitor_specs` | 38 colonnes : diagonale, ratio, définition, dalle, fréquence, HDR, connectique, pied (dont height\_adjustable, migration 0003) | `ppi` calculé par Postgres (colonne générée) |
+| `product_images` | URL, type de visuel, dimensions, couleur dominante | 1 353 vues de dessus des claviers et 1 435 vues de face des écrans ; le site lit la principale |
 | `offers` | Boutique, pays, URL, prix, stock, date | Vide : prévu pour les prix et l'affiliation |
 
 - **Seed** (`pnpm db:seed`) : lit `data/`, valide chaque fichier avec Zod (l'erreur cite le fichier et le slug), fait un upsert par slug, puis remplace traductions, variantes et specs. Relancé deux fois sans écart. Il ne supprime pas un produit retiré des YAML.
@@ -179,13 +179,13 @@ Les deux parcours suivent le même ordre : l'usage d'abord (il règle le classem
 | # | Question | Options | Type |
 | --- | --- | --- | --- |
 | 1 | Pour quoi faire ? | FPS compétitif, Jeu immersif, Console, Création, Bureau & code, Polyvalent | Profil seulement, obligatoire |
-| 2 | Quelle taille ? | 24", 27", 32", Ultra-large 34", Ultra-large 38–40", Super-ultra-large, Grand format 42"+ | Multi, obligatoire |
-| 3 | Quelle netteté ? | 1080p, 1440p, 4K, 5K et plus | Multi |
-| 4 | Quelle dalle ? | IPS, VA, OLED, Mini-LED, TN | Multi |
-| 5 | Quelle fluidité ? | 60, 100, 144, 240, 360 Hz « et plus » | Choix unique, lu comme un minimum |
-| 6 | Plat ou incurvé ? | Plat, Incurvé | Choix unique |
-| 7 | Quel budget ? | De 0 à 2 000 €, par pas de 50 € | Plage |
-| 8 | Des indispensables ? | USB-C 65 W+, KVM, HDR véritable, HDMI 2.1, Pied réglable, Rotation portrait, Haut-parleurs, Brillant, Calibré usine | ET |
+| 2 | Quelle taille ? | 24", 27", 32", Ultra-large 34", Ultra-large 38"+, Super-ultra-large, Grand format 37"+ | Multi, obligatoire |
+| 3 | Quel budget ? | De 0 à 1 600 € par pas de 25 € ; tout en haut, sans limite | Plage |
+| 4 | Quelle netteté ? | 1080p, 1440p, 4K, 5K et plus, lus sur la hauteur de l'image (1920 × 1200 et 2560 × 1080 sont des 1080p) | Multi |
+| 5 | Quelle dalle ? | IPS, VA, OLED, Mini-LED, TN (masquée tant qu'aucun écran du catalogue n'en a) | Multi |
+| 6 | Quelle fluidité ? | 60, 100, 144, 240, 360, 480 Hz « et plus » | Choix unique, lu comme un minimum |
+| 7 | Plat ou incurvé ? | Plat, Incurvé | Choix unique |
+| 8 | Des indispensables ? | USB-C 65 W+, KVM, HDR véritable, HDMI 2.1, Pied réglable, Rotation portrait, Fixation VESA, Haut-parleurs, Brillant, Calibré usine | ET |
 
 ### Profils de classement
 
@@ -201,8 +201,8 @@ La première réponse choisit les poids des critères ; sans réponse, un profil
 | Écran, FPS compétitif | Fréquence 3, temps de réponse 3, taille e-sport 2, contraste 0,5 |
 | Écran, jeu immersif | Contraste 3, HDR 2,5, immersion 2, fréquence 1 |
 | Écran, console | Compatibilité console 3, HDR 2, contraste 1,5, fréquence 1 |
-| Écran, création | Couleurs 3, netteté 2,5, ergonomie 1, contraste 1 |
-| Écran, bureau & code | Netteté 2,5, ergonomie 2, connectique 2, espace de travail 1,5 |
+| Écran, création | Couleurs 3, netteté 2,5, ergonomie 1, contraste 0,5 |
+| Écran, bureau & code | Netteté 2,5, ergonomie 2, connectique 2, espace de travail 1,5, marquage OLED 1 (cité seulement comme point faible) |
 | Écran, polyvalent | Fréquence 1,5, contraste 1,5, netteté 1,5, HDR 1, ergonomie 1 |
 
 ## Interface et animations
@@ -366,7 +366,7 @@ Six retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headl
 
 ## Retours du 23 octobre (2)
 
-Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless sur la base locale (`web-local-db-3`, port 3003). Commités sur la branche feat/finder-retours-23-octobre, pas encore dans main.
+Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless sur la base locale (`web-local-db-3`, port 3003). Dans main en local (06057fa), pas encore poussés ni déployés.
 
 | Mesure | Avant | Après |
 | --- | --- | --- |
@@ -384,6 +384,75 @@ Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome head
 
 - Sous 1 024 px, la bulle « Pas d'ordre imposé » de la barre d'étapes couvrait le pied de la console : le premier contact avec la console la referme.
 - Vérifié : typecheck des 4 paquets, 44 tests, build, Biome et Prettier sur les fichiers touchés ; parcours mesurés et captures en Chrome headless à 1280 × 720, 1440 × 900 et 390 × 844, en français et en anglais, écrans compris, et en mouvement réduit.
+
+## Écrans : vrais modèles (23 octobre)
+
+Le catalogue d'écrans compte 264 vrais modèles de 8 marques, les 50 plus pertinents de chacune dans l'ordre de la marque, importés par `pnpm ingest <marque>` depuis les pages et API officielles ; la démo est retirée. Les photos restent sur les CDN des marques et passent par Netlify Image CDN. Commités sur la branche feat/ecrans-vrais-modeles (pas encore dans main ni poussés), en base locale seulement : rien en production.
+
+| Marque | Écrans | Source | Prix | Pertinence |
+| --- | --- | --- | --- | --- |
+| Samsung | 30 | samsung.com/fr : sitemap, JSON-LD, fiche pdd32 | Boutique Samsung | Tous ceux en vente |
+| LG | 42 | lg.com/fr : sitemap, données Next.js | Boutique LG | Tous ceux de 2023 et après, en vente |
+| Dell (+ Alienware) | 50 | dell.com/fr-fr : pages de liste, tableau .spec\_\_item | Boutique Dell | Ordre de la liste Dell |
+| MSI | 50 | fr-store.msi.com (msi.com bloque les robots) | Boutique MSI | Meilleures ventes, puis avis, puis nouveautés |
+| AOC (+ AGON) | 50 | aoc.com/fr : ItemList, données Next.js | Médiane des revendeurs affichés par AOC | Listes jeu et bureau alternées |
+| ASUS (+ ROG) | 18 sur 50 | odinapi.asus.com (liste, fiches), rog.asus.com | ASUS eStore pour les ROG, sinon prix conseillé cité par la presse ; 32 attendent | Ordre « Recommandé » d'ASUS |
+| BenQ (+ MOBIUZ, ZOWIE) | 17 sur 50 | benq.eu/fr-fr : pages spec.html, page d'achat | Prix standard caché de la page, sinon prix conseillé cité par la presse ; 33 attendent | Gammes en alternance |
+| Philips (+ Evnia) | 7 sur 50 | philips.fr : données Next.js, API summary | Prix conseillé cité par la presse ; 43 attendent | Ordre « pertinence » de la liste |
+
+Acer et Gigabyte bloquent les robots (connexion coupée, Akamai 403) : rien n'est contourné. L'agent utilisateur est honnête, robots.txt respecté, 2 à 4 s entre deux requêtes par hôte (`packages/ingest/src/http.ts`).
+
+### Prix
+
+La boutique officielle quand la marque vend en direct, sinon la médiane des revendeurs que la page officielle affiche, sinon le prix conseillé d'un communiqué officiel dans `data/msrp.yaml` (`slug: { eur, source }`). Sans aucun des trois, le modèle attend (« sans prix » dans la fiche de relecture) et revient au passage suivant. Les liens revendeurs d'AOC portent ses propres codes d'affiliation : seul le prix est gardé.
+
+- **Prix conseillés (choix du 23 octobre)** : ceux que cite la presse tech (Prad, ComputerBase, Hardwareluxx, PC Games Hardware, Notebookcheck, Guru3D, TFTCentral, Cowcotland) ou un communiqué, l'URL gardée dans `data/msrp.yaml`, seulement s'ils datent de 2023 ou après. 29 trouvés sur 133 : ASUS 8, BenQ 14, Philips 7. Les Numériques, 01net et Tweakers refusent les robots de recherche : non utilisés.
+- **104 écrans attendent toujours** : ASUS ne publie aucun prix en euros pour ses TUF Gaming, VY, VB et la plupart des VA, Philips pas davantage pour une bonne partie de sa gamme B ; la presse ne cite que des prix de rue. Onze prix de lancement d'avant 2023 sont écartés (BenQ PD2700Q, PD2500Q, GW2480, XL2411K, EX2710S, SW271C, XL2566K ; Philips 242B1TC, 222B1TC, 27M1N3200VA, 27M1N3200ZA).
+- **BenQ** : le prix des 3 premiers modèles importés est un champ caché de la page (`disableMagentoECStandardPrice`, quand la boutique BenQ ne vend pas le modèle) ; à couper si on n'en veut pas.
+- `pnpm ingest prices` relit aussi les écrans et saute les slugs de `data/msrp.yaml`. Un import s'arrête à 10 modèles : `--next 50` pour toute la liste.
+
+### Parcours recalé
+
+- **Ordre** : usage, taille, budget, netteté, dalle, fluidité, courbure, indispensables (budget en 3e, choix validé).
+- **Netteté** lue sur la hauteur de l'image : 1080p sous 1300 px, 1440p de 1300 à 1999, 4K de 2000 à 2799, 5K au-delà. Un 1920 × 1200 ou un 2560 × 1080 est un 1080p.
+- **Taille** : « Ultra-large 38"+ » et « Grand format 37"+ » (16:9 dès 36" : 37" et 42,5" au catalogue).
+- **Fluidité** : « 480 Hz et plus » (8 écrans). **Indispensables** : « Fixation VESA », masquée tant que tous l'ont ; « Pied réglable » lit `heightAdjustable` (LG ne chiffre pas la course).
+- **Budget** : 0 à 1 600 € par pas de 25 €, barres de 50 € (médiane 380 €, 90 % sous 1 100 €).
+- Une option qu'aucun écran du catalogue n'a est masquée (`Console.tsx`) : la TN, tant que les ZOWIE attendent leur prix.
+
+### Classement et audit
+
+Les critères dont la valeur peut manquer comptent alors la médiane de leurs pairs (`known`, `peers`) : réactivité par type de dalle, couleurs (DCI-P3) par dalle, console (HDMI) par définition. L'OLED vaut 1 en réactivité, le VA plafonne à 0,55, l'IPS Black (2000:1 et plus) monte à 0,5 en contraste, la netteté suit une courbe qui s'essouffle vers 185 PPI. Chaque critère a son libellé de faiblesse (`weakLabel`, claviers compris) ; `burnIn` (OLED 0,3) pèse 1 au bureau et n'est jamais un point fort (`caveat`). Après l'audit, le contraste passe de 1 à 0,5 en Création.
+
+| Usage | Trois premiers (base locale) | Lecture |
+| --- | --- | --- |
+| FPS compétitif | ROG Swift OLED PG27AQWP, LG 27GX790B, AOC AG276QKD2 | OLED de 500 Hz et plus ; en 24", Alienware AW2524HF (500 Hz) |
+| Jeu immersif | MSI MPG 341CQR, LG 39GX900A, MSI MPG 491CQPX | OLED ultra-larges |
+| Console | AOC AG326UZD2, MSI MAG 321UP, MSI MPG 322UR | 4K QD-OLED en HDMI 2.1 |
+| Création | AOC AG276UZD, MSI MAG 272UP, Samsung Odyssey OLED G8 | 4K calibrés à large gamut, puis 5K IPS (ROG XG27JCG, ViewFinity S9) |
+| Bureau & code | ViewFinity S8 5K, LG 32U990A (6K), Dell U2725QE | Haute densité, pied complet, USB-C ; OLED marqué « À savoir » |
+| Polyvalent | AOC AG276UZD, MSI MAG 272UP, Samsung Odyssey OLED G8 | 4K OLED |
+
+Aucune marque ne dépasse 4 écrans dans un top 10. Script d'audit et chiffres : scratchpad de la session du 23 octobre (`audit.ts`).
+
+### Photos et données
+
+- `isolate` mesure la symétrie gauche-droite ; `squareOn` exige pour un écran une symétrie d'au moins 0,88 et deux morceaux au plus. 253 écrans sur 263 sont vus de face sur le canvas ; 7 seulement détourables (PG27AQWP livré avec un bras, AW2725DF sans vue de face chez Dell, LG 32U889SA sur pied haut, ProArt PA27USD et PA32USD vus de trois quarts, ZOWIE XL2546X+ et XL2586X+ avec leurs volets), 3 sans photo (Dell S2426HS, SE3426DW, ZOWIE XQ2566X).
+- Une vue de dos passe le contrôle de symétrie : relire la planche contact après chaque import. `data/excluded.yaml` écarte ainsi les dos de l'AW2725DF et des deux ProArt, fige le SE2426H sur sa vue de face non détourable et écarte le LG 27U421A (sa page porte la fiche d'un 23,8"). Le sélecteur remplace une photo principale exclue.
+- `atWidth` (`packages/catalog/src/media/cdn.ts`) redimensionne Scene7 (Samsung, Dell, Philips, BenQ), Sanity (AOC), ASUS et Shopify (MSI) ; leurs hôtes sont dans `netlify.toml`.
+- ASUS ROG : la galerie est lue sur `/gallery/` (la page produit montre d'autres produits). BenQ : les photos d'un modèle « + » portent le nom du modèle de base, et la liste d'atouts de la page d'achat sert de texte (elle dit « QD-OLED » là où la fiche dit « OLED »).
+- Philips : une plage de balayage (« 30-150 Hz (V) ») ne compte plus comme fréquence quand la résolution maximale donne la sienne ; le statut « NEW » compte comme en vente.
+- Noms : Dell sans « Base » ni lettre doublée (« Pro P2726H ») ; LG avec sa gamme, lue dans « Nom du produit » ou la rubrique de l'URL (« UltraGear OLED 27GX790A », « Smart Monitor 27U731SA »). Une fiche sans taille la déduit des PPP (BenQ SW272QN).
+
+### Base, production et suite
+
+Migration `0003` (`height_adjustable`, `true_black_600`) et seed appliqués en local : 264 écrans, 25 écrans et 5 marques fictives supprimés, sous le garde-fou du seed. En production, rien n'est fait.
+
+- [x] Source des prix d'ASUS, BenQ et Philips : prix conseillé cité par la presse tech (29 prix, 104 écrans attendent encore ; les prix d'avant 2023 restent écartés, choix confirmé)
+- [x] ASIN Amazon des écrans : 233 sur 264, par la même méthode que les claviers
+- [x] Commit sur la branche feat/ecrans-vrais-modeles
+- [ ] Fusionner dans main et pousser, puis production dans l'ordre : migration 0003, déploiement, seed (avec ton accord)
+- [ ] Acer et Gigabyte si une source ouverte apparaît
 
 ## SEO et i18n
 
@@ -462,12 +531,13 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 | `pnpm dev` | Serveur de dev du site, port 3000 |
 | `pnpm build` | Build de production dans `apps/web/.output` |
 | `pnpm --filter @choose/web start` | Lance le build de production avec le `.env` racine |
-| `pnpm test` | 44 tests du moteur (Vitest) |
+| `pnpm test` | 52 tests du moteur et des parcours (Vitest) ; pnpm --filter @choose/ingest test en lance 15 sur le mapper écrans |
 | `pnpm typecheck` | `tsc` sur `catalog`, `db` et `web` |
 | `pnpm lint`, `pnpm format` | Biome : vérification, puis correction automatique |
 | `pnpm pg:local` (ou `stop`, `status`) | Postgres local : port 54329, données dans `.pgdata` |
 | `pnpm db:generate`, `db:migrate`, `db:seed`, `db:studio` | Migrations Drizzle, seed YAML, interface de la base |
-| `pnpm ingest photos [--dry-run]` | Choisit la photo principale de chaque clavier (vue de dessus) et écrit `data/` |
+| `pnpm ingest photos [--dry-run]` | Choisit la photo principale de chaque clavier (vue de dessus) et de chaque écran (vue de face), keyboards ou monitors pour une seule catégorie, et écrit `data/` |
+| pnpm ingest \<marque> \[--dry-run\] | Écrans (samsung, lg, dell, msi, aoc, asus, philips, benq) : les 50 plus pertinents de la marque dans data/monitors/\<marque>.yaml, avec la fiche de relecture et les ignorés |
 
 - Si `apps/web/styled-system/` manque (dossier généré, non versionné) : `pnpm --filter @choose/web exec panda codegen`.
 - Dans l'app Claude, le serveur de prévisualisation « web » est décrit dans `.claude/launch.json` ; « web-local-db » tourne sur le port 3001 avec le Postgres local.
@@ -522,6 +592,7 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Accueil (1440 × 900 et 375 × 812) | Plaque « Écrans » à 16 px du séparateur en haut comme en bas (−17 px avant) ; sur téléphone, les deux étiquettes tiennent dans leur bande ; calcul de la place vérifié de 2 à 5 catégories |
 | Console et liste courte (1440 × 900) | Tuiles d'une rangée à 112 px au lieu de 228, console toujours à 376 px ; coches entières ; liste courte centrée sur l'axe (claviers 3 × 3, écrans 5 en ligne) ; sous elle, aucune esquisse ne réagit au survol |
 | Fiche produit, podium et résultats | Fiche ouverte depuis le canvas, le podium et les résultats, précédent / suivant, Échap ; « Voir les 9 résultats » garde la sélection en cours, « Modifier mes réponses » revient à l'étape quittée ; top 5 à 900 px de haut, top 3 + « Voir tout » à 790 px |
+| Écrans réels, base locale (23 octobre) | Chrome headless à 1440, 1024 et 390 px, FR et EN : 235 écrans (264 depuis l'ajout des prix ASUS, BenQ, Philips), photos de face sur le canvas, podium, résultats, fiche (luminosité, couleurs, pied), liens Amazon par référence, impasses « Bloqué par Budget », tuile TN masquée |
 
 Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
@@ -559,14 +630,13 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 
 La principale limite tient aux données : avec 25 produits fictifs par catégorie, le motif du canvas se répète vite et plusieurs étapes se sautent. Le reste est une dette assumée pour cette première version.
 
-- **Données** : les écrans sont encore les 25 de démonstration ; 41 claviers n'ont aucune vue de dessus détourable chez leur boutique et gardent leur dessin sur le canvas (leur fiche montre la photo). Les photos Razer font 500 px : un peu justes dans la fiche sur écran Retina.
-- **Classement** : popularité et note éditoriale valent 0,5 partout, donc l'a priori ne départage rien ; le firmware « propriétaire » est la valeur par défaut de l'ingest quand une page ne cite ni QMK ni VIA, ce qui avantage Keychron sur « Code ».
+- **Données** : les écrans sont 264 modèles de 8 marques : Acer et Gigabyte bloquent les robots, 104 écrans d'ASUS, BenQ et Philips n'ont aucun prix conseillé publié (voir « Écrans : vrais modèles ») ; 41 claviers n'ont aucune vue de dessus détourable chez leur boutique et gardent leur dessin sur le canvas (leur fiche montre la photo). Les photos Razer font 500 px : un peu justes dans la fiche sur écran Retina.
+- **Classement** : popularité et note éditoriale valent 0,5 partout, donc l'a priori ne départage rien ; le firmware « propriétaire » est la valeur par défaut de l'ingest quand une page ne cite ni QMK ni VIA, ce qui avantage Keychron sur « Code ». Les fiches d'écrans ne donnent ni couverture Adobe RGB ni uniformité : en « Création », un écran de jeu calibré à large gamut vaut un écran pro.
 - **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; les retenus restent alors serrés sur le canvas.
 - **Canvas 2D** : à l'aise avec des centaines de produits depuis les dessins partagés (45 Mo en DPR 2) et le budget des photos (64 Mo au plus) ; WebGL n'est plus nécessaire à cette échelle.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu, soit 724 Ko bruts (68 Ko en brotli) avec 523 claviers ; l'API en fait 909 Ko, dont 235 Ko de switchs recopiés dans chaque variante. Format compact à prévoir (switchs et marques en dictionnaire).
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
-- **Pas de prix boutiques** : la table `offers` est vide : les claviers n'ont que le lien Amazon (prix indicatif, pas celui du jour) et la fiche d'un écran n'affiche encore qu'un message d'attente.
-- **Seuils de format** : « Grand format 42"+ » prend les écrans 16:9 dès 36". Les seuils sont à recaler sur les vraies données.
+- **Pas de prix boutiques** : la table `offers` est vide : les claviers et les écrans n'ont que le lien Amazon (prix indicatif, pas celui du jour) ; un écran sans ASIN mène à une recherche par sa référence.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
 - **Le seed supprime** ce que data/ ne liste plus, avec un garde-fou (SEED\_PRUNE=force au-delà de max(30, la moitié du catalogue)).
@@ -583,7 +653,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiches produit `/fr/claviers/<slug>` avec JSON-LD, pages collections, `sitemap.xml`, `robots.txt`, images OG. Le détail et l'ordre sont dans « SEO et i18n » (audit du 23 octobre) ; les fiches produit sont proposées comme session séparée.
-- [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») ; restent les vrais écrans, les prix boutiques (`offers`) et liens d'affiliation.
+- [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») et écrans de 8 marques (264, voir « Écrans : vrais modèles ») ; restent 104 écrans sans prix publié, les prix boutiques (`offers`) et liens d'affiliation.
 - [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres sur la ligne du prix et dans la barre d'achat de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
 - [ ] **Idées en attente** : spécimen 3D procédural (accueil, tuiles), sons et courbes de force des switchs, démo de fréquence et loupe PPI dans les tuiles, vue éclatée, thème sombre, analytics, back-office (interface interne ou Directus).

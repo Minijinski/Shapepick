@@ -1,0 +1,724 @@
+# Samsung : importés de samsung.com (site français) par `pnpm ingest samsung`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 30 modèles, samsung.com/fr (prix € de la boutique Samsung)
+- slug: samsung-essential-monitor-s4-s40gd-24
+  brand: samsung
+  name: Essential Monitor S4 S40GD 24"
+  modelNumber: LS24D402GAUXEN
+  amazonAsin: B0DTQBVSR9
+  releaseYear: 2024
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468109?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468076?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468077?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468078?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468079?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468080?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468081?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468082?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/business/essential-monitor-s4-s40gd-24-inch-fhd-ips-100hz-ls24d402gauxen/
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, standHeightMm: 105, swivel: true, pivot: true, weightG: 3500 }
+  variants:
+    - { sku: LS24D402GAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s8-s80pb-27
+  brand: samsung
+  name: ViewFinity S8 S80PB 27"
+  modelNumber: LS27B800PXPXEN
+  releaseYear: 2022
+  msrpEur: 555
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514100?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514076?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514077?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514057?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514058?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514059?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514060?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514061?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/business/viewfinity-s8-s80pb-27-inch-ips-uhd-hdr-ls27b800pxpxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 90, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6700 }
+  variants:
+    - { sku: LS27B800PXPXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s6-s65uc-34
+  brand: samsung
+  name: ViewFinity S6 S65UC 34"
+  modelNumber: LS34C652UAUXEN
+  amazonAsin: B0C9YN7DV8
+  releaseYear: 2023
+  msrpEur: 380
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617721?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617690?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617691?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617692?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617693?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617694?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617695?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617696?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/curved/viewfinity-s6-s65uc-34-inch-ultra-wqhd-ls34c652uauxen/
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8000 }
+  variants:
+    - { sku: LS34C652UAUXEN, colorName: BLACK, colorFamily: black }
+
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: samsung-viewfinity-s9-s90pc-27
+  brand: samsung
+  name: ViewFinity S9 S90PC 27"
+  modelNumber: LS27C902PAUXEN
+  amazonAsin: B0C9YMNNJH
+  releaseYear: 2023
+  msrpEur: 1600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180576?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180617?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180587?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180595?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180581?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180582?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180584?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27c902pauxen/gallery/fr-viewfinity-s9-27s90pc-ls27c902pauxen-537180588?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/flat/viewfinity-s9-27-inch-5k-resolution-ls27c902pauxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 600, contrastStatic: 1000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 90, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 120, pivot: true, weightG: 7400 }
+  variants:
+    - { sku: LS27C902PAUXEN, colorName: SILVER, colorFamily: white }
+
+- slug: samsung-odyssey-3d-g90xf-27
+  brand: samsung
+  name: Odyssey 3D G90XF 27"
+  modelNumber: LS27FG904XUXEN
+  amazonAsin: B0DXF8S1NG
+  releaseYear: 2025
+  msrpEur: 2200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548697?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548726?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548698?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548699?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548700?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548701?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548702?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg904xuxen/gallery/fr-odyssey-3d-g90xf-ls27fg904xuxen-545548703?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-3d-g90xf-27-inch-165hz-uhd-ls27fg904xuxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 165, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, speakers: true, standHeightMm: 120, pivot: true, weightG: 7500 }
+  variants:
+    - { sku: LS27FG904XUXEN, colorName: Argenté, colorFamily: white }
+
+- slug: samsung-odyssey-g5-g55t-34
+  brand: samsung
+  name: Odyssey G5 G55T 34"
+  modelNumber: LC34G55TWWPXEN
+  amazonAsin: B0BRL8B5L5
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34__-c34g55twwp-lc34g55twwpxen-542670972?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363349?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363350?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363351?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363352?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363353?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363354?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363355?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g5-34-inch-165hz-curved-ultra-wqhd-lc34g55twwpxen/
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 165, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 2500, bitDepth: 8, hdmiPorts: 1, dpVersion: "1.4", weightG: 5600 }
+  variants:
+    - { sku: LC34G55TWWPXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-odyssey-g5-g50f-32
+  brand: samsung
+  name: Odyssey G5 G50F 32"
+  modelNumber: LS32FG506EUXEN
+  amazonAsin: B0GVFTXLB3
+  releaseYear: 2025
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716698?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716668?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716669?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716670?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716671?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716672?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716673?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716674?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g5-g50f-32-inch-180hz-qhd-ls32fg506euxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 105, swivel: true, pivot: true, weightG: 4900 }
+  variants:
+    - { sku: LS32FG506EUXEN, colorName: Black, colorFamily: black }
+
+- slug: samsung-odyssey-g6-g60f-27
+  brand: samsung
+  name: Odyssey G6 G60F 27"
+  modelNumber: LS27FG602EUXEN
+  amazonAsin: B0FPDDZFNH
+  releaseYear: 2025
+  msrpEur: 445
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622518?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622485?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622486?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622487?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622488?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622489?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622490?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602euxen/gallery/fr-odyssey-g6-27g60f-ls27fg602euxen-549622491?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g6-g60f-27-inch-350hz-qhd-ls27fg602euxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 350, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 120, swivel: true, pivot: true, weightG: 6400 }
+  variants:
+    - { sku: LS27FG602EUXEN, colorName: Noir, colorFamily: black, msrpEur: 510 }
+    - { sku: LS27FG606EUXEN, colorName: BLACK, colorFamily: black, msrpEur: 380 }
+
+- slug: samsung-odyssey-g7-g75f-37
+  brand: samsung
+  name: Odyssey G7 G75F 37"
+  modelNumber: LS37FG750EUXEN
+  amazonAsin: B0FK5MWZKD
+  releaseYear: 2025
+  msrpEur: 1100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367811?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367778?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367779?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367780?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367781?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367782?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367783?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37fg750euxen/gallery/fr-odyssey-g7-37g75f-ls37fg750euxen-548367784?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g7-g75f-37-inch-165hz-uhd-ls37fg750euxen/
+  specs: { diagonalIn: 37, aspect: 16:9, resW: 3840, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 165, responseGtgMs: 1, vrr: freesync_premium_pro, hdrCert: hdr600, brightnessSdrNits: 350, contrastStatic: 3000, dciP3Pct: 90, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, swivel: true, weightG: 11200 }
+  variants:
+    - { sku: LS37FG750EUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-odyssey-g8-dual-mode-g80hf-27
+  brand: samsung
+  name: Odyssey G8 Dual Mode G80HF 27"
+  modelNumber: LS27HG806EFXEN
+  amazonAsin: B0GZ4JP4NT
+  msrpEur: 780
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-552156213?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548332?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548499?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548504?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548547?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548571?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-553548577?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-552156188?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g8-g80hf-27-inch-dual-mode-5k-180hz-qhd-360hz-ls27hg806efxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 180, dualModeHz: 360, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6200 }
+  variants:
+    - { sku: LS27HG806EFXEN, colorName: Black, colorFamily: black }
+
+- slug: samsung-odyssey-g8-g80hs-dual-mode-32
+  brand: samsung
+  name: Odyssey G8 G80HS Dual Mode 32"
+  modelNumber: LS32HG806ESXEN
+  msrpEur: 1300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-552179414?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524607?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524641?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524792?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524806?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524828?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-553524837?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-552179395?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g8-g80hs-32-inch-dual-mode-6k-165hz-3k-330hz-ls32hg806esxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 330, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7400 }
+  variants:
+    - { sku: LS32HG806ESXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-odyssey-g9-g91f-49
+  brand: samsung
+  name: Odyssey G9 G91F 49"
+  modelNumber: LS49FG910EUXEN
+  amazonAsin: B0DF8L6PDK
+  releaseYear: 2025
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849463?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849447?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849434?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849435?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849436?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849437?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849438?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49fg910euxen/gallery/fr-odyssey-g9-g91f-570160-ls49fg910euxen-549849439?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g9-g91f-49-inch-144hz-dual-qhd-ls49fg910euxen/
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 144, responseGtgMs: 1, vrr: freesync_premium_pro, hdrCert: hdr600, brightnessSdrNits: 350, contrastStatic: 2500, dciP3Pct: 92, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, swivel: true, weightG: 15600 }
+  variants:
+    - { sku: LS49FG910EUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-odyssey-g9-g95c-49
+  brand: samsung
+  name: Odyssey G9 G95C 49"
+  modelNumber: LS49CG954EUXEN
+  amazonAsin: B0CDTVTFFS
+  releaseYear: 2023
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949863?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949837?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949838?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949839?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949832?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949833?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949834?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49cg954euxen/gallery/fr-odyssey-g9-g95c-ls49cg954euxen-538949835?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-g9-g95c-49-inch-240hz-curved-dual-qhd-ls49cg954euxen/
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium_pro, hdrCert: hdr1000, brightnessSdrNits: 450, contrastStatic: 2500, dciP3Pct: 92, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, swivel: true, weightG: 15600 }
+  variants:
+    - { sku: LS49CG954EUXEN, colorName: BLACK, colorFamily: black }
+
+- slug: samsung-odyssey-oled-g6-g60sf-27
+  brand: samsung
+  name: Odyssey OLED G6 G60SF 27"
+  modelNumber: LS27FG602SUXEN
+  amazonAsin: B0FHJ1MM7V
+  releaseYear: 2025
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625258?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625223?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625224?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625225?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625226?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625227?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625229?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg602suxen/gallery/fr-odyssey-oled-g6-27g60sf-575381-ls27fg602suxen-550625230?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g6-g60sf-27-inch-500hz-oled-qhd-ls27fg602suxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 500, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, dciP3Pct: 99, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6900 }
+  variants:
+    - { sku: LS27FG602SUXEN, colorName: Argent, colorFamily: white }
+
+# à vérifier : OLED Samsung sans ligne Quantum Dot : QD-OLED supposé
+# à vérifier : revêtement non indiqué : mat supposé
+- slug: samsung-odyssey-oled-g7-g73sh-dual-mode-32
+  brand: samsung
+  name: Odyssey OLED G7 G73SH Dual Mode 32"
+  modelNumber: LS32HG732SUXEN
+  amazonAsin: B0GZ4H7C9W
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-552240775?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549628?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549635?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549839?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549843?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549848?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-553549882?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg732suxen/gallery/fr-odyssey-oled-g7-g73sh-ls32hg732suxen-552240750?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g7-g73sh-32-inch-dual-mode-4k-165hz-fhd-330hz-ls32hg732suxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 165, dualModeHz: 330, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", thunderbolt: true, standHeightMm: 105, swivel: true, pivot: true, weightG: 4800 }
+  variants:
+    - { sku: LS32HG732SUXEN, colorName: Noir, colorFamily: black }
+
+# à vérifier : OLED Samsung sans ligne Quantum Dot : QD-OLED supposé
+- slug: samsung-odyssey-oled-g8-g80sh-27
+  brand: samsung
+  name: Odyssey OLED G8 G80SH 27"
+  modelNumber: LS27HG802SUXEN
+  amazonAsin: B0GZ4RW111
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-552803027?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553523260?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553523191?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553521784?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553522661?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553522803?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-553522960?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg802suxen/gallery/fr-odyssey-oled-g8-g80sh-ls27hg802suxen-552803007?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g8-g80sh-27-inch-4k-uhd-240hz-ls27hg802suxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 98, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6500 }
+  variants:
+    - { sku: LS27HG802SUXEN, colorName: Argent, colorFamily: white }
+
+# à vérifier : OLED Samsung sans ligne Quantum Dot : QD-OLED supposé
+- slug: samsung-odyssey-oled-g8-g81sf-27
+  brand: samsung
+  name: Odyssey OLED G8 G81SF 27"
+  modelNumber: LS27FG810SUXEN
+  amazonAsin: B0DF8WSJ82
+  releaseYear: 2025
+  msrpEur: 1400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592422?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592402?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592403?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592387?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592388?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592389?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592390?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27fg810suxen/gallery/fr-odyssey-oled-g8-27g81sf-575013-ls27fg810suxen-550592391?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g8-g81sf-27-inch-240hz-oled-uhd-ls27fg810suxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6900 }
+  variants:
+    - { sku: LS27FG810SUXEN, colorName: Silver, colorFamily: white }
+    - { sku: LS27FG814SUXEN, colorName: Argent, colorFamily: white }
+
+# à vérifier : revêtement non indiqué : mat supposé
+- slug: samsung-odyssey-oled-g9-g91sd-49
+  brand: samsung
+  name: Odyssey OLED G9 G91SD 49"
+  modelNumber: LS49DG912SUXEN
+  amazonAsin: B0DPJC74WV
+  releaseYear: 2024
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368941?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368916?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368917?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368918?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368919?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368920?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368921?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg912suxen/gallery/fr-odyssey-oled-g9-g91sd-ls49dg912suxen-548368922?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g9-g91sd-49-inch-144hz-curved-dual-qhd-ls49dg912suxen/
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 144, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 120, weightG: 12900 }
+  variants:
+    - { sku: LS49DG912SUXEN, colorName: Argent, colorFamily: white }
+
+- slug: samsung-odyssey-oled-g9-g95sd-49
+  brand: samsung
+  name: Odyssey OLED G9 G95SD 49"
+  modelNumber: LS49DG954SUXEN
+  amazonAsin: B0DQD7548D
+  releaseYear: 2024
+  msrpEur: 1100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548746?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548722?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548723?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548724?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548725?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548726?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548727?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49dg954suxen/gallery/fr-odyssey-oled-g9-g95sd-519529-ls49dg954suxen-546548728?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/gaming/odyssey-oled-g9-g95sd-49-inch-oled-dual-qhd-ls49dg954suxen/
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: none, brightnessSdrNits: 250, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, speakers: true, standHeightMm: 120, weightG: 12600 }
+  variants:
+    - { sku: LS49DG954SUXEN, colorName: SILVER, colorFamily: white }
+
+- slug: samsung-viewfinity-s6-s60ud-32
+  brand: samsung
+  name: ViewFinity S6 S60UD 32"
+  modelNumber: LS32D600UAUXEN
+  amazonAsin: B0D4B1NTBL
+  releaseYear: 2024
+  msrpEur: 280
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285271?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285236?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285237?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285238?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285239?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285240?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285241?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285242?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s6-32-inch-qhd-100hz-easysetupstand-ls32d600uauxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7200 }
+  variants:
+    - { sku: LS32D600UAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s6-s61f-27
+  brand: samsung
+  name: ViewFinity S6 S61F 27"
+  modelNumber: LS27F610EAUXEN
+  amazonAsin: B0FR2KW9F1
+  releaseYear: 2025
+  msrpEur: 280
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920149?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920121?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920122?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920123?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920124?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920125?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920128?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27f610eauxen/gallery/fr-viewfinity-s6-s61f-578937-ls27f610eauxen-550920129?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s6-s61f-27-inch-qhd-100hz-ergonomic-ls27f610eauxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 135, swivel: true, pivot: true, weightG: 5400 }
+  variants:
+    - { sku: LS27F610EAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s6-s65gc-34
+  brand: samsung
+  name: ViewFinity S6 S65GC 34"
+  modelNumber: LS34C652VAUXEN
+  amazonAsin: B0C9YNF36R
+  releaseYear: 2023
+  msrpEur: 420
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537135?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537098?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537099?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537100?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537101?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537102?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537103?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537104?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s6-s65vc-34-inch-ultra-wqhd-ls34c652vauxen/
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8100 }
+  variants:
+    - { sku: LS34C652VAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s8-s80d-37
+  brand: samsung
+  name: ViewFinity S8 S80D 37"
+  modelNumber: LS37D800EAUXEN
+  amazonAsin: B0DF6NSMV3
+  releaseYear: 2024
+  msrpEur: 580
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567918?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567885?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567886?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567887?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567888?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567889?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567890?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800eauxen/gallery/fr-viewfinity-s8-37s80d-ls37d800eauxen-550567891?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s80d-37-inch-uhd-hdr10-easysetupstand-ls37d800eauxen/
+  specs: { diagonalIn: 37, aspect: 16:9, resW: 3840, resH: 2160, panel: va, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 100, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbHub: true, standHeightMm: 120, swivel: true, weightG: 8800 }
+  variants:
+    - { sku: LS37D800EAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s8-s80hf-27
+  brand: samsung
+  name: ViewFinity S8 S80HF 27"
+  modelNumber: LS27H804EFAXEN
+  amazonAsin: B0H3V5R64N
+  msrpEur: 630
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813878?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813847?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813848?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813849?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813850?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813851?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813852?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813853?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s80hf-27-inch-5k-usb-c-easy-connection-ls27h804efaxen/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 60, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 5400 }
+  variants:
+    - { sku: LS27H804EFAXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s8-s80ud-37
+  brand: samsung
+  name: ViewFinity S8 S80UD 37"
+  modelNumber: LS37D800UAUXEN
+  amazonAsin: B0DF6NLGVK
+  releaseYear: 2024
+  msrpEur: 430
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424435?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424404?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424405?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424407?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424406?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424402?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424403?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls37d800uauxen/gallery/fr-viewfinity-s8-37s80ud-ls37d800uauxen-550424409?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s80ud-37-inch-uhd-usbc-easysetupstand-ls37d800uauxen/
+  specs: { diagonalIn: 37, aspect: 16:9, resW: 3840, resH: 2160, panel: va, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 100, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, weightG: 8900 }
+  variants:
+    - { sku: LS37D800UAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s8-s85th-40
+  brand: samsung
+  name: ViewFinity S8 S85TH 40"
+  modelNumber: LS40H850TAUXEN
+  msrpEur: 1200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695795?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695768?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695769?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695770?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695771?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695772?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695773?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695774?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s85th-40-inch-5k2k-curved-wuhd-ls40h850tauxen/
+  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 144, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 14000 }
+  variants:
+    - { sku: LS40H850TAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-viewfinity-s9-s95uf-49
+  brand: samsung
+  name: ViewFinity S9 S95UF 49"
+  modelNumber: LS49F950UAUXEN
+  amazonAsin: B0FRN89R9P
+  releaseYear: 2025
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902150?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902113?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902114?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902115?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902116?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902117?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902118?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls49f950uauxen/gallery/fr-viewfinity-s9-49s95uf-ls49f950uauxen-550902119?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s9-49-inch-dqhd-pbp-usbc-120hz-ls49f950uauxen/
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 3000, dciP3Pct: 92, srgbPct: 115, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 15600 }
+  variants:
+    - { sku: LS49F950UAUXEN, colorName: Noir, colorFamily: black }
+
+- slug: samsung-smart-monitor-m5-m50f-32
+  brand: samsung
+  name: Smart Monitor M5 M50F 32"
+  modelNumber: LS32FM500EUXEN
+  releaseYear: 2025
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569197?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569172?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569173?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569174?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569175?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569176?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569177?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm500euxen/gallery/fr-smart-m5-m50f-black-ls32fm500euxen-550569178?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/smart/smart-monitor-m5-32-inch-smart-tv-apps-ls32fm500euxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 60, responseGtgMs: 4, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", usbHub: true, speakers: true, weightG: 4700 }
+  variants:
+    - { sku: LS32FM500EUXEN, colorName: BLACK, colorFamily: black }
+
+- slug: samsung-smart-monitor-m8-m80f-32
+  brand: samsung
+  name: Smart Monitor M8 M80F 32"
+  modelNumber: LS32FM801UUXEN
+  amazonAsin: B0F8JFWZDH
+  releaseYear: 2025
+  msrpEur: 600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547201732?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547201708?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547201709?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547201710?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547201711?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547295092?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547296209?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm801uuxen/gallery/fr-smart-m8-32m80f-ls32fm801uuxen-547296495?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/smart/smart-monitor-m8-32-inch-smart-tv-apps-4k-uhd-ls32fm801uuxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: va, coating: matte, refreshHzMax: 60, responseGtgMs: 4, vrr: none, hdrCert: none, brightnessSdrNits: 400, contrastStatic: 3000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", usbcPdW: 65, usbHub: true, speakers: true, standHeightMm: 120, pivot: true, weightG: 7000 }
+  variants:
+    - { sku: LS32FM801UUXEN, colorName: Blanc, colorFamily: white }
+
+# à vérifier : OLED Samsung sans ligne Quantum Dot : QD-OLED supposé
+- slug: samsung-smart-monitor-m9-m90sf-32
+  brand: samsung
+  name: Smart Monitor M9 M90SF 32"
+  modelNumber: LS32FM900SUXEN
+  amazonAsin: B0F8JCZLC3
+  releaseYear: 2025
+  msrpEur: 1300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196367?$ORIGIN_PNG$, kind: cutout_front, primary: true }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196336?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196337?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196338?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196339?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547196340?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547216889?$ORIGIN_PNG$, kind: cutout_front }
+    - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fm900suxen/gallery/fr-smart-m9-32m90sf-ls32fm900suxen-547216895?$ORIGIN_PNG$, kind: cutout_front }
+  sources:
+    - https://www.samsung.com/fr/monitors/smart/smart-monitor-m9-32-inch-smart-tv-apps-4k-oled-ls32fm900suxen/
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, usbHub: true, speakers: true, standHeightMm: 120, pivot: true, weightG: 8400 }
+  variants:
+    - { sku: LS32FM900SUXEN, colorName: Argent, colorFamily: white }

@@ -1,6 +1,6 @@
 import { describe, expect, it } from 'vitest'
 import { filter, firstPending, keyboardFinder, monitorFinder, rank, switchSchema } from '../src'
-import type { FinderDefinition } from '../src/finder/types'
+import type { Answers, FinderDefinition } from '../src/finder/types'
 import { keyboards, monitors } from './fixtures'
 
 // Checks the two real questionnaires against the demo catalogue: every tile reachable, branching
@@ -93,5 +93,66 @@ describe('monitor finder', () => {
   it('favours calibrated wide-gamut panels for creative work', () => {
     const top = rank(monitorFinder, monitors, { use: 'creative' }).slice(0, 3)
     expect(top.every((r) => r.item.specs.factoryCalibrated)).toBe(true)
+  })
+  it('asks the budget right after the size', () => {
+    expect(monitorFinder.steps.map((s) => s.key).slice(0, 3)).toEqual(['use', 'format', 'budget'])
+    expect(firstPending(monitorFinder, monitors, { use: 'office', format: 's27' })).toBe('budget')
+  })
+
+  const slugs = (answers: Answers) => filter(monitorFinder, monitors, answers).map((m) => m.slug)
+
+  it('reads the sharpness on the height of the picture', () => {
+    expect(slugs({ resolution: 'fhd' })).toEqual(
+      expect.arrayContaining(['prism-p24-wuxga', 'kestrel-k29-uw']),
+    )
+    expect(slugs({ resolution: 'qhd' })).toEqual(
+      expect.arrayContaining(['halcyon-h38-uw', 'lumen-l34-uw', 'kestrel-k49-va']),
+    )
+    expect(slugs({ resolution: 'qhd' })).not.toContain('prism-p24-wuxga')
+    expect(slugs({ resolution: 'uhd' })).toContain('lumen-l40-5k2k')
+    expect(slugs({ resolution: '5k' })).toEqual(['lumen-l27-5k'])
+  })
+  it('puts every 21:9 panel from 37.5" up in the large ultrawides', () => {
+    expect(slugs({ format: 'uw38' })).toEqual(
+      expect.arrayContaining(['halcyon-h38-uw', 'lumen-l40-5k2k', 'vanta-v45-woled']),
+    )
+    expect(slugs({ format: 'uw34' })).toContain('kestrel-k29-uw')
+  })
+  it('counts a stand that goes up and down as height-adjustable, travel given or not', () => {
+    expect(slugs({ musts: 'height' })).toEqual(
+      expect.arrayContaining(['halcyon-h27-ergo', 'lumen-l27-4k']),
+    )
+    expect(slugs({ musts: 'height' })).not.toContain('kestrel-k27-budget')
+  })
+  it('offers the VESA mount as a must-have', () => {
+    expect(slugs({ musts: 'vesa' })).not.toContain('lumen-l27-slim')
+    expect(slugs({ musts: 'vesa' })).toHaveLength(monitors.length - 1)
+  })
+  it('never names a figure the sheet leaves out as a strength or a weakness', () => {
+    const response = monitorFinder.criteria.find((c) => c.key === 'response')
+    const ergo = rank(monitorFinder, monitors, { use: 'fps' }).find(
+      (r) => r.item.slug === 'halcyon-h27-ergo',
+    )
+    expect(ergo).toBeDefined()
+    expect(ergo?.pros).not.toContainEqual(response?.label)
+    expect(ergo?.cons).not.toContainEqual(response?.weakLabel)
+  })
+  it('puts an IPS ahead of the same screen in OLED for the office, and says why', () => {
+    const oled = monitors.find((m) => m.slug === 'vanta-v32-oled-4k')
+    if (!oled) throw new Error('demo OLED missing')
+    const ips = { ...oled, slug: 'same-in-ips', specs: { ...oled.specs, panel: 'ips' as const } }
+    const burnIn = monitorFinder.criteria.find((c) => c.key === 'burnIn')
+    const [first, second] = rank(monitorFinder, [oled, ips], { use: 'office' })
+    expect(first?.item.slug).toBe('same-in-ips')
+    expect(first?.pros).not.toContainEqual(burnIn?.label)
+    expect(second?.cons[0]).toEqual(burnIn?.weakLabel)
+  })
+})
+
+describe('both finders', () => {
+  it('word every weakness as a weakness', () => {
+    for (const c of [...keyboardFinder.criteria, ...monitorFinder.criteria]) {
+      expect(c.weakLabel, c.key).toBeDefined()
+    }
   })
 })

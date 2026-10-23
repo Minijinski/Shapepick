@@ -1,10 +1,3 @@
-# Marques FICTIVES des écrans de démo : elles partiront avec eux, quand les vrais écrans arriveront.
-- { slug: kestrel, name: Kestrel, country: CN }
-- { slug: lumen, name: Lumen Display, country: DE }
-- { slug: vanta, name: Vanta, country: TW }
-- { slug: prism, name: Prism, country: CN }
-- { slug: halcyon, name: Halcyon, country: JP }
-
 # Marques importées (pnpm ingest keychron, 2026-10-21)
 - { slug: keychron, name: Keychron, website: https://www.keychron.com }
 - { slug: lemokey, name: Lemokey, website: https://www.lemokey.com }
@@ -51,3 +44,27 @@
 
 # Marques importées (pnpm ingest steelseries, 2026-10-22)
 - { slug: steelseries, name: SteelSeries, website: https://steelseries.com }
+
+# Marques importées (pnpm ingest samsung, 2026-10-23)
+- { slug: samsung, name: Samsung, website: https://www.samsung.com }
+
+# Marques importées (pnpm ingest lg, 2026-10-23)
+- { slug: lg, name: LG, website: https://www.lg.com }
+
+# Marques importées (pnpm ingest dell, 2026-10-23)
+- { slug: dell, name: Dell, website: https://www.dell.com }
+
+# Marques importées (pnpm ingest msi, 2026-10-23)
+- { slug: msi, name: MSI, website: https://www.msi.com }
+
+# Marques importées (pnpm ingest aoc, 2026-10-23)
+- { slug: aoc, name: AOC, website: https://www.aoc.com }
+
+# Marques importées (pnpm ingest asus, 2026-10-23)
+- { slug: asus, name: ASUS, website: https://www.asus.com }
+
+# Marques importées (pnpm ingest benq, 2026-10-23)
+- { slug: benq, name: BenQ, website: https://www.benq.eu }
+
+# Marques importées (pnpm ingest philips, 2026-10-23)
+- { slug: philips, name: Philips, website: https://www.philips.fr }

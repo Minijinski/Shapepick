@@ -298,16 +298,6 @@ function Home() {
           >
             {m.homeSub[locale]}
           </p>
-          <p
-            data-fade
-            className={cx(
-              fade,
-              css({ fontFamily: "mono", fontSize: "2xs", color: "ink.faint" }),
-            )}
-            style={{ animationDelay: `${delay + 0.6}s` }}
-          >
-            {m.demoData[locale]}
-          </p>
         </div>
       </div>
     </main>

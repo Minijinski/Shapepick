@@ -1,0 +1,408 @@
+# ASUS (ROG, TUF, ProArt…) : importés de asus.com et rog.asus.com par `pnpm ingest asus`.
+# Prix : ASUS eStore quand il vend le modèle (ROG), sinon prix conseillé de data/msrp.yaml.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 10 modèles, asus.com/fr et rog.asus.com/fr (prix ASUS eStore pour les ROG, sinon prix conseillé)
+- slug: asus-rog-strix-5k-xg27jceg
+  brand: asus
+  name: ROG Strix 5K XG27JCEG
+  modelNumber: XG27JCEG
+  releaseYear: 2026
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/7F5BA482-2E60-4377-BAFF-C6ABBB888066, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5A823CF0-85AC-4300-B7D4-EA65618D0DB3, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7CD044A9-3723-4F4E-A4DD-53EA7A69C862, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B11A200B-DF46-4E26-81CA-89E1DE6DD592, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7D5F19D5-35F3-470D-BE03-2B02ACED6A31, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/8BD63ECE-E581-4E7C-BE16-EDFF09C0A7B6, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-5k-xg27jceg/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 320, responseGtgMs: 0.3, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1500, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
+  variants:
+    - { sku: XG27JCEG, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-xg27acmeg
+  brand: asus
+  name: ROG Strix XG27ACMEG
+  modelNumber: XG27ACMEG
+  amazonAsin: B0DQ8VBB71
+  releaseYear: 2026
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/D4EAAD58-4766-46B5-8167-D081728709AB, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5C1E58B5-42F1-4BDC-AEFD-E864DE79BCD8, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/DC154E69-700F-45D6-A837-F58CCE248E9E, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/056A5995-9F5B-4132-89AF-B2305AA51249, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2959D7FD-D7BB-49A0-9903-ADB0FEB47A8A, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2A6EF5D2-2084-492A-A5EC-376E4DC1BC8D, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/24EF9FF0-4EF9-4E28-A3AC-15B60FC43880, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-xg27acmeg/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, brightnessHdrPeakNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 5800 }
+  variants:
+    - { sku: XG27ACMEG, colorName: Noir, colorFamily: black }
+    - { sku: XG27ACMEG-W, colorName: Blanc, colorFamily: white }
+
+- slug: asus-rog-swift-oled-pg27aqwp
+  brand: asus
+  name: ROG Swift OLED PG27AQWP
+  modelNumber: ROG Swift OLED PG27AQWP-GR EDITION 20
+  amazonAsin: B09BJRNVWN
+  releaseYear: 2026
+  msrpEur: 1300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/CD4D70CA-BEEE-42CE-B28E-E396D2A380A3, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EB09672C-5DE5-42A4-8838-32DFED67DAE9, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/80BEA282-26AE-4AFD-8E94-09AE6B783E4A, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/1094C7C6-B607-4823-B7B5-99C296D6DE34, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/BE4001E1-5D59-436E-88FA-2068F459C9D7, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/ROG-Swift-OLED-PG27AQWP-GR-EDITION-20/
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: glossy, refreshHzMax: 540, responseGtgMs: 0.02, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessHdrPeakNits: 1500, dciP3Pct: 99.5, srgbPct: 135, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9360 }
+  variants:
+    - { sku: ROG Swift OLED PG27AQWP-G EDITION 20, colorName: Édition spéciale, colorFamily: color }
+    - { sku: PG27AQWP-W, colorName: Blanc, colorFamily: white }
+
+- slug: asus-rog-strix-xg27ucsr
+  brand: asus
+  name: ROG Strix XG27UCSR
+  modelNumber: XG27UCSR
+  releaseYear: 2026
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/E91AC275-8455-40CB-9BB0-D0DC4BFD2422, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/E59F55C6-6BFC-4154-A84D-5DF63C9EBC4C, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/568D141C-0697-44C1-9E97-87153523FDC0, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5F216A21-3799-44CB-8707-F870C3ED9A71, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/39F22D6B-82DE-49F2-B4C3-4B541D796EEC, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/6E593E02-D4EA-4921-AF62-A30C17770B9E, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/AA00C389-7FA2-49A4-AA1C-ABA6B21B9371, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-xg27ucs-gen2-xg27ucsr/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 160, dualModeHz: 324, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 500, contrastStatic: 1000, dciP3Pct: 95, srgbPct: 130, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 5970 }
+  variants:
+    - { sku: XG27UCSR, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-oled-xg32uqdms
+  brand: asus
+  name: ROG Strix OLED XG32UQDMS
+  modelNumber: XG32UQDMS
+  amazonAsin: B0GPNT35B4
+  releaseYear: 2026
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/755DDBA5-BD42-4E9F-8969-B5319AA6813C, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/AD94F65B-F0BF-41C0-99F2-FDEAAD8A02EB, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7C0C9296-D125-4591-A0ED-FBBC86A15FC3, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/D4D39A73-F1AD-4FB7-9ABD-ECD0F8E3CC9C, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/616B98E8-1806-478B-A0D5-690A1C40D085, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/C8E1D9BD-295A-49AC-B480-FD6AD889439D, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/49137E57-E84D-4F28-903E-CED2C9EA4433, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-oled-xg32uqdms/
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, weightG: 6600 }
+  variants:
+    - { sku: XG32UQDMS, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-xg27ucg-gen2-xg27ucgr
+  brand: asus
+  name: ROG Strix XG27UCG Gen2 (XG27UCGR)
+  modelNumber: XG27UCGR
+  amazonAsin: B0GR5VZ9VM
+  releaseYear: 2026
+  msrpEur: 410
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/C0B8521A-E3D5-449B-B10C-BA6EC554F062, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/41BFF78B-8CA1-4A4E-A4F2-17E6B23CD349, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EAD89DAE-C48C-455A-A046-3DD9660F1996, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/C7B2F4FD-08FA-4972-924E-765ADE1B8C88, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/8ECAAB64-55AB-4F7A-B565-C497FD35C1B3, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/D4EA82C3-1307-4D0E-8078-1A5F2C0A5F15, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/74A7F3E7-56BD-42D7-8CD0-F491EF7DDC5A, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-xg27ucg-gen2-xg27ucgr/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 162, dualModeHz: 485, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, brightnessHdrPeakNits: 400, contrastStatic: 1300, dciP3Pct: 95, srgbPct: 130, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
+  variants:
+    - { sku: XG27UCGR, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-5k-xg27jcg
+  brand: asus
+  name: ROG Strix 5K XG27JCG
+  modelNumber: XG27JCG
+  amazonAsin: B09BNK6C4C
+  releaseYear: 2026
+  msrpEur: 750
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/8A87687D-B574-4D77-A9E2-D14D960EBE84, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/34DD4E19-16AF-4722-A576-8082E8E8DED3, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/DF5631F0-C0AB-409B-99A0-1A4F0D0F15E7, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F35D9BCA-6F27-47C1-844A-2C72EA977024, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/92C09BDD-6468-4117-A647-5C8019ED65F3, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/4093D9BA-C8B2-48A3-A78B-04A5A5FF19BD, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/203BD37B-4581-4C03-AB5D-3607867F3816, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-5k-xg27jcg/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 0.3, vrr: freesync_premium_pro, hdrCert: hdr600, brightnessSdrNits: 350, brightnessHdrPeakNits: 600, contrastStatic: 1500, dciP3Pct: 97, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6900 }
+  variants:
+    - { sku: XG27JCG, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-pulsar-xg27aqngv
+  brand: asus
+  name: ROG Strix Pulsar XG27AQNGV
+  modelNumber: XG27AQNGV
+  amazonAsin: B0GFWNDFPS
+  releaseYear: 2026
+  msrpEur: 700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/1583FDE2-EA9E-4E01-8284-0727C5EE9C90, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EEE5E88C-D4DD-4563-A826-3C4E03531795, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/50A283CE-EC0F-411E-9151-FFDDFDF1ED87, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9A88162B-6539-4A95-B268-B692261A6771, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/4B8B4CD8-20B4-4ABC-9F12-A214D942777D, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FDD1CA54-4A2F-48B2-928F-B3D3A519417E, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-pulsar-xg27aqngv/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 360, responseGtgMs: 1, vrr: gsync_module, hdrCert: none, brightnessSdrNits: 400, brightnessHdrPeakNits: 500, contrastStatic: 1000, dciP3Pct: 90, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6500 }
+  variants:
+    - { sku: XG27AQNGV, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-oled-xg27aqdmes
+  brand: asus
+  name: ROG Strix OLED XG27AQDMES
+  modelNumber: XG27AQDMES
+  amazonAsin: B09CD3G35R
+  releaseYear: 2026
+  msrpEur: 430
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/271310F2-B1E9-428E-A727-C35F26652934, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0A0BADAF-C1A0-472A-8691-1A53D55C5435, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/3D95D729-1C23-44FA-8FF2-AA1B4969FDD1, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/96718456-DB79-40B8-965D-A384D4BC4F27, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9BDBAFAB-E980-4E75-BE9C-BF9547F0C26A, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FEE0FA8B-0CF3-49B7-905D-37FB582AA7F0, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/6F6258B7-BB07-427F-A07A-20A84D567CB0, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-oled-xg27aqdmes/
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 200, brightnessHdrPeakNits: 400, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
+  variants:
+    - { sku: XG27AQDMES, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-oled-xg27aqdmgr
+  brand: asus
+  name: ROG Strix OLED XG27AQDMGR
+  modelNumber: XG27AQDMGR
+  amazonAsin: B09CD32DNH
+  releaseYear: 2025
+  msrpEur: 490
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/FA804897-208F-4E22-A12F-9F3592B9D810, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/18E7FCF4-6945-43D3-B2BE-4B56930EA49D, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/CB6686CA-BB52-4120-A640-30B299211935, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0718EDE5-705D-4AB4-B3D7-E7C69E78246E, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/1339AC24-3989-44D1-A0DC-FFE64D7AF6F9, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F53E47F8-0C27-4983-835B-22E9B1305C08, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-oled-xg27aqdmg-gen2-xg27aqdmgr/
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: glossy, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessHdrPeakNits: 1300, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6600 }
+  variants:
+    - { sku: XG27AQDMGR, colorName: Noir, colorFamily: black }
+
+# Lot du 2026-10-23 : 8 modèles, asus.com/fr et rog.asus.com/fr (prix ASUS eStore pour les ROG, sinon prix conseillé)
+- slug: asus-proart-display-oled-pa32usd
+  brand: asus
+  name: ProArt Display OLED PA32USD
+  modelNumber: PA32USD
+  amazonAsin: B09BR64DKH
+  releaseYear: 2026
+  msrpEur: 3000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/500ae95e-4d30-4456-be4c-0a8c54916608, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0b6c2abb-b807-42a9-9a83-8b6bf107acb5, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/465f14b6-2d4c-496f-ab63-abececd51d06, kind: cutout_front }
+  sources:
+    - https://www.asus.com/fr/displays-desktops/monitors/proart/proart-display-oled-pa32usd/
+    - https://www.guru3d.com/story/asus-launches-proart-oled-pa27usd-and-pa32usd-with-4k-240hz-qdoled-panels
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.1, vrr: freesync, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6960 }
+  variants:
+    - { sku: PA32USD, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-xg27ucmg
+  brand: asus
+  name: ROG Strix XG27UCMG
+  modelNumber: XG27UCMG
+  releaseYear: 2026
+  msrpEur: 500
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/5AEC73E5-97F7-408B-A46A-8FB3766071FE, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7B0191A8-FE0D-439E-8E3A-5ACBCFF97E00, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F20C32B8-6D24-4FAD-959F-52FBAF8EEFEF, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/8DFC9F25-9242-40D8-97CF-A78329AC0C07, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0C98773B-46EE-4D1C-83D0-69F92DABE40A, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/85638169-1F98-4E87-BA57-015C925BD902, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2F20E5BA-4548-470A-9E9E-3C218BE61592, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-xg27ucmg/
+    - https://tftcentral.co.uk/articles/asus-unveil-two-new-triple-mode-gaming-monitors-at-gamescom-2026
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 240, dualModeHz: 488, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, brightnessHdrPeakNits: 400, contrastStatic: 1300, dciP3Pct: 95, srgbPct: 130, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6500 }
+  variants:
+    - { sku: XG27UCMG, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-swift-oled-pg32ucwm
+  brand: asus
+  name: ROG Swift OLED PG32UCWM
+  modelNumber: PG32UCWM
+  amazonAsin: B09BK26CMQ
+  releaseYear: 2026
+  msrpEur: 1360
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/1838F10E-2750-4042-87BF-209B3C3EB3EB, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/1DCD1548-F8EA-42CD-8F21-E56D54167CE8, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/217FBE28-56CA-4A7E-8B9D-F1B4D7DB8F2E, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/34A72D75-BF47-4B84-BB88-EE51F939D432, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/E4F410FF-A341-4F0F-BC80-162188D321C6, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B4A30B9D-9366-4A92-A0E4-14286DAC06B0, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-swift-oled-pg32ucwm/
+    - https://www.computerbase.de/news/monitore/monitore-mit-rgb-stripe-oled-asus-nennt-erstmals-preise-fuer-pg27ucwm-und-pg32ucwm.98439/
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: glossy, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 80, swivel: true, weightG: 9000 }
+  variants:
+    - { sku: PG32UCWM, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-oled-xg34wcdms
+  brand: asus
+  name: ROG Strix OLED XG34WCDMS
+  modelNumber: XG34WCDMS
+  amazonAsin: B0GVPNRPJJ
+  releaseYear: 2026
+  msrpEur: 920
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/7BEA077D-0A5B-49F3-B204-E226DC4DB901, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/4FBBE2E3-C41C-47C7-B159-93D65E792CC7, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/20869574-A67C-43BE-9373-458D73B932D5, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5A0535E3-E8BE-409C-9EF5-93D0CEFBC1DB, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/4D2A3380-04F7-4F2C-856A-E346501655BD, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/778D9C00-D6FF-47E3-B6BD-633131EF19A6, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/32-to-34-inches/rog-strix-oled-xg34wcdms/
+    - https://www.prad.de/asus-uwqhd-display-mit-rgb-qd-oled-und-kvm/
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessHdrPeakNits: 1300, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, usbHub: true, standHeightMm: 110, swivel: true, weightG: 7400 }
+  variants:
+    - { sku: XG34WCDMS, colorName: Noir, colorFamily: black }
+
+- slug: asus-proart-display-oled-pa27usd
+  brand: asus
+  name: ProArt Display OLED PA27USD
+  modelNumber: PA27USD
+  amazonAsin: B09BMPLHY1
+  releaseYear: 2026
+  msrpEur: 2250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/9552c786-1ddf-4ace-8e17-750673c23ce2, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/d46392d5-5768-4d5d-806a-7a367b878d1a, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2c7d8ac6-0103-4d64-9847-53aa9ff4ea19, kind: cutout_front }
+  sources:
+    - https://www.asus.com/fr/displays-desktops/monitors/proart/proart-display-oled-pa27usd/
+    - https://www.guru3d.com/story/asus-launches-proart-oled-pa27usd-and-pa32usd-with-4k-240hz-qdoled-panels
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.1, vrr: freesync, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 7500 }
+  variants:
+    - { sku: PA27USD, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-swift-oled-pg32ucdm3
+  brand: asus
+  name: ROG Swift OLED PG32UCDM3
+  modelNumber: PG32UCDM3
+  amazonAsin: B0GL3FPCRW
+  releaseYear: 2026
+  msrpEur: 1450
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/851B28C4-FEDF-4AE6-BDEC-20CF40A64900, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9EC909FE-4062-4F3D-89FF-26D31E118217, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/13122239-0E77-4BA7-9AD1-1456C40831F4, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/476836C8-0F98-4EC0-8CA9-9B1FDCAA6DA8, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/337E35B1-19E6-47BC-9789-83C4795755C6, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FAEE6FC0-FBEA-4428-A790-E6A4679AD490, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/ROG-Swift-OLED-PG32UCDM-Gen3-PG32UCDM3/
+    - https://www.pcgameshardware.de/Monitor-Display-Hardware-154105/News/Nicht-bei-Amazon-4K-OLED-Neuheit-von-Asus-schon-reduziert-1524729-1524729/
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 80, swivel: true, weightG: 8700 }
+  variants:
+    - { sku: PG32UCDM3, colorName: Noir, colorFamily: black }
+
+- slug: asus-va249qgse
+  brand: asus
+  name: VA249QGSE
+  modelNumber: VA249QGSE
+  releaseYear: 2025
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/1c6ffffa-8c23-44b7-ba5f-190ae847ff3f, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/ecab482a-75fa-4d80-ad70-b498e2bb394d, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/ea99e4b7-110f-45a1-8f56-30a160e78cf4, kind: cutout_front }
+  sources:
+    - https://www.asus.com/fr/displays-desktops/monitors/business/va249qgse/
+    - https://www.prad.de/schnaeppchen-asus-va249qgse-mit-ips-panel-und-120-hz-per-adaptive-sync/
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 4500 }
+  variants:
+    - { sku: VA249QGSE, colorName: Noir, colorFamily: black }
+
+- slug: asus-rog-strix-oled-xg27aqwmg
+  brand: asus
+  name: ROG Strix OLED XG27AQWMG
+  modelNumber: XG27AQWMG
+  amazonAsin: B09CD57PMJ
+  releaseYear: 2025
+  msrpEur: 650
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/609612E2-9EBC-4A8B-8402-91FB13DF5C96, kind: cutout_front, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/AEB81A89-1687-46C3-A5B0-A67B76324594, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/3C328950-B0F5-4D75-8F53-67A40BC21624, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5DDF4D8E-5AC5-4613-A286-9233FD2CA012, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2B048798-9D2B-4D31-BBE6-E8294415213A, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/8632DDB7-5B51-4130-9D87-91D5D23390EE, kind: cutout_front }
+    - { url: https://dlcdnwebimgs.asus.com/gain/39124F8D-33B6-4373-AAC4-29E6DEE3F8B6, kind: cutout_front }
+  sources:
+    - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-oled-xg27aqwmg/
+    - https://www.prad.de/asus-xg27aqwmg-details-zum-tandem-oled-display/
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: glossy, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessHdrPeakNits: 1500, dciP3Pct: 99.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6700 }
+  variants:
+    - { sku: XG27AQWMG, colorName: Noir, colorFamily: black }

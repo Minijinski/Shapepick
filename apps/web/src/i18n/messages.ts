@@ -81,7 +81,6 @@ export const messages = {
   allResults: text("Tous les résultats", "All results"),
   from: text("à partir de", "from"),
   language: text("Langue", "Language"),
-  demoData: text("Données de démonstration", "Demo data"),
   worlds: text("Univers", "Worlds"),
   explore: text("Explorer", "Explore"),
   canvasHint: text(
@@ -142,12 +141,7 @@ export const messages = {
   previous: text("Précédent", "Previous"),
   next: text("Suivant", "Next"),
   specSheet: text("Fiche technique", "Spec sheet"),
-  whereToBuy: text("Où l’acheter", "Where to buy"),
   listPrice: text("Prix indicatif", "Typical price"),
-  offersSoon: text(
-    "Les offres des marchands arrivent bientôt : prix du jour, stock et livraison, au même endroit.",
-    "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",
-  ),
   searchOnAmazon: text("Chercher sur Amazon", "Search on Amazon"),
   viewOnAmazon: text("Voir sur Amazon", "View on Amazon"),
   amazon: text("Amazon", "Amazon"),

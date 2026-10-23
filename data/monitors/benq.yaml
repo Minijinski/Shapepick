@@ -1,0 +1,390 @@
+# BenQ (MOBIUZ, ZOWIE) : importés de benq.eu et zowie.benq.eu par `pnpm ingest benq`.
+# Prix : prix standard que la page BenQ donne quand sa boutique ne vend pas le modèle
+# (disableMagentoECStandardPrice), sinon prix conseillé de data/msrp.yaml.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 3 modèles, benq.eu/fr-fr et zowie.benq.eu (prix standard affiché par BenQ, sinon prix conseillé)
+- slug: benq-ex240n
+  brand: benq
+  name: MOBIUZ EX240N
+  modelNumber: EX240N
+  amazonAsin: B0B797ZPF5
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/ex240n-front-2?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ex240n-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/ex240n-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/ex240n-leftside-information?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/ex240n-connectivity-information?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/gaming/ex240n.html
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 165, responseGtgMs: 4, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", speakers: true, weightG: 4300 }
+  variants:
+    - { sku: EX240N, colorName: Noir, colorFamily: black }
+
+- slug: benq-ex2710q
+  brand: benq
+  name: MOBIUZ EX2710Q
+  modelNumber: EX2710Q
+  amazonAsin: B096B2XQVJ
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-ex2710q-front-high?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ex2710q-front-1?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/2-ex2710q-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/ex2710q-right45-2?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-ex2710q-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/6-ex2710q-leftside?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-ex2710q-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/gaming/ex2710q.html
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 165, responseGtgMs: 2, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 250, brightnessHdrPeakNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", usbHub: true, speakers: true, standHeightMm: 100, swivel: true, weightG: 7400 }
+  variants:
+    - { sku: EX2710Q, colorName: Noir, colorFamily: black }
+
+- slug: benq-ex2710u
+  brand: benq
+  name: MOBIUZ EX2710U
+  modelNumber: EX2710U
+  amazonAsin: B09YV1JJZT
+  msrpEur: 600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-ex2710u-front-high?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ex2710u-front-1?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/2-ex2710u-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/9-ex2710u-remote-front45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/ex2710u-right45-2?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-ex2710u-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/5-ex2710u-leftside?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-ex2710u-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/gaming/ex2710u.html
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 1, vrr: freesync_premium_pro, hdrCert: hdr600, brightnessSdrNits: 300, brightnessHdrPeakNits: 600, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, speakers: true, standHeightMm: 100, swivel: true, weightG: 8000 }
+  variants:
+    - { sku: EX2710U, colorName: Noir, colorFamily: black }
+
+# Lot du 2026-10-23 : 14 modèles, benq.eu/fr-fr et zowie.benq.eu (prix standard affiché par BenQ, sinon prix conseillé)
+- slug: benq-rd240q
+  brand: benq
+  name: RD240Q
+  modelNumber: RD240Q
+  amazonAsin: B0D2KVY1FG
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-rd240q-front-high?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/08-rd240q-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/02-rd240q-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/04-rd240q-special?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/06-rd240q-pivot?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/05-rd240q-leftside-information?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/07-rd240q-vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/08-rd240q-vesa?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/programming/rd240q.html
+    - https://www.prad.de/benq-rd240q-wqxga-display-fuer-programmierer/
+  specs: { diagonalIn: 24.1, aspect: 16:10, resW: 2560, resH: 1600, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 7600 }
+  variants:
+    - { sku: RD240Q, colorName: Noir, colorFamily: black }
+
+- slug: benq-xl2546x-plus
+  brand: benq
+  name: ZOWIE XL2546X+
+  modelNumber: XL2546X+
+  amazonAsin: B0DBQGY8B3
+  msrpEur: 530
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/xl2546x-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/5-xl2546x-right45-5?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/6-xl2546x-leftside-5?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-xl2546x-right15-5?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-xl2546x-left45-5?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/xl2546x-plus-mobile-800xh?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://zowie.benq.eu/fr-fr/monitor/xl2546x-plus.html
+    - https://www.prad.de/280-statt-240-hz-neuauflage-des-benq-zowie-xl2546x/
+  specs: { diagonalIn: 24.1, aspect: 16:9, resW: 1920, resH: 1080, panel: tn, coating: matte, refreshHzMax: 280, vrr: none, hdrCert: none, brightnessSdrNits: 320, contrastStatic: 1000, hdmiPorts: 3, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 155, swivel: true, weightG: 5800 }
+  variants:
+    - { sku: XL2546X+, colorName: Noir, colorFamily: black }
+
+- slug: benq-rd270q
+  brand: benq
+  name: RD270Q
+  modelNumber: RD270Q
+  amazonAsin: B0GRXXH15D
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-rd270q-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/3-rd270q-front-vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/4-rd270q-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/2-rd270q-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/6-rd270q-has?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-rd270q-pivot?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/8-rd270q-side?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/9-rd270q-vesa?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/programming/rd270q.html
+    - https://www.prad.de/wqhd-144-hz-usb-c-und-pivot-benq-listet-den-neuen-coding-monitor-rd270q/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1300, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 65, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 7200 }
+  variants:
+    - { sku: RD270Q, colorName: Noir, colorFamily: black }
+
+- slug: benq-gw2490tc
+  brand: benq
+  name: GW2490TC
+  modelNumber: GW2490TC
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-front-vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-measurements-1?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-measurements-2?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2490TC-product-photo-vesa?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/home/gw2490tc.html
+    - https://www.prad.de/benq-guenstige-office-displays-mit-144-hz-und-usb-c/
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 20, thunderbolt: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5700 }
+  variants:
+    - { sku: GW2490TC, colorName: Noir, colorFamily: black }
+
+- slug: benq-xl2566x-plus
+  brand: benq
+  name: ZOWIE XL2566X+
+  modelNumber: XL2566X+
+  amazonAsin: B0D5QX3LVV
+  msrpEur: 700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-xl2566x-front-1?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+  sources:
+    - https://zowie.benq.eu/fr-fr/monitor/xl2566x-plus.html
+    - https://www.notebookcheck.com/BenQ-Zowie-XL2566X-400-Hz-Gaming-Monitor-soll-Bewegungen-schaerfer-als-OLED-darstellen.873311.0.html
+  specs: { diagonalIn: 24.1, aspect: 16:9, resW: 1920, resH: 1080, panel: tn, coating: matte, refreshHzMax: 400, vrr: none, hdrCert: none, brightnessSdrNits: 320, contrastStatic: 1000, hdmiPorts: 3, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 155, swivel: true, weightG: 5800 }
+  variants:
+    - { sku: XL2566X+, colorName: Noir, colorFamily: black }
+
+- slug: benq-gw2790tc
+  brand: benq
+  name: GW2790TC
+  modelNumber: GW2790TC
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-front-vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-measurements-1?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-measurements-2?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/Monitor-Home-office-GW2790TC-product-photo-vesa?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/home/gw2790tc.html
+    - https://www.prad.de/benq-guenstige-office-displays-mit-144-hz-und-usb-c/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 20, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6700 }
+  variants:
+    - { sku: GW2790TC, colorName: Noir, colorFamily: black }
+
+- slug: benq-pd2770u
+  brand: benq
+  name: PD2770U
+  modelNumber: PD2770U
+  amazonAsin: B0G6JW4W5H
+  msrpEur: 1700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1pd2770u-front-hood-hotkey-2?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/2pd2770u-left45-hood?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3pd2770u-right45-hood?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/pd2770u-4?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/pd2770u-side?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/pd2770u-s?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/pd2770u-3?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/pd2770u-6?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/creative-pro/pd2770u.html
+    - https://www.prad.de/benq-pd2770u-4k-monitor-mit-integriertem-kolorimeter/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 450, contrastStatic: 1000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 115, swivel: true, pivot: true, weightG: 9600 }
+  variants:
+    - { sku: PD2770U, colorName: Noir, colorFamily: black }
+
+- slug: benq-xl2586x-plus
+  brand: benq
+  name: ZOWIE XL2586X+
+  modelNumber: XL2586X+
+  amazonAsin: B0DMVF934B
+  msrpEur: 1200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/xl2586x-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/1-xl2586x-front-8?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-xl2586x-right15-8?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/6-xl2586x-leftside-8?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-xl2586x-left45-8?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/5-xl2586x-right45-9?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/xl2586x-plus-mobile-800xh?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/xl2586x-plus-vivid-color-1new?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://zowie.benq.eu/fr-fr/monitor/xl2586x-plus.html
+    - https://www.hardwareluxx.de/index.php/news/hardware/monitore/65339-mg-benq-zowie-xl2586x-esport-modell-mit-600-hz-vorgestellt.html
+  specs: { diagonalIn: 24.1, aspect: 16:9, resW: 1920, resH: 1080, panel: tn, coating: matte, refreshHzMax: 600, vrr: none, hdrCert: none, brightnessSdrNits: 320, contrastStatic: 1000, hdmiPorts: 3, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 155, swivel: true, weightG: 5900 }
+  variants:
+    - { sku: XL2586X+, colorName: Noir, colorFamily: black }
+
+- slug: benq-rd280ug
+  brand: benq
+  name: RD280UG
+  modelNumber: RD280UG
+  amazonAsin: B0GLPBF65H
+  msrpEur: 750
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-rd280ug-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/14-rd280ug-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/15-rd280ug-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/2-rd280ug-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/4-rd280ug-lefttside-light?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/5-rd280ug-vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/6-rd280ug-has?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-rd280ug-pivot?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/programming/rd280ug.html
+    - https://www.prad.de/benq-rd280ug-coding-monitor-mit-20001-kontrast/
+  specs: { diagonalIn: 28.2, aspect: 3:2, resW: 3840, resH: 2560, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 2000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 10100 }
+  variants:
+    - { sku: RD280UG, colorName: Noir, colorFamily: black }
+
+- slug: benq-sw272q
+  brand: benq
+  name: SW272Q
+  modelNumber: SW272Q
+  amazonAsin: B0CBQ88T67
+  msrpEur: 1050
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/sw272q-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/2-sw272q-front-Vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-sw272q-front70?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/sw272q-thumbnail?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-sw272q-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/5-sw272q-size?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/8-sw272q-leftside?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/9-sw272q-left45-hood?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/creative-pro/sw272q.html
+    - https://www.prad.de/benq-sw272q-neues-wqhd-display-mit-16-bit-lut/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 98, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 140, swivel: true, pivot: true, weightG: 9400 }
+  variants:
+    - { sku: SW272Q, colorName: Noir, colorFamily: black }
+
+- slug: benq-xq2566x
+  brand: benq
+  name: ZOWIE XQ2566X
+  modelNumber: XQ2566X
+  amazonAsin: B0GWQFXCKY
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/xq2566x-web-mobile-800x750-02?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/xq2566x-web-1920x1060-02?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://zowie.benq.eu/fr-fr/monitor/xq2566x.html
+    - https://www.prad.de/dyac-3-schaerfer-als-oled-benq-enthuellt-neue-e-sport-monitore-mit-360-hz/
+  specs: { diagonalIn: 24.1, aspect: 16:9, resW: 2560, resH: 1440, panel: tn, coating: matte, refreshHzMax: 360, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, hdmiPorts: 3, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 155, swivel: true, weightG: 6900 }
+  variants:
+    - { sku: XQ2566X, colorName: Noir, colorFamily: black }
+
+- slug: benq-sw272u
+  brand: benq
+  name: SW272U
+  modelNumber: SW272U
+  amazonAsin: B0C6SMCXC6
+  msrpEur: 1360
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/sw272u-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/2-sw272u-front-Vertical?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/7-sw272u-front70?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/sw272u-thumbnail?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/3-sw272u-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/5-sw272u-size?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/8-sw272u-leftside?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/9-sw272u-left45-hood?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/creative-pro/sw272u.html
+    - https://www.prad.de/benq-sw272u-4k-display-mit-99-prozent-adobe-rgb/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 140, swivel: true, pivot: true, weightG: 9700 }
+  variants:
+    - { sku: SW272U, colorName: Noir, colorFamily: black }
+
+- slug: benq-xq2766x
+  brand: benq
+  name: ZOWIE XQ2766X
+  modelNumber: XQ2766X
+  msrpEur: 1200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-xq2766x-front?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/02-xq2766x-right15?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/05-xq2766x-leftside?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/06-xq2766x-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/07-xq2766x-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/08-xq2766x-switch?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://zowie.benq.eu/fr-fr/monitor/xq2766x.html
+    - https://www.prad.de/dyac-3-schaerfer-als-oled-benq-enthuellt-neue-e-sport-monitore-mit-360-hz/
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: tn, coating: matte, refreshHzMax: 360, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, hdmiPorts: 3, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 155, swivel: true, weightG: 8000 }
+  variants:
+    - { sku: XQ2766X, colorName: Noir, colorFamily: black }
+
+- slug: benq-ex271uz
+  brand: benq
+  name: MOBIUZ EX271UZ
+  modelNumber: EX271UZ
+  amazonAsin: B0G1BRCP3V
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ex271uz-front-high?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/04-ex271uz-front-stand?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/10-ex271uz-front-low?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/09-ex271uz-right45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/02-ex271uz-left45?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/06-ex271uz-vesa?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/07-ex271uz-has?wid=2000&fmt=png-alpha, kind: cutout_front }
+    - { url: https://image.benq.com/is/image/benqco/08-ex271uz-side-tilt-swivel?wid=2000&fmt=png-alpha, kind: cutout_front }
+  sources:
+    - https://www.benq.eu/fr-fr/monitor/gaming/ex271uz.html
+    - https://www.prad.de/erhaeltlich-benq-ex271uz-mit-4k-oled-und-kvm/
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, thunderbolt: true, kvm: true, usbHub: true, standHeightMm: 100, swivel: true, weightG: 7430 }
+  variants:
+    - { sku: EX271UZ, colorName: Noir, colorFamily: black }

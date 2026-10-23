@@ -1,0 +1,911 @@
+# LG : importés de lg.com (site français) par `pnpm ingest lg`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 43 modèles, lg.com/fr (prix € de la boutique LG)
+# à vérifier : fixation VESA non indiquée : supposée
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: lg-34wr55qk
+  brand: lg
+  name: UltraWide 34WR55QK
+  modelNumber: 34WR55QK-B
+  amazonAsin: B0DGLR66J6
+  releaseYear: 2024
+  msrpEur: 340
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/mn/lg-34wr55qk-b/gallery/ultrawide-34wr55qk-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-34wr55qk-b-moniteur-ultrawide/
+  gtins:
+    - "8806096235386"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, heightAdjustable: true, weightG: 6900 }
+  variants:
+    - { sku: 34WR55QK-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-34wr50qk
+  brand: lg
+  name: UltraWide 34WR50QK
+  modelNumber: 34WR50QK-B
+  amazonAsin: B0DGLVL1GY
+  releaseYear: 2024
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide_34wr50qk_basic_large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34wr50qk-b/gallery/ultrawide-34wr50qk-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-34wr50qk-b-moniteur-ultrawide/
+  gtins:
+    - "8806096199527"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", weightG: 5900 }
+  variants:
+    - { sku: 34WR50QK-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-29u511a
+  brand: lg
+  name: UltraWide 29U511A
+  modelNumber: 29U511A-B
+  amazonAsin: B0FG8P1896
+  releaseYear: 2025
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/ph/29u511a-b-mnt/gallery-image/monitor-ultrawide-29u511a-b/b-450.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/29u511a-b/
+  gtins:
+    - "8806096534601"
+  specs: { diagonalIn: 29, aspect: 21:9, resW: 2560, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 5100 }
+  variants:
+    - { sku: 29U511A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-34u511a
+  brand: lg
+  name: UltraWide 34U511A
+  modelNumber: 34U511A-B
+  amazonAsin: B0FDQY69TP
+  releaseYear: 2025
+  msrpEur: 270
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34u511a-b/gallry/ultrawide-34u511a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-34u511a-b-moniteur-ultrawide/
+  gtins:
+    - "8806096520826"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 2560, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 7600 }
+  variants:
+    - { sku: 34U511A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-40u990a
+  brand: lg
+  name: UltraWide 40U990A
+  modelNumber: 40U990A-W
+  amazonAsin: B0FDQW9B8Z
+  releaseYear: 2025
+  msrpEur: 1900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/40u990a-w/350/ultrafine-uhd-4k-5k-40u990a-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-40u990a-w-moniteur-ultrawide/
+  gtins:
+    - "8806096489314"
+  specs: { diagonalIn: 39.7, aspect: 21:9, resW: 5120, resH: 2160, panel: ips, curvatureR: 2500, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync_premium, hdrCert: hdr600, brightnessSdrNits: 450, contrastStatic: 2000, dciP3Pct: 99, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 96, thunderbolt: true, kvm: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 14100 }
+  variants:
+    - { sku: 40U990A-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-34u650a
+  brand: lg
+  name: UltraWide 34U650A
+  modelNumber: 34U650A-B
+  amazonAsin: B0FT3XYRTJ
+  releaseYear: 2025
+  msrpEur: 450
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/34u650a/gallery/ultrawide-34u650a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-34u650a-b-moniteur-ultrawide/
+  gtins:
+    - "8806096594759"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 96, kvm: true, usbHub: true, heightAdjustable: true, swivel: true, weightG: 10100 }
+  variants:
+    - { sku: 34U650A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-49u950a
+  brand: lg
+  name: UltraWide 49U950A
+  modelNumber: 49U950A-W
+  amazonAsin: B0FKBNYF46
+  releaseYear: 2025
+  msrpEur: 1500
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/lg-49u950a-w/gallery/ultrawide-49u950a-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultrawide/lg-49u950a-w-moniteur-ultrawide/
+  gtins:
+    - "8806096532683"
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: ips, curvatureR: 3800, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 90, kvm: true, usbHub: true, heightAdjustable: true, swivel: true, weightG: 17300 }
+  variants:
+    - { sku: 49U950A-W, colorName: Blanc, colorFamily: white }
+
+# à vérifier : fixation VESA non indiquée : supposée
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: lg-45gx90sa
+  brand: lg
+  name: UltraGear OLED 45GX90SA
+  modelNumber: 45GX90SA-B
+  amazonAsin: B0DYVQ9S5Q
+  releaseYear: 2025
+  msrpEur: 1800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/45gx90sa-b/gallery/basic/ultrageargaming45gx90sabasiclarge.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-45gx90sa-b-moniteur-ultragear/
+  gtins:
+    - "8806096429488"
+  specs: { diagonalIn: 44.5, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 13500 }
+  variants:
+    - { sku: 45GX90SA-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27g640a
+  brand: lg
+  name: UltraGear 27G640A
+  modelNumber: 27G640A-B
+  amazonAsin: B0FL85P2QS
+  releaseYear: 2025
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/27g640a-b/gallery/ultragear-gaming-27g640a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-27g640a-b-moniteur-ultragear/
+  gtins:
+    - "8806096588642"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 300, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1300, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 5470 }
+  variants:
+    - { sku: 27G640A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-24g411a
+  brand: lg
+  name: UltraGear 24G411A
+  modelNumber: 24G411A-B
+  amazonAsin: B0FL32LSR5
+  releaseYear: 2025
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/24g411a-b/gallery/ultragear-gaming-24g411a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-24g411a-b-moniteur-ultragear/
+  gtins:
+    - "8806096571583"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 3300 }
+  variants:
+    - { sku: 24G411A-B, colorName: Noir, colorFamily: black }
+
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: lg-27g411a
+  brand: lg
+  name: UltraGear 27G411A
+  modelNumber: 27G411A-B
+  amazonAsin: B0FL366VPN
+  releaseYear: 2025
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/27g411a-b/gallery/ultragear-gaming-27g411a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-27g411a-b-moniteur-ultragear/
+  gtins:
+    - "8806096567449"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 5, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 3800 }
+  variants:
+    - { sku: 27G411A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32gs75q
+  brand: lg
+  name: UltraGear 32GS75Q
+  modelNumber: 32GS75Q-B
+  amazonAsin: B0CZ3PYW3Y
+  releaseYear: 2024
+  msrpEur: 350
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/B-450.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs75q-b/gallery/ultragear-32gs75q-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-32gs75q-b-moniteur-ultragear/
+  gtins:
+    - "8806096087787"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1200, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, heightAdjustable: true, pivot: true, weightG: 7500 }
+  variants:
+    - { sku: 32GS75Q-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32gs85q
+  brand: lg
+  name: UltraGear 32GS85Q
+  modelNumber: 32GS85Q-B
+  amazonAsin: B0CZ3LLG95
+  releaseYear: 2024
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs85q-b/gallery/ultragear-32gs85q-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-32gs85q-b-moniteur-ultragear/
+  gtins:
+    - "8806096087800"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbHub: true, heightAdjustable: true, weightG: 7500 }
+  variants:
+    - { sku: 32GS85Q-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32gs95uv
+  brand: lg
+  name: UltraGear OLED 32GS95UV
+  modelNumber: 32GS95UV-B
+  amazonAsin: B0DK3XQFLW
+  releaseYear: 2024
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear_32gs95uv_b_basic_large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/32gs95uv-b/gallery/ultragear-32gs95uv-b-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-32gs95uv-b-moniteur-ultragear/
+  gtins:
+    - "8806096269695"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9000 }
+  variants:
+    - { sku: 32GS95UV-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27gs75q
+  brand: lg
+  name: UltraGear 27GS75Q
+  modelNumber: 27GS75Q-B
+  amazonAsin: B0CZ3PS82R
+  releaseYear: 2024
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear_27gs75q_basic_large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gs75q-b/gallery/ultragear-27gs75q-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-27gs75q-b-moniteur-ultragear/
+  gtins:
+    - "8806096087794"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 200, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", heightAdjustable: true, weightG: 6000 }
+  variants:
+    - { sku: 27GS75Q-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27gx790a
+  brand: lg
+  name: UltraGear OLED 27GX790A
+  modelNumber: 27GX790A-B
+  amazonAsin: B0DYVNZR13
+  releaseYear: 2025
+  msrpEur: 850
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/ultragear-gaming-27gx790a-2025-gallery-basic-large2.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27gx790a/gallery/ultragear-gaming-27gx790a-2025-gallery-gallery-06-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-27gx790a-b-moniteur-ultragear/
+  gtins:
+    - "8806096357484"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 480, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9300 }
+  variants:
+    - { sku: 27GX790A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-45gx950a
+  brand: lg
+  name: UltraGear OLED 45GX950A
+  modelNumber: 45GX950A-B
+  amazonAsin: B0DZXNRXF6
+  releaseYear: 2025
+  msrpEur: 2000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/d2c-content/ms/monitor/fr-mnt27-ultragear-45gx950a-b/450-45gx950a-b.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-45gx950a-b-moniteur-ultragear/
+  gtins:
+    - "8806096436455"
+  specs: { diagonalIn: 44.5, aspect: 21:9, resW: 5120, resH: 2160, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: hdr400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "2.1", usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 14000 }
+  variants:
+    - { sku: 45GX950A-B, colorName: Noir, colorFamily: black }
+
+# à vérifier : fixation VESA non indiquée : supposée
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: lg-39gx90sa
+  brand: lg
+  name: UltraGear OLED 39GX90SA
+  modelNumber: 39GX90SA-W
+  amazonAsin: B0F2B54DCN
+  releaseYear: 2025
+  msrpEur: 1300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-39gx90sa-w/gallery/ultragear-gaming-39gx90sa-2025-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-39gx90sa-w-moniteur-ultragear/
+  gtins:
+    - "8806096433102"
+  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
+  variants:
+    - { sku: 39GX90SA-W, colorName: Blanc, colorFamily: white }
+
+# à vérifier : fixation VESA non indiquée : supposée
+- slug: lg-34gx90sa
+  brand: lg
+  name: UltraGear OLED 34GX90SA
+  modelNumber: 34GX90SA-W
+  amazonAsin: B0F59XT8QM
+  releaseYear: 2025
+  msrpEur: 1100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-34gx90sa-w/gallery/ultragear-gaming-34gx90sa-2025-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-34gx90sa-w-moniteur-ultragear/
+  gtins:
+    - "8806096435939"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
+  variants:
+    - { sku: 34GX90SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-34gx900a
+  brand: lg
+  name: UltraGear OLED 34GX900A
+  modelNumber: 34GX900A-B
+  amazonAsin: B0FH2TYX4M
+  releaseYear: 2025
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34gx900a-b/gallery/ultragear-gaming-34gx900a-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-34gx900a-b-moniteur-ultragear/
+  gtins:
+    - "8806096492499"
+  specs: { diagonalIn: 33.9, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
+  variants:
+    - { sku: 34GX900A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-39gx900a
+  brand: lg
+  name: UltraGear OLED 39GX900A
+  modelNumber: 39GX900A-B
+  amazonAsin: B0FH2NZ37P
+  releaseYear: 2025
+  msrpEur: 1250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/39gx900a-b/ultragear-gaming-39gx900a-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-39gx900a-b-moniteur-ultragear/
+  gtins:
+    - "8806096497760"
+  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 65, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
+  variants:
+    - { sku: 39GX900A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-34g600a
+  brand: lg
+  name: UltraGear 34G600A
+  modelNumber: 34G600A-B
+  amazonAsin: B0FG8LKDT7
+  releaseYear: 2025
+  msrpEur: 350
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/it-products/34g600a/gallery/basic/450-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-34g600a-b-moniteur-ultragear/
+  gtins:
+    - "8806096483992"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 160, responseGtgMs: 5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 4000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 2, dpVersion: "1.4", speakers: true, heightAdjustable: true, swivel: true, weightG: 10000 }
+  variants:
+    - { sku: 34G600A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27gx704a
+  brand: lg
+  name: UltraGear OLED 27GX704A
+  modelNumber: 27GX704A-B
+  amazonAsin: B0FTPCP6S1
+  releaseYear: 2025
+  msrpEur: 600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27gx704a-b/gallery/basic/ultragear-gaming-27gx704a-2025-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-27gx704a-b-moniteur-ultragear/
+  gtins:
+    - "8806096599921"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 7200 }
+  variants:
+    - { sku: 27GX704A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32gx870a
+  brand: lg
+  name: UltraGear OLED 32GX870A
+  modelNumber: 32GX870A-B
+  amazonAsin: B0FLDSWSQ7
+  releaseYear: 2025
+  msrpEur: 1300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32gx870a-b/gallery_2/450-Front-B2.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-32gx870a-b-moniteur-ultragear/
+  gtins:
+    - "8806096510520"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9800 }
+  variants:
+    - { sku: 32GX870A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32gx850a
+  brand: lg
+  name: UltraGear OLED 32GX850A
+  modelNumber: 32GX850A-B
+  amazonAsin: B0FT3P9Q36
+  releaseYear: 2025
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32gx850a-b/gallery/ultragear-gaming-32gx850a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-32gx850a-b-moniteur-ultragear/
+  gtins:
+    - "8806096592595"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9100 }
+  variants:
+    - { sku: 32GX850A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-34g630a
+  brand: lg
+  name: UltraGear 34G630A
+  modelNumber: 34G630A-B
+  amazonAsin: B0FT3WQLBG
+  releaseYear: 2025
+  msrpEur: 450
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/gaming/34g630a-b/gallery/ultragear-gaming-34g630a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-34g630a-b-moniteur-ultragear/
+  gtins:
+    - "8806096558058"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 7300 }
+  variants:
+    - { sku: 34G630A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27gx790b
+  brand: lg
+  name: UltraGear OLED 27GX790B
+  modelNumber: 27GX790B-B
+  amazonAsin: B0GPFCQZC9
+  releaseYear: 2026
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/27gx790b-b/gallery/ultragear-gaming-27gx790b-2026-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/gaming/lg-27gx790b-b/
+  gtins:
+    - "8806096678008"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 540, responseGtgMs: 0.02, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 335, dciP3Pct: 99.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 6800 }
+  variants:
+    - { sku: 27GX790B-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32ur500k
+  brand: lg
+  name: 32UR500K
+  modelNumber: 32UR500K-B
+  amazonAsin: B0DP37KYRR
+  releaseYear: 2025
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/lg-32ur500k-b/gallery-/ultrafine-32ur500k-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/uhd-4k-5k/lg-32ur500k-b/
+  gtins:
+    - "8806096227855"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: va, coating: matte, refreshHzMax: 60, responseGtgMs: 4, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, dciP3Pct: 90, bitDepth: 10, hdmiPorts: 1, speakers: true, weightG: 6200 }
+  variants:
+    - { sku: 32UR500K-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32u990a
+  brand: lg
+  name: 32U990A
+  modelNumber: 32U990A-S
+  amazonAsin: B0FVG8DZFG
+  releaseYear: 2025
+  msrpEur: 2000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/it-products/32u990a-s/gallery/ultrafine-uhd-4k-5k-32u990a-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/uhd-4k-5k/lg-32u990a-s-moniteur-bureautique/
+  gtins:
+    - "8806096615577"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr600, brightnessSdrNits: 450, contrastStatic: 2000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "2.1", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 9500 }
+  variants:
+    - { sku: 32U990A-S, colorName: Argent, colorFamily: white }
+
+- slug: lg-24ms550
+  brand: lg
+  name: 24MS550
+  modelNumber: 24MS550-B
+  amazonAsin: B0CZ3LQHKL
+  releaseYear: 2024
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24ms550-b/gallery/fhd-24ms550-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-24ms550-b-moniteur-bureautique/
+  gtins:
+    - "8806091986443"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, hdmiPorts: 1, speakers: true, tilt: false, weightG: 3200 }
+  variants:
+    - { sku: 24MS550-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32u631a
+  brand: lg
+  name: 32U631A
+  modelNumber: 32U631A-B
+  amazonAsin: B0DZXQBQQM
+  releaseYear: 2025
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full_hd_qhd_32u631a_2024_gallery_basic_large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-32u631a-b/gallery/full-hd-qhd-32u631a-2024-gallery-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-32u631a-b-moniteur-bureautique/
+  gtins:
+    - "8806096358603"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 15, weightG: 6500 }
+  variants:
+    - { sku: 32U631A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-24u631a
+  brand: lg
+  name: 24U631A
+  modelNumber: 24U631A-B
+  amazonAsin: B0F29YGFJ8
+  releaseYear: 2025
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/27ms500-b_aeu_eefs_fr_c/24u631a-b/gallery/full-hd-qhd-24u631a-2024-gallery-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-24u631a-b-moniteur-bureautique/
+  gtins:
+    - "8806096358498"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, weightG: 3600 }
+  variants:
+    - { sku: 24U631A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-27u631a
+  brand: lg
+  name: 27U631A
+  modelNumber: 27U631A-B
+  amazonAsin: B0DZXN8P3G
+  releaseYear: 2025
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/lg-27u631a-b/gallery/350/full-hd-qhd-27u631a-2024-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-27u631a-b-moniteur-bureautique/
+  gtins:
+    - "8806096358559"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 15, weightG: 4400 }
+  variants:
+    - { sku: 27U631A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-24u421a
+  brand: lg
+  name: 24U421A
+  modelNumber: 24U421A-B
+  amazonAsin: B0DZXP3VPY
+  releaseYear: 2025
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-basic-large-new.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/24u421a-b-aeuq/gallery/full-hd-qhd-24u421a-2025-gallery-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-24u421a-b-moniteur-bureautique/
+  gtins:
+    - "8806096323816"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 15, weightG: 2920 }
+  variants:
+    - { sku: 24U421A-B, colorName: Noir, colorFamily: black }
+
+# à vérifier : fixation VESA non indiquée : supposée
+- slug: lg-27u411a
+  brand: lg
+  name: UltraFine 27U411A
+  modelNumber: 27U411A-B
+  amazonAsin: B0FKNKDNXN
+  releaseYear: 2025
+  msrpEur: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/27u411a/gallery/basic/full-hd-qhd-27u411a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-27u411a-b-moniteur-bureautique/
+  gtins:
+    - "8806096543771"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 4200 }
+  variants:
+    - { sku: 27U411A-B, colorName: Noir, colorFamily: black }
+
+# à vérifier : fixation VESA non indiquée : supposée
+- slug: lg-24u411a
+  brand: lg
+  name: UltraFine 24U411A
+  modelNumber: 24U411A-B
+  amazonAsin: B0FKNH56RZ
+  releaseYear: 2025
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/24u411a/gallery/basic/full-hd-qhd-24u411a-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-24u411a-b-moniteur-bureautique/
+  gtins:
+    - "8806096543757"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 3200 }
+  variants:
+    - { sku: 24U411A-B, colorName: Noir, colorFamily: black }
+
+- slug: lg-32g810sa
+  brand: lg
+  name: Smart Monitor 32G810SA
+  modelNumber: 32G810SA-W
+  amazonAsin: B0DZXQCCYS
+  releaseYear: 2025
+  msrpEur: 600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/moniteurs/lg-32g810sa-w/gallery/ultragear-gaming-32g810sa-2025-gallery-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-32g810sa-w-smart-monitor/
+  gtins:
+    - "8806096349304"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 10500 }
+  variants:
+    - { sku: 32G810SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-32u889sa
+  brand: lg
+  name: Smart Monitor Swing 32U889SA
+  modelNumber: 32U889SA-W
+  amazonAsin: B0F397TTDS
+  releaseYear: 2025
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/monitor/smart-monitor/smart-monitor-swing/32u889sa/gallery/basic/450-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-32u889sa-w-smart-monitor/
+  gtins:
+    - "8806096481486"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 21200 }
+  variants:
+    - { sku: 32U889SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-27u731sa
+  brand: lg
+  name: Smart Monitor 27U731SA
+  modelNumber: 27U731SA-W
+  amazonAsin: B0F38QGFFB
+  releaseYear: 2025
+  msrpEur: 330
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-basic-large.jpg, kind: cutout_front, primary: true }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-01-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-02-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-03-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-04-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-05-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-06-2010.jpg, kind: cutout_front }
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/-27u731sa-w/gallery/smart-monitor-27u731sa-2025-gallery-gallery-07-2010.jpg, kind: cutout_front }
+  sources:
+    - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-27u731sa-w-smart-monitor/
+  gtins:
+    - "8806096444061"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 90, bitDepth: 10, hdmiPorts: 1, usbcPdW: 65, usbHub: true, speakers: true, weightG: 5850 }
+  variants:
+    - { sku: 27U731SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-32u850sa
+  brand: lg
+  name: Smart Monitor 32U850SA
+  modelNumber: 32U850SA-W
+  amazonAsin: B0F39G4BHG
+  releaseYear: 2025
+  msrpEur: 600
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/ca_fr/images/moniteurs/de-jeu/32u850sa-w/gallery/smart-monitor-32u850sa-2025-gallery-basic.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-32u850sa-w-smart-monitor/
+  gtins:
+    - "8806096501511"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 7700 }
+  variants:
+    - { sku: 32U850SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-34u601sa
+  brand: lg
+  name: Smart Monitor 34U601SA
+  modelNumber: 34U601SA-W
+  amazonAsin: B0FT3WT5JT
+  releaseYear: 2025
+  msrpEur: 380
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/images/moniteurs/34u601sa-w/gallery/basic/smart-monitor-34u601sa-2025-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-34u601sa-w-smart-monitor/
+  gtins:
+    - "8806096574409"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, usbHub: true, speakers: true, weightG: 6800 }
+  variants:
+    - { sku: 34U601SA-W, colorName: Blanc, colorFamily: white }
+
+- slug: lg-52g930b
+  brand: lg
+  name: UltraGear 52G930B
+  modelNumber: 52G930B-B
+  amazonAsin: B0GPDN1XT8
+  releaseYear: 2026
+  msrpEur: 1800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://www.lg.com/content/dam/channel/wcms/fr/2025_it_lg-com/monitor/52g930b-b/gallery/basic/ultragear-gaming-52g930b-2026-gallery-basic-01.jpg, kind: cutout_front, primary: true }
+  sources:
+    - https://www.lg.com/fr/moniteurs/ultragear-evo/lg-52g930b-b-moniteur-ultragear/
+  gtins:
+    - "8806096750360"
+  specs: { diagonalIn: 51.6, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr600, brightnessSdrNits: 400, contrastStatic: 4000, dciP3Pct: 95, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 16800 }
+  variants:
+    - { sku: 52G930B-B, colorName: Noir, colorFamily: black }

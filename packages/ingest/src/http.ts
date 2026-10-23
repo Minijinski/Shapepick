@@ -17,6 +17,18 @@ const gaps: Record<string, number> = {
   'www.logitech.com': 2500,
   'www.logitechg.com': 2500,
   'steelseries.com': 2500,
+  // Monitor sites: heavy pages (1 to 3 MB of HTML); MSI's store answered 429 at a faster pace.
+  'www.samsung.com': 2500,
+  'www.lg.com': 3000,
+  'www.dell.com': 3000,
+  'fr-store.msi.com': 4000,
+  'www.aoc.com': 2500,
+  'www.asus.com': 2500,
+  'rog.asus.com': 2500,
+  'odinapi.asus.com': 2000,
+  'www.philips.fr': 2500,
+  'www.benq.eu': 2500,
+  'zowie.benq.eu': 2500,
 }
 
 export const http = { refresh: false, requests: 0 }

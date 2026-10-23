@@ -162,6 +162,11 @@ const MIN_FILL = 0.8
 const FLAT_FILL = { rest: 0.93, short: 0.9 }
 /** Below this detail, a board shows no keys: its underside, a plain case, a box. */
 const MIN_DETAIL = 0.035
+/**
+ * A monitor seen from the front is symmetric left to right (its stand centred); seen at an angle,
+ * its mirror image covers it much less. Proportions alone let a three-quarter view through.
+ */
+const MIN_SYMMETRY = 0.88
 
 /**
  * Whether a cut-out photo shows its product as its drawing does, square on (a keyboard from
@@ -170,9 +175,17 @@ const MIN_DETAIL = 0.035
  */
 export function squareOn(
   item: CatalogItem,
-  cut: { width: number; height: number; fill: number; parts?: number; detail?: number },
+  cut: {
+    width: number
+    height: number
+    fill: number
+    parts?: number
+    detail?: number
+    symmetry?: number
+  },
 ): boolean {
   const keyboard = item.category === 'keyboard'
+  if (!keyboard && ((cut.symmetry ?? 1) < MIN_SYMMETRY || (cut.parts ?? 1) > 2)) return false
   if (keyboard) {
     if (cut.fill < MIN_FILL || (cut.detail ?? 1) < MIN_DETAIL) return false
     const split = item.specs.formFactor === 'split' || item.specs.formFactor === 'alice'

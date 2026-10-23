@@ -6,9 +6,9 @@ import { messages as m } from '~/i18n/messages'
 import { amazonLink } from './shops'
 
 // A product's Amazon.fr link, wherever the product shows: a button in its sheet and on the best
-// match, a small pill on the runners-up, an arrow at the end of a row of the results. Keyboards
-// only: the monitors are still a demo catalogue. It sits above the button stretched over a card or
-// a row, and a click on it never opens the sheet. Its arrow slides out under the pointer.
+// match, a small pill on the runners-up, an arrow at the end of a row of the results. It sits above
+// the button stretched over a card or a row, and a click on it never opens the sheet. Its arrow
+// slides out under the pointer.
 
 type Props = {
   item: CatalogItem
@@ -64,7 +64,6 @@ const Arrow = ({ size }: { size: number }) => (
 const keepToItself = (e: MouseEvent) => e.stopPropagation()
 
 export function AmazonLink({ item, locale, layouts, variant = 'button', className }: Props) {
-  if (item.category !== 'keyboard') return null
   const shop = amazonLink(item, locale, layouts)
   const rel = shop.affiliate ? 'sponsored nofollow noopener' : 'nofollow noopener'
   if (variant === 'button')

@@ -1,0 +1,72 @@
+# Prix conseillés des écrans dont la marque ne vend pas en ligne en France et dont la page
+# n'affiche aucun prix revendeur : ASUS (hors ROG vendus par l'ASUS eStore), BenQ, Philips.
+# Source (choix de l'utilisateur, 23 octobre 2026) : le prix conseillé (UVP, MSRP, prix public
+# conseillé) cité par la presse tech ou par un communiqué officiel, avec l'URL de la page qui le
+# donne ; jamais un prix de revendeur ni de comparateur. Seuls les prix de 2023 et après : un
+# prix de lancement plus ancien ne dit plus rien du prix actuel. En euros TTC, arrondis à 5 € à
+# l'import (pnpm ingest asus, benq, philips) ; pnpm ingest prices ne les touche pas.
+# Recherche du 23 octobre 2026 : 29 prix sur 133 écrans en attente.
+
+# ASUS (ROG, ProArt)
+# PC Games Hardware, 2025 : UVP du fabricant
+asus-rog-swift-oled-pg32ucdm3: { eur: 1449, source: "https://www.pcgameshardware.de/Monitor-Display-Hardware-154105/News/Nicht-bei-Amazon-4K-OLED-Neuheit-von-Asus-schon-reduziert-1524729-1524729/" }
+# ComputerBase, 2026 : prix annoncé par ASUS
+asus-rog-swift-oled-pg32ucwm: { eur: 1359.9, source: "https://www.computerbase.de/news/monitore/monitore-mit-rgb-stripe-oled-asus-nennt-erstmals-preise-fuer-pg27ucwm-und-pg32ucwm.98439/" }
+# Prad, 2026 : UVP
+asus-rog-strix-oled-xg34wcdms: { eur: 919.9, source: "https://www.prad.de/asus-uwqhd-display-mit-rgb-qd-oled-und-kvm/" }
+# TFTCentral, 2026 : prix annoncé à la Gamescom
+asus-rog-strix-xg27ucmg: { eur: 499, source: "https://tftcentral.co.uk/articles/asus-unveil-two-new-triple-mode-gaming-monitors-at-gamescom-2026" }
+# Prad, 2026 : UVP officielle
+asus-rog-strix-oled-xg27aqwmg: { eur: 649.9, source: "https://www.prad.de/asus-xg27aqwmg-details-zum-tandem-oled-display/" }
+# Guru3D, 2026 : prix conseillé en Europe
+asus-proart-display-oled-pa32usd: { eur: 2999.9, source: "https://www.guru3d.com/story/asus-launches-proart-oled-pa27usd-and-pa32usd-with-4k-240hz-qdoled-panels" }
+# Guru3D, 2026 : prix conseillé en Europe
+asus-proart-display-oled-pa27usd: { eur: 2249.9, source: "https://www.guru3d.com/story/asus-launches-proart-oled-pa27usd-and-pa32usd-with-4k-240hz-qdoled-panels" }
+# Prad (bon plan) : UVP affichée par Notebooksbilliger
+asus-va249qgse: { eur: 154.9, source: "https://www.prad.de/schnaeppchen-asus-va249qgse-mit-ips-panel-und-120-hz-per-adaptive-sync/" }
+
+# BenQ (MOBIUZ, ZOWIE)
+# Prad, 2025 : UVP
+benq-ex271uz: { eur: 999, source: "https://www.prad.de/erhaeltlich-benq-ex271uz-mit-4k-oled-und-kvm/" }
+# Hardwareluxx, 2025 : prix de vente conseillé
+benq-xl2586x-plus: { eur: 1199, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/65339-mg-benq-zowie-xl2586x-esport-modell-mit-600-hz-vorgestellt.html" }
+# Notebookcheck, 2024 : UVP
+benq-xl2566x-plus: { eur: 699, source: "https://www.notebookcheck.com/BenQ-Zowie-XL2566X-400-Hz-Gaming-Monitor-soll-Bewegungen-schaerfer-als-OLED-darstellen.873311.0.html" }
+# Prad, 2024 : UVP
+benq-xl2546x-plus: { eur: 529, source: "https://www.prad.de/280-statt-240-hz-neuauflage-des-benq-zowie-xl2546x/" }
+# Prad, 2026 : UVP
+benq-xq2566x: { eur: 949, source: "https://www.prad.de/dyac-3-schaerfer-als-oled-benq-enthuellt-neue-e-sport-monitore-mit-360-hz/" }
+# Prad, 2026 : UVP
+benq-xq2766x: { eur: 1199, source: "https://www.prad.de/dyac-3-schaerfer-als-oled-benq-enthuellt-neue-e-sport-monitore-mit-360-hz/" }
+# Prad, 2026 : UVP officielle
+benq-pd2770u: { eur: 1699, source: "https://www.prad.de/benq-pd2770u-4k-monitor-mit-integriertem-kolorimeter/" }
+# Prad, 2023 : UVP officielle
+benq-sw272q: { eur: 1049, source: "https://www.prad.de/benq-sw272q-neues-wqhd-display-mit-16-bit-lut/" }
+# Prad, 2023 : UVP
+benq-sw272u: { eur: 1359, source: "https://www.prad.de/benq-sw272u-4k-display-mit-99-prozent-adobe-rgb/" }
+# Prad, 2025 : UVP révisée (649 € au lancement)
+benq-rd280ug: { eur: 749, source: "https://www.prad.de/benq-rd280ug-coding-monitor-mit-20001-kontrast/" }
+# Prad, 2026 : UVP
+benq-rd270q: { eur: 300, source: "https://www.prad.de/wqhd-144-hz-usb-c-und-pivot-benq-listet-den-neuen-coding-monitor-rd270q/" }
+# Prad, 2024 : UVP
+benq-rd240q: { eur: 399, source: "https://www.prad.de/benq-rd240q-wqxga-display-fuer-programmierer/" }
+# Prad, 2025 : UVP
+benq-gw2490tc: { eur: 139, source: "https://www.prad.de/benq-guenstige-office-displays-mit-144-hz-und-usb-c/" }
+# Prad, 2025 : UVP
+benq-gw2790tc: { eur: 159, source: "https://www.prad.de/benq-guenstige-office-displays-mit-144-hz-und-usb-c/" }
+
+# Philips
+# Cowcotland, 2026 : prix public conseillé
+philips-34b2u5900c: { eur: 579, source: "https://www.cowcotland.com/news/102249/philips-devoile-le-34b2u5900c-un-ultrawide-dual-mode-pense-pour-le-travail.html" }
+# Hardwareluxx, 2025 : prix de lancement
+philips-27b2g5601: { eur: 389, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/65310-produktiv-arbeiten,-umwelt-schonen-philips-24b2g5301-und-27b2g5601-monitore.html" }
+# Notebookcheck, 2025 : UVP
+philips-34b2u3600c: { eur: 439, source: "https://www.notebookcheck.com/Philips-bietet-Curved-Monitor-mit-guter-Ausstattung-und-langer-Garantie-an.969118.0.html" }
+# Hardwareluxx, 2024 : UVP
+philips-49b2u6903ch: { eur: 1339, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/63940-mg-philips-49b2u6903ch-49-mit-thunderbolt-4-busylight-und-webcam-auto-framing.html" }
+# Hardwareluxx, 2024 : prix de lancement
+philips-27m2c5501: { eur: 249, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/64586-mg-evnia-27m2c5501-32m2c5501-philips-erweitert-gaming-monitor-serie.html" }
+# Hardwareluxx, 2024 : UVP
+philips-27m2c5200w: { eur: 249, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/64089-mg-philips-evnia-27m2c5200w-neuer-curved-monitor-mit-fast-va-panel.html" }
+# ComputerBase, 2024 : UVP
+philips-24b2g5200: { eur: 219, source: "https://www.computerbase.de/news/monitore/sparsam-im-office-philips-praesentiert-monitore-mit-unter-10-watt-trotz-100-hz.90429/" }

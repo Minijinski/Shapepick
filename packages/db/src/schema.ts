@@ -230,6 +230,7 @@ export const monitorSpecs = pgTable('monitor_specs', {
   usbHub: boolean().notNull().default(false),
   speakers: boolean().notNull().default(false),
   standHeightMm: integer().notNull().default(0),
+  heightAdjustable: boolean().notNull().default(false),
   tilt: boolean().notNull().default(true),
   swivel: boolean().notNull().default(false),
   pivot: boolean().notNull().default(false),

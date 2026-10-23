@@ -10,7 +10,7 @@ export type Fact = { label: string; value: string }
 const BR = ' [[br]] '
 const clean = (s: string) => s.replace(/\s+/g, ' ').trim()
 /** "Adjustable Ac-tuation Points" → "adjustableactuationpoints". */
-const key = (label: string) =>
+export const labelKey = (label: string) =>
   label
     .normalize('NFD')
     .replace(/\p{M}/gu, '')
@@ -79,12 +79,14 @@ export class Facts {
 
   /** Values of the facts whose normalised label matches, in document order. */
   all(label: RegExp): string[] {
-    return this.list.filter((f) => label.test(key(f.label))).map((f) => f.value)
+    return this.list.filter((f) => label.test(labelKey(f.label))).map((f) => f.value)
   }
 
   /** Same, with the label kept in front: "Polling Rate (BT Mode): 90Hz" says which mode. */
   allWithLabel(label: RegExp): string[] {
-    return this.list.filter((f) => label.test(key(f.label))).map((f) => `${f.label}: ${f.value}`)
+    return this.list
+      .filter((f) => label.test(labelKey(f.label)))
+      .map((f) => `${f.label}: ${f.value}`)
   }
 
   first(label: RegExp): string | undefined {

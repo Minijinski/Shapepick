@@ -1,5 +1,5 @@
 import type { Photo } from '@choose/catalog'
-import { isolate } from '@choose/catalog/media'
+import { atWidth, isolate } from '@choose/catalog/media'
 import type { CutoutAnswer, CutoutAsk } from './cutout.worker'
 
 // Product photos, cut out in the browser. Shops shoot a product on white or a light grey (some
@@ -26,6 +26,8 @@ export type Cutout = {
   parts: number
   /** Share of its pixels on an edge: keycaps give plenty, the underside of a case hardly any. */
   detail: number
+  /** How much its mirror image covers it: about 1 for a monitor seen from the front. */
+  symmetry: number
 }
 
 /** A cut-out as an image URL, for an `<img>`. */
@@ -37,37 +39,23 @@ export class PhotoUnavailable extends Error {}
 /** Whether the image CDN answers here (not on a second dev server without Netlify's emulation). */
 let proxied = true
 
-/** A Cloudinary URL (Corsair's photos) and the width step of its transformation. */
-const CLOUDINARY = /^https:\/\/(assets\.corsair\.com|res\.cloudinary\.com)\//
-const CLOUDINARY_WIDTH = /(w_)\d+(?=,|%2C|\/)/i
-
-/** The photo straight from the shop, resized by its CDN where it can be (Shopify, Cloudinary). */
-function direct(photo: Photo, width: number) {
-  if (CLOUDINARY.test(photo.url)) return sized(photo.url, width)
-  const url = new URL(photo.url)
-  if (url.hostname !== 'cdn.shopify.com') return photo.url
-  url.searchParams.set('width', String(width))
-  return url.toString()
-}
-
 /**
- * Cloudinary serves the width its URL names: a thumbnail's URL (`w_96`) asked for at the width
- * shown, or the photo stays a blur however large it is drawn.
+ * The photo straight from the shop, resized by its CDN where it can be (Shopify, Cloudinary, the
+ * monitor brands' Scene7, Sanity, ASUS): a thumbnail's URL (Corsair's `w_96`) asked for at the
+ * width shown, or the photo stays a blur however large it is drawn.
  */
-const sized = (url: string, width: number) =>
-  url.replace(CLOUDINARY_WIDTH, (_, step: string) => `${step}${width}`)
+const direct = (photo: Photo, width: number) => atWidth(photo.url, width)
 
 /**
  * The shop's original photo where its CDN wraps it in its own URL (Razer's resizer carries the
- * original, encoded, in its path): the image CDN fetches the original directly. Cloudinary's are
- * asked for at the width wanted.
+ * original, encoded, in its path): the image CDN fetches the original directly. Where the shop's
+ * CDN resizes, it is asked for the width wanted (an ASUS original weighs 3 MB).
  */
 function original(url: string, width: number) {
-  if (CLOUDINARY.test(url)) return sized(url, width)
   const wrapped = /^https:\/\/assets3\.razerzone\.com\/[^/]+\/\d+x\d+\/(https%3A%2F%2F.+)$/.exec(
     url,
   )
-  return wrapped?.[1] ? decodeURIComponent(wrapped[1]) : url
+  return wrapped?.[1] ? decodeURIComponent(wrapped[1]) : atWidth(url, width)
 }
 
 /** The photo at `width` px (never past its own width), from the image CDN on our domain. */
@@ -98,6 +86,7 @@ type Answer =
       fill: number
       parts: number
       detail: number
+      symmetry: number
     }
 
 let worker: Worker | null | undefined
@@ -197,6 +186,7 @@ async function cutHere(src: string): Promise<Answer> {
     fill: box.area / (box.w * box.h),
     parts: box.parts,
     detail: box.detail,
+    symmetry: box.symmetry,
   }
 }
 
@@ -210,8 +200,17 @@ const unusable = new Set<string>()
 async function cutFrom(photo: Photo, width: number, through: boolean): Promise<Cutout | null> {
   const answer = await ask(photoSrc(photo, width, through))
   if (answer.status === 'ok') {
-    const { image, source, fill, parts, detail } = answer
-    return { image, width: image.width, height: image.height, source, fill, parts, detail }
+    const { image, source, fill, parts, detail, symmetry } = answer
+    return {
+      image,
+      width: image.width,
+      height: image.height,
+      source,
+      fill,
+      parts,
+      detail,
+      symmetry,
+    }
   }
   if (answer.status === 'none') {
     unusable.add(photo.url)

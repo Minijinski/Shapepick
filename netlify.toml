@@ -19,4 +19,13 @@
     'https://resource\.logitech\.com/.*',
     'https://resource\.logitechg\.com/.*',
     'https://images\.ctfassets\.net/.*',
+    # Monitors: the brands' own image CDNs.
+    'https://images\.samsung\.com/.*',
+    'https://www\.lg\.com/content/dam/.*',
+    'https://i\.dell\.com/.*',
+    'https://fr-store\.msi\.com/cdn/shop/.*',
+    'https://cdn\.sanity\.io/.*',
+    'https://dlcdnwebimgs\.asus\.com/.*',
+    'https://images\.philips\.com/.*',
+    'https://image\.benq\.com/.*',
   ]

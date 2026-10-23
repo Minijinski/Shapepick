@@ -2,13 +2,15 @@ import { readdir, readFile, writeFile } from 'node:fs/promises'
 import { join } from 'node:path'
 import { isMap, isSeq, parseDocument, type YAMLMap } from 'yaml'
 import { http } from './http'
+import { msrps } from './msrp'
 import { EUR_PER_USD, median, priceVariants, roundPrice } from './prices'
 import type { PriceIndex, Source } from './source'
 
-// pnpm ingest prices: the weekly refresh. For every entry of data/keyboards, today's regular price
-// of each variant is read back by SKU from the shop the entry came from (its `sources`), then the
-// usual policy applies (median, rounded to 5 €, a variant priced on its own only when 10 % apart).
-// Only prices change: the files are edited in place, comments and hand corrections stay.
+// pnpm ingest prices: the weekly refresh. For every entry of data/keyboards and data/monitors,
+// today's regular price of each variant is read back by SKU from the shop the entry came from (its
+// `sources`), then the usual policy applies (median, rounded to 5 €, a variant priced on its own
+// only when 10 % apart). A monitor priced at its maker's recommended price (data/msrp.yaml) keeps
+// it. Only prices change: the files are edited in place, comments and hand corrections stay.
 
 const sourcesOf = (item: YAMLMap<unknown, unknown>) => {
   const urls = (item.get('sources') as { toJSON?: () => unknown } | undefined)?.toJSON?.()
@@ -17,13 +19,19 @@ const sourcesOf = (item: YAMLMap<unknown, unknown>) => {
 
 export async function refreshPrices(dataDir: string, sources: Source[], dry: boolean) {
   http.refresh = true
-  const dir = join(dataDir, 'keyboards')
-  const files = (await readdir(dir)).filter((f) => /\.ya?ml$/.test(f)).sort()
-  const docs = await Promise.all(
-    files.map(async (file) => {
-      const path = join(dir, file)
-      return { path, doc: parseDocument(await readFile(path, 'utf8')) }
+  const fixed = await msrps()
+  const paths = await Promise.all(
+    ['keyboards', 'monitors'].map(async (category) => {
+      const dir = join(dataDir, category)
+      const files = await readdir(dir).catch(() => [] as string[])
+      return files
+        .filter((f) => /\.ya?ml$/.test(f))
+        .sort()
+        .map((f) => join(dir, f))
     }),
+  )
+  const docs = await Promise.all(
+    paths.flat().map(async (path) => ({ path, doc: parseDocument(await readFile(path, 'utf8')) })),
   )
   // Pages to re-read per site (official sites price page by page; Shopify answers in one feed).
   const urlsByHost = new Map<string, string[]>()
@@ -61,7 +69,7 @@ export async function refreshPrices(dataDir: string, sources: Source[], dry: boo
       const host = first ? new URL(first).host : ''
       const source = sources.find((s) => s.host === host)
       const variants = item.get('variants')
-      if (!source || !isSeq(variants)) continue
+      if (!source || !isSeq(variants) || fixed.has(slug)) continue
       checked++
       const index = await indexFor(source)
       const rows = variants.items.filter(isMap) as YAMLMap<unknown, unknown>[]
@@ -99,7 +107,7 @@ export async function refreshPrices(dataDir: string, sources: Source[], dry: boo
   }
 
   console.info(
-    `${checked} claviers vérifiés, ${changed.length} prix changés, ${http.requests} requêtes`,
+    `${checked} produits vérifiés, ${changed.length} prix changés, ${http.requests} requêtes`,
   )
   for (const c of changed) console.info(`  ${c}`)
   if (missing.length) {

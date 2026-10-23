@@ -6,6 +6,7 @@ import { keyboardInputSchema, switchSchema } from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
 import { parse } from 'yaml'
 import { http } from './http'
+import { importMonitors } from './import-monitors'
 import { pickPhotos } from './photos'
 import { refreshPrices } from './refresh-prices'
 import { type Draft, Skip, type Source } from './source'
@@ -13,6 +14,7 @@ import * as corsair from './sources/corsair'
 import * as keychron from './sources/keychron'
 import * as logitech from './sources/logitech'
 import * as mk from './sources/mk'
+import { monitorSources } from './sources/monitors'
 import * as razer from './sources/razer'
 import * as steelseries from './sources/steelseries'
 import * as stores from './sources/stores'
@@ -20,10 +22,11 @@ import { switchResolver } from './switches'
 import { appendEntries, compact } from './yaml'
 
 // pnpm ingest <source> [--next 10] [--dry-run] [--refresh]   import the next N models
-//   sources: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, logitech,
+//   keyboards: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, logitech,
 //   logitechg, corsair, razer, steelseries, hyperx, turtlebeach
+//   monitors (sources/monitors/, written to data/monitors): see monitorSources
 // pnpm ingest prices [--dry-run]                              weekly price refresh, in place
-// pnpm ingest photos [--dry-run]                              each board's best photo as primary
+// pnpm ingest photos [keyboards|monitors] [--dry-run]         each product's best photo as primary
 //
 // An import takes the next N models of a source that are not in data/keyboards yet, with the
 // switches and brands they need, validates everything with the seed's Zod schemas, appends it to
@@ -37,6 +40,7 @@ const sources: Record<string, Source> = {
   corsair: corsair.source,
   razer: razer.source,
   steelseries: steelseries.source,
+  ...monitorSources,
 }
 
 const { values, positionals } = parseArgs({
@@ -56,7 +60,7 @@ if (command === 'prices') {
   process.exit(0)
 }
 if (command === 'photos') {
-  await pickPhotos(dataDir, dry)
+  await pickPhotos(dataDir, dry, positionals[1])
   process.exit(0)
 }
 
@@ -68,6 +72,11 @@ if (!source) {
 }
 const wanted = Number(values.next)
 http.refresh = values.refresh
+
+if (source.category === 'monitor') {
+  await importMonitors(source, { dataDir, wanted, dry, command })
+  process.exit(0)
+}
 
 const data = await loadData(dataDir)
 const known = new Set(data.keyboards.map((k) => k.slug))

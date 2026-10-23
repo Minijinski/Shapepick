@@ -15,6 +15,7 @@ export type CutoutAnswer =
       fill: number
       parts: number
       detail: number
+      symmetry: number
     }
   /** Read, but nothing to cut out (shot in a scene, on a colour). */
   | { id: number; status: 'none' }
@@ -54,6 +55,7 @@ async function cut({ id, url }: CutoutAsk): Promise<CutoutAnswer> {
     fill: box.area / (box.w * box.h),
     parts: box.parts,
     detail: box.detail,
+    symmetry: box.symmetry,
   }
 }
 

@@ -1,0 +1,1160 @@
+# MSI : importés de la boutique officielle MSI France par `pnpm ingest msi`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 50 modèles, fr-store.msi.com (boutique officielle MSI France, prix €)
+- slug: msi-mpg-341cqpx-qd-oled
+  brand: msi
+  name: MPG 341CQPX QD-OLED
+  modelNumber: MPG 341CQPX QD-OLED
+  amazonAsin: B0DDCN5C2Z
+  releaseYear: 2024
+  msrpEur: 770
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1c8a2bf3-0d57-41f6-8f1f-5733a462d346.png?v=1770893974, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3f1e50a3-dfc9-4f3a-a930-88573a7c1d4d.png?v=1770893974, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_51855159-1bf9-4b30-ae81-105a8e2a8cb4.png?v=1770893974, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_cd58166b-e6f7-4dc2-9a7c-1d8da119fe71.png?v=1770893974, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e9f50a46-0599-4539-b1e6-7df0e964e8bf.png?v=1770893974, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-341cqpx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377191302"
+  specs: { diagonalIn: 34.18, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.8, srgbPct: 139.1, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, standHeightMm: 100, swivel: true, weightG: 8900 }
+  variants:
+    - { sku: 9S6-3DD04T-035, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-271qrx-qd-oled
+  brand: msi
+  name: MPG 271QRX QD-OLED
+  modelNumber: MPG 271QRX QD-OLED
+  amazonAsin: B0CP49LW25
+  releaseYear: 2024
+  msrpEur: 700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1554d496-d8b0-4dbb-b4fa-0a728f5b11da.png?v=1770372567, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9dfbe282-8f7e-43ad-b135-a63989594d94.png?v=1770372615, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3672857e-2c15-41ba-8109-6724c025a434.png?v=1770372615, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b430f2d1-c0a0-4d23-95cf-03f8c418167c.png?v=1770372615, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_020282ff-ec45-4d42-b278-bce442318a8b.png?v=1770372615, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-271qrx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377157759"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 360, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 8300 }
+  variants:
+    - { sku: 9S6-3CD79A-050, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-272qpw-qd-oled-x28
+  brand: msi
+  name: MAG 272QPW QD-OLED X28
+  modelNumber: MAG 272QPW QD-OLED X28
+  amazonAsin: B0FJR8V3LV
+  releaseYear: 2025
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_852f0846-b8bf-4c76-844b-801d2fdeecb5.png?v=1761054133, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a36fd3a7-a9c1-4ec7-bc26-e85ef482bcc3.png?v=1761054133, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d04141f6-8a60-45b9-8083-d610d400babb.png?v=1761054134, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_21c4a305-4d44-4724-9b9a-a9c8572c2853.png?v=1761054133, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_53890746-170c-43de-be0c-1a12b0531f91.png?v=1761054133, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-272qpw-qd-oled-x28-gaming-monitor
+  gtins:
+    - "4711377319751"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
+  variants:
+    - { sku: 9S6-3CD79A-040, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-27cq6f
+  brand: msi
+  name: MAG 27CQ6F
+  modelNumber: MAG 27CQ6F
+  amazonAsin: B0CV191394
+  releaseYear: 2024
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_31436008-065d-409b-9660-46dabe9b9295.png?v=1770219470, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_158e2733-e15a-44a7-bd77-be9eda540207.png?v=1770219470, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_38cd77dc-ada3-4a3b-992c-fbddf9a738b8.png?v=1770219470, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a4464671-dd95-4bfb-99ac-6f816f4980a8.png?v=1770219470, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ab97b184-6539-47eb-8b0c-99c2a4fdf733.png?v=1770219435, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-27cq6f-gaming-monitor
+  gtins:
+    - "4711377177900"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, dciP3Pct: 85, srgbPct: 105, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3950 }
+  variants:
+    - { sku: 9S6-3CD91M-030, colorName: MAG 27CQ6F 16, colorFamily: color }
+
+- slug: msi-mpg-322ur-qd-oled-x24
+  brand: msi
+  name: MPG 322UR QD-OLED X24
+  modelNumber: MPG 322UR QD-OLED X24
+  amazonAsin: B0GY2VPH4V
+  releaseYear: 2026
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_deed5cd2-5f1e-41a1-a6e3-17bbab4eee91.png?v=1779441103, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_41ecb771-e743-498b-9a6b-0df99e7d0086.png?v=1779441106, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_128b0486-c137-459b-a4b7-470514aa695b.png?v=1779441105, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_4824cca3-d519-403f-ad68-f984dac595a2.png?v=1779441105, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_341fdec4-9bc3-440a-8bce-a9c99800001d.png?v=1779441105, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-322ur-qd-oled-x24-monitor
+  gtins:
+    - "4711377409179"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, dciP3Pct: 99, srgbPct: 138, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 98, kvm: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 9400 }
+  variants:
+    - { sku: 9S6-3DD39T-038, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-321up-qd-oled-x24
+  brand: msi
+  name: MAG 321UP QD-OLED X24
+  modelNumber: MAG 321UP QD-OLED X24
+  amazonAsin: B0GS53CD4F
+  releaseYear: 2026
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1cbd1de5-ee9d-4c41-b682-13d1257235d7.png?v=1776740589, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c7190300-e735-497e-afdc-34370a0e109d.png?v=1776740589, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_95d811ee-d0a7-4e28-a7ca-82eaee3b751a.png?v=1776740589, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_687f174e-7df4-4237-a9c9-444ab46f3923.png?v=1776740589, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0c959833-e427-4de9-b5fd-fef23d793ad2.png?v=1776740589, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-321up-qd-oled-x24-monitor
+  gtins:
+    - "4711377410786"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1000, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 7700 }
+  variants:
+    - { sku: 9S6-3DD29A-076, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-341cqr-qd-oled-x36
+  brand: msi
+  name: MPG 341CQR QD-OLED X36
+  modelNumber: MPG 341CQR QD-OLED X36
+  amazonAsin: B0GGRP6YKJ
+  releaseYear: 2026
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ef0dbc7c-9a30-417b-a8cc-794bfc69c75a.png?v=1770894200, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2b183d00-c715-4b24-a37a-2b4c94e2e451.png?v=1770894200, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_703b60b0-8a2e-42f9-a38c-f9746ba69a01.png?v=1770894200, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_23370694-4c4d-487a-9abd-0ffb52bb0150.png?v=1770894200, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_abc6ea95-606e-402d-b284-aa3c1814940a.png?v=1770894200, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-341cqr-qd-oled-x36-monitor
+  gtins:
+    - "4711377404099"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 360, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1300, dciP3Pct: 110.8, srgbPct: 139.1, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", standHeightMm: 110, swivel: true, pivot: true, weightG: 7770 }
+  variants:
+    - { sku: 9S6-3DE29A-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-271qr-qd-oled-x50
+  brand: msi
+  name: MPG 271QR QD-OLED X50
+  modelNumber: MPG 271QR QD-OLED X50
+  amazonAsin: B097PLXF1K
+  releaseYear: 2025
+  msrpEur: 750
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ddfb6688-2a31-4d38-a548-c235b369e0c9.png?v=1770372400, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7369e225-0634-48e0-ab34-47a570dbe811.png?v=1770372402, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_06ae84f3-e3b9-437a-82b9-4ff9ab918ec9.png?v=1770372418, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ed8701a1-bdc2-4ff7-b43c-24a045a004ef.png?v=1770372418, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0158f0ee-8a0e-4a63-9e55-da064b2f0f99.png?v=1770372418, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-271qr-qd-oled-x50-gaming-monitor
+  gtins:
+    - "4711377353427"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 500, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1000, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", standHeightMm: 110, swivel: true, pivot: true, weightG: 8400 }
+  variants:
+    - { sku: 9S6-3CF49T-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-491cqpx-qd-oled
+  brand: msi
+  name: MPG 491CQPX QD-OLED
+  modelNumber: MPG 491CQPX QD-OLED
+  amazonAsin: B0DMS92VRX
+  releaseYear: 2025
+  msrpEur: 1000
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b9afe453-fefd-4c55-8858-28432e99743a.png?v=1747642553, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6407498a-d3ee-407e-9958-a5c633df9902.png?v=1747642553, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e83b246d-4275-48cb-b335-f1e6800eb1eb.png?v=1747642553, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_794435b3-cb7c-4c90-b2c3-de1475a17b52.png?v=1747642553, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_af2c1058-a984-4120-be87-de5ebe7e9749.png?v=1747642553, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-491cqpx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377237932"
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 116.34, srgbPct: 146.11, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, standHeightMm: 100, swivel: true, weightG: 10600 }
+  variants:
+    - { sku: 9S6-3FA84T-028, colorName: MPG 491CQPX QD-OLED 1, colorFamily: color }
+
+# à vérifier : revêtement non indiqué : mat supposé
+- slug: msi-mag-341cqp-qd-oled
+  brand: msi
+  name: MAG 341CQP QD-OLED
+  modelNumber: MAG 341CQP QD-OLED
+  amazonAsin: B0CTQC65MK
+  releaseYear: 2024
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_29145459-75a9-4743-8068-caf400c2b4d7.png?v=1770371933, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_173dbdc9-b397-4052-bbe2-bd0889f38aaf.png?v=1770371933, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_70e1681e-41d4-45b7-9577-adbf697f7dbb.png?v=1770371933, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1bb0d7a4-5137-43be-8ee2-7b51b9bbc46c.png?v=1770371933, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c4c36ddc-124b-4cd4-a256-7bb761345252.png?v=1770371933, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-341cqp-qd-oled-gaming-monitor
+  gtins:
+    - "4711377135702"
+  specs: { diagonalIn: 34.18, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 175, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 110.8, srgbPct: 139.1, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, kvm: true, standHeightMm: 100, swivel: true, weightG: 8800 }
+  variants:
+    - { sku: 9S6-3DD04T-031, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-275cqpf
+  brand: msi
+  name: MAG 275CQPF
+  modelNumber: MAG 275CQPF
+  releaseYear: 2026
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_69efeb5d-ef7a-4e12-b7cf-f47ee7b37523.png?v=1783350240, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f99e848b-3b96-4f9a-bdc1-14477e7c1403.png?v=1783350239, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_78d6948b-8d56-43c6-903a-269bd415d03c.png?v=1783350239, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0efcc858-e4fc-489a-bdc3-9eb6a56b964d.png?v=1783350239, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d088b8dd-7ef9-4032-a58e-ee91fddcd7de.png?v=1783350238, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-275cqpf-gaming-monitor
+  gtins:
+    - "4711377212786"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 110, swivel: true, weightG: 5700 }
+  variants:
+    - { sku: 9S6-3CD04H-065, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-mp241-e14v
+  brand: msi
+  name: PRO MP241 E14V
+  modelNumber: PRO MP241 E14V
+  amazonAsin: B0FTM9RR4K
+  releaseYear: 2026
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_873bab55-ceff-4f51-b22c-3638c1af173e.png?v=1780930314, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d6590003-1429-4f74-a89d-9f2c23700b5e.png?v=1780930314, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f3b820f5-957f-4d82-93a9-072bd2d5175c.png?v=1780930313, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_78b278a7-0a1f-4398-a6e8-7e9c8c111ac1.png?v=1780930313, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_55f62adb-35b6-4aa0-bae6-69c0f1bd0d90.png?v=1780930311, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-mp241-e14v-monitor
+  gtins:
+    - "4711377349178"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 4000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", weightG: 2940 }
+  variants:
+    - { sku: 9S6-3PE1CH-015, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-341cqp-qd-oled-x28
+  brand: msi
+  name: MAG 341CQP QD-OLED X28
+  modelNumber: MAG 341CQP QD-OLED X28
+  amazonAsin: B0GVZKCD2F
+  releaseYear: 2026
+  msrpEur: 850
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_817d1b6e-8e13-40e6-a639-1fed3a4df04e.png?v=1780489668, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_32427786-1ffd-4a85-b47c-c2be7d336f6b.png?v=1780489670, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6c141aed-e2f5-4e30-9f34-cf410ce0c57a.png?v=1780489667, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5b52e030-d996-4653-9790-5843816f3c6d.png?v=1780489666, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_109348f8-e665-4632-845f-e58a79f69888.png?v=1780489666, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-341cqp-qd-oled-x28-gaming-monitor
+  gtins:
+    - "4711377411752"
+  specs: { diagonalIn: 34.18, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, dciP3Pct: 99, srgbPct: 136, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 9500 }
+  variants:
+    - { sku: 9S6-3DE39T-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-272qp-qd-oled-x24
+  brand: msi
+  name: MAG 272QP QD-OLED X24
+  modelNumber: MAG 272QP QD-OLED X24
+  amazonAsin: B096Y3QWHH
+  releaseYear: 2026
+  msrpEur: 450
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8293616f-e7ed-45c0-896a-da04e992b29a.png?v=1776388480, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5ab4a055-049c-409e-a6c6-9b9ed723a278.png?v=1776388481, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2123829a-94c7-4a9e-8e67-cc1488616020.png?v=1776388482, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b42609cb-f7d1-4d02-9478-662e39dd0432.png?v=1776388480, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b663770b-c7b1-49e0-86d3-b19fdcfb9d73.png?v=1776388481, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-272qp-qd-oled-x24-monitor
+  gtins:
+    - "4711377379311"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 200, brightnessHdrPeakNits: 400, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true }
+  variants:
+    - { sku: 9S6-3CF89A-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-272up-qd-oled-x24
+  brand: msi
+  name: MAG 272UP QD-OLED X24
+  modelNumber: MAG 272UP QD-OLED X24
+  amazonAsin: B0F5BBNSHQ
+  releaseYear: 2026
+  msrpEur: 750
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_09261a19-abb6-4f6c-a650-f75d5ea1bb26.png?v=1768487823, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_722e01cc-b880-40c3-8cc9-30bb5050fe4f.png?v=1768487823, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_be2c4d17-185d-465e-82a1-e09628e86325.png?v=1768487823, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8650d7d6-eef3-41cb-a45a-802574d63645.png?v=1768487823, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_27430115-56be-47f6-8b2d-8c15abc80207.png?v=1768487823, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-272up-qd-oled-x24-monitor
+  gtins:
+    - "4711377304450"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.1, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 8000 }
+  variants:
+    - { sku: 9S6-3CD79A-024, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-274qrfw-e20
+  brand: msi
+  name: MAG 274QRFW E20
+  modelNumber: MAG 274QRFW E20
+  amazonAsin: B096Y37TVP
+  releaseYear: 2026
+  msrpEur: 240
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_832a5c43-86bc-424d-8ce1-15bb97825d6e.png?v=1768489069, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6c7df4a7-4296-4383-9977-f2adc41d86eb.png?v=1768489069, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0264b75e-5223-42a8-a3df-7e76c4e64194.png?v=1768489069, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7ed0bd07-24e2-466a-9274-9098b3bdf2c2.png?v=1768489069, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c5f38a4d-7b7a-4d23-9348-9efc22539cbb.png?v=1768489047, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274qrfw-e20-monitor
+  gtins:
+    - "4711377368162"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 200, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 95, srgbPct: 124, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6900 }
+  variants:
+    - { sku: 9S6-3CF99T-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-274qpf-x30mv
+  brand: msi
+  name: MAG 274QPF X30MV
+  modelNumber: MAG 274QPF X30MV
+  amazonAsin: B0DQKFJMJM
+  releaseYear: 2025
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9964c3b1-5512-4c94-9ced-b920a2291bc0.png?v=1761056313, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c54d2b6f-06a7-49b9-bba0-e8385fa57167.png?v=1761056312, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_fbbba62a-c4e3-4c20-9c32-8ba7effdeb49.png?v=1761056313, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_312a6474-b85c-4e32-9ca9-3f946d040487.png?v=1761056313, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_59de598d-3c4b-414e-bdd6-1b156f38db4a.png?v=1761056312, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c329dbd5-98cc-422e-9fe2-a31d9b46f43c.png?v=1770215468, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d2290868-b688-4e2f-a285-da7ea13bccd7.png?v=1770215472, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b3854453-3866-4571-8d69-2bae7cca8254.png?v=1770215473, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274qpf-x30mv-gaming-monitor
+  gtins:
+    - "4711377298919"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: miniled_va, dimmingZones: 1152, coating: matte, refreshHzMax: 300, responseGtgMs: 0.5, vrr: freesync, hdrCert: hdr1000, brightnessSdrNits: 400, brightnessHdrPeakNits: 1000, contrastStatic: 4500, dciP3Pct: 120, srgbPct: 152, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 7500 }
+  variants:
+    - { sku: 9S6-3CF09H-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-272qp-qd-oled-x50
+  brand: msi
+  name: MAG 272QP QD-OLED X50
+  modelNumber: MAG 272QP QD-OLED X50
+  amazonAsin: B0F5B9WYZK
+  releaseYear: 2025
+  msrpEur: 700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_43e20a32-f428-463a-9178-92b5fc04ebae.png?v=1756805845, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a7546380-7587-4892-99d3-a0edcb5dfd4d.png?v=1756892707, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2c9beba6-5375-499c-a080-8cd994b98ef7.png?v=1770213956, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_efe234e4-5648-42a6-a801-36adcedf0d60.png?v=1770213956, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1d21c45b-d22b-49db-8b0e-8e4281cc1036.png?v=1770213956, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-272qp-qd-oled-x50-gaming-monitor
+  gtins:
+    - "4711377307208"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 500, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 1000, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 8000 }
+  variants:
+    - { sku: 9S6-3CD79A-032, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-271qp-qd-oled-x28
+  brand: msi
+  name: MAG 271QP QD-OLED X28
+  modelNumber: MAG 271QP QD-OLED X28
+  amazonAsin: B0FG7TQ3MC
+  releaseYear: 2025
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5db8b2ee-664a-44b2-ac5f-e97deed8e896.png?v=1755831170, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_fc3d7d4a-5fd4-4b61-8062-63b6c41b2479.png?v=1755831171, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f9495c0b-662f-4096-a07c-d97241ba57b5.png?v=1755831170, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5bcbf286-0efa-445b-9032-5ce5ffe6188c.png?v=1755831169, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_01c493f5-e370-413f-a762-4b789b701f21.png?v=1755831171, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-271qp-qd-oled-x28-gaming-monitor
+  gtins:
+    - "4711377311304"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 280, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.2, srgbPct: 138.4, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 8200 }
+  variants:
+    - { sku: 9S6-3CF19T-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-255xf
+  brand: msi
+  name: MAG 255XF
+  modelNumber: MAG 255XF
+  amazonAsin: B0DY14C946
+  releaseYear: 2025
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5a74fb62-a586-4884-9d5b-1b9a1c31922a.png?v=1770894702, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ed9de0b2-3dee-4b03-9034-9ef534c991cb.png?v=1770894702, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_633140d8-6608-426e-b05c-4e4edefa6997.png?v=1770894702, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1c1d9602-9651-4d87-af33-aad1f78fc29d.png?v=1770894702, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_cc010c04-23d5-42a5-a5af-7417745045bb.png?v=1770894702, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-255xf-gaming-monitor
+  gtins:
+    - "4711377251204"
+  specs: { diagonalIn: 24.5, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 300, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 90, srgbPct: 120, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3240 }
+  variants:
+    - { sku: 9S6-3BC21M-061, colorName: Noir, colorFamily: black }
+
+- slug: msi-g32c4x
+  brand: msi
+  name: G32C4X
+  modelNumber: G32C4X
+  amazonAsin: B09YC8TBV8
+  releaseYear: 2023
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/G32C4XDE.png?v=1709028856, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1500_FHD.jpg?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/60hzvs250hz.jpg?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/Freesyncpremium_f2e7e524-7e30-4fdb-99f8-3217a744fafb.jpg?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/0671f9cc_HDR-Ready_dab83ae1-c3a9-475c-a3e9-92ee7137bc3f.png?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/c81623b6_tailer_page-feature_widecolorgamut_09165936-383e-4102-bde6-f30cd08b5330.jpg?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/nightvision_e4d9cd60-900a-4320-9421-55c04258d160.jpg?v=1709028856, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/a853b06a_Antiflicker_3de2c584-de20-41c0-b20c-d06ab9c47566.jpg?v=1709028856, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/g32c4x-gaming-monitor
+  gtins:
+    - "4711377018487"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 1920, resH: 1080, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 250, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 91.1, srgbPct: 114.8, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", weightG: 6300 }
+  variants:
+    - { sku: 9S6-3DA61T-058, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-321curx-qd-oled
+  brand: msi
+  name: MPG 321CURX QD-OLED
+  modelNumber: MPG 321CURX QD-OLED
+  amazonAsin: B0BV6STN1D
+  releaseYear: 2025
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0f5b2cd9-713d-415e-b2a9-c197adf2a7d9.png?v=1748841837, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f15c7f8a-91d6-4caf-bf6e-b6e43f80766f.png?v=1748841837, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_4c572142-9d33-452b-b117-77f168c039dd.png?v=1748841837, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_495836a8-cae9-442b-b800-a3f67dc4f36e.png?v=1748841837, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_57955ee7-6f32-4d6a-a707-bc1a79aa39ed.png?v=1748841837, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-321curx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377250719"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, curvatureR: 1700, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 99, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 98, kvm: true, standHeightMm: 100, swivel: true, weightG: 8400 }
+  variants:
+    - { sku: 9S6-3DD64T-011, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-321urx-qd-oled
+  brand: msi
+  name: MPG 321URX QD-OLED
+  modelNumber: MPG 321URX QD-OLED
+  amazonAsin: B0CP49MMVC
+  releaseYear: 2024
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a98e3abe-0f7d-4402-9f31-7c2cc59feb1c.png?v=1771856575, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0d1bcced-16c3-4350-8caf-88b6bda96079.png?v=1771856575, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_706faf7e-b910-48e1-80f7-e080758dce0e.png?v=1771856575, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7085ec84-54fc-4dff-b406-e0af869427e9.png?v=1771856575, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a207a55d-f665-491d-a83b-f156f50b8513.png?v=1771856575, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-321urx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377157698"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 9600 }
+  variants:
+    - { sku: 9S6-3DD29A-054, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-321cup-qd-oled
+  brand: msi
+  name: MAG 321CUP QD-OLED
+  modelNumber: MAG 321CUP QD-OLED
+  amazonAsin: B0DQDBTD8B
+  releaseYear: 2025
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_49106d25-e05d-4dfe-bc6a-58f9eed7f2bf.png?v=1770289091, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5adf5375-dee5-4488-97b1-e0b72d519b5e.png?v=1770289091, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5f4cfaf2-22af-4262-8a82-3c90ded88a6d.png?v=1770289091, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1e0b0356-d660-461a-a5b0-cde3a23020ae.png?v=1770289091, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_09a8a267-7100-4dc3-95df-fb7e5542af3e.png?v=1770289091, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-321cup-qd-oled-gaming-monitor
+  gtins:
+    - "4711377250634"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, curvatureR: 1700, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.1, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 100, swivel: true, weightG: 8000 }
+  variants:
+    - { sku: 9S6-3DD54T-008, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-322up-qd-oled-e16
+  brand: msi
+  name: MAG 322UP QD-OLED E16
+  modelNumber: MAG 322UP QD-OLED E16
+  amazonAsin: B0FWJWJDZN
+  releaseYear: 2025
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_faad9f2c-9712-43e3-9d7c-d73611d85940.png?v=1770290491, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0a29e1a9-7c27-4780-8039-533143bd2db0.png?v=1770290518, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9fb00b1a-bb45-4d3b-8b13-82be383e3147.png?v=1770290518, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_61a17b50-2b6c-42c3-961c-131fe1ae8ac4.png?v=1770290518, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0b451c75-3b64-4ae9-a61e-f63f0376d79c.png?v=1770290518, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-322up-qd-oled-e16-gaming-monitor
+  gtins:
+    - "4711377319652"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 165, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.1, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 7700 }
+  variants:
+    - { sku: 9S6-3DD29A-049, colorName: MAG 322UP QD-OLED E16 1, colorFamily: color }
+
+- slug: msi-mag-274cxf
+  brand: msi
+  name: MAG 274CXF
+  modelNumber: MAG 274CXF
+  releaseYear: 2025
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f9ae3887-f613-469a-a536-0baf7bd6216d.png?v=1770894871, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6b39c143-502b-4fe5-984f-85886d1ac61b.png?v=1770894871, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_42b9382c-05b4-4975-b7ca-11f603319f52.png?v=1770894871, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6209bfae-2ad3-4111-9fc3-245fa06e3579.png?v=1770894871, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0349407b-6d9f-4df8-a226-be2cd363eb6a.png?v=1770894871, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274cxf-gaming-monitor
+  gtins:
+    - "4711377235112"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 280, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 98.2, srgbPct: 123.3, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", weightG: 3400 }
+  variants:
+    - { sku: 9S6-3CE31T-017, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-274cqf
+  brand: msi
+  name: MAG 274CQF
+  modelNumber: MAG 274CQF
+  amazonAsin: B0BSLN6P3L
+  releaseYear: 2025
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d22fae61-525e-48e6-812d-e56b81389972.png?v=1744093062, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5bdd7948-1a79-4330-8d9d-6ecb8eabfd03.png?v=1744598882, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7781c607-6d63-4e47-94d4-18284a031b9b.png?v=1744598882, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0b34b12e-4181-41e3-84c8-ffa752c9c446.png?v=1744598882, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_cb04f82d-202c-49b4-83c6-9c333f56263b.png?v=1744093059, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274cqf-gaming-monitor
+  gtins:
+    - "4711377235143"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, dciP3Pct: 102, srgbPct: 128, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3400 }
+  variants:
+    - { sku: 9S6-3CE31T-020, colorName: MAG 274CQF 1, colorFamily: color }
+
+- slug: msi-mag-325qf-e18v
+  brand: msi
+  name: MAG 325QF E18V
+  modelNumber: MAG 325QF E18V
+  amazonAsin: B0FGJGVGX9
+  releaseYear: 2025
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_394ef7db-656c-4b4d-9585-fbd580513bc7.png?v=1770291176, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6a1f2b4c-9200-47cb-bd33-16ec07195408.png?v=1770291176, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_61d8f04b-e87b-4119-a460-7b5be6ed3236.png?v=1770291176, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8256841b-8646-4977-aa48-8724675eb9cf.png?v=1770291176, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_30efcea3-924e-4159-8ac1-df88b47938f9.png?v=1770291176, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-325qf-e18v-gaming-monitor
+  gtins:
+    - "4711377347792"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: va, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4" }
+  variants:
+    - { sku: 9S6-3DE11M-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-274urdfw-e16m
+  brand: msi
+  name: MPG 274URDFW E16M
+  modelNumber: MPG 274URDFW E16M
+  amazonAsin: B0FGJ9RMTC
+  releaseYear: 2025
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_66d20bda-478b-4d29-b34c-a50deaf87d2b.png?v=1758532328, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c33d1857-1858-48fb-8b61-073494915fd1.png?v=1758532328, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e22e170e-6b6c-4678-9e7b-8b480e2f70db.png?v=1758532328, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_791566cd-cf57-4353-815d-d8759790f28b.png?v=1758532328, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_975cf017-0f99-415e-a9b7-a4f6b65179f5.png?v=1758532328, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-274urdfw-e16m-gaming-monitor
+  gtins:
+    - "4711377300322"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: miniled_ips, dimmingZones: 1152, coating: matte, refreshHzMax: 160, dualModeHz: 320, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: hdr1000, brightnessSdrNits: 400, brightnessHdrPeakNits: 1000, contrastStatic: 1000, dciP3Pct: 113, srgbPct: 140, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 8200 }
+  variants:
+    - { sku: 9S6-3CF09H-020, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-321urxw-qd-oled
+  brand: msi
+  name: MPG 321URXW QD-OLED
+  modelNumber: MPG 321URXW QD-OLED
+  amazonAsin: B0BSN2BXC5
+  releaseYear: 2025
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b8af4b1c-d62c-4c80-9e7f-7f17e15e49f2.png?v=1770827352, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_27d81481-d6d6-4d2e-ae5e-0ed7472f95d2.png?v=1770827352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ca3906cc-1a6b-406a-b321-1eec0ef6b340.png?v=1770827352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_40a59777-7a20-4099-8fe3-2eda67be0328.png?v=1770827352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_af65241b-6960-42ed-b332-2cab7f5e9767.png?v=1770827352, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-321urxw-qd-oled-gaming-monitor
+  gtins:
+    - "4711377266901"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110, srgbPct: 138, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", standHeightMm: 110, swivel: true, pivot: true, weightG: 9600 }
+  variants:
+    - { sku: 9S6-3DD29A-050, colorName: MPG 321URXW QD-OLED, colorFamily: color }
+
+- slug: msi-pro-mp341cq
+  brand: msi
+  name: PRO MP341CQ
+  modelNumber: PRO MP341CQ
+  amazonAsin: B0BGM43DRW
+  releaseYear: 2025
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d9bf5e8f-4d73-4a07-9c95-522cbd200cfb.png?v=1770911558, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7b1c057e-9f57-42fb-8927-98aab7b6923d.png?v=1770911555, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9f80492a-2914-486b-a873-fad635f2d8ac.png?v=1770911591, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_4b68c397-de2c-4bdf-8444-9fce234dbe48.png?v=1770911591, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_de5caf93-f982-4c77-9f50-b0286de7f137.png?v=1770911555, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-mp341cq-pro-monitor
+  gtins:
+    - "4719072960964"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 92.58, srgbPct: 116.25, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", speakers: true, weightG: 7700 }
+  variants:
+    - { sku: 9S6-3PB2CT-040, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-322urx-qd-oled
+  brand: msi
+  name: MPG 322URX QD-OLED
+  modelNumber: MPG 322URX QD-OLED
+  amazonAsin: B0DS6HNLL8
+  releaseYear: 2025
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3cfec44e-41aa-4d78-9ee4-0ffd5722de0b.png?v=1770893746, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d6f23a68-6844-4b5f-9138-fc7cd19d55b2.png?v=1770893746, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_06502ef9-e70e-4018-ac61-a09a0830982b.png?v=1770893746, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_eec945a3-eb0e-43d9-92a7-4da9bf2bf59b.png?v=1770893746, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_fd2ef356-3c81-4e2a-a49b-573bed24033b.png?v=1770893746, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-322urx-qd-oled-gaming-monitor
+  gtins:
+    - "4711377261197"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, brightnessHdrPeakNits: 1000, dciP3Pct: 110.1, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", standHeightMm: 110, swivel: true, pivot: true, weightG: 9600 }
+  variants:
+    - { sku: 9S6-3DD29A-058, colorName: Noir, colorFamily: black }
+
+- slug: msi-mpg-491cqp-qd-oled
+  brand: msi
+  name: MPG 491CQP QD-OLED
+  modelNumber: MPG 491CQP QD-OLED
+  amazonAsin: B0CRNF97K7
+  releaseYear: 2024
+  msrpEur: 900
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3ee3e825-fbf7-4cee-9cf0-c4367dde260a.png?v=1770894337, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_37ad093e-bace-4a08-97cd-b56636daa497.png?v=1770894337, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_20994cd6-300e-4314-bfb3-dce1808b3bd3.png?v=1770894337, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_4de969de-5cba-46ed-8f1a-55faaeed7c04.png?v=1770894337, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2a608b1a-d3cf-4b68-ae8e-ae21181976e4.png?v=1770894337, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mpg-491cqp-qd-oled-gaming-monitor
+  gtins:
+    - "4711377143622"
+  specs: { diagonalIn: 49, aspect: 32:9, resW: 5120, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 144, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, srgbPct: 146, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, standHeightMm: 100, swivel: true, weightG: 10300 }
+  variants:
+    - { sku: 9S6-3FA84T-033, colorName: MPG 491CQP QD-OLED 1, colorFamily: color }
+
+- slug: msi-mag-255pxf
+  brand: msi
+  name: MAG 255PXF
+  modelNumber: MAG 255PXF
+  amazonAsin: B0DQHXLN6K
+  releaseYear: 2026
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7a9247e3-8412-4b72-a21f-3d81657009a9.png?v=1792663701, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8a7a2719-420a-4431-8508-34db9b05b165.png?v=1792663701, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0752006d-bb98-43ea-b3fe-f3e655bb65ff.png?v=1792663701, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7800a13c-a59b-4fcc-951f-90ea41e2d16f.png?v=1792663701, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d7c8cb37-c169-4148-ab8d-bcd2fb28aa65.png?v=1792663700, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-255pxf-monitor
+  gtins:
+    - "4711377259279"
+  specs: { diagonalIn: 24.5, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 300, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, contrastStatic: 1000, dciP3Pct: 90, srgbPct: 120, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 5300 }
+  variants:
+    - { sku: 9S6-3BC24M-064, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-275cqf-e18
+  brand: msi
+  name: MAG 275CQF E18
+  modelNumber: MAG 275CQF E18
+  amazonAsin: B0DMSR1X9T
+  releaseYear: 2026
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5bccf415-d4d2-479d-8863-739df568ce53.png?v=1791793984, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9ea98e17-076a-4bb0-ad3e-31e8f3334e1d.png?v=1791793983, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_73fac432-bc50-41b9-934f-d2b9ff1e70a4.png?v=1791793984, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_baa2767c-8e2e-4a8e-a0c7-37192f601a27.png?v=1791793983, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_487058f2-3680-45ee-85de-5af20f6e584f.png?v=1791793983, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-275cqf-e18-monitor
+  gtins:
+    - "4711377289573"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 5000, dciP3Pct: 94, srgbPct: 136, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, weightG: 4600 }
+  variants:
+    - { sku: 9S6-3CE91H-009, colorName: MAG 275CQF E18 7, colorFamily: color }
+
+- slug: msi-mag-275qf-e20
+  brand: msi
+  name: MAG 275QF E20
+  modelNumber: MAG 275QF E20
+  amazonAsin: B0GWY8WZK3
+  releaseYear: 2026
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6c0a2552-bed8-4469-89d9-ca76ea784360.png?v=1791469784, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_10e39e4c-af26-4c6e-8a2b-ef6753eb092a.png?v=1791469782, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_33c64786-7d4e-40b1-b4b6-f1b77143b162.png?v=1791469783, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_be4c7cf4-511e-4d4a-850d-6b4310c09d10.png?v=1791469783, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_dbd28658-eccd-4d3e-a4fd-fe5de6630617.png?v=1791469782, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-275qf-e20-gaming-monitor
+  gtins:
+    - "4711377386302"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 200, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1200, dciP3Pct: 90, srgbPct: 115, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, weightG: 3950 }
+  variants:
+    - { sku: 9S6-3CAA1M-003, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-mp242-e14a
+  brand: msi
+  name: PRO MP242 E14A
+  modelNumber: PRO MP242 E14A
+  amazonAsin: B0FTMBG35T
+  releaseYear: 2026
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3b5f8592-54d3-4cd0-928b-8730c7743eb8.png?v=1792153059, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_07d5c0da-3396-4974-8bde-18606c55aa69.png?v=1792153058, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e19d676e-cf83-4e69-8c05-4f826b2c6104.png?v=1792153058, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_acdf8a66-04ba-46e4-8dd8-3bb8863b71d8.png?v=1792153057, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0d3f1f46-6140-4c6f-939f-81a58409d99a.png?v=1792153057, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-mp242-e14a-monitor
+  gtins:
+    - "4711377334945"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 91, srgbPct: 121, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PD1CT-011, colorName: Noir, colorFamily: black }
+
+# à vérifier : HDMI non trouvé dans la fiche
+- slug: msi-pro-mp245pg-e14
+  brand: msi
+  name: PRO MP245PG E14
+  modelNumber: PRO MP245PG E14
+  amazonAsin: B0FTMBL9MT
+  releaseYear: 2026
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_27ccebe4-2193-4c20-83fe-2863d151c8f0.png?v=1791538352, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_fa2432c9-bc45-4a08-b272-7eef7d5a5d0b.png?v=1791538352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_06577ca2-1e72-45ba-ab0c-3ff733790083.png?v=1791538352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_df65399d-5411-416c-ae05-e50a903b1b9d.png?v=1791538353, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_be1ed2e7-27dc-4926-a7f5-df514d875e2e.png?v=1791538352, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d9613a71-4247-4f1f-b01c-f444834f1c4b.png?v=1791538445, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1bc543a7-b52f-47b3-909e-d97a13efeac3.png?v=1791538446, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8ac48344-5668-4f09-90f4-6652296eb7aa.png?v=1791538445, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-mp245pg-e14-pro-monitor
+  gtins:
+    - "4711377318334"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 85, srgbPct: 107, bitDepth: 8, hdmiPorts: 1, standHeightMm: 130, swivel: true, pivot: true, weightG: 5250 }
+  variants:
+    - { sku: 9S6-3PE39M-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-274cqpdf-x32
+  brand: msi
+  name: MAG 274CQPDF X32
+  modelNumber: MAG 274CQPDF X32
+  releaseYear: 2026
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b6a60165-bb2d-4bc6-bafb-fbb5ba978a8c.png?v=1790864750, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_217969cc-2f91-47b7-979a-913ee22c4e2a.png?v=1790864749, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9939c138-e470-48f8-8c2d-79d19431b008.png?v=1790864750, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_697f891c-b588-47f1-862f-ff69294e8ebb.png?v=1790864749, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_967e0920-d794-42aa-a6bb-a00658c3694f.png?v=1790864750, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274cqpdf-x32-gaming-monitor
+  gtins:
+    - "4711377426046"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 320, dualModeHz: 400, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 450, contrastStatic: 5000, dciP3Pct: 95, srgbPct: 132.5, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, standHeightMm: 130, swivel: true, weightG: 4700 }
+  variants:
+    - { sku: 9S6-3CE34T-031, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-271kpd7
+  brand: msi
+  name: MAG 271KPD7
+  modelNumber: MAG 271KPD7
+  releaseYear: 2026
+  msrpEur: 550
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_92ddef59-235c-4277-bf36-a1c84ed37669.png?v=1791468978, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_4d2c42c5-66ca-4e6d-ab6e-df0a7a3ae8f7.png?v=1791468978, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6a9244d3-f8b1-46e4-a2a8-f5accc3dd073.png?v=1791468978, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3e541b6e-d3af-477e-a3e1-7855736e92d2.png?v=1791468976, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a88f2b35-e8e3-4e6f-b9c7-afdd861496de.png?v=1791468977, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-271kpd7-gaming-monitor
+  gtins:
+    - "4711377426060"
+  specs: { diagonalIn: 26.9, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 75, dualModeHz: 300, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: hdr400, contrastStatic: 1500, dciP3Pct: 95, srgbPct: 122.9, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6700 }
+  variants:
+    - { sku: 9S6-3CF69T-015, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-345cqrf-e20
+  brand: msi
+  name: MAG 345CQRF E20
+  modelNumber: MAG 345CQRF E20
+  releaseYear: 2026
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b4611370-bfb8-4ac7-97f5-b5c183c460c8.png?v=1788171111, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_78f07245-a5d1-4701-b575-ee2554dfa173.png?v=1788171112, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3d9dd7f4-5159-47c8-8e55-19e3fa371c88.png?v=1788171112, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b3935049-c3d2-41fe-b57f-1726f06cefac.png?v=1788171110, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_040af988-1d2b-4f11-92c9-a321dd624753.png?v=1788171111, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-345cqrf-e20-gaming-monitor
+  gtins:
+    - "4711377392440"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 200, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, dciP3Pct: 90, srgbPct: 110, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, standHeightMm: 100, swivel: true, pivot: true, weightG: 7750 }
+  variants:
+    - { sku: 9S6-3DD14H-030, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-max-271qphw-e14
+  brand: msi
+  name: PRO MAX 271QPHW E14
+  modelNumber: PRO MAX 271QPHW E14
+  releaseYear: 2026
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d3ae29bf-e095-4e2b-abd8-f8fea77b3363.png?v=1788268728, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_59893c37-d797-41fb-925d-59475416df43.png?v=1788268728, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_adcaf4c0-d82d-4ad7-9fb7-c39baf89aa9c.png?v=1788268728, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6ea67594-932e-4cf9-9583-824362d581a7.png?v=1788268726, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_445ae6e6-b2f8-4cab-8429-13c68579cd18.png?v=1788268727, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-max-271qphw-e14-pro-monitor
+  gtins:
+    - "4711377396325"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 93, srgbPct: 121, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PF54H-008, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-max-271phw-e14
+  brand: msi
+  name: PRO MAX 271PHW E14
+  modelNumber: PRO MAX 271PHW E14
+  releaseYear: 2026
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1b9b076c-eae8-473f-9e3c-ef5d14603e30.png?v=1787232039, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_57ed3bf8-f4e2-478a-8360-b418f9d91fac.png?v=1787232041, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_69dadf16-9065-4187-828b-bb52c9f2bdfc.png?v=1787232040, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_c9a41dd9-dc3f-4e3e-b8c7-fe1276321c15.png?v=1787232039, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_866f6bbb-080e-4ab4-96e0-5d1ecde1d659.png?v=1787232040, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-max-271phw-e14-pro-monitor
+  gtins:
+    - "4711377396301"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 86, srgbPct: 111, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PF54H-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-max-241phw-e14
+  brand: msi
+  name: PRO MAX 241PHW E14
+  modelNumber: PRO MAX 241PHW E14
+  amazonAsin: B0GMS4QWVR
+  releaseYear: 2026
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5361e74b-5f97-49de-b7fb-a6a28671ee2d.png?v=1787231555, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_576d1c20-4e3b-4f47-ab1f-8e312f0d4eed.png?v=1787231555, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f77198c2-2119-44d9-b1c5-e2e9d610bc96.png?v=1787231555, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_77d16ba2-83ae-4780-946d-bbd39f71e1d5.png?v=1787231555, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_8111777d-7327-4817-9e57-9e081546f19b.png?v=1787231554, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-max-241phw-e14-pro-monitor
+  gtins:
+    - "4711377396288"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 96, srgbPct: 122, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PF44H-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-274qf-x24
+  brand: msi
+  name: MAG 274QF X24
+  modelNumber: MAG 274QF X24
+  amazonAsin: B0F3P65X6Q
+  releaseYear: 2026
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f9e8960e-ec8c-4a1b-a966-3f46b421e00b.png?v=1788854229, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_28028778-c1fc-4d05-8aa3-1083836cdd43.png?v=1788854231, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_cc79e9ae-4185-4eec-9da2-b19244dc6e49.png?v=1788854229, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6b9ea6d9-4bff-49e5-b0f0-779797c0f374.png?v=1788854230, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_741e0d5d-89ff-4534-bb88-c3567a9585a7.png?v=1788854231, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-274qf-x24-gaming-monitor
+  gtins:
+    - "4711377281621"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 240, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 96, srgbPct: 130, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", kvm: true, weightG: 4700 }
+  variants:
+    - { sku: 9S6-3CE41H-051, colorName: Noir, colorFamily: black }
+
+# à vérifier : revêtement non indiqué : mat supposé
+- slug: msi-pro-max-271upx12g
+  brand: msi
+  name: PRO MAX 271UPX12G
+  modelNumber: PRO MAX 271UPX12G
+  releaseYear: 2026
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b8d3ba2e-5edd-4216-ab60-da1e80adc67a.png?v=1788169612, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_7c2a8424-93e2-4bff-8f2f-5ddc21ad90c5.png?v=1788169612, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_11effc4f-e7a5-47b4-b450-8763de176ef2.png?v=1788169613, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6ac0b1f0-c117-4b86-9584-e56837faf23f.png?v=1788169613, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d5f40f0b-1e85-445b-a891-0555721d88f3.png?v=1788169610, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-max-271upx12g-pro-monitor
+  gtins:
+    - "4711377420617"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PF8CA-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-321upd-e14
+  brand: msi
+  name: MAG 321UPD E14
+  modelNumber: MAG 321UPD E14
+  releaseYear: 2026
+  msrpEur: 400
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_23f23777-c2c5-422a-93e0-79937bbe8852.png?v=1787232545, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_24830f1d-3115-4361-b3b4-28c836414cfb.png?v=1787232542, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d50547a1-d194-413b-adcb-8212eb506bc3.png?v=1787232541, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5d738ef3-934a-46ff-886f-26c9a5385385.png?v=1787232541, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d365285a-3354-4530-a3bd-fc2c1388f8dd.png?v=1787232545, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-321upd-e14-gaming-monitor
+  gtins:
+    - "4711377416986"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 144, dualModeHz: 288, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 94, srgbPct: 132, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", kvm: true, standHeightMm: 100, swivel: true, pivot: true, weightG: 8250 }
+  variants:
+    - { sku: 9S6-3DE49M-003, colorName: Noir, colorFamily: black }
+
+- slug: msi-mag-245f-x24
+  brand: msi
+  name: MAG 245F X24
+  modelNumber: MAG 245F X24
+  amazonAsin: B096Y4JT1G
+  releaseYear: 2026
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d0e81ec7-960b-495a-a302-bd0b52b53639.png?v=1786452330, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_bf595e0e-b458-457a-a6b4-efc0ad46cb8f.png?v=1786452330, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3ff3e50e-b203-41ca-af2f-fb54e7874d18.png?v=1786452330, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_d2b2e3a6-f00e-4e73-9209-673fc42f5c5a.png?v=1786452330, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_eee6da5b-7a19-4171-9d83-e37d4c8c3c06.png?v=1786452330, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/mag-245f-x24-gaming-monitor
+  gtins:
+    - "4711377363211"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 240, responseGtgMs: 0.5, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 87, srgbPct: 112, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", kvm: true, weightG: 3250 }
+  variants:
+    - { sku: 9S6-3BC81M-001, colorName: Noir, colorFamily: black }
+
+- slug: msi-pro-mp273qw-e14
+  brand: msi
+  name: PRO MP273QW E14
+  modelNumber: PRO MP273QW E14
+  amazonAsin: B096Y7MK8W
+  releaseYear: 2026
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_dfcc9471-f37b-4810-bb91-e26ceae17868.png?v=1783951672, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_33756232-ab61-49b8-9097-6d218a8441c3.png?v=1783951672, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_85ddddd3-4cf1-4138-b059-3da9e914e2e6.png?v=1783951671, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0ba44808-dbf6-4cbf-833e-dcac029a33d4.png?v=1783951670, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_a04c47da-65c6-4ba1-a55c-723b3db84dd9.png?v=1783951672, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2b00d112-03b6-479d-8dc9-7fdad33d5a20.png?v=1783951672, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-mp273qw-e14-pro-monitor
+  gtins:
+    - "4711377381611"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 102, srgbPct: 129, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", speakers: true, weightG: 4500 }
+  variants:
+    - { sku: 9S6-3PE2CH-021, colorName: Noir, colorFamily: black }
+
+# à vérifier : revêtement non indiqué : mat supposé
+- slug: msi-pro-max-271upxw12g
+  brand: msi
+  name: PRO MAX 271UPXW12G
+  modelNumber: PRO MAX 271UPXW12G
+  releaseYear: 2026
+  msrpEur: 850
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e44183d6-9467-40b3-88d2-18d415b551fc.png?v=1783943634, kind: cutout_front, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_21177ce5-8aa3-4dd6-a2d5-facbb9990ca0.png?v=1783943634, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2cfb7f35-2a51-4927-8d9f-b0414e86b006.png?v=1783943634, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_15cf3559-7dcd-4928-aae8-0c0bfa0bb60e.png?v=1783943634, kind: cutout_front }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e79f0934-29ac-48ae-94ac-13bf05be949b.png?v=1783943633, kind: cutout_front }
+  sources:
+    - https://fr-store.msi.com/products/pro-max-271upxw12g-pro-monitor
+  gtins:
+    - "4711377421270"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 98, kvm: true, speakers: true }
+  variants:
+    - { sku: 9S6-3PF9CA-001, colorName: Noir, colorFamily: black }

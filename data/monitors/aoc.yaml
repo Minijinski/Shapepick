@@ -1,0 +1,1112 @@
+# AOC (et AGON) : importés de aoc.com (site français) par `pnpm ingest aoc`.
+# Prix : médiane des revendeurs que la page AOC affiche (AOC ne vend pas en direct).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (boutique officielle hors promo, sinon revendeurs listés par la marque, sinon
+# prix conseillé de data/msrp.yaml), arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 50 modèles, aoc.com/fr (prix € des revendeurs listés par AOC)
+- slug: aoc-cq32g4vead
+  brand: aoc
+  name: CQ32G4VEAD
+  modelNumber: CQ32G4VEAD
+  amazonAsin: B0GWDZ9N98
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ad7aa2d2f9f3c2a33f189601d7c218983b0d1147-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/371fe89a6ad1e5d4b85df02a6ec68e3e03103c66-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f8c8af1f13086e3aa530a8c49debae835333c6a2-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5a96343e25eee7be61dcba98df8b05df61353fdf-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/298d8fc871f30391fcd3624180b74ba8b28ff182-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/cq32g4vead
+  gtins:
+    - "4038986113762"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, dciP3Pct: 92.4, srgbPct: 124.2, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 7310 }
+  variants:
+    - { sku: CQ32G4VEAD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24p3qw
+  brand: aoc
+  name: 24P3QW
+  modelNumber: 24P3QW
+  amazonAsin: B0BPYG1K4G
+  msrpEur: 220
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/dba6b06604af5a85a57ca64f08ee847d374fddb6-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/314787a5eda1e30c7639733fb8651ad7091ffb38-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/39bd7c2e7b6af6025d5876f8b87b06ae8b729710-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7ec5d8b6225c57a188228e39f97332b091e843be-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a3b822b88d529721a9dec4af8414bf86cbf8f934-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/66489a019c323f54888c2d7fd22ad2b9d5fadc04-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3ca4f99146e7714632c91347b9999c4ff45459cb-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24p3qw
+  gtins:
+    - "4038986140775"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 124.3, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5060 }
+  variants:
+    - { sku: 24P3QW, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cu34v5c
+  brand: aoc
+  name: CU34V5C
+  modelNumber: CU34V5C/BK
+  amazonAsin: B0B5PL93XQ
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f4cca5c38390869abd6be8c2c8ff0648c3a02f54-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7e9c50a8a55ba9884ec97180934b69b3b5f840e2-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a137e8f8b735915987d0e900c5c8fbfd3498eda7-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/cu34v5c_bk
+  gtins:
+    - "4038986110198"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 90, srgbPct: 121, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, weightG: 9340 }
+  variants:
+    - { sku: CU34V5C/BK, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27g42ze
+  brand: aoc
+  name: Q27G42ZE
+  modelNumber: Q27G42ZE
+  amazonAsin: B0F5BTTM66
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4eca6b2f302ac1f2236c5d97287abfd6e3641aad-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0cadfe1a58a0885c62f0844e46fa57fbfd80ca64-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/42e04081a30d8b3b0459a3912b413e249f35b0cd-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c70b8831186da652baecbc344fde8c00de84e121-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/84ca8cc090bf982016e73e7a0fc327de8d809af8-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/efc0fbd2315843a938f0f1a7f604ba2b261fd79f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q27g42ze
+  gtins:
+    - "4038986182980"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 95.2, srgbPct: 123.6, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3840 }
+  variants:
+    - { sku: Q27G42ZE, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27b3cf2
+  brand: aoc
+  name: 27B3CF2
+  modelNumber: 27B3CF2
+  amazonAsin: B0CRF615TR
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c176b8fb9d63a58b781502175b63780ce77c3519-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c74a6f2941ca12ee076abab37fc0b5429e631eb5-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/67f39c64d22f9ab7af117065f704308ace51ba75-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8c68c639aa6145ad303bcf30ea924b94d38d0fbf-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/fdee7df80220a4c4f743c6ad198c66e641923ede-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/24d50b3bfcadaedc1ff89a6f9df396a913aa6e61-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27b3cf2
+  gtins:
+    - "4038986181457"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1500, dciP3Pct: 75, srgbPct: 101.8, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", usbcPdW: 65, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 110, weightG: 5560 }
+  variants:
+    - { sku: 27B3CF2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q24g4re
+  brand: aoc
+  name: Q24G4RE
+  modelNumber: Q24G4RE
+  amazonAsin: B0F5BW7TT1
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/52b74fbd1d426379054557d8917c89369f801a5a-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0dbb1d362250287ce5bb893e5c240316a2f1f4a6-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/eb5b07ee9b9b78d41b9f72c288af34f9096f5241-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/149db182df2202115e8ba065ee3a63624081fa1c-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5e9ab83d2a9f3764fb41db207616fc8de6f79a84-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/2f5ac34903ec006bc9da80098133ea38b7eb4f7b-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q24g4re
+  gtins:
+    - "4038986142731"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 93.7, srgbPct: 120.8, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3430 }
+  variants:
+    - { sku: Q24G4RE, colorName: Noir, colorFamily: black }
+
+- slug: aoc-u27e3uf
+  brand: aoc
+  name: U27E3UF
+  modelNumber: U27E3UF
+  amazonAsin: B0DBLV42YD
+  msrpEur: 285
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/abb1d5ca793f386ba067b153bb8ae3ae67c146c6-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ecefdcd02deb9a17453f472474c647f9b5c6eb3f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1fa707a3320bf67fb306cf8a02875e78827158fd-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/15806bc05bfa183b263d0c45beaee083b61933d3-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/60eb53c15288d85a07d7c4be0d8d3b5342fe5d46-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/u27e3uf
+  gtins:
+    - "4038986182522"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 99.6, srgbPct: 128.7, bitDepth: 10, hdmiPorts: 2, dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 6150 }
+  variants:
+    - { sku: U27E3UF, colorName: Noir, colorFamily: black }
+
+- slug: aoc-ag276uzd
+  brand: aoc
+  name: AGON PRO AG276UZD
+  modelNumber: AG276UZD
+  amazonAsin: B0F6D3JJKN
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e199efc56783fe02693aa1509ee8533d0e646cb0-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/47ef861a375f8026469e6fc6e4bec83c875e373d-5858x5858.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/821eca14236ce0a3f1203f678c8b4ed930c816ca-5858x5858.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/35cc6286fd912c1846422fe8f3e3fab05d4058aa-5858x5858.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/052b0a8bf1964eb0e8142f8fd5eaf47d91b42b17-5858x5858.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/ag276uzd
+  gtins:
+    - "4038986642620"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: gsync_compatible, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 99, srgbPct: 100, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 65, kvm: true, usbHub: true, speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6850 }
+  variants:
+    - { sku: AG276UZD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24b3ha2
+  brand: aoc
+  name: 24B3HA2
+  modelNumber: 24B3HA2
+  amazonAsin: B0CV3TM2WH
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d6aa8cc448a676c22e992b92a4f2f8d632466f9d-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e089c6417b0cacfc8fc2fbde6f5a639f855ae8d8-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f332cbe33d579d149164f3f05a4f186849929438-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1128d94e245513854732317cc81da0200716bc19-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24b3ha2
+  gtins:
+    - "4038986151481"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 73.8, srgbPct: 100.1, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", speakers: true, weightG: 2970 }
+  variants:
+    - { sku: 24B3HA2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-u27g4r
+  brand: aoc
+  name: U27G4R
+  modelNumber: U27G4R
+  amazonAsin: B0F5BTWP9T
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c07f7d5ebbc56ca14873b21f048ea901fe9616cb-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/31222f77207840fa19882ded524bbd0eaedf50ea-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/123aa94d61e941caa4dc8da83716326bfd5e0fdd-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4a5fb348f562f92795b6c67465a38aec83dd58cc-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/u27g4r
+  gtins:
+    - "4038986682688"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 160, dualModeHz: 320, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95.9, srgbPct: 124.7, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 6350 }
+  variants:
+    - { sku: U27G4R, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27b3ha2
+  brand: aoc
+  name: 27B3HA2
+  modelNumber: 27B3HA2
+  amazonAsin: B0CX9DVZDP
+  msrpEur: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/093a2dc6f3d725ee64af78da30685e62902e7bbe-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3b3b8361d53c35b9981b53f1e96f4583df2010f6-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c1ee8c3ef7b177c8875963d52b6f65113c292d34-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27b3ha2
+  gtins:
+    - "4038986181532"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 74.8, srgbPct: 101.5, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", speakers: true, weightG: 3980 }
+  variants:
+    - { sku: 27B3HA2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27b31h
+  brand: aoc
+  name: 27B31H
+  modelNumber: 27B31H
+  amazonAsin: B0F1YT4FCL
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/241c276ec6f28eedb3b4be99471ff9678cc8930d-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5b1fcb744fd2428cca18b8a42257e1bcf81fbc19-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/eaa623052f1fce49931b5036343f2d6f2385343e-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ca4e0ef264a7edb0969cf9d2e113484286cd935d-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/84507be7d7b9740e270a52a96a31f3d8861ad955-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27b31h
+  gtins:
+    - "4038986182225"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 91.2, srgbPct: 116.49, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", weightG: 3400 }
+  variants:
+    - { sku: 27B31H, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27g3xmn
+  brand: aoc
+  name: Q27G3XMN
+  modelNumber: Q27G3XMN/BK
+  amazonAsin: B0CNRPGQBG
+  msrpEur: 275
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5ebb99a6f32790ce3b1636cf30754f744ab5d615-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ff50cd2cfee3da1ac2c87688d471f593f1436524-2953x2953.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/bd66f7da82f63d408cc0fc92a5606ed80b88c86f-2953x2953.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/47b49e7901471c1da25f7f33632fbe6e52b37962-2953x2953.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f5455dd14d86f23cb760ae8c6d7e8076c3b50e72-2953x2953.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f9340eba857b621cb17ff9303485a16a5c8c4389-2953x2953.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q27g3xmn_bk
+  gtins:
+    - "4038986181440"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: miniled_va, dimmingZones: 336, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: freesync_premium_pro, hdrCert: hdr1000, brightnessSdrNits: 1000, contrastStatic: 4000, dciP3Pct: 98.5, srgbPct: 137.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, pivot: true, weightG: 5430 }
+  variants:
+    - { sku: Q27G3XMN/BK, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24e3qaf
+  brand: aoc
+  name: 24E3QAF
+  modelNumber: 24E3QAF
+  amazonAsin: B0CC8W2Z2D
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6dd244cd3b6102254e4632f04e19bd83cd3369e5-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/878eb1d09302db47bfd99b5ab8dac230d16fc30f-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d1f1e23996fd45aebc74d98c74647aabf8d12058-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5c146f335ddce6da00ece1c8257599d85a9bdbed-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24e3qaf
+  gtins:
+    - "4038986141253"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99.9, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4450 }
+  variants:
+    - { sku: 24E3QAF, colorName: Noir, colorFamily: black }
+
+- slug: aoc-ag326uzd2
+  brand: aoc
+  name: AGON PRO AG326UZD2
+  modelNumber: AG326UZD2
+  amazonAsin: B0GRWG622S
+  msrpEur: 950
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f38713c047cf02cee3cf8af5858052cb8403e29e-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b485b65514b8f98812263da0fc528b83d76d6f86-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/2bcebaeab123f3ef44878dbafb21090c782986a2-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/bd223b21e738a3eb12102d41a833847b275b4508-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ddb2b0829cfd7ad3fbbc00615c06f939ee9f3912-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/079e1e4195ea6b9f2a97755e929c806787be1af5-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c5a647c308ef99a590e0105bb5c089a4106294c6-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/ag326uzd2
+  gtins:
+    - "4038986113465"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: gsync_compatible, hdrCert: true_black_500, brightnessSdrNits: 300, brightnessHdrPeakNits: 515, dciP3Pct: 99.7, srgbPct: 140.7, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 65, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 10560 }
+  variants:
+    - { sku: AG326UZD2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27u3cv
+  brand: aoc
+  name: Q27U3CV
+  modelNumber: Q27U3CV
+  amazonAsin: B0D58NH4QW
+  msrpEur: 340
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a530a460f90b9ab8df4bda276222075ea661e0be-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7edd407c1a6b8b14b800d6dc11472be9c033ac16-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/89f9e12f9d24241c4fa634187cdefbd46aa3efb9-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a3617072aa2c383b8dd3486a795650756c45b41c-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/81f210d8b505b3e5c734c6ed262f686e164ad87b-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d0e6953fbf3436b0b52123cb97f9daa15379a97c-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1116778be1af0ae4c9cc56054d145311c74e50bc-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/665e2e9918b62ae0a21d728f06d2b2ccc5031156-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/q27u3cv
+  gtins:
+    - "4038986182065"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 75, responseGtgMs: 4, vrr: freesync, hdrCert: hdr400, brightnessHdrPeakNits: 420, contrastStatic: 1000, srgbPct: 144.5, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 96, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4800 }
+  variants:
+    - { sku: Q27U3CV, colorName: Noir, colorFamily: black }
+
+- slug: aoc-c27g4z2
+  brand: aoc
+  name: C27G4Z2
+  modelNumber: C27G4Z2
+  amazonAsin: B0GRWG554G
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/72d781658c34916f537cfbfc05d3c55f93420445-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/377211dd381a77dcb4d6d76cdcd8db37af3000b8-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3d2aad7f6509fd59b91c634c1e0d6fbf9ac34f49-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4bc15297ed199e7ea800e6c8fef75f36a2bb6e06-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/afce5778afe33da1eca5e5ebbd828b75aa4c5515-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/95e0084c90ce178de43794a0c4fd3f2bc2cc5429-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0d083a8b3ef6b41e8674c73f612eb81e12b20750-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/c27g4z2
+  gtins:
+    - "4038986183499"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 94, srgbPct: 120.9, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, weightG: 5370 }
+  variants:
+    - { sku: C27G4Z2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27g42xne
+  brand: aoc
+  name: Q27G42XNE
+  modelNumber: Q27G42XNE
+  amazonAsin: B0F1YW5DBB
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d0e2f6d964c1731f2f6df25f216bc8b17423e739-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0cadfe1a58a0885c62f0844e46fa57fbfd80ca64-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/42e04081a30d8b3b0459a3912b413e249f35b0cd-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c70b8831186da652baecbc344fde8c00de84e121-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/84ca8cc090bf982016e73e7a0fc327de8d809af8-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q27g42xne
+  gtins:
+    - "4038986642613"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, dciP3Pct: 93.1, srgbPct: 127.8, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", speakers: true, weightG: 3700 }
+  variants:
+    - { sku: Q27G42XNE, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q32e4u
+  brand: aoc
+  name: Q32E4U
+  modelNumber: Q32E4U
+  amazonAsin: B0FXXH1RTF
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7fac496a429bae5ec086d1abc854cb8acccb01ca-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/133695d3fdeb4292504b446abbd065717165b5c4-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6d2c6bcdfbe4f32ca8b674865c6ce54534d25b29-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/190acf07de9a854130a769ab074ce87fea9e1cd2-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c69a4ae2f93cf4f71a08428a19a8e574b2267878-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a1e9866c4bc99e77db20d84c9d20db6badf440bd-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/03bc5ede48222000c19ec4810dbca6bec0689c96-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ec7575586599f05883f6be5b142bfbeb98604e53-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/q32e4u
+  gtins:
+    - "4038986112956"
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 118.4, bitDepth: 8, hdmiPorts: 2, dpVersion: "1.4", usbHub: true, standHeightMm: 180, swivel: true, pivot: true, weightG: 9010 }
+  variants:
+    - { sku: Q32E4U, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24g50fad
+  brand: aoc
+  name: 24G50FAD
+  modelNumber: 24G50FAD
+  amazonAsin: B0GWLG1VQR
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/49ffca2cbd84ac0de28830dfb7e7a2cd961c80c1-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8dbe54988891f62fb50c2a864498a5cc3c857cee-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d5f68130dbac777a67e6f04ec44e52c53f1ec361-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0e0b8343f9f5b1e033dc035a6719a44cca4b99d9-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/95a33f08abc810bf89f9a0768fc6d355074ecf56-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/24g50fad
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 2490 }
+  variants:
+    - { sku: 24G50FAD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q24b36x
+  brand: aoc
+  name: Q24B36X
+  modelNumber: Q24B36X
+  amazonAsin: B0G4N49KMC
+  msrpEur: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e578bc2042cc56d9c85eaa7a1db1b3d34139a433-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ed98bef3154f6445fc820164d3338b1511a873c7-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/38d1122d9cdd170d6725a49a42a04a7e05f3468e-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c447f681d6e63762fe4e4ed8186c3531a1627873-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/06e9f536cb40f1fdc175ad295041e09571035333-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1fb621c7ece2f3caf8fa082f69ef136ab4abe7a8-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/q24b36x
+  gtins:
+    - "4038986143196"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1300, dciP3Pct: 88.8, srgbPct: 114.7, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 2500 }
+  variants:
+    - { sku: Q24B36X, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cu34g4z
+  brand: aoc
+  name: CU34G4Z
+  modelNumber: CU34G4Z
+  amazonAsin: B0DXFLVDT9
+  msrpEur: 330
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/68ce76770149620d93a78225bbb292293e02fa28-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/60190ba8b23d1cb6bce740b89ae5c3abd7b99afe-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1ea155c6861b8066586d7dd87dbe522ddeafc9ba-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/317074b09cba34c07e7c10df72755bc70dd86cac-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1f69e1b3450b221742a4c70a37a302c9d504d869-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/cu34g4z
+  gtins:
+    - "6973985232480"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 450, contrastStatic: 2500, dciP3Pct: 94, srgbPct: 130.3, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, standHeightMm: 130, swivel: true, weightG: 8620 }
+  variants:
+    - { sku: CU34G4Z, colorName: Noir, colorFamily: black }
+
+- slug: aoc-25g42e
+  brand: aoc
+  name: 25G42E
+  modelNumber: 25G42E
+  amazonAsin: B0DT4QQMGC
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b7c91ab3f67955f511ddcd6be296873d9d21ec24-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d39758ece5054dc13a527ee9b234465c5170c116-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f98961ceb4caad06dfc6efd349ddc4ae0984693d-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/93f727f05285e0f81664c74279f9fb6e466bd7c8-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/75035b6e05c46e4925b59caab6dca1566608c6eb-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/25g42e
+  gtins:
+    - "4038986642576"
+  specs: { diagonalIn: 24.5, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 92.4, srgbPct: 124.2, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3180 }
+  variants:
+    - { sku: 25G42E, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24g4zre
+  brand: aoc
+  name: 24G4ZRE
+  modelNumber: 24G4ZRE
+  amazonAsin: B0GFXY7SCR
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/596765b342d2ad17be4f11d4b7e1de22b25f2923-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0dbb1d362250287ce5bb893e5c240316a2f1f4a6-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5e9ab83d2a9f3764fb41db207616fc8de6f79a84-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/2f5ac34903ec006bc9da80098133ea38b7eb4f7b-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/eb5b07ee9b9b78d41b9f72c288af34f9096f5241-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/149db182df2202115e8ba065ee3a63624081fa1c-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/24g4zre
+  gtins:
+    - "4038986183215"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 87.7, srgbPct: 111.7, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3310 }
+  variants:
+    - { sku: 24G4ZRE, colorName: Noir, colorFamily: black }
+
+- slug: aoc-25g3zm
+  brand: aoc
+  name: 25G3ZM
+  modelNumber: 25G3ZM/BK
+  amazonAsin: B0BGCG4NJM
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3a6cab6097c106200ccc70960501f2a4685fb647-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8091358346601f66a213674d21b7a069747b97c4-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c400fe3de154fcf50569a825f9fbf3fe462a85e9-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/bd27ece4a88779a0457715e647f1e83a67d0bdf4-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/25g3zm_bk
+  gtins:
+    - "4038986140911"
+  specs: { diagonalIn: 24.5, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, dciP3Pct: 92, srgbPct: 100, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 130, swivel: true, pivot: true, weightG: 4240 }
+  variants:
+    - { sku: 25G3ZM/BK, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24b35hm2
+  brand: aoc
+  name: 24B35HM2
+  modelNumber: 24B35HM2
+  amazonAsin: B0F21NYQ68
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5fb04f9545f3a8277a1d7b015973e31ce4e9c8c3-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4d167441a8d1ded4bb8758084cdb048587c2aad7-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/47133803d121157b257eedc5e7829ebff13d8a67-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d166f7cb75bd33aabadf01bd8726abbc994c4e5b-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24b35hm2
+  gtins:
+    - "4038986142182"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 75.2, srgbPct: 102, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", weightG: 2470 }
+  variants:
+    - { sku: 24B35HM2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-ag276qkd2
+  brand: aoc
+  name: AGON PRO AG276QKD2
+  modelNumber: AG276QKD2
+  amazonAsin: B0FNRW389N
+  msrpEur: 800
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a9788b42cb57530854b49451566b443c82209913-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a3a49e62da9a3ceef5b167e42e5a2efa6c9ae987-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0e2ae0f758dee03bf55df6ee61e2d6d49bbe2e4e-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c96688f79ef35d9fe72608faa9a59dcb3f3060d5-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7c528487b84642342c1c17659495420c09b1a3d0-3840x3839.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/958b7a229eec452dd34b02d5eef5df59ab671581-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/ag276qkd2
+  gtins:
+    - "4038986183031"
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: qdoled, coating: matte, refreshHzMax: 500, responseGtgMs: 0.03, vrr: gsync_compatible, hdrCert: true_black_500, brightnessHdrPeakNits: 1000, dciP3Pct: 99.1, srgbPct: 147.6, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 5900 }
+  variants:
+    - { sku: AG276QKD2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27g4zrad
+  brand: aoc
+  name: Q27G4ZRAD
+  modelNumber: Q27G4ZRAD
+  amazonAsin: B0GWDRVW5P
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/bd3b727a08e82b2bff1729d5d08665f5b64dca24-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/31222f77207840fa19882ded524bbd0eaedf50ea-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/123aa94d61e941caa4dc8da83716326bfd5e0fdd-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4a5fb348f562f92795b6c67465a38aec83dd58cc-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q27g4zrad
+  gtins:
+    - "4038986183772"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95.2, srgbPct: 123.6, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 5320 }
+  variants:
+    - { sku: Q27G4ZRAD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24b3cf2
+  brand: aoc
+  name: 24B3CF2
+  modelNumber: 24B3CF2
+  amazonAsin: B0CRDNSCJ4
+  msrpEur: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e95128037f3bc340dd79704bad93636d7a951681-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b5d7040f732f2b57ccc413ab7fb986ebf9a43940-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8af05f438188f32ba11d58569fde5bc5e9047cd7-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/842d3d54851533b8a40b6e29fa92dcfb09f13f8e-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/aa83b25c669ab7376891a3557ec8caa21c99f24d-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24b3cf2
+  gtins:
+    - "4038986141437"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 75.7, srgbPct: 102.7, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", usbcPdW: 65, thunderbolt: true, usbHub: true, speakers: true, standHeightMm: 110, weightG: 4560 }
+  variants:
+    - { sku: 24B3CF2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24g4ha
+  brand: aoc
+  name: 24G4HA
+  modelNumber: 24G4HA
+  amazonAsin: B0F5BQZL79
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1af3a1c023b74b3a7812649bd37936e86bbf095d-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/765ed6d1bd0dc2d7d757256ed1b954dfbf00f09a-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/9e13c137564364afe3d3d4d6faf2cd926a083760-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a8a54f3b281d1a53b721bc05d05ecb35bd943c6c-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/29ebb714383d7dd225008dde17167f9da8a5b2b1-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7555699da99f81da7f91bc6cf74a1d5c95a56f37-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/70750d3e74c4f0bb6ab2212627e4f525a92433a2-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/24g4ha
+  gtins:
+    - "4038986642668"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 200, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 94.1, srgbPct: 120.4, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 3930 }
+  variants:
+    - { sku: 24G4HA, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27b35e
+  brand: aoc
+  name: Q27B35E
+  modelNumber: Q27B35E
+  amazonAsin: B0FB3STHGR
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/24be48c0910bfed72a1b2f892ba6231d6ee05a5c-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0e0b2a2598f057b1ab1fdc964bcb9b5dad6d2f1f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/527a03854c77a3ed5ff34dab886f14cbf317600f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0cb15370e068eafb603032c4c8a04bffabffe763-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c9d9d739e9305abd97a24d246c9f96339763354f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/q27b35e
+  gtins:
+    - "4038986183062"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 75, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 89.6, srgbPct: 124.7, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", weightG: 3030 }
+  variants:
+    - { sku: Q27B35E, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24e4cv
+  brand: aoc
+  name: 24E4CV
+  modelNumber: 24E4CV
+  amazonAsin: B0FH52CLZ8
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/226a73f18d5ea8e38e3d1e34809341142e58223b-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e11fa8ada4835690d6978101739402607608d974-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/64d867c1a80f73f19d612f2e1e261331ac519146-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8242b37c9bdc41eb8fd677a55152b761946c95bb-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b23d565e70b331eb333f2c2fa054c819bebc6eff-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/380b37e75fd4da2f5135c6951f22e734f8334af7-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/33f4ae1335acdb812b63a2b973d077833322c166-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d590dcda0b4c1c22a8e00df517210243fdb72d89-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24e4cv
+  gtins:
+    - "4038986142786"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 111.1, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 90, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5650 }
+  variants:
+    - { sku: 24E4CV, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24b2xdam
+  brand: aoc
+  name: 24B2XDAM
+  modelNumber: 24B2XDAM
+  amazonAsin: B08PL4Q1RQ
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d8d3169a56e2a8b0129e74ad5d2d26049a81954a-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e3e42cd969c6c192afca158b5f86d0b5b36d0727-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5d32490cbfee317568d841b0abca7305d9e90851-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24b2xdam
+  gtins:
+    - "4038986149600"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: va, coating: matte, refreshHzMax: 75, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 3000, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", speakers: true, weightG: 2700 }
+  variants:
+    - { sku: 24B2XDAM, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cq27g4z2
+  brand: aoc
+  name: CQ27G4Z2
+  modelNumber: CQ27G4Z2
+  amazonAsin: B0H5CKYZTD
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7b15ceec79ec154de3f6e94532580345461fd9bd-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/377211dd381a77dcb4d6d76cdcd8db37af3000b8-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4bc15297ed199e7ea800e6c8fef75f36a2bb6e06-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/afce5778afe33da1eca5e5ebbd828b75aa4c5515-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3d2aad7f6509fd59b91c634c1e0d6fbf9ac34f49-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/95e0084c90ce178de43794a0c4fd3f2bc2cc5429-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0d083a8b3ef6b41e8674c73f612eb81e12b20750-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/cq27g4z2
+  gtins:
+    - "4038986183703"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 260, dualModeHz: 400, responseGtgMs: 1, vrr: freesync, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 3000, dciP3Pct: 95.8, srgbPct: 125.9, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, weightG: 5370 }
+  variants:
+    - { sku: CQ27G4Z2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-u34e2m
+  brand: aoc
+  name: U34E2M
+  modelNumber: U34E2M
+  amazonAsin: B0BDM5ZJ4D
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ab7a16e9cd2080077b46e8e92f41622046e60615-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8a08e4b8f2bd471837b372085964e06fda7b5df3-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1d1254e97838b31f610ce8e8448fc80564ffadb0-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f6e37d8558f9049cf31f4520f05d0b9b0b293b02-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/u34e2m
+  gtins:
+    - "4038986110723"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 4000, srgbPct: 121.3, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", swivel: true, weightG: 7670 }
+  variants:
+    - { sku: U34E2M, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cu34g4ad
+  brand: aoc
+  name: CU34G4AD
+  modelNumber: CU34G4AD
+  amazonAsin: B0GWDZGT4T
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e845311a94aafc01bdd51d45d12ef9363022e008-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/60190ba8b23d1cb6bce740b89ae5c3abd7b99afe-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/692ba5295437673d14673109d6b318ee68a17019-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b39d8267aa93e0c5adb3a979cb6923f323cbf231-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1f69e1b3450b221742a4c70a37a302c9d504d869-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/317074b09cba34c07e7c10df72755bc70dd86cac-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/cu34g4ad
+  gtins:
+    - "4038986113755"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 2500, dciP3Pct: 92.3, srgbPct: 120.9, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, weightG: 8080 }
+  variants:
+    - { sku: CU34G4AD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cu34b3e
+  brand: aoc
+  name: CU34B3E
+  modelNumber: CU34B3E
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/2bdc7adf65ade05f7e04965a9a562b7677951341-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/082fed6c46c2ec4f6522a10bc09593c4d7ce214e-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ccc341dbe69b19e4e437a3007557c5c5a5cd4249-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/bf7de72f6e54fa5d398e9f59fc7806b3d6d8cf4d-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1d2a88bd02f381377250f297e8fc7a50fbcd998e-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7aaa82fb761b96b84050d55e887588bcc09dc765-5000x5000.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/cu34b3e
+  gtins:
+    - "4038986113250"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, srgbPct: 121, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 7400 }
+  variants:
+    - { sku: CU34B3E, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27g4ha
+  brand: aoc
+  name: 27G4HA
+  modelNumber: 27G4HA
+  amazonAsin: B0F5BX87K1
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6e8a8ec4687ca4bdea7ee37c09f458d63f18040a-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/a74b104694816e19c8346f413f8935038a3af39f-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e2c5a806bd0e5379534faa163d998fe3a5953830-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7adcf6a3a85bd75e34a55d59cf6e33bfab7d094c-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/62588522f03da9d23bee4b2ac1dc4018c9fcd4f0-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3d07d5171fb7fba8bbfc7d8b283119e37e57911b-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/27g4ha
+  gtins:
+    - "4038986682671"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 200, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 91.9, srgbPct: 115.4, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", speakers: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 4830 }
+  variants:
+    - { sku: 27G4HA, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27g4xfad
+  brand: aoc
+  name: Q27G4XFAD
+  modelNumber: Q27G4XFAD
+  amazonAsin: B0GWDTNJN3
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c8378ffcb3084ec9feaedbb4a4d11eec14aed260-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/324f154bf3f3d93927b8c6caf898fb9b07d28188-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ab40a29a2228f912ac83d5b00c94d0566a55a13c-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ec8e5f02e6356e48ec65ded7632b51a9d6e01181-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/q27g4xfad
+  gtins:
+    - "4038986183789"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 93.4, srgbPct: 117.2, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, pivot: true, weightG: 5300 }
+  variants:
+    - { sku: Q27G4XFAD, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24b36x
+  brand: aoc
+  name: 24B36X
+  modelNumber: 24B36X
+  amazonAsin: B0FH54QNFY
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7e41eadc6ccb09b3f1ac7865a21cada5209a4745-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/2d238e723d4031706844881faa5a9cb4c039f458-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/9153d2e4d1df25ff0b61d4dfe703aa3a1b691c29-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5607c42653d248cabaad375bbd90aabe3189f067-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/16e4ccf7729d5a8bcfc32e933607f4d7841eb9c8-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8b8f749ac88799439eb81ac327a67ce64f27c211-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24b36x
+  gtins:
+    - "4038986143073"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 95.8, srgbPct: 128.8, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.4", weightG: 2520 }
+  variants:
+    - { sku: 24B36X, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27e3qaf
+  brand: aoc
+  name: 27E3QAF
+  modelNumber: 27E3QAF
+  msrpEur: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0e1a18bf77a97bd33f6a0fb12824452b25802caa-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c068aae180f64e4dec29710f02e2f86447d8dc9b-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5c146f335ddce6da00ece1c8257599d85a9bdbed-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27e3qaf
+  gtins:
+    - "4038986181235"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99.9, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5200 }
+  variants:
+    - { sku: 27E3QAF, colorName: Noir, colorFamily: black }
+
+- slug: aoc-ag276qsg2
+  brand: aoc
+  name: AGON PRO AG276QSG2
+  modelNumber: AG276QSG2
+  amazonAsin: B0GFYHB2M5
+  msrpEur: 700
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/df41b2e55bb41d0e2c5b3223ca1bf880cab51809-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5210f3ed887caafee2f0bc17b95c8b32b6f41a3c-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0a02715eb6c79e548763da602c657277b48b12e1-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/16b69e35dd2169881008a96e81208d41ad214686-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d2f688bc74fce4e03184c21d840e34893fcbc19c-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/096cfabae0b6dcca735cea41d36dafe252d16dd2-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/ag276qsg2
+  gtins:
+    - "4038986183475"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 360, responseGtgMs: 1, vrr: gsync_module, hdrCert: none, brightnessSdrNits: 450, contrastStatic: 1000, dciP3Pct: 97.3, srgbPct: 131.3, bitDepth: 8, hdmiPorts: 2, dpVersion: "1.4", usbHub: true, standHeightMm: 130, swivel: true, pivot: true, weightG: 5640 }
+  variants:
+    - { sku: AG276QSG2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27b3ca2
+  brand: aoc
+  name: 27B3CA2
+  modelNumber: 27B3CA2
+  amazonAsin: B0CRF5QKG1
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/e089c6417b0cacfc8fc2fbde6f5a639f855ae8d8-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f332cbe33d579d149164f3f05a4f186849929438-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/1128d94e245513854732317cc81da0200716bc19-5280x4290.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27b3ca2
+  gtins:
+    - "6973985231841"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1300, dciP3Pct: 75, srgbPct: 101.8, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", usbcPdW: 65, thunderbolt: true, usbHub: true, speakers: true, weightG: 6930 }
+  variants:
+    - { sku: 27B3CA2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-cu34p2a
+  brand: aoc
+  name: CU34P2A
+  modelNumber: CU34P2A
+  amazonAsin: B08KP4VRRP
+  msrpEur: 310
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6d6658191d5384c7350aab73632f10d74f35534d-1221x961.jpg?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/ce5254bdf1fd8fc792cfd0bbf0441648db2ce35d-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f27ace806eca64bc3ec15b3e1f11713343d92914-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/706eaed885faa5b71c9c0c390579075c41dcbd23-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/cu34p2a
+  gtins:
+    - "4038986118224"
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 120, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 9800 }
+  variants:
+    - { sku: CU34P2A, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24p2q
+  brand: aoc
+  name: 24P2Q
+  modelNumber: 24P2Q
+  amazonAsin: B086X4QN6Z
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/95e1b99184c63b1aaad06fb6eed618f55d924e26-1221x1166.jpg?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/73c4594a5571bbf2041a2a3bde3499494fe38dde-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7a99a0f84f2d24a5213259c4dbd38277a42365a2-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3bc8a27c68fa40f02a7a421a600f6c4d71ae8d38-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24p2q
+  gtins:
+    - "6973985230424"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 107, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4750 }
+  variants:
+    - { sku: 24P2Q, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27p2q
+  brand: aoc
+  name: 27P2Q
+  modelNumber: 27P2Q
+  amazonAsin: B086X4D3NK
+  msrpEur: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/0cb126eea19746f9fec2a09c3f2b8c0d3f140441-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/7cadbc8e1b3fac738a6b14f8773b8cd0d963b4ae-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6e080534e309ac37f994eec97d7e05d5ca854fa0-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c537a2a7fcaaddefcc35be9ef3a0e20639a3ff1f-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/27p2q
+  gtins:
+    - "4038986187329"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 5870 }
+  variants:
+    - { sku: 27P2Q, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27g50f
+  brand: aoc
+  name: 27G50F
+  modelNumber: 27G50F
+  amazonAsin: B0H5CVKSX3
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/3a53e67a49352e1f9334ecf29095928397e885e0-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/5e4ecd2403e2224ab591801f6cddf53730f07bfa-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4c0eb2642de2c6ec052fb3489a0ae2fa1d52e63f-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/27g50f
+  gtins:
+    - "4038986183659"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 4, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 98, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 3140 }
+  variants:
+    - { sku: 27G50F, colorName: Noir, colorFamily: black }
+
+- slug: aoc-q27b3cf2
+  brand: aoc
+  name: Q27B3CF2
+  modelNumber: Q27B3CF2
+  amazonAsin: B0D42CGB4D
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/6c8bfa2104f279060c4f9f29591b615dcf6870e8-2011x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/c74a6f2941ca12ee076abab37fc0b5429e631eb5-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/67f39c64d22f9ab7af117065f704308ace51ba75-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8c68c639aa6145ad303bcf30ea924b94d38d0fbf-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/fdee7df80220a4c4f743c6ad198c66e641923ede-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/24d50b3bfcadaedc1ff89a6f9df396a913aa6e61-9000x6750.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/q27b3cf2
+  gtins:
+    - "4038986181464"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1500, dciP3Pct: 96.2, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, standHeightMm: 110, weightG: 5510 }
+  variants:
+    - { sku: Q27B3CF2, colorName: Noir, colorFamily: black }
+
+- slug: aoc-27g4zr
+  brand: aoc
+  name: 27G4ZR
+  modelNumber: 27G4ZR
+  amazonAsin: B0FR44R88G
+  msrpEur: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/51f4cccca5753e2c223ee8262a1b476c44a2de87-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/31222f77207840fa19882ded524bbd0eaedf50ea-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/4a5fb348f562f92795b6c67465a38aec83dd58cc-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/123aa94d61e941caa4dc8da83716326bfd5e0fdd-3840x3840.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/gaming/monitors/27g4zr
+  gtins:
+    - "4038986183246"
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 260, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, dciP3Pct: 92.3, srgbPct: 121.5, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 130, swivel: true, pivot: true, weightG: 5070 }
+  variants:
+    - { sku: 27G4ZR, colorName: Noir, colorFamily: black }
+
+- slug: aoc-24e4u
+  brand: aoc
+  name: 24E4U
+  modelNumber: 24E4U
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/f325d562a8dae02ad6415e4d04a36f804fedf711-2000x2000.png?w=2000&fit=max&fm=png, kind: cutout_front, primary: true }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/64d867c1a80f73f19d612f2e1e261331ac519146-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/8242b37c9bdc41eb8fd677a55152b761946c95bb-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/b23d565e70b331eb333f2c2fa054c819bebc6eff-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/380b37e75fd4da2f5135c6951f22e734f8334af7-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/33f4ae1335acdb812b63a2b973d077833322c166-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+    - { url: https://cdn.sanity.io/images/hf5b3axp/production/d590dcda0b4c1c22a8e00df517210243fdb72d89-5280x4920.png?w=2000&fit=max&fm=png, kind: cutout_front }
+  sources:
+    - https://www.aoc.com/fr/monitors/24e4u
+  gtins:
+    - "4038986142779"
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 111.1, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4860 }
+  variants:
+    - { sku: 24E4U, colorName: Noir, colorFamily: black }

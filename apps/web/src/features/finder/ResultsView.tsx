@@ -200,13 +200,8 @@ const row = css({
   transition: "background 160ms",
   _hover: { bg: "surface" },
 });
+/** Rank, picture, name, specs, price, then the Amazon arrow. */
 const rowColumns = css({
-  gridTemplateColumns: {
-    base: "28px 56px 1fr auto",
-    md: "28px 72px 1.2fr 2fr auto",
-  },
-});
-const rowColumnsShop = css({
   gridTemplateColumns: {
     base: "28px 56px 1fr auto 32px",
     md: "28px 72px 1.2fr 2fr auto 32px",
@@ -250,8 +245,6 @@ export function ResultsView({
   const runnersUp = others.slice(0, 2);
   const rest = others.slice(2);
   const rows = useRowsInView(root, list, rest.length);
-  // Keyboards can be bought (Amazon); the monitors are still a demo catalogue.
-  const shop = first?.item.category === "keyboard";
 
   useGSAP(
     () => {
@@ -502,13 +495,13 @@ export function ResultsView({
                     </p>
                   )}
                 </div>
-                {/* Where to buy it first, then its sheet; a demo monitor only has its sheet. */}
+                {/* Where to buy it first, then its sheet. */}
                 <KeyFigures
                   price={first.item.priceEur}
                   score={scored ? first.score : null}
                   accent
                   locale={locale}
-                  actionBelow={shop}
+                  actionBelow
                   action={
                     <div
                       className={css({
@@ -527,7 +520,7 @@ export function ResultsView({
                       <button
                         type="button"
                         className={cx(
-                          button({ tone: shop ? "line" : "ink", size: "md" }),
+                          button({ tone: "line", size: "md" }),
                           actionButton,
                         )}
                         onClick={() => onOpen(first.item.slug)}
@@ -773,11 +766,7 @@ export function ResultsView({
                       data-result
                       aria-posinset={i + 1}
                       aria-setsize={rest.length}
-                      className={cx(
-                        "group",
-                        row,
-                        shop ? rowColumnsShop : rowColumns,
-                      )}
+                      className={cx("group", row, rowColumns)}
                       style={{ top: i * ROW, height: ROW }}
                     >
                       <span

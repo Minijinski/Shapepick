@@ -54,8 +54,15 @@ export type Step<I> = ChoiceStep<I> | RangeStep<I>
 
 export type Criterion<I> = {
   key: string
-  /** The line a result card shows when this criterion is a strength or a weakness. */
+  /** The line a result card shows when this criterion is a strength. */
   label: Text
+  /** The line it shows when it is a weakness ("Fréquence modeste"); the label when absent. */
+  weakLabel?: Text
+  /**
+   * A warning rather than a quality (an OLED's burn-in): never cited as a strength, and always
+   * worth citing as a weakness, however light its weight.
+   */
+  caveat?: boolean
   /** 0 (worst) … 1 (best) for this item. */
   score: (item: I) => number
   /**

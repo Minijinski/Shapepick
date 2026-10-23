@@ -90,9 +90,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
   const figures = useRef<HTMLDivElement>(null)
   const closing = useRef(false)
   const { item } = sheet
-  // Keyboards are real products; the monitors are still a demo catalogue, with nothing to buy.
-  const amazon = item.category === 'keyboard' ? amazonLink(item, locale, layouts) : null
-  const buyable = amazon != null
+  const amazon = amazonLink(item, locale, layouts)
   const [barShown, setBarShown] = useState(false)
 
   /** Plays the sheet out, then closes it. A timer backs the animation up in a hidden tab. */
@@ -152,7 +150,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
     const line = figures.current
     const scroller = panel.current?.querySelector('[data-sheet-scroll]')
     setBarShown(false)
-    if (!buyable || !line || !scroller) return
+    if (!line || !scroller) return
     const observer = new IntersectionObserver(
       ([entry]) => {
         if (!entry) return
@@ -163,7 +161,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
     )
     observer.observe(line)
     return () => observer.disconnect()
-  }, [item.slug, buyable])
+  }, [item.slug])
 
   if (typeof document === 'undefined') return null
   const kept = sheet.rank != null
@@ -303,7 +301,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
               }),
               // Room at the end for the buying bar, which would otherwise cover the last lines (set
               // for md too, or the padding above would win there).
-              buyable && css({ pb: { base: '24', md: '24' } }),
+              css({ pb: { base: '24', md: '24' } }),
             )}
           >
             <div className={css({ display: 'grid', gap: '3' })}>
@@ -332,14 +330,12 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                   score={sheet.score}
                   accent={sheet.rank === 0}
                   locale={locale}
-                  action={amazon && <AmazonLink item={item} locale={locale} layouts={layouts} />}
+                  action={<AmazonLink item={item} locale={locale} layouts={layouts} />}
                 />
-                {amazon && (
-                  <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
-                    {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
-                    {amazon.affiliate && ` ${m.amazonNotice[locale]}`}
-                  </p>
-                )}
+                <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
+                  {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
+                  {amazon.affiliate && ` ${m.amazonNotice[locale]}`}
+                </p>
               </div>
               {sheet.fit != null && sheet.met != null && (
                 <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
@@ -421,55 +417,32 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                 ))}
               </dl>
             </section>
-
-            {/* Nothing to buy yet (the demo monitors): what the shops will bring. */}
-            {!amazon && (
-              <section className={css({ display: 'grid', gap: '2' })}>
-                <h3 className={sectionLabel}>{m.whereToBuy[locale]}</h3>
-                <p
-                  className={css({
-                    p: '4',
-                    borderRadius: 'card',
-                    borderWidth: '1px',
-                    borderStyle: 'dashed',
-                    borderColor: 'line.strong',
-                    fontSize: 'sm',
-                    color: 'ink.muted',
-                    lineHeight: '1.5',
-                  })}
-                >
-                  {m.offersSoon[locale]}
-                </p>
-              </section>
-            )}
           </div>
         </div>
 
-        {amazon && (
-          <div
-            className={buyBar}
-            data-shown={barShown || undefined}
-            aria-hidden={!barShown || undefined}
-            inert={!barShown || undefined}
-          >
-            <span className={css({ flex: '1', minW: '0', display: 'grid', gap: '0.5' })}>
-              <span
-                className={css({
-                  fontFamily: 'mono',
-                  fontSize: 'md',
-                  lineHeight: '1.1',
-                  fontVariantNumeric: 'tabular-nums',
-                })}
-              >
-                {formatPrice(item.priceEur, locale)}
-              </span>
-              <span className={css({ fontSize: 'xs', color: 'ink.muted', truncate: true })}>
-                {item.brand.name} {item.name}
-              </span>
+        <div
+          className={buyBar}
+          data-shown={barShown || undefined}
+          aria-hidden={!barShown || undefined}
+          inert={!barShown || undefined}
+        >
+          <span className={css({ flex: '1', minW: '0', display: 'grid', gap: '0.5' })}>
+            <span
+              className={css({
+                fontFamily: 'mono',
+                fontSize: 'md',
+                lineHeight: '1.1',
+                fontVariantNumeric: 'tabular-nums',
+              })}
+            >
+              {formatPrice(item.priceEur, locale)}
             </span>
-            <AmazonLink item={item} locale={locale} layouts={layouts} />
-          </div>
-        )}
+            <span className={css({ fontSize: 'xs', color: 'ink.muted', truncate: true })}>
+              {item.brand.name} {item.name}
+            </span>
+          </span>
+          <AmazonLink item={item} locale={locale} layouts={layouts} />
+        </div>
       </aside>
     </>,
     document.body,
