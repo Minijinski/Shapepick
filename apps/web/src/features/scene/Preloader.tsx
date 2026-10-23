@@ -1,70 +1,58 @@
-import { type Category, categories, type Locale } from '@choose/catalog'
-import { keyboardKeys } from '@choose/catalog/media'
-import { useLayoutEffect, useRef, useState } from 'react'
-import { css } from 'styled-system/css'
+import { type Category, categoryFromSlug, type Locale } from '@choose/catalog'
+import { useParams } from '@tanstack/react-router'
+import { type CSSProperties, useLayoutEffect, useRef, useState } from 'react'
+import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
 import { scene } from './controller'
 import { tiltFor } from './geometry'
 import { readViewport } from './navigation'
+import { type CssInk, preloaderArt } from './preloader-art'
 import { mark } from './stats'
 
-// What a visit sees first: a keyboard drawn like the canvas's sketches, its keys inking in as the
-// scene gets ready (the drawings and photos of its first screen, the fonts), its Enter key turning
-// orange, then a curtain cut at the panels' angle lifting onto the page. It is in the server's
-// HTML and moves in CSS until the page wakes up; the page's entrances wait under it (CSS ones
-// paused by `html[data-loading]`, GSAP ones held) and play as it lifts. It never holds a visit
-// longer than a moment (TIMING); without JavaScript it is never shown (see __root.tsx).
+// What a visit sees first. On the home page, the panels themselves, tilted and spaced like the
+// home's, each with its category's device (a keyboard, a monitor, a mouse) inking in as that
+// category's first screen gets ready (its drawings and photos, the fonts); then each device lights
+// its accent and the panels lift one after the other onto the real ones. Arriving straight on a
+// category's canvas, that category's device alone, then a curtain cut at the panels' angle lifting
+// onto the canvas. It is in the server's HTML and moves in CSS until the page wakes up; the page's
+// entrances wait under it (CSS ones paused by `html[data-loading]`, GSAP ones held) and play as it
+// lifts. It never holds a visit longer than a moment (TIMING); without JavaScript it is never
+// shown (see __root.tsx).
 
 const useIsoLayoutEffect = typeof window === 'undefined' ? () => {} : useLayoutEffect
+
+/**
+ * The preloader mounted last: React may run its effect twice in development (StrictMode), and the
+ * first run’s cleanup must not end the hold the second one takes over.
+ */
+let holder = 0
 
 /** In ms from the start of the visit: never shorter than `min`, never longer than `max` (or than
  * `afterWake` once the page wakes up late); photos get `photosGrace` once drawings are in. */
 const TIMING = { min: 650, max: 2600, afterWake: 700, photosGrace: 900 }
 
-const { keys, width, height } = keyboardKeys('f75')
-const PAD = 0.45
-const VIEW = { w: width + PAD * 2, h: height + PAD * 2 }
-/** Keys inked in CSS before the page wakes up: about half of them, one every `CSS_STEP` ms. */
-const CSS_KEYS = Math.floor(keys.length / 2)
-const CSS_STEP = 22
+/** Each drawing inks about half its units in CSS before the page wakes up, as the count runs to 50 %. */
 const CSS_START = 200
-/** The key that turns signal orange once everything is in. */
-const ENTER = keys.findIndex((k) => k.accent && k.w >= 2)
-
-const overlay = css({
-  position: 'fixed',
-  inset: '0',
-  zIndex: '100',
-  display: 'grid',
-  placeItems: 'center',
-  px: '6',
-  bg: 'paper',
-  // The canvas's dotted paper, so the curtain lifts onto the same ground.
-  backgroundImage: 'radial-gradient(circle, #CFCBC2 1.15px, transparent 1.4px)',
-  backgroundSize: '28px 28px',
-  backgroundPosition: 'center',
-  pointerEvents: 'auto',
-  willChange: 'clip-path',
-})
-
-const plate = css({
-  display: 'grid',
-  justifyItems: 'stretch',
-  gap: '4',
-  w: 'min(30rem, 78vw)',
-})
+const CSS_SPAN = 924
+const inkOf = (units: number): CssInk => {
+  const n = Math.floor(units / 2)
+  return { units: n, step: CSS_SPAN / Math.max(n, 1), start: CSS_START }
+}
 
 const meta = css({
   display: 'flex',
+  flexWrap: 'wrap',
   alignItems: 'baseline',
   justifyContent: 'space-between',
-  gap: '4',
+  columnGap: '4',
+  rowGap: '1',
   fontFamily: 'mono',
   fontSize: '2xs',
   color: 'ink.muted',
   textTransform: 'uppercase',
   letterSpacing: '0.06em',
+  whiteSpace: 'nowrap',
 })
 
 const count = css({
@@ -75,6 +63,16 @@ const count = css({
   letterSpacing: '0',
 })
 
+/** The box a drawing fits in: one cell its own size, so a tall drawing never outgrows it. */
+const stage = css({
+  display: 'grid',
+  gridTemplateColumns: 'minmax(0, 1fr)',
+  gridTemplateRows: 'minmax(0, 1fr)',
+  placeItems: 'center',
+})
+
+const art = css({ display: 'block', w: '100%', h: '100%', overflow: 'visible' })
+
 /** The value CSS has counted to before the page woke up (0 … 1), where the browser can say. */
 function cssCount(el: HTMLElement | null) {
   if (!el) return 0
@@ -83,49 +81,73 @@ function cssCount(el: HTMLElement | null) {
   return Number.isFinite(value) ? value / 100 : 0
 }
 
+/** One drawing being inked: its units, its accent, its count and how far it has got. */
+type Part = {
+  category: Category
+  units: Element[]
+  accent: Element | null
+  number: HTMLElement | null
+  value: number
+  inked: number
+}
+
 export function Preloader({
+  shown,
   counts,
   locale,
 }: {
+  /** The categories the site offers, in panel order. */
+  shown: readonly Category[]
   counts: Record<Category, number>
   locale: Locale
 }) {
   const root = useRef<HTMLDivElement>(null)
-  const board = useRef<SVGGElement>(null)
-  const number = useRef<HTMLSpanElement>(null)
   const [gone, setGone] = useState(false)
+  // Arriving on a category's canvas, that category alone; anywhere else, every panel.
+  const params = useParams({ strict: false }) as { category?: string }
+  const opened = params.category ? categoryFromSlug(params.category, locale) : null
+  const single = opened && shown.includes(opened) ? opened : null
 
   useIsoLayoutEffect(() => {
     const html = document.documentElement
     const el = root.current
-    const keysEl = board.current
-    const numberEl = number.current
     // Only a visit's first page shows it: back on a page of the same visit, it is already gone.
-    if (!html.hasAttribute('data-loading') || !el || !keysEl || !numberEl) {
+    if (!html.hasAttribute('data-loading') || !el) {
       html.removeAttribute('data-loading')
       setGone(true)
       return
     }
+    const mine = ++holder
     // The page's GSAP entrances wait with the CSS ones; the canvas keeps drawing (its ticker runs).
     gsap.globalTimeline.pause()
     el.style.animation = 'none'
-    const rects = Array.from(keysEl.querySelectorAll<SVGRectElement>('[data-key]'))
+    const parts: Part[] = Array.from(el.querySelectorAll<HTMLElement>('[data-part]')).map(
+      (part) => {
+        const number = part.querySelector<HTMLElement>('[data-count]')
+        if (number) number.dataset.live = ''
+        return {
+          category: part.dataset.part as Category,
+          units: Array.from(part.querySelectorAll('[data-unit]')),
+          accent: part.querySelector('[data-accent]'),
+          number,
+          value: cssCount(number),
+          inked: 0,
+        }
+      },
+    )
     const woke = performance.now()
-    let value = cssCount(numberEl)
-    numberEl.dataset.live = ''
     let fonts = false
     void document.fonts?.ready.then(() => {
       fonts = true
     })
     let drawnAt: number | null = null
-    let inked = 0
     let left = false
 
-    const show = (v: number) => {
-      const on = Math.min(rects.length, Math.round(v * rects.length))
-      for (let i = inked; i < on; i++) rects[i]?.setAttribute('data-on', '')
-      inked = Math.max(inked, on)
-      numberEl.textContent = `${String(Math.round(v * 100)).padStart(3, '0')} %`
+    const show = (part: Part, v: number) => {
+      const on = Math.min(part.units.length, Math.round(v * part.units.length))
+      for (let i = part.inked; i < on; i++) part.units[i]?.setAttribute('data-on', '')
+      part.inked = Math.max(part.inked, on)
+      if (part.number) part.number.textContent = `${String(Math.round(v * 100)).padStart(3, '0')} %`
     }
 
     const leave = (why: 'ready' | 'timeout') => {
@@ -134,10 +156,12 @@ export function Preloader({
       mark(`preloader-${why}`)
       gsap.ticker.remove(tick)
       window.clearTimeout(cap)
-      show(1)
-      rects[ENTER]?.setAttribute('data-enter', '')
+      for (const part of parts) {
+        show(part, 1)
+        part.accent?.setAttribute('data-lit', '')
+      }
       el.style.pointerEvents = 'none'
-      // Everything created while loading waits in `held`, which starts as the curtain lifts.
+      // Everything created while loading waits in `held`, which starts as the preloader lifts.
       const held = gsap.exportRoot()
       held.pause()
       gsap.globalTimeline.resume()
@@ -150,13 +174,35 @@ export function Preloader({
         gsap.to(el, { opacity: 0, duration: 0.25, onComplete: () => setGone(true) })
         return
       }
+      if (!single) {
+        // Each device steps back, then its panel lifts off the real one, one after the other.
+        gsap
+          .timeline({ onComplete: () => setGone(true) })
+          .to(
+            el.querySelectorAll('[data-device]'),
+            { opacity: 0, y: -8, scale: 0.97, duration: 0.3, stagger: 0.06, ease: 'power2.in' },
+            0.24,
+          )
+          .call(start, [], 0.34)
+          .to(
+            el.querySelectorAll('[data-slat]'),
+            {
+              clipPath: 'inset(0% 0% 100% 0%)',
+              duration: 0.8,
+              stagger: 0.09,
+              ease: 'expo.inOut',
+            },
+            0.34,
+          )
+        return
+      }
       const vp = readViewport()
-      const slant = Math.tan(tiltFor(vp, categories.length)) * vp.h
+      const slant = Math.tan(tiltFor(vp, shown.length)) * vp.h
       const cut = { p: 0 }
       gsap
         .timeline({ onComplete: () => setGone(true) })
         .to(
-          keysEl.closest('[data-plate]'),
+          el.querySelector('[data-plate]'),
           { opacity: 0, scale: 0.97, duration: 0.35, ease: 'power2.in' },
           0.22,
         )
@@ -181,11 +227,15 @@ export function Preloader({
       const now = performance.now()
       const first = scene.firstScreenProgress()
       if (first && first.drawings >= 1 && drawnAt == null) drawnAt = now
-      const real =
-        0.15 + (fonts ? 0.15 : 0) + 0.4 * (first?.drawings ?? 0) + 0.3 * (first?.photos ?? 0)
-      // The count never goes back, and holds just short of the end until everything is in.
-      value += (Math.max(value, Math.min(real, 0.96)) - value) * 0.14
-      show(value)
+      for (const part of parts) {
+        // Each drawing follows its own category's first screen.
+        const own = first?.byCategory[part.category] ?? first
+        const real =
+          0.15 + (fonts ? 0.15 : 0) + 0.4 * (own?.drawings ?? 0) + 0.3 * (own?.photos ?? 0)
+        // The count never goes back, and holds just short of the end until everything is in.
+        part.value += (Math.max(part.value, Math.min(real, 0.96)) - part.value) * 0.14
+        show(part, part.value)
+      }
       const ready =
         fonts &&
         !!first &&
@@ -203,62 +253,114 @@ export function Preloader({
     return () => {
       gsap.ticker.remove(tick)
       window.clearTimeout(cap)
-      if (!left) {
+      if (left) return
+      // Unmounted for good (not run again at once): the page is no longer held.
+      queueMicrotask(() => {
+        if (holder !== mine) return
         html.removeAttribute('data-loading')
         gsap.globalTimeline.resume()
-      }
+      })
     }
   }, [])
 
   if (gone) return null
-  const total = categories.map((c) => `${counts[c]} ${m.category[c][locale].toLowerCase()}`)
+
+  if (single) {
+    const { Art, units } = preloaderArt[single]
+    return (
+      <div
+        ref={root}
+        data-preloader
+        className={cx(overlay, paper)}
+        role="status"
+        aria-live="polite"
+      >
+        <div data-plate data-part={single} className={plate}>
+          <div className={cx(stage, css({ h: 'min(36vh, 15rem)' }))}>
+            <Art ink={inkOf(units)} className={art} />
+          </div>
+          <div className={meta}>
+            <span>
+              <span className={css({ color: 'signal' })}>●</span> {m.loadingCatalogue[locale]}
+            </span>
+            <span data-count className={count} />
+          </div>
+          <p className={css({ fontFamily: 'mono', fontSize: '2xs', color: 'ink.faint' })}>
+            {counts[single]} {m.category[single][locale].toLowerCase()}
+          </p>
+        </div>
+      </div>
+    )
+  }
+
   return (
     <div ref={root} data-preloader className={overlay} role="status" aria-live="polite">
-      <div data-plate className={plate}>
-        <svg
-          viewBox={`0 0 ${VIEW.w} ${VIEW.h}`}
-          aria-hidden
-          className={css({ w: '100%', h: 'auto' })}
-        >
-          <rect
-            x={0.03}
-            y={0.03}
-            width={VIEW.w - 0.06}
-            height={VIEW.h - 0.06}
-            rx={0.6}
-            fill="none"
-            stroke="#A8A399"
-            strokeWidth={0.06}
-            strokeDasharray="0.3 0.2"
-          />
-          <g ref={board}>
-            {keys.map((k, i) => (
-              <rect
-                key={`${k.x}-${k.y}`}
-                data-key={i}
-                data-css={i < CSS_KEYS ? '' : undefined}
-                x={PAD + k.x + 0.06}
-                y={PAD + k.y + 0.06}
-                width={k.w - 0.12}
-                height={0.88}
-                rx={0.14}
-                style={
-                  i < CSS_KEYS ? { animationDelay: `${CSS_START + i * CSS_STEP}ms` } : undefined
-                }
-              />
-            ))}
-          </g>
-        </svg>
-        <div className={meta}>
-          <span>
-            <span className={css({ color: 'signal' })}>●</span> {m.loadingCatalogue[locale]}
-          </span>
-          <span ref={number} data-count className={count} />
-        </div>
-        <p className={css({ fontFamily: 'mono', fontSize: '2xs', color: 'ink.faint' })}>
-          {total.join(' · ')}
-        </p>
+      <span className={css({ srOnly: true })}>{m.loadingCatalogue[locale]}</span>
+      <div data-split style={{ '--n': Math.max(shown.length, 1) } as CSSProperties}>
+        {shown.map((category, i) => {
+          const { Art, units } = preloaderArt[category]
+          return (
+            <div
+              key={category}
+              data-slat
+              data-part={category}
+              style={{ '--i': i } as CSSProperties}
+            >
+              <div data-slat-body>
+                <div data-device className={device}>
+                  <div className={cx(stage, css({ h: 'min(30vh, 13rem)' }))}>
+                    <Art ink={inkOf(units)} className={art} />
+                  </div>
+                  <div className={meta}>
+                    <span>
+                      <span className={css({ color: 'signal' })}>
+                        {String(i + 1).padStart(2, '0')}
+                      </span>{' '}
+                      {m.category[category][locale]} · {counts[category]}
+                    </span>
+                    <span data-count className={count} />
+                  </div>
+                </div>
+              </div>
+            </div>
+          )
+        })}
       </div>
     </div>
   )
 }
+
+const overlay = css({
+  position: 'fixed',
+  inset: '0',
+  zIndex: '100',
+  pointerEvents: 'auto',
+})
+
+/** Arriving on a canvas: the canvas's dotted paper, so the curtain lifts onto the same ground. */
+const paper = css({
+  display: 'grid',
+  placeItems: 'center',
+  px: '6',
+  bg: 'paper',
+  backgroundImage: 'radial-gradient(circle, #CFCBC2 1.15px, transparent 1.4px)',
+  backgroundSize: '28px 28px',
+  backgroundPosition: 'center',
+  willChange: 'clip-path',
+})
+
+const plate = css({
+  display: 'grid',
+  gridTemplateColumns: 'minmax(0, 1fr)',
+  justifyItems: 'stretch',
+  gap: '4',
+  w: 'min(30rem, 78vw)',
+})
+
+/** A device in its panel: as wide as the panel allows, never wider than a drawing needs. */
+const device = css({
+  display: 'grid',
+  gridTemplateColumns: 'minmax(0, 1fr)',
+  gap: '3',
+  w: 'min(76%, 22rem)',
+})

@@ -32,8 +32,11 @@ export type ItemDetail = {
  */
 export type Arrival = 'intro' | 'open' | 'swap' | 'close'
 
-/** How far the products of the scene's first screen are: their drawings and photos, 0 … 1. */
-export type FirstScreen = { drawings: number; photos: number }
+/** How far some products are: their drawings and photos, 0 … 1. */
+export type Readiness = { drawings: number; photos: number }
+
+/** How far the products of the scene's first screen are, all of them and by category. */
+export type FirstScreen = Readiness & { byCategory: Partial<Record<Category, Readiness>> }
 
 export const sameTarget = (a: SceneTarget | null, b: SceneTarget) =>
   !!a &&
@@ -88,7 +91,14 @@ class SceneController {
     // The free space belongs to the page that asked for it; the next page measures its own.
     this.stage = null
     this.renderer?.setStage(null)
-    if (this.renderer) this.settleIn(this.renderer.go(target, { focal }))
+    // The first page of a visit makes an entrance, whichever of the page and the canvas is ready
+    // first; later ones move from where the scene is.
+    const intro = this.kind === 'intro'
+    if (this.renderer) this.settleIn(this.renderer.go(target, { focal, intro }))
+    // Home shows every product of every category again, whatever answers each one keeps.
+    if (target.mode === 'bands') {
+      for (const category of this.targets.keys()) this.setTargets(category, null)
+    }
   }
 
   /** The kind of transition that brings the scene to `target` (the current one if it is there). */

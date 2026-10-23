@@ -1,4 +1,4 @@
-import { isLocale, type Locale } from "@choose/catalog";
+import { categories, isLocale, type Locale } from "@choose/catalog";
 import { createFileRoute, notFound, Outlet } from "@tanstack/react-router";
 import { SiteHeader } from "~/components/SiteHeader";
 import { Preloader } from "~/features/scene/Preloader";
@@ -38,10 +38,13 @@ export const Route = createFileRoute("/$lang")({
 function LocaleLayout() {
   const { catalogs } = Route.useLoaderData();
   const { lang } = Route.useParams();
+  // The categories with products, one panel each (and one drawing in the preloader).
+  const shown = categories.filter((category) => catalogs[category].length > 0);
   return (
     <>
       {/* First, so that it holds the page's entrances before any of them starts. */}
       <Preloader
+        shown={shown}
         counts={{
           keyboard: catalogs.keyboard.length,
           monitor: catalogs.monitor.length,

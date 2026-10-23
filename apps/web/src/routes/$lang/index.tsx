@@ -283,21 +283,6 @@ function Home() {
               </span>
             ))}
           </h1>
-          <p
-            data-fade
-            className={cx(
-              fade,
-              css({
-                fontSize: { base: "md", md: "lg" },
-                color: "ink.muted",
-                maxW: "34rem",
-                lineHeight: "1.5",
-              }),
-            )}
-            style={{ animationDelay: `${delay + 0.45}s` }}
-          >
-            {m.homeSub[locale]}
-          </p>
         </div>
       </div>
     </main>

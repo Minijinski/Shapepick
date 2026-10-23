@@ -29,30 +29,98 @@ html[data-loading] [data-preloader] *::after {
   }
 }
 
-/* The keys ink in: about half in CSS before the page wakes up, the rest with the real progress. */
-[data-preloader] [data-key] {
+/* The drawings ink in (keys, pixels, slices of a shell): about half in CSS before the page wakes
+   up, the rest with the real progress; their accent turns orange once everything is in. */
+[data-preloader] [data-unit] {
   fill: transparent;
   stroke: #c9c5bb;
-  stroke-width: 0.04;
   transition: fill 140ms, stroke 140ms;
 }
-[data-preloader] [data-key][data-css] {
+[data-preloader] [data-unit][data-css] {
   animation: preloaderKey 140ms linear both;
 }
-[data-preloader] [data-key][data-on] {
+[data-preloader] [data-unit][data-on] {
   fill: #141414;
   stroke: #141414;
 }
-[data-preloader] [data-key][data-enter] {
+[data-preloader] [data-accent] {
+  transition: fill 260ms, stroke 260ms;
+}
+[data-preloader] [data-accent][data-lit] {
   fill: #ff5a1f !important;
   stroke: #ff5a1f !important;
-  transition-duration: 260ms;
 }
 @keyframes preloaderKey {
   to {
     fill: #141414;
     stroke: #141414;
   }
+}
+
+/* The home page’s preloader is its panels, tilted and spaced as the canvas draws them
+   (features/scene/geometry.ts: bandQuads, tiltFor), laid out in CSS so they are in place before
+   the page wakes up. The outer slats run past the frame, which cuts them straight. */
+[data-preloader] [data-split] {
+  --top: 68px;
+  --side: 14px;
+  --bottom: 14px;
+  --gutter: 14px;
+  --ext: 240px;
+  --w: calc((100vw - 2 * var(--side)) / var(--n));
+  --half: calc((100dvh - var(--top) - var(--bottom)) / 2);
+  --tilt: min(16deg, atan2(calc(var(--w) * 0.3), var(--half)));
+  position: absolute;
+  top: var(--top);
+  right: var(--side);
+  bottom: var(--bottom);
+  left: var(--side);
+  border-radius: 22px;
+  overflow: hidden;
+}
+@media (max-width: 47.99rem) {
+  [data-preloader] [data-split] {
+    --top: 60px;
+    --side: 8px;
+    --bottom: 8px;
+    --gutter: 8px;
+  }
+}
+[data-preloader] [data-slat] {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: calc(var(--i) * var(--w) + var(--gutter) / 2);
+  width: calc(var(--w) - var(--gutter));
+  transform: skewX(calc(-1 * var(--tilt)));
+  border-radius: 22px;
+  background-color: #eae7e0;
+  background-image: radial-gradient(circle, #cfcbc2 1.15px, transparent 1.4px);
+  background-size: 28px 28px;
+  clip-path: inset(0% 0% 0% 0%);
+}
+[data-preloader] [data-slat]:first-child {
+  left: calc(-1 * var(--ext));
+  width: calc(var(--w) - var(--gutter) / 2 + var(--ext));
+}
+[data-preloader] [data-slat]:last-child {
+  width: calc(var(--w) - var(--gutter) / 2 + var(--ext));
+}
+[data-preloader] [data-slat]:only-child {
+  width: calc(var(--w) + 2 * var(--ext));
+}
+/* What a slat shows sits upright in its own part of the frame. */
+[data-preloader] [data-slat-body] {
+  position: absolute;
+  inset: 0;
+  display: grid;
+  place-items: center;
+  transform: skewX(var(--tilt));
+}
+[data-preloader] [data-slat]:first-child [data-slat-body] {
+  left: var(--ext);
+}
+[data-preloader] [data-slat]:last-child [data-slat-body] {
+  right: var(--ext);
 }
 
 /* The count, before the page wakes up: 000 → 050 % alongside the keys. */
@@ -77,9 +145,141 @@ html[data-loading] [data-preloader] *::after {
 }
 
 @media (prefers-reduced-motion: reduce) {
-  [data-preloader] [data-key][data-css],
+  [data-preloader] [data-unit][data-css],
   [data-preloader] [data-count]::after {
     animation: none !important;
+  }
+}
+
+/* ---- Product popup on the canvas (features/scene/Scene.tsx, PopupCard.tsx) ------------------- */
+
+/* The leader line draws out of the product, its dot pops, then the card unfolds from the line's
+   end, its lines following one another. Moving on to a neighbour, only the lines come in again
+   (the card glides there); leaving, everything folds back towards the product. `data-side` says
+   where the card sits: it unfolds away from its product. */
+[data-popup-frame] {
+  --from: inset(0 0 0 0 round 14px);
+  --shift: 0 0;
+  transform-origin: left center;
+  animation: popupIn 0.34s cubic-bezier(0.22, 1, 0.36, 1) 0.05s both;
+}
+[data-popup-frame][data-side="right"] {
+  --from: inset(0 100% 0 0 round 14px);
+  --shift: -10px 0;
+}
+[data-popup-frame][data-side="left"] {
+  --from: inset(0 0 0 100% round 14px);
+  --shift: 10px 0;
+  transform-origin: right center;
+}
+[data-popup-frame][data-side="below"] {
+  --from: inset(0 0 100% 0 round 14px);
+  --shift: 0 -10px;
+  transform-origin: center top;
+}
+[data-popup-frame][data-side="above"] {
+  --from: inset(100% 0 0 0 round 14px);
+  --shift: 0 10px;
+  transform-origin: center bottom;
+}
+@keyframes popupIn {
+  from {
+    clip-path: var(--from);
+    opacity: 0.3;
+    translate: var(--shift);
+    scale: 0.98;
+  }
+  to {
+    clip-path: inset(0 0 0 0 round 14px);
+    opacity: 1;
+    translate: 0 0;
+    scale: 1;
+  }
+}
+[data-popup-frame][data-state="out"] {
+  animation: popupOut 0.19s cubic-bezier(0.4, 0, 1, 1) both;
+}
+@keyframes popupOut {
+  from {
+    opacity: 1;
+  }
+  to {
+    opacity: 0;
+    translate: var(--shift);
+    scale: 0.97;
+  }
+}
+[data-popup-frame] [data-line] {
+  animation: popupLine 0.42s cubic-bezier(0.22, 1, 0.36, 1) backwards;
+  animation-delay: calc(0.1s + var(--i, 0) * 0.04s);
+}
+[data-popup-frame] [data-swap] [data-line] {
+  animation-duration: 0.3s;
+  animation-delay: calc(var(--i, 0) * 0.03s);
+}
+@keyframes popupLine {
+  from {
+    opacity: 0;
+    translate: 0 6px;
+  }
+}
+[data-popup-leader] {
+  stroke-dasharray: 1;
+  animation: leaderIn 0.26s cubic-bezier(0.22, 1, 0.36, 1) both;
+}
+@keyframes leaderIn {
+  from {
+    stroke-dashoffset: 1;
+  }
+  to {
+    stroke-dashoffset: 0;
+  }
+}
+[data-popup-leader][data-state="out"] {
+  animation: leaderOut 0.18s ease-in both;
+}
+@keyframes leaderOut {
+  from {
+    stroke-dashoffset: 0;
+  }
+  to {
+    stroke-dashoffset: -1;
+  }
+}
+[data-popup-dot] {
+  animation: dotIn 0.34s cubic-bezier(0.34, 1.56, 0.64, 1) both;
+}
+@keyframes dotIn {
+  from {
+    scale: 0;
+  }
+}
+[data-popup-dot][data-state="out"] {
+  animation: dotOut 0.18s ease-in 0.06s both;
+}
+@keyframes dotOut {
+  to {
+    scale: 0;
+    opacity: 0;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-popup-frame],
+  [data-popup-frame] [data-line],
+  [data-popup-leader],
+  [data-popup-dot] {
+    animation: popupFade 0.15s ease both;
+  }
+  [data-popup-frame][data-state="out"],
+  [data-popup-leader][data-state="out"],
+  [data-popup-dot][data-state="out"] {
+    animation: popupFade 0.15s ease reverse both;
+  }
+}
+@keyframes popupFade {
+  from {
+    opacity: 0;
   }
 }
 

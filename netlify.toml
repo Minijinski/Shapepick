@@ -9,6 +9,9 @@
 # Product photos go through Netlify's image CDN (`/.netlify/images`, see
 # apps/web/src/features/product/photo.ts): resized to the size shown and served from our own domain,
 # so the browser can cut them out whatever the shop's CDN allows. Only these shops may be fetched.
+# The shops whose CDN forbids keeping photos (`private`, `max-age=0`) are relayed by our own route
+# (`/api/photo/…`, which marks them as never changing): its allowlist in
+# apps/web/src/features/product/hosts.ts must match this one.
 [images]
   remote_images = [
     'https://cdn\.shopify\.com/.*',

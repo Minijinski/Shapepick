@@ -1,6 +1,7 @@
 import { type Category, categorySlugs } from '@choose/catalog'
-import { useNavigate } from '@tanstack/react-router'
+import { getRouteApi, useNavigate } from '@tanstack/react-router'
 import { type MouseEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { journeyTargets } from '~/features/finder/targets'
 import type { FinderSearch } from '~/features/finder/useFinder'
 import { useLocale } from '~/i18n/locale'
 import { type Arrival, scene } from './controller'
@@ -77,10 +78,13 @@ function loadJourney(category: Category): FinderSearch {
   }
 }
 
+const layout = getRouteApi('/$lang')
+
 /** Goes to a category (or home with null), through the scene transition. */
 export function useSceneNavigation() {
   const navigate = useNavigate()
   const locale = useLocale()
+  const { catalogs } = layout.useLoaderData()
   return useCallback(
     (category: Category | null, focal?: Pt) => {
       const current = scene.current
@@ -88,8 +92,13 @@ export function useSceneNavigation() {
       if (category && current?.mode === 'canvas' && current.category === category) return
       if (!category && current?.mode === 'bands') return
       const kind: ExitKind = category && current?.mode === 'canvas' ? 'switch' : 'leave'
-      if (category) scene.showCanvas(category, focal)
-      else scene.showBands()
+      const journey = category ? loadJourney(category) : {}
+      if (category) {
+        scene.showCanvas(category, focal)
+        // The canvas arrives showing what the saved answers keep, rather than the whole catalogue
+        // regrouping once the page is on screen.
+        scene.setTargets(category, journeyTargets(category, catalogs[category], journey), focal)
+      } else scene.showBands()
       const mine = ++ticket
       void runPageExit(kind).then(() => {
         if (mine !== ticket) return
@@ -97,11 +106,11 @@ export function useSceneNavigation() {
         return navigate({
           to: '/$lang/$category',
           params: { lang: locale, category: categorySlugs[category][locale] },
-          search: loadJourney(category),
+          search: journey,
         })
       })
     },
-    [navigate, locale],
+    [navigate, locale, catalogs],
   )
 }
 

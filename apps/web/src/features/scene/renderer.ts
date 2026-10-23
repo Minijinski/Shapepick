@@ -8,6 +8,7 @@ import {
   frameOf,
   fullQuad,
   hash01,
+  insideQuad,
   isCompact,
   lerpQuad,
   type Pt,
@@ -125,6 +126,24 @@ const REGROUP = {
 }
 /** A drawing (or a plate standing in for it) fading in once its bitmap exists. */
 const APPEAR_MS = 280
+/** How far ahead (s) the canvas looks for products coming into view, along its motion. */
+const AHEAD_S = 0.9
+/**
+ * A world that has just come on screen forms its short list as an arrival (ms; a visit’s first
+ * page waits under the preloader, so longer): finalists held on an opening panel glide to their
+ * places, the others appear in them. The page says where the short list goes a moment after the
+ * scene starts moving: the finalists wait for it, then go back to the field if it never comes.
+ */
+const ARRIVAL_MS = { open: 1800, swap: 1800, intro: 3200 }
+const STAGE_WAIT_MS = 1400
+const ARRIVE = { glide: 820, stagger: 35, appear: 560, rise: 16, morph: 380 }
+
+/**
+ * A finalist held on an opening panel (world px): one of its own copies there, or, when none is
+ * in sight (a large catalogue), a product near the click it takes the place of, fading in as that
+ * one fades out (`since`: when).
+ */
+type HeldCopy = Pt & { since?: number }
 
 const PAPER = [243, 241, 236] as const
 const PANEL = [234, 231, 224] as const
@@ -230,6 +249,13 @@ type SpotItem = {
   land: Copy | null
   landed: boolean
   phase: number
+  /**
+   * Waiting for its place, while the page has not said where the short list gathers: held where
+   * it was on the field (world px), following the camera, or hidden until it appears in place.
+   */
+  wait: Pt | 'hidden' | null
+  /** Coming in where it belongs, fading in as it rises, rather than flying from the field. */
+  appear: boolean
 }
 
 type Pose = { x: number; y: number; scale: number; alpha: number }
@@ -247,9 +273,21 @@ type Badge = {
 
 const copyKey = (c: Copy) => `${c.slot}:${c.kx}:${c.ky}`
 
-/** Notes that a product was drawn at `scale`, keeping the largest. */
-const seen = (drawn: Map<string, number>, slug: string, scale: number) => {
-  if ((drawn.get(slug) ?? 0) < scale) drawn.set(slug, scale)
+/** How a product was drawn: its largest scale, and its nearest place to the middle of the screen. */
+export type Drawn = { scale: number; distance: number }
+
+/** A product near the open canvas, about to come into view: its photo is worth fetching now. */
+export type Near = { category: Category; slug: string; scale: number; distance: number }
+
+/** Notes that a product was drawn at `scale`, `distance` px from the middle of the screen. */
+const seen = (drawn: Map<string, Drawn>, slug: string, scale: number, distance: number) => {
+  const known = drawn.get(slug)
+  if (!known) {
+    drawn.set(slug, { scale, distance })
+    return
+  }
+  if (known.scale < scale) known.scale = scale
+  if (known.distance > distance) known.distance = distance
 }
 
 class World {
@@ -284,6 +322,10 @@ class World {
   /** During a zoom, the world point that stays under a screen point (the click). */
   anchor: { screen: Pt; world: Pt } | null = null
   spot: SpotItem[] = []
+  /** When and how this world last came on screen: a panel opening, a category swapped in, a visit. */
+  arrival: { at: number; kind: 'open' | 'swap' | 'intro' } | null = null
+  /** A short list waiting to learn where it gathers, until the page says (or this time passes). */
+  awaiting: { until: number } | null = null
 
   constructor(readonly category: Category) {
     const cell = CELL[category]
@@ -344,12 +386,21 @@ export class SceneRenderer {
   private last = performance.now()
   /**
    * Products drawn since `takeDrawn` last ran, by category, with the largest scale each was drawn
-   * at (screen px per world px): the photos worth fetching, and how sharp.
+   * at (screen px per world px) and how near the middle of the screen: the photos worth fetching,
+   * how sharp, and which first.
    */
-  private drawn = new Map<Category, Map<string, number>>()
+  private drawn = new Map<Category, Map<string, Drawn>>()
+  /** Pointer moves since the last frame, and the drag's speed they make (screen px/s). */
+  private push: Pt = { x: 0, y: 0 }
+  private dragVelocity: Pt = { x: 0, y: 0 }
   /** Plates drawn this frame (products whose drawing is not ready yet), for the stats. */
   private plates = 0
   private products = 0
+  /** Products whose middle is on screen this frame, and how many of them show their photo. */
+  private onScreen = 0
+  private onScreenPhotos = 0
+  /** The last frame’s counts, for the stats. */
+  private lastFrame = { products: 0, plates: 0, onScreen: 0, onScreenPhotos: 0 }
   private readonly reduce: boolean
   /** Called after every frame, for overlays that follow a product (the popup). */
   onFrame: (() => void) | null = null
@@ -434,6 +485,58 @@ export class SceneRenderer {
   }
 
   /**
+   * Products of the open canvas about to come into view: within `reach` screens of it (a share of
+   * its larger side), further where the canvas is heading (its drift, a drag, a fling), nearest
+   * first and each once, with the scale they will be drawn at. Their photos are worth fetching
+   * before they show. None while a short list hides the field.
+   */
+  around(reach = 0.8, limit = 48): Near[] {
+    const band = this.activeBand()
+    const world = band?.world
+    if (!band || !world?.slots.length || world.spot.some((s) => !s.leaving)) return []
+    const t = this.transformOf(band)
+    const { w: vw, h: vh } = this.vp
+    const margin = Math.max(vw, vh) * reach
+    // Products move by the drift and the drag on screen: the ones to come are on the other side.
+    const drift = this.reduce ? 0 : world.speed * world.pause
+    const moving = this.dragging ? this.dragVelocity : world.velocity
+    const lead = {
+      x: Math.max(-vw, Math.min(vw, -(Math.cos(world.angle) * drift + moving.x) * AHEAD_S)),
+      y: Math.max(-vh, Math.min(vh, -(Math.sin(world.angle) * drift + moving.y) * AHEAD_S)),
+    }
+    const x0 = -margin + Math.min(0, lead.x)
+    const x1 = vw + margin + Math.max(0, lead.x)
+    const y0 = -margin + Math.min(0, lead.y)
+    const y1 = vh + margin + Math.max(0, lead.y)
+    // Nearest to where the screen is heading, rather than to where it is.
+    const cx = vw / 2 + lead.x / 2
+    const cy = vh / 2 + lead.y / 2
+    const { w: tw, h: th } = world.tile
+    const best = new Map<string, number>()
+    world.slots.forEach((slot) => {
+      if (slot.item.field.to < 1) return
+      const at = this.placeIn(world, slot)
+      const kx0 = Math.ceil(((x0 - t.ox) / t.scale - at.x) / tw)
+      const kx1 = Math.floor(((x1 - t.ox) / t.scale - at.x) / tw)
+      const ky0 = Math.ceil(((y0 - t.oy) / t.scale - at.y) / th)
+      const ky1 = Math.floor(((y1 - t.oy) / t.scale - at.y) / th)
+      for (let kx = kx0; kx <= kx1; kx++) {
+        for (let ky = ky0; ky <= ky1; ky++) {
+          const sx = (at.x + kx * tw) * t.scale + t.ox
+          const sy = (at.y + ky * th) * t.scale + t.oy
+          const d = Math.hypot(sx - cx, sy - cy)
+          if (d < (best.get(slot.item.slug) ?? Number.POSITIVE_INFINITY))
+            best.set(slot.item.slug, d)
+        }
+      }
+    })
+    return [...best]
+      .sort((a, b) => a[1] - b[1])
+      .slice(0, limit)
+      .map(([slug, distance]) => ({ category: band.category, slug, scale: t.scale, distance }))
+  }
+
+  /**
    * Gives a product its photo (null: back to its drawing), crossfading on screen; without `fade`
    * (a photo let go out of sight), at once, keeping no hold on the old bitmap.
    */
@@ -508,6 +611,9 @@ export class SceneRenderer {
         glides: world.glides.size,
         leaving: world.leaving.length,
         pending: !!world.pending,
+        // A short list waiting to learn where it gathers, and its finalists waiting meanwhile.
+        awaiting: !!world.awaiting,
+        waiting: world.spot.filter((s) => s.wait).length,
       }
     }
     const drawings = this.drawings.stats
@@ -516,6 +622,7 @@ export class SceneRenderer {
       drawings,
       photos: { count: photos, bytes: photoBytes },
       bitmapMB: Math.round(((drawings.bytes + photoBytes) / 1e6) * 10) / 10,
+      frame: this.lastFrame,
     }
   }
 
@@ -573,6 +680,11 @@ export class SceneRenderer {
     if (!this.reduce) {
       gsap.from(band.world, { zoom: band.world.zoom * 1.08, duration: 1.6, ease: 'expo.out' })
     }
+    // A visit that starts on a category with a short list shows it in place from the first frame.
+    const now = performance.now()
+    band.world.arrival = { at: now, kind: 'intro' }
+    const targets = this.targets.get(category)
+    this.updateSpot(band, targets?.kept ? targets.order : null, now, true)
     return this.reduce ? 0 : 0.35
   }
 
@@ -589,6 +701,9 @@ export class SceneRenderer {
     Object.assign(band, { enter: 1, veil: 0, ground: 1 })
     const point = focal ?? centroid(base)
     world.anchor = { screen: point, world: this.toWorld(band, point) }
+    world.arrival = { at: performance.now(), kind: 'open' }
+    // Answers given on an earlier visit change the field from the click on, in a wave from it.
+    this.ripple = point
     const zoom = this.zoomFor(band)
     const settle = () => {
       world.anchor = null
@@ -697,6 +812,8 @@ export class SceneRenderer {
       velocity: { ...old.world.velocity },
       anchor: null,
       spot: [],
+      awaiting: null,
+      arrival: { at: now, kind: 'swap' },
       leaving: [],
       entered: -1,
     })
@@ -788,14 +905,29 @@ export class SceneRenderer {
       this.updateSpot(band, order, now, animate)
       return
     }
-    if (animate && this.regroups(band, now) !== 'cut') {
+    const mode = animate ? this.regroups(band, now) : 'cut'
+    if (mode !== 'cut' && !this.arriving(band, now)) {
       // The answers may still be moving (a slider, several picks): the field waits for them.
       world.pending = { kept, order, at: now + REGROUP.settle }
       return
     }
     world.pending = null
-    this.layOut(band, kept)
-    this.updateSpot(band, order, now, false)
+    if (mode === 'cut') {
+      this.layOut(band, kept)
+      this.updateSpot(band, order, now, false)
+      return
+    }
+    // Arriving with answers given on an earlier visit (a panel opening onto them): the field
+    // changes at once, in a wave from the click, and its finalists stay where they are, ready to
+    // gather in the short list.
+    const { at, held } = this.regroup(band, kept, new Set(this.spotWanted(band, order)), now, true)
+    this.updateSpot(band, order, now, true, at, held)
+  }
+
+  /** Whether a world has just come on screen, and forms its short list as an arrival. */
+  private arriving(band: Band, now: number) {
+    const arrival = band.world.arrival
+    return !!arrival && now - arrival.at < ARRIVAL_MS[arrival.kind]
   }
 
   /**
@@ -805,6 +937,8 @@ export class SceneRenderer {
   private regroups(band: Band, now: number): 'glide' | 'fade' | 'cut' {
     if (this.reduce || band.enter <= 0) return 'cut'
     const presence = band.world.presence
+    // A category swapped in whose products have not begun to show: nothing to see change.
+    if (presence.dur > 0 && presence.to === 1 && now < presence.start) return 'cut'
     const arriving = presence.dur > 0 && now < presence.start + presence.dur + 420
     if (this.activeBand() === band && !arriving) return 'glide'
     const inSight =
@@ -838,21 +972,57 @@ export class SceneRenderer {
    * still kept glide to their nearest place in the new tile; the others fade where they are; the
    * new tile's other copies fade in, all in a wave from the console. Products about to join the
    * short list (`spot`) leave their copies behind: the short list takes off from where they were.
-   * Returns where each product was on screen, for the short list to take off from.
+   * With `hold` (a panel opening onto a short list whose place is not known yet), one copy of each
+   * of them, the one nearest the click on the panel, stays where it is instead of fading.
+   * Returns where each product was on screen (`at`), and the copies held (`held`, world px).
    */
-  private regroup(band: Band, kept: Set<string> | null, spot: Set<string>, now: number) {
+  private regroup(
+    band: Band,
+    kept: Set<string> | null,
+    spot: Set<string>,
+    now: number,
+    hold = false,
+  ) {
     const world = band.world
     const mode = this.regroups(band, now)
     const shown = mode === 'cut' ? [] : this.shownCopies(band, now)
     const before = world.leaving.filter((l) => now < l.start + l.dur)
     this.layOut(band, kept)
-    if (mode === 'cut') return new Map<string, Pt[]>()
-    const t = this.transformOf(band)
-    const taken = new Set<string>()
     const at = new Map<string, Pt[]>()
+    const held = new Map<string, HeldCopy>()
+    if (mode === 'cut') return { at, held }
+    const t = this.transformOf(band)
+    const toScreen = (c: { x: number; y: number }) => ({
+      x: c.x * t.scale + t.ox,
+      y: c.y * t.scale + t.oy,
+    })
+    if (hold) {
+      const quad = this.quadOf(band)
+      const nearer = (a: Pt, b: Pt) =>
+        Math.hypot(a.x - this.ripple.x, a.y - this.ripple.y) <
+        Math.hypot(b.x - this.ripple.x, b.y - this.ripple.y)
+      const inSight = shown.filter((c) => c.alpha >= 0.5 && insideQuad(quad, toScreen(c)))
+      for (const c of inSight) {
+        if (!spot.has(c.item.slug)) continue
+        const known = held.get(c.item.slug)
+        if (!known || nearer(toScreen(c), toScreen(known)))
+          held.set(c.item.slug, { x: c.x, y: c.y })
+      }
+      // Finalists with no copy in sight take the places of the products nearest the click.
+      const places = inSight
+        .filter((c) => !spot.has(c.item.slug))
+        .sort((a, b) => (nearer(toScreen(a), toScreen(b)) ? -1 : 1))
+      for (const slug of spot) {
+        if (held.has(slug)) continue
+        const place = places.shift()
+        if (!place) break
+        const p = toScreen(place)
+        held.set(slug, { x: place.x, y: place.y, since: now + this.rippleDelay(p.x, p.y) })
+      }
+    }
+    const taken = new Set<string>()
     for (const c of shown) {
-      const sx = c.x * t.scale + t.ox
-      const sy = c.y * t.scale + t.oy
+      const { x: sx, y: sy } = toScreen(c)
       const delay = this.rippleDelay(sx, sy)
       let list = at.get(c.item.slug)
       if (!list) {
@@ -860,6 +1030,9 @@ export class SceneRenderer {
         at.set(c.item.slug, list)
       }
       list.push({ x: sx, y: sy })
+      const keep = held.get(c.item.slug)
+      // The copy held for the short list stays put: it is the finalist itself, waiting.
+      if (keep && keep.since == null && keep.x === c.x && keep.y === c.y) continue
       const stays =
         mode === 'glide' && !spot.has(c.item.slug) && (world.kept?.has(c.item.slug) ?? true)
       const to = stays ? this.freeCopyNear(band, c.item, c.x, c.y, taken) : null
@@ -885,7 +1058,7 @@ export class SceneRenderer {
     }
     world.leaving = before
     world.entered = now
-    return at
+    return { at, held }
   }
 
   /** The field's copies on screen (and a cell around it), where they are drawn now (world px). */
@@ -972,7 +1145,9 @@ export class SceneRenderer {
   /**
    * The short list: when few products are left, they fly out of the field to a grid in the free
    * space, each shown once; the ones dropped fly back (or fade away). `from`: where the products
-   * were on screen just before the field regrouped, to take off from.
+   * were on screen just before the field regrouped, to take off from; `held`: the copies a panel
+   * opening onto the short list kept where they were (world px). Just come on screen, a world whose
+   * free space is not known yet keeps its finalists waiting for it.
    */
   private updateSpot(
     band: Band,
@@ -980,31 +1155,23 @@ export class SceneRenderer {
     now: number,
     animate: boolean,
     from?: Map<string, Pt[]>,
+    held?: Map<string, HeldCopy>,
   ) {
     const world = band.world
     if (!world.items.length) return
-    const wanted = this.spotWanted(order)
+    const wanted = this.spotWanted(band, order)
     const layout = wanted.length ? this.spotLayout(world, wanted) : null
+    if (wanted.length && !this.stage && this.arriving(band, now)) {
+      this.awaitSpot(band, wanted, now, held)
+      return
+    }
+    world.awaiting = null
     const keep = layout ? wanted : []
+    const arrival = this.arriving(band, now) ? world.arrival : null
 
-    for (const s of world.spot) {
+    for (const s of [...world.spot]) {
       if (s.leaving || keep.includes(s.item.slug)) continue
-      const pose = this.spotPose(band, s, now)
-      Object.assign(s, {
-        leaving: true,
-        from: { x: pose.x, y: pose.y },
-        fromScale: pose.scale,
-        start: now,
-        dur: animate ? 820 : 0,
-      })
-      if (world.kept?.has(s.item.slug) ?? true) {
-        // Still kept (the list just grew too long): back to the nearest copy on the field.
-        s.land = this.nearestCopy(band, s.item, pose)
-      } else {
-        // Ruled out: it fades where it is.
-        s.land = null
-        aim(s.item.field, 1, now, 0)
-      }
+      this.dropFromSpot(band, s, now, animate)
     }
 
     keep.forEach((slug, i) => {
@@ -1012,6 +1179,25 @@ export class SceneRenderer {
       const to = layout?.positions[i]
       if (!item || !to || !layout) return
       const existing = world.spot.find((s) => s.item === item)
+      if (existing?.wait) {
+        // Its place is known at last: a finalist held on the panel glides there, rank by rank;
+        // one that waited hidden comes in where it belongs.
+        const hidden = existing.wait === 'hidden'
+        const pose = this.spotPose(band, existing, now)
+        // One still fading in where it took another product's place finishes doing so first.
+        const ready = !hidden && existing.appear ? existing.start + ARRIVE.morph * 0.8 : now
+        Object.assign(existing, {
+          to,
+          scale: layout.zoom,
+          from: hidden ? { x: to.x, y: to.y + ARRIVE.rise } : { x: pose.x, y: pose.y },
+          fromScale: hidden ? layout.zoom * 0.94 : pose.scale,
+          start: Math.max(ready, now) + i * ARRIVE.stagger,
+          dur: animate ? (hidden ? ARRIVE.appear : ARRIVE.glide) : 0,
+          wait: null,
+          appear: hidden,
+        })
+        return
+      }
       if (existing) {
         const settled =
           !existing.leaving && Math.hypot(existing.to.x - to.x, existing.to.y - to.y) < 1
@@ -1027,35 +1213,122 @@ export class SceneRenderer {
           leaving: false,
           land: null,
           landed: false,
+          appear: false,
         })
         aim(item.field, 0, now, animate ? 250 : 0)
         return
       }
+      const kept = held?.get(slug)
+      const t = this.transformOf(band)
       // Entering: it takes off from where it was on screen (or its nearest copy on the field),
-      // which hands over to it.
-      const pose = this.takeOff(band, item, to, layout.zoom, from?.get(slug))
+      // which hands over to it; arriving on a canvas that was not on screen, it appears in place.
+      const appear = !kept && !!arrival && arrival.kind !== 'open'
+      const pose = kept
+        ? { x: kept.x * t.scale + t.ox, y: kept.y * t.scale + t.oy, scale: t.scale }
+        : appear
+          ? { x: to.x, y: to.y + ARRIVE.rise, scale: layout.zoom * 0.94 }
+          : this.takeOff(band, item, to, layout.zoom, from?.get(slug))
       world.spot.push({
         item,
         to,
         scale: layout.zoom,
         from: { x: pose.x, y: pose.y },
         fromScale: pose.scale,
-        start: now + i * 55,
-        dur: animate ? 950 : 0,
+        start: now + i * (arrival ? ARRIVE.stagger : 55),
+        dur: animate ? (appear ? ARRIVE.appear : kept ? ARRIVE.glide : 950) : 0,
         leaving: false,
         land: null,
         landed: false,
         phase: hash01(slug) * Math.PI * 2,
+        wait: null,
+        appear,
       })
-      aim(item.field, 0, now, animate ? 250 : 0)
+      aim(item.field, 0, now, animate && !appear ? 250 : 0)
     })
   }
 
-  /** The products the short list should hold: few enough, on the open canvas. */
-  private spotWanted(order: string[] | null) {
-    return order && order.length > 0 && order.length <= SPOT_MAX && this.target.mode === 'canvas'
-      ? order
-      : []
+  /**
+   * The short list is wanted, but the page has not said yet where it gathers (it comes on screen
+   * a moment after the scene starts moving). A finalist held on the panel stays where it is,
+   * following the camera; the others wait hidden; their copies on the field step aside meanwhile.
+   * Should the page never say (its results cover the canvas, a phone has no room), they go back to
+   * the field (see `settle`).
+   */
+  private awaitSpot(band: Band, wanted: string[], now: number, held?: Map<string, HeldCopy>) {
+    const world = band.world
+    world.awaiting = { until: now + STAGE_WAIT_MS }
+    const t = this.transformOf(band)
+    for (const s of [...world.spot]) {
+      if (!s.leaving && !s.wait && !wanted.includes(s.item.slug))
+        this.dropFromSpot(band, s, now, true)
+    }
+    for (const slug of wanted) {
+      const item = world.bySlug.get(slug)
+      if (!item || world.spot.some((s) => s.item === item && !s.leaving)) continue
+      const hold = held?.get(slug)
+      const at = hold ? { x: hold.x * t.scale + t.ox, y: hold.y * t.scale + t.oy } : { x: 0, y: 0 }
+      world.spot.push({
+        item,
+        to: at,
+        scale: t.scale,
+        from: at,
+        fromScale: t.scale,
+        // One taking another product's place fades in from when that one starts fading out.
+        start: hold?.since ?? now,
+        dur: 0,
+        leaving: false,
+        land: null,
+        landed: false,
+        phase: hash01(slug) * Math.PI * 2,
+        wait: hold ? { x: hold.x, y: hold.y } : 'hidden',
+        appear: hold?.since != null,
+      })
+      aim(item.field, 0, now, 0)
+    }
+  }
+
+  /** The finalists still waiting go back to the field: no short list will form after all. */
+  private releaseSpot(band: Band, now: number) {
+    const world = band.world
+    world.awaiting = null
+    for (const s of [...world.spot]) if (s.wait) this.dropFromSpot(band, s, now, true)
+  }
+
+  /**
+   * A product leaves the short list: back to its nearest copy on the field while the answers keep
+   * it, faded where it is otherwise; one that was waiting hidden simply gives its copies back.
+   */
+  private dropFromSpot(band: Band, s: SpotItem, now: number, animate: boolean) {
+    const world = band.world
+    const stillKept = world.kept?.has(s.item.slug) ?? true
+    if (s.wait === 'hidden') {
+      world.spot = world.spot.filter((x) => x !== s)
+      if (stillKept) aim(s.item.field, 1, now, animate ? 420 : 0)
+      return
+    }
+    const pose = this.spotPose(band, s, now)
+    Object.assign(s, {
+      leaving: true,
+      wait: null,
+      appear: false,
+      from: { x: pose.x, y: pose.y },
+      fromScale: pose.scale,
+      start: now,
+      dur: animate ? 820 : 0,
+    })
+    if (stillKept) {
+      // Still kept (the list just grew too long, or never formed): to the nearest field copy.
+      s.land = this.nearestCopy(band, s.item, pose)
+    } else {
+      // Ruled out: it fades where it is.
+      s.land = null
+      aim(s.item.field, 1, now, 0)
+    }
+  }
+
+  /** The products the short list should hold: few enough, on this band's open canvas. */
+  private spotWanted(band: Band, order: string[] | null) {
+    return order && order.length > 0 && order.length <= SPOT_MAX && this.isOpen(band) ? order : []
   }
 
   /** Where a product joining the short list takes off from. */
@@ -1143,7 +1416,25 @@ export class SceneRenderer {
 
   /** Where a product of the short list is now: on its flight, then floating gently. */
   private spotPose(band: Band, s: SpotItem, now: number): Pose {
-    const p = s.dur > 0 ? easeInOut(clamp01((now - s.start) / s.dur)) : now >= s.start ? 1 : 0
+    if (s.wait === 'hidden') return { x: s.to.x, y: s.to.y, scale: s.scale, alpha: 0 }
+    if (s.wait) {
+      // Held where it was on the field, it moves with the field (the panel zooming in, the drift).
+      const t = this.transformOf(band)
+      const alpha = s.appear ? easeOut(clamp01((now - s.start) / ARRIVE.morph)) : 1
+      return { x: s.wait.x * t.scale + t.ox, y: s.wait.y * t.scale + t.oy, scale: t.scale, alpha }
+    }
+    const raw = s.dur > 0 ? clamp01((now - s.start) / s.dur) : now >= s.start ? 1 : 0
+    // One that appears in place eases out as it fades in; a flight eases both ways.
+    const p = s.appear ? easeOut(raw) : easeInOut(raw)
+    if (s.appear && !s.leaving) {
+      const bob = this.reduce ? 0 : Math.sin(now / 1400 + s.phase) * 3 * p
+      return {
+        x: lerp(s.from.x, s.to.x, p),
+        y: lerp(s.from.y, s.to.y, p) + bob,
+        scale: lerp(s.fromScale, s.scale, p),
+        alpha: raw,
+      }
+    }
     let to = s.to
     let scale = s.scale
     if (s.leaving && s.land) {
@@ -1211,7 +1502,7 @@ export class SceneRenderer {
     // The short list sits in front of the field.
     for (let i = world.spot.length - 1; i >= 0; i--) {
       const s = world.spot[i]
-      if (!s || s.leaving) continue
+      if (!s || s.leaving || s.wait) continue
       const pose = this.spotPose(band, s, now)
       const { w, h } = this.sizeOf(s.item)
       if (Math.abs(p.x - pose.x) <= (w * pose.scale) / 2 + 6) {
@@ -1278,7 +1569,7 @@ export class SceneRenderer {
     if (!focus || !band || band.category !== focus.hit.category) return null
     const world = band.world
     if (focus.hit.spot) {
-      const s = world.spot.find((x) => x.item.slug === focus.hit.slug && !x.leaving)
+      const s = world.spot.find((x) => x.item.slug === focus.hit.slug && !x.leaving && !x.wait)
       if (!s) return null
       const pose = this.spotPose(band, s, performance.now())
       const { w: iw, h: ih } = this.sizeOf(s.item)
@@ -1300,6 +1591,7 @@ export class SceneRenderer {
     const band = this.activeBand()
     if (!band) return
     this.dragging = true
+    this.dragVelocity = { x: 0, y: 0 }
     band.world.velocity = { x: 0, y: 0 }
     gsap.to(band.world, { pause: 0, duration: 0.25, overwrite: 'auto' })
   }
@@ -1310,6 +1602,8 @@ export class SceneRenderer {
     if (!band) return
     band.world.cam.x -= dx / band.world.zoom
     band.world.cam.y -= dy / band.world.zoom
+    this.push.x += dx
+    this.push.y += dy
   }
 
   /** Lets go with the pointer's velocity, then eases the drift back in. */
@@ -1334,13 +1628,26 @@ export class SceneRenderer {
     frame(now - this.last)
     const dt = Math.min(0.05, (now - this.last) / 1000)
     this.last = now
+    // How fast the pointer (or a wheel) moves the canvas: where it is heading, for `around`.
+    const k = 1 - Math.exp(-8 * dt)
+    this.dragVelocity.x += (this.push.x / Math.max(dt, 0.001) - this.dragVelocity.x) * k
+    this.dragVelocity.y += (this.push.y / Math.max(dt, 0.001) - this.dragVelocity.y) * k
+    this.push = { x: 0, y: 0 }
     for (const band of this.bands) {
       this.step(band, dt)
       this.settle(band, now)
     }
     this.plates = 0
     this.products = 0
+    this.onScreen = 0
+    this.onScreenPhotos = 0
     this.draw(now)
+    this.lastFrame = {
+      products: this.products,
+      plates: this.plates,
+      onScreen: this.onScreen,
+      onScreenPhotos: this.onScreenPhotos,
+    }
     if (this.products > 0 && this.plates === 0) mark('first-full-frame')
     this.drawings.pump()
     this.onFrame?.()
@@ -1377,10 +1684,12 @@ export class SceneRenderer {
     if (pending && now >= pending.at) {
       world.pending = null
       if (this.focus && !this.focus.hit.spot && this.activeBand() === band) this.setFocus(null)
-      const spot = new Set(this.spotWanted(pending.order))
-      const from = this.regroup(band, pending.kept, spot, now)
-      this.updateSpot(band, pending.order, now, true, from)
+      const spot = new Set(this.spotWanted(band, pending.order))
+      const { at } = this.regroup(band, pending.kept, spot, now)
+      this.updateSpot(band, pending.order, now, true, at)
     }
+    // A short list that never learnt where to gather: its finalists go back to the field.
+    if (world.awaiting && now > world.awaiting.until) this.releaseSpot(band, now)
     if (world.leaving.length) world.leaving = world.leaving.filter((l) => now < l.start + l.dur)
     for (const [key, glide] of world.glides) {
       if (now >= glide.start + glide.dur) world.glides.delete(key)
@@ -1415,15 +1724,20 @@ export class SceneRenderer {
     for (const band of order.slice(first)) this.drawBand(band, now)
   }
 
-  private drawBand(band: Band, now: number) {
-    const { ctx, vp, dpr } = this
-    const base = this.quads[band.index]
-    if (!base || band.enter <= 0) return
-    let quad = band.expand > 0 ? lerpQuad(base, fullQuad(vp), band.expand) : base
+  /** The shape a panel covers on screen now: its slot, grown towards the whole screen, lifted. */
+  private quadOf(band: Band): Quad {
+    const base = this.quads[band.index] ?? fullQuad(this.vp)
+    const quad = band.expand > 0 ? lerpQuad(base, fullQuad(this.vp), band.expand) : base
     const lift = (1 - band.enter) * 56
-    if (lift) quad = quad.map((p) => ({ x: p.x, y: p.y + lift })) as Quad
+    return lift ? (quad.map((p) => ({ x: p.x, y: p.y + lift })) as Quad) : quad
+  }
+
+  private drawBand(band: Band, now: number) {
+    const { ctx, dpr } = this
+    if (!this.quads[band.index] || band.enter <= 0) return
+    const quad = this.quadOf(band)
     const path = new Path2D()
-    traceRounded(path, quad, frameOf(vp).radius * (1 - band.expand))
+    traceRounded(path, quad, frameOf(this.vp).radius * (1 - band.expand))
     const t = this.transformOf(band)
 
     ctx.save()
@@ -1513,7 +1827,7 @@ export class SceneRenderer {
           if (presence <= 0.002) continue
           const enter = this.enterOf(world, sx, sy, now)
           if (enter <= 0.002) continue
-          seen(drawn, item.slug, t.scale)
+          seen(drawn, item.slug, t.scale, this.fromMiddle(sx, sy))
           const focused =
             !!focus && focus.hit.slot === index && focus.hit.kx === kx && focus.hit.ky === ky
           this.drawProduct(
@@ -1540,7 +1854,7 @@ export class SceneRenderer {
       const p = this.glideAt(world, glide, now)
       const sx = p.x * t.scale + t.ox
       const sy = p.y * t.scale + t.oy
-      seen(drawn, slot.item.slug, t.scale)
+      seen(drawn, slot.item.slug, t.scale, this.fromMiddle(sx, sy))
       const a = alpha * field * presenceAt(sx, sy)
       this.drawProduct(slot.item, sx, sy, t.scale, a, now, 0, ranked, true)
     }
@@ -1555,10 +1869,12 @@ export class SceneRenderer {
     const drawn = this.drawnIn(band.category)
     for (const s of world.spot) {
       const pose = this.spotPose(band, s, now)
-      seen(drawn, s.item.slug, pose.scale)
+      seen(drawn, s.item.slug, pose.scale, this.fromMiddle(pose.x, pose.y))
       const delay = this.rippleDelay(pose.x, pose.y)
       const presence = read(world.presence, now, world.presence.ripple ? delay : 0)
-      const focused = !!focus && !s.leaving && focus.hit.slug === s.item.slug
+      // A finalist waiting for its place wears no badge yet: it is still on its way.
+      const placed = !s.leaving && !s.wait
+      const focused = !!focus && placed && focus.hit.slug === s.item.slug
       this.drawProduct(
         s.item,
         pose.x,
@@ -1567,8 +1883,8 @@ export class SceneRenderer {
         alpha * pose.alpha * presence,
         now,
         focused ? focusIn : 0,
-        !s.leaving,
-        !s.leaving,
+        placed,
+        placed,
       )
     }
   }
@@ -1596,6 +1912,10 @@ export class SceneRenderer {
     const a = alpha * (1 - 0.5 * dim)
     if (a <= 0.002) return
     this.products++
+    if (x > 0 && x < this.vp.w && y > 0 && y < this.vp.h) {
+      this.onScreen++
+      if (item.photo) this.onScreenPhotos++
+    }
     const drawing = this.drawings.get(item.key)
     if (!drawing) this.drawings.want(item.key)
     const appear = drawing ? easeOut(clamp01((now - drawing.at) / APPEAR_MS)) : 0
@@ -1631,7 +1951,7 @@ export class SceneRenderer {
         : null
     if (hot > 0.01) this.drawRing(x, y, w, h, a * hot, badge)
     if (badge) this.drawBadge(badge, a)
-    if (focus > 0) this.drawBrackets(x, y, size.w * scale, size.h * scale, a * focus)
+    if (focus > 0) this.drawBrackets(x, y, size.w * scale, size.h * scale, a * focus, focus)
   }
 
   /** A faint print of a product's shape, holding its place until its drawing is ready. */
@@ -1736,11 +2056,21 @@ export class SceneRenderer {
     ctx.textBaseline = 'alphabetic'
   }
 
-  /** Corner marks around the product under the pointer, like a viewfinder. */
-  private drawBrackets(cx: number, cy: number, w: number, h: number, alpha: number) {
+  /**
+   * Corner marks around the product under the pointer, like a viewfinder locking on: they close
+   * in from further out as `progress` reaches 1.
+   */
+  private drawBrackets(
+    cx: number,
+    cy: number,
+    w: number,
+    h: number,
+    alpha: number,
+    progress: number,
+  ) {
     const { ctx } = this
-    const pad = 12
-    const arm = 10
+    const pad = 12 + 14 * (1 - progress)
+    const arm = 10 - 3 * (1 - progress)
     const x0 = cx - w / 2 - pad
     const x1 = cx + w / 2 + pad
     const y0 = cy - h / 2 - pad
@@ -1773,10 +2103,15 @@ export class SceneRenderer {
   private drawnIn(category: Category) {
     let drawn = this.drawn.get(category)
     if (!drawn) {
-      drawn = new Map()
+      drawn = new Map<string, Drawn>()
       this.drawn.set(category, drawn)
     }
     return drawn
+  }
+
+  /** Screen px from the middle of the screen. */
+  private fromMiddle(x: number, y: number) {
+    return Math.hypot(x - this.vp.w / 2, y - this.vp.h / 2)
   }
 
   /** The panel that fills the screen on a category page, once it has finished opening. */
@@ -1825,6 +2160,7 @@ export class SceneRenderer {
       velocity: { x: 0, y: 0 },
       presence: channel(1),
       spot: [],
+      awaiting: null,
       leaving: [],
       entered: -1,
     })

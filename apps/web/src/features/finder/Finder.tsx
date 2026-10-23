@@ -206,8 +206,8 @@ export function Finder({ category, items, search, locale }: Props) {
   }, [done]);
   useEffect(
     () => () => {
-      // Back on the home page the panel shows every product again.
-      scene.setTargets(category, null);
+      // The canvas keeps what the answers keep until it is out of sight: going home shows every
+      // product again (the scene does it), going to another category hides this one meanwhile.
       scene.setDetails(category, null);
       scene.setStage(category, null);
       scene.setPickable(true);

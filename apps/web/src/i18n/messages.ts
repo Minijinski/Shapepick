@@ -9,16 +9,12 @@ const count = (n: number, locale: Locale) =>
 export const messages = {
   siteName: text("choose-a-device"),
   homeKicker: text(
-    "Le bon appareil, sans tableau de specs",
-    "The right device, without a spec sheet",
+    "Le bon appareil, en quelques questions",
+    "The right device, in a few questions",
   ),
   homeTitle: text(
     "Arrêter de chercher.\nCommencer à choisir.",
     "Stop searching.\nStart choosing.",
-  ),
-  homeSub: text(
-    "Choisis un univers : le catalogue se resserre avec toi, question après question.",
-    "Pick a world: the catalogue narrows with you, one question at a time.",
   ),
   homeLead: text(
     "Réponds à quelques questions : le catalogue se resserre à chaque réponse, en direct, jusqu’aux trois modèles faits pour toi.",

@@ -90,6 +90,20 @@ export function boundsOf(q: Quad) {
   return { x0: Math.min(...xs), y0: Math.min(...ys), x1: Math.max(...xs), y1: Math.max(...ys) }
 }
 
+/** Whether a point lies inside a quad (convex, corners in order). */
+export function insideQuad(q: Quad, p: Pt) {
+  let sign = 0
+  for (let i = 0; i < 4; i++) {
+    const a = q[i] as Pt
+    const b = q[(i + 1) % 4] as Pt
+    const cross = (b.x - a.x) * (p.y - a.y) - (b.y - a.y) * (p.x - a.x)
+    if (cross === 0) continue
+    if (sign === 0) sign = Math.sign(cross)
+    else if (Math.sign(cross) !== sign) return false
+  }
+  return true
+}
+
 /** x of the quad's left (or right) edge at height y. */
 export function edgeAt(q: Quad, side: 'left' | 'right', y: number) {
   const [a, b] = side === 'left' ? [q[0], q[3]] : [q[1], q[2]]

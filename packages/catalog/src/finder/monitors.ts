@@ -53,8 +53,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Usage', 'Use'),
       title: text('Pour quoi faire ?', 'What is it for?'),
       help: text(
-        "Cette réponse n'écarte aucun écran : elle règle ce qui compte le plus dans le classement (fluidité pour l'e-sport, contraste et HDR pour l'immersion, fidélité des couleurs pour la création…).",
-        'This answer rules nothing out: it decides what matters most in the ranking (motion clarity for esports, contrast and HDR for immersion, colour accuracy for creative work…).',
+        'On n’écarte aucun écran ici. Ta réponse sert juste à classer : la fluidité pour l’e-sport, le contraste pour l’immersion, les couleurs pour la création.',
+        'Nothing gets ruled out here. Your answer only sets the ranking: smoothness for esports, contrast for immersion, colour for creative work.',
       ),
       // Each hint says what the ranking looks for first for this use.
       options: [
@@ -91,8 +91,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Format', 'Format'),
       title: text('Quelle taille ?', 'How big?'),
       help: text(
-        'La diagonale se lit avec la distance : à 60–80 cm, un 27" remplit le champ de vision, un 32" demande de tourner la tête. Les ultra-larges (21:9, 32:9) remplacent deux écrans. Choisis-en plusieurs si tu hésites.',
-        'Read the diagonal against the distance: at 60–80 cm a 27" fills your view, a 32" makes you turn your head. Ultrawides (21:9, 32:9) replace two screens. Pick several if unsure.',
+        'Tout dépend de la distance. À 60–80 cm, un 27" remplit bien la vue, un 32" fait tourner la tête. Un ultra-large remplace deux écrans. Tu hésites ? Coche-en plusieurs.',
+        'It depends on how far you sit. At 60–80 cm a 27" fills your view, a 32" makes you turn your head. An ultrawide replaces two screens. Not sure? Pick a few.',
       ),
       // The drawing shows the size: one short line each.
       options: [
@@ -138,8 +138,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Budget', 'Budget'),
       title: text('Quel budget ?', "What's your budget?"),
       help: text(
-        'L’histogramme montre combien d’écrans restent à chaque prix avec tes réponses précédentes.',
-        'The histogram shows how many monitors remain at each price given your previous answers.',
+        'Les barres montrent combien d’écrans il reste à chaque prix.',
+        'The bars show how many monitors are left at each price.',
       ),
       value: (m) => m.priceEur,
       // Most monitors sell between 100 and 1,000 €: 25 € steps, the top of the scale for anything
@@ -153,8 +153,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Netteté', 'Sharpness'),
       title: text('Quelle netteté ?', 'How sharp?'),
       help: text(
-        'Ce qui compte vraiment, c’est la densité de pixels (PPI) : 1440p sur un 27" donne 109 PPI, 4K sur la même taille 163 PPI, un texte nettement plus fin. La 1080p reste idéale en 24" pour l’e-sport. Un ultra-large se range avec la hauteur de son image : 3440 × 1440 est un 1440p.',
-        'What really matters is pixel density (PPI): 1440p on a 27" is 109 PPI, 4K on the same size is 163 PPI, visibly finer text. 1080p is still ideal on a 24" for esports. An ultrawide goes with the height of its picture: 3440 × 1440 is a 1440p.',
+        'Ce qui compte, c’est la densité de pixels (PPI). En 27", le 1440p donne 109 PPI et la 4K 163 : le texte est bien plus fin. Pour jouer en 24", le 1080p suffit. Un ultra-large se range selon sa hauteur : 3440 × 1440, c’est du 1440p.',
+        'What counts is pixel density (PPI). On a 27", 1440p gives 109 PPI and 4K gives 163, so text looks much finer. For gaming on a 24", 1080p is enough. Ultrawides go by height: 3440 × 1440 counts as 1440p.',
       ),
       // Read on the vertical pixels with room either side: a 1920 × 1200 panel is no 1440p, a
       // 3840 × 1600 ultrawide no 4K, a 3:2 3840 × 2560 one goes with the 4K.
@@ -183,8 +183,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Dalle', 'Panel'),
       title: text('Quelle dalle ?', 'Which panel?'),
       help: text(
-        '**IPS** : couleurs fidèles, bons angles, noirs moyens (Fast IPS, Nano IPS et IPS Black en sont). **VA** : fort contraste, idéal dans le noir, un peu de traînée. **OLED** : noirs parfaits et réactivité instantanée (QD-OLED ou WOLED), attention au marquage sur les éléments fixes. **Mini-LED** : très lumineux, excellent en HDR. **TN** : réactif et bon marché, couleurs ternes.',
-        '**IPS**: accurate colours, good angles, average blacks (Fast IPS, Nano IPS and IPS Black are IPS). **VA**: high contrast, great in the dark, some smearing. **OLED**: perfect blacks and instant response (QD-OLED or WOLED), watch for burn-in on static elements. **Mini-LED**: very bright, excellent HDR. **TN**: fast and cheap, washed-out colours.',
+        '**IPS** : couleurs justes, noirs moyens. Fast IPS, Nano IPS et IPS Black en font partie. **VA** : gros contraste, top dans le noir, un peu de traînée. **OLED** : noirs parfaits et réponse instantanée, mais gare au marquage des éléments fixes. **Mini-LED** : très lumineux, excellent en HDR. **TN** : rapide et pas cher, couleurs ternes.',
+        '**IPS**: accurate colour, average blacks. Fast IPS, Nano IPS and IPS Black count as IPS. **VA**: big contrast, great in the dark, a little smearing. **OLED**: perfect blacks and instant response, but watch for burn-in on static elements. **Mini-LED**: very bright, great for HDR. **TN**: fast and cheap, dull colour.',
       ),
       options: [
         opt('ips', 'IPS', 'IPS', (m) => m.specs.panel === 'ips', [
@@ -203,8 +203,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Fluidité', 'Refresh rate'),
       title: text('Quelle fluidité ?', 'How smooth?'),
       help: text(
-        'La fréquence minimale que tu acceptes. 60 Hz suffit pour la bureautique, 144 Hz change tout en jeu, 240 Hz et plus visent l’e-sport. Au-delà de la fréquence, la clarté en mouvement dépend aussi de la dalle (l’OLED est la plus nette).',
-        'The lowest refresh rate you accept. 60 Hz is fine for office work, 144 Hz transforms gaming, 240 Hz and up targets esports. Beyond the number, motion clarity also depends on the panel (OLED is the clearest).',
+        'La fréquence minimum que tu acceptes. 60 Hz suffit pour bosser, 144 Hz change tout en jeu, 240 Hz et plus, c’est pour l’e-sport.',
+        'The lowest refresh rate you’ll accept. 60 Hz is fine for work, 144 Hz changes everything in games, 240 Hz and up is for esports.',
       ),
       options: [
         opt('60', '60 Hz suffisent', '60 Hz is fine', atLeast(60), [
@@ -239,8 +239,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Courbure', 'Curvature'),
       title: text('Plat ou incurvé ?', 'Flat or curved?'),
       help: text(
-        'La courbure garde les bords à la même distance des yeux : utile au-delà de 32" et sur les ultra-larges, moins pour la retouche où les lignes droites doivent le rester.',
-        'A curve keeps the edges at the same distance from your eyes: useful past 32" and on ultrawides, less so for retouching where straight lines must stay straight.',
+        'Un écran incurvé garde les bords à la même distance de tes yeux. Pratique en grand et en ultra-large, moins pour la retouche photo.',
+        'A curve keeps the edges at the same distance from your eyes. Handy on big and ultrawide screens, less so for photo editing.',
       ),
       options: [
         opt('flat', 'Plat', 'Flat', (m) => m.specs.curvatureR == null, [
@@ -259,8 +259,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Indispensables', 'Must-haves'),
       title: text('Des indispensables ?', 'Any must-haves?'),
       help: text(
-        'Chaque indispensable s’ajoute aux autres : un écran doit tous les avoir. Seuls ceux qui départagent encore les écrans restants sont proposés.',
-        'Must-haves add up: a monitor has to have all of them. Only the ones that still split the remaining monitors are offered.',
+        'Un écran doit tous les avoir. On ne te propose que ceux qui font encore la différence.',
+        'A monitor needs every one you pick. We only offer the ones that still make a difference.',
       ),
       options: [
         opt('usbc', 'USB-C 65 W+', 'USB-C 65 W+', (m) => m.specs.usbcPdW >= 65, [
@@ -280,7 +280,7 @@ export const monitorFinder: FinderDefinition<M> = {
           '4K 120 Hz on console',
         ]),
         opt('height', 'Pied réglable', 'Height-adjustable', (m) => m.specs.heightAdjustable, [
-          'À hauteur des yeux, sans réhausseur',
+          'À hauteur des yeux, sans rehausseur',
           'At eye level, no riser needed',
         ]),
         opt('pivot', 'Rotation portrait', 'Portrait pivot', (m) => m.specs.pivot, [

@@ -1,6 +1,7 @@
 import type { Photo } from '@choose/catalog'
 import { atWidth, isolate } from '@choose/catalog/media'
 import type { CutoutAnswer, CutoutAsk } from './cutout.worker'
+import { isShopPhoto, relayed, relayOf } from './hosts'
 
 // Product photos, cut out in the browser. Shops shoot a product on white or a light grey (some
 // publish it already cut out), often with company, and that white laid on our paper reads as a
@@ -58,11 +59,17 @@ function original(url: string, width: number) {
   return wrapped?.[1] ? decodeURIComponent(wrapped[1]) : atWidth(url, width)
 }
 
-/** The photo at `width` px (never past its own width), from the image CDN on our domain. */
+/**
+ * The photo at `width` px (never past its own width), from the image CDN on our domain. A shop
+ * whose CDN forbids keeping its photos is fetched through our own route (see `hosts.ts`), which
+ * also stands in for the image CDN where there is none (a second dev server): every shop's photo
+ * then comes from our origin, so its pixels stay readable whatever the shop allows.
+ */
 export function photoSrc(photo: Photo, width: number, through = proxied) {
   const w = Math.min(width, photo.width ?? width)
-  if (!through) return direct(photo, w)
-  return `/.netlify/images?url=${encodeURIComponent(original(photo.url, w))}&w=${w}&fm=webp&q=90`
+  const source = original(photo.url, w)
+  if (!through) return isShopPhoto(source) ? relayOf(source) : direct(photo, w)
+  return `/.netlify/images?url=${encodeURIComponent(relayed(source) ?? source)}&w=${w}&fm=webp&q=90`
 }
 
 /**
@@ -128,6 +135,26 @@ function ask(src: string): Promise<Answer> {
   return new Promise((resolve) => {
     waiting.set(id, resolve)
     w.postMessage({ id, url: src } satisfies CutoutAsk)
+  })
+}
+
+/** Photos whose bytes the worker was asked to fetch ahead, at a given width. */
+const warmed = new Set<string>()
+
+/**
+ * Fetches a photo's bytes ahead of time, before its product comes into view: the worker keeps
+ * them, so cutting it out then needs no network. Resolves once done, whatever the outcome; does
+ * nothing without a worker (the main thread has enough to do).
+ */
+export function warm(photo: Photo, width: number): Promise<void> {
+  const key = `${photo.url}@${width}`
+  const w = workerOf()
+  if (!w || warmed.has(key) || unusable.has(photo.url)) return Promise.resolve()
+  warmed.add(key)
+  const id = ++asked
+  return new Promise((resolve) => {
+    waiting.set(id, () => resolve())
+    w.postMessage({ id, url: photoSrc(photo, width), warm: true } satisfies CutoutAsk)
   })
 }
 

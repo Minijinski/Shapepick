@@ -51,8 +51,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Usage", "Use"),
       title: text("À quoi va-t-il servir ?", "What is it for?"),
       help: text(
-        "Cette réponse n'écarte aucun clavier : elle règle ce qui compte le plus dans le classement (latence et rapid trigger pour le jeu compétitif, silence et multi-appareils pour le bureau…).",
-        "This answer rules nothing out: it decides what matters most in the ranking (latency and rapid trigger for competitive play, quietness and multi-device for the office…).",
+        "On n’écarte aucun clavier ici. Ta réponse sert juste à classer : la réactivité si tu joues, le silence si tu bosses, l’autonomie si tu bouges.",
+        "Nothing gets ruled out here. Your answer only sets the ranking: speed if you game, quiet if you work, battery if you travel.",
       ),
       options: [
         // Each hint says what the ranking looks for first for this use. A hint wraps on a tile:
@@ -86,8 +86,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Taille", "Size"),
       title: text("Quelle taille ?", "How big should it be?"),
       help: text(
-        "Plus le clavier est compact, plus la souris a de place et plus il voyage facilement, au prix de touches regroupées sur des couches. Choisis-en plusieurs si tu hésites : un clavier passe s'il fait l'une d'elles.",
-        "The more compact the board, the more room for the mouse and the easier it travels, at the cost of keys moved to layers. Pick several if unsure: a board passes if it is any of them.",
+        "Plus c’est compact, plus ta souris a de place, mais certaines touches passent derrière des raccourcis. Tu hésites ? Coche-en plusieurs.",
+        "The smaller the board, the more room for your mouse, but some keys move behind shortcuts. Not sure? Pick a few.",
       ),
       // The drawing shows the size: one short line each.
       options: [
@@ -141,8 +141,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Disposition", "Layout"),
       title: text("Quelle disposition ?", "Which layout?"),
       help: text(
-        "Beaucoup de claviers passionnés n'existent qu'en QWERTY US (ANSI). Si tu tapes en AZERTY, garde-le ici : on ne gardera que les modèles vendus avec des touches françaises.",
-        "Many enthusiast boards only ship in US QWERTY (ANSI). If you need a local layout, keep it here and only boards sold with those legends remain.",
+        "Beaucoup de claviers ne sortent qu’en QWERTY US. Tu tapes en AZERTY ? Coche-le, on ne garde que ceux vendus en touches françaises.",
+        "Lots of boards only ship in US QWERTY. Need another layout? Tick it and we only keep boards sold with it.",
       ),
       options: [
         opt(
@@ -177,8 +177,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Touches", "Keys"),
       title: text("Quel type de touches ?", "What kind of keys?"),
       help: text(
-        "**Mécanique** : un switch par touche, durable et personnalisable. **Magnétique** : capteurs à effet Hall, point de déclenchement réglable et rapid trigger, la référence en FPS. **Optique** : déclenchement par faisceau lumineux, très rapide. **Membrane** : silencieux et économique. **Ciseaux** : extra-plat, comme un portable.",
-        "**Mechanical**: one switch per key, durable and customisable. **Magnetic**: Hall-effect sensors with adjustable actuation and rapid trigger, the FPS reference. **Optical**: light-beam actuation, very fast. **Membrane**: quiet and cheap. **Scissor**: very flat, like a laptop.",
+        "**Mécanique** : un switch par touche, solide et personnalisable. **Magnétique** : déclenchement réglable et rapid trigger, le choix des joueurs de FPS. **Optique** : déclenché par la lumière, très rapide. **Membrane** : discret et pas cher. **Ciseaux** : tout plat, comme sur un portable.",
+        "**Mechanical**: one switch per key, sturdy and tweakable. **Magnetic**: adjustable actuation and rapid trigger, what FPS players pick. **Optical**: triggered by light, very fast. **Membrane**: quiet and cheap. **Scissor**: flat, like a laptop.",
       ),
       options: [
         opt(
@@ -233,8 +233,8 @@ export const keyboardFinder: FinderDefinition<K> = {
         "How should the keys feel?",
       ),
       help: text(
-        "**Linéaire** : course lisse du début à la fin. **Tactile** : une petite bosse marque le déclenchement. **Clicky** : la bosse plus un clic audible. **Silencieux** : amorti en haut et en bas de course.",
-        "**Linear**: smooth all the way down. **Tactile**: a small bump marks actuation. **Clicky**: the bump plus an audible click. **Silent**: dampened at the top and bottom of the stroke.",
+        "**Linéaire** : la touche descend d’un trait. **Tactile** : une petite bosse quand elle s’active. **Clicky** : la bosse, plus un clic qu’on entend. **Silencieux** : amorti en haut et en bas.",
+        "**Linear**: the key goes straight down. **Tactile**: a small bump when it fires. **Clicky**: the bump plus a click you can hear. **Silent**: cushioned top and bottom.",
       ),
       options: [
         opt(
@@ -281,8 +281,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Hauteur", "Height"),
       title: text("Plutôt plat ou standard ?", "Flat or standard height?"),
       help: text(
-        "**Standard** : la hauteur classique des claviers mécaniques, souvent avec un repose-poignets. **Extra-plat** : touches basses et course courte, poignets à plat, proche d’un clavier de portable.",
-        "**Standard**: the classic mechanical height, often paired with a wrist rest. **Low profile**: short keys and travel, wrists flat, close to a laptop.",
+        "**Standard** : la hauteur classique, souvent avec un repose-poignets. **Extra-plat** : touches basses et poignets à plat, comme sur un portable.",
+        "**Standard**: the usual height, often with a wrist rest. **Low profile**: short keys and flat wrists, like a laptop.",
       ),
       options: [
         opt("standard", "Standard", "Standard", (k) => !k.specs.lowProfile, [
@@ -301,8 +301,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Connexion", "Connection"),
       title: text("Comment le connecter ?", "How should it connect?"),
       help: text(
-        "**2.4 GHz** : un dongle USB, latence de jeu. **Bluetooth** : bascule entre plusieurs appareils (ordinateur, tablette, téléphone). **Filaire uniquement** : pas de batterie, souvent moins cher.",
-        "**2.4 GHz**: a USB dongle, gaming latency. **Bluetooth**: switch between several devices (computer, tablet, phone). **Wired only**: no battery, often cheaper.",
+        "**2.4 GHz** : un petit dongle USB, assez rapide pour jouer. **Bluetooth** : tu passes de l’ordi à la tablette ou au téléphone. **Filaire uniquement** : pas de batterie à recharger, souvent moins cher.",
+        "**2.4 GHz**: a small USB dongle, fast enough for gaming. **Bluetooth**: hop between computer, tablet and phone. **Wired only**: no battery to charge, often cheaper.",
       ),
       options: [
         opt(
@@ -338,8 +338,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Budget", "Budget"),
       title: text("Quel budget ?", "What's your budget?"),
       help: text(
-        "Le prix le plus bas parmi les déclinaisons du modèle. L’histogramme montre combien de claviers restent à chaque prix avec tes réponses précédentes.",
-        "The lowest price across the model’s variants. The histogram shows how many boards remain at each price given your previous answers.",
+        "On prend le prix le plus bas du modèle. Les barres montrent combien de claviers il reste à chaque prix.",
+        "We go by the model’s lowest price. The bars show how many boards are left at each price.",
       ),
       value: (k) => k.priceEur,
       bounds: [0, 400],
@@ -351,8 +351,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Indispensables", "Must-haves"),
       title: text("Des indispensables ?", "Any must-haves?"),
       help: text(
-        "Chaque indispensable s’ajoute aux autres : un clavier doit tous les avoir. Seuls ceux qui départagent encore les claviers restants sont proposés.",
-        "Must-haves add up: a board has to have all of them. Only the ones that still split the remaining boards are offered.",
+        "Un clavier doit tous les avoir. On ne te propose que ceux qui font encore la différence.",
+        "A board needs every one you pick. We only offer the ones that still make a difference.",
       ),
       options: [
         opt(
@@ -429,8 +429,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Couleur", "Colour"),
       title: text("Une couleur ?", "Any colour?"),
       help: text(
-        "Un clavier compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. **Coloré** : teintes vives ou pastel. **Transparent** : boîtier translucide.",
-        "A board counts as soon as one of its versions comes in one of the picked colours. **Colourful**: bright or pastel finishes. **Transparent**: see-through case.",
+        "Un clavier compte s’il existe dans une des couleurs choisies. **Coloré** : vif ou pastel. **Transparent** : boîtier translucide.",
+        "A board counts if it comes in any colour you pick. **Colourful**: bright or pastel. **Transparent**: see-through case.",
       ),
       // What each family takes in (see familyOf at ingest), short beside its swatch.
       options: [

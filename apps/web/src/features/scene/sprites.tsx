@@ -3,7 +3,7 @@ import { drawingBox, squareOn } from '@choose/catalog/media'
 import { flushSync } from 'react-dom'
 import { createRoot, type Root } from 'react-dom/client'
 import { glyphKey, ProductGlyph } from '../product/glyphs'
-import { cutout, photoWidthFor } from '../product/photo'
+import { cutout, photoWidthFor, warm } from '../product/photo'
 
 // Products as bitmaps for the canvas. The canvas lays products out from their shape alone (the
 // size their specs give their drawing), so it can place hundreds of them at once and draw only
@@ -43,8 +43,13 @@ const PX_PER_UNIT: Record<Category, number> = { keyboard: 11, monitor: 7.4 }
 const PAD = 16
 /** Drawings being rasterised at once: enough to fill a screen in a few frames. */
 const DRAWING_LOADS = 3
-/** Photos loading at once: enough to fill the canvas fast, few enough to spread the cutting out. */
-const PHOTO_LOADS = 4
+/**
+ * Photos loading at once: enough to fill the canvas fast (a shop's CDN takes up to a second a
+ * photo, little of it transfer), few enough to spread the cutting out.
+ */
+const PHOTO_LOADS = 6
+/** Photos fetched at once ahead of the camera, bytes only, on top of those. */
+const AHEAD_LOADS = 4
 
 export const shapeOf = (item: CatalogItem): Shape => {
   const box = drawingBox(item)
@@ -243,6 +248,8 @@ export const photoBudget = (compact: boolean, dpr: number) => (compact || dpr < 
 
 /** How long a photo stays wanted after the canvas last drew its product (ms). */
 const WANTED_MS = 4000
+/** How long a photo fetched ahead stays wanted after the canvas last neared its product (ms). */
+const AHEAD_MS = 1500
 /** A photo the canvas has not drawn for this long may be let go when memory runs short (ms). */
 const UNSEEN_MS = 2000
 
@@ -253,29 +260,49 @@ type PhotoJob = {
   shape: Shape
   /** The photo width to ask for: the sharpest any drawing of the product needs. */
   width: number
+  /** On screen, in px from the middle of it, when last seen: the nearest go first. */
+  distance: number
   seen: number
   running: boolean
   attempts: number
   notBefore: number
 }
 
+/** A photo fetched ahead of its product coming into view: its bytes only, kept by the worker. */
+type AheadJob = Omit<PhotoJob, 'attempts' | 'notBefore'>
+
 type Held = { category: Category; slug: string; sprite: Sprite; width: number; seen: number }
 
+/** A visitor who asked to save data, or on a slow network, gets no photo it has not seen yet. */
+function frugal() {
+  const connection = (
+    navigator as Navigator & { connection?: { saveData?: boolean; effectiveType?: string } }
+  ).connection
+  return !!connection && (!!connection.saveData || /2g|3g/.test(connection.effectiveType ?? ''))
+}
+
 /**
- * The canvas's photos: fetched only for the products it draws (on screen, or a cell away), the
- * ones drawn most recently first, at the sharpness they are drawn at (half on the home panels,
- * whole on a canvas), cut out and handed over through `onPhoto` in place of the drawing. Those
- * the canvas has stopped drawing are let go once they weigh more than the budget: their product
- * falls back to its drawing and asks again when it comes back. A photo that cannot be fetched is
- * tried twice more; one that is not a square-on cut-out is never asked for again.
+ * The canvas's photos: fetched for the products it draws (on screen, or a cell away), the nearest
+ * the middle of the screen first, at the sharpness they are drawn at (half on the home panels,
+ * whole on a canvas), cut out and handed over through `onPhoto` in place of the drawing. Products
+ * about to come into view (`ahead`) have their photo's bytes fetched beforehand, so it shows as
+ * soon as they do. Those the canvas has stopped drawing are let go once they weigh more than the
+ * budget: their product falls back to its drawing and asks again when it comes back. A photo that
+ * cannot be fetched is tried twice more; one that is not a square-on cut-out is never asked for
+ * again.
  */
 export class Photos {
   private readonly jobs = new Map<string, PhotoJob>()
+  private readonly aheadJobs = new Map<string, AheadJob>()
+  /** Photos whose bytes are in, at the width fetched (`key@width`). */
+  private readonly fetched = new Set<string>()
   private readonly held = new Map<string, Held>()
   private readonly unusable = new Set<string>()
   private running = 0
+  private fetching = 0
   private bytes = 0
   private disposed = false
+  private readonly frugal = frugal()
 
   constructor(
     private readonly resolution: number,
@@ -284,8 +311,11 @@ export class Photos {
     private readonly onPhoto: (category: Category, slug: string, sprite: Sprite | null) => void,
   ) {}
 
-  /** The canvas drew a product at `scale` screen px per world px: its photo is worth having. */
-  see(category: Category, item: CatalogItem, shape: Shape, scale: number) {
+  /**
+   * The canvas drew a product at `scale` screen px per world px, `distance` px from the middle of
+   * the screen: its photo is worth having.
+   */
+  see(category: Category, item: CatalogItem, shape: Shape, scale: number, distance = 0) {
     if (!item.photo) return
     const key = `${category}:${item.slug}`
     if (this.unusable.has(key)) return
@@ -299,6 +329,7 @@ export class Photos {
     const job = this.jobs.get(key)
     if (job) {
       job.seen = now
+      job.distance = distance
       if (!job.running) job.width = Math.max(job.width, width)
       return
     }
@@ -308,6 +339,7 @@ export class Photos {
       photo: item.photo,
       shape,
       width,
+      distance,
       seen: now,
       running: false,
       attempts: 0,
@@ -315,22 +347,55 @@ export class Photos {
     })
   }
 
-  /** Starts the next photos, the ones drawn most recently first; lets old ones go if needed. */
+  /**
+   * A product about to come into view, `distance` px from the middle of the screen: its photo's
+   * bytes are fetched now, at the width it will be drawn at, unless the canvas has it already.
+   */
+  ahead(category: Category, item: CatalogItem, shape: Shape, scale: number, distance: number) {
+    if (!item.photo || this.frugal) return
+    const key = `${category}:${item.slug}`
+    if (this.unusable.has(key) || this.jobs.has(key)) return
+    const width = photoWidthFor(item.photo, shape.w * scale * this.dpr)
+    if ((this.held.get(key)?.width ?? 0) >= width || this.fetched.has(`${key}@${width}`)) return
+    const now = performance.now()
+    const job = this.aheadJobs.get(key)
+    if (job) {
+      job.seen = now
+      job.distance = distance
+      if (!job.running) job.width = Math.max(job.width, width)
+      return
+    }
+    this.aheadJobs.set(key, {
+      category,
+      item,
+      photo: item.photo,
+      shape,
+      width,
+      distance,
+      seen: now,
+      running: false,
+    })
+  }
+
+  /** Starts the next photos, the nearest first, then the ones ahead; lets old ones go if needed. */
   pump() {
     if (this.disposed) return
     const now = performance.now()
     for (const [key, job] of this.jobs) {
       if (!job.running && now - job.seen > WANTED_MS) this.jobs.delete(key)
     }
+    for (const [key, job] of this.aheadJobs) {
+      if (!job.running && now - job.seen > AHEAD_MS) this.aheadJobs.delete(key)
+    }
     while (this.running < PHOTO_LOADS) {
-      let next: [string, PhotoJob] | null = null
-      for (const entry of this.jobs) {
-        const job = entry[1]
-        if (job.running || job.notBefore > now) continue
-        if (!next || job.seen > next[1].seen) next = entry
-      }
+      const next = nearest(this.jobs, (job) => job.notBefore <= now)
       if (!next) break
       void this.run(next[0], next[1])
+    }
+    while (this.fetching < AHEAD_LOADS) {
+      const next = nearest(this.aheadJobs, () => true)
+      if (!next) break
+      void this.fetch(next[0], next[1])
     }
     this.evict(now)
   }
@@ -348,6 +413,9 @@ export class Photos {
       budget: this.budget,
       queued: this.jobs.size,
       running: this.running,
+      ahead: this.aheadJobs.size,
+      fetching: this.fetching,
+      fetched: this.fetched.size,
       unusable: this.unusable.size,
     }
   }
@@ -355,6 +423,7 @@ export class Photos {
   dispose() {
     this.disposed = true
     this.jobs.clear()
+    this.aheadJobs.clear()
   }
 
   private async run(key: string, job: PhotoJob) {
@@ -400,6 +469,20 @@ export class Photos {
     }
   }
 
+  /** Fetches the bytes of a photo ahead of its product; the worker keeps them. */
+  private async fetch(key: string, job: AheadJob) {
+    job.running = true
+    this.fetching++
+    try {
+      await warm(job.photo, job.width)
+      this.fetched.add(`${key}@${job.width}`)
+    } finally {
+      this.aheadJobs.delete(key)
+      this.fetching--
+      this.pump()
+    }
+  }
+
   /** Over budget: the photos drawn longest ago go, and their products show their drawing. */
   private evict(now: number) {
     if (this.bytes <= this.budget) return
@@ -417,4 +500,25 @@ export class Photos {
       held.sprite.image.height = 0
     }
   }
+}
+
+/** The job nearest the middle of the screen, among those not running that `ready` lets start. */
+function nearest<J extends { running: boolean; distance: number; seen: number }>(
+  jobs: Map<string, J>,
+  ready: (job: J) => boolean,
+): [string, J] | null {
+  let next: [string, J] | null = null
+  for (const entry of jobs) {
+    const job = entry[1]
+    if (job.running || !ready(job)) continue
+    const best = next?.[1]
+    if (
+      !best ||
+      job.distance < best.distance ||
+      (job.distance === best.distance && job.seen > best.seen)
+    ) {
+      next = entry
+    }
+  }
+  return next
 }

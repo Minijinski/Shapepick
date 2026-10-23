@@ -1,16 +1,20 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
-import { css } from 'styled-system/css'
+import type { CSSProperties } from 'react'
+import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { Match } from '../product/Match'
-import { formatPrice, sheetSpecs } from '../product/specs'
+import { KeySpecs } from '../product/ProductHero'
+import { formatPrice } from '../product/specs'
 import type { ItemDetail } from './controller'
 
-// The card that opens next to a product on the canvas: what it is, how well it fits the answers
-// (or which answer rules it out), and its spec sheet, set like a callout on a technical drawing.
-// Its last line says that a click opens the product's full sheet.
+// The card that opens next to a product on the canvas, set like a callout on a technical drawing:
+// where it stands among the answers (or which answer rules it out), what it is and costs, its key
+// specs laid out as in the results, and a last line saying that a click opens its full sheet. Its
+// lines come in one after the other (`data-line`, see styles.css); the frame around it, which
+// unfolds from the leader line, belongs to the scene.
 
 const card = css({
-  w: { base: '60', md: '72' },
+  w: { base: '64', md: '80' },
   bg: 'surface.raised/92',
   backdropFilter: 'blur(14px) saturate(1.2)',
   borderRadius: 'card',
@@ -20,52 +24,51 @@ const card = css({
   p: { base: '3.5', md: '4' },
   display: 'grid',
   gap: '3',
-  animation: 'cardIn 320ms token(easings.signal) backwards',
-  _motionReduce: { animation: 'none' },
 })
 
-const row = css({
-  display: 'grid',
-  gridTemplateColumns: '5.5rem 1fr',
-  gap: '2',
-  alignItems: 'baseline',
-  py: '1',
-  borderTopWidth: '1px',
-  borderColor: 'line',
-  animation: 'fadeUp 360ms token(easings.signal) backwards',
-  _motionReduce: { animation: 'none' },
+const mono = css({
+  fontFamily: 'mono',
+  fontSize: '2xs',
+  textTransform: 'uppercase',
+  letterSpacing: '0.06em',
 })
+
+const ruled = css({ borderTopWidth: '1px', borderColor: 'line', pt: '3' })
+
+/** The place of a line in the cascade. */
+const at = (i: number) => ({ '--i': i }) as CSSProperties
 
 export function PopupCard({
   item,
   detail,
   locale,
+  swap = false,
 }: {
   item: CatalogItem
   detail: ItemDetail | null
   locale: Locale
+  /** Replacing another product’s card as it glides over: its lines come in at once. */
+  swap?: boolean
 }) {
   const ranked = detail?.rank != null
   return (
-    <div className={card}>
+    <div className={card} data-swap={swap || undefined}>
       {/* Before any answer to rank on, a kept product has no rank or match to print. */}
       {(ranked || detail?.ruledOut) && (
         <div
+          data-line
+          style={at(0)}
           className={css({
             display: 'flex',
             alignItems: 'center',
             justifyContent: 'space-between',
             gap: '3',
-            fontFamily: 'mono',
-            fontSize: '2xs',
-            color: 'ink.faint',
-            textTransform: 'uppercase',
-            letterSpacing: '0.04em',
+            minH: '6',
           })}
         >
           {ranked ? (
             <>
-              <span className={css({ color: detail?.rank === 0 ? 'signal' : 'ink.muted' })}>
+              <span className={cx(mono, css({ color: detail?.rank === 0 ? 'signal' : 'ink' }))}>
                 {String((detail?.rank ?? 0) + 1).padStart(2, '0')}
               </span>
               {detail?.score != null && (
@@ -73,7 +76,7 @@ export function PopupCard({
               )}
             </>
           ) : (
-            <span>
+            <span className={cx(mono, css({ color: 'ink.muted' }))}>
               {detail?.excludedBy
                 ? `${m.ruledOutBy[locale]} · ${detail.excludedBy}`
                 : m.ruledOut[locale]}
@@ -82,7 +85,8 @@ export function PopupCard({
         </div>
       )}
 
-      <div className={css({ display: 'grid', gap: '1' })}>
+      <div data-line style={at(1)} className={css({ display: 'grid', gap: '1' })}>
+        <span className={cx(mono, css({ color: 'ink.muted' }))}>{item.brand.name}</span>
         <div
           className={css({
             display: 'flex',
@@ -99,51 +103,49 @@ export function PopupCard({
               lineHeight: '1.15',
             })}
           >
-            <span className={css({ color: 'ink.muted', fontWeight: '500' })}>
-              {item.brand.name}
-            </span>{' '}
             {item.name}
           </span>
-          <span className={css({ fontFamily: 'mono', fontSize: 'sm', flexShrink: '0' })}>
+          <span
+            className={css({
+              fontFamily: 'mono',
+              fontSize: 'sm',
+              flexShrink: '0',
+              fontVariantNumeric: 'tabular-nums',
+            })}
+          >
             {formatPrice(item.priceEur, locale)}
           </span>
         </div>
         {item.tagline && (
-          <p className={css({ fontSize: 'xs', color: 'ink.muted', lineHeight: '1.4' })}>
+          <p
+            className={css({
+              fontSize: 'xs',
+              color: 'ink.muted',
+              lineHeight: '1.4',
+              lineClamp: '2',
+            })}
+          >
             {item.tagline[locale]}
           </p>
         )}
       </div>
 
-      <dl className={css({ display: 'grid' })}>
-        {sheetSpecs(item, locale).map((spec, i) => (
-          <div key={spec.label} className={row} style={{ animationDelay: `${60 + i * 25}ms` }}>
-            <dt
-              className={css({
-                fontFamily: 'mono',
-                fontSize: '2xs',
-                color: 'ink.faint',
-                textTransform: 'uppercase',
-                letterSpacing: '0.04em',
-              })}
-            >
-              {spec.label}
-            </dt>
-            <dd className={css({ fontSize: 'xs', lineHeight: '1.35' })}>{spec.value}</dd>
-          </div>
-        ))}
-      </dl>
+      <div data-line style={at(2)} className={ruled}>
+        <KeySpecs item={item} locale={locale} />
+      </div>
 
       {/* The card follows the pointer; the product under it opens on a click. */}
       <div
+        data-line
+        style={at(3)}
         className={css({
           display: 'flex',
           alignItems: 'center',
           justifyContent: 'space-between',
           gap: '3',
-          pt: '2.5',
           borderTopWidth: '1px',
           borderColor: 'line',
+          pt: '2.5',
           fontSize: 'xs',
           fontWeight: '550',
           '@media (hover: none)': { display: 'none' },

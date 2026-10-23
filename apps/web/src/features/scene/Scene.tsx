@@ -1,12 +1,19 @@
 import { type CatalogItem, type Category, categories, type Locale } from '@choose/catalog'
-import { useEffect, useRef, useState, useSyncExternalStore } from 'react'
+import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { css } from 'styled-system/css'
 import { gsap } from '../motion/gsap'
-import { scene } from './controller'
+import { type FirstScreen, scene } from './controller'
 import { isCompact } from './geometry'
 import { markHydrated, readViewport } from './navigation'
 import { PopupCard } from './PopupCard'
-import { type Hit, SceneRenderer, sameHit, spriteResolution } from './renderer'
+import {
+  type Hit,
+  type Rect,
+  SceneRenderer,
+  type SceneTarget,
+  sameHit,
+  spriteResolution,
+} from './renderer'
 import { Drawings, Photos, photoBudget, type Shape } from './sprites'
 import { exposeStats, mark } from './stats'
 
@@ -22,15 +29,125 @@ type Drag = { id: number; x: number; y: number; t: number; vx: number; vy: numbe
 const TAP = 6
 const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v))
 
+/**
+ * The card waits this long once the pointer leaves its product (crossing the paper between two
+ * products, it glides to the next one instead of folding), then folds away in this long (ms).
+ */
+const POPUP_GRACE_MS = 120
+const POPUP_OUT_MS = 190
+/** How quickly the card catches up with its place (ms): it glides from one product to the next. */
+const POPUP_EASE_MS = 70
+
+const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect
+
+/** Which side of its product the card opens on. */
+type Side = 'right' | 'left' | 'below' | 'above'
+
+/** Where the card goes beside a product’s screen box, and where its leader line starts. */
+function placePopup(r: Rect, vw: number, vh: number, cw: number, ch: number) {
+  const gap = 36
+  const cy = r.y + r.h / 2
+  if (r.x + r.w + gap + cw <= vw - 12 || r.x - gap - cw >= 12) {
+    const right = r.x + r.w + gap + cw <= vw - 12
+    return {
+      side: (right ? 'right' : 'left') as Side,
+      x: right ? r.x + r.w + gap : r.x - gap - cw,
+      y: clamp(cy - 34, 76, vh - ch - 12),
+      ax: right ? r.x + r.w + 12 : r.x - 12,
+      ay: cy,
+    }
+  }
+  // No room beside it (a phone): above or below the product instead.
+  const below = r.y + r.h + gap + ch <= vh - 12
+  return {
+    side: (below ? 'below' : 'above') as Side,
+    x: clamp(r.x + r.w / 2 - cw / 2, 12, vw - cw - 12),
+    y: below ? r.y + r.h + gap : Math.max(76, r.y - gap - ch),
+    ax: r.x + r.w / 2,
+    ay: below ? r.y + r.h + 12 : r.y - 12,
+  }
+}
+
+/** Where the leader line meets the card, wherever the card is on its way. */
+function lineEnd(side: Side, x: number, y: number, cw: number, ch: number, ax: number, ay: number) {
+  if (side === 'right') return { x: x, y: clamp(ay, y + 18, y + ch - 18) }
+  if (side === 'left') return { x: x + cw, y: clamp(ay, y + 18, y + ch - 18) }
+  return { x: clamp(ax, x + 18, x + cw - 18), y: side === 'below' ? y : y + ch }
+}
+
+/** Which screen the scene shows: the home panels, or a category’s canvas. */
+const targetKey = (target: SceneTarget | null) =>
+  !target ? '' : target.mode === 'bands' ? 'bands' : target.category
+
+const hitKey = (hit: Hit) =>
+  `${hit.category}:${hit.slug}:${hit.spot}:${hit.slot}:${hit.kx}:${hit.ky}`
+
 export function Scene({ catalogs, locale }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<HTMLDivElement>(null)
   const dotRef = useRef<HTMLSpanElement>(null)
   const lineRef = useRef<SVGLineElement>(null)
+  const rendererRef = useRef<SceneRenderer | null>(null)
   const [hit, setHit] = useState<Hit | null>(null)
+  /**
+   * The card on screen: the product it shows, the opening it belongs to (a new opening plays the
+   * entrance; moving on to a neighbour glides instead), and whether it is folding away.
+   */
+  const [card, setCard] = useState<{
+    hit: Hit
+    opening: number
+    leaving: boolean
+    /** Moved on from another product of the same opening: its lines come in at once. */
+    swap: boolean
+  } | null>(null)
+  const cardState = useRef(card)
+  cardState.current = card
+  /** Where the card is drawn, eased towards its place, and on which side of its product. */
+  const placed = useRef({ x: 0, y: 0, side: 'right' as Side, at: 0 })
   // Re-render when the finder publishes new ranks, so an open popup stays current.
   useSyncExternalStore(scene.subscribe, scene.snapshot, () => 0)
+
+  useEffect(() => {
+    if (hit) {
+      setCard((prev) => {
+        const same = !!prev && !prev.leaving
+        return {
+          hit,
+          opening: same && prev ? prev.opening : (prev?.opening ?? 0) + 1,
+          leaving: false,
+          swap: same && !!prev && !sameHit(prev.hit, hit),
+        }
+      })
+      return
+    }
+    let gone: ReturnType<typeof setTimeout> | undefined
+    const fold = setTimeout(() => {
+      setCard((prev) => (prev ? { ...prev, leaving: true } : prev))
+      gone = setTimeout(() => setCard((prev) => (prev?.leaving ? null : prev)), POPUP_OUT_MS)
+    }, POPUP_GRACE_MS)
+    return () => {
+      clearTimeout(fold)
+      clearTimeout(gone)
+    }
+  }, [hit])
+
+  // A new opening is placed before it paints, so its entrance unfolds from the right side.
+  const opening = card && !card.leaving ? card.opening : null
+  useIsoLayoutEffect(() => {
+    if (opening == null) return
+    const renderer = rendererRef.current
+    const box = cardRef.current
+    const r = renderer?.focusRect()
+    if (!renderer || !box || !r) return
+    const { w: vw, h: vh } = renderer.viewport
+    const to = placePopup(r, vw, vh, box.offsetWidth, box.offsetHeight)
+    Object.assign(placed.current, { x: to.x, y: to.y, side: to.side, at: performance.now() })
+    box.style.transform = `translate3d(${to.x}px, ${to.y}px, 0)`
+    const frame = box.firstElementChild as HTMLElement | null
+    if (frame) frame.dataset.side = to.side
+    renderer.onFrame?.()
+  }, [opening])
 
   useEffect(() => markHydrated(), [])
 
@@ -48,6 +165,7 @@ export function Scene({ catalogs, locale }: Props) {
     const resolution = spriteResolution(readViewport(), dpr())
     const drawings = new Drawings(resolution)
     const renderer = new SceneRenderer(canvas, categories, drawings)
+    rendererRef.current = renderer
     mark('scene')
     const fit = () => {
       const vp = readViewport()
@@ -60,51 +178,40 @@ export function Scene({ catalogs, locale }: Props) {
     // ---- Popup placement, every frame: the product keeps drifting under it ------------------
     renderer.onFrame = () => {
       const root = overlayRef.current
+      if (!root) return
+      if (!cardState.current) {
+        if (root.style.visibility !== 'hidden') root.style.visibility = 'hidden'
+        return
+      }
       const box = cardRef.current
       const dot = dotRef.current
       const line = lineRef.current
-      if (!root || !box || !dot || !line) return
+      const frame = box?.firstElementChild as HTMLElement | null | undefined
       const r = renderer.focusRect()
-      if (!r || !box.firstElementChild) {
-        if (root.style.opacity !== '0') root.style.opacity = '0'
-        return
-      }
-      root.style.opacity = '1'
+      // Between two products, or folding away: everything stays where it was.
+      if (!box || !dot || !line || !frame || !r) return
+      root.style.visibility = 'visible'
       const { w: vw, h: vh } = renderer.viewport
       const cw = box.offsetWidth
       const ch = box.offsetHeight
-      const gap = 36
-      const cy = r.y + r.h / 2
-      let x: number
-      let y: number
-      let ax: number
-      let ay: number
-      let ex: number
-      let ey: number
-      if (r.x + r.w + gap + cw <= vw - 12 || r.x - gap - cw >= 12) {
-        const right = r.x + r.w + gap + cw <= vw - 12
-        x = right ? r.x + r.w + gap : r.x - gap - cw
-        y = clamp(cy - 34, 76, vh - ch - 12)
-        ax = right ? r.x + r.w + 12 : r.x - 12
-        ay = cy
-        ex = right ? x : x + cw
-        ey = clamp(cy, y + 18, y + ch - 18)
-      } else {
-        // No room beside it (a phone): above or below the product instead.
-        const below = r.y + r.h + gap + ch <= vh - 12
-        x = clamp(r.x + r.w / 2 - cw / 2, 12, vw - cw - 12)
-        y = below ? r.y + r.h + gap : Math.max(76, r.y - gap - ch)
-        ax = r.x + r.w / 2
-        ay = below ? r.y + r.h + 12 : r.y - 12
-        ex = clamp(ax, x + 18, x + cw - 18)
-        ey = below ? y : y + ch
+      const to = placePopup(r, vw, vh, cw, ch)
+      const p = placed.current
+      const now = performance.now()
+      const k = 1 - Math.exp(-Math.min(64, now - p.at) / POPUP_EASE_MS)
+      p.x += (to.x - p.x) * k
+      p.y += (to.y - p.y) * k
+      p.at = now
+      if (p.side !== to.side) {
+        p.side = to.side
+        frame.dataset.side = to.side
       }
-      box.style.transform = `translate3d(${x}px, ${y}px, 0)`
-      dot.style.transform = `translate3d(${ax - 4}px, ${ay - 4}px, 0)`
-      line.setAttribute('x1', String(ax))
-      line.setAttribute('y1', String(ay))
-      line.setAttribute('x2', String(ex))
-      line.setAttribute('y2', String(ey))
+      const end = lineEnd(p.side, p.x, p.y, cw, ch, to.ax, to.ay)
+      box.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`
+      dot.style.transform = `translate3d(${to.ax - 4}px, ${to.ay - 4}px, 0)`
+      line.setAttribute('x1', String(to.ax))
+      line.setAttribute('y1', String(to.ay))
+      line.setAttribute('x2', String(end.x))
+      line.setAttribute('y2', String(end.y))
     }
     gsap.ticker.add(renderer.tick)
 
@@ -126,39 +233,77 @@ export function Scene({ catalogs, locale }: Props) {
     const items = new Map(categories.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
     const askForPhotos = window.setInterval(() => {
       for (const [category, drawn] of renderer.takeDrawn()) {
-        for (const [slug, scale] of drawn) {
+        for (const [slug, { scale, distance }] of drawn) {
           const item = items.get(category)?.get(slug)
           const shape = shapes.get(category)?.get(slug)
-          if (item && shape) photos.see(category, item, shape, scale)
+          if (item && shape) photos.see(category, item, shape, scale, distance)
         }
       }
+      // Then the products about to come into view: their photos' bytes, fetched before they show.
+      for (const near of renderer.around()) {
+        const item = items.get(near.category)?.get(near.slug)
+        const shape = shapes.get(near.category)?.get(near.slug)
+        if (item && shape) photos.ahead(near.category, item, shape, near.scale, near.distance)
+      }
       photos.pump()
-    }, 250)
+    }, 150)
     const unexpose = exposeStats(() => ({ ...renderer.stats(), photoStore: photos.stats }))
 
     // ---- The first screen: asked for at once, and what the preloader waits for ---------------
-    const first = renderer.firstScreen()
-    for (const f of first) {
-      drawings.want(f.key)
-      const item = items.get(f.category)?.get(f.slug)
-      const shape = shapes.get(f.category)?.get(f.slug)
-      if (item && shape) photos.see(f.category, item, shape, f.scale)
-    }
-    drawings.pump()
-    photos.pump()
-    scene.provideFirstScreen(() => {
-      let drawn = 0
-      let withPhoto = 0
-      let photographed = 0
+    // Read again if the scene moves before the preloader lifts (the page may say where it is
+    // after the canvas exists): it waits for what will actually show.
+    let first = renderer.firstScreen()
+    let firstFor = targetKey(scene.current)
+    const askFirst = () => {
       for (const f of first) {
-        if (drawings.get(f.key)) drawn++
+        drawings.want(f.key)
+        const item = items.get(f.category)?.get(f.slug)
+        const shape = shapes.get(f.category)?.get(f.slug)
+        if (item && shape) photos.see(f.category, item, shape, f.scale)
+      }
+      drawings.pump()
+      photos.pump()
+    }
+    askFirst()
+    scene.provideFirstScreen(() => {
+      const key = targetKey(scene.current)
+      if (key !== firstFor) {
+        firstFor = key
+        first = renderer.firstScreen()
+        askFirst()
+      }
+      const tally = new Map<
+        Category,
+        { drawn: number; all: number; photographed: number; withPhoto: number }
+      >()
+      for (const f of first) {
+        let t = tally.get(f.category)
+        if (!t) {
+          t = { drawn: 0, all: 0, photographed: 0, withPhoto: 0 }
+          tally.set(f.category, t)
+        }
+        t.all++
+        if (drawings.get(f.key)) t.drawn++
         if (!items.get(f.category)?.get(f.slug)?.photo) continue
-        withPhoto++
-        if (photos.settled(f.category, f.slug)) photographed++
+        t.withPhoto++
+        if (photos.settled(f.category, f.slug)) t.photographed++
+      }
+      const sum = { drawn: 0, all: 0, photographed: 0, withPhoto: 0 }
+      const byCategory: FirstScreen['byCategory'] = {}
+      for (const [category, t] of tally) {
+        byCategory[category] = {
+          drawings: t.all ? t.drawn / t.all : 1,
+          photos: t.withPhoto ? t.photographed / t.withPhoto : 1,
+        }
+        sum.drawn += t.drawn
+        sum.all += t.all
+        sum.photographed += t.photographed
+        sum.withPhoto += t.withPhoto
       }
       return {
-        drawings: first.length ? drawn / first.length : 1,
-        photos: withPhoto ? photographed / withPhoto : 1,
+        drawings: sum.all ? sum.drawn / sum.all : 1,
+        photos: sum.withPhoto ? sum.photographed / sum.withPhoto : 1,
+        byCategory,
       }
     })
 
@@ -252,10 +397,13 @@ export function Scene({ catalogs, locale }: Props) {
       gsap.ticker.remove(renderer.tick)
       detach()
       renderer.dispose()
+      rendererRef.current = null
     }
   }, [catalogs])
 
-  const item = hit ? catalogs[hit.category].find((i) => i.slug === hit.slug) : undefined
+  const shown = card?.hit
+  const item = shown ? catalogs[shown.category].find((i) => i.slug === shown.slug) : undefined
+  const state = card?.leaving ? 'out' : 'in'
 
   return (
     <>
@@ -275,48 +423,62 @@ export function Scene({ catalogs, locale }: Props) {
           '&[data-dragging]': { cursor: 'grabbing' },
         })}
       />
+      {/* The popup: a leader line from the product to a card beside it. Its parts unfold in CSS
+          (styles.css, data-popup-*), placed here every frame. */}
       <div
         ref={overlayRef}
         aria-hidden
-        className={css({
-          position: 'fixed',
-          inset: '0',
-          zIndex: '15',
-          pointerEvents: 'none',
-          transition: 'opacity 160ms',
-        })}
-        style={{ opacity: 0 }}
+        className={css({ position: 'fixed', inset: '0', zIndex: '15', pointerEvents: 'none' })}
+        style={{ visibility: 'hidden' }}
       >
         <svg
           aria-hidden
           className={css({ position: 'absolute', inset: '0', w: '100%', h: '100%' })}
         >
-          <line ref={lineRef} stroke="#141414" strokeWidth={1} />
+          {card && (
+            <line
+              key={card.opening}
+              ref={lineRef}
+              data-popup-leader
+              data-state={state}
+              pathLength={1}
+              stroke="#141414"
+              strokeWidth={1}
+            />
+          )}
         </svg>
-        <span
-          ref={dotRef}
-          className={css({
-            position: 'absolute',
-            top: '0',
-            left: '0',
-            w: '2',
-            h: '2',
-            borderRadius: 'full',
-            bg: 'signal',
-            boxShadow: '0 0 0 3px rgba(255, 90, 31, 0.2)',
-          })}
-        />
+        {card && (
+          <span
+            key={card.opening}
+            ref={dotRef}
+            data-popup-dot
+            data-state={state}
+            className={css({
+              position: 'absolute',
+              top: '0',
+              left: '0',
+              w: '2',
+              h: '2',
+              borderRadius: 'full',
+              bg: 'signal',
+              boxShadow: '0 0 0 3px rgba(255, 90, 31, 0.2)',
+            })}
+          />
+        )}
         <div
           ref={cardRef}
           className={css({ position: 'absolute', top: '0', left: '0', willChange: 'transform' })}
         >
-          {hit && item && (
-            <PopupCard
-              key={`${hit.slug}:${hit.spot}:${hit.slot}:${hit.kx}:${hit.ky}`}
-              item={item}
-              detail={scene.detailOf(hit.category, hit.slug)}
-              locale={locale}
-            />
+          {card && item && (
+            <div key={card.opening} data-popup-frame data-state={state}>
+              <PopupCard
+                swap={card.swap}
+                key={hitKey(card.hit)}
+                item={item}
+                detail={scene.detailOf(card.hit.category, card.hit.slug)}
+                locale={locale}
+              />
+            </div>
           )}
         </div>
       </div>
