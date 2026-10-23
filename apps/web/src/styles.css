@@ -91,14 +91,6 @@ html[data-loading] [data-preloader] *::after {
   border-radius: 22px;
   overflow: hidden;
 }
-@media (max-width: 47.99rem) {
-  [data-preloader] [data-split] {
-    --top: 60px;
-    --side: 8px;
-    --bottom: 8px;
-    --gutter: 8px;
-  }
-}
 [data-preloader] [data-slat] {
   position: absolute;
   top: 0;
@@ -137,6 +129,38 @@ html[data-loading] [data-preloader] *::after {
   right: var(--ext);
 }
 
+/* On a phone, the home's rows (see « Home page on a phone » below): one under the other below
+   the title's room, each lifting off its row in turn. */
+@media (max-width: 47.99rem) {
+  [data-preloader] [data-split] {
+    top: var(--rows-top);
+    right: 8px;
+    bottom: auto;
+    left: 8px;
+    height: calc(var(--n) * (var(--rows-band) + 8px) - 8px);
+    border-radius: 0;
+    overflow: visible;
+  }
+  [data-preloader] [data-slat],
+  [data-preloader] [data-slat]:first-child,
+  [data-preloader] [data-slat]:last-child,
+  [data-preloader] [data-slat]:only-child {
+    top: calc(var(--i) * (var(--rows-band) + 8px));
+    bottom: auto;
+    left: 0;
+    width: 100%;
+    height: var(--rows-band);
+    transform: none;
+  }
+  [data-preloader] [data-slat-body],
+  [data-preloader] [data-slat]:first-child [data-slat-body],
+  [data-preloader] [data-slat]:last-child [data-slat-body] {
+    right: 0;
+    left: 0;
+    transform: none;
+  }
+}
+
 /* The count, before the page wakes up: 000 → 050 % alongside the keys. */
 @property --pre {
   syntax: "<integer>";
@@ -162,6 +186,33 @@ html[data-loading] [data-preloader] *::after {
   [data-preloader] [data-unit][data-css],
   [data-preloader] [data-count]::after {
     animation: none !important;
+  }
+}
+
+/* ---- Home page on a phone (routes/$lang/index.tsx, features/scene/geometry.ts) ----------------- */
+
+/* The rows' numbers as `rowsFrame` works them out, for the server render and the preloader: the
+   page sets the exact ones once it knows the viewport. The title's room under the header, then
+   rows sharing the rest of the first screen (three at most), within bounds; the page is as tall
+   as all of them. `--n` is the number of rows, set where they are drawn. */
+@media (max-width: 47.99rem) {
+  [data-home],
+  [data-preloader] [data-split] {
+    --rows-hero: clamp(180px, 26svh, 240px);
+    --rows-top: calc(64px + var(--rows-hero));
+    --rows-first: min(var(--n), 3);
+    --rows-band: clamp(
+      152px,
+      calc(
+        (100svh - var(--rows-top) - 8px - 8px * (var(--rows-first) - 1)) /
+          var(--rows-first)
+      ),
+      220px
+    );
+    --rows-height: calc(var(--rows-top) + var(--n) * (var(--rows-band) + 8px));
+  }
+  [data-home] {
+    height: calc(var(--rows-height) + env(safe-area-inset-bottom));
   }
 }
 
@@ -373,8 +424,10 @@ html[data-loading] [data-preloader] *::after {
 [data-pictured][data-no-count] [data-example] {
   bottom: 12px;
 }
-[data-pictured]:hover [data-example] {
-  transform: translateY(-2px) scale(1.04);
+@media (hover: hover) {
+  [data-pictured]:hover [data-example] {
+    transform: translateY(-2px) scale(1.04);
+  }
 }
 [data-pictured] [data-text] {
   padding-right: calc(min(34cqw, 7rem) + 0.5rem);

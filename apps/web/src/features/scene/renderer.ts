@@ -3,6 +3,7 @@ import { radii } from '~/styles/radii'
 import { gsap } from '../motion/gsap'
 import {
   bandQuads,
+  bandsInRows,
   boundsOf,
   centroid,
   frameOf,
@@ -93,7 +94,7 @@ const CELL: Record<Category, { w: number; h: number }> = {
 const JITTER: Record<Category, number> = { keyboard: 0.3, monitor: 0.3, mouse: 0.22 }
 /** A small catalogue is laid out more than once per tile, so its repetition is far apart. */
 const MIN_SLOTS = 50
-const ZOOM = { band: 0.5, canvas: 1, bandCompact: 0.4, canvasCompact: 0.56 }
+const ZOOM = { band: 0.5, canvas: 1, bandCompact: 0.4, bandRows: 0.42, canvasCompact: 0.56 }
 /** On-screen drift in px/s: along the panel on the home page, a calmer diagonal on the canvas. */
 const SPEED = { band: 36, canvas: 18 }
 /** Direction products travel on the canvas: from the top-right corner towards the bottom-left. */
@@ -359,6 +360,11 @@ type Band = {
   veil: number
   /** The panel's own paper and dots; off while its products appear over another category. */
   ground: number
+  /**
+   * Its world moves with the page as the home's rows scroll. Off once the panel has opened into
+   * the canvas: the scroll is then part of its camera.
+   */
+  scrolls: boolean
 }
 
 type Transform = { scale: number; ox: number; oy: number }
@@ -381,7 +387,18 @@ function sameKept(a: Set<string> | null, b: Set<string> | null, total: number) {
 export class SceneRenderer {
   private readonly ctx: CanvasRenderingContext2D
   private vp: Viewport = { w: 1, h: 1 }
+  /**
+   * How tall the canvas paints (px): the largest viewport, taller than the layout's on a phone
+   * whose toolbar can fold away, so the canvas never has to be resized as it does.
+   */
+  private paintH = 1
   private dpr = 1
+  /** The home's panels are rows, in page px, that move as the page scrolls (a phone). */
+  private rows = false
+  /** How far the home page is scrolled (px): read every frame while the home shows its rows. */
+  private scroll = 0
+  /** The home page's layer (its title, links and labels), moved with the rows in the same frame. */
+  private homeLayer: HTMLElement | null = null
   private quads: Quad[] = []
   private readonly bands: Band[]
   /** Panels grown over the others, last on top. */
@@ -440,6 +457,7 @@ export class SceneRenderer {
       hover: 0,
       veil: 0,
       ground: 1,
+      scrolls: true,
     }))
   }
 
@@ -449,11 +467,20 @@ export class SceneRenderer {
     return this.vp
   }
 
-  resize(w: number, h: number, dpr: number) {
+  /**
+   * The layout viewport (`w` × `h`), and how tall the canvas paints (`paintH`, at least `h`). A
+   * resize that changes nothing (a phone's toolbar folding away) leaves the canvas alone: resetting
+   * its size would clear it for a frame.
+   */
+  resize(w: number, h: number, dpr: number, paintH = h) {
+    const paint = Math.max(h, paintH)
+    if (w === this.vp.w && h === this.vp.h && dpr === this.dpr && paint === this.paintH) return
     this.vp = { w, h }
+    this.paintH = paint
     this.dpr = dpr
+    this.rows = bandsInRows(this.vp)
     this.canvas.width = Math.round(w * dpr)
-    this.canvas.height = Math.round(h * dpr)
+    this.canvas.height = Math.round(paint * dpr)
     this.quads = bandQuads(this.vp, this.bands.length)
     this.dots = this.makeDots()
     this.ripple = { x: w / 2, y: h * 0.8 }
@@ -462,6 +489,21 @@ export class SceneRenderer {
       band.world.zoom = this.zoomFor(band)
       band.world.angle = this.angleFor(band)
     }
+  }
+
+  /**
+   * The home page's layer of title, links and labels (null: gone). While the home shows its rows,
+   * the scene reads the page's scroll once per frame and moves the rows and this layer by it in the
+   * same frame, so a label never lags behind its row, even during a fling.
+   */
+  setHomeLayer(layer: HTMLElement | null) {
+    this.homeLayer = layer
+    this.applyScroll()
+  }
+
+  /** How far the home page was scrolled when the scene last followed it (px): it comes back there. */
+  get homeScroll() {
+    return this.scroll
   }
 
   /** A category's products, from their shapes: laid out at once, drawn as their bitmaps come. */
@@ -586,12 +628,14 @@ export class SceneRenderer {
         out.set(id, { category, slug: item.slug, key: item.key, scale })
     }
     for (const band of this.bands) {
-      const base = this.quads[band.index]
+      const base = this.slotOf(band)
       if (!base || (this.target.mode === 'canvas' && !this.isOpen(band))) continue
       const world = band.world
       for (const s of world.spot) if (!s.leaving) add(band.category, s.item, s.scale)
       if (!world.slots.length || world.spot.some((s) => !s.leaving)) continue
-      const b = boundsOf(this.target.mode === 'canvas' ? fullQuad(this.vp) : base)
+      const b = boundsOf(this.target.mode === 'canvas' ? this.full() : base)
+      // A row further down the page is not on the first screen: the preloader does not wait for it.
+      if (b.y0 >= this.vp.h || b.y1 <= 0) continue
       const t = this.transformOf(band)
       const { w: tw, h: th } = world.tile
       world.slots.forEach((slot) => {
@@ -701,6 +745,8 @@ export class SceneRenderer {
       other.ground = 1
       this.rest(other)
     }
+    // A canvas from the start: its world has no page to move with.
+    band.scrolls = false
     if (!this.reduce) {
       gsap.from(band.world, { zoom: band.world.zoom * 1.08, duration: 1.6, ease: 'expo.out' })
     }
@@ -715,7 +761,7 @@ export class SceneRenderer {
   /** The clicked panel grows over the others while its world zooms in around the click. */
   private open(category: Category, focal: Pt | undefined) {
     const band = this.band(category)
-    const base = band && this.quads[band.index]
+    const base = band && this.slotOf(band)
     if (!band || !base) return 0
     const world = band.world
     const below = this.stack.filter((c) => c !== category)
@@ -764,7 +810,8 @@ export class SceneRenderer {
   /** The open panel shrinks back into its slot, revealing the others again. */
   private close(category: Category) {
     const band = this.band(category)
-    const base = band && this.quads[band.index]
+    // Its row where the home was left: the page comes back to that scroll (scene.homeScroll).
+    const base = band && this.slotOf(band)
     if (!band || !base) return this.introBands()
     const world = band.world
     gsap.killTweensOf(world, MOTION)
@@ -781,6 +828,8 @@ export class SceneRenderer {
     const settle = () => {
       world.anchor = null
       this.stack = []
+      // Back in its row: its world moves with the page again.
+      this.unfoldScroll(band)
     }
     const zoom = this.zoomFor(band)
     const angle = this.angleFor(band)
@@ -825,7 +874,7 @@ export class SceneRenderer {
     const pending = band.world.pending
     band.world.pending = null
     if (pending) this.layOut(band, pending.kept)
-    Object.assign(band, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 0 })
+    Object.assign(band, { enter: 1, expand: 1, hover: 0, veil: 0, ground: 0, scrolls: false })
     // Same camera, zoom and drift as the old world: the dots run on without a seam.
     Object.assign(band.world, {
       zoom: old.world.zoom,
@@ -1702,6 +1751,9 @@ export class SceneRenderer {
     this.dragVelocity.x += (this.push.x / Math.max(dt, 0.001) - this.dragVelocity.x) * k
     this.dragVelocity.y += (this.push.y / Math.max(dt, 0.001) - this.dragVelocity.y) * k
     this.push = { x: 0, y: 0 }
+    // The home's rows move with the page: its scroll, read once here, places the rows this frame
+    // draws and the page's layer alike. Elsewhere it stays where the home was left.
+    if (this.homeLayer && this.rows && this.target.mode === 'bands') this.scroll = window.scrollY
     for (const band of this.bands) {
       this.step(band, dt)
       this.settle(band, now)
@@ -1711,6 +1763,7 @@ export class SceneRenderer {
     this.onScreen = 0
     this.onScreenPhotos = 0
     this.draw(now)
+    this.applyScroll()
     this.lastFrame = {
       products: this.products,
       plates: this.plates,
@@ -1782,7 +1835,7 @@ export class SceneRenderer {
   private draw(now: number) {
     const { ctx, vp, dpr } = this
     ctx.setTransform(dpr, 0, 0, dpr, 0, 0)
-    ctx.clearRect(0, 0, vp.w, vp.h)
+    ctx.clearRect(0, 0, vp.w, this.paintH)
     const stacked = this.stack.flatMap((c) => this.band(c) ?? [])
     const order = [...this.bands.filter((b) => !stacked.includes(b)), ...stacked]
     // Nothing under a panel that already covers the screen needs drawing.
@@ -1795,16 +1848,41 @@ export class SceneRenderer {
 
   /** The shape a panel covers on screen now: its slot, grown towards the whole screen, lifted. */
   private quadOf(band: Band): Quad {
-    const base = this.quads[band.index] ?? fullQuad(this.vp)
-    const quad = band.expand > 0 ? lerpQuad(base, fullQuad(this.vp), band.expand) : base
+    const full = this.full()
+    const base = this.slotOf(band) ?? full
+    const quad = band.expand > 0 ? lerpQuad(base, full, band.expand) : base
     const lift = (1 - band.enter) * 56
     return lift ? (quad.map((p) => ({ x: p.x, y: p.y + lift })) as Quad) : quad
+  }
+
+  /** A panel's slot on screen: its place on the home page, moved by the page's scroll (rows). */
+  private slotOf(band: Band): Quad | null {
+    const base = this.quads[band.index]
+    if (!base) return null
+    const shift = this.rows ? this.scroll : 0
+    return shift ? (base.map((p) => ({ x: p.x, y: p.y - shift })) as Quad) : base
+  }
+
+  /** The whole canvas, down to the bottom of the largest viewport. */
+  private full(): Quad {
+    return fullQuad({ w: this.vp.w, h: this.paintH })
+  }
+
+  /** Moves the home page's layer by the scroll the rows were drawn with. */
+  private applyScroll() {
+    const layer = this.homeLayer
+    if (!layer) return
+    const value = `translate3d(0, ${-this.scroll}px, 0)`
+    if (layer.style.transform !== value) layer.style.transform = value
   }
 
   private drawBand(band: Band, now: number) {
     const { ctx, dpr } = this
     if (!this.quads[band.index] || band.enter <= 0) return
     const quad = this.quadOf(band)
+    // A row scrolled out of sight is not drawn.
+    const box = boundsOf(quad)
+    if (box.y1 < 0 || box.y0 > this.paintH) return
     const path = new Path2D()
     traceRounded(path, quad, frameOf(this.vp).radius * (1 - band.expand))
     const t = this.transformOf(band)
@@ -2200,6 +2278,7 @@ export class SceneRenderer {
 
   private zoomFor(band: Band) {
     if (this.isOpen(band)) return this.zoomForCanvas()
+    if (this.rows) return ZOOM.bandRows
     return isCompact(this.vp) ? ZOOM.bandCompact : ZOOM.band
   }
 
@@ -2207,9 +2286,14 @@ export class SceneRenderer {
     return isCompact(this.vp) ? ZOOM.canvasCompact : ZOOM.canvas
   }
 
-  /** Along the panel, downwards: the direction of its tilted dividers. */
+  /**
+   * Along the panel: downwards, the direction of its tilted dividers; across a row, every other
+   * row the other way.
+   */
   private angleFor(band: Band) {
-    return this.isOpen(band) ? CANVAS_ANGLE : Math.PI / 2 + tiltFor(this.vp, this.bands.length)
+    if (this.isOpen(band)) return CANVAS_ANGLE
+    if (this.rows) return band.index % 2 ? 0 : Math.PI
+    return Math.PI / 2 + tiltFor(this.vp, this.bands.length)
   }
 
   /** A panel back at rest: home zoom, drifting along its tilt, every product on its field. */
@@ -2234,17 +2318,22 @@ export class SceneRenderer {
       entered: -1,
     })
     world.glides.clear()
+    // Back in its row (where it is out of sight), its world moves with the page again.
+    band.scrolls = true
     const now = performance.now()
     for (const item of world.items) aim(item.field, 1, now, 0)
   }
 
-  /** World → screen: the camera, then the hover zoom around the panel's centre. */
+  /**
+   * World → screen: the camera, then the hover zoom around the panel's centre. A row's world also
+   * moves with the page, as the row does.
+   */
   private transformOf(band: Band): Transform {
     const world = band.world
     const cx = this.vp.w / 2
-    const cy = this.vp.h / 2
+    const cy = this.vp.h / 2 - (band.scrolls && this.rows ? this.scroll : 0)
     const k = 1 + HOVER_ZOOM * band.hover
-    const pivot = centroid(this.quads[band.index] ?? fullQuad(this.vp))
+    const pivot = centroid(this.slotOf(band) ?? this.full())
     return {
       scale: world.zoom * k,
       ox: pivot.x + (cx - world.cam.x * world.zoom - pivot.x) * k,
@@ -2257,13 +2346,24 @@ export class SceneRenderer {
     return { x: (p.x - t.ox) / t.scale, y: (p.y - t.oy) / t.scale }
   }
 
-  /** Bakes the hover zoom into the camera, so a panel can open without a jump. */
+  /**
+   * Bakes the hover zoom and the page's scroll into the camera, so a panel can open without a
+   * jump: from then on its world no longer moves with the page.
+   */
   private foldHover(band: Band) {
-    if (!band.hover) return
+    if (!band.hover && !band.scrolls) return
     const t = this.transformOf(band)
     band.world.zoom = t.scale
     band.world.cam = { x: (this.vp.w / 2 - t.ox) / t.scale, y: (this.vp.h / 2 - t.oy) / t.scale }
     band.hover = 0
+    band.scrolls = false
+  }
+
+  /** Gives the page's scroll back to a panel folded into its row, without a jump. */
+  private unfoldScroll(band: Band) {
+    if (band.scrolls) return
+    band.scrolls = true
+    if (this.rows && this.scroll) band.world.cam.y -= this.scroll / band.world.zoom
   }
 
   private rippleDelay(x: number, y: number) {

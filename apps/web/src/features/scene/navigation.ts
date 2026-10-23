@@ -102,7 +102,9 @@ export function useSceneNavigation() {
       const mine = ++ticket
       void runPageExit(kind).then(() => {
         if (mine !== ticket) return
-        if (!category) return navigate({ to: '/$lang', params: { lang: locale } })
+        // The home page restores the scroll it was left at: its row folds back there.
+        if (!category)
+          return navigate({ to: '/$lang', params: { lang: locale }, resetScroll: false })
         return navigate({
           to: '/$lang/$category',
           params: { lang: locale, category: categorySlugs[category][locale] },
@@ -143,7 +145,12 @@ export function useArrival(target: SceneTarget): Arrival {
 export function useViewport(): Viewport | null {
   const [viewport, setViewport] = useState<Viewport | null>(null)
   useIsoLayoutEffect(() => {
-    const fit = () => setViewport(readViewport())
+    // A phone's toolbar folding away fires resize events that change nothing here: no re-render.
+    const fit = () =>
+      setViewport((prev) => {
+        const next = readViewport()
+        return prev && prev.w === next.w && prev.h === next.h ? prev : next
+      })
     fit()
     window.addEventListener('resize', fit)
     return () => window.removeEventListener('resize', fit)

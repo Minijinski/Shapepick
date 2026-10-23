@@ -308,10 +308,15 @@ export function Preloader({
             >
               <div data-slat-body>
                 <div data-device className={device}>
-                  <div className={cx(stage, css({ h: 'min(30vh, 13rem)' }))}>
+                  <div
+                    className={cx(
+                      stage,
+                      css({ gridArea: 'art', h: { base: '100%', md: 'min(30vh, 13rem)' } }),
+                    )}
+                  >
                     <Art ink={inkOf(units)} className={art} />
                   </div>
-                  <div className={meta}>
+                  <div className={cx(meta, css({ gridArea: 'meta' }))}>
                     <span>
                       <span className={css({ color: 'signal' })}>
                         {String(i + 1).padStart(2, '0')}
@@ -357,10 +362,28 @@ const plate = css({
   w: 'min(30rem, 78vw)',
 })
 
-/** A device in its panel: as wide as the panel allows, never wider than a drawing needs. */
+/**
+ * A device in its panel: as wide as the panel allows, never wider than a drawing needs. In a
+ * phone's row, the drawing at the right and its count at the left, where the row's label goes.
+ */
 const device = css({
+  position: 'absolute',
+  inset: '0',
   display: 'grid',
-  gridTemplateColumns: 'minmax(0, 1fr)',
+  gridTemplateColumns: 'minmax(0, 1fr) minmax(0, 50%)',
+  gridTemplateRows: 'minmax(0, 1fr)',
+  gridTemplateAreas: '"meta art"',
+  alignItems: 'end',
   gap: '3',
-  w: 'min(76%, 22rem)',
+  p: '4',
+  md: {
+    position: 'static',
+    inset: 'auto',
+    gridTemplateColumns: 'minmax(0, 1fr)',
+    gridTemplateRows: 'auto',
+    gridTemplateAreas: '"art" "meta"',
+    alignItems: 'normal',
+    w: 'min(76%, 22rem)',
+    p: '0',
+  },
 })

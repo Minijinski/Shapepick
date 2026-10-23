@@ -58,6 +58,7 @@ class SceneController {
   private readonly openers = new Set<(category: Category, slug: string) => void>()
   private version = 0
   private firstScreen: (() => FirstScreen) | null = null
+  private homeLayer: HTMLElement | null = null
 
   attach(renderer: SceneRenderer) {
     this.renderer = renderer
@@ -65,6 +66,7 @@ class SceneController {
     for (const [category, targets] of this.targets) renderer.setTargets(category, targets)
     renderer.setStage(this.stage)
     renderer.setPickable(this.pickable)
+    renderer.setHomeLayer(this.homeLayer)
     if (this.target) this.settleIn(renderer.go(this.target, { intro: true }))
     return () => {
       if (this.renderer === renderer) this.renderer = null
@@ -160,6 +162,22 @@ class SceneController {
 
   hoverBand(category: Category | null) {
     this.renderer?.hoverBand(category)
+  }
+
+  // ---- The home page's rows on a phone -----------------------------------------------------------
+
+  /**
+   * The home page's layer of title, links and labels (null: gone): while the home shows its rows,
+   * the scene moves it with the page's scroll, in the same frame as the rows it draws.
+   */
+  followHome(layer: HTMLElement | null) {
+    this.homeLayer = layer
+    this.renderer?.setHomeLayer(layer)
+  }
+
+  /** How far the home page was scrolled when it was left (px): it comes back there. */
+  homeScroll() {
+    return this.renderer?.homeScroll ?? 0
   }
 
   /** Whether the products on the canvas take the pointer (off while the results cover it). */

@@ -14,6 +14,37 @@ const TILT = (16 * Math.PI) / 180
 
 export const isCompact = (vp: Viewport) => vp.w < 768
 
+/**
+ * On a phone the home's panels are rows, one under the other below the title, and the page
+ * scrolls: slats a third of a phone wide leave no room for a name or for the title above them.
+ */
+export const bandsInRows = (vp: Viewport) => isCompact(vp)
+
+/** The header's height, and the side margin, gap between rows and bottom margin of the rows (px). */
+const ROWS = { header: 64, side: 8, gutter: 8, bottom: 8 }
+
+/**
+ * A phone's home, in page px: the title's room under the header, then one row per panel. The
+ * first three rows share the rest of the first screen, within bounds; more rows scroll into view.
+ * styles.css repeats these numbers for the server render and the preloader (`--rows-*`).
+ */
+export function rowsFrame(vp: Viewport, count: number) {
+  const hero = Math.min(240, Math.max(180, vp.h * 0.26))
+  const top = ROWS.header + hero
+  const first = Math.max(1, Math.min(count, 3))
+  const room = (vp.h - top - ROWS.bottom - ROWS.gutter * (first - 1)) / first
+  const band = Math.min(220, Math.max(152, room))
+  return {
+    hero,
+    top,
+    band,
+    side: ROWS.side,
+    gutter: ROWS.gutter,
+    /** The page's scrollable height. */
+    height: top + count * band + Math.max(0, count - 1) * ROWS.gutter + ROWS.bottom,
+  }
+}
+
 /** The paper margin around the panels: header room on top, a thin frame elsewhere. */
 export function frameOf(vp: Viewport) {
   const compact = isCompact(vp)
@@ -27,8 +58,9 @@ export function frameOf(vp: Viewport) {
   }
 }
 
-/** Narrow panels get a gentler slant so they never fold into slivers. */
+/** Narrow panels get a gentler slant so they never fold into slivers; rows stand straight. */
 export function tiltFor(vp: Viewport, count: number) {
+  if (bandsInRows(vp)) return 0
   const f = frameOf(vp)
   const width = (vp.w - 2 * f.side) / Math.max(count, 1)
   const half = (vp.h - f.top - f.bottom) / 2
@@ -37,9 +69,23 @@ export function tiltFor(vp: Viewport, count: number) {
 
 /**
  * One panel per category. The frame's outer edges stay vertical and the dividers between panels
- * lean right at the top, so the panels read as tilted slats inside a straight frame.
+ * lean right at the top, so the panels read as tilted slats inside a straight frame. On a phone,
+ * straight rows under the title instead, in page px (the scene shifts them as the page scrolls).
  */
 export function bandQuads(vp: Viewport, count: number): Quad[] {
+  if (bandsInRows(vp)) {
+    const r = rowsFrame(vp, count)
+    return Array.from({ length: count }, (_, i) => {
+      const y0 = r.top + i * (r.band + r.gutter)
+      const y1 = y0 + r.band
+      return [
+        { x: r.side, y: y0 },
+        { x: vp.w - r.side, y: y0 },
+        { x: vp.w - r.side, y: y1 },
+        { x: r.side, y: y1 },
+      ] as Quad
+    })
+  }
   const f = frameOf(vp)
   const top = f.top
   const bottom = vp.h - f.bottom

@@ -181,9 +181,11 @@ export function Scene({ catalogs, shown, locale }: Props) {
     const renderer = new SceneRenderer(canvas, shown, drawings)
     rendererRef.current = renderer
     mark('scene')
+    // The layout is the viewport's; the canvas paints down to the bottom of the largest one (its
+    // CSS height, 100lvh), so a phone's toolbar folding away as the home scrolls never resizes it.
     const fit = () => {
       const vp = readViewport()
-      renderer.resize(vp.w, vp.h, dpr())
+      renderer.resize(vp.w, vp.h, dpr(), canvas.clientHeight)
     }
     fit()
     window.addEventListener('resize', fit)
@@ -383,7 +385,8 @@ export function Scene({ catalogs, shown, locale }: Props) {
       setHit(null)
     }
     const down = (e: PointerEvent) => {
-      if (e.button !== 0) return
+      // On the home page the canvas only shows the panels: a finger on it scrolls the page.
+      if (e.button !== 0 || canvas.dataset.mode !== 'canvas') return
       forget()
       drag = {
         id: e.pointerId,
@@ -461,6 +464,8 @@ export function Scene({ catalogs, shown, locale }: Props) {
       if (!drag) show(null)
     }
     const wheel = (e: WheelEvent) => {
+      // The home page scrolls under a wheel; only a canvas takes it.
+      if (canvas.dataset.mode !== 'canvas') return
       e.preventDefault()
       const unit = e.deltaMode === 1 ? 16 : e.deltaMode === 2 ? renderer.viewport.h : 1
       renderer.dragBy(-e.deltaX * unit, -e.deltaY * unit)
@@ -507,11 +512,15 @@ export function Scene({ catalogs, shown, locale }: Props) {
         aria-hidden
         className={css({
           position: 'fixed',
-          inset: '0',
+          top: '0',
+          left: '0',
           w: '100%',
-          h: '100%',
+          // The largest viewport: still covering the screen once a phone's toolbar folds away.
+          h: '100lvh',
           zIndex: '0',
+          // On a canvas, a finger browses it; on the home page, it scrolls the page.
           touchAction: 'none',
+          '&[data-mode=bands]': { touchAction: 'pan-y pinch-zoom' },
           userSelect: 'none',
           '&[data-mode=canvas]': { cursor: 'grab' },
           '&[data-mode=canvas][data-hover]': { cursor: 'pointer' },
