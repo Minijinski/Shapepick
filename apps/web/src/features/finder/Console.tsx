@@ -6,7 +6,14 @@ import {
   type Locale,
   readChoice,
 } from "@choose/catalog";
-import { useId, useLayoutEffect, useRef, useState } from "react";
+import {
+  type CSSProperties,
+  type ReactNode,
+  useId,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { css, cx } from "styled-system/css";
 import { button, optionTile } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
@@ -14,6 +21,7 @@ import { gsap, prefersReducedMotion, SplitText, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
 import { BudgetControl } from "./BudgetControl";
 import { useDockHeight } from "./DockPanel";
+import { HelpBubble, plainHelp } from "./HelpBubble";
 import { hasVisual, OptionVisual } from "./OptionVisual";
 import { type Finder, toggled } from "./useFinder";
 
@@ -22,9 +30,11 @@ import { type Finder, toggled } from "./useFinder";
 //
 // The console takes the height of its question: same header and footer for every question, tiles
 // of one height in between (a long list scrolls past a ceiling), the budget's histogram at a fixed
-// height. The panel eases from one height to the next, growing or shrinking upwards, so the footer
-// and its buttons never move under the visitor's pointer. Each tile says in a few words what its
-// option means; the question's full explanation waits behind the help button.
+// height. The tiles share the width in rows of (nearly) equal length; "No preference" is no tile
+// but the footer's button, which turns into "Continue" once a tile is picked. The panel eases from
+// one height to the next, growing or shrinking upwards, so the footer and its buttons never move
+// under the visitor's pointer. Each tile says in a few words what its option means; the question's
+// full explanation waits behind the help button, in a bubble above the console.
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
@@ -51,6 +61,7 @@ const body = css({
  * The tiles' scroll box. A div rather than the fieldset itself, which does not clip what
  * overflows it. The padding is room for what overhangs a tile (the tick, the focus ring), which
  * the scroll box would otherwise cut; the negative margin keeps the tiles aligned with the header.
+ * While the tiles rise into place they overflow it for a moment: it shows no scrollbar meanwhile.
  */
 const tileScroll = css({
   m: "-2",
@@ -60,6 +71,7 @@ const tileScroll = css({
   overflowY: "auto",
   overscrollBehavior: "contain",
   scrollbarWidth: "thin",
+  "&[data-entering]": { overflowY: "hidden" },
 });
 
 const tileGrid = css({
@@ -70,7 +82,7 @@ const tileGrid = css({
   display: "grid",
   gridTemplateColumns: {
     base: "repeat(2, minmax(0, 1fr))",
-    md: "repeat(5, minmax(0, 1fr))",
+    md: "repeat(var(--cols, 5), minmax(0, 1fr))",
   },
   // A dead tile that needs one more line to say what blocks it grows its row rather than
   // overflowing it.
@@ -78,10 +90,67 @@ const tileGrid = css({
   gap: "2.5",
 });
 
+/**
+ * Columns for n tiles on a wide screen: one row up to five, then rows of (nearly) equal length,
+ * so no tile is ever left alone on a row of its own.
+ */
+const columnsFor = (n: number) =>
+  n <= 5 ? Math.max(2, n) : Math.ceil(n / Math.ceil(n / 5));
+
 const iconButton = cx(
   button({ tone: "ghost", size: "icon" }),
   css({ color: "ink.muted" }),
 );
+
+/** The help button: ⓘ, turned into × while the help is open. */
+const helpToggle = css({
+  display: "inline-grid",
+  "& > span": {
+    gridArea: "1 / 1",
+    display: "grid",
+    placeItems: "center",
+    transition: "transform 320ms token(easings.signal), opacity 200ms",
+  },
+  "& > [data-close]": { opacity: 0, transform: "rotate(-90deg) scale(0.6)" },
+  "&[aria-expanded=true]": { color: "ink", bg: "ink/6" },
+  "&[aria-expanded=true] > [data-info]": {
+    opacity: 0,
+    transform: "rotate(90deg) scale(0.6)",
+  },
+  "&[aria-expanded=true] > [data-close]": { opacity: 1, transform: "none" },
+  _motionReduce: { "& > span": { transition: "none" } },
+});
+
+/**
+ * "No preference" while nothing is picked, then "Continue": one button whose two labels share a
+ * cell (it is as wide as the longer one, so nothing moves) and slide past each other as it turns
+ * from a dashed outline to ink.
+ */
+const skipOrGo = css({
+  display: "inline-grid",
+  placeItems: "center",
+  overflow: "hidden",
+  borderWidth: "1px",
+  borderColor: "ink",
+  "& > span": {
+    gridArea: "1 / 1",
+    transition: "transform 420ms token(easings.signal), opacity 240ms",
+  },
+  "&:not([data-skip]):hover": { borderColor: "ink.soft" },
+  "&[data-skip]": {
+    bg: "transparent",
+    color: "ink",
+    borderStyle: "dashed",
+    borderColor: "line.strong",
+    _hover: { bg: "transparent", borderStyle: "solid", borderColor: "ink" },
+  },
+  "&[data-skip] > [data-go]": { transform: "translateY(110%)", opacity: 0 },
+  "&:not([data-skip]) > [data-skip-label]": {
+    transform: "translateY(-110%)",
+    opacity: 0,
+  },
+  _motionReduce: { "& > span": { transition: "none" } },
+});
 
 const Icon = ({ d }: { d: string }) => (
   <svg
@@ -116,10 +185,13 @@ export function Console({
 }) {
   const { step, counts, draft } = finder;
   const root = useRef<HTMLElement>(null);
+  const helpButton = useRef<HTMLButtonElement>(null);
   const [helpOpen, setHelpOpen] = useState(false);
   const uid = useId();
   const leaving = useRef(false);
   const first = useRef(true);
+  /** The tiles' columns, settled once per visit of a question: picks never reflow the grid. */
+  const columns = useRef({ visit: "", cols: 5 });
   // The question plays in when it changes or gets a new answer, not when other answers do: a
   // brand picked or dropped only updates the counts on its tiles.
   const committed = step ? finder.answers[step.key] : undefined;
@@ -131,7 +203,8 @@ export function Console({
       const fresh = first.current;
       const delay = fresh ? enterDelay : 0;
       first.current = false;
-      if (prefersReducedMotion() || !root.current) return;
+      const el = root.current;
+      if (prefersReducedMotion() || !el) return;
       if (fresh && morph) {
         gsap.from("[data-console-part]", {
           opacity: 0,
@@ -151,14 +224,41 @@ export function Console({
         stagger: 0.012,
         delay,
       });
-      gsap.from("[data-tile], [data-budget]", {
-        opacity: 0,
-        y: 14,
-        duration: motion.base,
-        ease: motion.ease,
-        stagger: motion.stagger,
-        delay: delay + 0.08,
-      });
+      // The tiles are new nodes for every question (their box is keyed by it), and they are taken
+      // to their final state explicitly all the same: what an exit leaves on an element can never
+      // hold it invisible.
+      const scroller = el.querySelector<HTMLElement>("[data-tile-scroll]");
+      scroller?.setAttribute("data-entering", "");
+      gsap.fromTo(
+        el.querySelectorAll("[data-tile], [data-budget]"),
+        { opacity: 0, y: 14 },
+        {
+          opacity: 1,
+          y: 0,
+          duration: motion.base,
+          ease: motion.ease,
+          stagger: motion.stagger,
+          delay: delay + 0.08,
+          clearProps: "opacity,transform",
+          onComplete: () => scroller?.removeAttribute("data-entering"),
+        },
+      );
+      // The budget's bars rise from their baseline, one after the other.
+      const bars = el.querySelectorAll("[data-bar]");
+      if (bars.length)
+        gsap.fromTo(
+          bars,
+          { scaleY: 0 },
+          {
+            scaleY: 1,
+            transformOrigin: "50% 100%",
+            duration: motion.base + 0.1,
+            ease: motion.ease,
+            stagger: 0.012,
+            delay: delay + 0.14,
+            clearProps: "transform",
+          },
+        );
       return () => split.revert();
     },
     { dependencies: [step?.key, committed], scope: root },
@@ -182,14 +282,23 @@ export function Console({
     };
     if (before.key !== step?.key || prefersReducedMotion()) return;
     const fresh = tiles.filter((t) => !before.ids.has(t.dataset.option ?? ""));
-    if (fresh.length)
-      gsap.from(fresh, {
-        opacity: 0,
-        y: 10,
+    if (!fresh.length) return;
+    const scroller =
+      root.current?.querySelector<HTMLElement>("[data-tile-scroll]");
+    scroller?.setAttribute("data-entering", "");
+    gsap.fromTo(
+      fresh,
+      { opacity: 0, y: 10 },
+      {
+        opacity: 1,
+        y: 0,
         duration: motion.base,
         ease: motion.ease,
         stagger: motion.stagger,
-      });
+        clearProps: "opacity,transform",
+        onComplete: () => scroller?.removeAttribute("data-entering"),
+      },
+    );
   });
 
   /**
@@ -240,20 +349,67 @@ export function Console({
           const c = counts?.counts[o.id] ?? 0;
           return c > 0 && c < base;
         });
+  const visit = `${step.key}|${committed ?? ""}`;
+  if (columns.current.visit !== visit)
+    columns.current = { visit, cols: columnsFor(options.length) };
 
-  const anyTile = !step.required && step.kind !== "range";
   const visual = hasVisual(category, step.key);
   const bins =
     step.kind === "range"
       ? histogram(finder.def, finder.items, finder.answers, step.key, 32)
       : [];
+  const help = step.help?.[locale];
+  const helpId = `${uid}help`;
+
+  // The footer's main button. "No preference" keeps everything: a question that may be skipped
+  // offers it until a tile is picked (a multiple choice then continues with its picks).
+  const skipLabel =
+    step.kind === "musts" ? m.noMustHaves[locale] : m.noPreference[locale];
+  let primary: ReactNode = null;
+  if (step.kind === "range" || (isMulti && step.required)) {
+    primary = (
+      <button
+        type="button"
+        className={button({ tone: "ink", size: "md" })}
+        disabled={step.kind !== "range" && pickedIds.size === 0}
+        onClick={() => leave(() => finder.commit(draft ? draft : ANY))}
+      >
+        {m.continue[locale]}
+      </button>
+    );
+  } else if (isMulti) {
+    const skip = pickedIds.size === 0;
+    primary = (
+      <button
+        type="button"
+        className={cx(button({ tone: "ink", size: "md" }), skipOrGo)}
+        data-skip={skip || undefined}
+        title={skip ? m.noPreferenceHint[locale] : undefined}
+        onClick={() => leave(() => finder.commit(!skip && draft ? draft : ANY))}
+      >
+        <span data-skip-label aria-hidden={!skip || undefined}>
+          {skipLabel}
+        </span>
+        <span data-go aria-hidden={skip || undefined}>
+          {m.continue[locale]}
+        </span>
+      </button>
+    );
+  } else if (!step.required) {
+    primary = (
+      <button
+        type="button"
+        className={button({ tone: "dashed", size: "md" })}
+        title={m.noPreferenceHint[locale]}
+        onClick={() => leave(() => finder.commit(ANY))}
+      >
+        {skipLabel}
+      </button>
+    );
+  }
 
   return (
-    <section
-      ref={root}
-      className={content}
-      aria-labelledby="step-title"
-    >
+    <section ref={root} className={content} aria-labelledby="step-title">
       <div
         data-console-part
         className={css({
@@ -309,18 +465,33 @@ export function Console({
         >
           {step.title[locale]}
         </h2>
-        {step.help && (
+        {help && (
           <button
+            ref={helpButton}
             type="button"
-            className={iconButton}
+            className={cx(iconButton, helpToggle)}
+            popoverTarget={helpId}
             aria-expanded={helpOpen}
             aria-label={m.help[locale]}
-            onClick={() => setHelpOpen((v) => !v)}
           >
-            <Icon d="M12 17v-5m0-4h.01M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
+            <span data-info>
+              <Icon d="M12 17v-5m0-4h.01M12 21a9 9 0 1 0 0-18 9 9 0 0 0 0 18z" />
+            </span>
+            <span data-close>
+              <Icon d="M7 7l10 10M17 7L7 17" />
+            </span>
           </button>
         )}
       </div>
+      {help && (
+        <HelpBubble
+          key={step.key}
+          id={helpId}
+          help={help}
+          anchor={helpButton}
+          onToggle={setHelpOpen}
+        />
+      )}
 
       <div data-console-part className={body}>
         {step.kind === "range" ? (
@@ -343,17 +514,18 @@ export function Console({
           </div>
         ) : (
           <>
-            {/* The explanation shows behind the help button; screen readers get it with the tiles. */}
-            {step.help && (
+            {/* The explanation shows in the help bubble; screen readers get it with the tiles. */}
+            {help && (
               <p id="step-lead" className={css({ srOnly: true })}>
-                {step.help[locale]}
+                {plainHelp(help)}
               </p>
             )}
-            <div className={tileScroll}>
+            <div key={step.key} data-tile-scroll className={tileScroll}>
               <fieldset
                 aria-labelledby="step-title"
-                aria-describedby={step.help ? "step-lead" : undefined}
+                aria-describedby={help ? "step-lead" : undefined}
                 className={tileGrid}
+                style={{ "--cols": columns.current.cols } as CSSProperties}
               >
                 {options.map((option) => {
                   const selected = pickedIds.has(option.id);
@@ -472,72 +644,9 @@ export function Console({
                     </div>
                   );
                 })}
-                {anyTile && (
-                  <div data-tile className={css({ display: "grid" })}>
-                    <button
-                      type="button"
-                      className={cx(
-                        optionTile().root,
-                        css({ borderStyle: "dashed", bg: "transparent" }),
-                      )}
-                      onClick={() => leave(() => finder.commit(ANY))}
-                    >
-                      <span className={css({ display: "grid", gap: "1" })}>
-                        <span className={optionTile().label}>
-                          {step.kind === "musts"
-                            ? m.noMustHaves[locale]
-                            : m.noPreference[locale]}
-                        </span>
-                        <span className={optionTile().hint}>
-                          {m.noPreferenceHint[locale]}
-                        </span>
-                      </span>
-                    </button>
-                  </div>
-                )}
               </fieldset>
             </div>
           </>
-        )}
-        {helpOpen && step.help && (
-          <div
-            className={css({
-              position: "absolute",
-              inset: "0",
-              zIndex: "2",
-              display: "grid",
-              alignContent: "start",
-              justifyItems: "start",
-              gap: "3",
-              p: { base: "3", md: "4" },
-              bg: "surface.raised/95",
-              backdropFilter: "blur(10px)",
-              borderRadius: "card",
-              borderWidth: "1px",
-              borderColor: "line",
-              overflowY: "auto",
-              animation: "fadeUp 0.35s token(easings.signal) backwards",
-              _motionReduce: { animation: "none" },
-            })}
-          >
-            <p
-              className={css({
-                fontSize: { base: "sm", md: "md" },
-                color: "ink.soft",
-                lineHeight: "1.6",
-                maxW: "3xl",
-              })}
-            >
-              {step.help[locale]}
-            </p>
-            <button
-              type="button"
-              className={button({ tone: "line", size: "sm" })}
-              onClick={() => setHelpOpen(false)}
-            >
-              {m.gotIt[locale]}
-            </button>
-          </div>
         )}
       </div>
 
@@ -558,19 +667,16 @@ export function Console({
             className={button({ tone: "ghost", size: "sm" })}
             onClick={() => leave(finder.showResults, true)}
           >
-            {m.seeResults(total, locale)} →
+            {/* A phone has room for the number only, beside "No preference". */}
+            <span className={css({ display: { base: "none", md: "inline" } })}>
+              {m.seeResults(total, locale)} →
+            </span>
+            <span className={css({ display: { base: "inline", md: "none" } })}>
+              {m.seeResultsShort(total, locale)} →
+            </span>
           </button>
         )}
-        {(isMulti || step.kind === "range") && (
-          <button
-            type="button"
-            className={button({ tone: "ink", size: "md" })}
-            disabled={step.kind !== "range" && pickedIds.size === 0}
-            onClick={() => leave(() => finder.commit(draft ? draft : ANY))}
-          >
-            {m.continue[locale]}
-          </button>
-        )}
+        {primary}
       </div>
     </section>
   );

@@ -1,14 +1,15 @@
 import type { Locale } from '@choose/catalog'
 import type { ReactNode } from 'react'
-import { css } from 'styled-system/css'
+import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { MatchRing } from './Match'
 import { formatPrice } from './specs'
 
 // The two figures a buyer weighs first, side by side like the cells of a title block: the
 // indicative price and, once there is something to rank on, the match. The labels share a line
-// and the values the next, so the two read as a pair. An action (the results' "View details") ends
-// the line of values when the block is wide enough, and goes under it when it is not.
+// and the values the next, so the two read as a pair. An action (the sheet's Amazon button) ends
+// the line of values when the block is wide enough, and goes under it when it is not; a pair of
+// actions (the best match's) always goes under it.
 
 type Props = {
   price: number
@@ -18,7 +19,19 @@ type Props = {
   accent?: boolean
   locale: Locale
   action?: ReactNode
+  /** The action on a line of its own under the figures, however wide the block. */
+  actionBelow?: boolean
 }
+
+const below = css({ gridColumn: '1 / -1', gridRow: '3', justifySelf: 'start', mt: '3' })
+const beside = css({
+  '@container (min-width: 27rem)': {
+    gridColumn: '3',
+    gridRow: '2',
+    justifySelf: 'end',
+    mt: '0',
+  },
+})
 
 const label = css({
   fontFamily: 'mono',
@@ -41,7 +54,14 @@ const value = css({
   whiteSpace: 'nowrap',
 })
 
-export function KeyFigures({ price, score, accent = false, locale, action }: Props) {
+export function KeyFigures({
+  price,
+  score,
+  accent = false,
+  locale,
+  action,
+  actionBelow = false,
+}: Props) {
   const pct = score == null ? null : Math.round(Math.min(1, Math.max(0, score)) * 100)
   return (
     <div className={css({ containerType: 'inline-size' })}>
@@ -75,24 +95,7 @@ export function KeyFigures({ price, score, accent = false, locale, action }: Pro
             </div>
           )}
         </dl>
-        {action && (
-          <div
-            className={css({
-              gridColumn: '1 / -1',
-              gridRow: '3',
-              justifySelf: 'start',
-              mt: '3',
-              '@container (min-width: 27rem)': {
-                gridColumn: '3',
-                gridRow: '2',
-                justifySelf: 'end',
-                mt: '0',
-              },
-            })}
-          >
-            {action}
-          </div>
-        )}
+        {action && <div className={cx(below, !actionBelow && beside)}>{action}</div>}
       </div>
     </div>
   )

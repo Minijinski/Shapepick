@@ -161,8 +161,8 @@ export const monitorFinder: FinderDefinition<M> = {
       label: text('Dalle', 'Panel'),
       title: text('Quelle dalle ?', 'Which panel?'),
       help: text(
-        'IPS : couleurs fidèles, bons angles, noirs moyens. VA : fort contraste, idéal dans le noir, un peu de traînée. OLED : noirs parfaits et réactivité instantanée, attention au marquage sur les éléments fixes. Mini-LED : très lumineux, excellent en HDR. TN : réactif et bon marché, couleurs ternes.',
-        'IPS: accurate colours, good angles, average blacks. VA: high contrast, great in the dark, some smearing. OLED: perfect blacks and instant response, watch for burn-in on static elements. Mini-LED: very bright, excellent HDR. TN: fast and cheap, washed-out colours.',
+        '**IPS** : couleurs fidèles, bons angles, noirs moyens. **VA** : fort contraste, idéal dans le noir, un peu de traînée. **OLED** : noirs parfaits et réactivité instantanée, attention au marquage sur les éléments fixes. **Mini-LED** : très lumineux, excellent en HDR. **TN** : réactif et bon marché, couleurs ternes.',
+        '**IPS**: accurate colours, good angles, average blacks. **VA**: high contrast, great in the dark, some smearing. **OLED**: perfect blacks and instant response, watch for burn-in on static elements. **Mini-LED**: very bright, excellent HDR. **TN**: fast and cheap, washed-out colours.',
       ),
       options: [
         opt('ips', 'IPS', 'IPS', (m) => m.specs.panel === 'ips', [

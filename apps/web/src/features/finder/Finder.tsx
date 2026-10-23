@@ -24,7 +24,8 @@ import { type FinderSearch, useFinder } from "./useFinder";
 // The finder over its category's canvas: the live counter (with the brand filter) and the answer
 // rail top-left, the podium on the right, the question console docked at the bottom over the journey bar, where the
 // visitor can take the questions in any order; at the end the console's panel grows into the
-// results, and shrinks back when the visitor edits an answer. The
+// results, up to the site header (the counter, the brands and the answers move into them), and
+// shrinks back when the visitor edits an answer. The
 // canvas itself is the layout's scene: the finder only tells it which products the answers keep,
 // which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
 // dragging anywhere else browses the canvas. Any product, on the canvas, the podium or the
@@ -72,6 +73,14 @@ const enterDock = css({
 const enterFade = css({
   animation: "fadeUp 0.8s token(easings.signal) backwards",
   _motionReduce: { animation: "none" },
+});
+/** The counter and answers give way to the results: they lift away while the results rise. */
+const fadesWithResults = css({
+  display: "grid",
+  gap: "3",
+  transition: "opacity 300ms, transform 450ms token(easings.signal)",
+  "&[data-done]": { opacity: 0, transform: "translateY(-12px)" },
+  _motionReduce: { transition: "none" },
 });
 
 export function Finder({ category, items, search, locale }: Props) {
@@ -126,6 +135,11 @@ export function Finder({ category, items, search, locale }: Props) {
     setJourneyHint(false);
     markSeen(JOURNEY_SEEN);
   }, []);
+  // Narrower than the podium's column, the hint hangs over the console's footer and its buttons:
+  // the first touch of the console folds it away.
+  const dismissJourneyHintOnNarrow = useCallback(() => {
+    if (!window.matchMedia("(min-width: 64rem)").matches) dismissJourneyHint();
+  }, [dismissJourneyHint]);
   useEffect(() => {
     if (!journeyHint) return;
     const timer = setTimeout(dismissJourneyHint, JOURNEY_HINT_MS);
@@ -254,6 +268,21 @@ export function Finder({ category, items, search, locale }: Props) {
     };
   }, [category, done]);
 
+  /** The visitor's layout answer (azerty, ansi, iso), which the Amazon links follow. */
+  const layouts = finder.answers.layout?.split(",");
+  // The brands, beside the counter; once the results show, beside their count (one at a time).
+  const brandFilter = finder.brands && finder.brands.options.length > 1 && (
+    <BrandFilter
+      options={finder.brands.options}
+      selected={finder.brands.selected}
+      open={finder.brandsOpen}
+      locale={locale}
+      onOpenChange={finder.setBrandsOpen}
+      onChange={finder.setBrands}
+      onHover={finder.setHoveredBrand}
+    />
+  );
+
   usePageExit(
     (kind) =>
       new Promise<void>((resolve) => {
@@ -333,9 +362,13 @@ export function Finder({ category, items, search, locale }: Props) {
         style={{ animationDelay: `${delay}s` }}
       />
 
+      {/* The results rise over its place, its counter and answers with them: it lifts away
+          meanwhile and comes back after. The inner box fades, the outer one plays the entrance,
+          so results opened from a link never show it on the way in. */}
       <div
         ref={hud}
         data-enter="hud"
+        inert={done || undefined}
         className={cx(
           swapped ? enterFade : enterLeft,
           css({
@@ -343,47 +376,35 @@ export function Finder({ category, items, search, locale }: Props) {
             top: { base: "16", md: "20" },
             left: { base: "4", md: "8" },
             right: { base: "4", lg: "96" },
-            display: "grid",
-            gap: "3",
-            "&[data-done]": { right: { base: "4", md: "8" } },
           }),
         )}
         style={{ animationDelay: `${delay + 0.1}s` }}
-        data-done={done || undefined}
       >
-        <LiveCounter
-          value={finder.matching}
-          total={items.length}
-          label={m.matching[category][locale]}
-          preview={finder.preview}
-          previewLabel={m.ifPicked[locale]}
-          ofLabel={m.of[locale]}
-        >
-          {finder.brands && finder.brands.options.length > 1 && (
-            <BrandFilter
-              options={finder.brands.options}
-              selected={finder.brands.selected}
-              open={finder.brandsOpen}
-              locale={locale}
-              onOpenChange={finder.setBrandsOpen}
-              onChange={finder.setBrands}
-              onHover={finder.setHoveredBrand}
-            />
-          )}
-        </LiveCounter>
-        <AnswerRail
-          items={finder.rail}
-          current={finder.currentKey}
-          onPick={finder.goTo}
-        />
+        <div data-done={done || undefined} className={fadesWithResults}>
+          <LiveCounter
+            value={finder.matching}
+            total={items.length}
+            label={m.matching[category][locale]}
+            preview={finder.preview}
+            previewLabel={m.ifPicked[locale]}
+            ofLabel={m.of[locale]}
+          >
+            {!done && brandFilter}
+          </LiveCounter>
+          <AnswerRail
+            items={finder.rail}
+            current={finder.currentKey}
+            onPick={finder.goTo}
+          />
+        </div>
       </div>
 
       {/* The results grow over its place: the podium fades out meanwhile, and back after. */}
       <aside
         ref={podium}
         data-enter="podium"
-        data-done={done || undefined}
         aria-hidden={done || undefined}
+        inert={done || undefined}
         className={cx(
           swapped ? enterFade : enterRight,
           css({
@@ -395,27 +416,30 @@ export function Finder({ category, items, search, locale }: Props) {
             w: "72",
             display: { base: "none", lg: "block" },
             containerType: "size",
-            transition:
-              "opacity 300ms, transform 450ms token(easings.signal)",
             "& button": { pointerEvents: "auto" },
-            "&[data-done]": {
-              opacity: 0,
-              transform: "translateX(16px)",
-              "& button": { pointerEvents: "none" },
-            },
           }),
         )}
         style={{ animationDelay: `${delay + 0.2}s` }}
       >
-        <Podium
-          top={finder.ranked.slice(0, PODIUM_SIZE)}
-          total={finder.matching}
-          informed={finder.informed}
-          locale={locale}
-          hint={hint}
-          onOpen={openSheet}
-          onShowAll={finder.showResults}
-        />
+        <div
+          data-done={done || undefined}
+          className={css({
+            h: "100%",
+            transition: "opacity 300ms, transform 450ms token(easings.signal)",
+            "&[data-done]": { opacity: 0, transform: "translateX(16px)" },
+            _motionReduce: { transition: "none" },
+          })}
+        >
+          <Podium
+            top={finder.ranked.slice(0, PODIUM_SIZE)}
+            total={finder.matching}
+            informed={finder.informed}
+            locale={locale}
+            hint={hint}
+            onOpen={openSheet}
+            onShowAll={finder.showResults}
+          />
+        </div>
       </aside>
 
       {!done && (
@@ -485,6 +509,9 @@ export function Finder({ category, items, search, locale }: Props) {
             }),
           )}
           style={{ animationDelay: `${delay}s` }}
+          onPointerDownCapture={
+            journeyHint ? dismissJourneyHintOnNarrow : undefined
+          }
         >
           {!done && finder.informed && (
             <div className={css({ display: { base: "block", lg: "none" } })}>
@@ -506,9 +533,14 @@ export function Finder({ category, items, search, locale }: Props) {
                 scored={finder.informed}
                 use={finder.useLabel}
                 locale={locale}
+                total={items.length}
+                layouts={layouts}
+                rail={finder.rail}
+                brands={brandFilter}
                 onEdit={finder.editAnswers}
                 onReset={finder.reset}
                 onOpen={openSheet}
+                onPickAnswer={finder.goTo}
               />
             ) : (
               <Console
@@ -536,7 +568,7 @@ export function Finder({ category, items, search, locale }: Props) {
         <ProductDrawer
           sheet={sheet}
           use={finder.useLabel}
-          layouts={finder.answers.layout?.split(",")}
+          layouts={layouts}
           locale={locale}
           position={
             sheet.rank != null

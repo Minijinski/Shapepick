@@ -20,6 +20,7 @@ type StepCommon<I> = {
   /** Short name, used on the answer rail and in "blocked by" notes. */
   label: Text
   title: Text
+  /** The question's explanation. A term it defines is marked `**Term**: …` and opens a line. */
   help?: Text
   /** Branching: a step that does not apply is neither asked nor used to filter. */
   applies?: (answers: Answers) => boolean

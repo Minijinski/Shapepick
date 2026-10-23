@@ -1,23 +1,26 @@
 import type { Locale } from '@choose/catalog'
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useRef, useState } from 'react'
 import { createPortal } from 'react-dom'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
 import { gsap, prefersReducedMotion } from '../motion/gsap'
+import { AmazonLink } from '../product/AmazonLink'
 import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
 import { amazonLink } from '../product/shops'
-import { sheetSpecs } from '../product/specs'
+import { formatPrice, sheetSpecs } from '../product/specs'
 import type { ProductSheet } from './useFinder'
 
 // One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
 // It reads like the results' best match (the product and its key specs, strengths, caveats), says
-// what its match is made of, adds the full spec sheet, and ends where buying will happen. A side
-// panel on wide screens, a bottom sheet on phones; Escape, the backdrop and the close button fold
-// it away, the arrows step through the ranking. Its text can be selected and copied (a name, a
-// spec), unlike the rest of the site, where a press and drag browses the canvas.
+// what its match is made of and adds the full spec sheet. Where to buy it sits on the line of its
+// price, and once that line has scrolled away a bar slides up at the foot of the sheet with the
+// price and the shop again. A side panel on wide screens, a bottom sheet on phones; Escape, the
+// backdrop and the close button fold it away, the arrows step through the ranking. Its text can be
+// selected and copied (a name, a spec), unlike the rest of the site, where a press and drag
+// browses the canvas.
 
 type Props = {
   sheet: ProductSheet
@@ -42,6 +45,29 @@ const sectionLabel = css({
 
 const iconButton = cx(button({ tone: 'ghost', size: 'icon' }), css({ color: 'ink.muted' }))
 
+/** The price and the shop again, at the foot of the sheet once the line of the price is gone. */
+const buyBar = css({
+  position: 'absolute',
+  insetInline: '0',
+  bottom: '0',
+  zIndex: '1',
+  display: 'flex',
+  alignItems: 'center',
+  gap: '3',
+  minH: '18',
+  px: { base: '4', md: '5' },
+  py: '2.5',
+  bg: 'surface.raised/90',
+  backdropFilter: 'blur(12px)',
+  borderTopWidth: '1px',
+  borderColor: 'line',
+  opacity: 0,
+  transform: 'translateY(100%)',
+  transition: 'transform 420ms token(easings.signal), opacity 260ms',
+  '&[data-shown]': { opacity: 1, transform: 'translateY(0)' },
+  _motionReduce: { transition: 'none' },
+})
+
 const Icon = ({ d }: { d: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -61,10 +87,13 @@ const Icon = ({ d }: { d: string }) => (
 export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, onClose }: Props) {
   const panel = useRef<HTMLElement>(null)
   const backdrop = useRef<HTMLDivElement>(null)
+  const figures = useRef<HTMLDivElement>(null)
   const closing = useRef(false)
   const { item } = sheet
   // Keyboards are real products; the monitors are still a demo catalogue, with nothing to buy.
   const amazon = item.category === 'keyboard' ? amazonLink(item, locale, layouts) : null
+  const buyable = amazon != null
+  const [barShown, setBarShown] = useState(false)
 
   /** Plays the sheet out, then closes it. A timer backs the animation up in a hidden tab. */
   const close = useCallback(() => {
@@ -115,6 +144,26 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
   useEffect(() => {
     panel.current?.querySelector('[data-sheet-scroll]')?.scrollTo({ top: 0 })
   }, [item.slug])
+
+  // The buying bar shows while the line of the price is scrolled away above the sheet's top (not
+  // before the sheet has been scrolled: the line is in view then). Each product has its own line.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: a new product brings a new line
+  useEffect(() => {
+    const line = figures.current
+    const scroller = panel.current?.querySelector('[data-sheet-scroll]')
+    setBarShown(false)
+    if (!buyable || !line || !scroller) return
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (!entry) return
+        const top = entry.rootBounds?.top ?? 0
+        setBarShown(!entry.isIntersecting && entry.boundingClientRect.top < top)
+      },
+      { root: scroller },
+    )
+    observer.observe(line)
+    return () => observer.disconnect()
+  }, [item.slug, buyable])
 
   if (typeof document === 'undefined') return null
   const kept = sheet.rank != null
@@ -244,13 +293,18 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
         >
           <div
             key={item.slug}
-            className={css({
-              display: 'grid',
-              gap: '6',
-              p: { base: '4', md: '5' },
-              animation: 'fadeUp 0.45s token(easings.signal) backwards',
-              _motionReduce: { animation: 'none' },
-            })}
+            className={cx(
+              css({
+                display: 'grid',
+                gap: '6',
+                p: { base: '4', md: '5' },
+                animation: 'fadeUp 0.45s token(easings.signal) backwards',
+                _motionReduce: { animation: 'none' },
+              }),
+              // Room at the end for the buying bar, which would otherwise cover the last lines (set
+              // for md too, or the padding above would win there).
+              buyable && css({ pb: { base: '24', md: '24' } }),
+            )}
           >
             <div className={css({ display: 'grid', gap: '3' })}>
               <h2
@@ -272,13 +326,20 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                   {item.tagline[locale]}
                 </p>
               )}
-              <div className={css({ mt: '1' })}>
+              <div ref={figures} className={css({ display: 'grid', gap: '2.5', mt: '1' })}>
                 <KeyFigures
                   price={item.priceEur}
                   score={sheet.score}
                   accent={sheet.rank === 0}
                   locale={locale}
+                  action={amazon && <AmazonLink item={item} locale={locale} layouts={layouts} />}
                 />
+                {amazon && (
+                  <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
+                    {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
+                    {amazon.affiliate && ` ${m.amazonNotice[locale]}`}
+                  </p>
+                )}
               </div>
               {sheet.fit != null && sheet.met != null && (
                 <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
@@ -361,42 +422,10 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
               </dl>
             </section>
 
-            {/* Where to buy: Amazon for now, as a search for the model (product/shops.ts). */}
-            <section className={css({ display: 'grid', gap: '2' })}>
-              <h3 className={sectionLabel}>{m.whereToBuy[locale]}</h3>
-              {amazon ? (
-                <div
-                  className={css({
-                    display: 'grid',
-                    gap: '3',
-                    p: '4',
-                    borderRadius: 'card',
-                    borderWidth: '1px',
-                    borderColor: 'line',
-                  })}
-                >
-                  <p className={css({ fontSize: 'sm', color: 'ink.muted', lineHeight: '1.5' })}>
-                    {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
-                  </p>
-                  <a
-                    href={amazon.url}
-                    target="_blank"
-                    rel={amazon.affiliate ? 'sponsored nofollow noopener' : 'nofollow noopener'}
-                    className={cx(
-                      button({ tone: 'ink', size: 'md' }),
-                      css({ justifySelf: 'start' }),
-                    )}
-                  >
-                    {amazon.direct ? m.viewOnAmazon[locale] : m.searchOnAmazon[locale]}
-                    <Icon d="M7 17 17 7M9 7h8v8" />
-                  </a>
-                  {amazon.affiliate && (
-                    <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.4' })}>
-                      {m.amazonNotice[locale]}
-                    </p>
-                  )}
-                </div>
-              ) : (
+            {/* Nothing to buy yet (the demo monitors): what the shops will bring. */}
+            {!amazon && (
+              <section className={css({ display: 'grid', gap: '2' })}>
+                <h3 className={sectionLabel}>{m.whereToBuy[locale]}</h3>
                 <p
                   className={css({
                     p: '4',
@@ -411,10 +440,36 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                 >
                   {m.offersSoon[locale]}
                 </p>
-              )}
-            </section>
+              </section>
+            )}
           </div>
         </div>
+
+        {amazon && (
+          <div
+            className={buyBar}
+            data-shown={barShown || undefined}
+            aria-hidden={!barShown || undefined}
+            inert={!barShown || undefined}
+          >
+            <span className={css({ flex: '1', minW: '0', display: 'grid', gap: '0.5' })}>
+              <span
+                className={css({
+                  fontFamily: 'mono',
+                  fontSize: 'md',
+                  lineHeight: '1.1',
+                  fontVariantNumeric: 'tabular-nums',
+                })}
+              >
+                {formatPrice(item.priceEur, locale)}
+              </span>
+              <span className={css({ fontSize: 'xs', color: 'ink.muted', truncate: true })}>
+                {item.brand.name} {item.name}
+              </span>
+            </span>
+            <AmazonLink item={item} locale={locale} layouts={layouts} />
+          </div>
+        )}
       </aside>
     </>,
     document.body,

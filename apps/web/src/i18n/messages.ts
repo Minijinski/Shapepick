@@ -52,11 +52,14 @@ export const messages = {
   noPreferenceHint: text("Tout garder", "Keep everything"),
   noMustHaves: text("Rien d’indispensable", "No must-haves"),
   help: text("Aide", "Help"),
-  gotIt: text("Compris", "Got it"),
   seeResults: (n: number, locale: Locale) =>
     locale === "fr"
       ? `Voir les ${count(n, locale)} résultats`
       : `See ${count(n, locale)} results`,
+  seeResultsShort: (n: number, locale: Locale) =>
+    locale === "fr"
+      ? `${count(n, locale)} résultats`
+      : `${count(n, locale)} results`,
   ifPicked: text("si choisi", "if picked"),
   blockedBy: text("Bloqué par", "Blocked by"),
   change: text("Changer", "Change"),
@@ -74,6 +77,7 @@ export const messages = {
   strengths: text("Points forts", "Strengths"),
   caveats: text("À savoir", "Worth knowing"),
   editAnswers: text("Modifier mes réponses", "Edit my answers"),
+  editShort: text("Modifier", "Edit"),
   allResults: text("Tous les résultats", "All results"),
   from: text("à partir de", "from"),
   language: text("Langue", "Language"),
@@ -146,6 +150,14 @@ export const messages = {
   ),
   searchOnAmazon: text("Chercher sur Amazon", "Search on Amazon"),
   viewOnAmazon: text("Voir sur Amazon", "View on Amazon"),
+  amazon: text("Amazon", "Amazon"),
+  /** The name of a compact Amazon link (a pill or an arrow), which does not show the model. */
+  amazonOf: (name: string, direct: boolean, locale: Locale) =>
+    locale === "fr"
+      ? `${direct ? "Voir" : "Chercher"} ${name} sur Amazon`
+      : direct
+        ? `View ${name} on Amazon`
+        : `Search Amazon for ${name}`,
   amazonProduct: text(
     "La fiche du modèle sur Amazon.fr, en AZERTY quand il existe dans cette disposition.",
     "The model’s page on Amazon.fr, in AZERTY when it comes in that layout.",

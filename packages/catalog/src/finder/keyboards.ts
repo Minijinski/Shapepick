@@ -177,8 +177,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Touches", "Keys"),
       title: text("Quel type de touches ?", "What kind of keys?"),
       help: text(
-        "Mécanique : un switch par touche, durable et personnalisable. Magnétique : capteurs à effet Hall, point de déclenchement réglable et rapid trigger, la référence en FPS. Optique : déclenchement par faisceau lumineux, très rapide. Membrane : silencieux et économique. Ciseaux : extra-plat, comme un portable.",
-        "Mechanical: one switch per key, durable and customisable. Magnetic: Hall-effect sensors with adjustable actuation and rapid trigger, the FPS reference. Optical: light-beam actuation, very fast. Membrane: quiet and cheap. Scissor: very flat, like a laptop.",
+        "**Mécanique** : un switch par touche, durable et personnalisable. **Magnétique** : capteurs à effet Hall, point de déclenchement réglable et rapid trigger, la référence en FPS. **Optique** : déclenchement par faisceau lumineux, très rapide. **Membrane** : silencieux et économique. **Ciseaux** : extra-plat, comme un portable.",
+        "**Mechanical**: one switch per key, durable and customisable. **Magnetic**: Hall-effect sensors with adjustable actuation and rapid trigger, the FPS reference. **Optical**: light-beam actuation, very fast. **Membrane**: quiet and cheap. **Scissor**: very flat, like a laptop.",
       ),
       options: [
         opt(
@@ -233,8 +233,8 @@ export const keyboardFinder: FinderDefinition<K> = {
         "How should the keys feel?",
       ),
       help: text(
-        "Linéaire : course lisse du début à la fin. Tactile : une petite bosse marque le déclenchement. Clicky : la bosse plus un clic audible. Silencieux : amorti en haut et en bas de course.",
-        "Linear: smooth all the way down. Tactile: a small bump marks actuation. Clicky: the bump plus an audible click. Silent: dampened at the top and bottom of the stroke.",
+        "**Linéaire** : course lisse du début à la fin. **Tactile** : une petite bosse marque le déclenchement. **Clicky** : la bosse plus un clic audible. **Silencieux** : amorti en haut et en bas de course.",
+        "**Linear**: smooth all the way down. **Tactile**: a small bump marks actuation. **Clicky**: the bump plus an audible click. **Silent**: dampened at the top and bottom of the stroke.",
       ),
       options: [
         opt(
@@ -281,8 +281,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Hauteur", "Height"),
       title: text("Plutôt plat ou standard ?", "Flat or standard height?"),
       help: text(
-        "Extra-plat : touches basses et course courte, poignets à plat, proche d’un clavier de portable. Standard : la hauteur classique des claviers mécaniques, souvent avec un repose-poignets.",
-        "Low profile: short keys and travel, wrists flat, close to a laptop. Standard: the classic mechanical height, often paired with a wrist rest.",
+        "**Standard** : la hauteur classique des claviers mécaniques, souvent avec un repose-poignets. **Extra-plat** : touches basses et course courte, poignets à plat, proche d’un clavier de portable.",
+        "**Standard**: the classic mechanical height, often paired with a wrist rest. **Low profile**: short keys and travel, wrists flat, close to a laptop.",
       ),
       options: [
         opt("standard", "Standard", "Standard", (k) => !k.specs.lowProfile, [
@@ -301,8 +301,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Connexion", "Connection"),
       title: text("Comment le connecter ?", "How should it connect?"),
       help: text(
-        "2.4 GHz : un dongle USB, latence de jeu. Bluetooth : bascule entre plusieurs appareils (ordinateur, tablette, téléphone). Filaire uniquement : pas de batterie, souvent moins cher.",
-        "2.4 GHz: a USB dongle, gaming latency. Bluetooth: switch between several devices (computer, tablet, phone). Wired only: no battery, often cheaper.",
+        "**2.4 GHz** : un dongle USB, latence de jeu. **Bluetooth** : bascule entre plusieurs appareils (ordinateur, tablette, téléphone). **Filaire uniquement** : pas de batterie, souvent moins cher.",
+        "**2.4 GHz**: a USB dongle, gaming latency. **Bluetooth**: switch between several devices (computer, tablet, phone). **Wired only**: no battery, often cheaper.",
       ),
       options: [
         opt(
@@ -429,8 +429,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       label: text("Couleur", "Colour"),
       title: text("Une couleur ?", "Any colour?"),
       help: text(
-        "Un clavier compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. Coloré : teintes vives ou pastel ; transparent : boîtier translucide.",
-        "A board counts as soon as one of its versions comes in one of the picked colours. Colourful: bright or pastel finishes; transparent: see-through case.",
+        "Un clavier compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. **Coloré** : teintes vives ou pastel. **Transparent** : boîtier translucide.",
+        "A board counts as soon as one of its versions comes in one of the picked colours. **Colourful**: bright or pastel finishes. **Transparent**: see-through case.",
       ),
       // What each family takes in (see familyOf at ingest), short beside its swatch.
       options: [

@@ -1,25 +1,36 @@
 import type { CatalogItem, Locale, Ranked } from "@choose/catalog";
-import { type RefObject, useLayoutEffect, useRef, useState } from "react";
+import {
+  type ReactNode,
+  type RefObject,
+  useLayoutEffect,
+  useRef,
+  useState,
+} from "react";
 import { css, cx } from "styled-system/css";
 import { button } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
+import { AmazonLink } from "../product/AmazonLink";
 import { KeyFigures } from "../product/KeyFigures";
 import { Match } from "../product/Match";
 import { MatchBreakdown } from "../product/MatchBreakdown";
 import { KeySpecs } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, keySpecs } from "../product/specs";
+import { AnswerRail } from "./AnswerRail";
 import { useDockHeight } from "./DockPanel";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
-// out of it. The best match as a product card (its photo beside its name, price, match and key
-// specs, then what its match is made of), the next two below it, every other match in a list.
-// Every product opens its sheet: the best match from its photo or its button, the others from
-// anywhere on their card or row. The list can hold the whole catalogue: only the rows in view (and
-// a few around them) are rendered, each the same height, so opening the results costs the same
-// for 5 products as for 500.
+// out of it. It takes the height of the page down from the site header, the finder's counter and
+// answers giving it their place: they come with it, under its title (how many products, the
+// brands, a chip per answer that reopens its question). The best match as a product card (its
+// photo beside its name, price, match and key specs, then what its match is made of), the next two
+// below it, every other match in a list. Every product opens its sheet: the best match from its
+// photo or its button, the others from anywhere on their card or row; each also links to Amazon
+// (keyboards). The list can hold the whole catalogue: only the rows in view (and a few around
+// them) are rendered, each the same height, so opening the results costs the same for 5 products
+// as for 500.
 
 type Props = {
   ranked: Ranked<CatalogItem>[];
@@ -28,9 +39,18 @@ type Props = {
   /** The use the visitor picked, which the match is measured against. */
   use: string | null;
   locale: Locale;
+  /** How many products the category holds, beside how many the answers keep. */
+  total: number;
+  /** The visitor's layout answer (azerty, ansi, iso), which the shop links follow. */
+  layouts?: readonly string[];
+  /** The answers given, a chip each: a chip reopens its question. */
+  rail: { key: string; label: string; value: string }[];
+  /** The brand control, beside the count. */
+  brands?: ReactNode;
   onEdit: () => void;
   onReset: () => void;
   onOpen: (slug: string) => void;
+  onPickAnswer: (key: string) => void;
 };
 
 /** Height of a row of the list (px), which places every row without measuring any. */
@@ -164,14 +184,64 @@ const photoFrame = css({
   _motionReduce: { transition: "none" },
 });
 
+/** The best match's two buttons: on a phone, where they stack, each as wide as the card. */
+const actionButton = css({ flex: { base: "1 1 auto", md: "0 0 auto" } });
+
+/** A row of the list: rank, photo, name, specs, price and match, then its Amazon link. */
+const row = css({
+  position: "absolute",
+  insetInline: "-2",
+  display: "grid",
+  alignItems: "center",
+  gap: "3",
+  px: "2",
+  borderTopWidth: "1px",
+  borderColor: "line",
+  transition: "background 160ms",
+  _hover: { bg: "surface" },
+});
+const rowColumns = css({
+  gridTemplateColumns: {
+    base: "28px 56px 1fr auto",
+    md: "28px 72px 1.2fr 2fr auto",
+  },
+});
+const rowColumnsShop = css({
+  gridTemplateColumns: {
+    base: "28px 56px 1fr auto 32px",
+    md: "28px 72px 1.2fr 2fr auto 32px",
+  },
+});
+
+const ResetIcon = () => (
+  <svg
+    viewBox="0 0 24 24"
+    width="16"
+    height="16"
+    fill="none"
+    stroke="currentColor"
+    strokeWidth="1.8"
+    strokeLinecap="round"
+    strokeLinejoin="round"
+    aria-hidden
+  >
+    <path d="M20 11a8.1 8.1 0 0 0-15.5-2m-.5-4v4h4M4 13a8.1 8.1 0 0 0 15.5 2m.5 4v-4h-4" />
+  </svg>
+);
+
 export function ResultsView({
   ranked,
   scored = true,
   use,
   locale,
+  total,
+  layouts,
+  rail,
+  brands,
   onEdit,
   onReset,
   onOpen,
+  onPickAnswer,
 }: Props) {
   const root = useRef<HTMLElement>(null);
   const list = useRef<HTMLOListElement>(null);
@@ -180,6 +250,8 @@ export function ResultsView({
   const runnersUp = others.slice(0, 2);
   const rest = others.slice(2);
   const rows = useRowsInView(root, list, rest.length);
+  // Keyboards can be bought (Amazon); the monitors are still a demo catalogue.
+  const shop = first?.item.category === "keyboard";
 
   useGSAP(
     () => {
@@ -231,8 +303,9 @@ export function ResultsView({
         // The list's rows are placed from it (offsetTop).
         position: "relative",
         flexShrink: "0",
-        // Room above for the counter, below for the journey bar.
-        maxH: "calc(100dvh - 290px)",
+        // Down from the site header (64 px, then 8) to the journey bar (44 px and the dock's
+        // gaps, 12 px between them and 12 or 24 px under it), borders included.
+        maxH: { base: "calc(100dvh - 144px)", md: "calc(100dvh - 156px)" },
         overflowY: "auto",
         overscrollBehavior: "contain",
       })}
@@ -241,16 +314,13 @@ export function ResultsView({
         className={css({
           position: "sticky",
           top: "0",
-          zIndex: "1",
+          zIndex: "2",
           display: "flex",
-          // A phone puts the buttons under the title rather than breaking their words.
-          flexWrap: "wrap",
           alignItems: "center",
           justifyContent: "space-between",
-          columnGap: "3",
-          rowGap: "2",
+          gap: "3",
           px: { base: "4", md: "6" },
-          py: "4",
+          py: { base: "3", md: "4" },
           bg: "surface.raised/90",
           backdropFilter: "blur(10px)",
           borderBottomWidth: "1px",
@@ -260,32 +330,89 @@ export function ResultsView({
         <h2
           id="results-title"
           className={css({
-            fontSize: { base: "xl", md: "2xl" },
+            fontSize: { base: "lg", md: "2xl" },
             fontWeight: "600",
             letterSpacing: "-0.03em",
+            whiteSpace: "nowrap",
           })}
         >
           {m.resultsTitle[locale]}
         </h2>
+        {/* A phone has room for "Edit" and the start-over arrow, a wider screen for the words. */}
         <div
-          className={css({ display: "flex", gap: "2", whiteSpace: "nowrap" })}
+          className={css({ display: "flex", gap: "1.5", whiteSpace: "nowrap" })}
         >
           <button
             type="button"
             className={button({ tone: "line", size: "sm" })}
             onClick={leave(onEdit)}
           >
-            {m.editAnswers[locale]}
+            <span className={css({ display: { base: "none", md: "inline" } })}>
+              {m.editAnswers[locale]}
+            </span>
+            <span className={css({ display: { base: "inline", md: "none" } })}>
+              {m.editShort[locale]}
+            </span>
           </button>
           <button
             type="button"
             className={button({ tone: "ghost", size: "sm" })}
+            aria-label={m.reset[locale]}
             onClick={leave(onReset)}
           >
-            {m.reset[locale]}
+            <span className={css({ display: { base: "none", md: "inline" } })}>
+              {m.reset[locale]}
+            </span>
+            <span className={css({ display: { base: "grid", md: "none" } })}>
+              <ResetIcon />
+            </span>
           </button>
         </div>
       </header>
+
+      {/* What the results answer: how many products, the brands, the answers (each reopens its
+          question). */}
+      <div
+        className={css({
+          display: "flex",
+          flexWrap: "wrap",
+          alignItems: "center",
+          columnGap: "3",
+          rowGap: "2.5",
+          px: { base: "4", md: "6" },
+          pt: { base: "4", md: "5" },
+        })}
+      >
+        <span
+          className={css({
+            fontFamily: "mono",
+            fontSize: "sm",
+            fontVariantNumeric: "tabular-nums",
+            whiteSpace: "nowrap",
+          })}
+        >
+          {String(ranked.length).padStart(3, "0")}
+          <span className={css({ color: "ink.faint" })}>
+            {" "}
+            {m.of[locale]} {total}
+          </span>
+        </span>
+        {brands}
+        {rail.length > 0 && (
+          <div
+            className={css({
+              flexBasis: { base: "100%", md: "auto" },
+              minW: "0",
+            })}
+          >
+            <AnswerRail
+              items={rail}
+              current={null}
+              onPick={(key) => leave(() => onPickAnswer(key))()}
+            />
+          </div>
+        )}
+      </div>
 
       {!first ? (
         <p className={css({ p: "8", color: "ink.muted" })}>
@@ -375,19 +502,39 @@ export function ResultsView({
                     </p>
                   )}
                 </div>
+                {/* Where to buy it first, then its sheet; a demo monitor only has its sheet. */}
                 <KeyFigures
                   price={first.item.priceEur}
                   score={scored ? first.score : null}
                   accent
                   locale={locale}
+                  actionBelow={shop}
                   action={
-                    <button
-                      type="button"
-                      className={button({ tone: "ink", size: "md" })}
-                      onClick={() => onOpen(first.item.slug)}
+                    <div
+                      className={css({
+                        display: "flex",
+                        flexWrap: "wrap",
+                        gap: "2",
+                        w: { base: "100%", md: "auto" },
+                      })}
                     >
-                      {m.viewSheet[locale]} →
-                    </button>
+                      <AmazonLink
+                        item={first.item}
+                        locale={locale}
+                        layouts={layouts}
+                        className={actionButton}
+                      />
+                      <button
+                        type="button"
+                        className={cx(
+                          button({ tone: shop ? "line" : "ink", size: "md" }),
+                          actionButton,
+                        )}
+                        onClick={() => onOpen(first.item.slug)}
+                      >
+                        {m.viewSheet[locale]} →
+                      </button>
+                    </div>
                   }
                 />
                 <KeySpecs item={first.item} locale={locale} />
@@ -520,7 +667,7 @@ export function ResultsView({
                     className={css({
                       display: "flex",
                       justifyContent: "space-between",
-                      alignItems: "baseline",
+                      alignItems: "center",
                       gap: "3",
                     })}
                   >
@@ -541,9 +688,24 @@ export function ResultsView({
                       {entry.item.name}
                     </h3>
                     <span
-                      className={css({ fontFamily: "mono", fontSize: "sm" })}
+                      className={css({
+                        display: "flex",
+                        alignItems: "center",
+                        gap: "2.5",
+                        flexShrink: "0",
+                      })}
                     >
-                      {formatPrice(entry.item.priceEur, locale)}
+                      <span
+                        className={css({ fontFamily: "mono", fontSize: "sm" })}
+                      >
+                        {formatPrice(entry.item.priceEur, locale)}
+                      </span>
+                      <AmazonLink
+                        item={entry.item}
+                        locale={locale}
+                        layouts={layouts}
+                        variant="pill"
+                      />
                     </span>
                   </div>
                   <dl
@@ -611,22 +773,11 @@ export function ResultsView({
                       data-result
                       aria-posinset={i + 1}
                       aria-setsize={rest.length}
-                      className={css({
-                        position: "absolute",
-                        insetInline: "-2",
-                        display: "grid",
-                        gridTemplateColumns: {
-                          base: "28px 56px 1fr auto",
-                          md: "28px 72px 1.2fr 2fr auto",
-                        },
-                        alignItems: "center",
-                        gap: "3",
-                        px: "2",
-                        borderTopWidth: "1px",
-                        borderColor: "line",
-                        transition: "background 160ms",
-                        _hover: { bg: "surface" },
-                      })}
+                      className={cx(
+                        "group",
+                        row,
+                        shop ? rowColumnsShop : rowColumns,
+                      )}
                       style={{ top: i * ROW, height: ROW }}
                     >
                       <span
@@ -699,6 +850,12 @@ export function ResultsView({
                           </span>
                         )}
                       </span>
+                      <AmazonLink
+                        item={entry.item}
+                        locale={locale}
+                        layouts={layouts}
+                        variant="icon"
+                      />
                       <button
                         type="button"
                         className={opener}

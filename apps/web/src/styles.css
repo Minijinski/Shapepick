@@ -82,3 +82,48 @@ html[data-loading] [data-preloader] *::after {
     animation: none !important;
   }
 }
+
+/* ---- Help bubble (features/finder/HelpBubble.tsx) -------------------------------------------- */
+
+/* It grows out of the help button as it opens, its lines following one another, and fades back
+   into the button as it closes. The closing fade needs `transition-behavior: allow-discrete`;
+   where a browser lacks it, the bubble simply goes. */
+[data-help-bubble] {
+  opacity: 1;
+  transform: none;
+  transition:
+    opacity 0.3s cubic-bezier(0.22, 1, 0.36, 1),
+    transform 0.4s cubic-bezier(0.22, 1, 0.36, 1),
+    overlay 0.3s allow-discrete,
+    display 0.3s allow-discrete;
+}
+[data-help-bubble]:not(:popover-open) {
+  opacity: 0;
+  transform: translateY(4px) scale(0.98);
+  transition-duration: 0.18s;
+}
+@starting-style {
+  [data-help-bubble]:popover-open {
+    opacity: 0;
+    transform: translateY(8px) scale(0.96);
+  }
+}
+[data-help-bubble] [data-line] {
+  transition:
+    opacity 0.35s ease,
+    transform 0.45s cubic-bezier(0.22, 1, 0.36, 1);
+  transition-delay: calc(0.06s + var(--i, 0) * 0.035s);
+}
+@starting-style {
+  [data-help-bubble]:popover-open [data-line] {
+    opacity: 0;
+    transform: translateY(6px);
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  [data-help-bubble],
+  [data-help-bubble] [data-line] {
+    transition: none;
+  }
+}

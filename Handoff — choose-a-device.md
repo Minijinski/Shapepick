@@ -6,11 +6,11 @@ Oct 23, 2026 · @Eddy
 
 choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit avec lien Amazon.fr (depuis le canvas, le podium ou les résultats), en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
 - **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 25 écrans de démonstration. Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
 - **Qualité** : 44 tests du moteur, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `97439b1` « adding amazon links », poussé et déployé le 23 octobre, avec les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon et les « Retours du 23 octobre ». Dans le dossier local, non commités : le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n ») et les ASIN Amazon d'une autre session (migration `0002`, YAML). La base Neon de production a été semée après le correctif Logitech (16 claviers Logitech y ont un switch) ; la migration `0002` n'y est pas encore.
+- **État du dépôt** : `main` = `9637ec8` « Updating handoff », poussé et déployé le 23 octobre : les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon, les « Retours du 23 octobre », les ASIN Amazon (`65c326b`) et le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n »). La migration `0002` et les ASIN sont en production depuis le 23 octobre. Les « Retours du 23 octobre (2) » sont commités sur la branche feat/finder-retours-23-octobre, pas encore fusionnés dans main ni poussés.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -220,11 +220,11 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 | Compteur (`LiveCounter`) | Produits restants « 0 025 sur 25 », aperçu orange au survol (« → 6 si choisi ») | Les chiffres défilent (0,9 s) |
 | Rail (`AnswerRail`) | Les réponses données, en puces reliées ; un clic rouvre l'étape | La nouvelle puce glisse en place |
 | Canvas (`Scene`) | Les produits de la catégorie en motif répété à l'infini, rang 01-03 du podium, popup de specs au survol, fiche produit au clic | Dérive en diagonale, drag avec inertie, molette ; une réponse retire les écartés et resserre les retenus, en vague depuis la console ; une liste courte se regroupe devant le canvas |
-| Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide derrière le bouton ⓘ, tuiles avec une indication de deux lignes au plus, compteur et coche, impasse « Bloqué par … » + « Changer → », Continuer, Peu importe | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade, rejoués seulement quand la question change ; sortie jouée avant la navigation |
+| Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide dans une bulle au-dessus de la console (ⓘ devient ✕), tuiles en rangées égales avec une indication de deux lignes au plus, compteur et coche, impasse « Bloqué par … » + « Changer → », « Peu importe » qui devient « Continuer » au premier choix | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade, rejoués seulement quand la question change ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
-| Résultats (`ResultsView`) | N°1 en carte produit (la photo ouvre la fiche ; prix, compatibilité et « Voir la fiche » sur une ligne ; 4 specs), détail du %, points forts et « à savoir », n°2 et n°3, liste des autres ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Le panneau de la console s'étire jusqu'aux résultats ; specs et lignes en fondu |
-| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Où l'acheter » (lien Amazon.fr) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer |
-| Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, double curseur ; tout en haut signifie sans plafond | Les barres de la plage passent à l'encre au fil du curseur |
+| Résultats (`ResultsView`) | Du header à la barre d'étapes ; total, marques et réponses sous le titre ; n°1 en carte produit (la photo ouvre la fiche ; prix et compatibilité, puis « Voir sur Amazon » et « Voir la fiche » ; 4 specs), détail du %, points forts et « à savoir », n°2 et n°3 (pastille Amazon), liste des autres (flèche Amazon par ligne) ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Le panneau de la console s'étire jusqu'aux résultats ; specs et lignes en fondu ; compteur et réponses du haut s'effacent |
+| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Voir sur Amazon » sur la ligne du prix, repris dans une barre collante une fois cette ligne passée (écrans : « Où l'acheter », offres à venir) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer ; la barre d'achat glisse du bas |
+| Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, bande de la plage, double curseur portant ses prix (fusionnés quand ils se touchent), échelle de prix ; tout en haut signifie sans plafond | Les barres montent en vague à l'entrée et passent à l'encre au fil du curseur ; les prix défilent ; le curseur saisi grossit, avec un halo |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
 | Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
@@ -243,7 +243,7 @@ Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule
 - **Filtres** : depuis le 22 octobre, le canvas ne montre que les produits retenus. Un produit écarté s'efface, les retenus glissent vers leur place dans un motif recomposé sans trous, le tout en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
 - **Liste courte** : dès qu'il reste au plus 12 produits retenus et qu'ils tiennent dans l'espace libre (entre le compteur, le podium et la console, mesuré par `Finder` et transmis par `scene.setStage`), ils quittent le canvas et se regroupent en grille devant lui, chacun une seule fois, avec leur rang. Leurs copies sur le canvas s'effacent ; elles reviennent quand la liste s'allonge. La grille se centre sur l'axe de la console quand elle y tient (sinon sur tout l'espace libre) ; derrière elle, le canvas n'a plus que son papier pointillé.
 - **Changement de catégorie** (header, depuis un canvas) : le canvas reste en place, les anciens produits se dissolvent et les nouveaux apparaissent en vague depuis le lien cliqué. La console ne bouge pas : seule sa question change. Chaque catégorie mémorise son parcours dans le stockage du navigateur (`choose-a-device:journey:<catégorie>`) et le reprend au retour ; « Recommencer » le remet à zéro.
-- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre par-dessus. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
+- **Console** : même hauteur à toutes les étapes. Les tuiles se partagent l'espace (au-delà de deux rangées la grille défile ; une question qui tient sur une rangée, 5 tuiles au plus sur grand écran, garde des tuiles de hauteur normale), le budget remplit l'espace avec l'histogramme des prix, l'aide s'ouvre dans une bulle au-dessus de la console. La coche d'une tuile choisie déborde dans une marge intérieure de la grille : elle n'est jamais rognée.
 
 | Fichier | Rôle |
 | --- | --- |
@@ -363,6 +363,27 @@ Six retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headl
 
 - Vérifié : typecheck des 4 paquets, 44 tests, build, Biome et Prettier sur les fichiers touchés ; captures à 1440, 1024 et 390 px de large.
 - Les animations ont été mesurées en temps réel dans Chrome headless, pas encore regardées à l'œil.
+
+## Retours du 23 octobre (2)
+
+Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless sur la base locale (`web-local-db-3`, port 3003). Commités sur la branche feat/finder-retours-23-octobre, pas encore dans main.
+
+| Mesure | Avant | Après |
+| --- | --- | --- |
+| Console sur « Quel type de touches ? » après Usage, Taille et Disposition (1280 × 720) | ≈ 360 px, une rangée vide | 250 px, une rangée |
+| Panneau des résultats, 1280 × 720 | 430 px | 566 px |
+| Panneau des résultats, 390 × 844 | ≈ 523 px | 702 px |
+
+| Retour | Ce qui a changé | Où |
+| --- | --- | --- |
+| Le lien Amazon n'est qu'en bas de la fiche | `AmazonLink` (bouton, pastille ou flèche ; claviers seulement) : « Voir sur Amazon ↗ » sur la ligne du prix de la fiche, repris dans une barre collante une fois cette ligne passée ; la section « Où l'acheter » ne reste que pour les écrans. Résultats : bouton sur le n° 1 avec « Voir la fiche », pastille sur les n° 2 et 3, flèche au bout de chaque ligne, sans ouvrir la fiche | `product/AmazonLink.tsx`, `finder/ProductDrawer.tsx`, `finder/ResultsView.tsx`, `product/KeyFigures.tsx` |
+| Les résultats sont trop petits sur un écran moyen | Plein cadre : compteur, marques et réponses s'effacent vers le haut (inertes) et le panneau monte jusque sous le header. Sous le titre, une rangée reprend le total, le filtre Marques et les puces des réponses ; sur téléphone, « Modifier » et ⟲ tiennent sur la ligne du titre. Ce bloc et le podium s'effacent par un cadre intérieur : des résultats ouverts par un lien ne les montrent plus pendant l'entrée | `finder/Finder.tsx`, `finder/ResultsView.tsx` |
+| Console trop haute pour une rangée de tuiles | Bug : la tuile « Peu importe », sans `key`, passait d'une question à l'autre avec l'`opacity: 0` de la sortie. Les tuiles sont recréées à chaque question et leur entrée va explicitement à `opacity: 1`. « Peu importe » quitte la grille : bouton du pied en pointillés, qui devient « Continuer » au premier choix. Grille équilibrée (6 tuiles en 2 × 3, jamais une tuile seule), sans barre de défilement pendant l'entrée | `finder/Console.tsx`, recette `button` (ton `dashed`) |
+| L'aide ⓘ défile et « Compris » alourdit | Bulle `popover` au-dessus de la console, à la taille de son texte, pointe sur le ⓘ devenu ✕ ; Échap, un clic ailleurs, une tuile ou une autre question la referment. Les termes sont balisés `**Terme** :` dans les textes d'aide (Touches, Ressenti, Hauteur, Connexion, Couleur ; Dalle pour les écrans) et rendus en liste à deux colonnes | `finder/HelpBubble.tsx`, `styles.css`, `catalog/src/finder/` |
+| Le module de prix manque de vie | Les barres montent en vague, une bande marque la plage, les prix suivent les curseurs en défilant (fusionnés quand ils se touchent), une échelle court sous le rail ; le curseur saisi grossit avec un halo et le rail s'épaissit | `finder/BudgetControl.tsx`, `finder/Console.tsx` |
+
+- Sous 1 024 px, la bulle « Pas d'ordre imposé » de la barre d'étapes couvrait le pied de la console : le premier contact avec la console la referme.
+- Vérifié : typecheck des 4 paquets, 44 tests, build, Biome et Prettier sur les fichiers touchés ; parcours mesurés et captures en Chrome headless à 1280 × 720, 1440 × 900 et 390 × 844, en français et en anglais, écrans compris, et en mouvement réduit.
 
 ## SEO et i18n
 
@@ -544,7 +565,7 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 - **Canvas 2D** : à l'aise avec des centaines de produits depuis les dessins partagés (45 Mo en DPR 2) et le budget des photos (64 Mo au plus) ; WebGL n'est plus nécessaire à cette échelle.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu, soit 724 Ko bruts (68 Ko en brotli) avec 523 claviers ; l'API en fait 909 Ko, dont 235 Ko de switchs recopiés dans chaque variante. Format compact à prévoir (switchs et marques en dictionnaire).
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
-- **Pas de prix boutiques** : la table `offers` est vide : la section « Où l'acheter » de la fiche produit n'affiche encore qu'un message d'attente.
+- **Pas de prix boutiques** : la table `offers` est vide : les claviers n'ont que le lien Amazon (prix indicatif, pas celui du jour) et la fiche d'un écran n'affiche encore qu'un message d'attente.
 - **Seuils de format** : « Grand format 42"+ » prend les écrans 16:9 dès 36". Les seuils sont à recaler sur les vraies données.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
@@ -563,7 +584,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiches produit `/fr/claviers/<slug>` avec JSON-LD, pages collections, `sitemap.xml`, `robots.txt`, images OG. Le détail et l'ordre sont dans « SEO et i18n » (audit du 23 octobre) ; les fiches produit sont proposées comme session séparée.
 - [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») ; restent les vrais écrans, les prix boutiques (`offers`) et liens d'affiliation.
-- [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres dans « Où l'acheter » de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
+- [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres sur la ligne du prix et dans la barre d'achat de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
 - [ ] **Idées en attente** : spécimen 3D procédural (accueil, tuiles), sons et courbes de force des switchs, démo de fréquence et loupe PPI dans les tuiles, vue éclatée, thème sombre, analytics, back-office (interface interne ou Directus).
 

@@ -15,7 +15,8 @@ const button = defineRecipe({
     letterSpacing: "-0.01em",
     borderRadius: "pill",
     cursor: "pointer",
-    transition: "background 160ms, color 160ms, transform 160ms",
+    transition:
+      "background 160ms, color 160ms, border-color 160ms, transform 160ms",
     _active: { transform: "scale(0.98)" },
     _disabled: { opacity: 0.4, cursor: "not-allowed" },
     _focusVisible: {
@@ -34,6 +35,16 @@ const button = defineRecipe({
         borderWidth: "1px",
         borderColor: "line.strong",
         _hover: { borderColor: "ink" },
+      },
+      // An answer that keeps everything ("No preference"): dashed like a question still ahead on
+      // the journey bar, drawn in full under the pointer.
+      dashed: {
+        bg: "transparent",
+        color: "ink",
+        borderWidth: "1px",
+        borderStyle: "dashed",
+        borderColor: "line.strong",
+        _hover: { borderStyle: "solid", borderColor: "ink" },
       },
     },
     size: {
