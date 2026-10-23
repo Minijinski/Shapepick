@@ -58,16 +58,7 @@ const button = defineRecipe({
 
 const optionTile = defineSlotRecipe({
   className: "option-tile",
-  slots: [
-    "root",
-    "visual",
-    "label",
-    "hint",
-    "count",
-    "tick",
-    "blocked",
-    "change",
-  ],
+  slots: ["root", "label", "hint", "count", "tick", "blocked", "change"],
   base: {
     root: {
       position: "relative",
@@ -103,13 +94,6 @@ const optionTile = defineSlotRecipe({
         color: "ink.faint",
       },
     },
-    visual: {
-      color: "ink.muted",
-      h: { base: "7", md: "8" },
-      w: "100%",
-      display: "flex",
-      alignItems: "flex-end",
-    },
     label: {
       fontWeight: "600",
       fontSize: { base: "sm", md: "0.9375rem" },
@@ -121,8 +105,8 @@ const optionTile = defineSlotRecipe({
       fontSize: "xs",
       color: "ink.muted",
       lineHeight: "1.25",
-      // Two lines at most, which a tile holds without growing (one beside a drawing, whose hints
-      // are kept short). The count sits at the end of the last line.
+      // Two lines at most, which a tile holds without growing. The count sits at the end of the
+      // last line.
       lineClamp: "2",
       pr: "7",
     },

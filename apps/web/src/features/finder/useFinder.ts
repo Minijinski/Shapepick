@@ -202,7 +202,7 @@ export function useFinder(
   );
 
   /**
-   * An answered question reopened, from a chip of the rail or a tile's "Change". Like a stop of
+   * An answered question reopened, from a tile's "Change" (or the brands' panel). Like a stop of
    * the journey bar, it commits the picks on screen first, as "Continue" would; Back drops them.
    * The brands are no question: their panel opens instead.
    */
@@ -214,7 +214,7 @@ export function useFinder(
     [answers, currentKey, draft, go],
   );
   /**
-   * A question picked on the journey bar. An answered one reopens, like a chip of the rail; one
+   * A question picked on the journey bar. An answered one reopens, as "Change" does; one
    * still ahead moves up to be the next answered, and the others keep their order behind it.
    */
   const pickStep = useCallback(
@@ -267,19 +267,6 @@ export function useFinder(
         : null;
     },
     [def, items, effective, step, locale],
-  );
-
-  // ---- Answer rail ---------------------------------------------------------------------------
-  const rail = useMemo(
-    () =>
-      def.steps
-        .filter((s) => answers[s.key] != null && asked.includes(s.key))
-        .map((s) => ({
-          key: s.key,
-          label: s.label[locale],
-          value: describeAnswer(s, answers[s.key], locale) ?? "",
-        })),
-    [def, answers, asked, locale],
   );
 
   // ---- Journey bar ---------------------------------------------------------------------------
@@ -349,6 +336,31 @@ export function useFinder(
   }, [def, items, effective, answers, locale]);
 
   /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
+  /**
+   * A product to picture in each option's tile: the best match the option would keep, given the
+   * other answers (for a question that only steers the ranking, the best product for that
+   * answer), a different one in each tile where the catalogue allows.
+   */
+  const examples = useMemo(() => {
+    if (!step || step.kind === "range") return null;
+    const others = withAnswer(answers, step.key, null);
+    const pool = step.weightOnly ? null : rank(def, items, others);
+    const used = new Set<string>();
+    const picked = new Map<string, CatalogItem>();
+    for (const option of step.options) {
+      const candidates = pool
+        ? pool.filter((r) => option.match(r.item))
+        : rank(def, items, withAnswer(others, step.key, option.id));
+      // One with a photo first: the tile shows a real device rather than a drawing.
+      const fresh = candidates.filter((r) => !used.has(def.id(r.item)));
+      const pick = fresh.find((r) => r.item.photo) ?? fresh[0] ?? candidates[0];
+      if (!pick) continue;
+      used.add(def.id(pick.item));
+      picked.set(option.id, pick.item);
+    }
+    return picked;
+  }, [def, items, answers, step]);
+
   const hotIds = useMemo(() => {
     if (hoveredBrand) {
       // A brand hovered in its panel: its products among those on the canvas, if it has any
@@ -448,12 +460,12 @@ export function useFinder(
     counts,
     asked,
     position: currentKey ? asked.indexOf(currentKey) + 1 : asked.length,
-    rail,
     journey,
     misses,
     order,
     scores,
     hotIds,
+    examples,
     details,
     commit,
     goTo,

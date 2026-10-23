@@ -6,8 +6,9 @@ import { Flip, gsap, prefersReducedMotion } from '../motion/gsap'
 import { motion } from '../motion/tokens'
 
 // The whole questionnaire under the console, as a map that never reorders: every question in its
-// usual place, answered ones ticked, those still ahead dashed, those the answers leave nothing to
-// decide greyed out until the answers widen. The question being answered is lifted out of the map
+// usual place, answered ones ticked with their answer, those still ahead dashed, those the answers
+// leave nothing to decide greyed out until the answers widen. It is the one place where the
+// visitor sees and changes the answers given so far. The question being answered is lifted out of the map
 // into the "In progress" slot at the start of the bar (the results take that slot once they are
 // open). Picking a stop moves it up into the slot and the question it replaces back to its place,
 // so the visitor takes the questions in any order without anything else moving: GSAP Flip carries
@@ -29,9 +30,6 @@ type Props = {
   /** The results are on screen: they hold the slot instead of a question. */
   done: boolean
   locale: Locale
-  /** First visit: a bubble says the questions can be taken in any order. */
-  hint: boolean
-  onDismissHint: () => void
   onPick: (key: string) => void
   /** Seconds before the stops fade in. */
   enterDelay?: number
@@ -170,37 +168,13 @@ const lift = css({
 
 const dot = css({ w: '1.5', h: '1.5', borderRadius: 'full', bg: 'signal' })
 
-const bubble = css({
-  position: 'absolute',
-  left: '2',
-  bottom: 'calc(100% + 12px)',
-  zIndex: '2',
-  display: 'flex',
-  alignItems: 'center',
-  gap: '3',
-  maxW: 'min(20rem, calc(100vw - 3rem))',
-  py: '2',
-  pl: '3.5',
-  pr: '2',
-  borderRadius: 'card',
-  bg: 'ink',
-  color: 'paper',
-  fontSize: 'xs',
-  lineHeight: '1.4',
-  boxShadow: '0 16px 36px -18px rgba(20,20,20,0.6)',
-  animation: 'fadeUp 0.5s token(easings.signal) 0.6s backwards',
-  _motionReduce: { animation: 'none' },
-  // A notch pointing down at the map.
-  _after: {
-    content: '""',
-    position: 'absolute',
-    top: '100%',
-    left: '6',
-    borderWidth: '6px',
-    borderStyle: 'solid',
-    borderColor: 'transparent',
-    borderTopColor: 'ink',
-  },
+/** An answered question’s answer, after its name, cut short when it is long. */
+const answer = css({
+  maxW: '11rem',
+  overflow: 'hidden',
+  textOverflow: 'ellipsis',
+  color: 'ink.muted',
+  _before: { content: '"·"', mr: '1.5', color: 'ink.faint' },
 })
 
 const Tick = () => (
@@ -221,15 +195,7 @@ const Tick = () => (
   </span>
 )
 
-export function JourneyBar({
-  stops,
-  done,
-  locale,
-  hint,
-  onDismissHint,
-  onPick,
-  enterDelay = 0,
-}: Props) {
+export function JourneyBar({ stops, done, locale, onPick, enterDelay = 0 }: Props) {
   const nav = useRef<HTMLElement>(null)
   const list = useRef<HTMLOListElement>(null)
   const state = useRef<Flip.FlipState | null>(null)
@@ -290,40 +256,6 @@ export function JourneyBar({
       </div>
       <span aria-hidden className={css({ flexShrink: '0', w: '1px', h: '5', bg: 'line' })} />
       <div data-console-part className={map} style={{ animationDelay: `${enterDelay}s` }}>
-        {hint && (
-          <div role="status" className={bubble}>
-            <span>{m.journeyHint[locale]}</span>
-            <button
-              type="button"
-              aria-label={m.close[locale]}
-              onClick={onDismissHint}
-              className={css({
-                flexShrink: '0',
-                display: 'grid',
-                placeItems: 'center',
-                w: '6',
-                h: '6',
-                borderRadius: 'full',
-                color: 'paper',
-                cursor: 'pointer',
-                _hover: { bg: 'paper/15' },
-              })}
-            >
-              <svg
-                aria-hidden
-                viewBox="0 0 24 24"
-                width="12"
-                height="12"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2.4"
-                strokeLinecap="round"
-              >
-                <path d="M6 6l12 12M18 6L6 18" />
-              </svg>
-            </button>
-          </div>
-        )}
         <ol ref={list} className={track}>
           {rest.map((s, i) => (
             <li
@@ -350,6 +282,7 @@ export function JourneyBar({
               >
                 {s.state === 'done' && <Tick />}
                 {s.label}
+                {s.state === 'done' && s.value && <span className={answer}>{s.value}</span>}
                 {s.state === 'ahead' && (
                   <span aria-hidden data-lift className={lift}>
                     ↑

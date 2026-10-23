@@ -283,6 +283,55 @@ html[data-loading] [data-preloader] *::after {
   }
 }
 
+/* ---- Option tiles with their example product (features/finder/OptionExample.tsx) -------------- */
+
+/* The picture sits at the tile’s right and never makes it taller: the text keeps the rest of
+   the width, and drops its hint on a tile too narrow for both (five in a row). Phones keep their
+   tiles for the words. */
+[data-pictured] {
+  container-type: inline-size;
+}
+[data-pictured] [data-example] {
+  position: absolute;
+  top: 12px;
+  right: 12px;
+  bottom: 28px;
+  width: min(34cqw, 7rem);
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  pointer-events: none;
+  transition: transform 320ms cubic-bezier(0.22, 1, 0.36, 1);
+}
+[data-pictured][data-no-count] [data-example] {
+  bottom: 12px;
+}
+[data-pictured]:hover [data-example] {
+  transform: translateY(-2px) scale(1.04);
+}
+[data-pictured] [data-text] {
+  padding-right: calc(min(34cqw, 7rem) + 0.5rem);
+}
+/* The tile’s inner width: about 9rem five to a row, 12rem four to a row. */
+@container (max-width: 11rem) {
+  [data-pictured] [data-hint] {
+    display: none;
+  }
+}
+@media (max-width: 39.99rem) {
+  [data-pictured] [data-example] {
+    display: none;
+  }
+  [data-pictured] [data-text] {
+    padding-right: 1.75rem;
+  }
+}
+@media (prefers-reduced-motion: reduce) {
+  [data-pictured] [data-example] {
+    transition: none;
+  }
+}
+
 /* ---- Help bubble (features/finder/HelpBubble.tsx) -------------------------------------------- */
 
 /* It grows out of the help button as it opens, its lines following one another, and fades back

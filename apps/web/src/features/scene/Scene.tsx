@@ -207,7 +207,9 @@ export function Scene({ catalogs, locale }: Props) {
       }
       const end = lineEnd(p.side, p.x, p.y, cw, ch, to.ax, to.ay)
       box.style.transform = `translate3d(${p.x}px, ${p.y}px, 0)`
-      dot.style.transform = `translate3d(${to.ax - 4}px, ${to.ay - 4}px, 0)`
+      // `translate`, not `transform`: the dot's entrance animates `scale`, which applies after
+      // `translate` (it grows in place) but before `transform` (it would grow out of the corner).
+      dot.style.translate = `${to.ax - 4}px ${to.ay - 4}px`
       line.setAttribute('x1', String(to.ax))
       line.setAttribute('y1', String(to.ay))
       line.setAttribute('x2', String(end.x))

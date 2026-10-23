@@ -103,10 +103,6 @@ export const messages = {
   ),
   inProgress: text("En cours", "Now"),
   results: text("Résultats", "Results"),
-  journeyHint: text(
-    "Pas d’ordre imposé : choisis ici ta prochaine question.",
-    "No set order: pick your next question here.",
-  ),
   matchHow: text("Comment lire ce %", "How to read this %"),
   matchExplain: text(
     "Les modèles listés respectent toutes tes réponses, et chacune fait monter leur score. Le reste dépend de ce qui compte le plus pour ton usage : un modèle peut cocher toutes tes cases sans être idéal pour lui.",

@@ -9,9 +9,8 @@ import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice } from "../product/specs";
 
 // The best matches for the answers so far, under a header that says what the numbers are: the
-// rank on each drawing, the match as a ring. Three cards, then the fourth and fifth as compact
-// rows where the height allows (the column asks its own container, so a short screen keeps
-// three), then a way to the whole ranking. Every entry opens its product's sheet: hovered, the
+// rank on each drawing, the match as a ring. Three cards, no more (the canvas stays the main
+// thing to look at), then a way to the whole ranking. Every entry opens its product's sheet: hovered, the
 // drawing lifts and the price gives way to "View details"; until the visitor has opened a sheet,
 // the best match plays that once by itself. When the ranking changes, GSAP Flip moves each entry
 // from where it was to where it now belongs, so a product visibly climbs or drops. Before the first
@@ -21,7 +20,7 @@ const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
 
 /** How many products the podium shows at most. */
-export const PODIUM_SIZE = 5;
+export const PODIUM_SIZE = 3;
 
 const frosted = css({
   bg: "surface.raised/80",

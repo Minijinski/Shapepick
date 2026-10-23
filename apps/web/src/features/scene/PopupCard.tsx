@@ -15,8 +15,8 @@ import type { ItemDetail } from './controller'
 
 const card = css({
   w: { base: '64', md: '80' },
-  bg: 'surface.raised/92',
-  backdropFilter: 'blur(14px) saturate(1.2)',
+  // Opaque: the products drifting behind it would only blur what it says.
+  bg: 'surface.raised',
   borderRadius: 'card',
   borderWidth: '1px',
   borderColor: 'line',

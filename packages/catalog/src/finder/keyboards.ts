@@ -4,7 +4,8 @@ import { ANY, type Answers, type FinderDefinition, type Option } from "./types";
 
 // The keyboard questionnaire. Order: use (sets the ranking profile, never filters), then the big
 // visible decision (size), then the layout a French buyer cannot compromise on, then the technical
-// choices that need explaining, budget once the trade-offs are known, must-haves last.
+// choices that need explaining, budget once the trade-offs are known, must-haves last. No colour
+// question: ten questions were too many, and a colour rarely decides between boards.
 
 type K = KeyboardItem;
 const opt = (
@@ -420,47 +421,6 @@ export const keyboardFinder: FinderDefinition<K> = {
             "Infos et réglages d’un coup d’œil",
             "Info and settings at a glance",
           ],
-        ),
-      ],
-    },
-    {
-      key: "look",
-      kind: "multi",
-      label: text("Couleur", "Colour"),
-      title: text("Une couleur ?", "Any colour?"),
-      help: text(
-        "Un clavier compte s’il existe dans une des couleurs choisies. **Coloré** : vif ou pastel. **Transparent** : boîtier translucide.",
-        "A board counts if it comes in any colour you pick. **Colourful**: bright or pastel. **Transparent**: see-through case.",
-      ),
-      // What each family takes in (see familyOf at ingest), short beside its swatch.
-      options: [
-        opt(
-          "black",
-          "Noir",
-          "Black",
-          (k) => k.variants.some((v) => v.colorFamily === "black"),
-          ["Noir, gris, graphite", "Black, grey, graphite"],
-        ),
-        opt(
-          "white",
-          "Blanc",
-          "White",
-          (k) => k.variants.some((v) => v.colorFamily === "white"),
-          ["Blanc, argent, crème", "White, silver, cream"],
-        ),
-        opt(
-          "color",
-          "Coloré",
-          "Colourful",
-          (k) => k.variants.some((v) => v.colorFamily === "color"),
-          ["Vif ou pastel", "Bright or pastel"],
-        ),
-        opt(
-          "transparent",
-          "Transparent",
-          "Transparent",
-          (k) => k.variants.some((v) => v.colorFamily === "transparent"),
-          ["Boîtier translucide", "See-through case"],
         ),
       ],
     },

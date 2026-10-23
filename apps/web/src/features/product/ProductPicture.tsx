@@ -15,9 +15,14 @@ type Props = {
   className?: string
   /** Larger pictures cast a larger shadow on the paper. */
   shadow?: 'sm' | 'lg'
+  /**
+   * Small pictures among others (an option's tile): a photo that cannot be cut out shows the
+   * drawing rather than its backdrop, which would read as a sticker among cut-outs.
+   */
+  cutoutOnly?: boolean
 }
 
-export function ProductPicture({ item, className, shadow = 'sm' }: Props) {
+export function ProductPicture({ item, className, shadow = 'sm', cutoutOnly = false }: Props) {
   if (!item.photo) return <ProductGlyph item={item} className={className} />
   // Another product's photo starts afresh, never on the previous one.
   return (
@@ -27,6 +32,7 @@ export function ProductPicture({ item, className, shadow = 'sm' }: Props) {
       photo={item.photo}
       className={className}
       shadow={shadow}
+      cutoutOnly={cutoutOnly}
     />
   )
 }
@@ -36,7 +42,13 @@ const shadows = {
   lg: css({ filter: 'drop-shadow(0 6px 8px rgba(20, 20, 20, 0.14))' }),
 }
 
-function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo: Photo }) {
+function Photographed({
+  item,
+  photo,
+  className,
+  shadow = 'sm',
+  cutoutOnly = false,
+}: Props & { photo: Photo }) {
   const box = useRef<SVGSVGElement & HTMLImageElement>(null)
   // A photo already cut out this session shows at once.
   const [shown, setShown] = useState<Picture | null>(() =>
@@ -58,7 +70,7 @@ function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo
       void picture(photo, width).then((made) => {
         if (!live) return
         if (made) setShown(made)
-        else if (!best) setPlain(photoSrc(photo, width))
+        else if (!best) setPlain(cutoutOnly ? '' : photoSrc(photo, width))
       })
     }
     const sized = new ResizeObserver(([entry]) => {
@@ -72,7 +84,7 @@ function Photographed({ item, photo, className, shadow = 'sm' }: Props & { photo
       live = false
       sized.disconnect()
     }
-  }, [photo])
+  }, [photo, cutoutOnly])
 
   if (!shown && plain)
     return (

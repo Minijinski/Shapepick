@@ -10,7 +10,6 @@ import {
   useEnterDelay,
   usePageExit,
 } from "../scene/navigation";
-import { AnswerRail } from "./AnswerRail";
 import { BrandFilter } from "./BrandFilter";
 import { Console } from "./Console";
 import { DockPanel } from "./DockPanel";
@@ -21,12 +20,11 @@ import { ProductDrawer } from "./ProductDrawer";
 import { ResultsView } from "./ResultsView";
 import { type FinderSearch, useFinder } from "./useFinder";
 
-// The finder over its category's canvas: the live counter (with the brand filter) and the answer
-// rail top-left, the podium on the right, the question console docked at the bottom over the journey bar, where the
-// visitor can take the questions in any order; at the end the console's panel grows into the
-// results, up to the site header (the counter, the brands and the answers move into them), and
-// shrinks back when the visitor edits an answer. The
-// canvas itself is the layout's scene: the finder only tells it which products the answers keep,
+// The finder over its category's canvas: the live counter (with the brand filter) top-left, the
+// podium on the right, the question console docked at the bottom over the journey bar, which holds
+// the answers given and lets the visitor take the questions in any order; at the end the console's
+// panel grows into the results, up to the site header (the counter and the brands move into them),
+// and shrinks back when the visitor edits an answer. The canvas itself is the layout's scene: the finder only tells it which products the answers keep,
 // which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
 // dragging anywhere else browses the canvas. Any product, on the canvas, the podium or the
 // results, opens its sheet over the page.
@@ -40,7 +38,6 @@ type Props = {
 
 // One-time hints, remembered in the browser only: a blocked storage just shows them again.
 const SHEET_SEEN = "choose-a-device:sheet-seen";
-const JOURNEY_SEEN = "choose-a-device:journey-seen";
 const seen = (key: string) => {
   try {
     return localStorage.getItem(key) === "1";
@@ -53,9 +50,6 @@ const markSeen = (key: string) => {
     localStorage.setItem(key, "1");
   } catch {}
 };
-
-/** How long the journey bar's hint stays up if the visitor does nothing with it. */
-const JOURNEY_HINT_MS = 10_000;
 
 const enterLeft = css({
   animation: "slideInLeft 0.9s token(easings.signal) backwards",
@@ -74,7 +68,7 @@ const enterFade = css({
   animation: "fadeUp 0.8s token(easings.signal) backwards",
   _motionReduce: { animation: "none" },
 });
-/** The counter and answers give way to the results: they lift away while the results rise. */
+/** The counter gives way to the results: it lifts away while the results rise. */
 const fadesWithResults = css({
   display: "grid",
   gap: "3",
@@ -123,36 +117,6 @@ export function Finder({ category, items, search, locale }: Props) {
     setHint(false);
     markSeen(SHEET_SEEN);
   }, []);
-
-  // Once a first answer is in, the journey bar says once that the questions can come in any order.
-  const [journeyHint, setJourneyHint] = useState(false);
-  const ahead = finder.journey.filter((s) => s.state === "ahead").length;
-  useEffect(() => {
-    if (!done && finder.informed && ahead > 1 && !seen(JOURNEY_SEEN))
-      setJourneyHint(true);
-  }, [done, finder.informed, ahead]);
-  const dismissJourneyHint = useCallback(() => {
-    setJourneyHint(false);
-    markSeen(JOURNEY_SEEN);
-  }, []);
-  // Narrower than the podium's column, the hint hangs over the console's footer and its buttons:
-  // the first touch of the console folds it away.
-  const dismissJourneyHintOnNarrow = useCallback(() => {
-    if (!window.matchMedia("(min-width: 64rem)").matches) dismissJourneyHint();
-  }, [dismissJourneyHint]);
-  useEffect(() => {
-    if (!journeyHint) return;
-    const timer = setTimeout(dismissJourneyHint, JOURNEY_HINT_MS);
-    return () => clearTimeout(timer);
-  }, [journeyHint, dismissJourneyHint]);
-  const { pickStep } = finder;
-  const pickFromJourney = useCallback(
-    (key: string) => {
-      dismissJourneyHint();
-      pickStep(key);
-    },
-    [dismissJourneyHint, pickStep],
-  );
 
   useEffect(() => {
     scene.showCanvas(category);
@@ -391,11 +355,6 @@ export function Finder({ category, items, search, locale }: Props) {
           >
             {!done && brandFilter}
           </LiveCounter>
-          <AnswerRail
-            items={finder.rail}
-            current={finder.currentKey}
-            onPick={finder.goTo}
-          />
         </div>
       </div>
 
@@ -509,9 +468,6 @@ export function Finder({ category, items, search, locale }: Props) {
             }),
           )}
           style={{ animationDelay: `${delay}s` }}
-          onPointerDownCapture={
-            journeyHint ? dismissJourneyHintOnNarrow : undefined
-          }
         >
           {!done && finder.informed && (
             <div className={css({ display: { base: "block", lg: "none" } })}>
@@ -535,12 +491,10 @@ export function Finder({ category, items, search, locale }: Props) {
                 locale={locale}
                 total={items.length}
                 layouts={layouts}
-                rail={finder.rail}
                 brands={brandFilter}
                 onEdit={finder.editAnswers}
                 onReset={finder.reset}
                 onOpen={openSheet}
-                onPickAnswer={finder.goTo}
               />
             ) : (
               <Console
@@ -556,9 +510,7 @@ export function Finder({ category, items, search, locale }: Props) {
             stops={finder.journey}
             done={done}
             locale={locale}
-            hint={journeyHint && !done}
-            onDismissHint={dismissJourneyHint}
-            onPick={pickFromJourney}
+            onPick={finder.pickStep}
             enterDelay={delay + 0.45}
           />
         </div>

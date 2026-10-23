@@ -22,7 +22,7 @@ import { motion } from "../motion/tokens";
 import { BudgetControl } from "./BudgetControl";
 import { useDockHeight } from "./DockPanel";
 import { HelpBubble, plainHelp } from "./HelpBubble";
-import { hasVisual, OptionVisual } from "./OptionVisual";
+import { examplesScale, OptionExample } from "./OptionExample";
 import { type Finder, toggled } from "./useFinder";
 
 // The question console, in the dock's panel. One question at a time; tiles carry a live count,
@@ -357,7 +357,8 @@ export function Console({
   if (columns.current.visit !== visit)
     columns.current = { visit, cols: columnsFor(options.length) };
 
-  const visual = hasVisual(category, step.key);
+  // Each tile pictures the product its option brings forward, to scale on a size question.
+  const scale = examplesScale(category, step.key, finder.examples);
   const bins =
     step.kind === "range"
       ? histogram(finder.def, finder.items, finder.answers, step.key, 32)
@@ -536,15 +537,7 @@ export function Console({
                   const count = counts?.counts[option.id] ?? 0;
                   const dead = count === 0 && !selected && !step.weightOnly;
                   const tile = optionTile();
-                  const art = visual && (
-                    <span className={tile.visual}>
-                      <OptionVisual
-                        category={category}
-                        stepKey={step.key}
-                        optionId={option.id}
-                      />
-                    </span>
-                  );
+                  const example = finder.examples?.get(option.id);
                   if (dead) {
                     // Nothing to pick: not a button, the tile says which earlier answer leaves it
                     // empty and leads back to that question.
@@ -558,7 +551,6 @@ export function Console({
                         data-dead
                         className={tile.root}
                       >
-                        {art}
                         <span className={css({ display: "grid", gap: "1" })}>
                           <span id={`${why}-label`} className={tile.label}>
                             {option.label[locale]}
@@ -594,6 +586,8 @@ export function Console({
                       <button
                         type="button"
                         className={tile.root}
+                        data-pictured={example ? "" : undefined}
+                        data-no-count={step.weightOnly || undefined}
                         aria-pressed={isMulti ? selected : undefined}
                         onPointerEnter={() => finder.setHovered(option.id)}
                         onPointerLeave={() => finder.setHovered(null)}
@@ -605,8 +599,14 @@ export function Console({
                           else leave(() => finder.commit(option.id));
                         }}
                       >
-                        {art}
+                        {example && (
+                          <OptionExample
+                            item={example}
+                            scale={scale.get(option.id)}
+                          />
+                        )}
                         <span
+                          data-text
                           className={css({
                             display: "grid",
                             gap: "1",
@@ -617,7 +617,7 @@ export function Console({
                             {option.label[locale]}
                           </span>
                           {option.hint && (
-                            <span className={tile.hint}>
+                            <span data-hint className={tile.hint}>
                               {option.hint[locale]}
                             </span>
                           )}

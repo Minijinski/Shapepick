@@ -18,7 +18,6 @@ import { MatchBreakdown } from "../product/MatchBreakdown";
 import { KeySpecs } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, keySpecs } from "../product/specs";
-import { AnswerRail } from "./AnswerRail";
 import { useDockHeight } from "./DockPanel";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
@@ -43,14 +42,11 @@ type Props = {
   total: number;
   /** The visitor's layout answer (azerty, ansi, iso), which the shop links follow. */
   layouts?: readonly string[];
-  /** The answers given, a chip each: a chip reopens its question. */
-  rail: { key: string; label: string; value: string }[];
   /** The brand control, beside the count. */
   brands?: ReactNode;
   onEdit: () => void;
   onReset: () => void;
   onOpen: (slug: string) => void;
-  onPickAnswer: (key: string) => void;
 };
 
 /** Height of a row of the list (px), which places every row without measuring any. */
@@ -231,12 +227,10 @@ export function ResultsView({
   locale,
   total,
   layouts,
-  rail,
   brands,
   onEdit,
   onReset,
   onOpen,
-  onPickAnswer,
 }: Props) {
   const root = useRef<HTMLElement>(null);
   const list = useRef<HTMLOListElement>(null);
@@ -363,8 +357,8 @@ export function ResultsView({
         </div>
       </header>
 
-      {/* What the results answer: how many products, the brands, the answers (each reopens its
-          question). */}
+      {/* What the results answer: how many products, and the brands. The answers stay on the
+          journey bar under the results, where each one reopens its question. */}
       <div
         className={css({
           display: "flex",
@@ -391,20 +385,6 @@ export function ResultsView({
           </span>
         </span>
         {brands}
-        {rail.length > 0 && (
-          <div
-            className={css({
-              flexBasis: { base: "100%", md: "auto" },
-              minW: "0",
-            })}
-          >
-            <AnswerRail
-              items={rail}
-              current={null}
-              onPick={(key) => leave(() => onPickAnswer(key))()}
-            />
-          </div>
-        )}
       </div>
 
       {!first ? (

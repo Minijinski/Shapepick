@@ -126,6 +126,12 @@ const REGROUP = {
 }
 /** A drawing (or a plate standing in for it) fading in once its bitmap exists. */
 const APPEAR_MS = 280
+/**
+ * Where a product on the field takes the pointer (screen px): most of it (`share`) clear of the
+ * screen’s edges and of the paper fading under the header and the counter (the finder's top
+ * gradient stays mostly opaque down to here), which leaves only a glimpse of it.
+ */
+const PICK = { top: 170, topCompact: 130, side: 8, bottom: 8, share: 0.7 }
 /** How far ahead (s) the canvas looks for products coming into view, along its motion. */
 const AHEAD_S = 0.9
 /**
@@ -1539,7 +1545,26 @@ export class SceneRenderer {
         best = { category: band.category, slug: item.slug, spot: false, slot: index, kx, ky }
       }
     }
-    return best
+    // One barely showing (in a corner, under the paper fading below the header) opens no card.
+    return best && this.inSight(band, best) ? best : null
+  }
+
+  /** Whether most of a copy on the field is in sight, clear of the screen’s edges. */
+  private inSight(band: Band, hit: Hit) {
+    const slot = band.world.slots[hit.slot]
+    if (!slot) return false
+    const pose = this.copyPose(band, hit)
+    const { w: iw, h: ih } = this.sizeOf(slot.item)
+    const w = iw * pose.scale
+    const h = ih * pose.scale
+    const top = isCompact(this.vp) ? PICK.topCompact : PICK.top
+    const shown =
+      Math.max(
+        0,
+        Math.min(pose.x + w / 2, this.vp.w - PICK.side) - Math.max(pose.x - w / 2, PICK.side),
+      ) *
+      Math.max(0, Math.min(pose.y + h / 2, this.vp.h - PICK.bottom) - Math.max(pose.y - h / 2, top))
+    return shown >= PICK.share * w * h
   }
 
   /** Whether the products take the pointer: off while the finder's results cover the canvas. */
