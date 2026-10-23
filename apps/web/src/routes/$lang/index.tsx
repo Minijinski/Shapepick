@@ -6,6 +6,7 @@ import {
   useEffect,
   useMemo,
   useRef,
+  useState,
 } from "react";
 import { css, cx } from "styled-system/css";
 import { gsap, prefersReducedMotion } from "~/features/motion/gsap";
@@ -109,6 +110,12 @@ function Home() {
   const open = useSceneNavigation();
   const root = useRef<HTMLElement>(null);
   const opening = useRef(false);
+  // The panel hovered (or focused): the canvas veils the others, and they blur (BandLink).
+  const [hovered, setHovered] = useState<Category | null>(null);
+  const hover = (category: Category | null) => {
+    scene.hoverBand(category);
+    setHovered(category);
+  };
   // Back from a category, the copy comes in while the panel is still settling into its slot.
   const delay = useEnterDelay({ mode: "bands" }, 0.55, 0.15);
 
@@ -117,15 +124,19 @@ function Home() {
     // A pointer already resting on a panel when the scene settles (back from a category) never
     // sends an enter event: hand it over now.
     return scene.whenSettled(() => {
-      const hovered =
+      const under =
         root.current?.querySelector<HTMLElement>("[data-band]:hover");
-      if (hovered) scene.hoverBand(hovered.dataset.band as Category);
+      if (!under) return;
+      scene.hoverBand(under.dataset.band as Category);
+      setHovered(under.dataset.band as Category);
     });
   }, []);
 
   usePageExit(
     () =>
       new Promise<void>((resolve) => {
+        // The other panels' blur fades while the opening panel covers them.
+        setHovered(null);
         const el = root.current;
         if (!el || prefersReducedMotion()) return resolve();
         const words = el.querySelectorAll("[data-word]");
@@ -179,6 +190,8 @@ function Home() {
             spot={spots?.[i] ?? null}
             count={catalogs[category].length}
             locale={locale}
+            veiled={hovered !== null && hovered !== category}
+            onHover={hover}
             onPick={pick}
           />
         ))}
@@ -191,6 +204,8 @@ function Home() {
           display: "grid",
           placeItems: "center",
           px: "6",
+          // Centred a little above the middle: the panels' names live at their feet.
+          pb: { base: "10dvh", md: "14dvh" },
           pointerEvents: "none",
         })}
       >
@@ -342,7 +357,7 @@ const label = css({
     zIndex: "-1",
     borderRadius: "panel",
     bg: "paper/72",
-    backdropFilter: "blur(14px) saturate(1.1)",
+    backdropFilter: "blur(22px) saturate(1.1)",
     boxShadow:
       "0 0 0 1px rgba(20,20,20,0.05), 0 18px 40px -20px rgba(20,20,20,0.25)",
     opacity: 0,
@@ -358,6 +373,29 @@ const label = css({
   },
   "@media (hover: none)": { _before: { opacity: 1, transform: "scale(1)" } },
 });
+/**
+ * While another panel is hovered, this one blurs, on top of the paper the canvas veils it with.
+ * It lies beside the link, cut to the same shape: inside the link, whose clip-path makes it a
+ * backdrop root, the blur would not see the canvas.
+ */
+const veil = css({
+  position: "absolute",
+  inset: "0",
+  pointerEvents: "none",
+  backdropFilter: "blur(3px)",
+  opacity: 0,
+  visibility: "hidden",
+  // The canvas's veil eases in with power3.out over 0.7 s (renderer.ts, hoverBand).
+  transition:
+    "opacity 700ms cubic-bezier(0.215, 0.61, 0.355, 1), visibility 0s 700ms",
+  "&[data-on]": {
+    opacity: 1,
+    visibility: "visible",
+    transition: "opacity 700ms cubic-bezier(0.215, 0.61, 0.355, 1)",
+  },
+  _motionReduce: { transition: "none" },
+});
+
 // Revealed by hovering or focusing the panel; always shown where there is no hover.
 const reveal = css({
   transition: "transform 700ms token(easings.signal), opacity 500ms",
@@ -376,6 +414,8 @@ function BandLink({
   spot,
   count,
   locale,
+  veiled,
+  onHover,
   onPick,
 }: {
   category: Category;
@@ -386,6 +426,9 @@ function BandLink({
   spot: LabelSpot | null;
   count: number;
   locale: Locale;
+  /** Another panel is hovered: this one blurs. */
+  veiled: boolean;
+  onHover: (category: Category | null) => void;
   onPick: (category: Category, e: MouseEvent) => void;
 }) {
   const name = m.category[category][locale];
@@ -434,10 +477,10 @@ function BandLink({
           WebkitTapHighlightColor: "transparent",
         })}
         style={linkStyle}
-        onPointerEnter={() => scene.hoverBand(category)}
-        onPointerLeave={() => scene.hoverBand(null)}
-        onFocus={() => scene.hoverBand(category)}
-        onBlur={() => scene.hoverBand(null)}
+        onPointerEnter={() => onHover(category)}
+        onPointerLeave={() => onHover(null)}
+        onFocus={() => onHover(category)}
+        onBlur={() => onHover(null)}
         onClick={(e) => onPick(category, e)}
       >
         <span className={css({ srOnly: true })}>
@@ -445,6 +488,14 @@ function BandLink({
           {m.categoryPitch[category][locale]}
         </span>
       </Link>
+      {quad && (
+        <span
+          aria-hidden
+          data-on={veiled || undefined}
+          className={veil}
+          style={{ clipPath: clipPathOf(quad) }}
+        />
+      )}
       <span aria-hidden data-band-label className={label} style={labelStyle}>
         <span
           className={css({

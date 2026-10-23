@@ -29,8 +29,9 @@ html[data-loading] [data-preloader] *::after {
   }
 }
 
-/* The drawings ink in (keys, pixels, slices of a shell): about half in CSS before the page wakes
-   up, the rest with the real progress; their accent turns orange once everything is in. */
+/* The drawings ink in (keys, pixels, the dots of a shell): about half in CSS before the page wakes
+   up, the rest with the real progress; their accent turns orange once everything is in. Units of
+   the signal tone (the mouse's buttons) ink in orange. */
 [data-preloader] [data-unit] {
   fill: transparent;
   stroke: #c9c5bb;
@@ -43,6 +44,13 @@ html[data-loading] [data-preloader] *::after {
   fill: #141414;
   stroke: #141414;
 }
+[data-preloader] [data-unit][data-tone="signal"][data-css] {
+  animation-name: preloaderKeySignal;
+}
+[data-preloader] [data-unit][data-tone="signal"][data-on] {
+  fill: #ff5a1f;
+  stroke: #ff5a1f;
+}
 [data-preloader] [data-accent] {
   transition: fill 260ms, stroke 260ms;
 }
@@ -54,6 +62,12 @@ html[data-loading] [data-preloader] *::after {
   to {
     fill: #141414;
     stroke: #141414;
+  }
+}
+@keyframes preloaderKeySignal {
+  to {
+    fill: #ff5a1f;
+    stroke: #ff5a1f;
   }
 }
 
@@ -283,6 +297,21 @@ html[data-loading] [data-preloader] *::after {
   }
 }
 
+/* ---- Journey bar (features/finder/JourneyBar.tsx) ------------------------------------------- */
+
+/* The fades at the ends of a chain wider than the bar, on the side it runs past: registered, so
+   they ease in and out as the chain scrolls. */
+@property --fade-before {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+@property --fade-after {
+  syntax: "<length>";
+  inherits: true;
+  initial-value: 0px;
+}
+
 /* ---- Option tiles with their example product (features/finder/OptionExample.tsx) -------------- */
 
 /* The picture sits at the tile’s right and never makes it taller: the text keeps the rest of
@@ -329,6 +358,42 @@ html[data-loading] [data-preloader] *::after {
 @media (prefers-reduced-motion: reduce) {
   [data-pictured] [data-example] {
     transition: none;
+  }
+}
+
+/* Two or three answers (Console sets data-layout): each tile is a card, its device large and
+   centred above its name and hint, rather than a wide tile with its words at one end and its
+   device at the other. Below 48rem tiles keep their usual shape. */
+@media (min-width: 48rem) {
+  [data-layout="card"] [data-pictured] {
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.625rem;
+    padding-top: 1rem;
+    text-align: center;
+  }
+  [data-layout="card"] [data-pictured] [data-example] {
+    position: relative;
+    inset: auto;
+    width: min(100%, 13rem);
+    height: 6.5rem;
+    justify-content: center;
+  }
+  [data-layout="card"] [data-pictured] [data-example] > span {
+    justify-content: center;
+  }
+  [data-layout="card"] [data-pictured] [data-text] {
+    justify-items: center;
+    padding-inline: 1.75rem;
+  }
+  [data-layout="card"] [data-hint] {
+    padding-right: 0;
+  }
+  [data-layout="card"] [data-tile] > button:not([data-pictured]),
+  [data-layout="card"] [data-dead] {
+    align-items: center;
+    justify-content: center;
+    text-align: center;
   }
 }
 

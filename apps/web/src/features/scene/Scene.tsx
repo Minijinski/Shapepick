@@ -42,6 +42,15 @@ const POPUP_GRACE_MS = 120
 const POPUP_OUT_MS = 190
 /** How quickly the card catches up with its place (ms): it glides from one product to the next. */
 const POPUP_EASE_MS = 70
+/**
+ * A card opens once the pointer has rested this long on a product (ms): a pointer crossing the
+ * canvas on its way somewhere else opens nothing.
+ */
+const POPUP_INTENT_MS = 160
+/** Slower than this (px/ms) the pointer is resting on its product: the card may open. */
+const REST_SPEED = 0.3
+/** Faster than this (px/ms) the pointer is passing through: an open card folds, it does not follow. */
+const PASS_SPEED = 0.7
 
 const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayoutEffect
 
@@ -315,16 +324,67 @@ export function Scene({ catalogs, shown, locale }: Props) {
     })
 
     // ---- Pointer on the open canvas ----------------------------------------------------------
+    // The cursor says at once that a product is clickable; its card waits until the pointer rests
+    // on it, and until the last card has finished folding away. An open card glides to the
+    // neighbour the pointer moves on to slowly, and folds when the pointer rushes past.
     let drag: Drag | null = null
-    const show = (next: Hit | null) => {
-      renderer.setFocus(next)
-      setHit((prev) => (sameHit(prev, next) ? prev : next))
-      // A product under the pointer is clickable: it opens the product's sheet.
+    /** Where the mouse last was, and how fast it was going (px/ms, eased). */
+    const pointer = { x: 0, y: 0, t: 0, speed: 0 }
+    /** The product a card waits to open on, and the wait. */
+    let pending: Hit | null = null
+    let intent: ReturnType<typeof setTimeout> | undefined
+    // A product under the pointer is clickable: it opens the product's sheet.
+    const hover = (next: Hit | null) => {
       if (next) canvas.dataset.hover = 'true'
       else delete canvas.dataset.hover
     }
+    const focus = (next: Hit | null) => {
+      renderer.setFocus(next)
+      setHit((prev) => (sameHit(prev, next) ? prev : next))
+    }
+    const forget = () => {
+      clearTimeout(intent)
+      intent = undefined
+      pending = null
+    }
+    /** Shows a product's card at once (a tap), or none. */
+    const show = (next: Hit | null) => {
+      forget()
+      hover(next)
+      focus(next)
+    }
+    /** The pointer's speed: one that has stopped moving is at rest. */
+    const speed = () => (performance.now() - pointer.t > 80 ? 0 : pointer.speed)
+    const arm = (ms = POPUP_INTENT_MS) => {
+      clearTimeout(intent)
+      // A still pointer sends no more events: where it rests is read again when the wait ends.
+      intent = setTimeout(() => {
+        intent = undefined
+        if (cardState.current?.leaving) return arm(POPUP_OUT_MS)
+        const next = renderer.pick(pointer)
+        if (!next) {
+          pending = null
+          return
+        }
+        // Still on its way: looked at again shortly.
+        if (speed() > REST_SPEED) return arm(60)
+        pending = null
+        focus(next)
+      }, ms)
+    }
+    /** Waits for the pointer to rest on this product before its card opens. */
+    const waitFor = (next: Hit) => {
+      if (sameHit(pending, next)) return
+      pending = next
+      arm()
+    }
+    renderer.onFocusLost = () => {
+      forget()
+      setHit(null)
+    }
     const down = (e: PointerEvent) => {
       if (e.button !== 0) return
+      forget()
       drag = {
         id: e.pointerId,
         x: e.clientX,
@@ -356,7 +416,32 @@ export function Scene({ catalogs, shown, locale }: Props) {
         }
         return
       }
-      if (e.pointerType === 'mouse') show(renderer.pick({ x: e.clientX, y: e.clientY }))
+      if (e.pointerType !== 'mouse') return
+      const now = performance.now()
+      const step =
+        Math.hypot(e.clientX - pointer.x, e.clientY - pointer.y) / Math.max(8, now - pointer.t)
+      // After a pause the pointer starts afresh rather than from the speed it had before.
+      pointer.speed = now - pointer.t > 120 ? step : pointer.speed * 0.6 + step * 0.4
+      pointer.x = e.clientX
+      pointer.y = e.clientY
+      pointer.t = now
+      const next = renderer.pick(pointer)
+      hover(next)
+      if (!next) {
+        forget()
+        focus(null)
+        return
+      }
+      const card = cardState.current
+      if (!card || card.leaving) return waitFor(next)
+      // A card is open: a slow pointer takes it along to the next product, a quick one lets it go.
+      if (pointer.speed <= PASS_SPEED || sameHit(card.hit, next)) {
+        forget()
+        focus(next)
+        return
+      }
+      focus(null)
+      waitFor(next)
     }
     const up = (e: PointerEvent) => {
       if (!drag || e.pointerId !== drag.id) return
@@ -389,6 +474,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
     canvas.addEventListener('wheel', wheel, { passive: false })
 
     return () => {
+      forget()
       window.clearInterval(askForPhotos)
       scene.provideFirstScreen(null)
       photos.dispose()

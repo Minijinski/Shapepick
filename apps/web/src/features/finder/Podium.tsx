@@ -14,7 +14,8 @@ import { formatPrice } from "../product/specs";
 // drawing lifts and the price gives way to "View details"; until the visitor has opened a sheet,
 // the best match plays that once by itself. When the ranking changes, GSAP Flip moves each entry
 // from where it was to where it now belongs, so a product visibly climbs or drops. Before the first
-// answer there is nothing to rank on: three empty places wait for the podium.
+// answer there is nothing to rank on: the page keeps the podium out of sight (Finder), and its
+// entries come in one after the other once there is a ranking.
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
@@ -129,24 +130,6 @@ const fifth = css({
   "@container (min-height: 25.25rem)": { display: "block" },
 });
 
-/** An empty place of the podium, before the first answer: the shape of a card, drawn dashed. */
-const slot = css({
-  display: "grid",
-  gridTemplateColumns: {
-    base: "48px minmax(0, 1fr) auto",
-    md: "64px minmax(0, 1fr) auto",
-  },
-  alignItems: "center",
-  gap: "3",
-  px: "3",
-  py: "2",
-  borderWidth: "1px",
-  borderStyle: "dashed",
-  borderColor: "line.strong",
-  borderRadius: "card",
-});
-const bone = css({ display: "block", borderRadius: "full", bg: "grey.100" });
-
 const columnLabel = css({
   fontFamily: "mono",
   fontSize: "2xs",
@@ -219,32 +202,53 @@ export function Podium({
   onShowAll: () => void;
 }) {
   const root = useRef<HTMLOListElement>(null);
-  const state = useRef<Flip.FlipState | null>(null);
-  // Empty places have no entry to move: the first ranking enters as a whole.
+  /** Where the entries stood before the ranking changed, and the ranking on screen. */
+  const before = useRef<Flip.FlipState | null>(null);
+  const drawn = useRef<string | null>(null);
+  // Before the first answer there is no entry: the first ranking enters as a whole.
   const signature = informed ? top.map((r) => r.item.slug).join("|") : "";
+  // Entries hidden for lack of room take no part in the move.
+  const entries = () =>
+    [
+      ...(root.current?.querySelectorAll<HTMLElement>("[data-flip-id]") ?? []),
+    ].filter((el) => el.getClientRects().length > 0);
+  // The ranking is about to change: each entry's place is read now, while the page still shows
+  // the old order (a move under way is read where it is, then finished, so the new places measure
+  // clean). Read after Flip.from instead, they would end each move as it begins.
+  if (
+    typeof window !== "undefined" &&
+    drawn.current !== null &&
+    drawn.current !== signature &&
+    !before.current
+  ) {
+    before.current = Flip.getState(entries());
+  }
 
   useIsoLayoutEffect(() => {
-    const all = root.current?.querySelectorAll<HTMLElement>("[data-flip-id]");
-    if (!all) return;
-    // Entries hidden for lack of room take no part in the move.
-    const entries = [...all].filter((el) => el.getClientRects().length > 0);
-    if (state.current && !prefersReducedMotion()) {
-      Flip.from(state.current, {
-        targets: entries,
-        duration: motion.base + 0.1,
-        ease: motion.ease,
-        absolute: true,
-        scale: false,
-        onEnter: (els) =>
-          gsap.fromTo(
-            els,
-            { opacity: 0, y: 16 },
-            { opacity: 1, y: 0, duration: motion.base, ease: motion.ease },
-          ),
-        onLeave: (els) => gsap.to(els, { opacity: 0, duration: motion.fast }),
-      });
-    }
-    state.current = Flip.getState(entries);
+    const from = before.current;
+    before.current = null;
+    drawn.current = signature;
+    if (!from || prefersReducedMotion()) return;
+    Flip.from(from, {
+      targets: entries(),
+      duration: motion.base + 0.1,
+      ease: motion.ease,
+      // Entries stay in the list's flow: newcomers fade in where they belong.
+      scale: false,
+      onEnter: (els) =>
+        gsap.fromTo(
+          els,
+          { opacity: 0, y: 16 },
+          {
+            opacity: 1,
+            y: 0,
+            duration: motion.base,
+            ease: motion.ease,
+            stagger: 0.07,
+          },
+        ),
+      onLeave: (els) => gsap.to(els, { opacity: 0, duration: motion.fast }),
+    });
   }, [signature]);
 
   const row = layout === "row";
@@ -320,62 +324,6 @@ export function Podium({
           gap: "2.5",
         })}
       >
-        {!informed &&
-          [1, 0.7, 0.45].map((opacity, i) => (
-            <li key={opacity} aria-hidden style={{ opacity }}>
-              <div className={slot}>
-                <span
-                  className={css({
-                    position: "relative",
-                    display: "grid",
-                    placeItems: "center",
-                    h: { base: "9", md: "10" },
-                  })}
-                >
-                  <span className={bone} style={{ width: "78%", height: 16 }} />
-                  <span
-                    className={css({
-                      position: "absolute",
-                      top: "-1.5",
-                      left: "-1.5",
-                      display: "grid",
-                      placeItems: "center",
-                      minW: "4.5",
-                      h: "4.5",
-                      borderRadius: "pill",
-                      fontFamily: "mono",
-                      fontSize: "2xs",
-                      lineHeight: "1",
-                      bg: "grey.200",
-                      color: "ink.faint",
-                    })}
-                  >
-                    {i + 1}
-                  </span>
-                </span>
-                <span className={css({ display: "grid", gap: "1.5" })}>
-                  <span className={bone} style={{ width: "42%", height: 6 }} />
-                  <span className={bone} style={{ width: "74%", height: 9 }} />
-                </span>
-                <span
-                  className={css({
-                    display: "grid",
-                    placeItems: "center",
-                    w: "34px",
-                    h: "34px",
-                    borderRadius: "full",
-                    borderWidth: "3px",
-                    borderColor: "grey.100",
-                    fontFamily: "mono",
-                    fontSize: "2xs",
-                    color: "ink.faint",
-                  })}
-                >
-                  –
-                </span>
-              </div>
-            </li>
-          ))}
         {informed && top.map((entry, i) => {
           const asCard = row || i < 3;
           const first = i === 0;
@@ -539,18 +487,6 @@ export function Podium({
           );
         })}
       </ol>
-      {!informed && (
-        <p
-          className={css({
-            px: "3",
-            fontSize: "xs",
-            lineHeight: "1.45",
-            color: "ink.muted",
-          })}
-        >
-          {m.rankingSoon[locale]}
-        </p>
-      )}
       {total > 0 && (
         <button
           type="button"

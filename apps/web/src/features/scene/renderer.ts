@@ -83,11 +83,14 @@ export const sameHit = (a: Hit | null, b: Hit | null) =>
 const CELL: Record<Category, { w: number; h: number }> = {
   keyboard: { w: 400, h: 230 },
   monitor: { w: 540, h: 370 },
-  // A mouse seen from above stands upright: a tall cell.
-  mouse: { w: 260, h: 320 },
+  // A mouse seen from above stands upright: a tall cell, roomy enough that small mice never crowd.
+  mouse: { w: 320, h: 390 },
 }
-/** How far a product may stray from its cell centre, as a share of the room it leaves. */
-const JITTER = 0.3
+/**
+ * How far a product may stray from its cell centre, as a share of the room it leaves. Mice stray
+ * less: two neighbours never come close, whichever way each one strays.
+ */
+const JITTER: Record<Category, number> = { keyboard: 0.3, monitor: 0.3, mouse: 0.22 }
 /** A small catalogue is laid out more than once per tile, so its repetition is far apart. */
 const MIN_SLOTS = 50
 const ZOOM = { band: 0.5, canvas: 1, bandCompact: 0.4, canvasCompact: 0.56 }
@@ -129,11 +132,11 @@ const REGROUP = {
 /** A drawing (or a plate standing in for it) fading in once its bitmap exists. */
 const APPEAR_MS = 280
 /**
- * Where a product on the field takes the pointer (screen px): most of it (`share`) clear of the
+ * Where a product on the field takes the pointer (screen px): half of it (`share`) clear of the
  * screen’s edges and of the paper fading under the header and the counter (the finder's top
- * gradient stays mostly opaque down to here), which leaves only a glimpse of it.
+ * gradient is still mostly opaque down to here). One showing less than that is only a glimpse.
  */
-const PICK = { top: 170, topCompact: 130, side: 8, bottom: 8, share: 0.7 }
+const PICK = { top: 150, topCompact: 118, side: 8, bottom: 8, share: 0.5 }
 /** How far ahead (s) the canvas looks for products coming into view, along its motion. */
 const AHEAD_S = 0.9
 /**
@@ -412,6 +415,11 @@ export class SceneRenderer {
   private readonly reduce: boolean
   /** Called after every frame, for overlays that follow a product (the popup). */
   onFrame: (() => void) | null = null
+  /**
+   * Called when the scene lets go of the product it highlighted on its own (the field regrouping
+   * after an answer, the results covering the canvas): its popup goes with it.
+   */
+  onFocusLost: (() => void) | null = null
 
   constructor(
     private readonly canvas: HTMLCanvasElement,
@@ -637,6 +645,7 @@ export class SceneRenderer {
   dispose() {
     for (const band of this.bands) gsap.killTweensOf([band, band.world])
     this.onFrame = null
+    this.onFocusLost = null
   }
 
   // ---- Where the scene is going ---------------------------------------------------------------
@@ -1493,9 +1502,10 @@ export class SceneRenderer {
   /** Where a slot's product sits: its cell centre, nudged as far as its size allows. */
   private placeIn(world: World, slot: Slot): Pt {
     const { item } = slot
+    const jitter = JITTER[world.category]
     return {
-      x: slot.cx + slot.jx * Math.max(0, world.cell.w - item.w) * JITTER,
-      y: slot.cy + slot.jy * Math.max(0, world.cell.h - item.h) * JITTER,
+      x: slot.cx + slot.jx * Math.max(0, world.cell.w - item.w) * jitter,
+      y: slot.cy + slot.jy * Math.max(0, world.cell.h - item.h) * jitter,
     }
   }
 
@@ -1572,7 +1582,14 @@ export class SceneRenderer {
   /** Whether the products take the pointer: off while the finder's results cover the canvas. */
   setPickable(on: boolean) {
     this.pickable = on
-    if (!on) this.setFocus(null)
+    if (!on) this.dropFocus()
+  }
+
+  /** Lets go of the highlighted product without the pointer leaving it, and says so. */
+  private dropFocus() {
+    if (!this.focus) return
+    this.setFocus(null)
+    this.onFocusLost?.()
   }
 
   /** Highlights a product (null: none) and holds the drift while it is looked at. */
@@ -1710,7 +1727,7 @@ export class SceneRenderer {
     const pending = world.pending
     if (pending && now >= pending.at) {
       world.pending = null
-      if (this.focus && !this.focus.hit.spot && this.activeBand() === band) this.setFocus(null)
+      if (this.focus && !this.focus.hit.spot && this.activeBand() === band) this.dropFocus()
       const spot = new Set(this.spotWanted(band, pending.order))
       const { at } = this.regroup(band, pending.kept, spot, now)
       this.updateSpot(band, pending.order, now, true, at)

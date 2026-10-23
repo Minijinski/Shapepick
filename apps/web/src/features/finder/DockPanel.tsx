@@ -14,9 +14,15 @@ import { motion } from '../motion/tokens'
 // The white panel docked at the bottom of the finder: the question console, then the results, in
 // one frame. Its content sets its height and the frame eases from one height to the next, growing
 // or shrinking upwards, so its bottom edge never moves: one question follows another without a
-// jolt, and the console morphs into the results and back.
+// jolt, and the console morphs into the results and back. Switching categories, the next page's
+// frame starts at the height the last one left with, so the panel morphs into the new page too.
 
 const useIsoLayoutEffect = typeof window === 'undefined' ? () => {} : useLayoutEffect
+
+/** The height the last frame had when its page went, and when (ms). */
+let handoff: { h: number; at: number } | null = null
+/** Past this (ms), the next frame is a new one rather than the last one carried over. */
+const HANDOFF_MS = 1000
 
 const frame = css({
   position: 'relative',
@@ -40,11 +46,19 @@ export function useDockHeight() {
   useIsoLayoutEffect(() => follow())
 }
 
-export function DockPanel({ children }: { children: ReactNode }) {
+export function DockPanel({
+  children,
+  carryOver = false,
+}: {
+  children: ReactNode
+  /** The page replaces another category's: its frame starts where that one's was. */
+  carryOver?: boolean
+}) {
   const box = useRef<HTMLDivElement>(null)
   /** The height on screen (kept by a ResizeObserver) and the one the frame is easing to. */
   const shown = useRef<number | null>(null)
   const target = useRef<number | null>(null)
+  const carry = useRef(carryOver)
 
   const follow = useCallback(function follow() {
     const el = box.current
@@ -53,7 +67,14 @@ export function DockPanel({ children }: { children: ReactNode }) {
     const to = content.offsetHeight + el.offsetHeight - el.clientHeight
     if (to === target.current) return
     target.current = to
-    const from = shown.current
+    let from = shown.current
+    // A frame taking over from the last page's starts at its height, before it is ever painted.
+    if (from == null && carry.current) {
+      carry.current = false
+      const last = handoff
+      handoff = null
+      if (last && performance.now() - last.at < HANDOFF_MS && !document.hidden) from = last.h
+    }
     if (from == null || Math.abs(from - to) < 1 || prefersReducedMotion()) {
       gsap.killTweensOf(el)
       gsap.set(el, { clearProps: 'height' })
@@ -91,6 +112,15 @@ export function DockPanel({ children }: { children: ReactNode }) {
 
   // A new content (the results in place of the console) is followed from the first paint.
   useIsoLayoutEffect(() => follow())
+
+  // Its page going, the frame leaves its height for the next category's (a layout effect: it
+  // runs while the frame is still on the page, before the next one is laid out).
+  useIsoLayoutEffect(() => {
+    const el = box.current
+    return () => {
+      if (el) handoff = { h: el.offsetHeight, at: performance.now() }
+    }
+  }, [])
 
   return (
     <Follow.Provider value={follow}>

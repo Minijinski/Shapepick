@@ -10,6 +10,7 @@ import { css, cx } from "styled-system/css";
 import { isPlainClick, useSceneNavigation } from "~/features/scene/navigation";
 import { useLocale } from "~/i18n/locale";
 import { messages as m } from "~/i18n/messages";
+import { CategoryIcon } from "./CategoryIcon";
 
 const link = css({
   fontSize: "sm",
@@ -26,6 +27,60 @@ const link = css({
     bg: "surface.raised",
     boxShadow: "0 0 0 1px token(colors.line)",
   },
+});
+
+/** A category's link: its icon alone, its name said to screen readers and shown on hover. */
+const iconLink = css({
+  position: "relative",
+  display: "grid",
+  placeItems: "center",
+  w: "9",
+  h: "9",
+  borderRadius: "full",
+  color: "ink.muted",
+  transition: "color 160ms, background 160ms, box-shadow 160ms",
+  _hover: { color: "ink" },
+  _focusVisible: {
+    outline: "2px solid",
+    outlineColor: "signal",
+    outlineOffset: "2px",
+  },
+  "&[data-status=active]": {
+    color: "ink",
+    bg: "surface.raised",
+    boxShadow: "0 0 0 1px token(colors.line)",
+  },
+});
+
+/** The name under the icon, a moment after the pointer settles on it (or at once on focus). */
+const tip = css({
+  position: "absolute",
+  top: "calc(100% + 6px)",
+  left: "50%",
+  px: "2",
+  py: "1",
+  borderRadius: "pill",
+  bg: "ink",
+  color: "paper",
+  fontFamily: "mono",
+  fontSize: "2xs",
+  lineHeight: "1",
+  letterSpacing: "0.06em",
+  textTransform: "uppercase",
+  whiteSpace: "nowrap",
+  pointerEvents: "none",
+  opacity: 0,
+  transform: "translate(-50%, -3px)",
+  transition: "opacity 160ms, transform 220ms token(easings.signal)",
+  "@media (hover: hover)": {
+    _groupHover: {
+      opacity: 1,
+      transform: "translate(-50%, 0)",
+      transitionDelay: "120ms",
+    },
+  },
+  _groupFocusVisible: { opacity: 1, transform: "translate(-50%, 0)" },
+  _motionReduce: { transition: "opacity 160ms" },
 });
 
 /** `shown`: the categories the site offers (those with products), in panel order. */
@@ -93,16 +148,23 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         </span>
       </Link>
 
-      <nav className={css({ display: { base: "none", sm: "flex" }, gap: "1" })}>
+      <nav
+        aria-label={m.categories[locale]}
+        className={css({ display: { base: "none", sm: "flex" }, gap: "1.5" })}
+      >
         {shown.map((category) => (
           <Link
             key={category}
             to="/$lang/$category"
             params={{ lang: locale, category: categorySlugs[category][locale] }}
             onClick={via(category)}
-            className={link}
+            aria-label={m.category[category][locale]}
+            className={cx("group", iconLink)}
           >
-            {m.category[category][locale]}
+            <CategoryIcon category={category} />
+            <span aria-hidden className={tip}>
+              {m.category[category][locale]}
+            </span>
           </Link>
         ))}
       </nav>

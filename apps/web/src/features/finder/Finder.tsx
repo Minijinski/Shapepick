@@ -84,6 +84,8 @@ export function Finder({ category, items, search, locale }: Props) {
   const podium = useRef<HTMLElement>(null);
   const dock = useRef<HTMLDivElement>(null);
   const done = finder.step == null;
+  /** The podium shows once there is something to rank on, and gives way to the results. */
+  const ranking = !done && finder.informed;
   const target = { mode: "canvas", category } as const;
   // From the home page the chrome waits for the panel to open. Switching categories, the console
   // stays where it is and only what it says changes.
@@ -258,10 +260,13 @@ export function Finder({ category, items, search, locale }: Props) {
           defaults: { ease: "power3.in" },
         });
         if (kind === "switch") {
-          // The console stays: only its question goes, and the new category's comes in.
+          // The panel stays, and takes the next category's height (DockPanel): only what it
+          // shows goes, the question or the results, and the new category's comes in.
           tl.to(
             el.querySelectorAll(
-              done ? "[data-enter=dock]" : "[data-console-part]",
+              done
+                ? "[data-dock-panel] > *, [data-console-part]"
+                : "[data-console-part], [data-podium-row]",
             ),
             { opacity: 0, y: -10, duration: 0.26, stagger: 0.015 },
             0,
@@ -358,12 +363,14 @@ export function Finder({ category, items, search, locale }: Props) {
         </div>
       </div>
 
-      {/* The results grow over its place: the podium fades out meanwhile, and back after. */}
+      {/* Before the first answer there is nothing to rank, and the results grow over its place:
+          the podium waits out of sight meanwhile, and comes in once there is a ranking. Its box
+          stays, as the edge of the canvas's free space. */}
       <aside
         ref={podium}
         data-enter="podium"
-        aria-hidden={done || undefined}
-        inert={done || undefined}
+        aria-hidden={!ranking || undefined}
+        inert={!ranking || undefined}
         className={cx(
           swapped ? enterFade : enterRight,
           css({
@@ -381,11 +388,11 @@ export function Finder({ category, items, search, locale }: Props) {
         style={{ animationDelay: `${delay + 0.2}s` }}
       >
         <div
-          data-done={done || undefined}
+          data-off={!ranking || undefined}
           className={css({
             h: "100%",
             transition: "opacity 300ms, transform 450ms token(easings.signal)",
-            "&[data-done]": { opacity: 0, transform: "translateX(16px)" },
+            "&[data-off]": { opacity: 0, transform: "translateX(16px)" },
             _motionReduce: { transition: "none" },
           })}
         >
@@ -469,8 +476,15 @@ export function Finder({ category, items, search, locale }: Props) {
           )}
           style={{ animationDelay: `${delay}s` }}
         >
-          {!done && finder.informed && (
-            <div className={css({ display: { base: "block", lg: "none" } })}>
+          {ranking && (
+            <div
+              data-podium-row
+              className={css({
+                display: { base: "block", lg: "none" },
+                animation: "fadeUp 0.5s token(easings.signal) backwards",
+                _motionReduce: { animation: "none" },
+              })}
+            >
               <Podium
                 top={finder.ranked.slice(0, PODIUM_SIZE)}
                 total={finder.matching}
@@ -482,7 +496,7 @@ export function Finder({ category, items, search, locale }: Props) {
               />
             </div>
           )}
-          <DockPanel>
+          <DockPanel carryOver={swapped}>
             {done ? (
               <ResultsView
                 ranked={finder.ranked}
@@ -502,7 +516,7 @@ export function Finder({ category, items, search, locale }: Props) {
                 category={category}
                 locale={locale}
                 enterDelay={backFromResults ? 0.12 : delay + 0.3}
-                morph={backFromResults}
+                morph={backFromResults || swapped}
               />
             )}
           </DockPanel>
@@ -511,6 +525,8 @@ export function Finder({ category, items, search, locale }: Props) {
             done={done}
             locale={locale}
             onPick={finder.pickStep}
+            results={finder.matching}
+            onResults={finder.showResults}
             enterDelay={delay + 0.45}
           />
         </div>

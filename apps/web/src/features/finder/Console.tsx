@@ -180,7 +180,10 @@ export function Console({
   locale: Locale;
   /** Seconds before the first question plays in, while the console itself rises. */
   enterDelay?: number;
-  /** In place of the results: its header and footer fade in with the question. */
+  /**
+   * In place of the results, or of another category's question: its header and footer fade in
+   * with the question.
+   */
   morph?: boolean;
 }) {
   const { step, counts, draft } = finder;
@@ -190,8 +193,11 @@ export function Console({
   const uid = useId();
   const leaving = useRef(false);
   const first = useRef(true);
-  /** The tiles' columns, settled once per visit of a question: picks never reflow the grid. */
-  const columns = useRef({ visit: "", cols: 5 });
+  /**
+   * The tiles' columns, and whether they are cards, settled once per visit of a question: picks
+   * never reflow the grid.
+   */
+  const columns = useRef({ visit: "", cols: 5, card: false });
   // The question plays in when it changes or gets a new answer, not when other answers do: a
   // brand picked or dropped only updates the counts on its tiles.
   const committed = step ? finder.answers[step.key] : undefined;
@@ -355,7 +361,12 @@ export function Console({
         });
   const visit = `${step.key}|${committed ?? ""}`;
   if (columns.current.visit !== visit)
-    columns.current = { visit, cols: columnsFor(options.length) };
+    columns.current = {
+      visit,
+      cols: columnsFor(options.length),
+      // Two or three answers, each with its device: cards, the device above its words.
+      card: options.length <= 3 && !!finder.examples?.size,
+    };
 
   // Each tile pictures the product its option brings forward, to scale on a size question.
   const scale = examplesScale(category, step.key, finder.examples);
@@ -529,6 +540,7 @@ export function Console({
               <fieldset
                 aria-labelledby="step-title"
                 aria-describedby={help ? "step-lead" : undefined}
+                data-layout={columns.current.card ? "card" : undefined}
                 className={tileGrid}
                 style={{ "--cols": columns.current.cols } as CSSProperties}
               >

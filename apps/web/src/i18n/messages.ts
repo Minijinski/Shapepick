@@ -81,6 +81,7 @@ export const messages = {
   from: text("à partir de", "from"),
   language: text("Langue", "Language"),
   worlds: text("Univers", "Worlds"),
+  categories: text("Catégories", "Categories"),
   explore: text("Explorer", "Explore"),
   canvasHint: text(
     "Glisse pour explorer · survole un modèle",
@@ -94,17 +95,14 @@ export const messages = {
   ruledOut: text("Écarté", "Ruled out"),
   seeAll: text("Voir tout", "See all"),
   ranking: text("Classement", "Ranking"),
-  rankingSoon: text(
-    "Ton classement se dessine dès ta première réponse.",
-    "Your ranking takes shape with your first answer.",
-  ),
   journey: text("Parcours", "Journey"),
   answerNow: text("Y répondre maintenant", "Answer it now"),
   nothingToDecide: text(
     "Plus rien à départager avec tes réponses",
     "Nothing left to decide with your answers",
   ),
-  inProgress: text("En cours", "Now"),
+  scrollBack: text("Étapes précédentes", "Earlier steps"),
+  scrollMore: text("Étapes suivantes", "Later steps"),
   results: text("Résultats", "Results"),
   matchHow: text("Comment lire ce %", "How to read this %"),
   matchExplain: text(
