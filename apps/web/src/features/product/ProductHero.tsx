@@ -1,7 +1,8 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
 import { css } from 'styled-system/css'
 import { ProductPicture } from './ProductPicture'
-import { keySpecs } from './specs'
+import { SpecValue } from './SpecValue'
+import { specCells } from './specs'
 
 // A product, photographed or drawn, with its key specs set under it like the title block of a
 // technical drawing: two columns where it is narrow (a phone, the product sheet), four given room
@@ -28,15 +29,15 @@ export function KeySpecs({ item, locale }: { item: CatalogItem; locale: Locale }
           '@container (min-width: 40rem)': { gridTemplateColumns: 'repeat(4, minmax(0, 1fr))' },
         })}
       >
-        {keySpecs(item, locale).map((spec) => (
+        {specCells(item, locale).map((cell) => (
           <div
-            key={spec.label}
+            key={cell.label}
             data-spec
-            className={css({ display: 'grid', gap: '0.5', alignContent: 'start' })}
+            className={css({ display: 'grid', gap: '1', alignContent: 'start', minW: '0' })}
           >
-            <dt className={label}>{spec.label}</dt>
-            <dd className={css({ fontSize: 'sm', fontWeight: '600', lineHeight: '1.3' })}>
-              {spec.value}
+            <dt className={label}>{cell.label}</dt>
+            <dd className={css({ minW: '0' })}>
+              <SpecValue cell={cell} />
             </dd>
           </div>
         ))}

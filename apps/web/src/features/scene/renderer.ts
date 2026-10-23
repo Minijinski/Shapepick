@@ -143,10 +143,11 @@ const AHEAD_S = 0.9
  * A world that has just come on screen forms its short list as an arrival (ms; a visit’s first
  * page waits under the preloader, so longer): finalists held on an opening panel glide to their
  * places, the others appear in them. The page says where the short list goes a moment after the
- * scene starts moving: the finalists wait for it, then go back to the field if it never comes.
+ * scene starts moving (later when its code has to load): the finalists wait for it, and go back to
+ * the field when the page says it has no room, or if it never says anything.
  */
 const ARRIVAL_MS = { open: 1800, swap: 1800, intro: 3200 }
-const STAGE_WAIT_MS = 1400
+const STAGE_WAIT_MS = 3000
 const ARRIVE = { glide: 820, stagger: 35, appear: 560, rise: 16, morph: 380 }
 
 /**
@@ -630,6 +631,8 @@ export class SceneRenderer {
         // A short list waiting to learn where it gathers, and its finalists waiting meanwhile.
         awaiting: !!world.awaiting,
         waiting: world.spot.filter((s) => s.wait).length,
+        // Finalists flying back to the field (the short list grew too long, or broke up).
+        returning: world.spot.filter((s) => s.leaving && s.land).length,
       }
     }
     const drawings = this.drawings.stats
@@ -655,6 +658,10 @@ export class SceneRenderer {
     const from = this.target
     this.target = target
     this.focus = null
+    // The free space belongs to the page that measured it: the next page measures its own. A short
+    // list on screen is left as it is and goes with its canvas. (A visit's first page may measure
+    // before the scene starts: its free space stays.)
+    if (!intro) this.stage = null
     this.canvas.dataset.mode = target.mode
     for (const band of this.bands) gsap.killTweensOf(band)
     if (intro) {
@@ -842,6 +849,8 @@ export class SceneRenderer {
       band.ground = 1
       Object.assign(old, { expand: 0, veil: 0, hover: 0, enter: 1, ground: 1 })
       this.rest(old)
+      // Out of sight now, the old canvas lets its short list go.
+      this.clearSpot(old)
     }
     if (this.reduce) {
       band.world.presence = channel(1)
@@ -881,6 +890,12 @@ export class SceneRenderer {
 
   /** The free part of the screen on the open canvas (null: no short list, e.g. on results). */
   setStage(stage: Rect | null) {
+    // A page with no room for a short list (its results cover the canvas) lets the finalists
+    // waiting for one go back to the field at once.
+    if (!stage && this.target.mode === 'canvas') {
+      const band = this.band(this.target.category)
+      if (band?.world.awaiting) this.releaseSpot(band, performance.now())
+    }
     const same =
       stage === this.stage ||
       (!!stage &&
@@ -1302,6 +1317,16 @@ export class SceneRenderer {
       })
       aim(item.field, 0, now, 0)
     }
+  }
+
+  /** A world gone out of sight forgets its short list at once: its products are back on its field. */
+  private clearSpot(band: Band) {
+    const world = band.world
+    const now = performance.now()
+    for (const s of world.spot)
+      if (world.kept?.has(s.item.slug) ?? true) aim(s.item.field, 1, now, 0)
+    world.spot = []
+    world.awaiting = null
   }
 
   /** The finalists still waiting go back to the field: no short list will form after all. */

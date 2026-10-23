@@ -17,7 +17,8 @@ import { Match } from "../product/Match";
 import { MatchBreakdown } from "../product/MatchBreakdown";
 import { KeySpecs } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
-import { formatPrice, keySpecs } from "../product/specs";
+import { formatPrice, specCells } from "../product/specs";
+import { SpecValue } from "../product/SpecValue";
 import { useDockHeight } from "./DockPanel";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
@@ -197,11 +198,30 @@ const row = css({
   _hover: { bg: "surface" },
 });
 /** Rank, picture, name, specs, price, then the Amazon arrow. */
+// The price has a column of its own width, so the specs line up from row to row.
 const rowColumns = css({
   gridTemplateColumns: {
-    base: "28px 56px 1fr auto 32px",
-    md: "28px 72px 1.2fr 2fr auto 32px",
+    base: "24px 56px minmax(0, 1fr) 5.5rem 32px",
+    md: "24px 64px minmax(0, 0.9fr) minmax(0, 2.5fr) 5.5rem 32px",
   },
+});
+
+/** A row's four specs, in the columns the list's header names. */
+const specColumns = css({
+  display: { base: "none", md: "grid" },
+  gridTemplateColumns: "repeat(4, minmax(0, 1fr))",
+  columnGap: "3",
+  alignItems: "center",
+  minW: "0",
+});
+
+const headLabel = css({
+  fontFamily: "mono",
+  fontSize: "2xs",
+  color: "ink.faint",
+  textTransform: "uppercase",
+  letterSpacing: "0.04em",
+  truncate: true,
 });
 
 const ResetIcon = () => (
@@ -684,15 +704,16 @@ export function ResultsView({
                   <dl
                     className={css({
                       display: "grid",
-                      gridTemplateColumns: "auto 1fr",
-                      columnGap: "3",
-                      rowGap: "1",
+                      gridTemplateColumns: "auto minmax(0, 1fr)",
+                      alignItems: "center",
+                      columnGap: "4",
+                      rowGap: "2",
                       fontSize: "xs",
                     })}
                   >
-                    {keySpecs(entry.item, locale).map((s) => (
+                    {specCells(entry.item, locale).map((cell) => (
                       <div
-                        key={s.label}
+                        key={cell.label}
                         className={css({ display: "contents" })}
                       >
                         <dt
@@ -701,9 +722,11 @@ export function ResultsView({
                             color: "ink.faint",
                           })}
                         >
-                          {s.label}
+                          {cell.label}
                         </dt>
-                        <dd>{s.value}</dd>
+                        <dd className={css({ minW: "0" })}>
+                          <SpecValue cell={cell} layout="inline" />
+                        </dd>
                       </div>
                     ))}
                   </dl>
@@ -723,16 +746,52 @@ export function ResultsView({
 
           {rest.length > 0 && (
             <div className={css({ display: "grid", gap: "2" })}>
-              <h4
-                className={css({
-                  fontFamily: "mono",
-                  fontSize: "2xs",
-                  color: "ink.faint",
-                  textTransform: "uppercase",
-                })}
+              {/* The list's title, then the name of each spec over its column. */}
+              <div
+                className={cx(
+                  rowColumns,
+                  css({
+                    display: "grid",
+                    alignItems: "end",
+                    gap: "3",
+                    mx: "-2",
+                    px: "2",
+                  }),
+                )}
               >
-                {m.allResults[locale]} · {rest.length}
-              </h4>
+                <h4
+                  className={css({
+                    gridColumn: "1 / 4",
+                    fontFamily: "mono",
+                    fontSize: "2xs",
+                    color: "ink.faint",
+                    textTransform: "uppercase",
+                  })}
+                >
+                  {m.allResults[locale]} · {rest.length}
+                </h4>
+                <span aria-hidden className={specColumns}>
+                  {(rest[0] ? specCells(rest[0].item, locale) : []).map(
+                    (cell) => (
+                      <span key={cell.label} className={headLabel}>
+                        {cell.label}
+                      </span>
+                    ),
+                  )}
+                </span>
+                <span
+                  aria-hidden
+                  className={cx(
+                    headLabel,
+                    css({
+                      display: { base: "none", md: "block" },
+                      textAlign: "right",
+                    }),
+                  )}
+                >
+                  {m.price[locale]}
+                </span>
+              </div>
               <ol
                 ref={list}
                 className={css({ position: "relative" })}
@@ -760,37 +819,39 @@ export function ResultsView({
                       </span>
                       <ProductPicture
                         item={entry.item}
-                        className={css({ h: "8", w: "auto", maxW: "72px" })}
+                        className={css({ h: "8", w: "auto", maxW: "100%" })}
                       />
+                      {/* Brand over model, as everywhere else. */}
                       <span
                         className={css({
+                          display: "grid",
                           minW: "0",
-                          fontWeight: "600",
-                          fontSize: "sm",
-                          truncate: true,
+                          lineHeight: "1.25",
                         })}
                       >
                         <span
                           className={css({
+                            fontSize: "2xs",
                             color: "ink.muted",
-                            fontWeight: "500",
+                            truncate: true,
                           })}
                         >
                           {entry.item.brand.name}
-                        </span>{" "}
-                        {entry.item.name}
+                        </span>
+                        <span
+                          className={css({
+                            fontSize: "sm",
+                            fontWeight: "600",
+                            truncate: true,
+                          })}
+                        >
+                          {entry.item.name}
+                        </span>
                       </span>
-                      <span
-                        className={css({
-                          display: { base: "none", md: "block" },
-                          fontSize: "xs",
-                          color: "ink.muted",
-                          truncate: true,
-                        })}
-                      >
-                        {keySpecs(entry.item, locale)
-                          .map((s) => s.value)
-                          .join(" · ")}
+                      <span className={specColumns}>
+                        {specCells(entry.item, locale).map((cell) => (
+                          <SpecValue key={cell.label} cell={cell} />
+                        ))}
                       </span>
                       <span
                         className={css({

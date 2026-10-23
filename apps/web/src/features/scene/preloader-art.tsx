@@ -3,7 +3,7 @@ import { keyboardKeys } from '@choose/catalog/media'
 import type { CSSProperties, ReactElement } from 'react'
 
 // The drawings the preloader fills in, one per category, in the canvas's sketch style: units
-// (keys, pixels, the dots of a shell) that ink in one after the other as the scene gets ready, in
+// (keys, pixels, the rings of a shell) that ink in one after the other as the scene gets ready, in
 // their order in the markup, and an accent (`data-accent`: the Enter key, the power light, the
 // logo) that turns signal orange once everything is in. The first units ink in CSS before the
 // page wakes up (`data-css`, each with its delay), the rest with the real progress (Preloader.tsx).
@@ -126,7 +126,7 @@ function MonitorArt({ ink, className }: ArtProps) {
   )
 }
 
-// ---- Mouse: a shell seen from above, its dots inking in a ripple from the palm ----------------
+// ---- Mouse: a shell seen from above, its palm inking in ring by ring, then its buttons -------
 
 // A symmetrical gaming mouse, modelled on a PRO X2 SUPERSTRIKE: the palm behind, the two buttons
 // in front, split by a seam, and the wheel between them.
@@ -134,117 +134,79 @@ const SHELL =
   'M30 3C42 3 50 8 52 18C53 28 51 34 51 42C51 52 55 58 55 68C55 90 44 101 30 101C16 101 5 90 5 68C5 58 9 52 9 42C9 34 7 28 8 18C10 8 18 3 30 3Z'
 const PALM =
   'M9 42Q19.5 46 30 46Q40.5 46 51 42C51 52 55 58 55 68C55 90 44 101 30 101C16 101 5 90 5 68C5 58 9 52 9 42Z'
+const LEFT_BUTTON = 'M30 3C18 3 10 8 8 18C7 28 9 34 9 42Q19.5 46 30 46Z'
+const RIGHT_BUTTON = 'M30 3C42 3 50 8 52 18C53 28 51 34 51 42Q40.5 46 30 46Z'
 const SEAMS = 'M9 42Q30 50 51 42M30 3V12M30 27V46'
 const WHEEL = { x: 27.2, y: 12, w: 5.6, h: 15 }
 /** The logo on the palm, which lights up once everything is in. */
 const LOGO = { x: 30, y: 80, r: 2.8, hole: 1.5 }
 const MOUSE_VIEW = { w: 60, h: 104 }
-/** The dots' grid: how far apart they are, and how big. */
-const DOT_STEP = 4.6
-const DOT_R = 1.5
+/** The palm's rings, from its edge in, and the point they close in on. */
+const RINGS = 12
+const RING_CENTRE = { x: 30, y: 72 }
 
-type Pt = [number, number]
-
-/** A point along a Bézier curve, one axis at a time: quadratic with three values, cubic with four. */
-const along = (t: number, [a, b, c, d]: number[]) => {
-  const u = 1 - t
-  return d == null
-    ? u * u * (a ?? 0) + 2 * u * t * (b ?? 0) + t * t * (c ?? 0)
-    : u * u * u * (a ?? 0) + 3 * u * u * t * (b ?? 0) + 3 * u * t * t * (c ?? 0) + t * t * t * d
-}
-
-/** One of our paths (M, C and Q, absolute, one segment per command), as a polygon to test. */
-function polygonOf(d: string): Pt[] {
-  const tokens = d.match(/[MCQZ]|-?\d*\.?\d+/g) ?? []
-  const points: Pt[] = []
+/** One of our paths (absolute commands, coordinate pairs only), scaled about the rings' centre. */
+const shrunk = (d: string, by: number) => {
   let i = 0
-  let at: Pt = [0, 0]
-  const pt = (): Pt => [Number(tokens[i++]), Number(tokens[i++])]
-  while (i < tokens.length) {
-    const command = tokens[i++]
-    if (command === 'M') {
-      at = pt()
-      points.push(at)
-    } else if (command === 'C' || command === 'Q') {
-      const curve = [at, ...(command === 'C' ? [pt(), pt(), pt()] : [pt(), pt()])]
-      const xs = curve.map((p) => p[0])
-      const ys = curve.map((p) => p[1])
-      for (let k = 1; k <= 8; k++) points.push([along(k / 8, xs), along(k / 8, ys)])
-      at = curve[curve.length - 1] as Pt
-    }
-  }
-  return points
+  return d.replace(/-?\d*\.?\d+/g, (n) => {
+    const centre = i++ % 2 ? RING_CENTRE.y : RING_CENTRE.x
+    return String(Math.round((centre + (Number(n) - centre) * by) * 100) / 100)
+  })
 }
-
-/** Whether a point is inside a polygon (even-odd). */
-function inside(polygon: Pt[], x: number, y: number) {
-  let hit = false
-  for (let i = 0, j = polygon.length - 1; i < polygon.length; j = i++) {
-    const [xi, yi] = polygon[i] as Pt
-    const [xj, yj] = polygon[j] as Pt
-    if (yi > y !== yj > y && x < ((xj - xi) * (y - yi)) / (yj - yi) + xi) hit = !hit
-  }
-  return hit
-}
-
-const round = (v: number) => Math.round(v * 100) / 100
 
 /**
- * The dots, a staggered grid over the shell, nearest the logo first: the ink spreads out from the
- * palm and reaches the buttons, whose dots ink in orange, last. Pure geometry: the preloader is in
- * the server's HTML.
+ * The palm, cut into rings that follow its outline, outermost first: it fills from its edge in,
+ * the way a shell takes shape, the last ring closing on the middle.
  */
-const DOTS = (() => {
-  const shell = polygonOf(SHELL)
-  const palm = polygonOf(PALM)
-  const rise = DOT_STEP * Math.sin(Math.PI / 3)
-  const dots: { x: number; y: number; button: boolean; from: number }[] = []
-  for (let row = 0; 3 + DOT_STEP / 2 + row * rise < 101; row++) {
-    const y = 3 + DOT_STEP / 2 + row * rise
-    for (let x = 5 + (row % 2 ? DOT_STEP / 2 : 0); x < 56; x += DOT_STEP) {
-      if (!inside(shell, x, y)) continue
-      // Room around the logo and under the wheel, so both read clearly.
-      const from = Math.hypot(x - LOGO.x, y - LOGO.y)
-      if (from < LOGO.r + 1.2) continue
-      const underWheel =
-        x > WHEEL.x - 1 && x < WHEEL.x + WHEEL.w + 1 && y > WHEEL.y - 1 && y < WHEEL.y + WHEEL.h + 1
-      if (underWheel) continue
-      dots.push({ x: round(x), y: round(y), button: !inside(palm, x, y), from })
-    }
-  }
-  return dots.sort((a, b) => a.from - b.from)
-})()
+const PALM_RINGS = Array.from({ length: RINGS }, (_, k) => {
+  const outer = shrunk(PALM, 1 - (k / RINGS) * 0.96)
+  return k < RINGS - 1 ? `${outer}${shrunk(PALM, 1 - ((k + 1) / RINGS) * 0.96)}` : outer
+})
 
 /** The logo: a ring, drawn as a filled shape (a lit accent is filled orange). */
 const ring = (r: number) =>
   `M${LOGO.x - r} ${LOGO.y}a${r} ${r} 0 1 0 ${2 * r} 0a${r} ${r} 0 1 0 ${-2 * r} 0Z`
 
+/** The palm's rings, then the two buttons (in orange), then the wheel. */
+const MOUSE_UNITS = PALM_RINGS.length + 3
+
 function MouseArt({ ink, className }: ArtProps) {
+  const after = PALM_RINGS.length
   return (
     <svg viewBox={`0 0 ${MOUSE_VIEW.w} ${MOUSE_VIEW.h}`} aria-hidden className={className}>
-      {DOTS.map((dot, i) => (
-        <circle
-          key={`${dot.x}-${dot.y}`}
+      {PALM_RINGS.map((d, i) => (
+        <path
+          // Index keys: the rings are fixed, in their filling order (outermost first).
+          // biome-ignore lint/suspicious/noArrayIndexKey: a fixed drawing
+          key={i}
           data-unit={i}
-          data-tone={dot.button ? 'signal' : undefined}
-          cx={dot.x}
-          cy={dot.y}
-          r={DOT_R}
-          strokeWidth={0.22}
+          d={d}
+          fillRule="evenodd"
+          strokeWidth={0.25}
           {...inked(i, ink)}
+        />
+      ))}
+      {[LEFT_BUTTON, RIGHT_BUTTON].map((d, i) => (
+        <path
+          key={d}
+          data-unit={after + i}
+          data-tone="signal"
+          d={d}
+          strokeWidth={0.4}
+          {...inked(after + i, ink)}
         />
       ))}
       <path d={SHELL} fill="none" stroke={OUTLINE} strokeWidth={0.5} />
       <path d={SEAMS} fill="none" stroke={OUTLINE} strokeWidth={0.4} strokeLinecap="round" />
       <rect
-        data-unit={DOTS.length}
+        data-unit={after + 2}
         x={WHEEL.x}
         y={WHEEL.y}
         width={WHEEL.w}
         height={WHEEL.h}
         rx={WHEEL.w / 2}
         strokeWidth={0.4}
-        {...inked(DOTS.length, ink)}
+        {...inked(after + 2, ink)}
       />
       <path
         data-accent
@@ -265,5 +227,5 @@ export const preloaderArt: Record<
 > = {
   keyboard: { Art: KeyboardArt, units: BOARD.keys.length },
   monitor: { Art: MonitorArt, units: PIXELS.length },
-  mouse: { Art: MouseArt, units: DOTS.length + 1 },
+  mouse: { Art: MouseArt, units: MOUSE_UNITS },
 }

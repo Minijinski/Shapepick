@@ -88,9 +88,9 @@ class SceneController {
     if (sameTarget(this.target, target)) return
     this.kind = this.arrivalTo(target)
     this.target = target
-    // The free space belongs to the page that asked for it; the next page measures its own.
+    // The free space belongs to the page that asked for it; the next page measures its own (the
+    // renderer forgets it as it moves, leaving the short list on screen to go with its canvas).
     this.stage = null
-    this.renderer?.setStage(null)
     // The first page of a visit makes an entrance, whichever of the page and the canvas is ready
     // first; later ones move from where the scene is.
     const intro = this.kind === 'intro'

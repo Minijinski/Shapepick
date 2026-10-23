@@ -1,8 +1,17 @@
-import type { CatalogItem, Locale } from "@choose/catalog";
+import {
+  type CatalogItem,
+  type Category,
+  finders,
+  type ItemOf,
+  type Locale,
+} from "@choose/catalog";
 
 // The handful of specs a card, a list row or an annotated hero prints, worded per locale.
 
 export type SpecLine = { label: string; value: string };
+
+/** A spec as the rows of the results line it up: its main value, then details as small tags. */
+export type SpecCell = { label: string; value: string; details: string[] };
 
 const formFactorName: Record<string, [string, string]> = {
   full: ["100 %", "Full size"],
@@ -49,6 +58,11 @@ const mouseHandName: Record<string, [string, string]> = {
 const ballName: Record<string, [string, string]> = {
   thumb: ["boule au pouce", "thumb ball"],
   finger: ["boule aux doigts", "finger ball"],
+};
+const feelName: Record<string, [string, string]> = {
+  linear: ["linéaire", "linear"],
+  tactile: ["tactile", "tactile"],
+  clicky: ["clicky", "clicky"],
 };
 const gripName: Record<string, [string, string]> = {
   palm: ["paume", "palm"],
@@ -114,11 +128,6 @@ export function keySpecs(item: CatalogItem, locale: Locale): SpecLine[] {
     const feels = [
       ...new Set(item.variants.map((v) => v.switch?.feel).filter(Boolean)),
     ] as string[];
-    const feelName: Record<string, [string, string]> = {
-      linear: ["linéaire", "linear"],
-      tactile: ["tactile", "tactile"],
-      clicky: ["clicky", "clicky"],
-    };
     const connection = [
       s.conn24ghz && "2.4 GHz",
       s.connBt && "Bluetooth",
@@ -359,4 +368,142 @@ export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
       value: stand.join(" · ") || (fr ? "fixe" : "fixed"),
     },
   ]);
+}
+
+/** A monitor's HDR certification, short enough for a tag ("TB": DisplayHDR True Black). */
+const hdrTag: Record<string, string> = {
+  hdr400: "HDR 400",
+  hdr500: "HDR 500",
+  hdr600: "HDR 600",
+  hdr1000: "HDR 1000",
+  hdr1400: "HDR 1400",
+  true_black_400: "TB 400",
+  true_black_500: "TB 500",
+  true_black_600: "TB 600",
+};
+
+/** The labels of a question's options an item meets, in the question's order. */
+function met<C extends Category>(
+  category: C,
+  key: string,
+  item: ItemOf<C>,
+  locale: Locale,
+): string[] {
+  const step = finders[category].steps.find((s) => s.key === key);
+  if (!step || !("options" in step)) return [];
+  return step.options
+    .filter((option) => option.match(item))
+    .map((option) => option.label[locale]);
+}
+
+const wiredOr = (wireless: boolean, fr: boolean) =>
+  wireless ? (fr ? "Sans fil" : "Wireless") : fr ? "Filaire" : "Wired";
+
+const present = (values: (string | false | null | undefined)[]) =>
+  values.filter((value): value is string => !!value);
+
+/**
+ * The four specs the rows of the results line up in columns, the same four for every product of
+ * a category: each a main value, then what qualifies it as tags (21:9 and 800R beside 39").
+ */
+export function specCells(item: CatalogItem, locale: Locale): SpecCell[] {
+  const fr = locale === "fr";
+  const radio = fr ? "2,4 GHz" : "2.4 GHz";
+  if (item.category === "mouse") {
+    const s = item.specs;
+    const fit =
+      s.shape === "trackball" && s.ballPosition
+        ? pick(ballName[s.ballPosition], locale)
+        : pick(mouseHandName[s.hand], locale);
+    // Its length, which sets its size class: the full measures are on its sheet.
+    const length = s.lengthMm ? `${num(s.lengthMm, locale)} mm` : null;
+    return [
+      {
+        label: fr ? "Forme" : "Shape",
+        value: pick(mouseShapeName[s.shape], locale),
+        details: present([fit]),
+      },
+      {
+        label: fr ? "Taille" : "Size",
+        // The size class the questionnaire asks about, then the measures.
+        value: met("mouse", "size", item, locale)[0] ?? "—",
+        details: present([length]),
+      },
+      {
+        label: fr ? "Poids" : "Weight",
+        value: s.weightG ? `${num(s.weightG, locale)} g` : "—",
+        details: [],
+      },
+      {
+        label: fr ? "Connexion" : "Connection",
+        value: wiredOr(s.conn24ghz || s.connBt, fr),
+        details: present([
+          s.conn24ghz && radio,
+          s.connBt && "BT",
+          (s.pollingHz ?? 0) >= 2000 &&
+            `${num((s.pollingHz ?? 0) / 1000, locale)} kHz`,
+        ]),
+      },
+    ];
+  }
+  if (item.category === "keyboard") {
+    const s = item.specs;
+    const feels = [
+      ...new Set(item.variants.map((v) => v.switch?.feel).filter(Boolean)),
+    ] as string[];
+    return [
+      {
+        label: "Format",
+        value: pick(formFactorName[s.formFactor], locale),
+        details: present([
+          s.lowProfile && (fr ? "extra-plat" : "low profile"),
+          item.variants.some((v) => v.layout === "iso_fr") && "AZERTY",
+        ]),
+      },
+      {
+        label: fr ? "Touches" : "Keys",
+        value: pick(techName[s.technology], locale),
+        details: feels.map((feel) => pick(feelName[feel], locale)),
+      },
+      {
+        label: fr ? "Connexion" : "Connection",
+        value: wiredOr(s.conn24ghz || s.connBt, fr),
+        details: present([s.conn24ghz && radio, s.connBt && "BT"]),
+      },
+      {
+        // The must-haves of the questionnaire it has, the first three.
+        label: fr ? "Atouts" : "Highlights",
+        value: "",
+        details: met("keyboard", "musts", item, locale).slice(0, 3),
+      },
+    ];
+  }
+  const s = item.specs;
+  return [
+    {
+      label: fr ? "Taille" : "Size",
+      value: `${num(s.diagonalIn, locale)}"`,
+      details: [
+        s.aspect,
+        s.curvatureR ? `${s.curvatureR}R` : fr ? "plat" : "flat",
+      ],
+    },
+    {
+      label: fr ? "Définition" : "Resolution",
+      value: `${s.resW}×${s.resH}`,
+      details: [`${s.ppi} PPI`],
+    },
+    {
+      label: fr ? "Dalle" : "Panel",
+      value: panelName[s.panel] ?? s.panel,
+      details: present([hdrTag[s.hdrCert]]),
+    },
+    {
+      label: fr ? "Fréquence" : "Refresh",
+      value: `${s.refreshHzMax} Hz`,
+      details: present([
+        s.responseGtgMs != null && `${num(s.responseGtgMs, locale)} ms`,
+      ]),
+    },
+  ];
 }

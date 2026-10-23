@@ -389,7 +389,7 @@ export function JourneyBar({
   }
 
   return (
-    <nav aria-label={m.journey[locale]} className={bar}>
+    <nav aria-label={m.journey[locale]} data-journey-bar className={bar}>
       <div
         data-console-part
         data-more-before={more.before || undefined}

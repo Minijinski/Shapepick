@@ -16,7 +16,8 @@ import { ANY, type Answers, type FinderDefinition, type Option } from './types'
 // The mouse questionnaire. The use first (ranking profile only), then the hand and the shape, the
 // two answers that decide which shells can be used at all; then the fit: the hand size and the grip
 // steer the ranking and suggest a mouse size, the size and the weight narrow the catalogue; the
-// connection, the budget, must-haves and the colour last. The fit model lives in mouse-fit.ts.
+// connection, the budget and must-haves last. No colour question, as for keyboards: a colour rarely
+// decides between mice. The fit model lives in mouse-fit.ts.
 
 type M = MouseItem
 const opt = (
@@ -51,7 +52,6 @@ const GRACE_G = 3
 const weighs = (lo: number, hi: number) => (m: M) =>
   m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G
 const wireless = (m: M) => m.specs.conn24ghz || m.specs.connBt
-const hasColor = (family: string) => (m: M) => m.variants.some((v) => v.colorFamily === family)
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v))
 
 export const mouseFinder: FinderDefinition<M> = {
@@ -351,34 +351,6 @@ export const mouseFinder: FinderDefinition<M> = {
           ['Pas de double-clic fantôme', 'No phantom double clicks'],
         ),
         opt('rgb', 'RGB', 'RGB', (m) => m.specs.rgb, ['Éclairage réglable', 'Adjustable lighting']),
-      ],
-    },
-    {
-      key: 'look',
-      kind: 'multi',
-      label: text('Couleur', 'Colour'),
-      title: text('Une couleur ?', 'Any colour?'),
-      help: text(
-        'Une souris compte dès qu’une de ses déclinaisons existe dans une des couleurs choisies. **Coloré** : teintes vives ou pastel. **Transparent** : coque translucide.',
-        'A mouse counts as soon as one of its versions comes in one of the picked colours. **Colourful**: bright or pastel finishes. **Transparent**: see-through shell.',
-      ),
-      options: [
-        opt('black', 'Noir', 'Black', hasColor('black'), [
-          'Noir, gris, graphite',
-          'Black, grey, graphite',
-        ]),
-        opt('white', 'Blanc', 'White', hasColor('white'), [
-          'Blanc, argent, crème',
-          'White, silver, cream',
-        ]),
-        opt('color', 'Coloré', 'Colourful', hasColor('color'), [
-          'Vif ou pastel',
-          'Bright or pastel',
-        ]),
-        opt('transparent', 'Transparent', 'Transparent', hasColor('transparent'), [
-          'Coque translucide',
-          'See-through shell',
-        ]),
       ],
     },
   ],

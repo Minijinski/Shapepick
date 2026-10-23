@@ -32,6 +32,14 @@ export const getCatalogs = createServerFn({ method: "GET" }).handler(
   },
 );
 
-/** The categories the site offers: those with products. An empty or failed one stays hidden. */
+/** Where each category stands on the site: home panels, header links, preloader. */
+const ORDER: Record<Category, number> = { mouse: 0, keyboard: 1, monitor: 2 };
+
+/**
+ * The categories the site offers, in the site's order: those with products. An empty or failed
+ * one stays hidden.
+ */
 export const shownCategories = (catalogs: Record<Category, CatalogItem[]>) =>
-  categories.filter((category) => catalogs[category].length > 0);
+  categories
+    .filter((category) => catalogs[category].length > 0)
+    .sort((a, b) => ORDER[a] - ORDER[b]);
