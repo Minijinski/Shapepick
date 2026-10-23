@@ -370,8 +370,8 @@ export function BrandFilter({
                   key={o.id}
                   className={row}
                   data-empty={o.count === 0 ? '' : undefined}
-                  onPointerEnter={() => onHover(o.id)}
-                  onPointerLeave={() => onHover(null)}
+                  onPointerEnter={(e) => e.pointerType === 'mouse' && onHover(o.id)}
+                  onPointerLeave={(e) => e.pointerType === 'mouse' && onHover(null)}
                 >
                   <label
                     className={css({

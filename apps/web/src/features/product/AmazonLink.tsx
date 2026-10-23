@@ -34,6 +34,7 @@ const icon = css({
   placeItems: 'center',
   w: '8',
   h: '8',
+  _coarse: { w: '10', h: '10' },
   borderRadius: 'full',
   color: 'ink.faint',
   transition: 'color 160ms, background 160ms',

@@ -17,6 +17,8 @@ const link = css({
   color: "ink.muted",
   px: "3",
   h: "8",
+  // A finger needs a larger target than a pointer.
+  _coarse: { h: "10", px: "3.5" },
   display: "inline-flex",
   alignItems: "center",
   borderRadius: "pill",
@@ -110,8 +112,18 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         gridTemplateColumns: "1fr auto 1fr",
         alignItems: "center",
         gap: "4",
+        // Clear of the notch and the rounded corners of a phone (viewport-fit=cover).
+        boxSizing: "content-box",
         h: "16",
-        px: { base: "4", md: "8" },
+        pt: "env(safe-area-inset-top)",
+        pl: {
+          base: "max(1rem, env(safe-area-inset-left))",
+          md: "max(2rem, env(safe-area-inset-left))",
+        },
+        pr: {
+          base: "max(1rem, env(safe-area-inset-right))",
+          md: "max(2rem, env(safe-area-inset-right))",
+        },
         pointerEvents: "none",
         "& > *": { pointerEvents: "auto" },
       })}
@@ -169,9 +181,15 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         ))}
       </nav>
 
+      {/* Always in the last column, so it stays at the right when the categories are hidden. */}
       <nav
         aria-label={m.language[locale]}
-        className={css({ justifySelf: "end", display: "flex", gap: "1" })}
+        className={css({
+          gridColumn: "3",
+          justifySelf: "end",
+          display: "flex",
+          gap: "1",
+        })}
       >
         {locales.map((other) => (
           <a

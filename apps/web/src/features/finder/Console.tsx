@@ -603,9 +603,19 @@ export function Console({
                         data-pictured={example ? "" : undefined}
                         data-no-count={step.weightOnly || undefined}
                         aria-pressed={isMulti ? selected : undefined}
-                        onPointerEnter={() => finder.setHovered(option.id)}
-                        onPointerLeave={() => finder.setHovered(null)}
-                        onFocus={() => finder.setHovered(option.id)}
+                        // A preview follows a mouse or the keyboard, never a tap: a finger has
+                        // nothing to hover with, and the preview would stay behind it.
+                        onPointerEnter={(e) =>
+                          e.pointerType === "mouse" &&
+                          finder.setHovered(option.id)
+                        }
+                        onPointerLeave={(e) =>
+                          e.pointerType === "mouse" && finder.setHovered(null)
+                        }
+                        onFocus={(e) =>
+                          e.currentTarget.matches(":focus-visible") &&
+                          finder.setHovered(option.id)
+                        }
                         onBlur={() => finder.setHovered(null)}
                         onClick={() => {
                           if (isMulti)

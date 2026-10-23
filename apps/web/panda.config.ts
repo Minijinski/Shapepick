@@ -50,7 +50,8 @@ const button = defineRecipe({
     size: {
       sm: { h: "8", px: "3", fontSize: "sm" },
       md: { h: "11", px: "5", fontSize: "md" },
-      icon: { h: "9", w: "9", p: "0" },
+      // A finger needs a larger target than a pointer.
+      icon: { h: "9", w: "9", p: "0", _coarse: { h: "10", w: "10" } },
     },
   },
   defaultVariants: { tone: "ink", size: "md" },
@@ -191,6 +192,24 @@ export default defineConfig({
   outdir: "styled-system",
   jsxFramework: "react",
   strictTokens: false,
+  conditions: {
+    extend: {
+      // Hover styles only where something can hover: on a touch screen, `:hover` sticks to
+      // whatever was tapped last (a tile stays lit, a button stays dark).
+      hover: {
+        "@media (hover: hover)": { "&:is(:hover, [data-hover])": "@slot" },
+      },
+      groupHover: {
+        "@media (hover: hover)": {
+          ".group:is(:hover, [data-hover]) &": "@slot",
+        },
+      },
+      /** A finger rather than a mouse: larger targets. */
+      coarse: "@media (pointer: coarse)",
+      /** A phone on its side, or any screen this short: the finder compacts. */
+      short: "@media (max-height: 30rem)",
+    },
+  },
   globalCss: {
     html: {
       bg: "paper",

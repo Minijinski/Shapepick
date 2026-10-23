@@ -89,6 +89,8 @@ const thumbLook = {
   pointerEvents: "auto",
   w: "6",
   h: "6",
+  // A finger needs a larger thumb than a pointer.
+  _coarse: { w: "7", h: "7" },
   borderRadius: "full",
   bg: "surface.raised",
   border: "2px solid token(colors.ink)",
@@ -283,7 +285,10 @@ export function BudgetControl({
         )}
       </div>
 
-      <div className={css({ position: "relative", h: "6" })}>
+      {/* Taller under a finger: the whole height of the inputs takes the touch. */}
+      <div
+        className={css({ position: "relative", h: "6", _coarse: { h: "10" } })}
+      >
         <div
           className={css({
             position: "absolute",
