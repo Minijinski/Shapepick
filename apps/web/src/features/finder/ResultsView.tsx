@@ -46,26 +46,45 @@ type Props = {
   /** The brand control, beside the count. */
   brands?: ReactNode;
   onEdit: () => void;
+  /** Opens the whole journey (a phone's sheet), where "Edit" leads on a phone. */
+  onJourney?: () => void;
   onReset: () => void;
   onOpen: (slug: string) => void;
 };
 
-/** Height of a row of the list (px), which places every row without measuring any. */
-const ROW = 56;
+/**
+ * Height of a row of the list (px), which places every row without measuring any: a phone's row
+ * is taller, its name on two lines with its price and match under it.
+ */
+const ROW = { wide: 56, phone: 88 };
 /** Rows rendered beyond those in view, above and below, for a scroll to never reveal a gap. */
 const OVERSCAN = 8;
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
 
+/** The height of a row on this screen (a wide one's while rendering on the server). */
+function useRowHeight() {
+  const [height, setHeight] = useState(ROW.wide);
+  useIsoLayoutEffect(() => {
+    const phone = window.matchMedia("(max-width: 47.99rem)");
+    const update = () => setHeight(phone.matches ? ROW.phone : ROW.wide);
+    update();
+    phone.addEventListener("change", update);
+    return () => phone.removeEventListener("change", update);
+  }, []);
+  return height;
+}
+
 /**
- * Which rows of a list of `count` rows of `ROW` px are in view in `scroller`, with `OVERSCAN` on
+ * Which rows of a list of `count` rows of `row` px are in view in `scroller`, with `OVERSCAN` on
  * either side: followed on scroll and resize, once per frame.
  */
 function useRowsInView(
   scroller: RefObject<HTMLElement | null>,
   list: RefObject<HTMLElement | null>,
   count: number,
+  row: number,
 ) {
   const [range, setRange] = useState({ start: 0, end: Math.min(count, 24) });
   useIsoLayoutEffect(() => {
@@ -83,9 +102,9 @@ function useRowsInView(
           : el.getBoundingClientRect().top -
             box.getBoundingClientRect().top +
             box.scrollTop;
-      const first = Math.floor((box.scrollTop - top) / ROW) - OVERSCAN;
+      const first = Math.floor((box.scrollTop - top) / row) - OVERSCAN;
       const last =
-        Math.ceil((box.scrollTop + box.clientHeight - top) / ROW) + OVERSCAN;
+        Math.ceil((box.scrollTop + box.clientHeight - top) / row) + OVERSCAN;
       const start = Math.max(0, Math.min(count, first));
       const end = Math.max(start, Math.min(count, last));
       setRange((r) =>
@@ -104,7 +123,7 @@ function useRowsInView(
       box.removeEventListener("scroll", schedule);
       resized.disconnect();
     };
-  }, [count]);
+  }, [count, row]);
   return range;
 }
 
@@ -194,12 +213,18 @@ const row = css({
   transition: "background 160ms",
   _hover: { bg: "surface" },
 });
-/** Rank, picture, name, specs, price, then the Amazon arrow. */
+/**
+ * Rank, picture, name, specs, price, then the Amazon arrow. On a phone: the picture (its rank on
+ * it), the name with its price and match under it, the arrow.
+ */
 // The price has a column of its own width, so the specs line up from row to row.
 const rowColumns = css({
+  // The arrow is a finger's width under a finger.
+  "--amazon-col": "32px",
+  _coarse: { "--amazon-col": "2.5rem" },
   gridTemplateColumns: {
-    base: "24px 56px minmax(0, 1fr) 5.5rem 32px",
-    md: "24px 64px minmax(0, 0.9fr) minmax(0, 2.5fr) 5.5rem 32px",
+    base: "2.75rem minmax(0, 1fr) var(--amazon-col)",
+    md: "24px 64px minmax(0, 0.9fr) minmax(0, 2.5fr) 5.5rem var(--amazon-col)",
   },
 });
 
@@ -257,6 +282,7 @@ export function ResultsView({
   layouts,
   brands,
   onEdit,
+  onJourney,
   onReset,
   onOpen,
 }: Props) {
@@ -266,7 +292,8 @@ export function ResultsView({
   const [first, ...others] = ranked;
   const runnersUp = others.slice(0, 2);
   const rest = others.slice(2);
-  const rows = useRowsInView(root, list, rest.length);
+  const rowHeight = useRowHeight();
+  const rows = useRowsInView(root, list, rest.length, rowHeight);
 
   useGSAP(
     () => {
@@ -319,8 +346,12 @@ export function ResultsView({
         position: "relative",
         flexShrink: "0",
         // Down from the site header (64 px, then 8) to the journey bar (44 px and the dock's
-        // gaps, 12 px between them and 12 or 24 px under it), borders included.
-        maxH: { base: "calc(100dvh - 144px)", md: "calc(100dvh - 156px)" },
+        // gaps, 12 px between them and 24 px under it), borders included; on a phone, which has
+        // no journey bar, to 12 px above the bottom of the screen.
+        maxH: {
+          base: "calc(100dvh - 84px - env(safe-area-inset-top) - env(safe-area-inset-bottom))",
+          md: "calc(100dvh - 156px)",
+        },
         overflowY: "auto",
         overscrollBehavior: "contain",
       })}
@@ -357,10 +388,20 @@ export function ResultsView({
         <div
           className={css({ display: "flex", gap: "1.5", whiteSpace: "nowrap" })}
         >
+          {/* On a phone, every answer at once in the journey's sheet, to pick the one to
+              change, the results staying in place; wider, back to the question they were
+              opened from. */}
           <button
             type="button"
-            className={button({ tone: "line", size: "sm" })}
-            onClick={leave(onEdit)}
+            className={cx(
+              button({ tone: "line", size: "sm" }),
+              css({ _coarse: { h: "10", px: "4" } }),
+            )}
+            onClick={() =>
+              onJourney && window.matchMedia("(max-width: 47.99rem)").matches
+                ? onJourney()
+                : leave(onEdit)()
+            }
           >
             <span className={css({ display: { base: "none", md: "inline" } })}>
               {m.editAnswers[locale]}
@@ -371,7 +412,10 @@ export function ResultsView({
           </button>
           <button
             type="button"
-            className={button({ tone: "ghost", size: "sm" })}
+            className={cx(
+              button({ tone: "ghost", size: "sm" }),
+              css({ _coarse: { h: "10", minW: "10" } }),
+            )}
             aria-label={m.reset[locale]}
             onClick={leave(onReset)}
           >
@@ -674,16 +718,22 @@ export function ResultsView({
                         className={css({ maxH: "24", w: "80%", h: "auto" })}
                       />
                     </div>
+                    {/* The name keeps the width it needs: on a narrow card the price and the
+                        shop go under it rather than squeezing it. */}
                     <div
                       className={css({
                         display: "flex",
+                        flexWrap: "wrap",
                         justifyContent: "space-between",
                         alignItems: "center",
-                        gap: "3",
+                        columnGap: "3",
+                        rowGap: "2",
                       })}
                     >
                       <h3
                         className={css({
+                          flex: "1 1 12rem",
+                          minW: "0",
                           fontWeight: "600",
                           letterSpacing: "-0.02em",
                         })}
@@ -817,10 +867,11 @@ export function ResultsView({
               <ol
                 ref={list}
                 className={css({ position: "relative" })}
-                style={{ height: rest.length * ROW }}
+                style={{ height: rest.length * rowHeight }}
               >
                 {rest.slice(rows.start, rows.end).map((entry, offset) => {
                   const i = rows.start + offset;
+                  const rank = String(i + 4).padStart(2, "0");
                   return (
                     <li
                       key={entry.item.slug}
@@ -828,22 +879,60 @@ export function ResultsView({
                       aria-posinset={i + 1}
                       aria-setsize={rest.length}
                       className={cx("group", row, rowColumns)}
-                      style={{ top: i * ROW, height: ROW }}
+                      style={{ top: i * rowHeight, height: rowHeight }}
                     >
                       <span
                         className={css({
+                          display: { base: "none", md: "block" },
                           fontFamily: "mono",
                           fontSize: "xs",
                           color: "ink.faint",
                         })}
                       >
-                        {String(i + 4).padStart(2, "0")}
+                        {rank}
                       </span>
-                      <ProductPicture
-                        item={entry.item}
-                        className={css({ h: "8", w: "auto", maxW: "100%" })}
-                      />
-                      {/* Brand over model, as everywhere else. */}
+                      {/* On a phone the rank rides on the picture, as on the podium. */}
+                      <span
+                        className={css({
+                          position: "relative",
+                          display: "grid",
+                          placeItems: "center",
+                          h: { base: "11", md: "8" },
+                        })}
+                      >
+                        <ProductPicture
+                          item={entry.item}
+                          className={css({
+                            h: { base: "11", md: "8" },
+                            w: "auto",
+                            maxW: "100%",
+                          })}
+                        />
+                        <span
+                          aria-hidden
+                          className={css({
+                            display: { base: "grid", md: "none" },
+                            position: "absolute",
+                            top: "-1",
+                            left: "-1",
+                            placeItems: "center",
+                            minW: "5",
+                            h: "4.5",
+                            px: "1",
+                            borderRadius: "pill",
+                            bg: "surface.raised",
+                            boxShadow: "0 0 0 1px token(colors.line)",
+                            fontFamily: "mono",
+                            fontSize: "2xs",
+                            lineHeight: "1",
+                            color: "ink.muted",
+                          })}
+                        >
+                          {rank}
+                        </span>
+                      </span>
+                      {/* Brand over model, as everywhere else; on a phone the whole name, on
+                          two lines if need be, then its price and match. */}
                       <span
                         className={css({
                           display: "grid",
@@ -864,10 +953,29 @@ export function ResultsView({
                           className={css({
                             fontSize: "sm",
                             fontWeight: "600",
-                            truncate: true,
+                            overflowWrap: "anywhere",
+                            lineClamp: { base: "2", md: "1" },
                           })}
                         >
                           {entry.item.name}
+                        </span>
+                        <span
+                          className={css({
+                            display: { base: "block", md: "none" },
+                            mt: "0.5",
+                            fontFamily: "mono",
+                            fontSize: "xs",
+                            color: "ink.muted",
+                            fontVariantNumeric: "tabular-nums",
+                          })}
+                        >
+                          {formatPrice(entry.item.priceEur, locale)}
+                          {scored && (
+                            <span className={css({ color: "ink.faint" })}>
+                              {" · "}
+                              {Math.round(entry.score * 100)} %
+                            </span>
+                          )}
                         </span>
                       </span>
                       <span className={specColumns}>
@@ -882,7 +990,7 @@ export function ResultsView({
                       </span>
                       <span
                         className={css({
-                          display: "grid",
+                          display: { base: "none", md: "grid" },
                           justifyItems: "end",
                           gap: "0.5",
                         })}

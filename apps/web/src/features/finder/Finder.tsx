@@ -45,8 +45,6 @@ type Props = {
 const SHEET_SEEN = "choose-a-device:sheet-seen";
 const CANVAS_HINT_SEEN = "choose-a-device:canvas-hint-seen";
 
-/** A phone's layout (the journey in a sheet, the best match above the console). */
-const onPhone = () => window.matchMedia("(max-width: 47.99rem)").matches;
 const seen = (key: string) => {
   try {
     return localStorage.getItem(key) === "1";
@@ -628,11 +626,8 @@ export function Finder({ category, items, search, locale }: Props) {
                 total={items.length}
                 layouts={layouts}
                 brands={brandFilter}
-                // On a phone, every answer at once in the journey's sheet, to pick the one to
-                // change; wider, back to the question the results were opened from.
-                onEdit={() =>
-                  onPhone() ? openJourney() : finder.editAnswers()
-                }
+                onEdit={finder.editAnswers}
+                onJourney={openJourney}
                 onReset={finder.reset}
                 onOpen={openSheet}
               />

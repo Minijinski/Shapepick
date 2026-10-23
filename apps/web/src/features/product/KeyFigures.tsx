@@ -69,7 +69,8 @@ export function KeyFigures({
         className={css({
           display: 'grid',
           gridTemplateColumns: 'auto auto minmax(0, 1fr)',
-          columnGap: '8',
+          // Tighter on a phone, so the dearest price and its match still share a line.
+          columnGap: { base: '5', sm: '8' },
           rowGap: '1.5',
           alignItems: 'center',
         })}

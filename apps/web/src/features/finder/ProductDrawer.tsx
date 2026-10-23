@@ -1,16 +1,22 @@
 import type { Locale } from '@choose/catalog'
-import { useCallback, useEffect, useRef, useState } from 'react'
+import {
+  type PointerEvent as ReactPointerEvent,
+  useCallback,
+  useEffect,
+  useRef,
+  useState,
+} from 'react'
 import { createPortal } from 'react-dom'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
-import { gsap, prefersReducedMotion } from '../motion/gsap'
 import { AmazonLink } from '../product/AmazonLink'
 import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
 import { amazonLink } from '../product/shops'
 import { formatPrice, sheetSpecs } from '../product/specs'
+import { foldAway, useSheetDrag } from './Sheet'
 import type { ProductSheet } from './useFinder'
 
 // One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
@@ -44,6 +50,19 @@ const sectionLabel = css({
 })
 
 const iconButton = cx(button({ tone: 'ghost', size: 'icon' }), css({ color: 'ink.muted' }))
+
+/** The rank, which a phone shows once: in the steps beside it. */
+const rankOnce = css({ display: { base: 'none', md: 'inline' } })
+
+/**
+ * Where a part of the sheet goes on a phone: the product's photo right under its name, then its
+ * price and match, then the rest. Wider, in the order of the page.
+ */
+const onPhoneAt = {
+  photo: css({ order: { base: '1', md: '0' } }),
+  figures: css({ order: { base: '2', md: '0' } }),
+  rest: css({ order: { base: '3', md: '0' } }),
+}
 
 /** The price and the shop again, at the foot of the sheet once the line of the price is gone. */
 const buyBar = css({
@@ -97,26 +116,14 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
   const close = useCallback(() => {
     if (closing.current) return
     closing.current = true
-    const el = panel.current
-    if (!el || prefersReducedMotion() || document.hidden) return onClose()
-    let done = false
-    const finish = () => {
-      if (done) return
-      done = true
-      onClose()
-    }
     const wide = window.matchMedia('(min-width: 48rem)').matches
-    gsap.set([el, backdrop.current], { animation: 'none' })
-    gsap.to(el, {
-      ...(wide ? { x: 48 } : { y: 80 }),
-      opacity: 0,
-      duration: 0.28,
-      ease: 'power3.in',
-      onComplete: finish,
-    })
-    gsap.to(backdrop.current, { opacity: 0, duration: 0.28 })
-    window.setTimeout(finish, 480)
+    foldAway(panel.current, backdrop.current, onClose, wide)
   }, [onClose])
+  // On a phone the sheet comes from the bottom: its head can be pulled down to fold it away.
+  const pull = useSheetDrag(panel, close)
+  const pullOnPhone = (e: ReactPointerEvent) => {
+    if (window.matchMedia('(max-width: 47.99rem)').matches) pull(e)
+  }
 
   // Focus moves into the sheet and back to whatever had it once the sheet closes.
   useEffect(() => {
@@ -191,10 +198,12 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
         className={css({
           position: 'fixed',
           zIndex: '41',
-          left: { base: '2', md: 'auto' },
-          right: { base: '2', md: '3' },
+          left: { base: 'max(0.5rem, env(safe-area-inset-left))', md: 'auto' },
+          right: { base: 'max(0.5rem, env(safe-area-inset-right))', md: '3' },
           top: { base: 'auto', md: '3' },
-          bottom: { base: '2', md: '3' },
+          // Clear of the iPhone's home indicator.
+          bottom: { base: 'calc(0.5rem + env(safe-area-inset-bottom))', md: '3' },
+          transition: 'translate 320ms token(easings.signal)',
           w: { md: 'min(34rem, calc(100vw - 1.5rem))' },
           maxH: { base: '88dvh', md: 'none' },
           display: 'flex',
@@ -213,8 +222,11 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
           _motionReduce: { animation: 'none' },
         })}
       >
+        {/* On a phone, its handle: pulled down, the sheet folds away. */}
         <header
+          onPointerDown={pullOnPhone}
           className={css({
+            position: 'relative',
             display: 'flex',
             alignItems: 'center',
             gap: '2',
@@ -224,6 +236,19 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
             pr: '3',
             borderBottomWidth: '1px',
             borderColor: 'line',
+            touchAction: { base: 'none', md: 'auto' },
+            _before: {
+              content: '""',
+              display: { base: 'block', md: 'none' },
+              position: 'absolute',
+              top: '1.5',
+              left: '50%',
+              w: '9',
+              h: '1',
+              ml: '-4.5',
+              borderRadius: 'full',
+              bg: 'line',
+            },
           })}
         >
           <span
@@ -231,7 +256,13 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
             aria-live="polite"
           >
             {kept ? (
-              <span className={css({ color: sheet.rank === 0 ? 'signal' : 'ink.muted' })}>
+              // A phone shows the rank once, in the steps beside it.
+              <span
+                className={cx(
+                  css({ color: sheet.rank === 0 ? 'signal' : 'ink.muted' }),
+                  position && rankOnce,
+                )}
+              >
                 {String((sheet.rank ?? 0) + 1).padStart(2, '0')}
               </span>
             ) : !sheet.ruledOut ? null : sheet.excludedBy ? (
@@ -324,6 +355,14 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                   {item.tagline[locale]}
                 </p>
               )}
+            </div>
+            {/* Right under the name, wider (the grid's gap, less the title block's). */}
+            <div
+              className={cx(
+                onPhoneAt.figures,
+                css({ display: 'grid', gap: '3', md: { mt: '-3' } }),
+              )}
+            >
               <div ref={figures} className={css({ display: 'grid', gap: '2.5', mt: '1' })}>
                 <KeyFigures
                   price={item.priceEur}
@@ -344,26 +383,32 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
 
             {/* The product (its photo, or its drawing) on the canvas's dotted paper. */}
             <div
-              className={css({
-                p: '4',
-                borderRadius: 'card',
-                borderWidth: '1px',
-                borderColor: 'line',
-                bg: 'paper',
-                backgroundImage: 'radial-gradient(#CFCBC2 1.1px, transparent 1.3px)',
-                backgroundSize: '14px 14px',
-              })}
+              className={cx(
+                onPhoneAt.photo,
+                css({
+                  p: '4',
+                  borderRadius: 'card',
+                  borderWidth: '1px',
+                  borderColor: 'line',
+                  bg: 'paper',
+                  backgroundImage: 'radial-gradient(#CFCBC2 1.1px, transparent 1.3px)',
+                  backgroundSize: '14px 14px',
+                }),
+              )}
             >
               <ProductHero item={item} locale={locale} />
             </div>
 
             {(sheet.pros.length > 0 || sheet.cons.length > 0) && (
               <div
-                className={css({
-                  display: 'grid',
-                  gridTemplateColumns: { base: '1fr', sm: '1fr 1fr' },
-                  gap: '4',
-                })}
+                className={cx(
+                  onPhoneAt.rest,
+                  css({
+                    display: 'grid',
+                    gridTemplateColumns: { base: '1fr', sm: '1fr 1fr' },
+                    gap: '4',
+                  }),
+                )}
               >
                 {sheet.pros.length > 0 && (
                   <div className={css({ display: 'grid', gap: '2', alignContent: 'start' })}>
@@ -395,7 +440,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
               </div>
             )}
 
-            <section className={css({ display: 'grid', gap: '2' })}>
+            <section className={cx(onPhoneAt.rest, css({ display: 'grid', gap: '2' }))}>
               <h3 className={sectionLabel}>{m.specSheet[locale]}</h3>
               <dl className={css({ display: 'grid' })}>
                 {sheetSpecs(item, locale).map((spec) => (
