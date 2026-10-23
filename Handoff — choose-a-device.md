@@ -4,13 +4,13 @@ Oct 23, 2026 · @Eddy
 
 ## En bref
 
-choose-a-device est un « finder » de claviers et d'écrans inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
+choose-a-device est un « finder » de claviers, d'écrans et de souris inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (10 questions) et écrans (8) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (9 questions), écrans (8) et souris (11) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur.
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
-- **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources) et 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
-- **Qualité** : 52 tests du moteur et des parcours, 15 du mapper écrans, typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` = `9637ec8` « Updating handoff » sur origin, poussé et déployé le 23 octobre : les retours du 22 octobre (soir), le correctif Logitech (`3f2e42a`), le lien Amazon, les « Retours du 23 octobre », les ASIN Amazon (`65c326b`) et le correctif d'hydratation (`routes/__root.tsx`, voir « SEO et i18n »). La migration `0002` et les ASIN sont en production depuis le 23 octobre. Les « Retours du 23 octobre (2) » sont dans main en local (06057fa, fusionné en avance rapide), pas encore poussés ni déployés. Les vrais écrans du 23 octobre sont commités sur la branche feat/ecrans-vrais-modeles, pas encore dans main ni poussés ; en base locale seulement.
+- **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources), 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles ») et 149 vraies souris de 8 marques (voir « Souris : troisième catégorie »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
+- **Qualité** : 72 tests du moteur et des parcours (19 pour les souris), 26 de l'import (15 du mapper écrans, 11 du mapper souris), typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` sur origin = la fusion `184fc39` de feat/souris (`e6a01d9`, `3760b9e`) sur les retours du 23 octobre au soir (`bd1fcfb`, `bad913f`), puis la mise à jour de ce handoff ; poussé et déployé le 23 octobre au soir. La migration `0004` est passée sur Neon avant le push et le seed après : le site en ligne montre les 149 souris (voir « Souris : troisième catégorie »). Plus tôt le 23 octobre : les vrais écrans (`ad9f146`) en ligne avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -91,6 +91,8 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | `packages/catalog/src/domain/` | Énumérations partagées (Zod et Postgres), schémas Zod du seed, forme « item » lue par le moteur |
 | `packages/catalog/src/finder/engine.ts` | Moteur pur : filtres, compteurs, sauts, impasses, classement |
 | `packages/catalog/src/finder/keyboards.ts`, `monitors.ts` | Les deux questionnaires : étapes, options, critères, profils |
+| `packages/catalog/src/finder/mice.ts`, `mouse-fit.ts` | Le questionnaire souris et son modèle de prise : taille de main, prise, conseil de taille |
+| `packages/ingest/` | Import des catalogues (`pnpm ingest <source>`) : un adaptateur par site (`src/sources/`, `sources/monitors/`, `sources/mice/`), mappers testés (`mapping.ts`, `monitor-specs.ts`, `mouse-specs.ts`), fiches de relecture, photos et prix |
 | `packages/catalog/src/registry.ts` | Slugs localisés (`claviers` ↔ `keyboards`) et questionnaire par catégorie |
 | `packages/catalog/src/node/load-data.ts` | Lecture et validation des YAML, Node uniquement |
 | `packages/catalog/test/` | 28 tests Vitest |
@@ -104,12 +106,12 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | `apps/web/src/features/motion/` | Enregistrement de GSAP, durées et courbes communes |
 | `apps/web/src/i18n/` | Textes d'interface FR/EN, langue de la page |
 | `apps/web/panda.config.ts` | Tokens « Labo clair », recettes `button`, `chip`, `optionTile` |
-| `data/` | Marques, switchs, claviers et écrans de démo en YAML |
+| `data/` | Marques, switchs, claviers, écrans et souris en YAML (un fichier par marque), prix conseillés (msrp.yaml), exclusions (excluded.yaml) |
 | `scripts/pg-local.sh`, `infra/`, `.claude/launch.json` | Postgres local, Docker Compose, serveur de prévisualisation de l'app |
 
 ## Base de données et données de démo
 
-La base compte 9 tables et 25 enums Postgres. Tout ce qui sert à filtrer ou classer est une colonne typée ; le reste ira dans une colonne `extra` en jsonb. Les valeurs des enums viennent des mêmes tableaux que les schémas Zod (`packages/catalog/src/domain/enums.ts`).
+La base compte 10 tables et 32 enums Postgres. Tout ce qui sert à filtrer ou classer est une colonne typée ; le reste ira dans une colonne `extra` en jsonb. Les valeurs des enums viennent des mêmes tableaux que les schémas Zod (`packages/catalog/src/domain/enums.ts`).
 
 | Table | Contenu | À noter |
 | --- | --- | --- |
@@ -120,6 +122,7 @@ La base compte 9 tables et 25 enums Postgres. Tout ce qui sert à filtrer ou cla
 | `switches` | Ressenti, silencieux, techno, forces (g), courses (mm), lubrification, son | Référentiel partagé entre claviers |
 | `keyboard_specs` | 34 colonnes : format, techno, hot-swap, connexions, polling, rapid trigger, matériaux, firmware, mesures | Une ligne par clavier |
 | `monitor_specs` | 38 colonnes : diagonale, ratio, définition, dalle, fréquence, HDR, connectique, pied (dont height\_adjustable, migration 0003) | `ppi` calculé par Postgres (colonne générée) |
+| `mouse_specs` | 30 colonnes : forme, main, segment, longueur, largeur, hauteur, poids, position de la boule, boutons, capteur, DPI, fréquence, switchs, liaisons, hôtes, autonomie, alimentation, molettes, RGB, plage de main et prises conseillées par la marque | Migration 0004 ; mesures obligatoires sauf pour un trackball |
 | `product_images` | URL, type de visuel, dimensions, couleur dominante | 1 353 vues de dessus des claviers et 1 435 vues de face des écrans ; le site lit la principale |
 | `offers` | Boutique, pays, URL, prix, stock, date | Vide : prévu pour les prix et l'affiliation |
 
@@ -366,7 +369,7 @@ Six retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headl
 
 ## Retours du 23 octobre (2)
 
-Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless sur la base locale (`web-local-db-3`, port 3003). Dans main en local (06057fa), pas encore poussés ni déployés.
+Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome headless sur la base locale (`web-local-db-3`, port 3003). Poussés sur origin (06057fa).
 
 | Mesure | Avant | Après |
 | --- | --- | --- |
@@ -387,7 +390,7 @@ Cinq retours sur l'interface, faits et vérifiés le 23 octobre dans Chrome head
 
 ## Écrans : vrais modèles (23 octobre)
 
-Le catalogue d'écrans compte 264 vrais modèles de 8 marques, les 50 plus pertinents de chacune dans l'ordre de la marque, importés par `pnpm ingest <marque>` depuis les pages et API officielles ; la démo est retirée. Les photos restent sur les CDN des marques et passent par Netlify Image CDN. Commités sur la branche feat/ecrans-vrais-modeles (pas encore dans main ni poussés), en base locale seulement : rien en production.
+Le catalogue d'écrans compte 264 vrais modèles de 8 marques, les 50 plus pertinents de chacune dans l'ordre de la marque, importés par `pnpm ingest <marque>` depuis les pages et API officielles ; la démo est retirée. Les photos restent sur les CDN des marques et passent par Netlify Image CDN. Poussés et déployés (ad9f146), migration 0003 et seed passés sur Neon le 23 octobre : en ligne.
 
 | Marque | Écrans | Source | Prix | Pertinence |
 | --- | --- | --- | --- | --- |
@@ -450,9 +453,125 @@ Migration `0003` (`height_adjustable`, `true_black_600`) et seed appliqués en l
 
 - [x] Source des prix d'ASUS, BenQ et Philips : prix conseillé cité par la presse tech (29 prix, 104 écrans attendent encore ; les prix d'avant 2023 restent écartés, choix confirmé)
 - [x] ASIN Amazon des écrans : 233 sur 264, par la même méthode que les claviers
-- [x] Commit sur la branche feat/ecrans-vrais-modeles
-- [ ] Fusionner dans main et pousser, puis production dans l'ordre : migration 0003, déploiement, seed (avec ton accord)
+- [x] Commit (ad9f146) et fusion dans main en local
+- [x] Production : push, migration 0003 et seed faits le 23 octobre (264 écrans, 233 ASIN en ligne)
 - [ ] Acer et Gigabyte si une source ouverte apparaît
+
+## Souris : troisième catégorie (23 octobre)
+
+Le site gagne une troisième catégorie, les souris (`/fr/souris`, `/en/mice`) : 149 vrais modèles de 8 marques, lus sur les fiches officielles par `pnpm ingest <marque>-mice`, et un parcours de 11 questions sur le modèle de l'accueil de shapefinder (« quelle coque va à ta main ? »). Commits sur feat/souris : e6a01d9 (catégorie, moteur, parcours, socle de l'import) et 3760b9e (les 149 souris), fusionnés dans main (184fc39) et mis en ligne le 23 octobre au soir : migration 0004 sur Neon, push, seed des 149 souris.
+
+Le plan validé est dans `~/.claude/plans/j-aimerai-que-tu-explores-moonlit-wilkinson.md` (lots 0 et A à I). Choix de l'utilisateur : une quinzaine de marques et 300 souris au plus, jeu et bureau ; trackballs dans la question de forme (« au pouce » ou « aux doigts ») ; mesures des fiches officielles seulement, ni EloShapes ni autre base tierce ; trois prises (paume, griffe, bout des doigts) ; couleur facultative.
+
+| Marque | Souris | Source | Prix | Écartées ou en attente |
+| --- | --- | --- | --- | --- |
+| Logitech (+ Logitech G) | 33 | logitechg.com et logitech.com (fr-fr) : pages catégorie, état sérialisé de chaque page | Boutique Logitech | G502 X LIGHTSPEED (pas de poids), M750 L (la page mesure la M750) |
+| Pulsar | 30, le plafond | eu.pulsar.gg (Shopify) : flux JSON, accordéons des pages | Boutique européenne | Collaborations, éditions signées, coloris de tournoi |
+| Razer | 27 | razer.com/fr-fr : sitemap produits, état ng-state (`mice-mice-specifications`) | Boutique Razer | Boomslang 20th Anniversary (collector) ; packs et éditions spéciales hors des variantes |
+| SteelSeries | 23 | steelseries.com/fr-fr : sitemap, données Next.js (« Design\|\|\|Longueur\|\|\|… ») | Boutique SteelSeries | CS2 Dragon Lore, coloris Fortnite |
+| ASUS ROG | 11 sur 26 | API odinapi.asus.com, pages `/spec/` de rog.asus.com | eStore ASUS | 11 sans prix (absentes de l'eStore), 4 sans poids ni mesures complètes ; éditions EVA, Gundam, Phantom Blade |
+| HyperX | 10 | hyperx.com (Shopify) : la fiche est dans la description du flux | Prix US × 1,2 | 4 en rupture aux États-Unis |
+| Turtle Beach | 9 | turtlebeach.com (Shopify) : accordéons des pages | Prix US × 1,2 | Gamme ROCCAT en rupture ; Burst II Pro (pas de mesures) |
+| MSI | 6 | fr-store.msi.com (Shopify) | Boutique MSI | Versa 300 W et Forge GM340 W (pas de mesures) |
+
+Le catalogue compte 63 symétriques, 80 ergonomiques, 4 verticales et 2 trackballs ; 135 pour droitiers, 9 ambidextres, 5 pour gauchers ; 127 de jeu, 22 de bureau. Une variante est une couleur : une autre taille, forme, fréquence ou version filaire est un produit à part.
+
+### Parcours souris, 11 étapes
+
+L'usage d'abord (profil de classement seulement), puis la main et la forme, qui décident des coques possibles ; puis l'ajustement (taille de main et prise règlent le classement et suggèrent une taille, taille et poids filtrent) ; connexion, budget, indispensables et couleur pour finir (`packages/catalog/src/finder/mice.ts`).
+
+| Clé | Question | Options | Comportement |
+| --- | --- | --- | --- |
+| `use` | À quoi va-t-elle servir ? | Jeu compétitif, Jeu polyvalent, Bureau & productivité, Nomade | Profil seulement, obligatoire |
+| `hand` | Avec quelle main ? | Main droite, Main gauche | Obligatoire ; gauche = ambidextres + souris pour gauchers |
+| `shape` | Quelle forme ? | Symétrique, Ergonomique, Verticale, Trackball au pouce, Trackball aux doigts | Plusieurs choix, obligatoire |
+| `handsize` | Quelle taille de main ? | Petite (moins de 17 cm), Moyenne, Grande, Très grande (plus de 21 cm) ; « Je ne sais pas » | Classement et conseil de taille ; sautée pour des trackballs seuls |
+| `grip` | Comment la tiens-tu ? | Paume, Griffe, Bout des doigts ; « Je ne sais pas » | Plusieurs choix, classement seul ; deux voisines = l'entre-deux ; si la forme garde des coques symétriques ou ergonomiques |
+| `size` | Quelle taille de souris ? | Petite, Moyenne, Grande, Très grande | Filtre ; `recommend` donne la taille conseillée et ses voisines |
+| `weight` | Quel poids ? | Plume (moins de 40 g), Ultra-légère, Légère, Moyenne, Lourde (plus de 90 g) | Plusieurs choix, 3 g de tolérance |
+| `connection` | Comment la connecter ? | Sans fil 2,4 GHz, Bluetooth, 2,4 GHz + Bluetooth, Filaire uniquement | Un choix |
+| `budget` | Quel budget ? | 0 à 200 € par 5 €, sans limite tout en haut | Plage |
+| `musts` | Des indispensables ? | 8 000 Hz, Multi-appareils, Clics silencieux, Molette rapide, Défilement horizontal, Recharge sans fil, Batterie rechargeable, 8 boutons et +, Pavé MMO, Switchs optiques, RGB | ET ; un indispensable qui ne départage rien est masqué |
+| `look` | Une couleur ? | Noir, Blanc, Coloré, Transparent | Plusieurs choix, facultative |
+
+Sur les 149 souris, deux tuiles restent vides et masquées : « Trackball aux doigts » (pas de Kensington) et « Transparent ».
+
+### Conseil de taille et classement
+
+Le modèle de prise est le nôtre (`packages/catalog/src/finder/mouse-fit.ts`) : ni le code ni les constantes de shapefinder. Ses constantes sont de départ, à recaler au lot G sur les recommandations que publient les marques.
+
+- **Taille d'une souris** : `sizeIndex` = longueur + la moitié de la largeur au-delà de 75 mm (une coque large comme la MX Master compte plus grand). Classes : petite sous 119 mm, moyenne de 119 à 126, grande de 126 à 130, très grande au-delà.
+- **Longueur visée** : 76 mm + 2,5 mm par cm de main + un décalage de prise (paume +3, griffe 0, bout des doigts −7) ; deux prises voisines prennent la moyenne.
+- **Adéquation à la main** (`handFit`, active dès que la taille de main est donnée) : gaussienne asymétrique autour de la longueur visée ; une taille de souris choisie l'emporte ; la plage de main d'une marque (« mains moyennes à grandes ») pèse 0,3. Faiblesse dans le bon sens : « Petite pour ta main » ou « Grande pour ta main ».
+- **Adéquation à la prise** (`gripFit`) : hauteur et largeur rapportées à la longueur, autour de cibles par prise, petits bonus (ergonomique pour la paume) ; coques symétriques et ergonomiques seulement.
+- **Conseil** (`recommend`) : la classe de la longueur visée est « Conseillé », ses voisines dans la tolérance « Convient aussi » ; le badge dans les tuiles reste à faire (lot F).
+- **Autres critères** : légèreté, capteur (fréquence), sans fil, autonomie, multi-appareils, défilement, silence, confort, compacité, boutons, chacun avec son libellé de faiblesse.
+
+| Profil | Poids des critères |
+| --- | --- |
+| Jeu compétitif | main 2, prise 1, légèreté 2,5, capteur 2, sans fil 1 |
+| Jeu polyvalent | main 2, prise 1, capteur 1, légèreté 1, sans fil 1, autonomie 1, boutons 1 |
+| Bureau & productivité | main 1,5, prise 0,5, confort 2, multi-appareils 2, défilement 2, silence 1,5, autonomie 1,5 |
+| Nomade | compacité 3, multi-appareils 2, autonomie 2, sans fil 2, légèreté 1, main 1 |
+
+Le moteur, commun aux trois catégories, gagne de quoi lire les réponses : `Criterion.score(item, answers)`, `active?`, `weakLabel` en fonction, `anyLabel` (« Je ne sais pas »), `recommend` et `recommended()`, `rankingAnswers()`, `isInformed` vrai dès une réponse « classement seulement », `FinderDefinition.category`. Claviers et écrans classent comme avant.
+
+| Profil testé sur les 149 souris | Trois premiers |
+| --- | --- |
+| Jeu compétitif, symétrique, main moyenne, griffe | PRO X Superlight 2c, Sensei Pro Mini, eS FS-1 |
+| Jeu, ergonomique, grande main, paume | DeathAdder V4 Pro, DeathAdder V3 Pro 8000 Hz, Rival Pro |
+| Jeu, petite main, bout des doigts | Orochi V2, X2H CrazyLight Mini, X2 CrazyLight Mini |
+| Bureau, ergonomique, grande main | Signature Comfort Plus M850 L, MX Master 3S, Signature M650 L |
+| Bureau, verticale, petite main | Lift, Pro Click V2 Vertical, MX Vertical |
+| Main gauche, ergonomique | M650 L pour gaucher, Naga Left-Handed Edition, X3 LHD CrazyLight |
+| MMO (pavé latéral) | Naga V2 HyperSpeed, Aerox 9 Wireless, Rival 5 |
+
+### Import des souris
+
+Une source par marque : `pnpm ingest logitechg-mice` (puis `logitech-mice`, `razer-mice`, `steelseries-mice`, `rog-mice`, `msi-mice`, `pulsar-mice`, `hyperx-mice`, `turtlebeach-mice`), `--dry-run` d'abord, `--next 30`. Chaque adaptateur (`packages/ingest/src/sources/mice/`) lit une page en `OfficialMouse` (paires libellé/valeur, texte, variantes, photos) ; `mapMouse` (`official.ts`) et `mouseSpecsOf` (`mouse-specs.ts`, 11 tests sur de vraies fiches) font le reste ; `import-mice.ts` écrit `data/mice/<marque>.yaml` et une fiche de relecture. Au plus 30 souris par marque, dans l'ordre de la marque.
+
+- **Mesures** : libellés propres, sinon un champ « L × l × H » lu dans l'ordre qu'il nomme, sinon triées (la longueur est la plus grande) avec une note. Poids hors câble, pile comprise pour une souris à piles ; « ± 1 g » et « ±44g » lus ; livres et onces converties (HyperX : les grammes exacts du texte quand ils concordent).
+- **Fréquence dans la boîte** : un dongle 8K, un dock ou un over-polling « vendu séparément » ou « en option » ne compte pas ; la DeathAdder V3 Pro est vendue en 1000 Hz et en 8000 Hz, deux produits.
+- **Autonomie** : la valeur à 1 000 Hz, éclairage éteint, sur la liaison 2,4 GHz plutôt qu'en Bluetooth ; à défaut celle que le texte lie à la batterie ; jours et mois comptés à 8 h par jour.
+- **Liaison et alimentation** : 2,4 GHz sur un nom de radio (LIGHTSPEED, HyperSpeed, Quantum, UWB…) ou un récepteur dans la boîte ; un récepteur « compatible » ou « non inclus », ou une « Édition Bluetooth », ne compte pas. Piles quand les lignes de batterie le disent ; une souris sans fil qui marche en filaire ou vient avec un câble USB-C est rechargeable.
+- **Main** : « ambidextre » avec des boutons d'un seul côté reste pour droitiers (note) ; une coque symétrique sans boutons latéraux, ou avec les siens sur le dessus, est ambidextre. Une page de gamme donne la plage de main de chaque taille (M650, M650 L).
+- **Drapeaux** (clics silencieux, molette rapide, inclinable ou latérale…) sur preuve positive seulement ; « Virtuel » vaut non.
+
+| Marque en attente | Ce qui manque | Piste |
+| --- | --- | --- |
+| Zowie (environ 25) | Dimensions en image seulement (la ligne « Dimensions » est vide, en français comme en anglais) ; prix chargés dans le navigateur | Recopier les schémas de mesure officiels ; prix conseillés de presse |
+| Keychron et Lemokey (environ 18) | Dimensions en image seulement | Schémas officiels ; prix de keychron.fr par SKU |
+| Corsair (environ 20) | Pas de dimensions dans les pages françaises ni américaines | Un document officiel (manuel), sinon attendre |
+| Kensington (8 trackballs) | Pas de prix | Prix conseillés de presse ; les dimensions ne sont pas exigées d'un trackball |
+| Glorious, Endgame Gear, Lamzu | Pas essayées (Shopify limitait l'agent le 23 au matin, levé le soir) | Nouvel essai, 4 s entre deux pages |
+| Cooler Master | Catalogue rendu dans le navigateur | À étudier |
+| VAXEE | Refus (403) | Laissée de côté |
+
+### Base, production et suite des souris
+
+- **Catégories à l'abri (lot 0)** : une catégorie dont le snapshot échoue ou est vide est masquée (`shown` rendu par le loader de `$lang`, en-têtes no-store en cas d'échec, `/$category` en 404). Un déploiement avant la migration ou avant le seed ne casse donc rien.
+- **Migration `0004_mouse_specs`** : la valeur `mouse` de l'énumération `category`, sept énumérations et la table `mouse_specs`. Appliquée en local, puis sur Neon le 23 octobre au soir, avant le push.
+- **Seed** : garde-fou par catégorie (refus si une catégorie perd plus de max(10, la moitié) de ses produits ; `SEED_PRUNE=force` pour passer outre), `SEED_DATA_DIR` pour un autre dossier. Seeder la production depuis un dossier sans `data/mice` serait refusé : c'est voulu.
+- **Vérifié en local** : deux seeds sans écart ; snapshot identique au YAML pour 523 claviers, 264 écrans et 149 souris ; le serveur de main tournant sur la même base répondait 200. La base de démo `choose_a_device_mice` (29 souris fictives) reste pour le travail sur le site.
+
+* [x] Lots 0, A, B et socle de l'import (e6a01d9)
+* [x] Lot D : 149 souris de 8 marques (3760b9e)
+* [x] Fusion dans main (184fc39), migration 0004 sur Neon, push, seed de la production : en ligne le 23 octobre au soir
+* [ ] Lot E : photos (`pnpm ingest photos mice`, barrière vue de dessus), prix et curation
+* [ ] Lot F : le site pour les souris (tuiles qui montrent le meilleur modèle depuis bad913f, à vérifier ; badges « Conseillé » ; figure de mesure de la main ; emplacements portrait ; titre au féminin « trouve la tienne »)
+* [ ] Lot G : calage du modèle et audit des personas (`packages/catalog/scripts/audit-mice.ts`)
+* [ ] Marques en attente (tableau ci-dessus) et ASIN Amazon des souris
+
+## Retours du 23 octobre (soir)
+
+Deux commits de la session canvas, poussés sur origin le 23 octobre au soir : bd1fcfb « Canvas : photos relayées, arrivée filtrée, preloader en panneaux, popup revue » et bad913f « Finder : une seule navigation, appareils dans les tuiles, popup corrigée ». Résumé d'après leurs messages de commit.
+
+- **Photos d'écrans relayées** : le CDN d'images de Netlify recopie l'en-tête de cache des marques ; Samsung, Dell, LG, ASUS (« private »), BenQ et Philips (« max-age=0 ») ne laissaient rien garder. La route `/api/photo/<clé>` les relaie, marquées immuables (`hosts.ts`, même liste que `remote_images`). Sur le canvas : photos du centre d'abord, préchargement dans le sens du mouvement, 6 découpes et 4 préchargements, octets gardés par le worker.
+- **Arrivée filtrée** : changer de catégorie, ou entrer depuis l'accueil, applique les réponses enregistrées dès le clic (`journeyTargets`) ; avec une short list, les finalistes restent sur le panneau qui s'ouvre puis glissent vers la grille.
+- **Preloader en panneaux** : les panneaux de l'accueil en CSS, un appareil par catégorie qui se remplit à son rythme, puis levée panneau par panneau ; sur un canvas, l'appareil de la catégorie seul. Une souris y est déjà dessinée.
+- **Popup du canvas** : 4 specs clés en grille, ouverture depuis le trait, glissement d'un produit au voisin, carte opaque, boule orange placée par translate ; plus de popup sur un produit visible à moins de 70 %.
+- **Une seule navigation** : la barre de parcours montre chaque réponse ; les puces de réponses et la bulle d'astuce sont retirées ; le podium n'affiche que les 3 premiers. Les claviers perdent la question de couleur (9 questions, les anciens liens `look=` sont ignorés).
+- **Tuiles des questions** : chaque option montre le meilleur modèle qu'elle garde selon les autres réponses (un différent par tuile, photographié d'abord), à l'échelle pour la taille des claviers et le format des écrans ; `OptionVisual` est retiré. Nouvelle accroche : « Le bon appareil, en quelques questions ».
 
 ## SEO et i18n
 
@@ -531,13 +650,14 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 | `pnpm dev` | Serveur de dev du site, port 3000 |
 | `pnpm build` | Build de production dans `apps/web/.output` |
 | `pnpm --filter @choose/web start` | Lance le build de production avec le `.env` racine |
-| `pnpm test` | 52 tests du moteur et des parcours (Vitest) ; pnpm --filter @choose/ingest test en lance 15 sur le mapper écrans |
+| `pnpm test` | 72 tests du moteur et des parcours (Vitest) ; pnpm --filter @choose/ingest test en lance 26 sur les mappers écrans et souris |
 | `pnpm typecheck` | `tsc` sur `catalog`, `db` et `web` |
 | `pnpm lint`, `pnpm format` | Biome : vérification, puis correction automatique |
 | `pnpm pg:local` (ou `stop`, `status`) | Postgres local : port 54329, données dans `.pgdata` |
 | `pnpm db:generate`, `db:migrate`, `db:seed`, `db:studio` | Migrations Drizzle, seed YAML, interface de la base |
-| `pnpm ingest photos [--dry-run]` | Choisit la photo principale de chaque clavier (vue de dessus) et de chaque écran (vue de face), keyboards ou monitors pour une seule catégorie, et écrit `data/` |
+| `pnpm ingest photos [--dry-run]` | Choisit la photo principale de chaque clavier (vue de dessus) et de chaque écran (vue de face), keyboards, monitors ou mice pour une seule catégorie, et écrit `data/` |
 | pnpm ingest \<marque> \[--dry-run\] | Écrans (samsung, lg, dell, msi, aoc, asus, philips, benq) : les 50 plus pertinents de la marque dans data/monitors/\<marque>.yaml, avec la fiche de relecture et les ignorés |
+| pnpm ingest \<marque>-mice \[--dry-run\] \[--next 30\] | Souris (logitechg-mice, logitech-mice, razer-mice, steelseries-mice, rog-mice, msi-mice, pulsar-mice, hyperx-mice, turtlebeach-mice) : jusqu'à 30 par marque dans data/mice/\<marque>.yaml, avec la fiche de relecture et les ignorés |
 
 - Si `apps/web/styled-system/` manque (dossier généré, non versionné) : `pnpm --filter @choose/web exec panda codegen`.
 - Dans l'app Claude, le serveur de prévisualisation « web » est décrit dans `.claude/launch.json` ; « web-local-db » tourne sur le port 3001 avec le Postgres local.
@@ -593,6 +713,8 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Console et liste courte (1440 × 900) | Tuiles d'une rangée à 112 px au lieu de 228, console toujours à 376 px ; coches entières ; liste courte centrée sur l'axe (claviers 3 × 3, écrans 5 en ligne) ; sous elle, aucune esquisse ne réagit au survol |
 | Fiche produit, podium et résultats | Fiche ouverte depuis le canvas, le podium et les résultats, précédent / suivant, Échap ; « Voir les 9 résultats » garde la sélection en cours, « Modifier mes réponses » revient à l'étape quittée ; top 5 à 900 px de haut, top 3 + « Voir tout » à 790 px |
 | Écrans réels, base locale (23 octobre) | Chrome headless à 1440, 1024 et 390 px, FR et EN : 235 écrans (264 depuis l'ajout des prix ASUS, BenQ, Philips), photos de face sur le canvas, podium, résultats, fiche (luminosité, couleurs, pied), liens Amazon par référence, impasses « Bloqué par Budget », tuile TN masquée |
+| Souris, base locale (23 octobre) | 149 souris de 8 marques : seed relancé sans écart, snapshot identique au YAML (523 claviers, 264 écrans, 149 souris) ; parcours essayé sur 7 profils (tableau dans « Souris ») ; 72 tests du moteur dont 19 souris, 26 de l'import ; lecture des claviers inchangée (exports seulement, mêmes 30 claviers Razer). Le site avec des souris n'a été vu que sur la base de démo (29 souris fictives) : catégorie vide ou en échec masquée, /fr/ecrans en 404 quand les écrans manquent, podium et fiche. |
+| Souris en production (23 octobre au soir) | Migration 0004 sur Neon (5 migrations, valeur mouse ajoutée) ; build de 184fc39 en ligne en une minute, /fr/souris en 404 tant que la catégorie était vide ; seed : 523 claviers, 264 écrans, 149 souris, aucun produit supprimé ; snapshot de Neon identique au YAML (523, 264, 149) ; /fr/souris et /en/mice en 200 après la revalidation du CDN ; la page en ligne montre « 149 souris correspondent » et la question 1 sur 11, sans erreur dans la console. |
 
 Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
@@ -625,6 +747,11 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 * **Mesurer sous une animation 3D** : à l'ouverture des résultats, le panneau est encore incliné et réduit ; `getBoundingClientRect` y donne des positions faussées. Placer ce qui dépend de la mise en page avec `offsetTop` (la liste virtualisée le fait).
 * **Mesures de photo et résolution** : le « détail » d'une photo (part de ses points sur une arête) se lit sur une grille d'environ 400 points, sinon une même photo en 3 840 px (Logitech en direct) passe pour « sans détail » alors qu'elle en a en 800 px (via l'Image CDN).
 * **Revue des photos choisies** : `pnpm ingest photos` peut prendre une bannière, un schéma ou un collage pour une vue de dessus ; après chaque passage, regarder les photos principales changées (planche contact) et compléter `photos:` dans `data/excluded.yaml`.
+* **Pousser `main` déploie aussitôt** : une migration qui ajoute une colonne lue par le snapshot doit passer avant le push. Le 23 octobre, ad9f146 poussé avant la migration 0003 a mis tout le site en erreur 500 (colonne `height_adjustable` absente) jusqu'à `pnpm db:migrate`.
+* **Lire une fiche de souris** : Logitech bureau appelle « Hauteur » la longueur et « Épaisseur » la hauteur ; une page de gamme peut mesurer une autre taille (celle de la M750 L mesure la M750) ; un récepteur « compatible » ou « non inclus » n'est pas une liaison 2,4 GHz ; SteelSeries recopie parfois la fiche d'un modèle voisin (Sensei Pro et Rival Pro : la forme vient du paramètre mouse-shape de l'URL) ; les pages ROG citent la presse, aucun poids n'est lu dans leur texte.
+* **Mesures en image** : Zowie et Keychron ne publient les dimensions de leurs souris qu'en image ; sans mesures, une souris attend (« sans dimensions » dans la fiche de relecture).
+* **Shopify et le 429** : une rafale de sondages a fait limiter l'agent sur toutes les boutiques Shopify le 23 octobre au matin (levé le soir). 4 s entre deux pages pour turtlebeach.com, keychron.com et eu.pulsar.gg (http.ts), cache d'abord.
+* **Seed sans data/mice** : un seed lancé d'un dossier qui n'a pas encore les souris voudrait les supprimer toutes ; le garde-fou par catégorie refuse, ne jamais le forcer. Toujours seeder la production depuis le main à jour.
 
 ## Limites connues et dette technique
 
@@ -639,9 +766,10 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 - **Pas de prix boutiques** : la table `offers` est vide : les claviers et les écrans n'ont que le lien Amazon (prix indicatif, pas celui du jour) ; un écran sans ASIN mène à une recherche par sa référence.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
 - **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
-- **Le seed supprime** ce que data/ ne liste plus, avec un garde-fou (SEED\_PRUNE=force au-delà de max(30, la moitié du catalogue)).
+- **Le seed supprime** ce que data/ ne liste plus, avec un garde-fou (SEED\_PRUNE=force au-delà de max(30, la moitié du catalogue), et par catégorie au-delà de max(10, la moitié de la catégorie)).
 - **Ni tests d'interface ni CI.**
 - **Prévu mais pas encore utilisé** : ScrollTrigger, three et React Three Fiber.
+- **Souris** : 149 modèles de 8 marques ; Zowie, Keychron, Corsair et Kensington attendent (voir « Souris : troisième catégorie »). La forme n'est connue que par longueur, largeur, hauteur et poids (ni bosse ni courbure) et les constantes du modèle de prise ne sont pas calées. Pas encore de photo principale choisie, ni d'ASIN ; les prix HyperX et Turtle Beach sont estimés depuis les prix US (× 1,2). Pulsar touche le plafond de 30 et compte plusieurs générations d'une même coque (X2H, X2H v3, X2H CrazyLight).
 
 * **« À savoir » mal formulé** : la rubrique reprend le nom des critères où le produit est faible, ce qui donne des lignes qui se lisent comme des qualités (« Taille idéale pour l'e-sport »). Il faut un libellé négatif par critère.
 * **Liste courte sur téléphone** : avec le module « Parcours », le dock est plus haut et l'indice « Glisse pour explorer » se masque faute de place.
@@ -653,7 +781,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
 - [ ] **Phase 5, pages SEO** : fiches produit `/fr/claviers/<slug>` avec JSON-LD, pages collections, `sitemap.xml`, `robots.txt`, images OG. Le détail et l'ordre sont dans « SEO et i18n » (audit du 23 octobre) ; les fiches produit sont proposées comme session séparée.
-- [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») et écrans de 8 marques (264, voir « Écrans : vrais modèles ») ; restent 104 écrans sans prix publié, les prix boutiques (`offers`) et liens d'affiliation.
+- [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») et écrans de 8 marques (264, voir « Écrans : vrais modèles ») et souris de 8 marques (149, voir « Souris : troisième catégorie ») ; restent 104 écrans sans prix publié, les prix boutiques (`offers`) et liens d'affiliation.
 - [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres sur la ligne du prix et dans la barre d'achat de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
 - [ ] **Idées en attente** : spécimen 3D procédural (accueil, tuiles), sons et courbes de force des switchs, démo de fréquence et loupe PPI dans les tuiles, vue éclatée, thème sombre, analytics, back-office (interface interne ou Directus).
@@ -670,3 +798,4 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 * [ ] **Firmware** : croiser avec la liste des claviers pris en charge par VIA pour ne plus noter « propriétaire » par défaut.
 * [ ] **Profil « Code »** : décider si le bonus de confort des dispositions Alice doit peser autant.
 * [ ] **Netlify** : suivre les crédits de l'Image CDN ; corriger « Données de démonstration » sur l'accueil.
+* [ ] **Souris** : lots E (photos principales, prix, curation), F (le site), G (calage du modèle et audit des personas), marques en attente et ASIN Amazon (voir « Souris : troisième catégorie »).
