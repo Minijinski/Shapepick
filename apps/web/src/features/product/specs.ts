@@ -35,6 +35,26 @@ const panelName: Record<string, string> = {
 };
 const pick = (pair: [string, string] | undefined, locale: Locale) =>
   pair ? pair[locale === "fr" ? 0 : 1] : "";
+const mouseShapeName: Record<string, [string, string]> = {
+  symmetrical: ["Symétrique", "Symmetrical"],
+  ergonomic: ["Ergonomique", "Ergonomic"],
+  vertical: ["Verticale", "Vertical"],
+  trackball: ["Trackball", "Trackball"],
+};
+const mouseHandName: Record<string, [string, string]> = {
+  right: ["droitier", "right-handed"],
+  left: ["gaucher", "left-handed"],
+  ambidextrous: ["ambidextre", "ambidextrous"],
+};
+const ballName: Record<string, [string, string]> = {
+  thumb: ["boule au pouce", "thumb ball"],
+  finger: ["boule aux doigts", "finger ball"],
+};
+const gripName: Record<string, [string, string]> = {
+  palm: ["paume", "palm"],
+  claw: ["griffe", "claw"],
+  fingertip: ["bout des doigts", "fingertip"],
+};
 
 /** An amount in euros, as typed: budget bounds and the like. */
 export const formatAmount = (value: number, locale: Locale) =>
@@ -54,6 +74,41 @@ const num = (value: number, locale: Locale) =>
 
 export function keySpecs(item: CatalogItem, locale: Locale): SpecLine[] {
   const fr = locale === "fr";
+  if (item.category === "mouse") {
+    const s = item.specs;
+    const shape =
+      s.shape === "trackball" && s.ballPosition
+        ? pick(ballName[s.ballPosition], locale)
+        : pick(mouseHandName[s.hand], locale);
+    const connection = [
+      s.conn24ghz && "2,4 GHz",
+      s.connBt && "Bluetooth",
+      !s.conn24ghz && !s.connBt && (fr ? "Filaire" : "Wired"),
+    ]
+      .filter(Boolean)
+      .join(" + ");
+    return [
+      {
+        label: fr ? "Forme" : "Shape",
+        value: `${pick(mouseShapeName[s.shape], locale)} · ${shape}`,
+      },
+      {
+        label: fr ? "Dimensions" : "Size",
+        value:
+          s.lengthMm && s.widthMm && s.heightMm
+            ? `${num(s.lengthMm, locale)} × ${num(s.widthMm, locale)} × ${num(s.heightMm, locale)} mm`
+            : "—",
+      },
+      {
+        label: fr ? "Poids" : "Weight",
+        value: s.weightG ? `${num(s.weightG, locale)} g` : "—",
+      },
+      {
+        label: fr ? "Connexion" : "Connection",
+        value: fr ? connection : connection.replace("2,4", "2.4"),
+      },
+    ];
+  }
   if (item.category === "keyboard") {
     const s = item.specs;
     const feels = [
@@ -182,6 +237,74 @@ export function sheetSpecs(item: CatalogItem, locale: Locale): SpecLine[] {
       connection,
       { label: fr ? "Disposition" : "Layout", value: layouts.join(", ") },
       extra,
+    ]);
+  }
+  if (item.category === "mouse") {
+    const [shape, size, weight, connection] = keySpecs(item, locale);
+    const s = item.specs;
+    const sensor = [
+      s.sensor,
+      s.dpiMax && `${num(s.dpiMax, locale)} DPI`,
+      s.pollingHz && `${num(s.pollingHz, locale)} Hz`,
+    ].filter(Boolean);
+    const power =
+      s.power === "aa" || s.power === "aaa"
+        ? fr
+          ? `piles ${s.power.toUpperCase()}`
+          : `${s.power.toUpperCase()} batteries`
+        : s.batteryHours
+          ? `${num(Math.round(s.batteryHours), locale)} h`
+          : "";
+    const wheel = [
+      s.freeSpinWheel && (fr ? "débrayable" : "free-spin"),
+      s.thumbWheel && (fr ? "molette latérale" : "thumb wheel"),
+      s.tiltWheel && (fr ? "inclinable" : "tilt"),
+    ].filter(Boolean);
+    const clicks = [
+      s.silentClicks && (fr ? "silencieux" : "silent"),
+      s.switchType === "optical" &&
+        (fr ? "switchs optiques" : "optical switches"),
+      s.switchType === "magnetic" &&
+        (fr ? "switchs magnétiques" : "magnetic switches"),
+    ].filter(Boolean);
+    // What the maker says the shell suits: the hand lengths and the grips.
+    const advice = [
+      s.makerHandMinCm != null || s.makerHandMaxCm != null
+        ? `${fr ? "mains" : "hands"} ${[s.makerHandMinCm, s.makerHandMaxCm]
+            .map((v) => (v == null ? "…" : num(v, locale)))
+            .join("–")} cm`
+        : "",
+      (s.makerGrips ?? []).map((g) => pick(gripName[g], locale)).join(", "),
+    ].filter(Boolean);
+    return known([
+      shape,
+      size,
+      weight,
+      connection,
+      { label: fr ? "Capteur" : "Sensor", value: sensor.join(" · ") },
+      {
+        label: fr ? "Boutons" : "Buttons",
+        value: s.buttons
+          ? `${s.buttons}${s.mmo ? (fr ? " · pavé MMO" : " · MMO grid") : ""}`
+          : "",
+      },
+      {
+        label: fr ? "Autonomie" : "Battery",
+        value: [
+          power,
+          s.wirelessCharging &&
+            (fr ? "recharge sans fil" : "wireless charging"),
+        ]
+          .filter(Boolean)
+          .join(" · "),
+      },
+      { label: fr ? "Molette" : "Wheel", value: wheel.join(" · ") },
+      { label: fr ? "Clics" : "Clicks", value: clicks.join(" · ") },
+      {
+        label: fr ? "Appareils" : "Devices",
+        value: s.hosts >= 2 ? `${s.hosts}` : "",
+      },
+      { label: fr ? "Conseillée pour" : "Made for", value: advice.join(" · ") },
     ]);
   }
   const [size, resolution, panel, refresh] = keySpecs(item, locale);

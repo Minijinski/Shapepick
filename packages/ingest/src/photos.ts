@@ -7,6 +7,7 @@ import {
   productImageSchema,
   toKeyboardItems,
   toMonitorItems,
+  toMouseItems,
 } from '@choose/catalog'
 import { atWidth, isolate, squareOn } from '@choose/catalog/media'
 import { loadData } from '@choose/catalog/node'
@@ -151,6 +152,7 @@ export async function pickPhotos(dataDir: string, dry: boolean, only?: string) {
   const items = new Map<string, CatalogItem>([
     ...toKeyboardItems(data.keyboards, data.brands, data.switches).map((k) => [k.slug, k] as const),
     ...toMonitorItems(data.monitors, data.brands).map((m) => [m.slug, m] as const),
+    ...toMouseItems(data.mice, data.brands).map((m) => [m.slug, m] as const),
   ])
   const pages = await galleries()
   const listed = await readFile(join(dataDir, 'excluded.yaml'), 'utf8')
@@ -158,8 +160,8 @@ export async function pickPhotos(dataDir: string, dry: boolean, only?: string) {
     .catch(() => [] as string[])
   const excluded = new Set(listed.filter((entry) => entry.startsWith('https://')))
   const kept = new Set(listed.filter((entry) => !entry.startsWith('https://')))
-  // A keyboard is shown from above, a monitor from the front.
-  const views = { keyboards: 'cutout_top', monitors: 'cutout_front' } as const
+  // A keyboard or a mouse is shown from above, a monitor from the front.
+  const views = { keyboards: 'cutout_top', monitors: 'cutout_front', mice: 'cutout_top' } as const
   const docs = (
     await Promise.all(
       (Object.keys(views) as (keyof typeof views)[])

@@ -1,13 +1,21 @@
-import type { Brand, KeyboardInput, MonitorInput } from '@choose/catalog'
+import type { Brand, KeyboardInput, MonitorInput, MouseRecord } from '@choose/catalog'
 import type { SwitchResolver } from './switches'
 
 // What the CLI needs from a shop adapter (sources/*.ts): the models it can import, in batch order,
 // each mapped on demand, and today's prices by SKU for the weekly refresh. A keyboard source maps
-// its models with the switch resolver; a monitor source (sources/monitors/) needs none.
+// its models with the switch resolver; a monitor or mouse source (sources/monitors/, sources/mice/)
+// needs none.
 
 export type Draft = { input: KeyboardInput; notes: string[] }
 export type MonitorDraft = {
   input: MonitorInput
+  notes: string[]
+  /** Where the price comes from: the brand's shop, the resellers its page lists, its MSRP. */
+  priceFrom?: 'shop' | 'resellers' | 'msrp'
+}
+
+export type MouseDraft = {
+  input: MouseRecord
   notes: string[]
   /** Where the price comes from: the brand's shop, the resellers its page lists, its MSRP. */
   priceFrom?: 'shop' | 'resellers' | 'msrp'
@@ -26,6 +34,12 @@ export type MonitorCandidate = {
   slug: string
   brand: Brand
   map: () => Promise<MonitorDraft>
+}
+
+export type MouseCandidate = {
+  slug: string
+  brand: Brand
+  map: () => Promise<MouseDraft>
 }
 
 export type PriceIndex = Map<string, { eur?: number; usd?: number }>
@@ -51,4 +65,9 @@ export type MonitorSource = SourceBase & {
   candidates: () => Promise<MonitorCandidate[]>
 }
 
-export type Source = KeyboardSource | MonitorSource
+export type MouseSource = SourceBase & {
+  category: 'mouse'
+  candidates: () => Promise<MouseCandidate[]>
+}
+
+export type Source = KeyboardSource | MonitorSource | MouseSource

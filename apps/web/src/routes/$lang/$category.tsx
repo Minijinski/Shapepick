@@ -12,9 +12,12 @@ export const Route = createFileRoute("/$lang/$category")({
   // The catalogue comes from the layout and does not depend on the answers: every answer is local.
   staleTime: Number.POSITIVE_INFINITY,
   shouldReload: false,
-  loader: ({ params }) => {
+  // A category the site does not offer (no products yet, or its catalogue failed) has no page.
+  loader: async ({ params, parentMatchPromise }) => {
     const category = categoryFromSlug(params.category, params.lang as Locale);
     if (!category) throw notFound();
+    const { loaderData } = await parentMatchPromise;
+    if (!loaderData?.shown.includes(category)) throw notFound();
     return { category };
   },
   head: ({ params, loaderData }) => {

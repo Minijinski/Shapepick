@@ -1,0 +1,206 @@
+# Souris FICTIVES (démo) : des mesures plausibles pour exercer chaque question, pas de vrais produits.
+
+# ---- Jeu, symétriques ------------------------------------------------------------------------
+- slug: ardent-swift-mini
+  brand: ardent
+  name: Swift Mini
+  msrpEur: 89
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 112, widthMm: 58, heightMm: 37, weightG: 45, buttons: 5, pollingHz: 4000, switchType: optical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 90, makerHandMinCm: 15, makerHandMaxCm: 17.5, makerGrips: [fingertip, claw] }
+  variants:
+    - { colorName: Noir, colorFamily: black }
+    - { colorName: Blanc, colorFamily: white }
+
+- slug: ardent-swift
+  brand: ardent
+  name: Swift
+  msrpEur: 129
+  popularity: 0.8
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 63, heightMm: 39, weightG: 52, buttons: 5, pollingHz: 8000, switchType: optical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 95, makerHandMinCm: 17, makerHandMaxCm: 19.5, makerGrips: [claw, fingertip] }
+  variants:
+    - { colorName: Noir, colorFamily: black }
+    - { colorName: Blanc, colorFamily: white }
+    - { colorName: Rose, colorFamily: color }
+
+- slug: ardent-swift-max
+  brand: ardent
+  name: Swift Max
+  msrpEur: 139
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 65, heightMm: 41, weightG: 58, buttons: 5, pollingHz: 8000, switchType: optical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 80, makerHandMinCm: 19, makerHandMaxCm: 21.5, makerGrips: [claw] }
+
+- slug: ardent-feather
+  brand: ardent
+  name: Feather
+  msrpEur: 159
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 60, heightMm: 38, weightG: 36, buttons: 5, pollingHz: 8000, switchType: optical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 60 }
+
+- slug: nimbus-tide
+  brand: nimbus
+  name: Tide
+  msrpEur: 49
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 40, weightG: 61, buttons: 6, pollingHz: 1000, switchType: mechanical, connWired: true, rgb: true }
+  variants:
+    - { colorName: Noir, colorFamily: black }
+    - { colorName: Transparent, colorFamily: transparent }
+
+- slug: nimbus-tide-air
+  brand: nimbus
+  name: Tide Air
+  msrpEur: 79
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 40, weightG: 66, buttons: 6, pollingHz: 1000, switchType: mechanical, connWired: true, conn24ghz: true, connBt: true, power: rechargeable, batteryHours: 120, rgb: true }
+
+- slug: nimbus-duo
+  brand: nimbus
+  name: Duo
+  msrpEur: 69
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 39, weightG: 74, buttons: 8, pollingHz: 1000, switchType: mechanical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 70, rgb: true }
+
+- slug: pebblework-dot
+  brand: pebblework
+  name: Dot
+  msrpEur: 25
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 100, widthMm: 58, heightMm: 27, weightG: 76, buttons: 3, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 2, power: aa, batteryHours: 8760 }
+  variants:
+    - { colorName: Graphite, colorFamily: black }
+    - { colorName: Blanc cassé, colorFamily: white }
+    - { colorName: Lavande, colorFamily: color }
+
+- slug: pebblework-dot-bt
+  brand: pebblework
+  name: Dot Bluetooth
+  msrpEur: 19
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 104, widthMm: 60, heightMm: 34, weightG: 72, buttons: 3, pollingHz: 125, connWired: false, connBt: true, power: aa, batteryHours: 8760 }
+
+- slug: nimbus-cable
+  brand: nimbus
+  name: Cable
+  msrpEur: 15
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 113, widthMm: 62, heightMm: 38, weightG: 95, buttons: 3, pollingHz: 125, connWired: true }
+
+# ---- Jeu, ergonomiques -----------------------------------------------------------------------
+- slug: ardent-rook
+  brand: ardent
+  name: Rook
+  msrpEur: 149
+  popularity: 0.8
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 5, pollingHz: 8000, switchType: optical, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 90, wirelessCharging: true, makerHandMinCm: 18.5, makerHandMaxCm: 21, makerGrips: [palm, claw] }
+  variants:
+    - { colorName: Noir, colorFamily: black }
+    - { colorName: Blanc, colorFamily: white }
+
+- slug: ardent-rook-xl
+  brand: ardent
+  name: Rook XL
+  msrpEur: 99
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 70, heightMm: 45, weightG: 77, buttons: 7, pollingHz: 1000, switchType: optical, connWired: true, makerHandMinCm: 20, makerHandMaxCm: 23, makerGrips: [palm] }
+
+- slug: ardent-rook-mini
+  brand: ardent
+  name: Rook Mini
+  msrpEur: 79
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 117, widthMm: 62, heightMm: 40, weightG: 55, buttons: 5, pollingHz: 1000, switchType: optical, connWired: true, makerHandMinCm: 15.5, makerHandMaxCm: 18, makerGrips: [palm, claw] }
+
+- slug: ardent-rook-left
+  brand: ardent
+  name: Rook pour gauchers
+  msrpEur: 89
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 127, widthMm: 68, heightMm: 44, weightG: 82, buttons: 7, pollingHz: 1000, switchType: mechanical, connWired: true, rgb: true }
+
+- slug: nimbus-titan
+  brand: nimbus
+  name: Titan
+  msrpEur: 169
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132, widthMm: 75, heightMm: 40, weightG: 102, buttons: 13, pollingHz: 1000, switchType: hybrid, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 130, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+
+- slug: nimbus-legion
+  brand: nimbus
+  name: Legion MMO
+  msrpEur: 119
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 75, heightMm: 43, weightG: 98, buttons: 19, mmo: true, pollingHz: 1000, switchType: mechanical, connWired: true, conn24ghz: true, connBt: true, power: rechargeable, batteryHours: 150, rgb: true }
+
+- slug: nimbus-legion-left
+  brand: nimbus
+  name: Legion MMO gauchère
+  msrpEur: 109
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119, widthMm: 75, heightMm: 43, weightG: 101, buttons: 19, mmo: true, pollingHz: 1000, switchType: mechanical, connWired: true, rgb: true }
+
+- slug: nimbus-scout
+  brand: nimbus
+  name: Scout
+  msrpEur: 59
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 66, heightMm: 42, weightG: 69, buttons: 6, pollingHz: 2000, switchType: magnetic, connWired: true, conn24ghz: true, power: rechargeable, batteryHours: 40 }
+
+# ---- Bureau ----------------------------------------------------------------------------------
+- slug: pebblework-master
+  brand: pebblework
+  name: Master
+  msrpEur: 119
+  popularity: 0.9
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 125, widthMm: 84, heightMm: 51, weightG: 141, buttons: 7, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable, batteryHours: 1680, freeSpinWheel: true, thumbWheel: true, makerHandMinCm: 18, makerHandMaxCm: 22, makerGrips: [palm] }
+  variants:
+    - { colorName: Graphite, colorFamily: black }
+    - { colorName: Gris pâle, colorFamily: white }
+
+- slug: pebblework-signature
+  brand: pebblework
+  name: Signature
+  msrpEur: 45
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 107, widthMm: 61, heightMm: 38, weightG: 101, buttons: 5, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, power: aa, batteryHours: 17520, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 18.5 }
+
+- slug: pebblework-signature-l
+  brand: pebblework
+  name: Signature L
+  msrpEur: 49
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118, widthMm: 66, heightMm: 42, weightG: 111, buttons: 5, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, power: aa, batteryHours: 17520, freeSpinWheel: true, makerHandMinCm: 18, makerHandMaxCm: 22 }
+
+- slug: pebblework-anywhere
+  brand: pebblework
+  name: Anywhere
+  msrpEur: 89
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 100, widthMm: 65, heightMm: 34, weightG: 99, buttons: 6, pollingHz: 125, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable, batteryHours: 1680, tiltWheel: true }
+
+# ---- Verticales ------------------------------------------------------------------------------
+- slug: pebblework-upright
+  brand: pebblework
+  name: Upright
+  msrpEur: 109
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78, weightG: 135, buttons: 6, pollingHz: 125, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable, batteryHours: 960, makerHandMinCm: 18, makerHandMaxCm: 22 }
+
+- slug: pebblework-upright-s
+  brand: pebblework
+  name: Upright S
+  msrpEur: 79
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 71, heightMm: 71, weightG: 125, buttons: 6, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: aa, batteryHours: 8760, makerHandMinCm: 15, makerHandMaxCm: 18.5 }
+  variants:
+    - { colorName: Graphite, colorFamily: black }
+    - { colorName: Rose, colorFamily: color }
+
+- slug: pebblework-upright-left
+  brand: pebblework
+  name: Upright S gauchère
+  msrpEur: 79
+  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 71, heightMm: 71, weightG: 125, buttons: 6, pollingHz: 125, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: aa, batteryHours: 8760 }
+
+# ---- Trackballs ------------------------------------------------------------------------------
+- slug: pebblework-thumbball
+  brand: pebblework
+  name: Thumbball
+  msrpEur: 59
+  specs: { shape: trackball, ballPosition: thumb, hand: right, segment: office, lengthMm: 134, widthMm: 100, heightMm: 48, weightG: 145, buttons: 5, pollingHz: 125, connWired: false, conn24ghz: true, connBt: true, power: aa, batteryHours: 17520 }
+
+- slug: pebblework-thumbball-pro
+  brand: pebblework
+  name: Thumbball Pro
+  msrpEur: 109
+  specs: { shape: trackball, ballPosition: thumb, hand: right, segment: office, lengthMm: 132, widthMm: 100, heightMm: 51, weightG: 164, buttons: 6, pollingHz: 125, connWired: false, conn24ghz: true, connBt: true, hosts: 2, power: rechargeable, batteryHours: 1700, tiltWheel: true }
+
+- slug: nimbus-orb
+  brand: nimbus
+  name: Orb
+  msrpEur: 99
+  specs: { shape: trackball, ballPosition: finger, hand: ambidextrous, segment: office, buttons: 4, pollingHz: 125, connWired: false, conn24ghz: true, connBt: true, power: aa, makerHandMinCm: 17, makerHandMaxCm: 23 }
+
+- slug: nimbus-orb-wired
+  brand: nimbus
+  name: Orb filaire
+  msrpEur: 59
+  specs: { shape: trackball, ballPosition: finger, hand: ambidextrous, segment: office, buttons: 4, pollingHz: 125, connWired: true }

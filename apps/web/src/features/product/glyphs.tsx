@@ -1,14 +1,21 @@
-import type { CatalogItem, KeyboardSpecs, MonitorSpecs } from "@choose/catalog";
+import type {
+  CatalogItem,
+  KeyboardSpecs,
+  MonitorSpecs,
+  MouseSpecs,
+} from "@choose/catalog";
 import {
   keyboardBlocks,
   keyboardCase,
   keyboardKeys,
   monitorBox,
+  mouseBox,
 } from "@choose/catalog/media";
 import type { SVGProps } from "react";
 
 // Product silhouettes drawn from the specs, standing in for photos until real imagery exists.
-// A 75% board is drawn with a 75% layout, a 32:9 monitor at 32:9 and to scale against a 24".
+// A 75% board is drawn with a 75% layout, a 32:9 monitor at 32:9 and to scale against a 24", a
+// mouse from above at its length and width.
 
 type ColorFamily = "black" | "white" | "color" | "transparent";
 
@@ -299,6 +306,178 @@ export function MonitorGlyph({
   );
 }
 
+// ==== Mice =====================================================================================
+
+type MouseGlyphProps = {
+  shape: MouseSpecs["shape"];
+  hand?: MouseSpecs["hand"];
+  lengthMm?: number;
+  widthMm?: number;
+  ballPosition?: MouseSpecs["ballPosition"];
+  mmo?: boolean;
+  colorFamily?: ColorFamily;
+  /** Fixed scale (a 140 mm mouse fills the height) instead of filling the box. */
+  absolute?: boolean;
+  /** Outline only, for products the answers rule out. */
+  ghost?: boolean;
+} & Omit<SVGProps<SVGSVGElement>, "children">;
+
+/**
+ * A shell seen from above, front up, in a box of its width and length (mm): narrower at the
+ * buttons, widest behind the middle. An ergonomic shell (drawn for the right hand) hollows a
+ * thumb groove on the left and swells on the right; a vertical one is a narrow teardrop.
+ */
+function mouseOutline(
+  shape: MouseSpecs["shape"],
+  w: number,
+  l: number,
+): string {
+  const c = w / 2;
+  const at = (x: number, y: number) => `${c + x * w},${y * l}`;
+  if (shape === "ergonomic" || shape === "trackball") {
+    return [
+      `M${at(0.02, 0)}`,
+      `C${at(0.3, 0)} ${at(0.4, 0.06)} ${at(0.41, 0.2)}`,
+      `C${at(0.42, 0.38)} ${at(0.5, 0.5)} ${at(0.49, 0.68)}`,
+      `C${at(0.48, 0.9)} ${at(0.28, 1)} ${at(0.02, 1)}`,
+      `C${at(-0.3, 1)} ${at(-0.5, 0.92)} ${at(-0.5, 0.74)}`,
+      `C${at(-0.5, 0.62)} ${at(-0.4, 0.55)} ${at(-0.4, 0.44)}`,
+      `C${at(-0.4, 0.3)} ${at(-0.44, 0.2)} ${at(-0.4, 0.1)}`,
+      `C${at(-0.36, 0.02)} ${at(-0.2, 0)} ${at(0.02, 0)}`,
+      "Z",
+    ].join(" ");
+  }
+  if (shape === "vertical") {
+    return [
+      `M${at(0.08, 0)}`,
+      `C${at(0.34, 0)} ${at(0.5, 0.18)} ${at(0.5, 0.5)}`,
+      `C${at(0.5, 0.84)} ${at(0.3, 1)} ${at(0.02, 1)}`,
+      `C${at(-0.3, 1)} ${at(-0.5, 0.86)} ${at(-0.5, 0.6)}`,
+      `C${at(-0.5, 0.3)} ${at(-0.2, 0)} ${at(0.08, 0)}`,
+      "Z",
+    ].join(" ");
+  }
+  return [
+    `M${at(0, 0)}`,
+    `C${at(0.3, 0)} ${at(0.41, 0.05)} ${at(0.41, 0.18)}`,
+    `C${at(0.41, 0.38)} ${at(0.5, 0.52)} ${at(0.5, 0.68)}`,
+    `C${at(0.5, 0.9)} ${at(0.3, 1)} ${at(0, 1)}`,
+    `C${at(-0.3, 1)} ${at(-0.5, 0.9)} ${at(-0.5, 0.68)}`,
+    `C${at(-0.5, 0.52)} ${at(-0.41, 0.38)} ${at(-0.41, 0.18)}`,
+    `C${at(-0.41, 0.05)} ${at(-0.3, 0)} ${at(0, 0)}`,
+    "Z",
+  ].join(" ");
+}
+
+export function MouseGlyph({
+  shape,
+  hand = "right",
+  lengthMm,
+  widthMm,
+  ballPosition,
+  mmo = false,
+  colorFamily = "black",
+  absolute = false,
+  ghost = false,
+  ...svg
+}: MouseGlyphProps) {
+  const { length: l, width: w } = mouseBox({ lengthMm, widthMm, ballPosition });
+  const pal = ghost ? ghostPalette : keyboardPalette[colorFamily];
+  const view = absolute ? { w: 96, h: 144 } : { w: w + 4, h: l + 4 };
+  const ox = (view.w - w) / 2;
+  const oy = (view.h - l) / 2;
+  const line = ghost ? GHOST.line : pal.keyStroke;
+  const stroke = ghost ? 0.9 : 0.6;
+  const dash = ghost
+    ? "3 2"
+    : colorFamily === "transparent"
+      ? "2.4 1.6"
+      : undefined;
+  const finger = shape === "trackball" && ballPosition === "finger";
+  // Drawn for the right hand; a left-handed shell is its mirror image.
+  const mirror = hand === "left" ? `translate(${w} 0) scale(-1 1)` : undefined;
+  const ball = shape === "trackball" && (
+    <circle
+      cx={finger ? w / 2 : w * 0.28}
+      cy={finger ? l * 0.46 : l * 0.4}
+      r={finger ? w * 0.3 : w * 0.17}
+      fill={ghost ? "none" : pal.accent}
+      stroke={line}
+      strokeWidth={stroke}
+    />
+  );
+  return (
+    <svg viewBox={`0 0 ${view.w} ${view.h}`} role="img" aria-hidden {...svg}>
+      <g transform={`translate(${ox} ${oy})`}>
+        <g transform={mirror}>
+          {finger ? (
+            <rect
+              width={w}
+              height={l}
+              rx={w * 0.32}
+              fill={pal.case}
+              stroke={pal.stroke}
+              strokeWidth={stroke}
+              strokeDasharray={dash}
+            />
+          ) : (
+            <path
+              d={mouseOutline(shape, w, l)}
+              fill={pal.case}
+              stroke={pal.stroke}
+              strokeWidth={stroke}
+              strokeDasharray={dash}
+            />
+          )}
+          {/* The split between the two buttons, and the wheel. */}
+          {!finger && (
+            <>
+              <line
+                x1={w / 2}
+                y1={l * 0.02}
+                x2={w / 2}
+                y2={l * 0.36}
+                stroke={line}
+                strokeWidth={stroke}
+              />
+              <rect
+                x={w / 2 - Math.max(2.2, w * 0.045)}
+                y={l * 0.11}
+                width={Math.max(4.4, w * 0.09)}
+                height={l * 0.12}
+                rx={Math.max(2.2, w * 0.045)}
+                fill={
+                  ghost ? "none" : shape === "trackball" ? pal.key : pal.accent
+                }
+                stroke={line}
+                strokeWidth={stroke * 0.8}
+              />
+            </>
+          )}
+          {/* A grid of side buttons under the thumb. */}
+          {mmo &&
+            [0, 1, 2].flatMap((row) =>
+              [0, 1].map((col) => (
+                <rect
+                  key={`${row}-${col}`}
+                  x={w * 0.04 + col * w * 0.09}
+                  y={l * (0.4 + row * 0.07)}
+                  width={w * 0.07}
+                  height={l * 0.05}
+                  rx={0.8}
+                  fill={ghost ? "none" : pal.key}
+                  stroke={line}
+                  strokeWidth={stroke * 0.7}
+                />
+              )),
+            )}
+          {ball}
+        </g>
+      </g>
+    </svg>
+  );
+}
+
 // ==== Any product ==============================================================================
 
 export function ProductGlyph({
@@ -310,6 +489,22 @@ export function ProductGlyph({
   "children"
 >) {
   const colorFamily = item.variants[0]?.colorFamily;
+  if (item.category === "mouse") {
+    const { shape, hand, lengthMm, widthMm, ballPosition, mmo } = item.specs;
+    return (
+      <MouseGlyph
+        shape={shape}
+        hand={hand}
+        lengthMm={lengthMm}
+        widthMm={widthMm}
+        ballPosition={ballPosition}
+        mmo={mmo}
+        colorFamily={colorFamily}
+        ghost={ghost}
+        {...svg}
+      />
+    );
+  }
   if (item.category === "keyboard") {
     const { formFactor, lowProfile, knob, screen } = item.specs;
     return (
@@ -344,6 +539,13 @@ export function ProductGlyph({
  */
 export function glyphKey(item: CatalogItem): string {
   const colorFamily = item.variants[0]?.colorFamily ?? "black";
+  if (item.category === "mouse") {
+    // Mice a few millimetres apart look the same at canvas size: they share a bitmap.
+    const { shape, hand, ballPosition, mmo } = item.specs;
+    const { length, width } = mouseBox(item.specs);
+    const mm = (v: number) => Math.round(v / 3) * 3;
+    return `s:${shape}:${hand === "left" ? "l" : "r"}:${mm(length)}:${mm(width)}:${ballPosition ?? ""}:${mmo ? 1 : 0}:${colorFamily}`;
+  }
   if (item.category === "keyboard") {
     const { formFactor, lowProfile, knob, screen } = item.specs;
     return `k:${formFactor}:${colorFamily}:${lowProfile ? 1 : 0}:${knob ? 1 : 0}:${screen ? 1 : 0}`;

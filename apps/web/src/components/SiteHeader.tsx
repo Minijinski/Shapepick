@@ -11,8 +11,6 @@ import { isPlainClick, useSceneNavigation } from "~/features/scene/navigation";
 import { useLocale } from "~/i18n/locale";
 import { messages as m } from "~/i18n/messages";
 
-const categoryList: Category[] = ["keyboard", "monitor"];
-
 const link = css({
   fontSize: "sm",
   color: "ink.muted",
@@ -30,7 +28,8 @@ const link = css({
   },
 });
 
-export function SiteHeader() {
+/** `shown`: the categories the site offers (those with products), in panel order. */
+export function SiteHeader({ shown }: { shown: readonly Category[] }) {
   const locale = useLocale();
   const params = useParams({ strict: false }) as { category?: string };
   const { searchStr } = useLocation();
@@ -95,7 +94,7 @@ export function SiteHeader() {
       </Link>
 
       <nav className={css({ display: { base: "none", sm: "flex" }, gap: "1" })}>
-        {categoryList.map((category) => (
+        {shown.map((category) => (
           <Link
             key={category}
             to="/$lang/$category"

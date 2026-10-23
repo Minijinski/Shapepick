@@ -1,5 +1,13 @@
 import { describe, expect, it } from 'vitest'
-import { filter, firstPending, keyboardFinder, monitorFinder, rank, switchSchema } from '../src'
+import {
+  filter,
+  finders,
+  firstPending,
+  keyboardFinder,
+  monitorFinder,
+  rank,
+  switchSchema,
+} from '../src'
 import type { Answers, FinderDefinition } from '../src/finder/types'
 import { keyboards, monitors } from './fixtures'
 
@@ -70,8 +78,8 @@ describe('keyboard finder', () => {
     if (!quiet || !board || !variant) throw new Error('demo board or quiet criterion missing')
     const clicky = { ...variant, switch: switchOf('clicky') ?? null }
     const tactile = { ...variant, switch: switchOf('tactile') ?? null }
-    expect(quiet.score({ ...board, variants: [clicky] })).toBe(0.15)
-    expect(quiet.score({ ...board, variants: [clicky, tactile] })).toBe(0.5)
+    expect(quiet.score({ ...board, variants: [clicky] }, {})).toBe(0.15)
+    expect(quiet.score({ ...board, variants: [clicky, tactile] }, {})).toBe(0.5)
   })
 })
 
@@ -149,10 +157,17 @@ describe('monitor finder', () => {
   })
 })
 
-describe('both finders', () => {
-  it('word every weakness as a weakness', () => {
-    for (const c of [...keyboardFinder.criteria, ...monitorFinder.criteria]) {
-      expect(c.weakLabel, c.key).toBeDefined()
+describe('every finder', () => {
+  it('words every weakness as a weakness', () => {
+    for (const finder of Object.values(finders)) {
+      for (const c of finder.criteria)
+        expect(c.weakLabel, `${finder.category} ${c.key}`).toBeDefined()
+    }
+  })
+  it('never lets a criterion that may lack a figure read the answers', () => {
+    // The medians standing in for missing figures are worked out once per catalogue.
+    for (const finder of Object.values(finders)) {
+      for (const c of finder.criteria) if (c.known) expect(c.score.length, c.key).toBeLessThan(2)
     }
   })
 })

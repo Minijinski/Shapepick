@@ -8,3 +8,6 @@
 - { slug: vanta, name: Vanta, country: TW }
 - { slug: prism, name: Prism, country: CN }
 - { slug: halcyon, name: Halcyon, country: JP }
+- { slug: ardent, name: Ardent Gear, country: SE }
+- { slug: pebblework, name: Pebblework, country: DE }
+- { slug: nimbus, name: Nimbus Input, country: JP }

@@ -1,8 +1,8 @@
 import type { CatalogItem } from '../domain/items'
-import type { KeyboardSpecs, MonitorSpecs } from '../domain/schemas'
+import type { KeyboardSpecs, MonitorSpecs, MouseSpecs } from '../domain/schemas'
 
 // The geometry of a product's drawing, from its specs alone: the keys of a board, the frame and
-// stand of a monitor, and the box they fill. The site draws products from it (apps/web glyphs),
+// stand of a monitor, the outline of a mouse seen from above, and the box they fill. The site draws products from it (apps/web glyphs),
 // lays its canvas out with it before drawing anything, and judges photos against it, here and in
 // the ingest: a photo stands in for the drawing only if it shows the product the same way.
 
@@ -135,17 +135,45 @@ export function monitorBox(aspect: MonitorSpecs['aspect'], diagonalIn: number) {
   return { w, h, bezel, standH, totalW: w + bezel * 2, totalH: h + bezel * 2 + standH }
 }
 
+// ==== Mice =====================================================================================
+
+/** A trackball whose maker gives no dimensions is drawn at a typical size for its kind, in mm. */
+const TRACKBALL_SIZE = { thumb: { length: 135, width: 95 }, finger: { length: 150, width: 130 } }
+
+/** A mouse seen from above, in mm: its length upright, its width across. */
+export function mouseBox(specs: Pick<MouseSpecs, 'lengthMm' | 'widthMm' | 'ballPosition'>): {
+  length: number
+  width: number
+} {
+  const typical = TRACKBALL_SIZE[specs.ballPosition ?? 'thumb']
+  return { length: specs.lengthMm ?? typical.length, width: specs.widthMm ?? typical.width }
+}
+
 // ==== Any product ==============================================================================
 
-/** The box a product's drawing fills (its viewBox), in key units or inches. */
+const unknownCategory = (item: never): never => {
+  throw new Error(`No drawing for ${JSON.stringify(item)}`)
+}
+
+/** The box a product's drawing fills (its viewBox): key units, inches or millimetres. */
 export function drawingBox(item: CatalogItem): { w: number; h: number } {
-  if (item.category === 'keyboard') {
-    const { formFactor, lowProfile = false } = item.specs
-    const { halves, caseW, caseH } = keyboardCase(formFactor, lowProfile)
-    return { w: caseW, h: caseH + (halves ? 1.6 : 0) }
+  switch (item.category) {
+    case 'keyboard': {
+      const { formFactor, lowProfile = false } = item.specs
+      const { halves, caseW, caseH } = keyboardCase(formFactor, lowProfile)
+      return { w: caseW, h: caseH + (halves ? 1.6 : 0) }
+    }
+    case 'monitor': {
+      const { totalW, totalH } = monitorBox(item.specs.aspect, item.specs.diagonalIn)
+      return { w: totalW + 0.4, h: totalH + 0.4 }
+    }
+    case 'mouse': {
+      const { length, width } = mouseBox(item.specs)
+      return { w: width + 4, h: length + 4 }
+    }
+    default:
+      return unknownCategory(item)
   }
-  const { totalW, totalH } = monitorBox(item.specs.aspect, item.specs.diagonalIn)
-  return { w: totalW + 0.4, h: totalH + 0.4 }
 }
 
 /**
@@ -167,11 +195,17 @@ const MIN_DETAIL = 0.035
  * its mirror image covers it much less. Proportions alone let a three-quarter view through.
  */
 const MIN_SYMMETRY = 0.88
+/**
+ * A mouse seen from above, lying upright, is close to an ellipse (π/4 of its box); a shot at an
+ * angle leaves more of its box empty, a side view has other proportions. Only a symmetrical shell
+ * is symmetrical from above. Starting values, to measure on the makers' photos.
+ */
+const MOUSE_VIEW = { minFill: 0.68, minRatio: 0.8, maxRatio: 1.2, minSymmetry: 0.9 }
 
 /**
- * Whether a cut-out photo shows its product as its drawing does, square on (a keyboard from
- * above, a monitor from the front), with nothing alongside: only then does it stand in for the
- * drawing on the canvas.
+ * Whether a cut-out photo shows its product as its drawing does, square on (a keyboard or a mouse
+ * from above, a monitor from the front), with nothing alongside: only then does it stand in for
+ * the drawing on the canvas.
  */
 export function squareOn(
   item: CatalogItem,
@@ -184,18 +218,28 @@ export function squareOn(
     symmetry?: number
   },
 ): boolean {
-  const keyboard = item.category === 'keyboard'
-  if (!keyboard && ((cut.symmetry ?? 1) < MIN_SYMMETRY || (cut.parts ?? 1) > 2)) return false
-  if (keyboard) {
-    if (cut.fill < MIN_FILL || (cut.detail ?? 1) < MIN_DETAIL) return false
-    const split = item.specs.formFactor === 'split' || item.specs.formFactor === 'alice'
-    // Three shapes and more: several boards, or a board among its parts.
-    if ((cut.parts ?? 1) > 2) return false
-    if (split) return true
-  }
   const box = drawingBox(item)
   const ratio = cut.width / cut.height / (box.w / box.h)
-  const min = keyboard && cut.fill >= FLAT_FILL.rest ? PROPORTIONS.minFlat : PROPORTIONS.min
-  const max = keyboard && cut.fill >= FLAT_FILL.short ? PROPORTIONS.maxFlat : PROPORTIONS.max
-  return ratio >= min && ratio <= max
+  switch (item.category) {
+    case 'keyboard': {
+      if (cut.fill < MIN_FILL || (cut.detail ?? 1) < MIN_DETAIL) return false
+      // Three shapes and more: several boards, or a board among its parts.
+      if ((cut.parts ?? 1) > 2) return false
+      if (item.specs.formFactor === 'split' || item.specs.formFactor === 'alice') return true
+      const min = cut.fill >= FLAT_FILL.rest ? PROPORTIONS.minFlat : PROPORTIONS.min
+      const max = cut.fill >= FLAT_FILL.short ? PROPORTIONS.maxFlat : PROPORTIONS.max
+      return ratio >= min && ratio <= max
+    }
+    case 'monitor':
+      if ((cut.symmetry ?? 1) < MIN_SYMMETRY || (cut.parts ?? 1) > 2) return false
+      return ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max
+    case 'mouse':
+      // One shape: a dongle, a cable or a second mouse alongside is no plain top view.
+      if ((cut.parts ?? 1) > 1 || cut.fill < MOUSE_VIEW.minFill) return false
+      if (item.specs.shape === 'symmetrical' && (cut.symmetry ?? 1) < MOUSE_VIEW.minSymmetry)
+        return false
+      return ratio >= MOUSE_VIEW.minRatio && ratio <= MOUSE_VIEW.maxRatio
+    default:
+      return unknownCategory(item)
+  }
 }

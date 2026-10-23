@@ -1,4 +1,4 @@
-import { type Category, categories, type Locale } from '@choose/catalog'
+import type { Category, Locale } from '@choose/catalog'
 import { keyboardKeys } from '@choose/catalog/media'
 import { useLayoutEffect, useRef, useState } from 'react'
 import { css } from 'styled-system/css'
@@ -84,9 +84,12 @@ function cssCount(el: HTMLElement | null) {
 }
 
 export function Preloader({
+  shown,
   counts,
   locale,
 }: {
+  /** The categories the site offers, in panel order. */
+  shown: readonly Category[]
   counts: Record<Category, number>
   locale: Locale
 }) {
@@ -151,7 +154,7 @@ export function Preloader({
         return
       }
       const vp = readViewport()
-      const slant = Math.tan(tiltFor(vp, categories.length)) * vp.h
+      const slant = Math.tan(tiltFor(vp, shown.length)) * vp.h
       const cut = { p: 0 }
       gsap
         .timeline({ onComplete: () => setGone(true) })
@@ -211,7 +214,7 @@ export function Preloader({
   }, [])
 
   if (gone) return null
-  const total = categories.map((c) => `${counts[c]} ${m.category[c][locale].toLowerCase()}`)
+  const total = shown.map((c) => `${counts[c]} ${m.category[c][locale].toLowerCase()}`)
   return (
     <div ref={root} data-preloader className={overlay} role="status" aria-live="polite">
       <div data-plate className={plate}>

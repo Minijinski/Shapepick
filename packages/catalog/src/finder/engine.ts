@@ -3,9 +3,11 @@ import {
   ANY,
   type Answers,
   type ChoiceStep,
+  type Criterion,
   type FinderDefinition,
   type RangeStep,
   type Ranked,
+  type Recommendation,
   type Step,
 } from './types'
 
@@ -302,10 +304,55 @@ const FIT_SHARE = 0.75
 /** Weight of the fit in the match, against one answer that an item meets. */
 const FIT_WEIGHT = 3
 
-/** Whether the answers say anything to rank on: the use, or an answer that narrows the catalogue. */
-export const isInformed = <I>(def: FinderDefinition<I>, answers: Answers) =>
-  (answers[def.profileStep] ?? ANY) !== ANY ||
-  def.steps.some((s) => !s.aside && predicateOf(s, answers) != null)
+/**
+ * The answers that still mean something: those of questions that apply, readable, other than
+ * "no preference". What a criterion that measures an item against an answer reads.
+ */
+export function liveAnswers<I>(def: FinderDefinition<I>, answers: Answers): Answers {
+  const live: Answers = {}
+  for (const step of def.steps) {
+    const value = answers[step.key]
+    if (value == null || value === ANY || !isAnswered(step, answers)) continue
+    if (applies(step, answers)) live[step.key] = value
+  }
+  return live
+}
+
+/** The live answers that only steer the ranking (the use, a hand size): what strengths read. */
+export function rankingAnswers<I>(def: FinderDefinition<I>, answers: Answers): Answers {
+  const live = liveAnswers(def, answers)
+  const kept: Answers = {}
+  for (const step of def.steps) {
+    const value = live[step.key]
+    if (step.weightOnly && value != null) kept[step.key] = value
+  }
+  return kept
+}
+
+/**
+ * What the other answers suggest picking at a step (a mouse size, from the hand and the grip), or
+ * null: never read from the step's own answer.
+ */
+export function recommended<I>(
+  def: FinderDefinition<I>,
+  answers: Answers,
+  key: string,
+): Recommendation | null {
+  const step = stepOf(def, key)
+  if (!isChoice(step) || !step.recommend) return null
+  return step.recommend(liveAnswers(def, withAnswer(answers, key, null)))
+}
+
+/**
+ * Whether the answers say anything to rank on: the use, an answer that only steers the ranking (a
+ * hand size), or one that narrows the catalogue.
+ */
+export function isInformed<I>(def: FinderDefinition<I>, answers: Answers): boolean {
+  if ((answers[def.profileStep] ?? ANY) !== ANY) return true
+  if (def.steps.some((s) => !s.aside && predicateOf(s, answers) != null)) return true
+  const live = liveAnswers(def, answers)
+  return def.steps.some((s) => s.weightOnly && live[s.key] != null)
+}
 
 type Typical = Map<string, Map<string, number>>
 
@@ -332,8 +379,10 @@ function typicalScores<I>(def: FinderDefinition<I>, items: I[]): Typical {
         if (!c.known(item)) continue
         const peer = c.peers?.(item) ?? ''
         const list = groups.get(peer)
-        if (list) list.push(clamp(c.score(item)))
-        else groups.set(peer, [clamp(c.score(item))])
+        // A criterion that may leave a figure blank never reads the answers.
+        const score = clamp(c.score(item, {}))
+        if (list) list.push(score)
+        else groups.set(peer, [score])
       }
       const medians = new Map<string, number>()
       for (const [peer, list] of groups) {
@@ -364,7 +413,11 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
   const met = def.steps.filter((s) => !s.aside && predicateOf(s, answers) != null).length
   const profileId = answers[def.profileStep]
   const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
-  const criteria = def.criteria.filter((c) => (weights[c.key] ?? 0) > 0)
+  const live = liveAnswers(def, answers)
+  // A criterion with nothing to measure yet (a fit to a hand not given) sits out.
+  const criteria = def.criteria.filter(
+    (c) => (weights[c.key] ?? 0) > 0 && (c.active?.(live) ?? true),
+  )
   const total = criteria.reduce((sum, c) => sum + (weights[c.key] ?? 0), 0)
   const heavy = [...criteria].sort((a, b) => (weights[b.key] ?? 0) - (weights[a.key] ?? 0))
   /** The criteria whose weakness is worth saying: the heaviest half, at least three. */
@@ -379,7 +432,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
         guessed.add(c.key)
         scores.set(c.key, typical.get(c.key)?.get(c.peers?.(item) ?? '') ?? 0.5)
       } else {
-        scores.set(c.key, clamp(c.score(item)))
+        scores.set(c.key, clamp(c.score(item, live)))
       }
     }
     const profileFit = total
@@ -407,12 +460,15 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       fit,
       met,
       pros: pros.map((c) => c.label),
-      cons: cons.map((c) => c.weakLabel ?? c.label),
+      cons: cons.map((c) => weakLabelOf(c, item, live)),
     }
   })
   ranked.sort((a, b) => b.score - a.score || def.id(a.item).localeCompare(def.id(b.item)))
   return def.maker ? takeTurns(ranked, def.maker) : ranked
 }
+
+const weakLabelOf = <I>(c: Criterion<I>, item: I, answers: Answers) =>
+  typeof c.weakLabel === 'function' ? c.weakLabel(item, answers) : (c.weakLabel ?? c.label)
 
 /** The match as printed: a whole percentage. */
 export const matchPercent = (score: number) => Math.round(score * 100)
@@ -491,7 +547,7 @@ export function describeAnswer<I>(
   raw: string | undefined,
   locale: Locale,
 ): string | null {
-  const anyLabel = locale === 'fr' ? 'Peu importe' : 'No preference'
+  const anyLabel = step.anyLabel?.[locale] ?? (locale === 'fr' ? 'Peu importe' : 'No preference')
   if (!isChoice(step)) {
     const range = readRange(raw)
     if (!range) return null
