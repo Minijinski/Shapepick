@@ -494,13 +494,13 @@ export function Finder({ category, items, search, locale }: Props) {
             _before: {
               content: '""',
               position: "absolute",
-              inset: "-3rem -5rem -1.5rem -2rem",
+              inset: "-5rem -5rem -1.5rem -2rem",
               zIndex: "-1",
               background:
                 "linear-gradient(to right, rgba(243,241,236,0.94) 55%, rgba(243,241,236,0))",
               backdropFilter: "blur(8px)",
               maskImage:
-                "linear-gradient(to bottom, transparent, #000 4rem), linear-gradient(to right, #000 60%, transparent)",
+                "linear-gradient(to bottom, transparent, #000 5rem), linear-gradient(to right, #000 60%, transparent)",
               maskComposite: "intersect",
               pointerEvents: "none",
             },

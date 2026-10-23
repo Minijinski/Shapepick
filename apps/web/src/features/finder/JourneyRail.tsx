@@ -61,11 +61,26 @@ const track = css({
   '&::-webkit-scrollbar': { display: 'none' },
 })
 
+/**
+ * The thread through the stops' marks, one line from the first to the last: under the bar and
+ * under the marks, which hide it where they sit. It goes and comes back with the stops.
+ */
+const thread = css({
+  position: 'absolute',
+  left: 'calc(0.625rem + 0.625rem - 0.5px)',
+  zIndex: '0',
+  w: '1px',
+  bg: 'line.strong',
+  pointerEvents: 'none',
+  animation: 'fadeIn 0.4s ease 80ms backwards',
+  _motionReduce: { animation: 'none' },
+})
+
 const bar = css({
   position: 'absolute',
   top: '0',
   insetInline: '0',
-  zIndex: '0',
+  zIndex: '1',
   borderRadius: 'card',
   bg: 'ink',
   boxShadow: '0 6px 16px -8px rgba(20,20,20,0.45)',
@@ -74,22 +89,7 @@ const bar = css({
   _motionReduce: { transition: 'none' },
 })
 
-const list = css({ position: 'relative', zIndex: '1', display: 'grid' })
-
-/** The thread through the stops' marks: from the one above to this one, and on to the next. */
-const item = css({
-  position: 'relative',
-  '&::before, &::after': {
-    content: '""',
-    position: 'absolute',
-    left: 'calc(0.625rem + 0.625rem - 0.5px)',
-    w: '1px',
-    bg: 'line.strong',
-  },
-  _before: { top: '0', bottom: '50%' },
-  _after: { top: '50%', bottom: '-2px' },
-  '&:first-child::before, &:last-child::after': { display: 'none' },
-})
+const list = css({ position: 'relative', zIndex: '2', display: 'grid' })
 
 const stop = css({
   position: 'relative',
@@ -277,6 +277,12 @@ export function JourneyRail({
       </p>
       <div ref={box} className={track}>
         <span
+          aria-hidden
+          data-console-part
+          className={thread}
+          style={{ top: ROW / 2, height: stops.length * (ROW + GAP) }}
+        />
+        <span
           ref={ink}
           aria-hidden
           className={bar}
@@ -292,7 +298,7 @@ export function JourneyRail({
           {stops.map((s, i) => {
             const answered = (s.state === 'done' || s.state === 'current') && !!s.value
             return (
-              <li key={s.key} className={item} style={{ height: ROW }}>
+              <li key={s.key} style={{ height: ROW }}>
                 <button
                   type="button"
                   data-console-part
@@ -319,7 +325,7 @@ export function JourneyRail({
               </li>
             )
           })}
-          <li className={item} style={{ height: ROW }}>
+          <li style={{ height: ROW }}>
             <button
               type="button"
               data-console-part
