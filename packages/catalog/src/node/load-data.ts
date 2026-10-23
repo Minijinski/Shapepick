@@ -6,6 +6,7 @@ import {
   brandSchema,
   keyboardInputSchema,
   monitorInputSchema,
+  mouseInputSchema,
   switchSchema,
 } from '../domain/schemas'
 
@@ -27,22 +28,28 @@ async function readList<S extends z.ZodType>(file: string, schema: S): Promise<z
 }
 
 async function readDir<S extends z.ZodType>(dir: string, schema: S): Promise<z.infer<S>[]> {
-  const files = (await readdir(dir)).filter((f) => /\.ya?ml$/.test(f)).sort()
+  // A category not imported yet has no folder: it simply has no products.
+  const names = await readdir(dir).catch((error: NodeJS.ErrnoException) => {
+    if (error.code === 'ENOENT') return [] as string[]
+    throw error
+  })
+  const files = names.filter((f) => /\.ya?ml$/.test(f)).sort()
   const lists = await Promise.all(files.map((f) => readList(join(dir, f), schema)))
   return lists.flat()
 }
 
 export async function loadData(dataDir: string) {
-  const [brands, switches, keyboards, monitors] = await Promise.all([
+  const [brands, switches, keyboards, monitors, mice] = await Promise.all([
     readList(join(dataDir, 'brands.yaml'), brandSchema),
     readList(join(dataDir, 'switches.yaml'), switchSchema),
     readDir(join(dataDir, 'keyboards'), keyboardInputSchema),
     readDir(join(dataDir, 'monitors'), monitorInputSchema),
+    readDir(join(dataDir, 'mice'), mouseInputSchema),
   ])
   for (const [kind, list] of [
     ['brand', brands],
     ['switch', switches],
-    ['product', [...keyboards, ...monitors]],
+    ['product', [...keyboards, ...monitors, ...mice]],
   ] as const) {
     const seen = new Set<string>()
     for (const { slug } of list) {
@@ -50,5 +57,5 @@ export async function loadData(dataDir: string) {
       seen.add(slug)
     }
   }
-  return { brands, switches, keyboards, monitors }
+  return { brands, switches, keyboards, monitors, mice }
 }

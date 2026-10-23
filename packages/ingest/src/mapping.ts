@@ -11,7 +11,7 @@ export const joined = (xs: (string | undefined)[]) => xs.filter(Boolean).join(' 
 const HUE =
   /\b(red|rouge|pink|rose|orange|yellow|jaune|green|vert|blue|bleu|purple|violet|lilac|lilas|lavender|lavande|mint|menthe|magenta|coral|corail|turquoise)\b/i
 
-const BLACK = /black|noir|carbon|graphite|anthracite|space|dark|charcoal|midnight|onyx/i
+const BLACK = /black|noir|carbon|charbon|graphite|anthracite|space|dark|charcoal|midnight|onyx/i
 const WHITE =
   /white|blanc|silver|argent|ivory|ivoire|light|cream|cr[eè]me|shell|snow|frost|p[aâ]le|mercury/i
 

@@ -6,7 +6,8 @@ import { msrps } from './msrp'
 import { EUR_PER_USD, median, priceVariants, roundPrice } from './prices'
 import type { PriceIndex, Source } from './source'
 
-// pnpm ingest prices: the weekly refresh. For every entry of data/keyboards and data/monitors,
+// pnpm ingest prices: the weekly refresh. For every entry of data/keyboards, data/monitors and
+// data/mice,
 // today's regular price of each variant is read back by SKU from the shop the entry came from (its
 // `sources`), then the usual policy applies (median, rounded to 5 €, a variant priced on its own
 // only when 10 % apart). A monitor priced at its maker's recommended price (data/msrp.yaml) keeps
@@ -20,18 +21,25 @@ const sourcesOf = (item: YAMLMap<unknown, unknown>) => {
 export async function refreshPrices(dataDir: string, sources: Source[], dry: boolean) {
   http.refresh = true
   const fixed = await msrps()
+  // A site may sell several categories (Razer, Logitech): an entry is priced by its own category's
+  // source for that site.
+  const folders = { keyboards: 'keyboard', monitors: 'monitor', mice: 'mouse' } as const
   const paths = await Promise.all(
-    ['keyboards', 'monitors'].map(async (category) => {
-      const dir = join(dataDir, category)
+    Object.entries(folders).map(async ([folder, category]) => {
+      const dir = join(dataDir, folder)
       const files = await readdir(dir).catch(() => [] as string[])
       return files
         .filter((f) => /\.ya?ml$/.test(f))
         .sort()
-        .map((f) => join(dir, f))
+        .map((f) => ({ path: join(dir, f), category }))
     }),
   )
   const docs = await Promise.all(
-    paths.flat().map(async (path) => ({ path, doc: parseDocument(await readFile(path, 'utf8')) })),
+    paths.flat().map(async ({ path, category }) => ({
+      path,
+      category,
+      doc: parseDocument(await readFile(path, 'utf8')),
+    })),
   )
   // Pages to re-read per site (official sites price page by page; Shopify answers in one feed).
   const urlsByHost = new Map<string, string[]>()
@@ -45,12 +53,12 @@ export async function refreshPrices(dataDir: string, sources: Source[], dry: boo
       }
     }
   }
-  const indexes = new Map<string, Promise<PriceIndex>>()
+  const indexes = new Map<Source, Promise<PriceIndex>>()
   const indexFor = (source: Source) => {
-    let index = indexes.get(source.host)
+    let index = indexes.get(source)
     if (!index) {
       index = source.priceIndex(urlsByHost.get(source.host) ?? [])
-      indexes.set(source.host, index)
+      indexes.set(source, index)
     }
     return index
   }
@@ -58,7 +66,7 @@ export async function refreshPrices(dataDir: string, sources: Source[], dry: boo
   const missing: string[] = []
   let checked = 0
 
-  for (const { path, doc } of docs) {
+  for (const { path, category, doc } of docs) {
     if (!isSeq(doc.contents)) continue
     let edits = 0
     for (const node of doc.contents.items) {
@@ -67,7 +75,7 @@ export async function refreshPrices(dataDir: string, sources: Source[], dry: boo
       const slug = String(item.get('slug'))
       const [first] = sourcesOf(item)
       const host = first ? new URL(first).host : ''
-      const source = sources.find((s) => s.host === host)
+      const source = sources.find((s) => s.host === host && (s.category ?? 'keyboard') === category)
       const variants = item.get('variants')
       if (!source || !isSeq(variants) || fixed.has(slug)) continue
       checked++

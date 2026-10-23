@@ -117,7 +117,7 @@ const entities = (s: string) =>
     .replace(/&quot;/g, '"')
     .replace(/&apos;/g, "'")
 
-function rogSheet(html: string): Fact[] {
+export function rogSheet(html: string): Fact[] {
   const facts: Fact[] = []
   for (const m of html.matchAll(
     /<span class="ProductSpecSingle__descriptionItem__[^"]*"[^>]*>([\s\S]*?)<\/span>\s*<span class="ProductSpecSingle__descriptionItemValue__[^"]*"[^>]*>([\s\S]*?)<\/span>/g,
@@ -133,7 +133,7 @@ function rogSheet(html: string): Fact[] {
 }
 
 /** "Prix ASUS estore 429,00 €" on a ROG page: what the eStore sells it for. */
-function estorePrice(html: string) {
+export function estorePrice(html: string) {
   const prices = [
     ...html.matchAll(/ProductTabBar__productMoney[^"]*"[^>]*>\s*([\d\s ]+,\d{2})\s*€/g),
   ].map((m) => Number((m[1] ?? '').replace(/[\s ]/g, '').replace(',', '.')))

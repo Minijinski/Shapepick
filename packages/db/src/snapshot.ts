@@ -4,10 +4,12 @@ import {
   type ItemOf,
   keyboardInputSchema,
   monitorInputSchema,
+  mouseInputSchema,
   type Switch,
   switchSchema,
   toKeyboardItems,
   toMonitorItems,
+  toMouseItems,
 } from '@choose/catalog'
 import { and, eq, inArray, max } from 'drizzle-orm'
 import type { Db } from './client'
@@ -126,30 +128,50 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
     ...rest
   }: S) => compact(rest)
 
-  if (category === 'keyboard') {
-    const specs = specsOf(
-      await db.select().from(t.keyboardSpecs).where(inArray(t.keyboardSpecs.productId, ids)),
-    )
-    const inputs = base.flatMap((p) => {
-      const row = specs.get(p.id)
-      return row
-        ? [keyboardInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
-        : []
-    })
-    return {
-      version,
-      items: toKeyboardItems(inputs, [...brands.values()], [...switches.values()]) as ItemOf<C>[],
+  const kind: Category = category
+  switch (kind) {
+    case 'keyboard': {
+      const specs = specsOf(
+        await db.select().from(t.keyboardSpecs).where(inArray(t.keyboardSpecs.productId, ids)),
+      )
+      const inputs = base.flatMap((p) => {
+        const row = specs.get(p.id)
+        return row
+          ? [keyboardInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
+          : []
+      })
+      return {
+        version,
+        items: toKeyboardItems(inputs, [...brands.values()], [...switches.values()]) as ItemOf<C>[],
+      }
+    }
+    case 'monitor': {
+      const specs = specsOf(
+        await db.select().from(t.monitorSpecs).where(inArray(t.monitorSpecs.productId, ids)),
+      )
+      const inputs = base.flatMap((p) => {
+        const row = specs.get(p.id)
+        if (!row) return []
+        const { ppi: _, ...rest } = strip(row)
+        return [monitorInputSchema.parse({ ...p.input, specs: rest, variants: p.variants })]
+      })
+      return { version, items: toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[] }
+    }
+    case 'mouse': {
+      const specs = specsOf(
+        await db.select().from(t.mouseSpecs).where(inArray(t.mouseSpecs.productId, ids)),
+      )
+      const inputs = base.flatMap((p) => {
+        const row = specs.get(p.id)
+        return row
+          ? [mouseInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
+          : []
+      })
+      return { version, items: toMouseItems(inputs, [...brands.values()]) as ItemOf<C>[] }
+    }
+    default: {
+      const unknown: never = kind
+      throw new Error(`No snapshot for category "${unknown}"`)
     }
   }
-
-  const specs = specsOf(
-    await db.select().from(t.monitorSpecs).where(inArray(t.monitorSpecs.productId, ids)),
-  )
-  const inputs = base.flatMap((p) => {
-    const row = specs.get(p.id)
-    if (!row) return []
-    const { ppi: _, ...rest } = strip(row)
-    return [monitorInputSchema.parse({ ...p.input, specs: rest, variants: p.variants })]
-  })
-  return { version, items: toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[] }
 }

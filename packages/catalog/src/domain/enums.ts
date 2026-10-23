@@ -2,7 +2,8 @@
 // from these arrays, so adding a value here is the only change a new panel or form factor needs
 // before a migration.
 
-export const categories = ['keyboard', 'monitor'] as const
+export const categories = ['keyboard', 'monitor', 'mouse'] as const
+export type Category = (typeof categories)[number]
 export const productStatuses = ['active', 'discontinued'] as const
 export const imageKinds = ['cutout_top', 'cutout_front', 'three_quarter', 'lifestyle'] as const
 export const colorFamilies = ['black', 'white', 'color', 'transparent'] as const
@@ -75,3 +76,16 @@ export const hdrCerts = [
 ] as const
 export const hdmiVersions = ['1.4', '2.0', '2.1'] as const
 export const dpVersions = ['1.2', '1.4', '2.1'] as const
+
+// Mice
+/** A trackball is its own shape: the ball, not the hand, moves the pointer. */
+export const mouseShapes = ['symmetrical', 'ergonomic', 'vertical', 'trackball'] as const
+/** The hand a mouse is made for. Ambidextrous: buttons on both sides, or none on the sides. */
+export const mouseHands = ['right', 'left', 'ambidextrous'] as const
+/** The maker's line it belongs to: gaming and office shells are shaped differently. */
+export const mouseSegments = ['gaming', 'office'] as const
+export const mouseSwitchTypes = ['mechanical', 'optical', 'hybrid', 'magnetic'] as const
+/** What powers a wireless mouse. */
+export const mousePowers = ['rechargeable', 'aa', 'aaa'] as const
+export const ballPositions = ['thumb', 'finger'] as const
+export const grips = ['palm', 'claw', 'fingertip'] as const

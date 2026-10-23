@@ -50,6 +50,13 @@ export const vrr = enumOf('vrr', E.vrrKinds)
 export const hdrCert = enumOf('hdr_cert', E.hdrCerts)
 export const hdmiVersion = enumOf('hdmi_version', E.hdmiVersions)
 export const dpVersion = enumOf('dp_version', E.dpVersions)
+export const mouseShape = enumOf('mouse_shape', E.mouseShapes)
+export const mouseHand = enumOf('mouse_hand', E.mouseHands)
+export const mouseSegment = enumOf('mouse_segment', E.mouseSegments)
+export const mouseSwitchType = enumOf('mouse_switch_type', E.mouseSwitchTypes)
+export const mousePower = enumOf('mouse_power', E.mousePowers)
+export const ballPosition = enumOf('ball_position', E.ballPositions)
+export const grip = enumOf('grip', E.grips)
 
 const timestamps = {
   createdAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
@@ -236,6 +243,43 @@ export const monitorSpecs = pgTable('monitor_specs', {
   pivot: boolean().notNull().default(false),
   vesa: boolean().notNull().default(true),
   weightG: integer(),
+  extra: jsonb().$type<Record<string, unknown>>(),
+})
+
+export const mouseSpecs = pgTable('mouse_specs', {
+  productId: integer()
+    .primaryKey()
+    .references(() => products.id, { onDelete: 'cascade' }),
+  shape: mouseShape().notNull(),
+  hand: mouseHand().notNull(),
+  segment: mouseSegment().notNull(),
+  /** A trackball's maker may give no measurements. */
+  lengthMm: real(),
+  widthMm: real(),
+  heightMm: real(),
+  weightG: real(),
+  ballPosition: ballPosition(),
+  buttons: smallint(),
+  mmo: boolean().notNull().default(false),
+  sensor: text(),
+  dpiMax: integer(),
+  pollingHz: integer(),
+  switchType: mouseSwitchType(),
+  silentClicks: boolean().notNull().default(false),
+  connWired: boolean().notNull().default(true),
+  conn24ghz: boolean().notNull().default(false),
+  connBt: boolean().notNull().default(false),
+  hosts: smallint().notNull().default(1),
+  batteryHours: real(),
+  power: mousePower(),
+  wirelessCharging: boolean().notNull().default(false),
+  freeSpinWheel: boolean().notNull().default(false),
+  tiltWheel: boolean().notNull().default(false),
+  thumbWheel: boolean().notNull().default(false),
+  rgb: boolean().notNull().default(false),
+  makerHandMinCm: real(),
+  makerHandMaxCm: real(),
+  makerGrips: grip().array(),
   extra: jsonb().$type<Record<string, unknown>>(),
 })
 

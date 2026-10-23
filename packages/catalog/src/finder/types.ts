@@ -1,3 +1,4 @@
+import type { Category } from '../domain/enums'
 import type { Text } from '../i18n'
 
 // A finder is content plus predicates: the wording, order and options of each screen live in a
@@ -24,7 +25,10 @@ type StepCommon<I> = {
   help?: Text
   /** Branching: a step that does not apply is neither asked nor used to filter. */
   applies?: (answers: Answers) => boolean
-  /** Never filters; the answer only picks the ranking profile (the "use" question). */
+  /**
+   * Never filters: the answer only steers the ranking (the "use" question picks the profile; a
+   * hand size sets what a criterion measures).
+   */
   weightOnly?: boolean
   /** No "no preference" tile: everyone can make this decision. */
   required?: boolean
@@ -33,6 +37,8 @@ type StepCommon<I> = {
    * any answer, but takes no place in the questionnaire, its progress or the match.
    */
   aside?: boolean
+  /** The words of the "no preference" answer, when others fit better ("Je ne sais pas"). */
+  anyLabel?: Text
   // Phantom field so steps stay tied to their item type.
   readonly _item?: I
 }
@@ -41,7 +47,15 @@ export type ChoiceStep<I> = StepCommon<I> & {
   /** single: one option · multi: any of the picked options (OR) · musts: all of them (AND) */
   kind: 'single' | 'multi' | 'musts'
   options: Option<I>[]
+  /**
+   * What the other answers suggest picking here (a mouse size, from the hand and the grip), or
+   * null when they say nothing: the console marks those options.
+   */
+  recommend?: (answers: Answers) => Recommendation | null
 }
+
+/** The option to pick (`primary`) and the ones that would do too (`also`). */
+export type Recommendation = { primary: string; also: string[] }
 
 export type RangeStep<I> = StepCommon<I> & {
   kind: 'range'
@@ -56,15 +70,21 @@ export type Criterion<I> = {
   key: string
   /** The line a result card shows when this criterion is a strength. */
   label: Text
-  /** The line it shows when it is a weakness ("Fréquence modeste"); the label when absent. */
-  weakLabel?: Text
+  /**
+   * The line it shows when it is a weakness ("Fréquence modeste"); the label when absent. A
+   * function when the weakness depends on the item and the answers ("Grande pour ta main").
+   */
+  weakLabel?: Text | ((item: I, answers: Answers) => Text)
   /**
    * A warning rather than a quality (an OLED's burn-in): never cited as a strength, and always
    * worth citing as a weakness, however light its weight.
    */
   caveat?: boolean
-  /** 0 (worst) … 1 (best) for this item. */
-  score: (item: I) => number
+  /**
+   * 0 (worst) … 1 (best) for this item. Most criteria read the item alone; one that measures the
+   * item against an answer (a hand size) reads the live answers, those of questions that apply.
+   */
+  score: (item: I, answers: Answers) => number
   /**
    * Whether the item's sheet gives what the score reads. One that does not counts as the median
    * of its peers that do: a missing figure is neither a flaw nor a strength.
@@ -72,10 +92,16 @@ export type Criterion<I> = {
   known?: (item: I) => boolean
   /** Which items an item with a missing figure is compared with (default: all of them). */
   peers?: (item: I) => string
+  /**
+   * Whether the answers give it something to measure (the fit to a hand, once its size is given):
+   * until then it sits out of the fit. A criterion that reads the answers never declares `known`,
+   * since what stands in for a missing figure is worked out once per catalogue.
+   */
+  active?: (answers: Answers) => boolean
 }
 
 export type FinderDefinition<I> = {
-  category: 'keyboard' | 'monitor'
+  category: Category
   steps: Step<I>[]
   criteria: Criterion<I>[]
   /** Criterion weights per answer of the profile step, plus a `default` profile. */

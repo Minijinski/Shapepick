@@ -29,6 +29,13 @@
       "when": 1792756588351,
       "tag": "0003_monitor_height_hdr",
       "breakpoints": true
+    },
+    {
+      "idx": 4,
+      "version": "7",
+      "when": 1792771215388,
+      "tag": "0004_mouse_specs",
+      "breakpoints": true
     }
   ]
 }

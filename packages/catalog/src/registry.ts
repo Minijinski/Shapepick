@@ -1,16 +1,16 @@
-import type { categories } from './domain/enums'
-import type { CatalogItem, KeyboardItem, MonitorItem } from './domain/items'
+import type { Category } from './domain/enums'
+import type { CatalogItem, KeyboardItem, MonitorItem, MouseItem } from './domain/items'
 import { keyboardFinder } from './finder/keyboards'
+import { mouseFinder } from './finder/mice'
 import { monitorFinder } from './finder/monitors'
 import type { FinderDefinition } from './finder/types'
 import type { Locale, Text } from './i18n'
-
-export type Category = (typeof categories)[number]
 
 /** Localised path segments: /fr/claviers ↔ /en/keyboards. */
 export const categorySlugs: Record<Category, Text> = {
   keyboard: { fr: 'claviers', en: 'keyboards' },
   monitor: { fr: 'ecrans', en: 'monitors' },
+  mouse: { fr: 'souris', en: 'mice' },
 }
 
 export function categoryFromSlug(slug: string, locale: Locale): Category | null {
@@ -20,11 +20,13 @@ export function categoryFromSlug(slug: string, locale: Locale): Category | null 
   return null
 }
 
-export type ItemOf<C extends Category> = C extends 'keyboard' ? KeyboardItem : MonitorItem
+type ItemByCategory = { keyboard: KeyboardItem; monitor: MonitorItem; mouse: MouseItem }
+export type ItemOf<C extends Category> = ItemByCategory[C]
 
 export const finders: { [C in Category]: FinderDefinition<ItemOf<C>> } = {
   keyboard: keyboardFinder,
   monitor: monitorFinder,
+  mouse: mouseFinder,
 }
 
 /** The definition for an item list whose category is only known at runtime. */

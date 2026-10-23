@@ -6,6 +6,8 @@ import {
   type KeyboardSpecs,
   type MonitorInput,
   type MonitorSpecs,
+  type MouseInput,
+  type MouseSpecs,
   type ProductImage,
   ppiOf,
   type Switch,
@@ -32,8 +34,8 @@ type ItemBase = {
   amazonAsin?: string
   tagline?: Text
   /**
-   * The product seen the way its silhouette is drawn: a keyboard from above, a monitor from the
-   * front. Without one, the silhouette stands in for it.
+   * The product seen the way its silhouette is drawn: a keyboard or a mouse from above, a monitor
+   * from the front. Without one, the silhouette stands in for it.
    */
   photo?: Photo
 }
@@ -56,7 +58,13 @@ export type MonitorItem = ItemBase & {
   variants: { colorName: string; colorFamily: (typeof colorFamilies)[number]; priceEur: number }[]
 }
 
-export type CatalogItem = KeyboardItem | MonitorItem
+export type MouseItem = ItemBase & {
+  category: 'mouse'
+  specs: MouseSpecs
+  variants: { colorName: string; colorFamily: (typeof colorFamilies)[number]; priceEur: number }[]
+}
+
+export type CatalogItem = KeyboardItem | MonitorItem | MouseItem
 
 const brandOf = (brands: Map<string, Brand>, slug: string, product: string) => {
   const brand = brands.get(slug)
@@ -134,6 +142,33 @@ export function toMonitorItems(inputs: MonitorInput[], brandList: Brand[]): Moni
       tagline: m.tagline,
       photo: photoOf(m.images, 'cutout_front'),
       specs: { ...m.specs, ppi: ppiOf(m.specs) },
+      variants,
+    }
+  })
+}
+
+export function toMouseItems(inputs: MouseInput[], brandList: Brand[]): MouseItem[] {
+  const brands = new Map(brandList.map((b) => [b.slug, b]))
+  return inputs.map((m) => {
+    const variants = m.variants.map((v) => ({
+      colorName: v.colorName,
+      colorFamily: v.colorFamily,
+      priceEur: v.msrpEur ?? m.msrpEur,
+    }))
+    return {
+      category: 'mouse',
+      slug: m.slug,
+      brand: brandOf(brands, m.brand, m.slug),
+      name: m.name,
+      modelNumber: m.modelNumber,
+      releaseYear: m.releaseYear,
+      priceEur: cheapest(variants.map((v) => v.priceEur)),
+      popularity: m.popularity,
+      editorialScore: m.editorialScore,
+      amazonAsin: m.amazonAsin,
+      tagline: m.tagline,
+      photo: photoOf(m.images, 'cutout_top'),
+      specs: m.specs,
       variants,
     }
   })

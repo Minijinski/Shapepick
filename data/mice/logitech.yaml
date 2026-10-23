@@ -1,0 +1,736 @@
+# Logitech : souris importées de logitechg.com et logitech.com (sites français) par `pnpm ingest logitechg-mice` et `logitech-mice`.
+# La forme (symétrique, ergonomique, verticale, trackball) est celle de la gamme : les pages ne la disent pas.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 13 modèles, www.logitechg.com/fr-fr (prix € du site français)
+- slug: logitech-pro-x3-superstrike
+  brand: logitech
+  name: PRO X3 SUPERSTRIKE
+  modelNumber: 910-007879
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-magenta-eclipse-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-profile-left-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-profile-right-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-magenta-eclipse-profile-left-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-magenta-eclipse-profile-right-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-filtered-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-bottom-open-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x3-superstrike-mouse.910-007879
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sensor: HERO 2, dpiMax: 48000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: 910-007879, colorName: Noir nuit, colorFamily: black }
+    - { sku: 910-007870, colorName: Éclipse magenta, colorFamily: color }
+
+- slug: logitech-pro-x2-superstrike
+  brand: logitech
+  name: PRO X2 SUPERSTRIKE
+  modelNumber: 910-007777
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-profile-left-angle-with-badge-gallery-4-new.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-profile-angle-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-bottom-angle-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x2-superstrike-mouse.910-007777
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 90, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: 910-007777, colorName: Éclipse lunaire, colorFamily: color }
+
+- slug: logitech-g502-x-plus
+  brand: logitech
+  name: G502 X PLUS
+  modelNumber: 910-006163
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-angle-black-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-angle-white-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-angle-black-purple-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-angle-white-mint-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-profile-angle-black-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-profile-angle-white-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-profile-angle-black-purple-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-profile-angle-white-mint-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g502-x-plus-wireless-lightforce.910-006163
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 106, buttons: 13, sensor: HERO 44K, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: 910-006163, colorName: Noir, colorFamily: black }
+    - { sku: 910-006172, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007811, colorName: Noir/Pourpre, colorFamily: black }
+    - { sku: 910-007820, colorName: Blanc/Menthe, colorFamily: white }
+
+# à vérifier : mesures dans un ordre inattendu (38.2 × 63.9 × 117.3 mm) : rangées par taille
+- slug: logitech-g305-x-superlight
+  brand: logitech
+  name: G305 X SUPERLIGHT
+  modelNumber: 910-007740
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-top-angle-black-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-top-angle-white-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-top-angle-lilac-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-profile-angle-black-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-profile-angle-white-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-profile-angle-lilac-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-3qtr-front-angle-black-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-3qtr-high-back-angle-black-gallery-8.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g305-x-superlight.910-007740
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117.3, widthMm: 63.9, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HERO, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 910-007740, colorName: Noir, colorFamily: black }
+    - { sku: 910-007748, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007756, colorName: Lilac, colorFamily: color }
+
+- slug: logitech-pro-x-superlight-2c
+  brand: logitech
+  name: PRO X SUPERLIGHT 2c
+  modelNumber: 910-007539
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-top-angle-offwhite-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-top-angle-black-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-top-angle-pink-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-profile-right-angle-offwhite-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-profile-right-angle-black-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-profile-right-angle-pink-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-bottom-angle-offwhite-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-3qtr-right-angle-offwhite-gallery-9.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x-superlight-2c.910-007539
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 61.4, heightMm: 38.5, weightG: 51, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: 910-007539, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007532, colorName: Noir, colorFamily: black }
+    - { sku: 910-007546, colorName: Magenta, colorFamily: color }
+
+- slug: logitech-pro-x-superlight-2
+  brand: logitech
+  name: PRO X SUPERLIGHT 2
+  modelNumber: 910-006639
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-top-angle-white-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-top-angle-black-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-top-angle-pink-gallery-1-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-profile-right-angle-white-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-profile-right-angle-black-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mouse-profile-right-angle-pink-gallery-5-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mouse-bottom-angle-white-gallery-6.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-bottom-angle-black-gallery-6.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x2-superlight-wireless-mouse.910-006639
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 60, buttons: 5, sensor: HERO 2, dpiMax: 32000, pollingHz: 8000, switchType: hybrid, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: 910-006639, colorName: Blanc, colorFamily: white }
+    - { sku: 910-006631, colorName: Noir, colorFamily: black }
+    - { sku: 910-006798, colorName: Magenta, colorFamily: color }
+
+- slug: logitech-pro-x-superlight-2-dex
+  brand: logitech
+  name: PRO X SUPERLIGHT 2 DEX
+  modelNumber: 910-007358
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-top-angle-black-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-top-angle-white-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-top-angle-pink-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-profile-right-angle-black-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-profile-right-angle-white-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-profile-right-angle-pink-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-3qtr-high-back-angle-black-gallery-3-new.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-bottom-angle-black-gallery-6.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-x-superlight-2-dex.910-007358
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 67.7, heightMm: 43.9, weightG: 60, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: 910-007358, colorName: Noir, colorFamily: black }
+    - { sku: 910-007366, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007374, colorName: Magenta, colorFamily: color }
+
+- slug: logitech-pro-2-lightspeed
+  brand: logitech
+  name: PRO 2 LIGHTSPEED
+  modelNumber: 910-007310
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-pink-gallery-4.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-white-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-black-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-pink-gallery1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-white-gallery1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-black-new-gallery1.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/pro-2-lightspeed.910-007310
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 80, buttons: 4, sensor: HERO 2, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, rgb: true }
+  variants:
+    - { sku: 910-007310, colorName: Magenta, colorFamily: color }
+    - { sku: 910-007303, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007296, colorName: Noir, colorFamily: black }
+
+- slug: logitech-g502-x
+  brand: logitech
+  name: G502 X
+  modelNumber: 910-006147
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-1-white.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-1-black.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-3-white.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-2-white.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-4-white.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-5-white.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-3-black.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-2-black.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g502-x-wired-lightforce.910-006147
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 89, buttons: 13, sensor: HERO 25K, dpiMax: 25600, freeSpinWheel: true, tiltWheel: true }
+  variants:
+    - { sku: 910-006147, colorName: Blanc, colorFamily: white }
+    - { sku: 910-006139, colorName: Noir, colorFamily: black }
+
+# à vérifier : mesures dans un ordre inattendu (40 × 75 × 131.2 mm) : rangées par taille
+- slug: logitech-g502
+  brand: logitech
+  name: G502
+  modelNumber: 910-005471
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-profile-left-angle-gallery-2.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-profile-right-angle-gallery-6.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-bottom-angle-gallery-3.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-high-back-angle-gallery-4.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g502-hero-gaming-mouse.910-005471
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.2, widthMm: 75, heightMm: 40, weightG: 121, buttons: 11, sensor: HERO, dpiMax: 25600, pollingHz: 1000, freeSpinWheel: true, rgb: true }
+  variants:
+    - { sku: 910-005471, colorName: Noir, colorFamily: black }
+
+- slug: logitech-g402-hyperion-fury
+  brand: logitech
+  name: G402 Hyperion Fury
+  modelNumber: 910-004068
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g402/gallery-5.png", kind: cutout_top, primary: true }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g402-hyperion-fury-fps-gaming-mouse.910-004068
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 136, widthMm: 72, heightMm: 41, weightG: 108, buttons: 8, dpiMax: 4000, pollingHz: 1000 }
+  variants:
+    - { sku: 910-004068, colorName: Noir, colorFamily: black }
+
+- slug: logitech-g309-lightspeed
+  brand: logitech
+  name: G309 LIGHTSPEED
+  modelNumber: 910-007208
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-black-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-3.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-2.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-6.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-white-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-black-gallery-3.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g309-lightspeed-gaming-mouse.910-007208
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64, heightMm: 39, weightG: 86, buttons: 6, sensor: HERO 25K, dpiMax: 25600, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, wirelessCharging: true }
+  variants:
+    - { sku: 910-007208, colorName: Blanc, colorFamily: white }
+    - { sku: 910-007200, colorName: Noir, colorFamily: black }
+
+- slug: logitech-g305
+  brand: logitech
+  name: G305
+  modelNumber: 910-005292
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-top-angle-white-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-top-angle-lilac-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-top-angle-blue-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-profile-left-angle-white-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-profile-left-angle-lilac-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-profile-left-angle-blue-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-bottom-angle-white-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-3qtr-high-back-angle-white-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitechg.com/fr-fr/shop/p/g305-lightspeed-wireless-gaming-mouse.910-005292
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.1, heightMm: 38.2, weightG: 99, buttons: 6, sensor: HERO, dpiMax: 12000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 250, power: aa }
+  variants:
+    - { sku: 910-005292, colorName: Blanc, colorFamily: white }
+    - { sku: 910-006023, colorName: Lilas, colorFamily: color }
+    - { sku: 910-006015, colorName: Bleu, colorFamily: color }
+
+# Lot du 2026-10-23 : 20 modèles, www.logitech.com/fr-fr (prix € du site français)
+# à vérifier : mesures dans un ordre inattendu (33 × 57 × 122 mm) : rangées par taille
+# à vérifier : autonomie en jours (32) comptée à 8 h par jour
+- slug: logitech-mobi-fold
+  brand: logitech
+  name: Mobi Fold
+  modelNumber: 910-007624
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-lilac-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-graphite-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-off-white-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-lilac-profile-fold-angle-gallery-9.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-graphite-profile-fold-angle-gallery-9.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-off-white-profile-fold-angle-gallery-9.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-lilac-3qtr-open-angle-light-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-lilac-3qtr-fold-angle-gallery-8.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mobi-fold-mouse.910-007624
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 122, widthMm: 57, heightMm: 33, weightG: 79, buttons: 4, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 256, power: rechargeable }
+  variants:
+    - { sku: 910-007624, colorName: Lilas, colorFamily: color }
+    - { sku: 910-007604, colorName: Graphite, colorFamily: black }
+    - { sku: 910-007631, colorName: Blanc cassé, colorFamily: white }
+
+- slug: logitech-signature-comfort-plus-m850-l
+  brand: logitech
+  name: Signature Comfort Plus M850 L
+  modelNumber: 910-007715
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/signature-comfort-plus-m850l/gallery/graphite/signature-comfort-plus-m850-l-mouse-graphite-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/signature-comfort-plus-m850l/gallery/off-white/signature-comfort-plus-m850-l-mouse-off-white-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/signature-comfort-plus-m850l/gallery/black/signature-comfort-plus-m850-l-mouse-black-top-angle-gallery-1.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/signature-comfort-plus-m850l.910-007715
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 121.8, widthMm: 74.3, heightMm: 44.2, weightG: 107.9, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
+  variants:
+    - { sku: 910-007715, colorName: Graphite, colorFamily: black }
+    - { sku: 910-007716, colorName: Blanc cassé, colorFamily: white }
+    - { sku: 910-007807, colorName: Noir, colorFamily: black }
+
+# à vérifier : autonomie en jours (70) comptée à 8 h par jour
+- slug: logitech-mx-master-4
+  brand: logitech
+  name: MX Master 4
+  modelNumber: 910-007562
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-pale-grey-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-profile-angle-gallery-11.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-pale-grey-profile-angle-gallery-11.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-front-3qtr-angle-gallery-10.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-software-angle-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-3qtr-angle-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-front-angle-gallery-9.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-master-4.910-007562
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 128.15, widthMm: 88.35, heightMm: 50.8, weightG: 150, buttons: 8, dpiMax: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  variants:
+    - { sku: 910-007562, colorName: Graphite, colorFamily: black }
+    - { sku: 910-007563, colorName: Pale Gray, colorFamily: white }
+
+# à vérifier : autonomie lue dans le texte (autonomie pouvant aller jusqu'à 70 jours)
+- slug: logitech-mx-master-3s-edition-bluetooth
+  brand: logitech
+  name: MX Master 3S Édition Bluetooth
+  modelNumber: 910-007501
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/2025-update/mx-master-3s-bluetooth-edition-top-view-graphite-new-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/w_544,h_544,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/2025-update/mx-master-3s-graphite-sustainability-gallery-4.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-master-3s.910-007501
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 124.9, widthMm: 84.3, heightMm: 51, weightG: 141, buttons: 7, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  variants:
+    - { sku: 910-007501, colorName: Graphite, colorFamily: black }
+
+# à vérifier : autonomie lue dans le texte (Autonomie: Jusqu’à 70 jours)
+- slug: logitech-mx-anywhere-3s
+  brand: logitech
+  name: MX Anywhere 3S
+  modelNumber: 910-006929
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-anywhere-3s/product-gallery/graphite/mx-anywhere-3s-mouse-top-view-graphite.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-anywhere-3s/product-gallery/rose/mx-anywhere-3s-mouse-top-view-rose.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-anywhere-3s/product-gallery/pale-grey/mx-anywhere-3s-mouse-top-view-pale-grey.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-anywhere-3s.910-006929
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 100.5, widthMm: 65, heightMm: 34.4, weightG: 99, buttons: 6, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  variants:
+    - { sku: 910-006929, colorName: Graphite, colorFamily: black }
+    - { sku: 910-006931, colorName: Rose, colorFamily: color }
+    - { sku: 910-006930, colorName: Pale Grey, colorFamily: white }
+
+- slug: logitech-pop-mouse
+  brand: logitech
+  name: POP Mouse
+  modelNumber: 910-007413
+  msrpEur: 30
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-top-angle-rose-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-top-angle-lilac-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-top-angle-off-white-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-top-angle-graphite-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-profile-angle-rose-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-profile-angle-lilac-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-profile-angle-off-white-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-profile-angle-graphite-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/pop-wireless-mouse.910-007413
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 104.8, widthMm: 59.4, heightMm: 35.2, weightG: 82, buttons: 4, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
+  variants:
+    - { sku: 910-007413, colorName: Rose, colorFamily: color }
+    - { sku: 910-007414, colorName: Lilac, colorFamily: color }
+    - { sku: 910-007411, colorName: Blanc cassé, colorFamily: white }
+    - { sku: 910-007412, colorName: Graphite, colorFamily: black }
+
+# à vérifier : autonomie en jours (120) comptée à 8 h par jour
+- slug: logitech-mx-ergo-s
+  brand: logitech
+  name: MX Ergo S
+  modelNumber: 910-007260
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-2.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-3.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-6.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-ergo-s-wireless-trackball-mouse.910-007260
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 132.5, widthMm: 99.8, heightMm: 51.4, weightG: 164, ballPosition: thumb, buttons: 8, dpiMax: 2048, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable, tiltWheel: true }
+  variants:
+    - { sku: 910-007260, colorName: Graphite, colorFamily: black }
+
+- slug: logitech-lift
+  brand: logitech
+  name: Lift
+  modelNumber: 910-006473
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-top-angle-graphite-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-top-angle-graphite-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/off-white/lift-mouse-top-angle-offwhite-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/sand/lift-mouse-top-angle-sand-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/rose/lift-mouse-top-angle-rose-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-profile-right-graphite-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  variants:
+    - { sku: 910-006473, colorName: Graphite, colorFamily: black }
+    - { sku: 910-006475, colorName: Blanc cassé, colorFamily: white }
+    - { sku: 910-007771, colorName: Sable, colorFamily: color, msrpEur: 80 }
+    - { sku: 910-006478, colorName: Rose, colorFamily: color }
+
+- slug: logitech-lift-left
+  brand: logitech
+  name: Lift Left
+  modelNumber: 910-006474
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-top-angle-graphite-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-top-angle-graphite-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/off-white/lift-mouse-top-angle-offwhite-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/sand/lift-mouse-top-angle-sand-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/rose/lift-mouse-top-angle-rose-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite/lift-mouse-profile-right-graphite-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
+  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  variants:
+    - { sku: 910-006474, colorName: Graphite, colorFamily: black }
+
+- slug: logitech-mx-vertical
+  brand: logitech
+  name: MX Vertical
+  modelNumber: 910-005448
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-04.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-01-new.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-02.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-03.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-05.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/mx-vertical-ergonomic-mouse.910-005448
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78.5, weightG: 125, buttons: 4, dpiMax: 4000, connWired: false, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: 910-005448, colorName: Graphite, colorFamily: black }
+
+- slug: logitech-pebble-mouse-2-m350s
+  brand: logitech
+  name: Pebble Mouse 2 M350s
+  modelNumber: 910-007014
+  msrpEur: 20
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-graphite-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-white-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-profile-angle-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-graphite-profile-angle-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-white-profile-angle-gallery-7.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-3qtr-angle-gallery-8.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-front-angle-gallery-9.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/pebble-2-m350s-wireless-mouse.910-007014
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 106, widthMm: 58.7, heightMm: 26.62, weightG: 76, buttons: 3, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa }
+  variants:
+    - { sku: 910-007014, colorName: Tons de rose, colorFamily: color }
+    - { sku: 910-007015, colorName: Tons de graphite, colorFamily: black }
+    - { sku: 910-007013, colorName: Tons de blanc, colorFamily: white }
+
+- slug: logitech-ergo-m575s
+  brand: logitech
+  name: ERGO M575S
+  modelNumber: 910-007030
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-off-white-blue-ball-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-graphite-blue-ball-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-off-white-blue-ball-gallery-2.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-off-white-blue-ball-gallery-3.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-off-white-blue-ball-gallery-4.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575s-m575sp-off-white-blue-ball-gallery-5.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575sp-off-white-blue-ball-gallery-6.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575sp-off-white-blue-ball-gallery-7.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/ergo-m575s-wireless-trackball.910-007030
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 134, widthMm: 100, heightMm: 48, weightG: 145, ballPosition: thumb, buttons: 5, dpiMax: 2000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 4320, power: aa }
+  variants:
+    - { sku: 910-007030, colorName: Blanc cassé +boule bleue, colorFamily: white }
+    - { sku: 910-007029, colorName: Graphite + boule bleue, colorFamily: black }
+
+- slug: logitech-m720-triathlon
+  brand: logitech
+  name: M720 Triathlon
+  modelNumber: 910-004791
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-1a.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-2a.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-3a.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-4a.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-5a.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-video-poster.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m720-triathlon.910-004791
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 115, widthMm: 74, heightMm: 45, weightG: 135, buttons: 8, dpiMax: 1000, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true, tiltWheel: true }
+  variants:
+    - { sku: 910-004791, colorName: Noir, colorFamily: black }
+
+- slug: logitech-signature-m650
+  brand: logitech
+  name: Signature M650
+  modelNumber: 910-006253
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large/m650-graphite-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large-left/m650-graphite-large-left-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-medium/m650-rose-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-large/m650-rose-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-medium/m650-off-white-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large/m650-off-white-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  variants:
+    - { sku: 910-006253, colorName: Graphite, colorFamily: black }
+    - { sku: 910-006254, colorName: Rose, colorFamily: color }
+    - { sku: 910-006255, colorName: Blanc cassé, colorFamily: white }
+
+- slug: logitech-signature-m650-l
+  brand: logitech
+  name: Signature M650 L
+  modelNumber: 910-006236
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large/m650-graphite-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large-left/m650-graphite-large-left-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-medium/m650-rose-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-large/m650-rose-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-medium/m650-off-white-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large/m650-off-white-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  variants:
+    - { sku: 910-006236, colorName: Graphite, colorFamily: black }
+    - { sku: 910-006237, colorName: Rose, colorFamily: color }
+    - { sku: 910-006238, colorName: Blanc cassé, colorFamily: white }
+
+- slug: logitech-signature-m650-l-pour-main-gauche
+  brand: logitech
+  name: Signature M650 L pour main gauche
+  modelNumber: 910-006239
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-medium/m650-graphite-medium-top-angle-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large/m650-graphite-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/graphite-large-left/m650-graphite-large-left-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-medium/m650-rose-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/rose-large/m650-rose-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-medium/m650-off-white-medium-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large/m650-off-white-large-top-angle-gallery-1.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
+  specs: { shape: ergonomic, hand: left, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  variants:
+    - { sku: 910-006239, colorName: Graphite, colorFamily: black }
+    - { sku: 910-006240, colorName: Blanc cassé, colorFamily: white }
+
+- slug: logitech-marathon-mouse-m705
+  brand: logitech
+  name: Marathon Mouse M705
+  modelNumber: 910-001949
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m705/gallery/m705-gallery-1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m705/gallery/m705-gallery-2.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m705/gallery/m705-gallery-3.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m705/gallery/m705-gallery-4.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m705-wireless-mouse.910-001949
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 109, widthMm: 71, heightMm: 42, weightG: 135, buttons: 5, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 8640, power: aa, freeSpinWheel: true, tiltWheel: true }
+  variants:
+    - { sku: 910-001949, colorName: Charbon, colorFamily: black }
+
+- slug: logitech-m500s
+  brand: logitech
+  name: M500s
+  modelNumber: 910-005784
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m500s/gallery/m500s-gallery-02.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m500s/gallery/m500s-gallery-01.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m500s/gallery/m500s-gallery-03.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m500s/gallery/m500s-gallery-04.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m500s-corded-mouse.910-005784
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 69, heightMm: 42, weightG: 144, buttons: 7, dpiMax: 4000, freeSpinWheel: true, tiltWheel: true }
+  variants:
+    - { sku: 910-005784, colorName: Noir, colorFamily: black }
+
+- slug: logitech-m240-silent
+  brand: logitech
+  name: M240 Silent
+  modelNumber: 910-007120
+  msrpEur: 25
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m240/product-gallery/m240-mouse-top-view-off-white.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m240/product-gallery/m240-mouse-top-view-graphite.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m240/product-gallery/m240-mouse-top-view-rose.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m240-silent-bluetooth-mouse.910-007120
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 73.8, buttons: 3, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, batteryHours: 4320, power: aa }
+  variants:
+    - { sku: 910-007120, colorName: Blanc cassé, colorFamily: white }
+    - { sku: 910-007119, colorName: Graphite, colorFamily: black }
+    - { sku: 910-007121, colorName: Rose, colorFamily: color }
+
+- slug: logitech-m171
+  brand: logitech
+  name: M171
+  modelNumber: 910-006867
+  msrpEur: 15
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-off-white.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-rose.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-blue.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-red.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-black.png", kind: cutout_top }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-bluegrey.png", kind: cutout_top }
+  sources:
+    - https://www.logitech.com/fr-fr/shop/p/m171-wireless-mouse.910-006867
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 97.7, widthMm: 61.5, heightMm: 35.2, weightG: 69.3, buttons: 3, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 2880, power: aa }
+  variants:
+    - { sku: 910-006867, colorName: Blanc cassé, colorFamily: white }
+    - { sku: 910-006865, colorName: Rose, colorFamily: color }
+    - { sku: 910-004640, colorName: Bleu/Noir, colorFamily: black }
+    - { sku: 910-004641, colorName: Rouge/Noir, colorFamily: black }
+    - { sku: 910-004424, colorName: Noir/Noir, colorFamily: black }
+    - { sku: 910-006866, colorName: Blue Gray, colorFamily: black }

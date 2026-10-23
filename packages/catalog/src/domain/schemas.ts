@@ -183,6 +183,84 @@ export const monitorInputSchema = productBase.extend({
 })
 export type MonitorInput = z.infer<typeof monitorInputSchema>
 
+const mouseSpecsShape = z.object({
+  shape: z.enum(E.mouseShapes),
+  hand: z.enum(E.mouseHands),
+  segment: z.enum(E.mouseSegments),
+  /** Overall length, widest width and height, in mm. A trackball's sheet may give none. */
+  lengthMm: positive.optional(),
+  widthMm: positive.optional(),
+  heightMm: positive.optional(),
+  /** The mouse alone, without cable or dongle; with its batteries when it runs on batteries. */
+  weightG: positive.optional(),
+  /** Where a trackball's ball sits: under the thumb, or under the fingers. */
+  ballPosition: z.enum(E.ballPositions).optional(),
+  /** Programmable buttons in all, the two main clicks and the wheel click included. */
+  buttons: positiveInt.optional(),
+  /** A grid of six side buttons or more, for MMO games (Naga, Scimitar). */
+  mmo: z.boolean().default(false),
+  sensor: z.string().optional(),
+  dpiMax: positiveInt.optional(),
+  /** The highest report rate with what comes in the box: a dongle sold apart does not count. */
+  pollingHz: positiveInt.optional(),
+  switchType: z.enum(E.mouseSwitchTypes).optional(),
+  silentClicks: z.boolean().default(false),
+  connWired: z.boolean().default(true),
+  conn24ghz: z.boolean().default(false),
+  connBt: z.boolean().default(false),
+  /** Devices it pairs with and switches between. */
+  hosts: positiveInt.optional(),
+  /** Battery life in hours (at 1 000 Hz for a gaming mouse). */
+  batteryHours: positive.optional(),
+  power: z.enum(E.mousePowers).optional(),
+  /** Charges on a pad or a dock (Powerplay, Qi…). */
+  wirelessCharging: z.boolean().default(false),
+  /** A wheel that can spin free (MagSpeed, HyperScroll…). */
+  freeSpinWheel: z.boolean().default(false),
+  tiltWheel: z.boolean().default(false),
+  /** A second wheel under the thumb, for horizontal scrolling. */
+  thumbWheel: z.boolean().default(false),
+  rgb: z.boolean().default(false),
+  /** Hand lengths (wrist crease to middle fingertip, cm) and grips the maker says it suits. */
+  makerHandMinCm: positive.optional(),
+  makerHandMaxCm: positive.optional(),
+  makerGrips: z.array(z.enum(E.grips)).optional(),
+})
+// A mouse is chosen on its size: one without its measurements is not one the finder can place.
+// A trackball is chosen on its ball instead, and some makers give nothing else.
+export const mouseSpecsSchema = mouseSpecsShape
+  .superRefine((s, ctx) => {
+    if (s.shape === 'trackball') {
+      if (!s.ballPosition)
+        ctx.addIssue({ code: 'custom', message: 'a trackball needs ballPosition' })
+    } else if (!s.lengthMm || !s.widthMm || !s.heightMm || !s.weightG) {
+      ctx.addIssue({
+        code: 'custom',
+        message: 'a mouse needs lengthMm, widthMm, heightMm, weightG',
+      })
+    }
+    if (s.makerHandMinCm && s.makerHandMaxCm && s.makerHandMinCm > s.makerHandMaxCm) {
+      ctx.addIssue({ code: 'custom', message: 'makerHandMinCm above makerHandMaxCm' })
+    }
+  })
+  // A mouse with a receiver and Bluetooth pairs with two devices at least.
+  .transform((s) => ({ ...s, hosts: s.hosts ?? (s.conn24ghz && s.connBt ? 2 : 1) }))
+export type MouseSpecs = z.infer<typeof mouseSpecsSchema>
+
+/** A mouse's variants are its colours only: a size, a report rate or a cable makes another product. */
+export const mouseVariantSchema = monitorVariantSchema
+
+export const mouseInputSchema = productBase.extend({
+  specs: mouseSpecsSchema,
+  variants: z
+    .array(mouseVariantSchema)
+    .min(1)
+    .default([{ colorName: 'Black', colorFamily: 'black' }]),
+})
+export type MouseInput = z.infer<typeof mouseInputSchema>
+/** A mouse as written in data/mice, before the schema's defaults and derived fields. */
+export type MouseRecord = z.input<typeof mouseInputSchema>
+
 /** Pixels per inch from a resolution and a diagonal. The database stores the same formula as a generated column. */
 export const ppiOf = (s: Pick<MonitorSpecs, 'resW' | 'resH' | 'diagonalIn'>) =>
   Math.round(Math.hypot(s.resW, s.resH) / s.diagonalIn)

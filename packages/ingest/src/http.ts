@@ -29,6 +29,10 @@ const gaps: Record<string, number> = {
   'www.philips.fr': 2500,
   'www.benq.eu': 2500,
   'zowie.benq.eu': 2500,
+  // Shopify stores limited the agent after a burst (23 October): one page every 4 s.
+  'turtlebeach.com': 4000,
+  'www.keychron.com': 4000,
+  'eu.pulsar.gg': 4000,
 }
 
 export const http = { refresh: false, requests: 0 }

@@ -25,6 +25,7 @@ export const messages = {
   category: {
     keyboard: text("Claviers", "Keyboards"),
     monitor: text("Écrans", "Monitors"),
+    mouse: text("Souris", "Mice"),
   } satisfies Record<Category, Text>,
   categoryPitch: {
     keyboard: text(
@@ -35,10 +36,12 @@ export const messages = {
       "Taille, dalle, fréquence, budget",
       "Size, panel, refresh rate, budget",
     ),
+    mouse: text("Main, prise, poids, budget", "Hand, grip, weight, budget"),
   } satisfies Record<Category, Text>,
   matching: {
     keyboard: text("claviers correspondent", "keyboards match"),
     monitor: text("écrans correspondent", "monitors match"),
+    mouse: text("souris correspondent", "mice match"),
   } satisfies Record<Category, Text>,
   of: text("sur", "of"),
   back: text("Retour", "Back"),

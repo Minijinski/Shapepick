@@ -48,7 +48,7 @@ type Product = {
 }
 
 /** The page's Next.js flight payload, as one string. */
-function flightOf(html: string) {
+export function flightOf(html: string) {
   return [...html.matchAll(/self\.__next_f\.push\(\[1,"((?:[^"\\]|\\.)*)"\]\)/g)]
     .map((m) => {
       try {
@@ -61,7 +61,7 @@ function flightOf(html: string) {
 }
 
 /** The JSON object starting at the first occurrence of `marker` (braces balanced, strings skipped). */
-function objectAt<T>(flight: string, marker: string): T | undefined {
+export function objectAt<T>(flight: string, marker: string): T | undefined {
   const at = flight.indexOf(marker)
   if (at < 0) return undefined
   let depth = 0

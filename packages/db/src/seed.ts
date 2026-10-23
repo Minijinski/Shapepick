@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import type { KeyboardInput, MonitorInput } from '@choose/catalog'
+import type { Category, KeyboardInput, MonitorInput, MouseInput } from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
 import { eq, notInArray, sql } from 'drizzle-orm'
 import { connectDirect } from './client'
@@ -10,7 +10,9 @@ import * as t from './schema'
 // seed after editing a YAML file always converges on what the file says. That includes removals:
 // products, switches and brands the files no longer list are deleted (offers go with products).
 
-const dataDir = fileURLToPath(new URL('../../../data', import.meta.url))
+// SEED_DATA_DIR: another data folder, to rehearse a seed (a checkout without some category…).
+const dataDir =
+  process.env.SEED_DATA_DIR ?? fileURLToPath(new URL('../../../data', import.meta.url))
 // One interactive transaction: a TCP connection, not the site's HTTP driver.
 const db = connectDirect()
 const data = await loadData(dataDir)
@@ -45,7 +47,7 @@ await db.transaction(async (tx) => {
     if (row) switchIds.set(sw.slug, row.id)
   }
 
-  async function upsertProduct(p: KeyboardInput | MonitorInput, category: 'keyboard' | 'monitor') {
+  async function upsertProduct(p: KeyboardInput | MonitorInput | MouseInput, category: Category) {
     const brandId = brandIds.get(p.brand)
     if (!brandId) throw new Error(`${p.slug}: unknown brand "${p.brand}"`)
     const values = {
@@ -137,8 +139,23 @@ await db.transaction(async (tx) => {
     await tx.insert(t.monitorSpecs).values({ productId, ...m.specs })
   }
 
+  for (const m of data.mice) {
+    const productId = await upsertProduct(m, 'mouse')
+    await tx.insert(t.productVariants).values(
+      m.variants.map((v) => ({
+        productId,
+        sku: v.sku,
+        colorName: v.colorName,
+        colorFamily: v.colorFamily,
+        msrpEur: v.msrpEur,
+      })),
+    )
+    await tx.delete(t.mouseSpecs).where(eq(t.mouseSpecs.productId, productId))
+    await tx.insert(t.mouseSpecs).values({ productId, ...m.specs })
+  }
+
   // Children first: products cascade to their variants, so the switches they used can go next.
-  const products = [...data.keyboards, ...data.monitors].map((p) => p.slug)
+  const products = [...data.keyboards, ...data.monitors, ...data.mice].map((p) => p.slug)
   // A seed run on a half-written data/ (an import in progress, a bad checkout) must not empty the
   // live catalogue: large removals need SEED_PRUNE=force, and the transaction rolls back otherwise.
   const doomed = await tx
@@ -152,6 +169,25 @@ await db.transaction(async (tx) => {
     throw new Error(
       `Refusing to remove ${doomed.length} of ${total} products the files no longer list (set SEED_PRUNE=force to confirm).`,
     )
+  }
+  // The same, category by category: a checkout that predates a category (no data/mice) would
+  // otherwise wipe it out, its products being few next to the whole catalogue.
+  const perCategory = await tx
+    .select({ category: t.products.category, total: sql<number>`count(*)::int` })
+    .from(t.products)
+    .groupBy(t.products.category)
+  const leaving = await tx
+    .select({ category: t.products.category, total: sql<number>`count(*)::int` })
+    .from(t.products)
+    .where(notInArray(t.products.slug, products))
+    .groupBy(t.products.category)
+  for (const { category, total: gone } of leaving) {
+    const had = perCategory.find((c) => c.category === category)?.total ?? 0
+    if (gone > Math.max(10, had / 2) && process.env.SEED_PRUNE !== 'force') {
+      throw new Error(
+        `Refusing to remove ${gone} of ${had} ${category} products the files no longer list (set SEED_PRUNE=force to confirm).`,
+      )
+    }
   }
   const gone = {
     products: await tx
@@ -184,6 +220,6 @@ await db.transaction(async (tx) => {
 })
 
 console.info(
-  `Seeded ${data.brands.length} brands, ${data.switches.length} switches, ${data.keyboards.length} keyboards, ${data.monitors.length} monitors.`,
+  `Seeded ${data.brands.length} brands, ${data.switches.length} switches, ${data.keyboards.length} keyboards, ${data.monitors.length} monitors, ${data.mice.length} mice.`,
 )
 await db.$client.end()

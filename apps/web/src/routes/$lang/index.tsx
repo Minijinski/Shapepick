@@ -1,9 +1,4 @@
-import {
-  type Category,
-  categories,
-  categorySlugs,
-  type Locale,
-} from "@choose/catalog";
+import { type Category, categorySlugs, type Locale } from "@choose/catalog";
 import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
 import {
   type CSSProperties,
@@ -92,24 +87,25 @@ const fade = css({
 });
 
 function Home() {
-  const { catalogs } = layout.useLoaderData();
+  // One panel per category the site offers (`shown`: those with products).
+  const { catalogs, shown } = layout.useLoaderData();
   const locale = Route.useParams().lang as Locale;
   const viewport = useViewport();
   const quads = useMemo(
-    () => (viewport ? bandQuads(viewport, categories.length) : null),
-    [viewport],
+    () => (viewport ? bandQuads(viewport, shown.length) : null),
+    [viewport, shown],
   );
   const spots = useMemo(() => {
     if (!viewport || !quads) return null;
     const each = quads.map((quad) => labelSpot(quad, viewport));
     // One size for every name: the largest at which each name still fits its own panel.
     const fit = Math.min(
-      ...categories.map(
+      ...shown.map(
         (c, i) => (each[i]?.width ?? 0) / (0.58 * m.category[c][locale].length),
       ),
     );
     return each.map((spot) => ({ ...spot, nameFit: Math.max(20, fit) }));
-  }, [viewport, quads, locale]);
+  }, [viewport, quads, locale, shown]);
   const open = useSceneNavigation();
   const root = useRef<HTMLElement>(null);
   const opening = useRef(false);
@@ -173,11 +169,12 @@ function Home() {
         aria-label={m.worlds[locale]}
         className={css({ position: "absolute", inset: "0" })}
       >
-        {categories.map((category, i) => (
+        {shown.map((category, i) => (
           <BandLink
             key={category}
             category={category}
             index={i}
+            total={shown.length}
             quad={quads?.[i] ?? null}
             spot={spots?.[i] ?? null}
             count={catalogs[category].length}
@@ -374,6 +371,7 @@ const reveal = css({
 function BandLink({
   category,
   index,
+  total,
   quad,
   spot,
   count,
@@ -382,6 +380,8 @@ function BandLink({
 }: {
   category: Category;
   index: number;
+  /** How many panels share the screen. */
+  total: number;
   quad: Quad | null;
   spot: LabelSpot | null;
   count: number;
@@ -393,9 +393,9 @@ function BandLink({
   const linkStyle: CSSProperties = quad
     ? { clipPath: clipPathOf(quad) }
     : {
-        left: `${(index / categories.length) * 100}%`,
+        left: `${(index / total) * 100}%`,
         right: "auto",
-        width: `${100 / categories.length}%`,
+        width: `${100 / total}%`,
       };
   const labelStyle: CSSProperties = spot
     ? {
@@ -407,7 +407,7 @@ function BandLink({
         ["--name-fit" as string]: `${spot.nameFit}px`,
       }
     : {
-        left: `calc(${(index / categories.length) * 100}% + 24px)`,
+        left: `calc(${(index / total) * 100}% + 24px)`,
         bottom: 24,
       };
 

@@ -1,0 +1,147 @@
+# MSI : souris importées de fr-store.msi.com par `pnpm ingest msi-mice`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 6 modèles, fr-store.msi.com (prix € de la boutique officielle)
+# à vérifier : forme non dite : symétrique supposée
+# à vérifier : dimensions sans ordre (128 x 68,5 x 40,5 mm) : la plus grande prise pour la longueur
+- slug: msi-clutch-gm08
+  brand: msi
+  name: Clutch GM08
+  modelNumber: CLUTCH GM08
+  releaseYear: 2022
+  msrpEur: 25
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/products/1024_4c6c5f1e-4710-400b-a0f6-c5220af52116.png?v=1650279383, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/products/1024_d56f3435-0524-444b-8265-0731ee8193a3.png?v=1650279383, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/products/1024_b433f2ba-5861-4593-b78a-d8319cbf18b8.png?v=1650279383, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/products/1024_158312ea-8ef0-4322-8af7-fb7b9d48260c.png?v=1650246544, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/products/1024_e3761fad-a2f5-46f9-828f-f5eabe6fb2ae.png?v=1650246544, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/clutch-gm08-gaming-gear
+  gtins:
+    - "4719072731151"
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 68.5, heightMm: 40.5, weightG: 92, buttons: 6, sensor: PAW-3519, dpiMax: 4200, pollingHz: 1000 }
+  variants:
+    - { sku: S12-0401800-CLA, colorName: Black, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (127 x 70 x 41) : la plus grande prise pour la longueur
+- slug: msi-forge-gm300
+  brand: msi
+  name: Forge GM300
+  modelNumber: FORGE GM300
+  releaseYear: 2024
+  msrpEur: 15
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_209be78c-1567-4adc-8a0b-20c17491d46f.png?v=1720691082, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3e9e8845-d0d4-48a9-8671-fba2b3a12f99.png?v=1746009006, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_763671d2-59a0-45eb-bfd2-0605de697b3a.png?v=1720691082, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_30ab2cd4-c645-4da1-b788-1510050ddf64.png?v=1720691012, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_1d42c0b6-cc50-4854-beed-293338cb58d6.png?v=1720691012, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/forge-gm300-gaming-gear
+  gtins:
+    - "4711377175487"
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 41, weightG: 118, buttons: 7, dpiMax: 7200, rgb: true }
+  variants:
+    - { sku: S12-0402300-HH9, colorName: Black, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (125 x 64 x 41 mm) : la plus grande prise pour la longueur
+- slug: msi-versa-300-elite-w
+  brand: msi
+  name: Versa 300 Elite W
+  modelNumber: VERSA 300 ELITE W
+  releaseYear: 2024
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_fe8ded20-7a9b-4893-a3e3-aa70aeed2dc6.png?v=1761580934, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_baf39155-0085-40a5-9520-4104dd671f8c.png?v=1733236496, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2e8c7b29-6c8e-4aa3-b1c7-88baa482f18c.png?v=1733236497, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f35af913-d376-4032-8c2c-1eb29ea5410a.png?v=1733236496, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_5bb9732e-0f80-45ed-819c-74988f833ba1.png?v=1761580934, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/versa-300-elite-gaming-gear
+  gtins:
+    - "4711377245951"
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 65, buttons: 6, sensor: PixArt PAW3395DM, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, rgb: true }
+  variants:
+    - { sku: S12-4301290-CLA, colorName: Black, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (125 x 64 x 41 mm) : la plus grande prise pour la longueur
+- slug: msi-versa-300-w-8k
+  brand: msi
+  name: Versa 300 W 8K
+  modelNumber: VERSA 300 W 8K
+  releaseYear: 2026
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2bd78ae2-9458-4904-bf57-0a885be4491b.png?v=1776325991, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_189c2bb9-97df-4ef3-a7bc-b895f7447216.png?v=1776325991, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_f17f46ca-e4b7-49b1-9021-40f391885b82.png?v=1776325992, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_b00515c2-a26d-48d3-b5de-b303067bf885.png?v=1776325991, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_e3881618-4d40-4397-962e-6530b1d8369f.png?v=1776325992, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/versa-300-w-8k-gaming-gear
+  gtins:
+    - "4711377395991"
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 66, buttons: 6, sensor: PixArt PAW339, dpiMax: 26000, pollingHz: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 196, power: rechargeable, rgb: true }
+  variants:
+    - { sku: S12-4301600-CLA, colorName: Black, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (120 x 60 x 40mm) : la plus grande prise pour la longueur
+- slug: msi-forge-gm100
+  brand: msi
+  name: Forge GM100
+  modelNumber: FORGE GM100
+  releaseYear: 2026
+  msrpEur: 10
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ea7bdb48-1323-4d18-bc35-5bd2a9967d11.png?v=1783512041, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_ca98eee7-fb5a-4a11-a5cf-be32bc491816.png?v=1783512041, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_00dd2a6c-3d56-4c16-86ad-2fb5a49adf1e.png?v=1783512041, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3946a008-7f1e-49e2-97a2-037dc3a62f16.png?v=1783512041, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9703e994-4977-46d2-aa6b-3ac532c85822.png?v=1783512041, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/forge-gm100-gaming-gear
+  gtins:
+    - "4711377176873"
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 60, heightMm: 40, weightG: 108, buttons: 7, dpiMax: 6400, rgb: true }
+  variants:
+    - { sku: S12-0402310-HH9, colorName: Black, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (126 x 66 x 40 mm) : la plus grande prise pour la longueur
+- slug: msi-forge-gm320
+  brand: msi
+  name: Forge GM320
+  modelNumber: FORGE GM320
+  releaseYear: 2026
+  msrpEur: 15
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_6e20c214-4da5-4973-b423-e0ea425ab15a.png?v=1786612365, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_30246660-1ecd-421d-a94d-f16e4dec21c1.png?v=1786612363, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_0953c138-a627-46fc-a753-ad21a7a92e59.png?v=1786612365, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_3f3e7708-1d22-4f56-988b-407a4f433291.png?v=1786612365, kind: cutout_top }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_9c22ee9f-567d-4908-b617-772665fcd6d8.png?v=1786612365, kind: cutout_top }
+  sources:
+    - https://fr-store.msi.com/products/forge-gm320-gaming-gear
+  gtins:
+    - "4711377367523"
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 40, weightG: 126, buttons: 7, dpiMax: 12800, rgb: true }
+  variants:
+    - { sku: S12-0402420-HH9, colorName: Black, colorFamily: black }

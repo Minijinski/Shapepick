@@ -1,4 +1,4 @@
-import { type CatalogItem, type Category, categories, type Locale } from '@choose/catalog'
+import type { CatalogItem, Category, Locale } from '@choose/catalog'
 import { useEffect, useLayoutEffect, useRef, useState, useSyncExternalStore } from 'react'
 import { css } from 'styled-system/css'
 import { gsap } from '../motion/gsap'
@@ -22,7 +22,12 @@ import { exposeStats, mark } from './stats'
 // (hover, drag, fling, wheel) and the popup that follows the product under the pointer; a click
 // (or a tap) on a product asks the page to open that product's sheet.
 
-type Props = { catalogs: Record<Category, CatalogItem[]>; locale: Locale }
+/** `shown`: the categories the site offers (with products), one band each, in this order. */
+type Props = {
+  catalogs: Record<Category, CatalogItem[]>
+  shown: readonly Category[]
+  locale: Locale
+}
 
 type Drag = { id: number; x: number; y: number; t: number; vx: number; vy: number; moved: number }
 
@@ -82,7 +87,7 @@ const targetKey = (target: SceneTarget | null) =>
 const hitKey = (hit: Hit) =>
   `${hit.category}:${hit.slug}:${hit.spot}:${hit.slot}:${hit.kx}:${hit.ky}`
 
-export function Scene({ catalogs, locale }: Props) {
+export function Scene({ catalogs, shown, locale }: Props) {
   const canvasRef = useRef<HTMLCanvasElement>(null)
   const overlayRef = useRef<HTMLDivElement>(null)
   const cardRef = useRef<HTMLDivElement>(null)
@@ -164,7 +169,7 @@ export function Scene({ catalogs, locale }: Props) {
     const dpr = () => Math.min(2, window.devicePixelRatio || 1)
     const resolution = spriteResolution(readViewport(), dpr())
     const drawings = new Drawings(resolution)
-    const renderer = new SceneRenderer(canvas, categories, drawings)
+    const renderer = new SceneRenderer(canvas, shown, drawings)
     rendererRef.current = renderer
     mark('scene')
     const fit = () => {
@@ -219,7 +224,7 @@ export function Scene({ catalogs, locale }: Props) {
 
     // ---- Products: laid out at once from their shapes; drawings come as the canvas needs them --
     const shapes = new Map<Category, Map<string, Shape>>()
-    for (const category of categories) {
+    for (const category of shown) {
       const list = drawings.register(catalogs[category])
       renderer.setItems(category, list)
       shapes.set(category, new Map(list.map((shape) => [shape.slug, shape])))
@@ -232,7 +237,7 @@ export function Scene({ catalogs, locale }: Props) {
       photoBudget(isCompact(readViewport()), dpr()),
       (category, slug, sprite) => renderer.setPhoto(category, slug, sprite, sprite != null),
     )
-    const items = new Map(categories.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
+    const items = new Map(shown.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
     const askForPhotos = window.setInterval(() => {
       for (const [category, drawn] of renderer.takeDrawn()) {
         for (const [slug, { scale, distance }] of drawn) {
@@ -401,10 +406,12 @@ export function Scene({ catalogs, locale }: Props) {
       renderer.dispose()
       rendererRef.current = null
     }
-  }, [catalogs])
+  }, [catalogs, shown])
 
-  const shown = card?.hit
-  const item = shown ? catalogs[shown.category].find((i) => i.slug === shown.slug) : undefined
+  const shownHit = card?.hit
+  const item = shownHit
+    ? catalogs[shownHit.category].find((i) => i.slug === shownHit.slug)
+    : undefined
   const state = card?.leaving ? 'out' : 'in'
 
   return (

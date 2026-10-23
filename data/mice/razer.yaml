@@ -1,0 +1,597 @@
+# Razer : souris importées de razer.com (site français) par `pnpm ingest razer-mice`.
+# Packs et éditions spéciales écartés ; une fréquence vendue à part (DeathAdder V3 Pro 8000 Hz) est un produit.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 27 modèles, razer.com/fr-fr (prix € du site français)
+- slug: razer-basilisk-v3-pro
+  brand: razer
+  name: Basilisk V3 Pro
+  modelNumber: RZ01-04620100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/Euovc-dQl-6uC_Xt2dt3Nt9ajKQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha0%2Fhb6%2F9529652445214%2Fbasilisk-v3-pro-black-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/kye3vcK-LJuke4glWC7QT3Lm4e0=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh5f%2Fhba%2F9529652314142%2Fbasilisk-v3-pro-white-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ZEmvv9V6wzx1ZFCY3qQrOElBNS0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fheb%2Fh05%2F9434919862302%2F220823-basilisk-v3-pro-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/McMVGgLwAp6x4DvfQhxIAoM0Zfw=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6c%2Fh64%2F9434918813726%2F220823-basilisk-v3-pro-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Rd2aZZ7YRRytk2fNOTAbS50Kelo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh03%2Fh61%2F9434918912030%2F220823-basilisk-v3-pro-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/DqBBeuNn95xCC_n2xPhOnapomrU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhbe%2Fh63%2F9434918879262%2F220823-basilisk-v3-pro-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/GoYiysEQDcaK_ZJ3guK5YacAYNQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh15%2Fh64%2F9434918846494%2F220823-basilisk-v3-pro-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/wMiYffvbRm1XwkDFn5hXiUe5dik=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fh60%2F9434918944798%2F220823-basilisk-v3-pro-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-pro/RZ01-04620100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.4, heightMm: 42.5, weightG: 112, buttons: 11, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-04620100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-04620200-R3G1, colorName: Blanc, colorFamily: white }
+
+# à vérifier : alimentation non dite
+- slug: razer-naga-v2-hyperspeed
+  brand: razer
+  name: Naga V2 HyperSpeed
+  modelNumber: RZ01-03600100-R3G1
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/omPiRy_-hZVjRoekdPSPXj0qSrE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh68%2Fhac%2F9529652740126%2Fnaga-v2-hyperspeed-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/hIPjnryECsULfqw_ZkJgrtupu4A=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha3%2Fh22%2F9451886510110%2F221110-naga-v2-hyperspeed-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/YtW40ympvjWzuBMqmHu6xFFZZ3A=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4d%2Fh22%2F9451886542878%2F221110-naga-v2-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/0kC16B_JPB6utgGMdSWUIxZN6ws=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb4%2Fh25%2F9451886444574%2F221110-naga-v2-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/jG5sn-GjPWjIGg2n_gd6B7Uigag=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8d%2Fh1e%2F9451886673950%2F221110-naga-v2-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/VozyFOakg5LxfC5cOZlcNjy5eIg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh5d%2Fh25%2F9451886477342%2F221110-naga-v2-hyperspeed-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ZI5YRnqX_m2x1-XQ0nAR7ctDrog=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe6%2Fh1b%2F9451886706718%2F221110-naga-v2-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-naga-v2-hyperspeed/RZ01-03600100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75, heightMm: 43.5, weightG: 95, buttons: 19, mmo: true, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 250, freeSpinWheel: true, tiltWheel: true }
+  variants:
+    - { sku: RZ01-03600100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-viper-v3-pro
+  brand: razer
+  name: Viper V3 Pro
+  modelNumber: RZ01-05120100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/7iNSfvOWFgxrmcfyeEJuZvZpXp4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh37%2Fh08%2F9765619138590%2F240423-viper-v3-pro-black-1500x1000-5.jpg, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/16q6d2phedNVhHThXW05Fu5-Hxo=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh08%2Fh61%2F9765618188318%2Fviper-v3-pro-black-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ZF_oVAk4CuVtEpmCbg-UqkJ5kyI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4e%2Fh5e%2F9765618221086%2Fviper-v3-pro-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Vn-bHBZD9ZIF_ky3gZCmCPpAWvg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe0%2Fh07%2F9765619105822%2F240423-viper-v3-pro-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/kM3wMvkVHkt4jWIkrCPR5sN4y54=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh48%2Fh0b%2F9765619204126%2F240423-viper-v3-pro-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/dJY_IYbE21VwtQo-rO99AjLXeMI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9f%2Fh0b%2F9765619236894%2F240423-viper-v3-pro-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/cECBff2UeIqLs7-5lt3u6zrsy6Q=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9b%2Fh46%2F9765618909214%2F240423-viper-v3-pro-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/-5MtOByYeLpblOfghHTJXueulas=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha1%2Fh08%2F9765619171358%2F240423-viper-v3-pro-black-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-pro/RZ01-05120100-R3G1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
+  variants:
+    - { sku: RZ01-05120100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05120200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-basilisk-v3-pro-35k
+  brand: razer
+  name: Basilisk V3 Pro 35K
+  modelNumber: RZ01-05240100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/YNDcgzQNA5rg_FPTo1Z83UcFB20=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh5a%2Fh1c%2F9821720576030%2Fbasilisk-v3-pro-35k-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/fMnDxGl02svUvruBEBmEMR1Va5U=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fheb%2Fh5a%2F9822063231006%2Fbasilisk-v3-pro-35k-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/e_Wgt84QExereiAe4BgOEYV8IVs=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8b%2Fhf1%2F9821719822366%2F241001-basilisk-v3-pro-35k-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/laksrfEC1Edzex-9zPaKaKp0QLE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh23%2Fhee%2F9821719920670%2F241001-basilisk-v3-pro-35k-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/QVQVdgOY1H57jIq5IabOP6QQ6zU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdd%2Fhf0%2F9821719887902%2F241001-basilisk-v3-pro-35k-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/9SinWQjZhR4rgAyARdDfDKCsPZg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc1%2Fhe1%2F9822093901854%2F241001-basilisk-v3-pro-35k-3-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/SMQD_VBOgAwGZj1U6vkNvPx1-ow=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcc%2Fhed%2F9821719953438%2F241001-basilisk-v3-pro-35k-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/1YscQiPT-s9OeNmZL0cogQeYgwo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh34%2Fhf1%2F9821719855134%2F241001-basilisk-v3-pro-35k-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-pro-35k/RZ01-05240100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 112, buttons: 11, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-05240100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05240200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-deathadder-v4-pro
+  brand: razer
+  name: DeathAdder V4 Pro
+  modelNumber: RZ01-05330100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/8bgNvtr-FOrv3EkYOblEB32CpHg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh01%2Fhf3%2F9926511951902%2Fdeathadder-v4-pro-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/eU4KcLb3MHx2LamWM2DzCOB44I4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhaa%2Fhf2%2F9926511984670%2Fdeathadder-v4-pro-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/yN5D7iJuk2Bc2Z10Mq9t6qlE9G0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhca%2Fhcf%2F9980075016222%2F251024-da-v4-pro-esports-gr-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ttILwg9KuXGalG19X8BQwLe3fN4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb9%2Fhe1%2F9980074819614%2F251024-da-v4-pro-esports-gr-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/SJmylN4b-gGTIEp1kqW6GJnG_i0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh21%2Fhe5%2F9980074917918%2F251024-da-v4-pro-esports-gr-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/E5619irSHNIzOFZvmiqqvegRxzU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7a%2Fhe2%2F9980074885150%2F251024-da-v4-pro-esports-gr-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/BMF6rIRQPVfgZHhsQi2lquleYa8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfc%2Fhda%2F9980074623006%2F251024-da-v4-pro-esports-gr-1500x1000-5.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v4-pro/RZ01-05330500-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 58, buttons: 6, sensor: 45K Focus Pro de 2e génération, dpiMax: 45000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 150, power: rechargeable }
+  variants:
+    - { sku: RZ01-05330100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05330200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-basilisk-v4-pro
+  brand: razer
+  name: Basilisk V4 Pro
+  modelNumber: RZ01-05670100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/-pmVG5L3U7tofr0tkAPatZIe5Pg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd0%2Fhb2%2F10458042105886%2Fbasilisk-v4-pro-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/7MsByul5s-Hnok5B11T_9LA63js=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh28%2Fhb3%2F10458042138654%2Fbasilisk-v4-pro-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/LjjBQtEFFCyt_fYeYAo1rJu8rjU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh60%2Fhbd%2F10458042433566%2F261008-basilisk-v4-pro-white-1500X1000-1.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/A2Lcy3UKoUOIto7rLMWGPGJQxAY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh90%2Fhb6%2F10458042236958%2F261008-basilisk-v4-pro-white-1500X1000-2.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/E0D-1RTOB4x7Svdu3PMW5B2jR8M=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh39%2Fhb6%2F10458042204190%2F261008-basilisk-v4-pro-white-1500X1000-3.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/AWjfJnR75jsijeWEe-OlYmJ4H7Q=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb7%2Fhbd%2F10458042466334%2F261008-basilisk-v4-pro-white-1500X1000-4.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/6sSu6LL5P8UpmrrKXKYErJk8Ssc=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf8%2Fhb9%2F10458042335262%2F261008-basilisk-v4-pro-white-1500X1000-5.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/k7AOAGFkrjlT3EIO2tWk3DanpWs=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0f%2Fhbe%2F10458042499102%2F261008-basilisk-v4-pro-white-1500X1000-6.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v4-pro/RZ01-05670200-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 101, buttons: 12, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-05670100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05670200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-basilisk-v4-hyperspeed
+  brand: razer
+  name: Basilisk V4 HyperSpeed
+  modelNumber: RZ01-05680100-R3M1
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/MOcszaJiY_4K_xYtT1E00SrMXjA=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh80%2Fhde%2F10458276331550%2Fbasilisk-v4-hyperspeed-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/E0sGi77jYxFzYynR9AN8_Rq6ypg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4f%2Fhba%2F10458042368030%2Fbasilisk-v4-hyperspeed-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/XW4sQwtp6FSHRKmJA5xQUW5xlCY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd6%2Fhe2%2F10458043154462%2F261008-basilisk-v4-hyperspeed-white-1500X1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ETEWGP3glbwdSTHaPxX3IMrtyS8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd9%2Fhdf%2F10458043219998%2F261008-basilisk-v4-hyperspeed-white-1500X1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/uFGrmQn8oBU_EtMEOJBa83-xEeY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7f%2Fhe2%2F10458043187230%2F261008-basilisk-v4-hyperspeed-white-1500X1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/WFb08BTUUaPx3KxyR5xw_WUjv1U=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh17%2Fhdf%2F10458043285534%2F261008-basilisk-v4-hyperspeed-white-1500X1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/mZEF5oLGqtM1n3IjTsrUj23bCcg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6e%2Fhdf%2F10458043252766%2F261008-basilisk-v4-hyperspeed-white-1500X1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Wr51QT6N4Z5aVC5MBq1kFxserbI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh70%2Fhdc%2F10458043318302%2F261008-basilisk-v4-hyperspeed-white-1500X1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v4-hyperspeed/RZ01-05680200-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 95, buttons: 10, sensor: 33 K Focus X de 3e génération, dpiMax: 33000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-05680100-R3M1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05680200-R3M1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-deathadder-essential
+  brand: razer
+  name: DeathAdder Essential
+  modelNumber: RZ01-03850100-R3M1
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/nVvVxRRBTfqEpblxhAxwnuCDOOc=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh95%2Fh52%2F9198280966174%2FDeathadder-Essential-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/4uFEf1PpfbEU_FuHNaVnR8u2lZA=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh74%2Fh12%2F9199722594334%2FDeathAdder-Essential-White-500x500-V2.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Cho5I6cL1-NEqYg2QcD-ffCjh74=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfa%2Fhe5%2F9234225430558%2Fdeathadder-essential-2021-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/FLiHweWz3Zx11upU-fjMLHaEOEo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhe3%2F9234225397790%2Fdeathadder-essential-2021-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/9NAIe5Ijdo7WnYAnQXeNpwHmWK4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha9%2Fhe6%2F9234225496094%2Fdeathadder-essential-2021-black-1500x1000-3.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-essential/RZ01-03850100-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.3, widthMm: 72.7, heightMm: 42.8, weightG: 96, buttons: 5, dpiMax: 6400, switchType: mechanical }
+  variants:
+    - { sku: RZ01-03850100-R3M1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-03850200-R3M1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-basilisk-v3-x-hyperspeed
+  brand: razer
+  name: Basilisk V3 X HyperSpeed
+  modelNumber: RZ01-04870100-R3G1
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/lvnK5XNh-eJ_jXi4ntYCvl1aMjY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3a%2Fhb0%2F9529652609054%2Fbasilisk-v3-x-hyperspeed-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/-MrumCccJ2TpUxOCXsg-W8s6tx0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1e%2Fhd7%2F9497493012510%2F230330-basilisk-v3-x-hyperspeed-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/u6ea942poP_cKumiMnyQ_Usl4rE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcc%2Fhd7%2F9497493078046%2F230330-basilisk-v3-x-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/poexn512O_ISNCIZAUMrt5uwLII=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh86%2Fhda%2F9497493110814%2F230330-basilisk-v3-x-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/j9N7HtgXvo6X1cWQKoJMAx6bVOY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdd%2Fhda%2F9497493143582%2F230330-basilisk-v3-x-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/xQ4XxTQJvc2rVeWppBAZxxhhBfU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh75%2Fhd7%2F9497493045278%2F230330-basilisk-v3-x-hyperspeed-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/rpRxmeB0BRFGSLLR75rpXKOyhik=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh34%2Fhdb%2F9497493176350%2F230330-basilisk-v3-x-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-x-hyperspeed/RZ01-04870100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.1, widthMm: 75.1, heightMm: 42.5, weightG: 110, buttons: 7, sensor: avancé 5G 18K DPI Razer, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 285, power: aa, rgb: true }
+  variants:
+    - { sku: RZ01-04870100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-cobra-pro
+  brand: razer
+  name: Cobra Pro
+  modelNumber: RZ01-04660100-R3G1
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/48JM6Pwg6TbY0Z7QaRrYJ5lea2Q=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh35%2Fhcc%2F9594549370910%2Fcobra-pro-500x500-2.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/PXXbH3dE9OuJW6PLTYSTrvvCzJQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fh05%2F9774771273758%2Fcobra-pro-white-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/lLDWCiKBI1aYsdrwOqCXPoU923M=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd2%2Fh36%2F9592669503518%2F230629-cobra-pro-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/D_psJ4XEFZRWGQ-8N1pdtlCkI2k=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh23%2Fh36%2F9592669569054%2F230629-cobra-pro-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/BqjYRQzQWwps0ZVjXMaXbdNWRAA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6a%2Fh33%2F9592669601822%2F230629-cobra-pro-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/wXUi3iVx4XIlEgoRlw4hdwglMfk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcd%2Fh9d%2F9593496895518%2F230629-cobra-pro-2-1500x1000.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/m-Yybg9B-mUiQmVsXTFZaLqu82s=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh79%2Fh39%2F9592669470750%2F230629-cobra-pro-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/KK2tYr26A_Zr67of6EqY3ErDIec=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7b%2Fh36%2F9592669536286%2F230629-cobra-pro-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-cobra-pro/RZ01-04660100-R3G1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 77, buttons: 8, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, rgb: true }
+  variants:
+    - { sku: RZ01-04660100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-04660200-R3G1, colorName: Blanc, colorFamily: white }
+
+# à vérifier : 8000 Hz avec un dongle vendu à part : non compté
+- slug: razer-viper-v3-pro-se
+  brand: razer
+  name: Viper V3 Pro SE
+  modelNumber: RZ01-04550100-R3G1
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/iwy9O4rBOMH2PsykdYz2uTMIuVY=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh55%2Fh10%2F10011389198366%2Fviper-v3-pro-se-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/h7mOVaKP3VQbzi8rhmCwYemsux4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh73%2Fh4f%2F10011388477470%2F260115-viper-v3-pro-se-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/S5UMk18mxnyTEgnwurqMxdvwFUU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhdb%2Fh52%2F10011388379166%2F260115-viper-v3-pro-se-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/LTeABl_gWYk-SfThDv-xaoKTv3s=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf9%2Fh48%2F10011388641310%2F260115-viper-v3-pro-se-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/-wiHc_5S80BGhzfflUNhPvQA5U4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb8%2Fh4c%2F10011388510238%2F260115-viper-v3-pro-se-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/WzPoQIa72bnIYnqGHVwTR9IEwBk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0b%2Fh4c%2F10011388575774%2F260115-viper-v3-pro-se-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/rhNmOYCPyW37V03qY3zbKQoZs_g=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh64%2Fh49%2F10011388608542%2F260115-viper-v3-pro-se-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-pro-se/RZ01-04550100-R3G1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
+  variants:
+    - { sku: RZ01-04550100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-cobra
+  brand: razer
+  name: Cobra
+  modelNumber: RZ01-04650100-R3M1
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/W_GOpXqIHcsWoCfZnpZwvHNPrzk=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh54%2Fh60%2F9591466950686%2Fcobra-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/hvy8aOgxT1wYpHMCBqTNpd1-7dw=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcf%2Fh92%2F10172281389086%2F260706-cobra-espeon-umbreon-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/uwLVeS8h8ZNTQrsIBHEVB8bBkUY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7e%2Fha6%2F10172281913374%2F260706-cobra-espeon-umbreon-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/htYuoMmE--lcZJlvVa8NriIVoNU=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6f%2Fha0%2F10172281782302%2F260706-cobra-espeon-umbreon-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/usLgb0EOqspspNlVX9zDA_ffojQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha8%2Fhf5%2F10172282175518%2F260706-cobra-espeon-umbreon-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/TF5VOIUbmid7QEz82uAZiCppkKA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf2%2F10172282077214%2F260706-cobra-espeon-umbreon-1500x1000-5.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-cobra/RZ01-04650800-RUEA
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 58, buttons: 6, sensor: 8 500 DPI, dpiMax: 8500, switchType: optical, rgb: true }
+  variants:
+    - { sku: RZ01-04650100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-naga-v3-pro
+  brand: razer
+  name: Naga V3 Pro
+  modelNumber: RZ01-05660100-R3G1
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/sApdVsKNIdXG57HxVdhO9ULiUtc=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fhe7%2F10268566880286%2Fnaga-v3-pro-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/pNvLaNfzJshNVqM_jL3OQ__8Z5c=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb3%2Fhcd%2F10271821332510%2F260811-naga-v3-pro-1500x1000-1-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/3ju2vJNg23o87CcMImzUiwWpoyM=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8c%2Fhe7%2F10268566847518%2F260811-naga-v3-pro-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/M52vevTguF0o4_ttVwf1-1spE2U=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9e%2Fhea%2F10268566913054%2F260811-naga-v3-pro-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/8P2uQ2ZGlyLDNFe5vqrUnpR111M=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4e%2Fhca%2F10268567011358%2F260811-naga-v3-pro-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/tsTqF09MgstofjnYYUYJiGgOjkQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf4%2Fhea%2F10268566945822%2F260811-naga-v3-pro-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/CsotVh_8q2UAP_tx8sN42NEBfsM=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4c%2Fheb%2F10268566978590%2F260811-naga-v3-pro-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-naga-v3-pro/RZ01-05660100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75.5, heightMm: 43.5, weightG: 117, buttons: 23, mmo: true, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 155, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-05660100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-viper-v4-pro
+  brand: razer
+  name: Viper V4 Pro
+  modelNumber: RZ01-05630100-R3G1
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/-Vd923rZLyWe0JLxhb6PlNE3vic=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9d%2Fh5d%2F10039373168670%2Fviper-v4-pro-black-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/IMd8XNgFzl_5-wN-CcFzjkBsqCg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh57%2Fh60%2F10039373201438%2Fviper-v4-pro-white-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Mws8dy6i2diForBnPo7EfBEjVcQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfb%2Fhe5%2F10302623088670%2F260818-viper-v4-pro-esports-gr-2-1500x1000-1.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/mef3leqlSNEYYRsFLIOHS1GXqHI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh52%2Fhe6%2F10302623055902%2F260818-viper-v4-pro-esports-gr-2-1500x1000-2.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/K6zlWGWT0SXK4as4R2hgFUVXaus=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh41%2Fhe3%2F10302623121438%2F260818-viper-v4-pro-esports-gr-2-1500x1000-3.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/qHaLuK4bnc6DAcwFhsEzcf7Eg4w=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh93%2Fhe2%2F10302623186974%2F260818-viper-v4-pro-esports-gr-2-1500x1000-4.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/JLkKHX-IfvYKuOK11lCWG3UpX-k=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe9%2Fhe2%2F10302623154206%2F260818-viper-v4-pro-esports-gr-2-1500x1000-5.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ERw0iyroNuubX8Y05r2YW808Rno=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhec%2Fhdf%2F10302623219742%2F260818-viper-v4-pro-esports-gr-2-1500x1000-6.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v4-pro/RZ01-05630300-R3M1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 52, buttons: 6, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 180, power: rechargeable }
+  variants:
+    - { sku: RZ01-05630100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05630200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-naga-left-handed-edition
+  brand: razer
+  name: Naga Left Handed Edition
+  modelNumber: RZ01-03410100-R3M1
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/hPTOb-wRlR4aMCyxV8PTNmNnz2Y=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh09%2Fhba%2F9529652346910%2Fnaga-left-handed-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/RjxHXKP-uYLDlyVKdZQHIR7zf7A=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhff%2Fh63%2F9081450889246%2FRazer-Naga-Left-Handed-Edition-Gallery0.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/zEzhXPlrX-qy_OUDAxFTbsBZNYo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8c%2Fh71%2F9081450496030%2FRazer-Naga-Left-Handed-Edition-Gallery1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/WnqVN35UArn8qviRd5oqRv1WgOk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3b%2Fh72%2F9081450430494%2FRazer-Naga-Left-Handed-Edition-Gallery2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/QZw_ObiobdMbOClQ_GrhDHuqhpA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh27%2Fh6b%2F9081450659870%2FRazer-Naga-Left-Handed-Edition-Gallery3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/dgBU6CSoxobhyEcJ0VtSEeGS_YQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh56%2Fh64%2F9081450856478%2FRazer-Naga-Left-Handed-Edition-Gallery4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/R9C1IWV6QV8j7tb1383afq5eCD0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1b%2Fh12%2F9081451184158%2FRazer-Naga-Left-Handed-Edition-Gallery5.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-naga-left-handed-edition/RZ01-03410100-R3M1
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119, widthMm: 75, heightMm: 43, weightG: 109, buttons: 20, mmo: true, dpiMax: 20000, switchType: mechanical, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-03410100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-cobra-hyperspeed
+  brand: razer
+  name: Cobra HyperSpeed
+  modelNumber: RZ01-05570100-R3G1
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/9OoRH_jDOcGxVi7ZSXv8mKVvIVI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb6%2Fha2%2F9935790473246%2Fcobra-hyperspeed-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/sm3Cazx9Ud1GmMzDbZVSM8vnAsY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh80%2Fhfd%2F9935791194142%2F250722-cobra-hyperspeed-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/yQTRG9opEXP_d5AT3Kc3KeL8Rbs=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh68%2Fhfe%2F9935791030302%2F250722-cobra-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/RIzIuFa6Kn4wnJpVqPevRE5va9A=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd8%2Fhfd%2F9935791161374%2F250722-cobra-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Z0uI-hAdVPI2xCo-QsQjcTooiuE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh18%2Fhfa%2F9935791292446%2F250722-cobra-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/LdKzLt-WEjj-6KKwUE2hOemyvtg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd1%2Fh5a%2F9966801879070%2F250925-cobra-hyperspeed-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/v172IG4vHlklURkQ4pSa9olaef4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhda%2Fhfa%2F9935791226910%2F250722-cobra-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-cobra-hyperspeed/RZ01-05570100-R3G1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 62, buttons: 7, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, rgb: true }
+  variants:
+    - { sku: RZ01-05570100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-deathadder-v3-pro
+  brand: razer
+  name: DeathAdder V3 Pro
+  modelNumber: RZ01-04630100-R3G1
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/sX9h9d-qdDYnZk_5at20SxhCSBE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc9%2Fh51%2F9449963946014%2Fdeathadder-v3-pro-black-v2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/vB3tVGdkbagm8c5sLuykjomm5k4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh72%2Fh51%2F9449963913246%2Fdeathadder-v3-pro-white-v2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/CE1Pv74mPQi-bb6OpGGh0qwckDQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh26%2Fh29%2F9729772224542%2Fdav3pro-hyperpolling-smooth-touch-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/r7KEsTmyfjBddbEguZw8BH-oiC4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc8%2Fhd8%2F9636322213918%2F230822-dav3-pro-black-hyper-polling-dongle-bundle-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/uAiiQmp2Pr7IYGGJNndtiSf6O6c=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhef%2Fhdf%2F9636322443294%2F230822-dav3-pro-white-hyper-polling-dongle-bundle-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/WK6eJTr2orY0AkNKkZmdJtYKM_g=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe5%2Fhe0%2F9910830956574%2F250521-deathadder-v3-pro-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/P0Z_XN9MPkzTcdSi1CyZuIFgbhA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh68%2Fh92%2F9910831153182%2F250521-deathadder-v3-pro-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ZNFMwaXvlV7k0IIMN7U5YEtlTDk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc0%2Fh92%2F9910831120414%2F250521-deathadder-v3-pro-black-1500x1000-3.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-pro/RZ01-04630100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
+  variants:
+    - { sku: RZ01-04630100-R3G1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-04630200-R3G1, colorName: Blanc, colorFamily: white }
+
+- slug: razer-deathadder-v3-pro-8000-hz
+  brand: razer
+  name: DeathAdder V3 Pro 8000 Hz
+  modelNumber: RZ01-04630300-R3WL
+  msrpEur: 195
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/sX9h9d-qdDYnZk_5at20SxhCSBE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc9%2Fh51%2F9449963946014%2Fdeathadder-v3-pro-black-v2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/vB3tVGdkbagm8c5sLuykjomm5k4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh72%2Fh51%2F9449963913246%2Fdeathadder-v3-pro-white-v2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/CE1Pv74mPQi-bb6OpGGh0qwckDQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh26%2Fh29%2F9729772224542%2Fdav3pro-hyperpolling-smooth-touch-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/r7KEsTmyfjBddbEguZw8BH-oiC4=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc8%2Fhd8%2F9636322213918%2F230822-dav3-pro-black-hyper-polling-dongle-bundle-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/uAiiQmp2Pr7IYGGJNndtiSf6O6c=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhef%2Fhdf%2F9636322443294%2F230822-dav3-pro-white-hyper-polling-dongle-bundle-4-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/WK6eJTr2orY0AkNKkZmdJtYKM_g=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe5%2Fhe0%2F9910830956574%2F250521-deathadder-v3-pro-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/P0Z_XN9MPkzTcdSi1CyZuIFgbhA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh68%2Fh92%2F9910831153182%2F250521-deathadder-v3-pro-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/ZNFMwaXvlV7k0IIMN7U5YEtlTDk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc0%2Fh92%2F9910831120414%2F250521-deathadder-v3-pro-black-1500x1000-3.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-pro/RZ01-04630100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
+  variants:
+    - { sku: RZ01-04630300-R3WL, colorName: "Noir, Toucher lisse", colorFamily: black }
+    - { sku: RZHB-230201-21, colorName: Noir, colorFamily: black }
+    - { sku: RZHB-230512-02, colorName: Blanc, colorFamily: white }
+
+- slug: razer-basilisk-v3-35k
+  brand: razer
+  name: Basilisk V3 35K
+  modelNumber: RZ01-05230100-R3M1
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/xgPYZqqYZ3BdQJulvvPDHexSdUg=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe4%2Fh63%2F9822107926558%2Fbasilisk-v3-35k-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/BZ5mtQoSCkpSxGN1OuTf_vIOTFQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf3%2Fhf4%2F9821719724062%2F241001-basilisk-v3-35k-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/9N9ogxV8xUtF5fOwT5rOIket4HQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh45%2Fhf4%2F9821719789598%2F241001-basilisk-v3-35k-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Nlgp209oYd5zgsDTBxhgcr8y_co=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9c%2Fhf4%2F9821719756830%2F241001-basilisk-v3-35k-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/a-yxdXF4mbEaTV9QWiCrK3sjY68=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9a%2Fhf7%2F9821719691294%2F241001-basilisk-v3-35k-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/BFPhdCynFh-SV10poByN8U58sZ8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh04%2Fhf8%2F9821719658526%2F241001-basilisk-v3-35k-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/swf63mS4DyOf7FGogcAeo5jsDlI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc2%2Fhfe%2F9821719461918%2F241001-basilisk-v3-35k-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-35k/RZ01-05230100-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 101, buttons: 11, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-05230100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-basilisk-mobile
+  brand: razer
+  name: Basilisk Mobile
+  modelNumber: RZ01-04310100-R3G1
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/l75W_0KbFJHP-Bj9EUHyERNpWIo=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc3%2Fh92%2F9904339255326%2Fbasilisk-mobile-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/5YM8lS74Tx6ff3X4LYOjkZ2ogIc=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe6%2Fhff%2F9904338141214%2F250508-basilisk-mobile-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/THnMWJMwO47Vn-Hll-Aotly_tio=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7d%2Fhfc%2F9904338042910%2F250508-basilisk-mobile-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/oh7fBMtiC7RyIe-BH2Su38crqmg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6a%2Fhb1%2F9904337944606%2F250508-basilisk-mobile-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/2bKg9w0vyPnvYlWA-akTULur700=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc3%2Fhff%2F9904338173982%2F250508-basilisk-mobile-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/bPVUzpWYZlZMU6ltrC4j36zOQsc=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb3%2Fhf9%2F9904338305054%2F250508-basilisk-mobile-black-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/GhXiFbzGyzCRWG9YjXP7K9fRNcQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh5d%2Fhf9%2F9904338337822%2F250508-basilisk-mobile-black-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-mobile/RZ01-04310100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 111.5, widthMm: 75.9, heightMm: 41.4, weightG: 76, buttons: 10, sensor: 18 K Razer Focus X, dpiMax: 18000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 105, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-04310100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-basilisk-v3
+  brand: razer
+  name: Basilisk V3
+  modelNumber: RZ01-04000100-R3M1
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/UHq4mj-v1cIaG2JqrwwoLd91u-A=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf7%2Fhb6%2F9529652412446%2Fbasilisk-v3-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/5SbFMFalLgQpx8Y2nH8d3rWA2rc=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh57%2Fh2e%2F9234032656414%2Fbasiliskv-3-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/llUr9XZSuUE2PgKrG69gt927r8I=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhae%2Fh2e%2F9234032689182%2Fbasiliskv-3-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/-_CcXL-Pc4IMMEoJQNe_udEqGf8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhff%2Fh2d%2F9234032623646%2Fbasiliskv-3-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/FLElmKtz-s9pogYN3VIFmh5rzzY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhef%2Fh2a%2F9234032558110%2Fbasiliskv-3-1500x1000-4.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3/RZ01-04000100-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42.5, weightG: 101, buttons: 11, dpiMax: 26000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-04000100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-deathadder-v3-hyperspeed
+  brand: razer
+  name: DeathAdder V3 HyperSpeed
+  modelNumber: RZ01-05140100-R3G1
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/okJmuxL_EfUuQCvLCXlQ6x4ZXmo=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh79%2Fh1f%2F9786703085598%2Fdeathadder-v3-hyperspeed-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/54ge4fZbcvFJNJsMS1QiODlOip4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh59%2Fh7b%2F9785428475934%2F240620-deathadder-v3-hyperspeed-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/jabrCuZhVO6Rx-XKz2-VPvstbNk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9a%2Fh77%2F9785428344862%2F240620-deathadder-v3-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/SQyg9SMLoTykxEHgQvcQuNEAB1c=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh00%2Fh7e%2F9785428508702%2F240620-deathadder-v3-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/UUJWBGYXc6JNNOTabo3WhW5J_Ww=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc2%2Fh7e%2F9785428574238%2F240620-deathadder-v3-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/cYFZCzwQ8rltYflFcZebswt-9NM=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh69%2Fh81%2F9785428607006%2F240620-deathadder-v3-hyperspeed-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/-MuSilbLn67cSRkmnKnIT_0aDfE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6a%2Fh7e%2F9785428541470%2F240620-deathadder-v3-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-hyperspeed/RZ01-05140100-R3G1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 64.8, heightMm: 41.3, weightG: 55, buttons: 6, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 100, power: rechargeable }
+  variants:
+    - { sku: RZ01-05140100-R3G1, colorName: Noir, colorFamily: black }
+
+- slug: razer-orochi-v2
+  brand: razer
+  name: Orochi V2
+  modelNumber: RZ01-05690100-R3M1
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/8wBzQjlW4ri4HXzHMfx0V5jxdRI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb4%2Fhf8%2F10078844813342%2Forochi-v2-2026-black-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/-ehSvniIgxmoCAfYVajZg_1ktXI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0b%2Fhf9%2F10078844846110%2Forochi-v2-2026-white-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/gywUkSLmpduvqtWx8S4imz_2O0w=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1c%2Fhfc%2F10078844911646%2Forochi-v2-2026-quartz-2-500x500.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Zu7XliFhrQCoAh92ost4sarmRf4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3d%2Fha1%2F10107681505310%2F260615-orochi-v2-2026-black-1500x1000-1-2.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/KAaaqhl9etFZPXquPLzTMa3QfxQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh84%2Fh76%2F10071823548446%2F260526-orochi-v2-2026-black-1500x1000-2.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/nHrFMq1T0DMI4SqYa2rc34JEFH8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh83%2Fh79%2F10071823482910%2F260526-orochi-v2-2026-black-1500x1000-3.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/qsM1cP-AfHsiyOh2z--mS20TZHo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc5%2Fh72%2F10071823679518%2F260526-orochi-v2-2026-black-1500x1000-4.png, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/yllAtBAeDDPF1AFq3TRCvlrS8x4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1c%2Fh73%2F10071823646750%2F260526-orochi-v2-2026-black-1500x1000-5.png, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-orochi-v2/RZ01-05690100-R3M1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 108, widthMm: 62.6, heightMm: 38.5, weightG: 60, buttons: 6, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 445, power: aa }
+  variants:
+    - { sku: RZ01-05690100-R3M1, colorName: Noir, colorFamily: black }
+    - { sku: RZ01-05690200-R3M1, colorName: Blanc, colorFamily: white }
+    - { sku: RZ01-05690300-R3M1, colorName: Quartz, colorFamily: color }
+
+- slug: razer-deathadder-v3
+  brand: razer
+  name: DeathAdder V3
+  modelNumber: RZ01-04640100-R3M1
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/m0Sl9wE0TluSWRqhiKMw-6SZ0pE=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh79%2Fhaf%2F9529652674590%2Fdeathadder-v3-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/OPsTFeVyvjtl7qt1RcjfLqa-gwI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc4%2Fh47%2F9481236021278%2F230221-da-v3-1500X1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/xeFJVcVH0Fm26SVKT936f7NuVSQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh72%2Fh48%2F9481236086814%2F230221-da-v3-1500X1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/YAdXL1vZ026BEBE6-dZUasjydto=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh81%2Fh4e%2F9481236217886%2F230221-da-v3-1500X1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/pUnzZRs40cwJPqVK_eM59TBrre8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh19%2Fh4b%2F9481236119582%2F230221-da-v3-1500X1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/es-tcl9zNq6UriEAMJXYAqUrtNk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb5%2Fh26%2F9481442721822%2F230221-da-v3-2-1500X1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/SA0MMpD8Sh2HBwMnSwSZr9k_CoI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh42%2Fh4f%2F9481236283422%2F230221-da-v3-1500X1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3/RZ01-04640100-R3M1
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 59, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: optical }
+  variants:
+    - { sku: RZ01-04640100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-viper-v3-hyperspeed
+  brand: razer
+  name: Viper V3 HyperSpeed
+  modelNumber: RZ01-04910100-R3M1
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/u4lVBuAv4dPFestToSLlm_DVa7c=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh21%2Fh26%2F9767046578206%2F240424-Viper-V3-Hyperspeed_500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/IPYEqk2fe_Drdc7behCD9CaDZKQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6d%2Fhee%2F9657631080478%2F230914-viper-v3-hyperspeed-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/sIULAks--UJb88PvueVCih_mmOI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh14%2Fhf1%2F9657631113246%2F230914-viper-v3-hyperspeed-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/dopdr9nYjSr-3QzPTqazrPdo8s4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6b%2Fhf1%2F9657631146014%2F230914-viper-v3-hyperspeed-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/1MJjUCBSTLvEArx4xgsBTDAesNA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh2a%2Fhf5%2F9657631277086%2F230914-viper-v3-hyperspeed-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Z_K1VUb0Wywb7FKK8h4AShr3WY4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd1%2Fhf7%2F9657631309854%2F230914-viper-v3-hyperspeed-black-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/QVV5gs0ORX9XjdjcnUkzP5eLSro=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3b%2Fhf8%2F9657631342622%2F230914-viper-v3-hyperspeed-black-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-hyperspeed/RZ01-04910100-R3M1
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 82, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 280, power: aa }
+  variants:
+    - { sku: RZ01-04910100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-pro-click-v2
+  brand: razer
+  name: Pro Click V2
+  modelNumber: RZ01-03900100-R3M1
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/qdHcEeeQ-CE2ZJe7DPnzn9zSf2E=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha3%2Fh76%2F9899953717278%2Fpro-click-v2-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/f5KH6i3-muIQIITpeegBD7A9b4E=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhd9%2Fh19%2F9899954372638%2F250424-pro-click-v2-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Qip0f5_nJHUAs4QhocnnXQEhw9Y=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhb3%2Fh0f%2F9899954667550%2F250424-pro-click-v2-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/TR8ujLW_YkGwxnUmUxnZqZBv9xg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhda%2Fh16%2F9899954438174%2F250424-pro-click-v2-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/TZMNrbCocyTaeXGd4Jt5RZJfcXI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0b%2Fh10%2F9899954634782%2F250424-pro-click-v2-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/BKccROoy-OBoLvDvXJIc3JoJZQo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha2%2Fh0c%2F9899954733086%2F250424-pro-click-v2-black-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/iB4z5FmIUz5d-C6umKNINPn8AJ4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf9%2Fh0c%2F9899954700318%2F250424-pro-click-v2-black-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-pro-click-v2/RZ01-03900100-R3M1
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 80, heightMm: 46, weightG: 110, buttons: 9, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1200, power: rechargeable, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: RZ01-03900100-R3M1, colorName: Noir, colorFamily: black }
+
+- slug: razer-pro-click-v2-vertical
+  brand: razer
+  name: Pro Click V2 Vertical
+  modelNumber: RZ01-05250100-R3G1
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/u1Ij2AqhGwogwEilqBsFFScrHtI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4a%2Fh79%2F9899953684510%2Fpro-click-v2-vertical-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/1QtQ7a21nCDYAGiW3JlcCdjeFxQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh8c%2Fh08%2F9899954896926%2F250424-pro-click-v2-vertical-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/1ZZoR4p5PCUAepTLm3LYmz7oboo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf4%2Fh0b%2F9899954798622%2F250424-pro-click-v2-vertical-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/yniohA8tfgs-8ecu1BINKnSOW6s=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4b%2Fh0c%2F9899954765854%2F250424-pro-click-v2-vertical-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/1pUJvLNBngusRLFdafT9vwwfUQw=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe5%2Fh05%2F9899954929694%2F250424-pro-click-v2-vertical-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/jaoNF-2KDz7R47ChVLq598FBFNc=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3a%2Fh09%2F9899954831390%2F250424-pro-click-v2-vertical-black-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/i4eiZOWA-y_KQRrfaAHODrd1Nso=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe3%2Fh08%2F9899954864158%2F250424-pro-click-v2-vertical-black-1500x1000-6.jpg, kind: cutout_top }
+  sources:
+    - https://www.razer.com/fr-fr/gaming-mice/razer-pro-click-v2-vertical/RZ01-05250100-R3G1
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 111, widthMm: 88, heightMm: 79, weightG: 150, buttons: 8, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1440, power: rechargeable, rgb: true }
+  variants:
+    - { sku: RZ01-05250100-R3G1, colorName: Noir, colorFamily: black }

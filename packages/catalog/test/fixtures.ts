@@ -1,5 +1,5 @@
 import { fileURLToPath } from 'node:url'
-import { toKeyboardItems, toMonitorItems } from '../src'
+import { toKeyboardItems, toMonitorItems, toMouseItems } from '../src'
 import { loadData } from '../src/node/load-data'
 
 // The demo catalogue (fictional brands, specs chosen to exercise every question), frozen here so the
@@ -9,3 +9,4 @@ const data = await loadData(dataDir)
 
 export const keyboards = toKeyboardItems(data.keyboards, data.brands, data.switches)
 export const monitors = toMonitorItems(data.monitors, data.brands)
+export const mice = toMouseItems(data.mice, data.brands)

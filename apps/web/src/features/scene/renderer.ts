@@ -83,6 +83,8 @@ export const sameHit = (a: Hit | null, b: Hit | null) =>
 const CELL: Record<Category, { w: number; h: number }> = {
   keyboard: { w: 400, h: 230 },
   monitor: { w: 540, h: 370 },
+  // A mouse seen from above stands upright: a tall cell.
+  mouse: { w: 260, h: 320 },
 }
 /** How far a product may stray from its cell centre, as a share of the room it leaves. */
 const JITTER = 0.3

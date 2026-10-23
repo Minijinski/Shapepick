@@ -1,0 +1,232 @@
+# HyperX : souris importées de hyperx.com par `pnpm ingest hyperx-mice`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 10 modèles, hyperx.com (prix € estimés depuis les prix US)
+- slug: hyperx-pulsefire-haste-3-wireless
+  brand: hyperx
+  name: Pulsefire Haste 3 Wireless
+  modelNumber: D9LS1AA
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_main_1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_5.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_6.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_7_a40446a4-2fc5-4b20-bde5-f8559b2b5f2a.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-3-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 51, buttons: 6, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
+  variants:
+    - { sku: D9LS1AA, colorName: Black, colorFamily: black }
+
+- slug: hyperx-pulsefire-haste-3-pro-wireless
+  brand: hyperx
+  name: Pulsefire Haste 3 Pro Wireless
+  modelNumber: D6GJ3AA
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_main_1_6be8ed76-cc34-420b-8050-4723558ef5df.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_2_e4f2ece6-0a10-4413-88ad-b1764f1aed3b.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_3_42a2271b-f3bd-401b-a867-ccb38d5095d6.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_4_23c87d73-9dae-40ee-ae2f-651bda7ca2d4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_5_19ba6cd0-32a0-4ad5-acac-fe817cba0ea7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_6_8f050072-c074-40eb-ac30-b57d13cd1d46.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_7_d3baa308-b2a4-4318-939d-53665b5100f0.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-3-pro-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 47, buttons: 6, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
+  variants:
+    - { sku: D6GJ3AA, colorName: Black, colorFamily: black }
+
+- slug: hyperx-pulsefire-saga
+  brand: hyperx
+  name: Pulsefire Saga
+  modelNumber: A2PB3AA
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_main_1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_5.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_6.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-saga-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 69, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, switchType: optical, rgb: true }
+  variants:
+    - { sku: A2PB3AA, colorName: Black, colorFamily: black }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: hyperx-pulsefire-fuse-wireless
+  brand: hyperx
+  name: Pulsefire Fuse Wireless
+  modelNumber: A1KY6AA
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_main_1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_5.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_6.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_8_f675a0c4-72c4-4332-9d28-238e87eb9db1.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-fuse-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.4, widthMm: 64, heightMm: 39.7, weightG: 75, buttons: 6, sensor: Pixart PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 85, power: aaa, rgb: true }
+  variants:
+    - { sku: A1KY6AA, colorName: Black, colorFamily: black }
+
+- slug: hyperx-pulsefire-haste-2-s-wireless
+  brand: hyperx
+  name: Pulsefire Haste 2 S Wireless
+  modelNumber: 9B001AA
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_main_1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/untitled2_768c2014-0767-40b8-b718-490bef0dee0b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_5_284a8713-177c-40f8-9a0d-6fca88fb15fe.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-2-s-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 66.5, heightMm: 38.5, weightG: 64, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 9B001AA, colorName: Navy, colorFamily: color }
+    - { sku: 9B002AA, colorName: Silver, colorFamily: white }
+
+- slug: hyperx-pulsefire-saga-pro-wireless
+  brand: hyperx
+  name: Pulsefire Saga Pro Wireless
+  modelNumber: A2PB2AA
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_main_1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_5.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_6.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-saga-pro-wireless-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 72, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
+  variants:
+    - { sku: A2PB2AA, colorName: Black, colorFamily: black }
+
+- slug: hyperx-pulsefire-haste-2-pro-4k-wireless
+  brand: hyperx
+  name: Pulsefire Haste 2 Pro 4K Wireless
+  modelNumber: A1KY5AA
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_8_f3de8e70-cc91-42f6-95b2-22ab16dd973e.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-2-pro-4k-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HyperX 26K, dpiMax: 26000, pollingHz: 4000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
+  variants:
+    - { sku: A1KY5AA, colorName: Slate Gray, colorFamily: black }
+
+- slug: hyperx-pulsefire-haste-2-core-wireless
+  brand: hyperx
+  name: Pulsefire Haste 2 Core Wireless
+  modelNumber: 8R2E6AA
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-2-core-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 70, buttons: 6, sensor: HyperX Core Sensor, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: aaa, rgb: true }
+  variants:
+    - { sku: 8R2E6AA, colorName: Black, colorFamily: black }
+    - { sku: 8R2E7AA, colorName: White, colorFamily: white }
+
+- slug: hyperx-pulsefire-haste-2
+  brand: hyperx
+  name: Pulsefire Haste 2
+  modelNumber: 6N0A8AA
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_1_main.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_2_back.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_3_front.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_4_side.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_5_ends.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_6_sensor.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_7_rgb.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_8_grips.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-2-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 53, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, rgb: true }
+  variants:
+    - { sku: 6N0A8AA, colorName: White, colorFamily: white }
+    - { sku: 6N0A7AA, colorName: Black, colorFamily: black }
+
+- slug: hyperx-pulsefire-haste-2-wireless
+  brand: hyperx
+  name: Pulsefire Haste 2 Wireless
+  modelNumber: 6N0B0AA
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://hyperx.com/products/hyperx-pulsefire-haste-2-wireless-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 6N0B0AA, colorName: Black, colorFamily: black }
+    - { sku: 6N0A9AA, colorName: White, colorFamily: white }
