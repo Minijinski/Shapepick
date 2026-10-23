@@ -1,8 +1,9 @@
 import type { CatalogItem, Locale, Ranked } from "@choose/catalog";
-import { useLayoutEffect, useRef } from "react";
+import { type CSSProperties, useLayoutEffect, useRef } from "react";
 import { css, cx } from "styled-system/css";
 import { messages as m } from "~/i18n/messages";
 import { Flip, gsap, prefersReducedMotion } from "../motion/gsap";
+import { Rolling, rollSlot } from "../motion/Rolling";
 import { motion } from "../motion/tokens";
 import { Match } from "../product/Match";
 import { ProductPicture } from "../product/ProductPicture";
@@ -15,13 +16,31 @@ import { formatPrice } from "../product/specs";
 // the best match plays that once by itself. When the ranking changes, GSAP Flip moves each entry
 // from where it was to where it now belongs, so a product visibly climbs or drops. Before the first
 // answer there is nothing to rank on: the page keeps the podium out of sight (Finder), and its
-// entries come in one after the other once there is a ranking.
+// entries come in one after the other once there is a ranking. Switching categories, a podium as
+// long as the last one takes its place: the cards, their ranks, the header and the "See all"
+// button stay, only what the cards show gives way to the new category's (Finder decides).
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
 
 /** How many products the podium shows at most. */
 export const PODIUM_SIZE = 3;
+
+/** What the last category's "See all" count showed as its page went. */
+const seeAllSlot = rollSlot();
+const seeAllDigits = (n: number) => String(Math.round(n)).padStart(3, "0");
+
+/**
+ * Carried over from the last category's podium, what a card shows comes in, card after card,
+ * where the last one's went.
+ */
+const part = css({
+  "[data-arrive] &": {
+    animation: "fadeIn 0.45s ease backwards",
+    animationDelay: "calc(var(--i, 0) * 70ms + 50ms)",
+  },
+  _motionReduce: { "[data-arrive] &": { animation: "none" } },
+});
 
 const frosted = css({
   bg: "surface.raised/80",
@@ -186,6 +205,7 @@ export function Podium({
   locale,
   layout = "column",
   hint = false,
+  carryOver = false,
   onOpen,
   onShowAll,
 }: {
@@ -198,6 +218,8 @@ export function Podium({
   layout?: "column" | "row";
   /** The best match shows once, by itself, what hovering it does. */
   hint?: boolean;
+  /** The page replaces another category's, whose podium showed as many cards: they stay. */
+  carryOver?: boolean;
   onOpen: (slug: string) => void;
   onShowAll: () => void;
 }) {
@@ -318,51 +340,180 @@ export function Podium({
       )}
       <ol
         ref={root}
+        data-arrive={carryOver || undefined}
         className={css({
           display: "flex",
           flexDirection: row ? "row" : "column",
           gap: "2.5",
         })}
       >
-        {informed && top.map((entry, i) => {
-          const asCard = row || i < 3;
-          const first = i === 0;
-          return (
-            <li
-              key={entry.item.slug}
-              data-flip-id={entry.item.slug}
-              className={cx(
-                css({ flexShrink: "0", minW: row ? "60" : undefined }),
-                !row && i === 3 && fourth,
-                !row && i === 4 && fifth,
-              )}
-            >
-              {asCard ? (
-                <button
-                  type="button"
-                  className={card}
-                  data-first={first || undefined}
-                  data-hint={(hint && first) || undefined}
-                  onClick={() => onOpen(entry.item.slug)}
-                >
-                  <span
-                    className={css({
-                      position: "relative",
-                      display: "grid",
-                      placeItems: "center",
-                      h: { base: "9", md: "10" },
-                    })}
+        {informed &&
+          top.map((entry, i) => {
+            const asCard = row || i < 3;
+            const first = i === 0;
+            return (
+              <li
+                key={entry.item.slug}
+                data-flip-id={entry.item.slug}
+                style={{ "--i": i } as CSSProperties}
+                className={cx(
+                  css({ flexShrink: "0", minW: row ? "60" : undefined }),
+                  !row && i === 3 && fourth,
+                  !row && i === 4 && fifth,
+                )}
+              >
+                {asCard ? (
+                  <button
+                    type="button"
+                    className={card}
+                    data-first={first || undefined}
+                    data-hint={(hint && first) || undefined}
+                    onClick={() => onOpen(entry.item.slug)}
                   >
+                    <span
+                      className={css({
+                        position: "relative",
+                        display: "grid",
+                        placeItems: "center",
+                        h: { base: "9", md: "10" },
+                      })}
+                    >
+                      <span
+                        data-swap-part
+                        className={cx(
+                          part,
+                          css({
+                            position: "absolute",
+                            inset: "0",
+                            display: "grid",
+                            placeItems: "center",
+                          }),
+                        )}
+                      >
+                        <span
+                          className={cx(
+                            lift,
+                            css({ display: "grid", placeItems: "center" }),
+                          )}
+                        >
+                          <ProductPicture
+                            item={entry.item}
+                            className={css({
+                              maxH: { base: "9", md: "10" },
+                              maxW: "100%",
+                              w: "100%",
+                              h: "auto",
+                            })}
+                          />
+                        </span>
+                      </span>
+                      <span
+                        className={css({
+                          position: "absolute",
+                          top: "-1.5",
+                          left: "-1.5",
+                          display: "grid",
+                          placeItems: "center",
+                          minW: "4.5",
+                          h: "4.5",
+                          px: "1",
+                          borderRadius: "pill",
+                          fontFamily: "mono",
+                          fontSize: "2xs",
+                          lineHeight: "1",
+                          bg: "ink",
+                          color: "paper",
+                          boxShadow: "0 0 0 2px token(colors.surface.raised)",
+                          "[data-first] &": { bg: "signal", color: "white" },
+                        })}
+                      >
+                        <span className={css({ srOnly: true })}>n° </span>
+                        {i + 1}
+                      </span>
+                    </span>
+                    <span
+                      data-swap-part
+                      className={cx(
+                        part,
+                        css({ minW: "0", display: "grid", gap: "0.5" }),
+                      )}
+                    >
+                      {/* Brand over model, as everywhere else: a long name stays readable. */}
+                      <span
+                        className={css({
+                          fontSize: "2xs",
+                          lineHeight: "1.35",
+                          color: "ink.muted",
+                          truncate: true,
+                        })}
+                      >
+                        {entry.item.brand.name}
+                      </span>
+                      <span
+                        className={css({
+                          fontWeight: "600",
+                          fontSize: "sm",
+                          lineHeight: "1.2",
+                          truncate: true,
+                        })}
+                      >
+                        {entry.item.name}
+                      </span>
+                      <span
+                        className={cx(
+                          swap,
+                          css({ fontSize: "xs", lineHeight: "1.4" }),
+                        )}
+                      >
+                        <span
+                          className={css({
+                            fontFamily: "mono",
+                            color: "ink.muted",
+                          })}
+                        >
+                          {formatPrice(entry.item.priceEur, locale)}
+                        </span>
+                        <span aria-hidden>{m.viewSheet[locale]} →</span>
+                      </span>
+                    </span>
+                    <span
+                      data-swap-part
+                      className={cx(part, css({ display: "grid" }))}
+                    >
+                      <Match
+                        score={entry.score}
+                        locale={locale}
+                        size="sm"
+                        accent={first}
+                        label={false}
+                      />
+                    </span>
+                  </button>
+                ) : (
+                  <button
+                    type="button"
+                    className={compact}
+                    onClick={() => onOpen(entry.item.slug)}
+                  >
+                    <span
+                      className={css({
+                        fontFamily: "mono",
+                        fontSize: "2xs",
+                        color: "ink.muted",
+                      })}
+                    >
+                      {i + 1}
+                    </span>
                     <span
                       className={cx(
                         lift,
-                        css({ display: "grid", placeItems: "center" }),
+                        css({ display: "grid", placeItems: "center", h: "6" }),
                       )}
                     >
                       <ProductPicture
                         item={entry.item}
                         className={css({
-                          maxH: { base: "9", md: "10" },
+                          maxH: "6",
                           maxW: "100%",
                           w: "100%",
                           h: "auto",
@@ -370,122 +521,23 @@ export function Podium({
                       />
                     </span>
                     <span
+                      className={css({ fontWeight: "600", truncate: true })}
+                    >
+                      {name(entry)}
+                    </span>
+                    <span
                       className={css({
-                        position: "absolute",
-                        top: "-1.5",
-                        left: "-1.5",
-                        display: "grid",
-                        placeItems: "center",
-                        minW: "4.5",
-                        h: "4.5",
-                        px: "1",
-                        borderRadius: "pill",
                         fontFamily: "mono",
-                        fontSize: "2xs",
-                        lineHeight: "1",
-                        bg: "ink",
-                        color: "paper",
-                        boxShadow: "0 0 0 2px token(colors.surface.raised)",
-                        "[data-first] &": { bg: "signal", color: "white" },
-                      })}
-                    >
-                      <span className={css({ srOnly: true })}>n° </span>
-                      {i + 1}
-                    </span>
-                  </span>
-                  <span
-                    className={css({ minW: "0", display: "grid", gap: "0.5" })}
-                  >
-                    {/* Brand over model, as everywhere else: a long name stays readable. */}
-                    <span
-                      className={css({
-                        fontSize: "2xs",
-                        lineHeight: "1.35",
                         color: "ink.muted",
-                        truncate: true,
                       })}
                     >
-                      {entry.item.brand.name}
+                      {Math.round(entry.score * 100)} %
                     </span>
-                    <span
-                      className={css({
-                        fontWeight: "600",
-                        fontSize: "sm",
-                        lineHeight: "1.2",
-                        truncate: true,
-                      })}
-                    >
-                      {entry.item.name}
-                    </span>
-                    <span
-                      className={cx(
-                        swap,
-                        css({ fontSize: "xs", lineHeight: "1.4" }),
-                      )}
-                    >
-                      <span
-                        className={css({
-                          fontFamily: "mono",
-                          color: "ink.muted",
-                        })}
-                      >
-                        {formatPrice(entry.item.priceEur, locale)}
-                      </span>
-                      <span aria-hidden>{m.viewSheet[locale]} →</span>
-                    </span>
-                  </span>
-                  <Match
-                    score={entry.score}
-                    locale={locale}
-                    size="sm"
-                    accent={first}
-                    label={false}
-                  />
-                </button>
-              ) : (
-                <button
-                  type="button"
-                  className={compact}
-                  onClick={() => onOpen(entry.item.slug)}
-                >
-                  <span
-                    className={css({
-                      fontFamily: "mono",
-                      fontSize: "2xs",
-                      color: "ink.muted",
-                    })}
-                  >
-                    {i + 1}
-                  </span>
-                  <span
-                    className={cx(
-                      lift,
-                      css({ display: "grid", placeItems: "center", h: "6" }),
-                    )}
-                  >
-                    <ProductPicture
-                      item={entry.item}
-                      className={css({
-                        maxH: "6",
-                        maxW: "100%",
-                        w: "100%",
-                        h: "auto",
-                      })}
-                    />
-                  </span>
-                  <span className={css({ fontWeight: "600", truncate: true })}>
-                    {name(entry)}
-                  </span>
-                  <span
-                    className={css({ fontFamily: "mono", color: "ink.muted" })}
-                  >
-                    {Math.round(entry.score * 100)} %
-                  </span>
-                </button>
-              )}
-            </li>
-          );
-        })}
+                  </button>
+                )}
+              </li>
+            );
+          })}
       </ol>
       {total > 0 && (
         <button
@@ -509,15 +561,17 @@ export function Podium({
         >
           <span>
             {m.seeAll[locale]}{" "}
-            <span
+            <Rolling
+              value={total}
+              format={seeAllDigits}
+              slot={row ? undefined : seeAllSlot}
+              carryOver={carryOver}
               className={css({
                 fontFamily: "mono",
                 fontSize: "xs",
                 color: "ink.muted",
               })}
-            >
-              {String(total).padStart(3, "0")}
-            </span>
+            />
           </span>
           <span aria-hidden>→</span>
         </button>

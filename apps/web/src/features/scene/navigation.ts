@@ -1,7 +1,7 @@
 import { type Category, categorySlugs } from '@choose/catalog'
 import { getRouteApi, useNavigate } from '@tanstack/react-router'
 import { type MouseEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
-import { journeyTargets } from '~/features/finder/targets'
+import { type FinderAhead, journeyAhead } from '~/features/finder/targets'
 import type { FinderSearch } from '~/features/finder/useFinder'
 import { useLocale } from '~/i18n/locale'
 import { type Arrival, scene } from './controller'
@@ -20,16 +20,22 @@ const EXIT_CAP_MS = 650
 /** `leave`: the page goes away (home ↔ category); `switch`: one category's finder for another. */
 export type ExitKind = 'leave' | 'switch'
 
-let exit: ((kind: ExitKind) => Promise<void>) | null = null
+/**
+ * Plays the page's exit. `ahead`, heading to a category: what its finder will show, so that the
+ * page on screen can leave in place what the next one shows in the same place.
+ */
+type Exit = (kind: ExitKind, ahead: FinderAhead | null) => Promise<void>
+
+let exit: Exit | null = null
 /** Bumped by every scene navigation: only the last of several quick clicks navigates. */
 let ticket = 0
 
 /** Registers the exit animation of the page on screen. */
-export function usePageExit(play: (kind: ExitKind) => Promise<void>) {
+export function usePageExit(play: Exit) {
   const latest = useRef(play)
   latest.current = play
   useEffect(() => {
-    const run = (kind: ExitKind) => latest.current(kind)
+    const run: Exit = (kind, ahead) => latest.current(kind, ahead)
     exit = run
     return () => {
       if (exit === run) exit = null
@@ -37,12 +43,12 @@ export function usePageExit(play: (kind: ExitKind) => Promise<void>) {
   }, [])
 }
 
-function runPageExit(kind: ExitKind) {
+function runPageExit(kind: ExitKind, ahead: FinderAhead | null) {
   const play = exit
   exit = null
   if (!play) return Promise.resolve()
   return Promise.race([
-    play(kind).catch(() => {}),
+    play(kind, ahead).catch(() => {}),
     new Promise<void>((resolve) => setTimeout(resolve, EXIT_CAP_MS)),
   ])
 }
@@ -93,14 +99,15 @@ export function useSceneNavigation() {
       if (!category && current?.mode === 'bands') return
       const kind: ExitKind = category && current?.mode === 'canvas' ? 'switch' : 'leave'
       const journey = category ? loadJourney(category) : {}
-      if (category) {
+      const ahead = category ? journeyAhead(category, catalogs[category], journey) : null
+      if (category && ahead) {
         scene.showCanvas(category, focal)
         // The canvas arrives showing what the saved answers keep, rather than the whole catalogue
         // regrouping once the page is on screen.
-        scene.setTargets(category, journeyTargets(category, catalogs[category], journey), focal)
+        scene.setTargets(category, ahead.targets, focal)
       } else scene.showBands()
       const mine = ++ticket
-      void runPageExit(kind).then(() => {
+      void runPageExit(kind, ahead?.finder ?? null).then(() => {
         if (mine !== ticket) return
         // The home page restores the scroll it was left at: its row folds back there.
         if (!category)

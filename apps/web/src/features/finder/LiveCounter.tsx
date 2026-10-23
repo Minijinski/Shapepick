@@ -1,16 +1,25 @@
-import { type ReactNode, useRef, useState } from 'react'
+import type { ReactNode } from 'react'
 import { css } from 'styled-system/css'
-import { gsap, prefersReducedMotion, useGSAP } from '../motion/gsap'
-import { motion } from '../motion/tokens'
+import { Rolling, rollSlot } from '../motion/Rolling'
 
-// The signature readout: how many products are left, ticking down with every answer. React
-// renders the first value (server HTML), GSAP rolls the digits after that. What it says the
-// products are can be followed by a control of what is counted (the brands).
+// The signature readout: how many products are left, ticking down with every answer. What it says
+// the products are can be followed by a control of what is counted (the brands). Switching
+// categories it stays on screen: its digits roll on from the last category's count to the new
+// one, while the words under them give way to the new category's.
 
 const digits = (n: number) => {
   const s = String(Math.max(0, Math.round(n))).padStart(4, '0')
-  return `${s.slice(0, 1)} ${s.slice(1)}`
+  return `${s.slice(0, 1)} ${s.slice(1)}`
 }
+
+/** What the last category's counter showed as its page went. */
+const slots = { value: rollSlot(), total: rollSlot() }
+
+/** Carried over, what it counts comes in once the last category's words have gone. */
+const arrive = css({
+  '&[data-arrive]': { animation: 'fadeIn 0.45s ease 0.05s backwards' },
+  _motionReduce: { '&[data-arrive]': { animation: 'none' } },
+})
 
 type Props = {
   value: number
@@ -19,6 +28,8 @@ type Props = {
   preview: number | null
   previewLabel: string
   ofLabel: string
+  /** The page replaces another category's: the digits roll on from that one's count. */
+  carryOver?: boolean
   /** Beside the label: what narrows the count without being a question (the brand filter). */
   children?: ReactNode
 }
@@ -30,39 +41,18 @@ export function LiveCounter({
   preview,
   previewLabel,
   ofLabel,
+  carryOver = false,
   children,
 }: Props) {
-  const number = useRef<HTMLSpanElement>(null)
-  const [initial] = useState(value)
-  const shown = useRef({ v: value })
-
-  useGSAP(
-    () => {
-      const el = number.current
-      if (!el) return
-      if (prefersReducedMotion()) {
-        shown.current.v = value
-        el.textContent = digits(value)
-        return
-      }
-      gsap.to(shown.current, {
-        v: value,
-        duration: motion.slow,
-        ease: motion.ease,
-        overwrite: true,
-        onUpdate: () => {
-          el.textContent = digits(shown.current.v)
-        },
-      })
-    },
-    { dependencies: [value] },
-  )
-
+  const arriving = carryOver ? '' : undefined
   return (
     <div className={css({ display: 'flex', flexDirection: 'column', gap: '1' })}>
       <div className={css({ display: 'flex', alignItems: 'baseline', gap: '3' })}>
-        <span
-          ref={number}
+        <Rolling
+          value={value}
+          format={digits}
+          slot={slots.value}
+          carryOver={carryOver}
           aria-live="polite"
           className={css({
             fontFamily: 'mono',
@@ -71,12 +61,11 @@ export function LiveCounter({
             letterSpacing: '-0.04em',
             fontVariantNumeric: 'tabular-nums',
             color: value === 0 ? 'ink.faint' : 'ink',
+            transition: 'color 300ms',
           })}
-        >
-          {digits(initial)}
-        </span>
+        />
         <span className={css({ fontFamily: 'mono', fontSize: 'sm', color: 'ink.faint' })}>
-          {ofLabel} {total}
+          {ofLabel} <Rolling value={total} slot={slots.total} carryOver={carryOver} />
         </span>
       </div>
       <div
@@ -91,8 +80,14 @@ export function LiveCounter({
           minH: '5',
         })}
       >
-        <span>{label}</span>
-        {children}
+        <span data-swap-part data-arrive={arriving} className={arrive}>
+          {label}
+        </span>
+        {children && (
+          <span data-swap-part data-arrive={arriving} className={arrive}>
+            {children}
+          </span>
+        )}
         {preview != null && preview !== value && (
           <span className={css({ fontFamily: 'mono', fontSize: 'xs', color: 'signal' })}>
             → {preview} {previewLabel}

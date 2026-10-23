@@ -5,11 +5,12 @@ import {
   locales,
 } from "@choose/catalog";
 import { Link, useLocation, useParams } from "@tanstack/react-router";
-import type { MouseEvent } from "react";
+import { type MouseEvent, useEffect, useState } from "react";
 import { css, cx } from "styled-system/css";
 import { isPlainClick, useSceneNavigation } from "~/features/scene/navigation";
 import { useLocale } from "~/i18n/locale";
 import { messages as m } from "~/i18n/messages";
+import { CategoryDrop } from "./CategoryDrop";
 import { CategoryIcon } from "./CategoryIcon";
 
 const link = css({
@@ -31,7 +32,10 @@ const link = css({
   },
 });
 
-/** A category's link: its icon alone, its name said to screen readers and shown on hover. */
+/**
+ * A category's link: its icon alone, its name said to screen readers and shown on hover. The
+ * picked one's disc is the drop behind them all (CategoryDrop): its icon inks as the drop lands.
+ */
 const iconLink = css({
   position: "relative",
   display: "grid",
@@ -40,18 +44,14 @@ const iconLink = css({
   h: "9",
   borderRadius: "full",
   color: "ink.muted",
-  transition: "color 160ms, background 160ms, box-shadow 160ms",
+  transition: "color 160ms",
   _hover: { color: "ink" },
   _focusVisible: {
     outline: "2px solid",
     outlineColor: "signal",
     outlineOffset: "2px",
   },
-  "&[data-status=active]": {
-    color: "ink",
-    bg: "surface.raised",
-    boxShadow: "0 0 0 1px token(colors.line)",
-  },
+  "&[data-picked]": { color: "ink", transitionDelay: "220ms" },
 });
 
 /** The name under the icon, a moment after the pointer settles on it (or at once on focus). */
@@ -93,11 +93,16 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
   const current = params.category
     ? categoryFromSlug(params.category, locale)
     : null;
+  // The category picked shows as soon as it is clicked, ahead of its page; the page on screen
+  // (back and forward included) has the last word.
+  const [picked, setPicked] = useState(current);
+  useEffect(() => setPicked(current), [current]);
   // Plain clicks go through the scene (the panel opens or folds back); modified clicks stay links.
   const sceneTo = useSceneNavigation();
   const via = (category: Category | null) => (e: MouseEvent) => {
     if (!isPlainClick(e)) return;
     e.preventDefault();
+    setPicked(category);
     sceneTo(category);
   };
 
@@ -162,8 +167,13 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
 
       <nav
         aria-label={m.categories[locale]}
-        className={css({ display: { base: "none", sm: "flex" }, gap: "1.5" })}
+        className={css({
+          position: "relative",
+          display: { base: "none", sm: "flex" },
+          gap: "1.5",
+        })}
       >
+        <CategoryDrop at={picked ? shown.indexOf(picked) : -1} />
         {shown.map((category) => (
           <Link
             key={category}
@@ -171,6 +181,8 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
             params={{ lang: locale, category: categorySlugs[category][locale] }}
             onClick={via(category)}
             aria-label={m.category[category][locale]}
+            data-slot
+            data-picked={category === picked || undefined}
             className={cx("group", iconLink)}
           >
             <CategoryIcon category={category} />
