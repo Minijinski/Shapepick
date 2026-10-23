@@ -311,7 +311,7 @@ export function Preloader({
                   <div
                     className={cx(
                       stage,
-                      css({ gridArea: 'art', h: { base: '100%', md: 'min(30vh, 13rem)' } }),
+                      css({ gridArea: 'art', h: { base: '100%', _slats: 'min(30vh, 13rem)' } }),
                     )}
                   >
                     <Art ink={inkOf(units)} className={art} />
@@ -376,7 +376,7 @@ const device = css({
   alignItems: 'end',
   gap: '3',
   p: '4',
-  md: {
+  _slats: {
     position: 'static',
     inset: 'auto',
     gridTemplateColumns: 'minmax(0, 1fr)',

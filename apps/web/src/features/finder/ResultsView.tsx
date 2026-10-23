@@ -346,11 +346,14 @@ export function ResultsView({
         position: "relative",
         flexShrink: "0",
         // Down from the site header (64 px, then 8) to the journey bar (44 px and the dock's
-        // gaps, 12 px between them and 24 px under it), borders included; on a phone, which has
-        // no journey bar, to 12 px above the bottom of the screen.
-        maxH: {
-          base: "calc(100dvh - 84px - env(safe-area-inset-top) - env(safe-area-inset-bottom))",
-          md: "calc(100dvh - 156px)",
+        // gaps, 12 px between them and 24 px under it), borders included; on a phone, and on any
+        // screen too short for a journey bar, to 12 (or 24) px above the bottom of the screen.
+        maxH: "calc(100dvh - 84px - env(safe-area-inset-top) - env(safe-area-inset-bottom))",
+        "@media (min-width: 48rem) and (min-height: 30.01rem)": {
+          maxH: "calc(100dvh - 156px)",
+        },
+        "@media (min-width: 48rem) and (max-height: 30rem)": {
+          maxH: "calc(100dvh - 96px - env(safe-area-inset-bottom))",
         },
         overflowY: "auto",
         overscrollBehavior: "contain",

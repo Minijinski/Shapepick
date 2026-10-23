@@ -102,7 +102,7 @@ const fade = css({
  */
 const page = css({
   position: "relative",
-  md: { h: "100dvh", minH: "520px", overflow: "hidden" },
+  _slats: { h: "100dvh", minH: "520px", overflow: "hidden" },
 });
 
 /**
@@ -134,7 +134,7 @@ const underHeader = css({
   pointerEvents: "none",
   background:
     "linear-gradient(to bottom, rgba(243,241,236,0.96) 55%, rgba(243,241,236,0))",
-  md: { display: "none" },
+  _slats: { display: "none" },
 });
 
 /** The title: above the rows on a phone, aligned left; centred over the slats on a wider screen. */
@@ -147,7 +147,7 @@ const hero = css({
   alignContent: "center",
   pl: "max(1rem, env(safe-area-inset-left))",
   pr: "max(1rem, env(safe-area-inset-right))",
-  md: {
+  _slats: {
     top: "0",
     bottom: "0",
     h: "auto",
@@ -318,7 +318,7 @@ function Home() {
               maxW: "5xl",
               // Its own stacking context, so the halo below stays above the canvas.
               isolation: "isolate",
-              md: { justifyItems: "center", gap: "5", textAlign: "center" },
+              _slats: { justifyItems: "center", gap: "5", textAlign: "center" },
             })}
           >
             {/* A frosted paper halo keeps the line legible over the products drifting behind it
@@ -329,7 +329,7 @@ function Home() {
               className={cx(
                 fade,
                 css({
-                  display: { base: "none", md: "block" },
+                  display: { base: "none", _slats: "block" },
                   position: "absolute",
                   inset: "-34% -18%",
                   zIndex: "-1",
@@ -366,7 +366,7 @@ function Home() {
                 // Four lines at most on the narrowest phone, two from about 380 px.
                 fontSize: {
                   base: "clamp(1.75rem, 0.9rem + 4.2vw, 2.5rem)",
-                  md: "clamp(2.4rem, 1.35rem + 3.5vw, 4.75rem)",
+                  _slats: "clamp(2.4rem, 1.35rem + 3.5vw, 4.75rem)",
                 },
                 fontWeight: "650",
                 letterSpacing: "-0.035em",
@@ -462,7 +462,7 @@ const bandLink = css({
   pointerEvents: "auto",
   WebkitTapHighlightColor: "transparent",
   _focusVisible: { boxShadow: "inset 0 0 0 2px token(colors.signal)" },
-  md: {
+  _slats: {
     top: "0",
     bottom: "0",
     h: "auto",
@@ -491,7 +491,7 @@ const label = css({
   transform: "skewX(calc(-1 * var(--slant, 0rad)))",
   transformOrigin: "left bottom",
   "& > *": { transform: "skewX(var(--slant, 0rad))" },
-  md: {
+  _slats: {
     // Until the viewport is known: at the foot of its column.
     left: "calc(var(--i) * 100% / var(--n) + 24px)",
     top: "auto",
@@ -504,7 +504,7 @@ const label = css({
   _before: {
     content: '""',
     position: "absolute",
-    inset: { base: "-10px -12px", md: "-14px -18px -14px -16px" },
+    inset: { base: "-10px -12px", _slats: "-14px -18px -14px -16px" },
     zIndex: "-1",
     borderRadius: "panel",
     bg: "paper/72",
@@ -513,7 +513,7 @@ const label = css({
       "0 0 0 1px rgba(20,20,20,0.05), 0 18px 40px -20px rgba(20,20,20,0.25)",
     transformOrigin: "left bottom",
     transition: "opacity 450ms, transform 600ms token(easings.signal)",
-    "@media (min-width: 48rem) and (hover: hover)": {
+    "@media (min-width: 48rem) and (min-height: 30.01rem) and (hover: hover)": {
       opacity: 0,
       transform: "scale(0.96)",
     },
@@ -651,9 +651,9 @@ function BandLink({
           className={css({
             display: "flex",
             alignItems: "center",
-            gap: { base: "2", md: "3" },
+            gap: { base: "2", _slats: "3" },
             fontFamily: "mono",
-            fontSize: { base: "2xs", md: "xs" },
+            fontSize: { base: "2xs", _slats: "xs" },
             color: "ink.muted",
             fontVariantNumeric: "tabular-nums",
             whiteSpace: "nowrap",
@@ -661,7 +661,7 @@ function BandLink({
         >
           <span
             className={css({
-              display: { base: "none", md: "inline" },
+              display: { base: "none", _slats: "inline" },
               color: "signal",
             })}
           >
@@ -670,7 +670,7 @@ function BandLink({
           <span
             aria-hidden
             className={css({
-              display: { base: "none", md: "block" },
+              display: { base: "none", _slats: "block" },
               w: "16",
               h: "1px",
               bg: "ink",
@@ -695,7 +695,7 @@ function BandLink({
               display: "block",
               fontSize: {
                 base: "min(1.625rem, var(--name-fit, 1.625rem))",
-                md: "min(3rem, var(--name-fit, 3rem))",
+                _slats: "min(3rem, var(--name-fit, 3rem))",
               },
               fontWeight: "650",
               letterSpacing: "-0.045em",
@@ -709,9 +709,10 @@ function BandLink({
               css({
                 display: "block",
                 overflowWrap: "anywhere",
-                "@media (min-width: 48rem) and (hover: hover)": {
-                  transform: "translateY(calc(100% + 0.5em))",
-                },
+                "@media (min-width: 48rem) and (min-height: 30.01rem) and (hover: hover)":
+                  {
+                    transform: "translateY(calc(100% + 0.5em))",
+                  },
               }),
             )}
           >
@@ -726,16 +727,17 @@ function BandLink({
                 display: "flex",
                 flexWrap: "wrap",
                 alignItems: "baseline",
-                columnGap: { base: "3", md: "4" },
+                columnGap: { base: "3", _slats: "4" },
                 rowGap: "0.5",
                 // A phone's row keeps its products in sight: a smaller line under the name.
-                fontSize: { base: "xs", md: "sm" },
+                fontSize: { base: "xs", _slats: "sm" },
                 color: "ink.muted",
                 transitionDelay: "60ms",
-                "@media (min-width: 48rem) and (hover: hover)": {
-                  opacity: 0,
-                  transform: "translateY(8px)",
-                },
+                "@media (min-width: 48rem) and (min-height: 30.01rem) and (hover: hover)":
+                  {
+                    opacity: 0,
+                    transform: "translateY(8px)",
+                  },
               }),
             )}
           >

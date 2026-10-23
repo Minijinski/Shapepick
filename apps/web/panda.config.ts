@@ -213,6 +213,11 @@ export default defineConfig({
       coarse: "@media (pointer: coarse)",
       /** A phone on its side, or any screen this short: the finder compacts. */
       short: "@media (max-height: 30rem)",
+      /**
+       * A screen wide and tall enough for the home's tilted slats; narrower or shorter, rows
+       * (features/scene/geometry.ts, `bandsInRows`).
+       */
+      slats: "@media (min-width: 48rem) and (min-height: 30.01rem)",
     },
   },
   globalCss: {

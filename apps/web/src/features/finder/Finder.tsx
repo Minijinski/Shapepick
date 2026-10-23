@@ -387,6 +387,8 @@ export function Finder({ category, items, search, locale }: Props) {
             top: { base: "16", md: "20" },
             left: { base: "4", md: "8" },
             right: { base: "4", lg: "96" },
+            // A screen this short has room for the question alone (the results button counts).
+            _short: { display: "none" },
           }),
         )}
         style={{ animationDelay: `${delay + 0.1}s` }}
@@ -600,7 +602,10 @@ export function Finder({ category, items, search, locale }: Props) {
             <div
               data-podium-row
               className={css({
-                display: { base: "none", md: "block", lg: "none" },
+                // A tablet's row, below the podium's column; not on a screen too short for it.
+                display: "none",
+                "@media (min-width: 48rem) and (max-width: 63.99rem) and (min-height: 30.01rem)":
+                  { display: "block" },
                 animation: "fadeUp 0.5s token(easings.signal) backwards",
                 _motionReduce: { animation: "none" },
               })}
@@ -643,7 +648,17 @@ export function Finder({ category, items, search, locale }: Props) {
             )}
           </DockPanel>
           {/* A phone's journey is a sheet, opened from the console: the bar has no room there. */}
-          <div className={css({ display: { base: "none", md: "block" } })}>
+          {/* data-journey-bar: the layout under test hides it with its bar (styles.css). */}
+          <div
+            data-journey-bar
+            className={css({
+              display: "none",
+              // Nor on a screen too short for it (a phone on its side): its step opens the sheet.
+              "@media (min-width: 48rem) and (min-height: 30.01rem)": {
+                display: "block",
+              },
+            })}
+          >
             <JourneyBar
               stops={finder.journey}
               done={done}

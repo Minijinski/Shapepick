@@ -16,9 +16,10 @@ export const isCompact = (vp: Viewport) => vp.w < 768
 
 /**
  * On a phone the home's panels are rows, one under the other below the title, and the page
- * scrolls: slats a third of a phone wide leave no room for a name or for the title above them.
+ * scrolls: slats a third of a phone wide leave no room for a name or for the title above them,
+ * nor slats as short as a phone on its side. (`_slats` in panda.config.ts says the same in CSS.)
  */
-export const bandsInRows = (vp: Viewport) => isCompact(vp)
+export const bandsInRows = (vp: Viewport) => isCompact(vp) || vp.h < 480
 
 /** The header's height, and the side margin, gap between rows and bottom margin of the rows (px). */
 const ROWS = { header: 64, side: 8, gutter: 8, bottom: 8 }
@@ -29,7 +30,8 @@ const ROWS = { header: 64, side: 8, gutter: 8, bottom: 8 }
  * styles.css repeats these numbers for the server render and the preloader (`--rows-*`).
  */
 export function rowsFrame(vp: Viewport, count: number) {
-  const hero = Math.min(240, Math.max(180, vp.h * 0.26))
+  // A phone on its side keeps less room for the title (two lines there).
+  const hero = Math.min(240, Math.max(vp.h < 480 ? 132 : 180, vp.h * 0.26))
   const top = ROWS.header + hero
   const first = Math.max(1, Math.min(count, 3))
   const room = (vp.h - top - ROWS.bottom - ROWS.gutter * (first - 1)) / first

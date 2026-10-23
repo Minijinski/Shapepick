@@ -103,6 +103,8 @@ const panelStyle = css({
   left: 'max(0.5rem, env(safe-area-inset-left))',
   right: 'max(0.5rem, env(safe-area-inset-right))',
   bottom: 'calc(0.5rem + env(safe-area-inset-bottom))',
+  // A phone on its side: centred, no wider than a phone held upright.
+  md: { left: 'max(1rem, calc(50% - 16rem))', right: 'max(1rem, calc(50% - 16rem))' },
   maxH: '85dvh',
   display: 'flex',
   flexDirection: 'column',

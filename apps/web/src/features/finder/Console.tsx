@@ -46,7 +46,10 @@ const content = css({
   flexDirection: "column",
   gap: "3",
   // Past this, the tiles scroll inside the panel rather than covering the page.
-  maxH: { base: "min(30rem, 52dvh)", md: "min(32rem, 58dvh)" },
+  maxH: "min(30rem, 52dvh)",
+  "@media (min-width: 48rem) and (min-height: 30.01rem)": {
+    maxH: "min(32rem, 58dvh)",
+  },
   // A short phone: the answers come first, up to the counter (the canvas only shows above a
   // short question).
   "@media (max-width: 47.99rem) and (min-height: 30.01rem) and (max-height: 43.75rem)":
@@ -74,6 +77,11 @@ const head = css({
     gap: "2",
     // Room for a title on two lines, so the header never changes height.
     minH: "2.5rem",
+  },
+  // A phone on its side has the width for one row, and little height to spare.
+  "@media (max-width: 47.99rem) and (max-height: 30rem)": {
+    gridTemplateColumns: "auto auto minmax(0, 1fr) auto auto",
+    gridTemplateAreas: '"back reset title journey help"',
   },
 });
 
@@ -117,7 +125,8 @@ const journeyButton = css({
     bg: "ink/8",
     transition: "width 600ms token(easings.signal)",
   },
-  md: { display: "none" },
+  // Wider, the journey has a bar (or a column) of its own; not on a screen too short for it.
+  "@media (min-width: 48rem) and (min-height: 30.01rem)": { display: "none" },
 });
 
 const body = css({
@@ -176,6 +185,7 @@ const kind = css({
   textTransform: "uppercase",
   letterSpacing: "0.06em",
   md: { display: "none" },
+  _short: { display: "none" },
 });
 
 /** On a phone the footer's buttons share its width, and wrap rather than overflow. */
@@ -562,7 +572,11 @@ export function Console({
         </button>
         <span
           className={css({
-            display: { base: "none", md: "inline" },
+            // On a phone, and on a screen too short for the journey bar, the journey's step says it.
+            display: "none",
+            "@media (min-width: 48rem) and (min-height: 30.01rem)": {
+              display: "inline",
+            },
             fontFamily: "mono",
             fontSize: "xs",
             color: "ink.faint",

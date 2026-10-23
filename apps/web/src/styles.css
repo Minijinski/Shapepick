@@ -129,9 +129,9 @@ html[data-loading] [data-preloader] *::after {
   right: var(--ext);
 }
 
-/* On a phone, the home's rows (see « Home page on a phone » below): one under the other below
-   the title's room, each lifting off its row in turn. */
-@media (max-width: 47.99rem) {
+/* On a phone, upright or on its side, the home's rows (see « Home page on a phone » below): one
+   under the other below the title's room, each lifting off its row in turn. */
+@media (max-width: 47.99rem), (max-height: 30rem) {
   [data-preloader] [data-split] {
     top: var(--rows-top);
     right: 8px;
@@ -194,8 +194,9 @@ html[data-loading] [data-preloader] *::after {
 /* The rows' numbers as `rowsFrame` works them out, for the server render and the preloader: the
    page sets the exact ones once it knows the viewport. The title's room under the header, then
    rows sharing the rest of the first screen (three at most), within bounds; the page is as tall
-   as all of them. `--n` is the number of rows, set where they are drawn. */
-@media (max-width: 47.99rem) {
+   as all of them. `--n` is the number of rows, set where they are drawn. A phone on its side keeps
+   less room for the title. */
+@media (max-width: 47.99rem), (max-height: 30rem) {
   [data-home],
   [data-preloader] [data-split] {
     --rows-hero: clamp(180px, 26svh, 240px);
@@ -213,6 +214,12 @@ html[data-loading] [data-preloader] *::after {
   }
   [data-home] {
     height: calc(var(--rows-height) + env(safe-area-inset-bottom));
+  }
+}
+@media (max-height: 30rem) {
+  [data-home],
+  [data-preloader] [data-split] {
+    --rows-hero: clamp(132px, 26svh, 240px);
   }
 }
 
