@@ -438,12 +438,17 @@ html[data-loading] [data-preloader] *::after {
     display: none;
   }
 }
-@media (max-width: 39.99rem) {
+/* A phone's row: the picture between the words and the count, small, never making the row taller. */
+@media (max-width: 47.99rem) {
   [data-pictured] [data-example] {
-    display: none;
+    position: static;
+    order: 1;
+    flex: none;
+    width: 3.5rem;
+    height: 2.25rem;
   }
   [data-pictured] [data-text] {
-    padding-right: 1.75rem;
+    padding-right: 0;
   }
 }
 @media (prefers-reduced-motion: reduce) {

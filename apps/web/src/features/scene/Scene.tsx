@@ -387,6 +387,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
     const down = (e: PointerEvent) => {
       // On the home page the canvas only shows the panels: a finger on it scrolls the page.
       if (e.button !== 0 || canvas.dataset.mode !== 'canvas') return
+      scene.canvasPressed()
       forget()
       drag = {
         id: e.pointerId,

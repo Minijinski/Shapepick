@@ -15,11 +15,13 @@ import { Console } from "./Console";
 import { DockPanel } from "./DockPanel";
 import { JourneyBar } from "./JourneyBar";
 import { JourneyRail } from "./JourneyRail";
+import { JourneySheet } from "./JourneySheet";
 import { useFinderLayout } from "./layout";
 import { LiveCounter } from "./LiveCounter";
 import { PODIUM_SIZE, Podium } from "./Podium";
 import { ProductDrawer } from "./ProductDrawer";
 import { ResultsView } from "./ResultsView";
+import { TopPick } from "./TopPick";
 import { type FinderSearch, useFinder } from "./useFinder";
 
 // The finder over its category's canvas: the live counter (with the brand filter) top-left, the
@@ -41,6 +43,10 @@ type Props = {
 
 // One-time hints, remembered in the browser only: a blocked storage just shows them again.
 const SHEET_SEEN = "choose-a-device:sheet-seen";
+const CANVAS_HINT_SEEN = "choose-a-device:canvas-hint-seen";
+
+/** A phone's layout (the journey in a sheet, the best match above the console). */
+const onPhone = () => window.matchMedia("(max-width: 47.99rem)").matches;
 const seen = (key: string) => {
   try {
     return localStorage.getItem(key) === "1";
@@ -119,6 +125,20 @@ export function Finder({ category, items, search, locale }: Props) {
   // Until the visitor has opened a sheet once, the podium's best match shows how.
   const [hint, setHint] = useState(false);
   useEffect(() => setHint(!seen(SHEET_SEEN)), []);
+  // On a phone the journey opens in a sheet, from the console's step or the results' "Edit".
+  const [journeyOpen, setJourneyOpen] = useState(false);
+  const openJourney = useCallback(() => setJourneyOpen(true), []);
+  const closeJourney = useCallback(() => setJourneyOpen(false), []);
+  // A finger that has dragged the canvas or picked a product knows it can: the hint goes.
+  const [canvasKnown, setCanvasKnown] = useState(false);
+  useEffect(() => {
+    setCanvasKnown(seen(CANVAS_HINT_SEEN));
+    return scene.onCanvasPress(() => {
+      if (!window.matchMedia("(pointer: coarse)").matches) return;
+      setCanvasKnown(true);
+      markSeen(CANVAS_HINT_SEEN);
+    });
+  }, []);
   const openSheet = useCallback((slug: string) => {
     setOpen(slug);
     setHint(false);
@@ -326,7 +346,11 @@ export function Finder({ category, items, search, locale }: Props) {
       className={css({
         position: "relative",
         h: "100dvh",
-        minH: "560px",
+        // A phone, upright or on its side, is narrower or shorter than this: everything then fits
+        // the screen it has.
+        "@media (min-width: 48rem) and (min-height: 30.01rem)": {
+          minH: "560px",
+        },
         overflow: "hidden",
         pointerEvents: "none",
         "--dock-h": "320px",
@@ -431,6 +455,7 @@ export function Finder({ category, items, search, locale }: Props) {
       {!done && (
         <p
           data-enter="hint"
+          data-known={canvasKnown || undefined}
           aria-hidden
           className={cx(
             enterFade,
@@ -441,13 +466,15 @@ export function Finder({ category, items, search, locale }: Props) {
               insetInline: "0",
               mx: "auto",
               w: "fit-content",
+              // On the narrowest phones it goes onto a second line rather than past the edges.
+              maxW: "calc(100% - 2rem)",
+              textAlign: "center",
               bottom: "calc(var(--dock-h) + 40px)",
               fontFamily: "mono",
               fontSize: "2xs",
               color: "ink.muted",
               textTransform: "uppercase",
               letterSpacing: "0.06em",
-              whiteSpace: "nowrap",
               px: "3",
               py: "1.5",
               borderRadius: "pill",
@@ -455,6 +482,8 @@ export function Finder({ category, items, search, locale }: Props) {
               backdropFilter: "blur(8px)",
               transition: "bottom 400ms token(easings.signal), opacity 300ms",
               "[data-cramped] &": { opacity: 0 },
+              "&[data-known]": { opacity: 0 },
+              _short: { display: "none" },
             }),
           )}
           style={{ animationDelay: `${delay + 0.5}s` }}
@@ -523,10 +552,17 @@ export function Finder({ category, items, search, locale }: Props) {
         data-dock
         className={css({
           position: "absolute",
-          bottom: { base: "3", md: "6" },
+          // Clear of the iPhone's home indicator.
+          bottom: {
+            base: "calc(0.75rem + env(safe-area-inset-bottom))",
+            md: "calc(1.5rem + env(safe-area-inset-bottom))",
+          },
           left: "50%",
           transform: "translateX(-50%)",
-          w: { base: "calc(100% - 24px)", md: "min(960px, calc(100% - 48px))" },
+          w: {
+            base: "calc(100% - 24px - env(safe-area-inset-left) - env(safe-area-inset-right))",
+            md: "min(960px, calc(100% - 48px))",
+          },
         })}
       >
         <div
@@ -536,17 +572,37 @@ export function Finder({ category, items, search, locale }: Props) {
             css({
               display: "grid",
               gridTemplateColumns: "minmax(0, 1fr)",
-              gap: "3",
+              gap: { base: "2", md: "3" },
               pointerEvents: "auto",
             }),
           )}
           style={{ animationDelay: `${delay}s` }}
         >
+          {/* A phone has room for the best match alone, above the console: a tap opens its
+              sheet, whose arrows lead to the next ones. A short phone keeps the room for the
+              answers. */}
+          {ranking && finder.ranked[0] && (
+            <div
+              data-podium-row
+              className={css({
+                display: { base: "block", md: "none" },
+                animation: "fadeUp 0.5s token(easings.signal) backwards",
+                _motionReduce: { animation: "none" },
+                "@media (max-height: 43.75rem)": { display: "none" },
+              })}
+            >
+              <TopPick
+                entry={finder.ranked[0]}
+                locale={locale}
+                onOpen={openSheet}
+              />
+            </div>
+          )}
           {ranking && (
             <div
               data-podium-row
               className={css({
-                display: { base: "block", lg: "none" },
+                display: { base: "none", md: "block", lg: "none" },
                 animation: "fadeUp 0.5s token(easings.signal) backwards",
                 _motionReduce: { animation: "none" },
               })}
@@ -572,7 +628,11 @@ export function Finder({ category, items, search, locale }: Props) {
                 total={items.length}
                 layouts={layouts}
                 brands={brandFilter}
-                onEdit={finder.editAnswers}
+                // On a phone, every answer at once in the journey's sheet, to pick the one to
+                // change; wider, back to the question the results were opened from.
+                onEdit={() =>
+                  onPhone() ? openJourney() : finder.editAnswers()
+                }
                 onReset={finder.reset}
                 onOpen={openSheet}
               />
@@ -581,22 +641,40 @@ export function Finder({ category, items, search, locale }: Props) {
                 finder={finder}
                 category={category}
                 locale={locale}
+                onJourney={openJourney}
                 enterDelay={backFromResults ? 0.12 : delay + 0.3}
                 morph={backFromResults || swapped}
               />
             )}
           </DockPanel>
-          <JourneyBar
-            stops={finder.journey}
-            done={done}
-            locale={locale}
-            onPick={finder.pickStep}
-            results={finder.matching}
-            onResults={finder.showResults}
-            enterDelay={delay + 0.45}
-          />
+          {/* A phone's journey is a sheet, opened from the console: the bar has no room there. */}
+          <div className={css({ display: { base: "none", md: "block" } })}>
+            <JourneyBar
+              stops={finder.journey}
+              done={done}
+              locale={locale}
+              onPick={finder.pickStep}
+              results={finder.matching}
+              onResults={finder.showResults}
+              enterDelay={delay + 0.45}
+            />
+          </div>
         </div>
       </div>
+
+      {journeyOpen && (
+        <JourneySheet
+          stops={finder.journey}
+          done={done}
+          position={finder.position}
+          total={finder.asked.length}
+          locale={locale}
+          results={finder.matching}
+          onPick={finder.pickStep}
+          onResults={finder.showResults}
+          onClose={closeJourney}
+        />
+      )}
 
       {sheet && (
         <ProductDrawer

@@ -61,14 +61,16 @@ const optionTile = defineSlotRecipe({
   className: "option-tile",
   slots: ["root", "label", "hint", "count", "tick", "blocked", "change"],
   base: {
+    // A phone lists the answers one per row: the words (name and hint), then the picture and the
+    // count at the end. Wider, a tile: the words at the top, the count in its bottom corner.
     root: {
       position: "relative",
       display: "flex",
-      flexDirection: "column",
-      alignItems: "flex-start",
-      justifyContent: "space-between",
-      gap: "1.5",
-      minH: { base: "16", md: "20" },
+      flexDirection: { base: "row", md: "column" },
+      alignItems: { base: "center", md: "flex-start" },
+      justifyContent: { base: "flex-start", md: "space-between" },
+      gap: { base: "3", md: "1.5" },
+      minH: { base: "13", md: "20" },
       p: "3",
       textAlign: "left",
       bg: "surface",
@@ -102,19 +104,22 @@ const optionTile = defineSlotRecipe({
       letterSpacing: "-0.01em",
     },
     hint: {
-      display: { base: "none", md: "block" },
+      display: "block",
       fontSize: "xs",
       color: "ink.muted",
       lineHeight: "1.25",
-      // Two lines at most, which a tile holds without growing. The count sits at the end of the
-      // last line.
-      lineClamp: "2",
-      pr: "7",
+      // A phone's row grows with its hint. A tile holds two lines without growing, the count at
+      // the end of the last one.
+      lineClamp: { base: "none", md: "2" },
+      pr: { base: "0", md: "7" },
     },
     count: {
-      position: "absolute",
-      bottom: "3",
-      right: "3",
+      position: { base: "static", md: "absolute" },
+      order: { base: "2", md: "0" },
+      flexShrink: "0",
+      ml: { base: "auto", md: "0" },
+      bottom: { md: "3" },
+      right: { md: "3" },
       fontFamily: "mono",
       fontSize: "2xs",
       color: "ink.faint",

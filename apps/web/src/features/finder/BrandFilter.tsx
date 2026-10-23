@@ -2,12 +2,14 @@ import type { Locale } from '@choose/catalog'
 import { useEffect, useId, useLayoutEffect, useRef, useState } from 'react'
 import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
+import { Sheet } from './Sheet'
 
 // The brands, beside the counter: a chip that says which brands the finder shows (every one until
 // told otherwise) and opens a list of them, A to Z, each with how many of its products the other
 // answers leave. Unticking a brand hides it, "Only" (beside the count, under the pointer) keeps one
 // alone, "Show all" undoes it all; each change applies at once, the canvas and the counter follow.
-// A brand under the pointer rings its products on the canvas.
+// A brand under the pointer rings its products on the canvas. On a phone the list opens in a sheet
+// from the bottom of the screen rather than hanging from the chip.
 
 type Option = { id: string; name: string; count: number }
 
@@ -91,7 +93,7 @@ const row = css({
   gridTemplateColumns: 'minmax(0, 1fr) auto auto',
   alignItems: 'center',
   gap: '2.5',
-  h: '9',
+  h: { base: '11', md: '9' },
   px: '3',
   borderRadius: '8px',
   fontSize: 'sm',
@@ -149,6 +151,19 @@ const only = css({
   _focusVisible: { opacity: 1, outline: '2px solid', outlineColor: 'signal' },
 })
 
+/** A phone's screen, where the list opens in a sheet (false while rendering on the server). */
+function usePhone() {
+  const [phone, setPhone] = useState(false)
+  useEffect(() => {
+    const query = window.matchMedia('(max-width: 47.99rem)')
+    const update = () => setPhone(query.matches)
+    update()
+    query.addEventListener('change', update)
+    return () => query.removeEventListener('change', update)
+  }, [])
+  return phone
+}
+
 /** What the chip says: every brand, one, a few, or every one but a few. */
 function summary(options: Option[], selected: Set<string> | null, locale: Locale) {
   if (!selected) return m.allBrands[locale]
@@ -178,10 +193,12 @@ export function BrandFilter({
   const [shift, setShift] = useState(0)
   const listId = useId()
   const shown = selected?.size ?? options.length
+  const phone = usePhone()
 
-  // Escape or a press anywhere else folds the list away; the pointer leaves its brand behind.
+  // Escape or a press anywhere else folds the list away; the pointer leaves its brand behind. A
+  // phone's sheet folds away on its own.
   useEffect(() => {
-    if (!open) return
+    if (!open || phone) return
     const away = (e: PointerEvent) => {
       if (!root.current?.contains(e.target as Node)) onOpenChange(false)
     }
@@ -196,7 +213,7 @@ export function BrandFilter({
       document.removeEventListener('pointerdown', away)
       window.removeEventListener('keydown', key)
     }
-  }, [open, onOpenChange])
+  }, [open, phone, onOpenChange])
   // It hangs from the chip, moved left as much as a narrow screen needs.
   useIsoLayoutEffect(() => {
     const el = list.current
@@ -205,8 +222,11 @@ export function BrandFilter({
     setShift(Math.min(0, window.innerWidth - EDGE - (from + el.offsetWidth)))
   }, [open])
   useEffect(() => {
-    if (open) search.current?.focus({ preventScroll: true })
-    else {
+    // Not under a finger: the keyboard would come up over the list before anyone asked for it.
+    if (open) {
+      if (!window.matchMedia('(pointer: coarse)').matches)
+        search.current?.focus({ preventScroll: true })
+    } else {
       setQuery('')
       onHover(null)
     }
@@ -224,6 +244,133 @@ export function BrandFilter({
 
   const needle = query.trim().toLowerCase()
   const listed = needle ? options.filter((o) => o.name.toLowerCase().includes(needle)) : options
+
+  // The list's head: how many brands show, and the way back to all of them.
+  const head = (
+    <div className={css({ display: 'flex', alignItems: 'baseline', gap: '2' })}>
+      <span className={caption}>{m.brands[locale]}</span>
+      <span className={cx(caption, css({ color: 'ink.muted' }))}>
+        {m.brandsShown(shown, options.length, locale)}
+      </span>
+      <button
+        type="button"
+        disabled={!selected}
+        onClick={() => onChange(null)}
+        className={css({
+          ml: 'auto',
+          fontSize: 'xs',
+          fontWeight: '550',
+          cursor: 'pointer',
+          _hover: { textDecoration: 'underline' },
+          _disabled: { color: 'ink.faint', cursor: 'default', textDecoration: 'none' },
+          _focusVisible: { outline: '2px solid', outlineColor: 'signal' },
+        })}
+      >
+        {m.showAllBrands[locale]}
+      </button>
+    </div>
+  )
+  const searchField =
+    options.length >= SEARCH_FROM ? (
+      <div className={css({ px: '3', pb: '2' })}>
+        <input
+          ref={search}
+          type="search"
+          value={query}
+          onChange={(e) => setQuery(e.target.value)}
+          placeholder={m.findBrand[locale]}
+          aria-label={m.findBrand[locale]}
+          className={css({
+            w: '100%',
+            h: { base: '10', md: '8' },
+            px: '3',
+            borderRadius: 'pill',
+            borderWidth: '1px',
+            borderColor: 'line',
+            bg: 'surface',
+            // 16 px on a phone: a smaller field makes iOS zoom the page in on focus.
+            fontSize: { base: 'md', md: 'sm' },
+            outline: 'none',
+            _focus: { borderColor: 'ink' },
+            _placeholder: { color: 'ink.faint' },
+          })}
+        />
+      </div>
+    ) : (
+      <span />
+    )
+  const brandList = (
+    <ul
+      aria-label={m.brands[locale]}
+      className={css({
+        minH: '0',
+        // In a phone's sheet, the sheet itself scrolls.
+        overflowY: { base: 'visible', md: 'auto' },
+        overscrollBehavior: 'contain',
+        scrollbarWidth: 'thin',
+        px: '1.5',
+        pb: '1.5',
+      })}
+    >
+      {listed.map((o) => {
+        const checked = !selected || selected.has(o.id)
+        const last = checked && shown === 1
+        return (
+          <li
+            key={o.id}
+            className={row}
+            data-empty={o.count === 0 ? '' : undefined}
+            onPointerEnter={(e) => e.pointerType === 'mouse' && onHover(o.id)}
+            onPointerLeave={(e) => e.pointerType === 'mouse' && onHover(null)}
+          >
+            <label
+              className={css({
+                alignSelf: 'stretch',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '2.5',
+                minW: '0',
+                cursor: 'pointer',
+              })}
+            >
+              <input
+                type="checkbox"
+                className={box}
+                checked={checked}
+                disabled={last}
+                onChange={() => toggle(o.id)}
+              />
+              <span className={css({ truncate: true })}>{o.name}</span>
+            </label>
+            <button
+              type="button"
+              data-only
+              className={only}
+              aria-label={m.onlyBrandOf(o.name, locale)}
+              onClick={() => onChange([o.id])}
+            >
+              {m.onlyBrand[locale]}
+            </button>
+            <span
+              className={css({
+                fontFamily: 'mono',
+                fontSize: '2xs',
+                color: 'ink.faint',
+                fontVariantNumeric: 'tabular-nums',
+              })}
+            >
+              {String(o.count).padStart(3, '0')}
+            </span>
+          </li>
+        )
+      })}
+      {!listed.length && (
+        <li className={css({ px: '3', py: '2', fontSize: 'sm', color: 'ink.muted' })}>
+          {m.noBrandFound[locale]}
+        </li>
+      )}
+    </ul>
+  )
 
   return (
     <span ref={root} className={css({ position: 'relative', display: 'inline-flex', gap: '1' })}>
@@ -268,6 +415,7 @@ export function BrandFilter({
             placeItems: 'center',
             w: '7',
             h: '7',
+            _coarse: { w: '9', h: '9' },
             borderRadius: 'full',
             color: 'ink.muted',
             cursor: 'pointer',
@@ -291,136 +439,20 @@ export function BrandFilter({
         </button>
       )}
 
-      {open && (
+      {open && !phone && (
         <div ref={list} id={listId} className={panel} style={{ left: shift }}>
-          <div
-            className={css({
-              display: 'flex',
-              alignItems: 'baseline',
-              gap: '2',
-              px: '4',
-              pt: '3.5',
-              pb: '2',
-            })}
-          >
-            <span className={caption}>{m.brands[locale]}</span>
-            <span className={cx(caption, css({ color: 'ink.muted' }))}>
-              {m.brandsShown(shown, options.length, locale)}
-            </span>
-            <button
-              type="button"
-              disabled={!selected}
-              onClick={() => onChange(null)}
-              className={css({
-                ml: 'auto',
-                fontSize: 'xs',
-                fontWeight: '550',
-                cursor: 'pointer',
-                _hover: { textDecoration: 'underline' },
-                _disabled: { color: 'ink.faint', cursor: 'default', textDecoration: 'none' },
-                _focusVisible: { outline: '2px solid', outlineColor: 'signal' },
-              })}
-            >
-              {m.showAllBrands[locale]}
-            </button>
-          </div>
-          {options.length >= SEARCH_FROM ? (
-            <div className={css({ px: '3', pb: '2' })}>
-              <input
-                ref={search}
-                type="search"
-                value={query}
-                onChange={(e) => setQuery(e.target.value)}
-                placeholder={m.findBrand[locale]}
-                aria-label={m.findBrand[locale]}
-                className={css({
-                  w: '100%',
-                  h: '8',
-                  px: '3',
-                  borderRadius: 'pill',
-                  borderWidth: '1px',
-                  borderColor: 'line',
-                  bg: 'surface',
-                  fontSize: 'sm',
-                  outline: 'none',
-                  _focus: { borderColor: 'ink' },
-                  _placeholder: { color: 'ink.faint' },
-                })}
-              />
-            </div>
-          ) : (
-            <span />
-          )}
-          <ul
-            aria-label={m.brands[locale]}
-            className={css({
-              minH: '0',
-              overflowY: 'auto',
-              overscrollBehavior: 'contain',
-              scrollbarWidth: 'thin',
-              px: '1.5',
-              pb: '1.5',
-            })}
-          >
-            {listed.map((o) => {
-              const checked = !selected || selected.has(o.id)
-              const last = checked && shown === 1
-              return (
-                <li
-                  key={o.id}
-                  className={row}
-                  data-empty={o.count === 0 ? '' : undefined}
-                  onPointerEnter={(e) => e.pointerType === 'mouse' && onHover(o.id)}
-                  onPointerLeave={(e) => e.pointerType === 'mouse' && onHover(null)}
-                >
-                  <label
-                    className={css({
-                      alignSelf: 'stretch',
-                      display: 'flex',
-                      alignItems: 'center',
-                      gap: '2.5',
-                      minW: '0',
-                      cursor: 'pointer',
-                    })}
-                  >
-                    <input
-                      type="checkbox"
-                      className={box}
-                      checked={checked}
-                      disabled={last}
-                      onChange={() => toggle(o.id)}
-                    />
-                    <span className={css({ truncate: true })}>{o.name}</span>
-                  </label>
-                  <button
-                    type="button"
-                    data-only
-                    className={only}
-                    aria-label={m.onlyBrandOf(o.name, locale)}
-                    onClick={() => onChange([o.id])}
-                  >
-                    {m.onlyBrand[locale]}
-                  </button>
-                  <span
-                    className={css({
-                      fontFamily: 'mono',
-                      fontSize: '2xs',
-                      color: 'ink.faint',
-                      fontVariantNumeric: 'tabular-nums',
-                    })}
-                  >
-                    {String(o.count).padStart(3, '0')}
-                  </span>
-                </li>
-              )
-            })}
-            {!listed.length && (
-              <li className={css({ px: '3', py: '2', fontSize: 'sm', color: 'ink.muted' })}>
-                {m.noBrandFound[locale]}
-              </li>
-            )}
-          </ul>
+          <div className={css({ px: '4', pt: '3.5', pb: '2' })}>{head}</div>
+          {searchField}
+          {brandList}
         </div>
+      )}
+      {open && phone && (
+        <Sheet label={m.brands[locale]} title={head} onClose={() => onOpenChange(false)}>
+          <div id={listId} className={css({ pt: '1' })}>
+            {searchField}
+            {brandList}
+          </div>
+        </Sheet>
       )}
     </span>
   )

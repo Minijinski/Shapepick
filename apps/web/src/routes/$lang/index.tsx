@@ -284,12 +284,7 @@ function Home() {
   }
 
   return (
-    <main
-      ref={root}
-      data-home
-      className={page}
-      style={vars as CSSProperties}
-    >
+    <main ref={root} data-home className={page} style={vars as CSSProperties}>
       <div ref={layerRef} data-home-layer className={layer}>
         <nav
           aria-label={m.worlds[locale]}
@@ -518,7 +513,10 @@ const label = css({
       "0 0 0 1px rgba(20,20,20,0.05), 0 18px 40px -20px rgba(20,20,20,0.25)",
     transformOrigin: "left bottom",
     transition: "opacity 450ms, transform 600ms token(easings.signal)",
-    "@media (min-width: 48rem) and (hover: hover)": { opacity: 0, transform: "scale(0.96)" },
+    "@media (min-width: 48rem) and (hover: hover)": {
+      opacity: 0,
+      transform: "scale(0.96)",
+    },
   },
   "@media (hover: hover)": {
     _groupHover: { _before: { opacity: 1, transform: "scale(1)" } },

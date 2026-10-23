@@ -56,6 +56,7 @@ class SceneController {
   private readonly details = new Map<Category, Map<string, ItemDetail>>()
   private readonly listeners = new Set<() => void>()
   private readonly openers = new Set<(category: Category, slug: string) => void>()
+  private readonly touches = new Set<() => void>()
   private version = 0
   private firstScreen: (() => FirstScreen) | null = null
   private homeLayer: HTMLElement | null = null
@@ -218,6 +219,19 @@ class SceneController {
     this.openers.add(open)
     return () => {
       this.openers.delete(open)
+    }
+  }
+
+  /** The visitor pressed on the open canvas (to drag it, or to pick a product). */
+  canvasPressed() {
+    for (const touched of this.touches) touched()
+  }
+
+  /** Called whenever the visitor presses on the open canvas; returns an unsubscribe. */
+  onCanvasPress(touched: () => void) {
+    this.touches.add(touched)
+    return () => {
+      this.touches.delete(touched)
     }
   }
 

@@ -46,7 +46,78 @@ const content = css({
   flexDirection: "column",
   gap: "3",
   // Past this, the tiles scroll inside the panel rather than covering the page.
-  maxH: { base: "min(25rem, 46dvh)", md: "min(32rem, 58dvh)" },
+  maxH: { base: "min(30rem, 52dvh)", md: "min(32rem, 58dvh)" },
+  // A short phone: the answers come first, up to the counter (the canvas only shows above a
+  // short question).
+  "@media (max-width: 47.99rem) and (min-height: 30.01rem) and (max-height: 43.75rem)":
+    { maxH: "calc(100dvh - 10rem)" },
+  // A phone on its side: the console takes the screen under the header.
+  _short: { maxH: "calc(100dvh - 5.5rem)" },
+});
+
+/**
+ * The question's header. On a phone, two rows: its buttons around the journey's (the step, which
+ * opens the whole journey), then the title, the width of the console, and what kind of answer it
+ * takes. Wider, one row: the buttons, the step, the title, the help.
+ */
+const head = css({
+  display: "grid",
+  gridTemplateColumns: "auto auto minmax(0, 1fr) auto",
+  gridTemplateAreas:
+    '"back reset journey help" "title title title title" "kind kind kind kind"',
+  alignItems: "center",
+  columnGap: "1",
+  rowGap: "1.5",
+  flexShrink: "0",
+  md: {
+    display: "flex",
+    gap: "2",
+    // Room for a title on two lines, so the header never changes height.
+    minH: "2.5rem",
+  },
+});
+
+/**
+ * The step on screen, on a phone: it opens the journey. The questions answered so far fill it from
+ * its left edge.
+ */
+const journeyButton = css({
+  gridArea: "journey",
+  justifySelf: "center",
+  position: "relative",
+  isolation: "isolate",
+  display: "inline-flex",
+  alignItems: "center",
+  gap: "1.5",
+  h: "9",
+  px: "3.5",
+  overflow: "hidden",
+  borderRadius: "pill",
+  borderWidth: "1px",
+  borderColor: "line",
+  bg: "surface",
+  fontSize: "xs",
+  fontWeight: "550",
+  whiteSpace: "nowrap",
+  cursor: "pointer",
+  transition: "border-color 160ms",
+  _hover: { borderColor: "line.strong" },
+  _focusVisible: {
+    outline: "2px solid",
+    outlineColor: "signal",
+    outlineOffset: "2px",
+  },
+  _before: {
+    content: '""',
+    position: "absolute",
+    insetBlock: "0",
+    left: "0",
+    zIndex: "-1",
+    w: "var(--progress)",
+    bg: "ink/8",
+    transition: "width 600ms token(easings.signal)",
+  },
+  md: { display: "none" },
 });
 
 const body = css({
@@ -72,8 +143,14 @@ const tileScroll = css({
   overscrollBehavior: "contain",
   scrollbarWidth: "thin",
   "&[data-entering]": { overflowY: "hidden" },
+  // More answers below: the list fades out at the bottom rather than stopping dead.
+  "&[data-more-below]": {
+    maskImage:
+      "linear-gradient(to bottom, #000 calc(100% - 2.5rem), transparent)",
+  },
 });
 
+/** One answer per row on a phone, with room for its hint; tiles in rows of equal length wider. */
 const tileGrid = css({
   border: "0",
   m: "0",
@@ -81,14 +158,28 @@ const tileGrid = css({
   minW: "0",
   display: "grid",
   gridTemplateColumns: {
-    base: "repeat(2, minmax(0, 1fr))",
+    base: "minmax(0, 1fr)",
     md: "repeat(var(--cols, 5), minmax(0, 1fr))",
   },
   // A dead tile that needs one more line to say what blocks it grows its row rather than
   // overflowing it.
-  gridAutoRows: { base: "minmax(4.75rem, auto)", md: "minmax(6.25rem, auto)" },
-  gap: "2.5",
+  gridAutoRows: { base: "minmax(3.25rem, auto)", md: "minmax(6.25rem, auto)" },
+  gap: { base: "2", md: "2.5" },
 });
+
+/** The kind of answer a question takes, under its title on a phone. */
+const kind = css({
+  gridArea: "kind",
+  fontFamily: "mono",
+  fontSize: "2xs",
+  color: "ink.faint",
+  textTransform: "uppercase",
+  letterSpacing: "0.06em",
+  md: { display: "none" },
+});
+
+/** On a phone the footer's buttons share its width, and wrap rather than overflow. */
+const grow = css({ flex: { base: "1 1 auto", md: "0 0 auto" } });
 
 /**
  * Columns for n tiles on a wide screen: one row up to five, then rows of (nearly) equal length,
@@ -174,10 +265,13 @@ export function Console({
   locale,
   enterDelay = 0,
   morph = false,
+  onJourney,
 }: {
   finder: Finder;
   category: Category;
   locale: Locale;
+  /** Opens the whole journey (a phone's sheet): its step, in the header, is the button. */
+  onJourney?: () => void;
   /** Seconds before the first question plays in, while the console itself rises. */
   enterDelay?: number;
   /**
@@ -271,6 +365,26 @@ export function Console({
   );
   // Once the title is split into words (above), the panel eases to the question's height.
   useDockHeight();
+
+  // A list longer than its box fades out at the bottom while there is more of it below.
+  // biome-ignore lint/correctness/useExhaustiveDependencies: a new question brings a new list
+  useIsoLayoutEffect(() => {
+    const box = root.current?.querySelector<HTMLElement>("[data-tile-scroll]");
+    if (!box) return;
+    const check = () =>
+      box.toggleAttribute(
+        "data-more-below",
+        box.scrollTop + box.clientHeight < box.scrollHeight - 2,
+      );
+    check();
+    box.addEventListener("scroll", check, { passive: true });
+    const resized = new ResizeObserver(check);
+    resized.observe(box);
+    return () => {
+      box.removeEventListener("scroll", check);
+      resized.disconnect();
+    };
+  }, [step?.key]);
 
   // A brand picked or dropped can still add must-haves to the question on screen (or take some
   // away): only the tiles that appear play in.
@@ -386,7 +500,7 @@ export function Console({
     primary = (
       <button
         type="button"
-        className={button({ tone: "ink", size: "md" })}
+        className={cx(button({ tone: "ink", size: "md" }), grow)}
         disabled={step.kind !== "range" && pickedIds.size === 0}
         onClick={() => leave(() => finder.commit(draft ? draft : ANY))}
       >
@@ -398,7 +512,7 @@ export function Console({
     primary = (
       <button
         type="button"
-        className={cx(button({ tone: "ink", size: "md" }), skipOrGo)}
+        className={cx(button({ tone: "ink", size: "md" }), skipOrGo, grow)}
         data-skip={skip || undefined}
         title={skip ? m.noPreferenceHint[locale] : undefined}
         onClick={() => leave(() => finder.commit(!skip && draft ? draft : ANY))}
@@ -415,7 +529,7 @@ export function Console({
     primary = (
       <button
         type="button"
-        className={button({ tone: "dashed", size: "md" })}
+        className={cx(button({ tone: "dashed", size: "md" }), grow)}
         title={m.noPreferenceHint[locale]}
         onClick={() => leave(() => finder.commit(ANY))}
       >
@@ -428,20 +542,10 @@ export function Console({
 
   return (
     <section ref={root} className={content} aria-labelledby="step-title">
-      <div
-        data-console-part
-        className={css({
-          display: "flex",
-          alignItems: "center",
-          gap: "2",
-          flexShrink: "0",
-          // Room for a title on two lines on phones, so the header never changes height.
-          minH: { base: "3.25rem", md: "2.5rem" },
-        })}
-      >
+      <div data-console-part className={head}>
         <button
           type="button"
-          className={iconButton}
+          className={cx(iconButton, css({ gridArea: "back" }))}
           onClick={finder.back}
           disabled={!finder.canGoBack}
           aria-label={m.back[locale]}
@@ -450,7 +554,7 @@ export function Console({
         </button>
         <button
           type="button"
-          className={iconButton}
+          className={cx(iconButton, css({ gridArea: "reset" }))}
           onClick={finder.reset}
           aria-label={m.reset[locale]}
         >
@@ -458,6 +562,7 @@ export function Console({
         </button>
         <span
           className={css({
+            display: { base: "none", md: "inline" },
             fontFamily: "mono",
             fontSize: "xs",
             color: "ink.faint",
@@ -468,26 +573,75 @@ export function Console({
           {String(finder.position).padStart(2, "0")} /{" "}
           {String(finder.asked.length).padStart(2, "0")}
         </span>
+        {onJourney && (
+          <button
+            type="button"
+            className={journeyButton}
+            aria-label={m.stepOf(finder.position, finder.asked.length, locale)}
+            onClick={onJourney}
+            style={
+              {
+                "--progress": `${(100 * Math.max(0, finder.position - 1)) / Math.max(1, finder.asked.length)}%`,
+              } as CSSProperties
+            }
+          >
+            <span
+              className={css({
+                fontFamily: "mono",
+                fontVariantNumeric: "tabular-nums",
+              })}
+            >
+              {String(finder.position).padStart(2, "0")}/
+              {String(finder.asked.length).padStart(2, "0")}
+            </span>
+            <span aria-hidden className={css({ color: "ink.faint" })}>
+              ·
+            </span>
+            {m.journey[locale]}
+            <svg
+              aria-hidden
+              viewBox="0 0 24 24"
+              width="12"
+              height="12"
+              fill="none"
+              stroke="currentColor"
+              strokeWidth="2.2"
+              strokeLinecap="round"
+              strokeLinejoin="round"
+            >
+              <path d="M6 9l6 6 6-6" />
+            </svg>
+          </button>
+        )}
         <h2
           id="step-title"
           data-title
           key={step.key}
           className={css({
+            gridArea: "title",
             flex: "1",
             fontSize: { base: "xl", md: "2xl" },
             fontWeight: "600",
             letterSpacing: "-0.03em",
             lineHeight: "1.1",
-            ml: "2",
+            mt: { base: "1", md: "0" },
+            ml: { base: "0", md: "2" },
           })}
         >
           {step.title[locale]}
         </h2>
+        <p className={kind}>
+          {step.kind === "range"
+            ? m.rangeAnswer[locale]
+            : isMulti
+              ? m.manyAnswers[locale]
+              : m.oneAnswer[locale]}
+        </p>
         {help && (
           <button
             ref={helpButton}
             type="button"
-            className={cx(iconButton, helpToggle)}
+            className={cx(iconButton, helpToggle, css({ gridArea: "help" }))}
             popoverTarget={helpId}
             aria-expanded={helpOpen}
             aria-label={m.help[locale]}
@@ -633,8 +787,11 @@ export function Console({
                           data-text
                           className={css({
                             display: "grid",
-                            gap: "1",
-                            pr: { base: "7", md: "0" },
+                            gap: "0.5",
+                            // A phone's row: the words take what the picture and count leave.
+                            flex: { base: "1 1 auto", md: "0 1 auto" },
+                            minW: "0",
+                            md: { gap: "1" },
                           })}
                         >
                           <span className={tile.label}>
@@ -678,10 +835,13 @@ export function Console({
         )}
       </div>
 
+      {/* On a phone the two buttons share the width, each a finger's height; when they do not
+          fit on one line, the main one goes under the other, the whole width. */}
       <div
         data-console-part
         className={css({
           display: "flex",
+          flexWrap: { base: "wrap", md: "nowrap" },
           alignItems: "center",
           justifyContent: "flex-end",
           gap: "2",
@@ -690,19 +850,29 @@ export function Console({
         })}
       >
         {total > 0 && (
-          <button
-            type="button"
-            className={button({ tone: "ghost", size: "sm" })}
-            onClick={seeResults}
-          >
-            {/* A phone has room for the number only, beside "No preference". */}
-            <span className={css({ display: { base: "none", md: "inline" } })}>
+          <>
+            <button
+              type="button"
+              className={cx(
+                button({ tone: "ghost", size: "sm" }),
+                css({ display: { base: "none", md: "inline-flex" } }),
+              )}
+              onClick={seeResults}
+            >
               {m.seeResults(total, locale)} →
-            </span>
-            <span className={css({ display: { base: "inline", md: "none" } })}>
+            </button>
+            <button
+              type="button"
+              className={cx(
+                button({ tone: "line", size: "md" }),
+                grow,
+                css({ md: { display: "none" } }),
+              )}
+              onClick={seeResults}
+            >
               {m.seeResultsShort(total, locale)} →
-            </span>
-          </button>
+            </button>
+          </>
         )}
         {primary}
       </div>

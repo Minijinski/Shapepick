@@ -51,6 +51,14 @@ export const messages = {
   noPreferenceHint: text("Tout garder", "Keep everything"),
   noMustHaves: text("Rien d’indispensable", "No must-haves"),
   help: text("Aide", "Help"),
+  oneAnswer: text("Une seule réponse", "One answer"),
+  manyAnswers: text("Plusieurs réponses possibles", "Pick as many as you like"),
+  rangeAnswer: text("Glisse l’un ou l’autre curseur", "Drag either handle"),
+  /** The step on screen, as a screen reader says the journey button. */
+  stepOf: (n: number, total: number, locale: Locale) =>
+    locale === "fr"
+      ? `Étape ${n} sur ${total} : voir le parcours`
+      : `Step ${n} of ${total}: see the journey`,
   seeResults: (n: number, locale: Locale) =>
     locale === "fr"
       ? `Voir les ${count(n, locale)} résultats`
