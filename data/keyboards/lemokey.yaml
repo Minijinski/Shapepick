@@ -58,6 +58,7 @@
   msrpUsd: 170
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DY7KTB87
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Lemokey-P1-HE-Wireless-Custom-Gaming-Keyboard-Black-Aluminum-Frame-Gateron-Double-Rail-Magnetic-Nebula-Switch-Shine-Through-Double-Shot-PBT-Keycaps-Version.jpg?v=1767074925, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Lemokey-P1-HE-Wireless-Custom-Gaming-Keyboard-White-Aluminum-Frame-Gateron-Double-Rail-Magnetic-Nebula-Switch-Shine-Through-Double-Shot-PBT-Keycaps-Version.jpg?v=1767074925, kind: cutout_top, width: 2000, height: 2000 }
@@ -184,6 +185,7 @@
   msrpUsd: 215
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CVZZ6XK7
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Lemokey-L3-QMK_VIA-Wireless-Custom-Mechanical-Keyboard-Gateron-Jupiter-Red-Switch-Carbon-Black.jpg?v=1690541848, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Lemokey-L3-QMK_VIA-Wireless-Custom-Mechanical-Keyboard-Gateron-Jupiter-Red-Switch-Blue.jpg?v=1690541848, kind: cutout_top, width: 2000, height: 2000 }

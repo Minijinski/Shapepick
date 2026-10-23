@@ -212,6 +212,7 @@
   msrpUsd: 160
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0BWGM4W2F
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6164_63ae00b97369f_FC900RBT-Bluetooth-BlueGrey-PD.jpg?v=1707269951, kind: cutout_top, width: 932, height: 526, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/6203_62a3d21b815c6_FC900RBT-Bluetooth-BlueGrey-PD-Cherry-MX-Black.jpg?v=1707269951, kind: cutout_top, width: 2400, height: 881 }

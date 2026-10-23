@@ -15,6 +15,7 @@
   msrpUsd: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D18768PC
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanII-BLK-US_31f2f2f7-6f18-4c2a-85f4-8f52b74df495.png?v=1711929965, kind: cutout_top, width: 1106, height: 840, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIXPAirUSHeroshot.png?v=1790003864, kind: cutout_top, width: 1106, height: 840 }
@@ -39,6 +40,7 @@
   msrpUsd: 125
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GY4JNK7B
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB5_TopDown_1106x840_ecf8b09f-f3f1-4cd2-9498-0037706a2345.png?v=1777669193, kind: cutout_top, width: 1106, height: 840, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KP7_TopDown_1106x840_c3cbb046-eb8e-47d3-8ce5-5810ffd69d2a.png?v=1777669377, kind: cutout_top, width: 1106, height: 840 }
@@ -58,6 +60,7 @@
   msrpUsd: 200
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GY4CDH9J
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB7_TopDownTransparent_1106x840_8ee4ea3c-1de0-43a1-8552-7298f6992b28.png?v=1779471488, kind: cutout_top, width: 1106, height: 840, primary: true }
   sources:
@@ -91,6 +94,7 @@
   msrpUsd: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D9CB2WQL
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLVariantImage_VulcanIIMini_Black.png?v=1721844770, kind: cutout_top, width: 1106, height: 840, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMiniAir-BLK-US_895dffd1-16c5-483b-bdcf-6bbebaf294ee.png?v=1709819867, kind: cutout_top, width: 1106, height: 840 }
@@ -110,6 +114,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D184CJC1
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanTKL-BLK-US.png?v=1709736276, kind: cutout_top, width: 1106, height: 840, primary: true }
   sources:
@@ -126,6 +131,7 @@
   msrpUsd: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D1875HKP
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-BLK-US.png?v=1711848080, kind: cutout_top, width: 1106, height: 840, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-BLK-US_bab3b9fa-8003-403b-9970-d3601372b04f.png?v=1713207676, kind: cutout_top, width: 1106, height: 840 }
@@ -146,6 +152,7 @@
   msrpUsd: 130
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D186KXVF
   images:
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMax-BLK-US.png?v=1709734298, kind: cutout_top, width: 1106, height: 840, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMax-WHT-US.png?v=1709774505, kind: cutout_top, width: 1106, height: 840 }

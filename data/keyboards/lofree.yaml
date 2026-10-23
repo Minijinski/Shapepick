@@ -83,6 +83,7 @@
   msrpUsd: 175
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H1LZZ1W4
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27575-A82BT-Lofree-Flow-2-100-Keyboard-Black-Kailh-Pulse.jpg?v=1781632501, kind: cutout_top, width: 2000, height: 912, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27574-WE5LQ-Lofree-Flow-2-100-Keyboard.jpg?v=1781632501, kind: cutout_top, width: 2200, height: 1369 }

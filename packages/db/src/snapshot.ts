@@ -94,6 +94,7 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
         msrpUsd: product.msrpUsd,
         popularity: product.popularity,
         editorialScore: product.editorialScore,
+        amazonAsin: product.amazonAsin,
         tagline: localized('tagline'),
         description: localized('description'),
         images: ownImages.length ? ownImages : undefined,

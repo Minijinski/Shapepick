@@ -15,6 +15,7 @@
   msrpUsd: 145
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FPXDV27G
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K10-HE-Swappable-RGB-Backlight-Aluminum-Keycrhon-Ultra-Fast-Lime-Switch-Special-Edition-Black-3_b2dee0d4-efcc-4f1b-8c81-005e6d9cac46.jpg?v=1787198627, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K10-HE-Swappable-RGB-Backlight-Aluminum-Nebula-Switch-Special-Edition-Black.jpg?v=1750749059, kind: cutout_top, width: 2000, height: 2000 }
@@ -40,6 +41,7 @@
   msrpUsd: 140
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G33ZHFW5
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K2-HE-75-Percent-Layout-Wireless-Magnetic-Switch-Custom-Keyboard-Standard-Version-RGB-Backlight-Double-Shot-PBT-Keycaps-Nebula-Switch-V2.jpg?v=1788946277, kind: cutout_top, width: 2100, height: 2100, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K2-HE-75-Percent-Layout-Wireless-Magnetic-Switch-Custom-Keyboard-Special-Edition-Wooden-White-RGB-Backlight-Double-Shot-PBT-Keycaps-Nebula-Switch-V2_df646e5f-ec16-4016-9ffa-5a99499cc56b.jpg?v=1788946402, kind: cutout_top, width: 2100, height: 2100 }
@@ -143,6 +145,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D2L37KM5
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K5-Max-QMK-VIA-ultra-slim-custom-mechanical-keyboard-100-percent-full-size-layout-for-Mac-Windows-Linux-low-profile-Gateron-red.jpg?v=1760599542, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K5-Max-QMK-Wireless-Custom-Mechanical-Keyboard-White-Backlight-Full-Size-Layout-for-Mac-Windows-Linux-Hot-Swappable-Keychron-Super-Red-white_version.jpg?v=1760599542, kind: cutout_top, width: 2000, height: 2000 }
@@ -167,6 +170,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G1KBL3D1
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V6-Max-QMK-Wireless-Custom-Mechanical-Keyboard-full-size-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1763084414, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -242,6 +246,7 @@
   msrpUsd: 140
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DY17T591
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K8-HE-Swappable-RGB-Backlight-Aluminum-Nebula-Switch-Special-Edition-Black.jpg?v=1750749990, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K8-HE-Swappable-RGB-Backlight-Aluminum-Nebula-Switch-Special-Edition-White.jpg?v=1750749990, kind: cutout_top, width: 2000, height: 2000 }
@@ -263,6 +268,7 @@
   msrpUsd: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FGQ395XV
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-75_-Layout-Aluminum-Black-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Brown.jpg?v=1753685590, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-75_-Layout-Aluminum-White-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Brown.jpg?v=1753685590, kind: cutout_top, width: 2000, height: 2000 }
@@ -380,6 +386,7 @@
   msrpUsd: 145
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FZK4HFP6
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K4-HE-96-Percent-Layout-Wireless-Magnetic-Switch-Custom-Keyboard-Special-Edition-Wooden-Black-RGB-Backlight-Double-Shot-PBT-Keycaps-Ultra-fast_Lime_Magnetic_Switch.jpg?v=1787229336, kind: cutout_top, width: 2560, height: 2560, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K4-HE-96-Percent-Layout-Wireless-Magnetic-Switch-Custom-Keyboard-Special-Edition-Wooden-White-RGB-Backlight-Double-Shot-PBT-Keycaps-Ultra-fast_Lime_Magnetic_Switch.jpg?v=1787229625, kind: cutout_top, width: 2560, height: 2560 }
@@ -411,6 +418,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C9DDGHKX
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V3-Custom-Mechanical-Keyboard-frosted-black-QMK-VIA-tenkeyless-hot-swappable-Keychron-K-Pro-switch-red-V3-A1_5b0d4891-ce08-448b-8956-d667bf5159ae.jpg?v=1664265535, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V3-Custom-Mechanical-Keyboard-black-QMK-VIA-tenkeyless-hot-swappable-Keychron-K-Pro-switch-red-V3-B1_8158f432-87b6-4292-b97c-57d1ba4ed1cf.jpg?v=1664265536, kind: cutout_top, width: 2000, height: 2000 }
@@ -445,6 +453,7 @@
   msrpUsd: 250
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GLGTSG6Z
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q6-HE-QMK-Wireless-Custom-Keyboard-Full-Aluminum-Carbon-Black-Frame-Double-Rail-Magnetic-Nebula-Switch1.jpg?v=1755054298, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q6-HE-QMK-Wireless-Custom-Keyboard-Full-Aluminum-Shell-White-Frame-Double-Rail-Magnetic-Nebula-Switch1.jpg?v=1755054298, kind: cutout_top, width: 2560, height: 2560 }
@@ -475,6 +484,7 @@
   msrpUsd: 65
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H2WCPVN1
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C2-Pro-8K-Hot-Swappable-Keychron-Apex-Brown-Switch.jpg?v=1780285858, kind: cutout_top, width: 2560, height: 2560, primary: true }
   sources:
@@ -494,6 +504,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCKBXQR4
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q5-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-96_-Layout-Aluminum-Black-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1753839750, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q5-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-96_-Layout-Aluminum-White-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1753839750, kind: cutout_top, width: 2000, height: 2000 }
@@ -599,6 +610,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FF9B79FG
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_Q6_HE_8K_Magnetic_Switch_Keyboard_Fully_Assembled_Knob_Black_Keychron_Ultra-fastLime_Magnetic_Switch.jpg?v=1763429855, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_Q6_HE_8K_Magnetic_Switch_Keyboard_Fully_Assembled_Knob_White_Keychron_Ultra-fast_Lime_Magnetic_Switch.jpg?v=1763429855, kind: cutout_top, width: 2000, height: 2000 }
@@ -619,6 +631,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DNFQJBM7
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K15-Max-ultra-slim-wireless-custom-mechanical-keyboard-Gateron-Red.jpg?v=1719887833, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -714,6 +727,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F2YYV82L
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K17-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-96-Percent-Layout-Fully-Assembled-for-Mac-Windows-Linux-Gateron-Low-Profile-Red.jpg?v=1720517595, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -736,6 +750,7 @@
   msrpUsd: 40
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G1H1KRYR
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_B1_Pro_Black_2.jpg?v=1785138440, kind: cutout_top, width: 3000, height: 3000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/B1P-K8.jpg?v=1786950776, kind: cutout_top, width: 2560, height: 2560 }
@@ -809,6 +824,7 @@
   msrpUsd: 45
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G1MJT8ZW
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-B6-Pro-Ultra-Slim-Wireless-Keybaord-Retro-Blue-1.jpg?v=1761279632, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-B6-Pro-Ultra-Slim-Wireless-Keybaord-Retro-Red-1.jpg?v=1761279632, kind: cutout_top, width: 2000, height: 2000 }
@@ -847,6 +863,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F31XSFKP
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Version-3-Ultra-Slim-Wireless-Mechanical-Keyboard-Low-Profile-Red-Switch-White-Backlight_bca48623-6eb7-457e-8341-e600d55ddc55.jpg?v=1764056062, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -873,6 +890,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CYSQ79W1
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V5-Max-QMK-Wireless-Custom-Mechanical-Keyboard-96-Percent-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1763518792, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -930,6 +948,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D2KYSRWD
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K1-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-TKL-Layout-Fully-Assembled-for-Mac-Windows-Linux-Gateron-Low-Profile-Red.jpg?v=1760175342, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1030,6 +1049,7 @@
   msrpUsd: 140
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F9XYT9BR
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K6-HE-Swappable-RGB-Backlight-Aluminum-Nebula-Switch-Special-Edition-Black.jpg?v=1750995541, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K6-HE-Swappable-RGB-Backlight-Aluminum-Nebula-Switch-Special-Edition-White_34b3de20-34b1-4591-b2a0-3e0f1cb57a52.jpg?v=1750995541, kind: cutout_top, width: 2000, height: 2000 }
@@ -1051,6 +1071,7 @@
   msrpUsd: 55
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F47NZ6DM
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/C3-Pro-8K-Swappable-RGB-Backlight-Red-Switch---Black.jpg?v=1749625085, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1121,6 +1142,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CYSPNM43
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V1-Max-QMK-Wireless-Custom-Mechanical-Keyboard-75_-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red_c19869a6-3c1d-41fc-962c-2896d416a9b6.jpg?v=1760933054, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1187,6 +1209,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H5CJ8MJT
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-HE-QMK-Wireless-Custom-Keyboard-Carbon-Black.jpg?v=1754623218, kind: cutout_top, width: 2560, height: 2560, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-HE-QMK-Wireless-Custom-Keyboard-Shell-White.jpg?v=1754623218, kind: cutout_top, width: 2560, height: 2560 }
@@ -1264,6 +1287,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DP9N9MN5
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_Q3_HE_QMK_Wireless_Custom_Keyboard_Carbon_Black.jpg?v=1754893326, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_Q3_HE_QMK_Wireless_Custom_Keyboard_Shell_White.jpg?v=1754893326, kind: cutout_top, width: 2560, height: 2560 }
@@ -1291,6 +1315,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DRFRH8T4
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K1-Version-6-Ultra-Slim-TKL-Layout-QMK-Wireless-Mechanical-Keyboard-Low-Profile-Red-Switch-white-Backlight_1414ec12-a4a1-4321-82a3-fd648fae1fd8.jpg?v=1761640169, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1555,6 +1580,7 @@
   msrpUsd: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCP1LDTS
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q2-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-65_-Layout-Aluminum-Black-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1754098803, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q2-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-65_-Layout-Aluminum-White-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1754098803, kind: cutout_top, width: 2000, height: 2000 }
@@ -1623,6 +1649,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C9DJ9SPK
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V6-QMK-VIA-custom-mechanical-keyboard-100-percent-layout-frosted-black-knob-Mac-Windows-Linux-hot-swappable-Keychron-K-Pro-switch-red-Russian-layout.jpg?v=1699515773, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1657,6 +1684,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F31X551R
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_K4_V3_White_new_3.png?v=1792397867, kind: cutout_top, width: 1254, height: 1254, primary: true }
   sources:
@@ -1691,6 +1719,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C9D8VMTZ
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V5-QMK-VIA-custom-mechanical-keyboard-96-percent-layout-for-Mac-Windows-Linux-frame-frosted-black-V5-A1_3b842908-ce99-4d1d-8b07-d5306de16313.jpg?v=1666255457, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V5-QMK-VIA-custom-mechanical-keyboard-96-percent-layout-for-Mac-Windows-Linux-frame-black-V5-B1_21169607-4bd8-40e6-965d-3fb3bc9964d9.jpg?v=1666255457, kind: cutout_top, width: 2000, height: 2000 }
@@ -1810,6 +1839,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B08N44TC43
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K12-60percent-compact-wireless-mechanical-keyboard-Non-backlit-version-for-Mac-Windows-Keychron-mechanical-switch-red.jpg?v=1618315894, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -1897,6 +1927,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F31VSVWW
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K2-Version-3-Wireless-Mechanical-Keyboard-Keychron-Super-Red-Switch-_RBG.jpg?v=1761797128, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2049,6 +2080,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCNVS785
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V2-Max-QMK-Wireless-Custom-Mechanical-Keyboard-65-Percent-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1763454147, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2072,6 +2104,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCVS8ZHG
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K13-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-TKL-Layout-Fully-Assembled-for-Mac-Windows-Linux-Gateron-Low-Profile-Red.jpg?v=1707014794, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2212,6 +2245,7 @@
   msrpUsd: 215
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CN9F21BT
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q5-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-96-percent-layout-full-aluminum-black-frame-for-Mac-WIndows-Linux-with-RGB-backlight-and-hot-swappable-K-Pro-switch-red.jpg?v=1684981658, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q5-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-96-percent-layout-full-aluminum-grey-frame-for-Mac-WIndows-Linux-with-RGB-backlight-and-hot-swappable-K-Pro-switch-red.jpg?v=1684981705, kind: cutout_top, width: 2000, height: 2000 }
@@ -2318,6 +2352,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G1S26GLJ
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K10-Pro-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-Full-Size-for-Mac-Windows-Linux-hot-swappable-with-MX-Switch-White-Backlight-with-Keychron-K-pro-switch-Red_bddd047f-4490-4934-b803-d7a22a9c23e9.jpg?v=1696921663, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2345,6 +2380,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CPT2SWVD
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V10-75-Percent-Alice-Layout-QMK-VIA-Custom-Mechanical-Keyboard-RGB-Backlight-Frosted-Black-Knob-Hot-swappable-K-Pro-Switch-Red_5acb8d79-d55f-408c-856b-565026daf823.jpg?v=1671174287, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V10-75-Percent-Alice-Layout-QMK-VIA-Custom-Mechanical-Keyboard-RGB-Backlight-Carbon-Black-Knob-Hot-swappable-K-Pro-Switch-Red_304ae080-b987-4948-8d8e-629b74e10a8b.jpg?v=1671174288, kind: cutout_top, width: 2000, height: 2000 }
@@ -2375,6 +2411,7 @@
   msrpUsd: 125
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D1KFM3KW
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V10-Max-QMK-Wireless-Custom-Mechanical-Keyboard-75-Percent-Alice-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1718866032, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2452,6 +2489,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CFHHZ1MY
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K1-Pro-QMK-VIA-ultra-slim-custom-mechanical-keyboard-80-percent-tenkeyless-layout-for-Mac-Windows-Linux-low-profile-Gateron-red.jpg?v=1677814144, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2521,6 +2559,7 @@
   msrpUsd: 220
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CN9FNFCX
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q6-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-100-percent-layout-full-aluminum-black-frame-for-Mac-WIndows-Linux-with-RGB-backlight-and-hot-swappable-K-Pro-red.jpg?v=1688980366, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q6-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-100-percent-layout-full-aluminum-grey-frame-for-Mac-WIndows-Linux-with-RGB-backlight-and-hot-swappable-K-Pro-red.jpg?v=1688980427, kind: cutout_top, width: 2000, height: 2000 }
@@ -2556,6 +2595,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCK3L8ZL
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q8-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-65-Percent-Alice-Layout-Aluminum-Black-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1705486679, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q8-Max-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-65-Percent-Alice-Layout-Aluminum-White-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1705486895, kind: cutout_top, width: 2000, height: 2000 }
@@ -2620,6 +2660,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07ZT7W5FP
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K6-hot-swappable-compact-65-percent-wireless-mechanical-keyboard-for-Mac-Windows-iOS-Gateron-switch-red-with-type-C-RGB-white-backlight_7f5684b8-e1be-4a8c-a0b7-3d0d8c22535b.jpg?v=1621238767, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2764,6 +2805,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DFMHWBFC
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-V8-Max-QMK-Wireless-Custom-Mechanical-Keyboard-65-Percent-Alice-Layout-Fully-Assembled-Knob-for-Mac-Windows-Linux-Gateron-Jupiter-Red.jpg?v=1717660703, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2784,6 +2826,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C9D2N4KH
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-V1-QMK-VIA-custom-mechanical-keyboard-75-percent-layout-frosted-black-knob-Mac-Windows-Linux-hot-swappable-Keychron-K-Pro-switch-red-Russian-layout.jpg?v=1687234877, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -2916,6 +2959,7 @@
   msrpUsd: 210
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CDPPCT3T
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q1-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-75_-layout-full-aluminum-black-frame-for-Mac-WIndows-Linux-with-RGB-backlight-and-hot-swappable-K-Pro-switch-red.jpg?v=1675158115, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-Q1-Pro-QMK-VIA-wireless-custom-mechanical-keyboard-knob-75-percent-layout-full-aluminum-grey-frame-for-Mac-Windows-Linux-with-RGB-backlight-hot-swappable-K-Pro-switch-red.jpg?v=1689309013, kind: cutout_top, width: 2000, height: 2000 }
@@ -2981,6 +3025,7 @@
   msrpUsd: 60
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0B2NQYSNK
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/keychron-c1-hot-swappable-wired-mechanical-keyboard-tenkeyless-layout-for-mac-windows-non-backlight-keychron-switch-red-retro-style-color.jpg?v=1645785294, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3000,6 +3045,7 @@
   msrpUsd: 60
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B09JG7KRC7
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-C2-hot-swappable-wired-mechanical-keyboard-tenkeyless-layout-for-mac-windows-non-backlight-retro-color-Keychron-switch-red.jpg?v=1645785319, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3034,6 +3080,7 @@
   msrpUsd: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G4MCKMKG
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Q1-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch---Black.jpg?v=1767603530, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Q1-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch---White.jpg?v=1767603530, kind: cutout_top, width: 2000, height: 2000 }
@@ -3061,6 +3108,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CFHKCYYH
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K5-Pro-QMK-VIA-ultra-slim-custom-mechanical-keyboard-100-percent-full-size-layout-for-Mac-Windows-Linux-low-profile-Gateron-brown.jpg?v=1678863629, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K5-Pro-QMK-VIA-ultra-slim-custom-mechanical-keyboard-Shell-White-100-percent-layout-for-Mac-Windows-Linux-low-profile-Gateron-red.jpg?v=1694748793, kind: cutout_top, width: 2000, height: 2000 }
@@ -3090,6 +3138,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CPSYQFZD
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_K8_White_new_2.jpg?v=1792396496, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3216,6 +3265,7 @@
   msrpUsd: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GS99VXJP
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-HE-8K-Wired-Magnetic-Switch-Keyboard-Knob-Version-75_-Layout-Black.jpg?v=1761655109, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q1-HE-8K-Wired-Magnetic-Switch-Keyboard-Knob-Version-75_-Layout-White.jpg?v=1761655109, kind: cutout_top, width: 2000, height: 2000 }
@@ -3239,6 +3289,7 @@
   msrpUsd: 85
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C5QFSCPX
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/keychron-k1-v5-ultra-slim-wireless-mechanical-keyboard-87-keys-white-backlight-gateron-mechanical-low-profile-red-switch.jpg?v=1638354393, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3258,6 +3309,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CFTWL4FT
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/keychron-k10--full-size-wired-wireless-mechanical-keyboard-white-rgb-backlight-gateron-red-switches-mac-windows-layout.jpg?v=1631097814, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3303,6 +3355,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F31XWQ7L
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/K5_c5d25454-1257-431b-9b7b-74f2e4c2bc05.png?v=1792395939, kind: cutout_top, width: 1774, height: 887, primary: true }
   sources:
@@ -3430,6 +3483,7 @@
   msrpUsd: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C81YP8ZH
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C2-Pro-QMK-VIA-Wired-Mechanical-Keyboard-With-Red-Switch_f3fb55cd-51ed-4b30-8624-e1ff7c9cae84.jpg?v=1773387835, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3452,6 +3506,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CNDC4VVF
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K17-Pro-QMK-VIA-ultra-slim-wireless-custom-mechanical-keyboard-96-percent-layout-for-Mac-Windows-Linux-low-profile-Gateron-red.jpg?v=1695369230, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3490,6 +3545,7 @@
   msrpUsd: 65
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0C81T6MFV
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C1-Pro-QMK-VIA-Wired-Mechanical-Keyboard-With-Red-Switch_2ad045f5-60b8-4e43-ba8f-2da49e905bd0.jpg?v=1773387632, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3588,6 +3644,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0BZS9GQJY
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K12-Pro-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-for-Mac-Windows-Linux-with-MX-Switch-with-Keychron-K-pro-switch-Red.jpg?v=1684144636, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-K12-Pro-QMK-VIA-Wireless-Custom-Mechanical-Keyboard-for-Mac-Windows-Linux-with-MX-Switch-with-Keychron-K-pro-switch-Red.jpg?v=1684144636, kind: cutout_top, width: 2000, height: 2000 }
@@ -3634,6 +3691,7 @@
   msrpUsd: 35
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DBHWT2LY
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-C3-Pro-QMK-VIA-Mechanical-Keyboard-80-percent-TKL-layout-for-Mac-Windows-Linux-Keychron-mechanical-red-switch.jpg?v=1693390158, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3701,6 +3759,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GSG9V8MM
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/V1-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch-Black.jpg?v=1766394689, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3722,6 +3781,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GJCDVX6R
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_V5_Ultra_8K_Wireless_Custom_Mechanical_Keyboard_-_Red.jpg?v=1769589545, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3742,6 +3802,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GVDRPK15
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/V3-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch---Black.jpg?v=1768914100, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3779,6 +3840,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GX9NW98W
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/V6-Ultra-8K-Red-switch.jpg?v=1776775689, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
@@ -3999,6 +4061,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H387YWRD
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Ultra-8K-Wireless-Custom-Mechanical-Keyboar-Red.jpg?v=1778643053, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-K3-Ultra-8K-Wireless-Custom-Mechanical-Keyboar-Red-white.jpg?v=1778643290, kind: cutout_top, width: 3840, height: 3840 }
@@ -4231,6 +4294,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GTQWMY5K
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q6-Ultra-8K-Wireless-Custom-Mechanical-Keyboard-Black-Keychron-Silk-POM-Switch-Brown.jpg?v=1768377923, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q6-Ultra-8K-Wireless-Custom-Mechanical-Keyboard-White-Keychron-Silk-POM-Switch-Brown.jpg?v=1768377923, kind: cutout_top, width: 2000, height: 2000 }
@@ -4253,6 +4317,7 @@
   msrpUsd: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GXW2WP37
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Q3-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch---Black.jpg?v=1767005341, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Q3-Ultra-8K-Wireless-Hot-swappable-RGB-Backlight-Red-Switch---White.jpg?v=1767005341, kind: cutout_top, width: 2000, height: 2000 }
@@ -4360,6 +4425,7 @@
   msrpUsd: 240
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GTWFRP1M
   images:
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q11-Ultra-8K-Wireless-Custom-Mechanical-Keyboard-Red.jpg?v=1775037225, kind: cutout_top, width: 2000, height: 2000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-Q11-Ultra-white-red-switch.jpg?v=1791888705, kind: cutout_top, width: 2000, height: 2000 }

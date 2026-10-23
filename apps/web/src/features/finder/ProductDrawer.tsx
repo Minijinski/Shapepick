@@ -8,7 +8,7 @@ import { gsap, prefersReducedMotion } from '../motion/gsap'
 import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
-import { amazonSearch } from '../product/shops'
+import { amazonLink } from '../product/shops'
 import { sheetSpecs } from '../product/specs'
 import type { ProductSheet } from './useFinder'
 
@@ -64,7 +64,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
   const closing = useRef(false)
   const { item } = sheet
   // Keyboards are real products; the monitors are still a demo catalogue, with nothing to buy.
-  const amazon = item.category === 'keyboard' ? amazonSearch(item, locale, layouts) : null
+  const amazon = item.category === 'keyboard' ? amazonLink(item, locale, layouts) : null
 
   /** Plays the sheet out, then closes it. A timer backs the animation up in a hidden tab. */
   const close = useCallback(() => {
@@ -376,7 +376,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                   })}
                 >
                   <p className={css({ fontSize: 'sm', color: 'ink.muted', lineHeight: '1.5' })}>
-                    {m.amazonQuery(amazon.query, locale)}
+                    {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
                   </p>
                   <a
                     href={amazon.url}
@@ -387,7 +387,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                       css({ justifySelf: 'start' }),
                     )}
                   >
-                    {m.searchOnAmazon[locale]}
+                    {amazon.direct ? m.viewOnAmazon[locale] : m.searchOnAmazon[locale]}
                     <Icon d="M7 17 17 7M9 7h8v8" />
                   </a>
                   {amazon.affiliate && (

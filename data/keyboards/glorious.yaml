@@ -14,6 +14,7 @@
   msrpUsd: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B01D8YNJH0
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/2539-37Q9C-GMMK-Prebuilt-Compact-Gateron-Brown.jpg?v=1707256102, kind: cutout_top, width: 2048, height: 1368, primary: true }
   sources:

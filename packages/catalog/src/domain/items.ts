@@ -26,6 +26,8 @@ type ItemBase = {
   priceEur: number
   popularity: number
   editorialScore: number
+  /** Amazon.fr product id: the buy link opens it rather than a search. */
+  amazonAsin?: string
   tagline?: Text
   /**
    * The product seen the way its silhouette is drawn: a keyboard from above, a monitor from the
@@ -98,6 +100,7 @@ export function toKeyboardItems(
       priceEur: cheapest(variants.map((v) => v.priceEur)),
       popularity: k.popularity,
       editorialScore: k.editorialScore,
+      amazonAsin: k.amazonAsin,
       tagline: k.tagline,
       photo: photoOf(k.images, 'cutout_top'),
       specs: k.specs,
@@ -123,6 +126,7 @@ export function toMonitorItems(inputs: MonitorInput[], brandList: Brand[]): Moni
       priceEur: cheapest(variants.map((v) => v.priceEur)),
       popularity: m.popularity,
       editorialScore: m.editorialScore,
+      amazonAsin: m.amazonAsin,
       tagline: m.tagline,
       photo: photoOf(m.images, 'cutout_front'),
       specs: { ...m.specs, ppi: ppiOf(m.specs) },

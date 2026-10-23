@@ -15,6 +15,13 @@
       "when": 1792703185714,
       "tag": "0001_switch_feel_only",
       "breakpoints": true
+    },
+    {
+      "idx": 2,
+      "version": "7",
+      "when": 1792707882081,
+      "tag": "0002_product_amazon_asin",
+      "breakpoints": true
     }
   ]
 }

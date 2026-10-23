@@ -168,6 +168,7 @@
   msrpUsd: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G6ZMZB3F
   images:
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-coffee-brown-main-1.jpg?v=1784108106, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/b75-pro-coffee-brown-main-3.jpg?v=1784108106, kind: cutout_top, width: 1600, height: 1600 }
@@ -210,6 +211,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H29S5HR9
   images:
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509_dbf4fc5d-ef16-4df9-93a8-a51d47b534c6.jpg?v=1780397400, kind: cutout_top, width: 3000, height: 3000, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/C98_-260509.jpg?v=1780397400, kind: cutout_top, width: 3000, height: 3000 }
@@ -428,6 +430,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F5Q9RWNG
   images:
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-01-2.jpg?v=1753839333, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/ql75-main-01.jpg?v=1753839333, kind: cutout_top, width: 1600, height: 1600 }
@@ -476,6 +479,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DT72GPXF
   images:
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_6d5f03f3-a7e6-4952-9846-e974a3b8e8bc.jpg?v=1736934479, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_ce938024-87eb-49c3-8c5d-b5cc0d707dba.jpg?v=1736934520, kind: cutout_top, width: 1600, height: 1600 }
@@ -524,6 +528,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CN3GH63C
   images:
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_89b08858-8a84-4303-8ebc-8800dd4339e7.jpg?v=1701340524, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_1_6633dc7e-af5a-4678-8204-a9785c6a1952.jpg?v=1701340532, kind: cutout_top, width: 1600, height: 1600 }

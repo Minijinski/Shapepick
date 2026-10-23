@@ -58,6 +58,11 @@ const productBase = z.object({
   tagline: text.optional(),
   description: text.optional(),
   images: z.array(productImageSchema).optional(),
+  /** The Amazon.fr product (ASIN) a buy link opens: the AZERTY version when the model has one. */
+  amazonAsin: z
+    .string()
+    .regex(/^[A-Z0-9]{10}$/, 'ASIN')
+    .optional(),
   /** Pages the record was imported from (pnpm ingest), to re-check or refresh it later. */
   sources: z.array(z.url()).optional(),
 })

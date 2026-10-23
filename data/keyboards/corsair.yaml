@@ -11,6 +11,7 @@
   msrpEur: 350
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G5YMDN62
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/pages/galleon/Gallery/ww/GALLEON_ELGATO_FR-M.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/v1790877407/Content%20Syndication/Universal%20HTML%20Image%20Assets/Keyboards/Galleon%20100%20SD/white/regional/Galleon_TOP_Palmrest_FR.png, kind: cutout_top }
@@ -55,6 +56,7 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GYF8J5HK
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/Clipper-Pro-Mini-60/Gallery/black/ww/UK_Top_Black.png, kind: cutout_top }
@@ -76,6 +78,7 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DK9VS53W
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911911G-NA/K70_PRO_TKL_BLACK_RENDER_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/K70-PRO-TKL-APAC/Gallery/CH-911921G-NA/K70_PRO_TKL_WHITE_RENDER_01.png, kind: cutout_top }
@@ -95,6 +98,7 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CP698TBT
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226C65-NA/K55_CORE_BLK_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k55-core/gallery/CH-9226D65-FR/K55_CORE_GRY_01.png, kind: cutout_top }
@@ -132,6 +136,7 @@
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GPRDJFMM
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-wireless/Gallery/VANGUARD_FR_BLACK_01_TOP.png, kind: cutout_top }
@@ -148,6 +153,7 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CH8WZNM8
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910981E-FR_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-core/Gallery/CH-910991E-FR_01.png, kind: cutout_top }
@@ -166,6 +172,7 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FH5LM7WX
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k55-core-tkl-config/gallery/black/k55_core_tkl_blk_01_FR.png, kind: cutout_top }
@@ -182,6 +189,7 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FTMP55N3
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96/dual-tone/VANGUARD_FR_GRAY_01_TOP.png, kind: cutout_top }
@@ -200,6 +208,7 @@
   msrpEur: 300
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GPRKVGBS
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-vanguard-air-99-config/gallery/black/ww/vanguard-air-Top_FR_Black_iCue.png, kind: cutout_top }
@@ -217,6 +226,7 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H5C65JLL
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-skiff-100/gallery/ww/skiff_100_WW-FR_ON_i6_wmq0c6.png, kind: cutout_top }
@@ -235,6 +245,7 @@
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DG36PX7P
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-wireless-config/gallery/CH-914901E-FR/K70_CORE_TKL_WIRELESS_01.png, kind: cutout_top }
@@ -251,6 +262,7 @@
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FNRRHBXD
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/vanguard-96-pro/VANGUARD_PRO_FR_BLACK_01_TOP.png, kind: cutout_top }
@@ -267,6 +279,7 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DG363LK1
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k70-core-tkl-config/gallery/CH-911911E-FR/K70_CORE_TKL_01.png, kind: cutout_top }
@@ -283,6 +296,7 @@
   msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B09F9SJHQM
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k65-rgb-mini-config/Gallery/CH-9194110-FR/FR_K65_RGB_MINI_WHITE_01.png, kind: cutout_top }
@@ -300,6 +314,7 @@
   msrpEur: 325
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0BDSNLHCN
   images:
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top, primary: true }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/CH-913A01U-FR/FR_K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
@@ -317,6 +332,7 @@
   msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B08Y613KGH
   images:
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top, primary: true }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9226765-FR/Gallery/K55_RGB_PRO_01.png, kind: cutout_top }

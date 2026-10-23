@@ -187,6 +187,7 @@
   msrpUsd: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B072834P1Z
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4033-E27KB-POK3R-Black-LE-Black-Border.jpg?v=1707268810, kind: cutout_top, width: 1200, height: 801, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/4031-R65VJ-POK3R-Silver-LE-Frosted-White-Border.jpg?v=1707268808, kind: cutout_top, width: 1600, height: 1066 }

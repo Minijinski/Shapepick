@@ -13,6 +13,7 @@
   msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FGY4833G
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/fra/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/solar-k980-keyboard/gallery-images/ch/signature-slim-solar-plus-wireless-keyboard-k980-graphite-top-view-1-ch.png", kind: cutout_top }
@@ -34,6 +35,7 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W5JK4VS
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-s/migration-assets-for-delorean-2025/gallery/mx-keys-s-top-view-graphite-ukr.png", kind: cutout_top }
@@ -68,6 +70,7 @@
   msrpEur: 170
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0B423DM3H
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/migration-assets-for-delorean-2025/gallery/mx-mechanical-top-view-graphite-deu.png", kind: cutout_top }
@@ -95,6 +98,7 @@
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W8QFPC8
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-mechanical/gallery/mx-mechanical-mini/mx-mechanical-mini-mini-keyboard-top-view-graphite-deu.png", kind: cutout_top }
@@ -129,6 +133,7 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W4DH9QZ
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/fra/mx-keys-mini-top-graphite-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/mx-keys-mini/gallery/deu/mx-keys-mini-top-graphite-deu.png", kind: cutout_top }
@@ -164,6 +169,7 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W4DJ2N3
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-graphite-gallery-1-fr.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/wave-keys/2025/wave-keys-top-angle-offwhite-gallery-1-deu.png", kind: cutout_top }
@@ -186,6 +192,7 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W6GVT3X
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-fra-new.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-uk-new.png", kind: cutout_top }
@@ -207,6 +214,7 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DBZTP6RX
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/graphite-green/pop-icon-keys-top-angle-graphite-green-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pop-icon-keys/2026-update/gallery/rose-off-white/pop-icon-keys-top-angle-rose-off-white-gallery-1-us-intl.png", kind: cutout_top }
@@ -232,6 +240,7 @@
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CTKRPKQJ
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/signature-slim-k950/gallery/k950-graphite-gallery1-front-view-uk.png", kind: cutout_top }
@@ -257,6 +266,7 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W6GVS5P
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k650-signature-wireless-keyboard/gallery/k650-top-off-white-us-intl.png", kind: cutout_top }
@@ -279,6 +289,7 @@
   msrpEur: 35
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W7K3HL9
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/pebble-keys-2-k380s/2026/gallery/tonal-rose/pebble-keys-k380s-2-tonal-rose-top-angle-gallery-1-uk.png", kind: cutout_top }
@@ -309,6 +320,7 @@
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D3WMJ8M1
   images:
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-deu.png", kind: cutout_top }
@@ -335,6 +347,7 @@
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0HBWKRX9Z
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-rapid-pdp/gallery/pro-x2-rapid-black-gallery1-fra.png", kind: cutout_top }
@@ -387,6 +400,7 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H4MFPRQJ
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g316-x-wired-pdp/gallery/g316x-keyboard-black-gallery1-new.png", kind: cutout_top }
@@ -418,6 +432,7 @@
   msrpEur: 220
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GSR7KW5K
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-deu.png", kind: cutout_top }
@@ -476,6 +491,7 @@
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W5JHV5H
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl/gallery-2-pro-x-tkl-magenta-lightspeed-gaming-keyboard-deu.png", kind: cutout_top }
@@ -509,6 +525,7 @@
   msrpEur: 170
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DCZT9RJZ
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-tkl-rapid/gallery/pro-x-tkl-rapid-black-gallery-1-deu.png", kind: cutout_top }
@@ -539,6 +556,7 @@
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D9M4G5Y3
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-wireless/gallery/g915-x-wireless-mechanical-gaming-keyboard-gallery-1-deu.png", kind: cutout_top }
@@ -572,6 +590,7 @@
   msrpEur: 200
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D9VM335Y
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-lightspeed-tkl/gallery/g915-x-tkl-wireless-keyboard-gallery-1-deu.png", kind: cutout_top }
@@ -606,6 +625,7 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D9P8JBYC
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g915-x-wired/gallery/g915-x-mechanical-gaming-keyboard-carbon-gallery-1-deu.png", kind: cutout_top }
@@ -632,6 +652,7 @@
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FJ8TGPN9
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-rapid-tkl-pdp/gallery/g515-rapid-tkl-midnight-black-top-angle-gallery-1-us.png", kind: cutout_top }
@@ -653,6 +674,7 @@
   msrpEur: 170
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CW1VPWBG
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-fra.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x60-wireless-keyboard/layouts/pro-x-60-top-hero-gallery-white-deu.png", kind: cutout_top }
@@ -680,6 +702,7 @@
   msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D3HKCTL9
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-fr.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-lightspeed-tkl/gallery/g515-keyboard-black-gallery-1-esp.png", kind: cutout_top }
@@ -708,6 +731,7 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D3HKMDNC
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-fr.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g515-tkl-wired/gallery/g515-wired-keyboard-black-gallery-1-ch.png", kind: cutout_top }
@@ -729,6 +753,7 @@
   msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W5JJ85P
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/uk-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-keyboard/pro-keyboard-gallery/uk-pro-gaming-keyboard-gallery-topdown.png", kind: cutout_top }
@@ -750,6 +775,7 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W7KNWKK
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-top-angle-gallery-1.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se-tkl/2025/gallery/g413-tkl-se-mechanical-keyboard-top-angle-gallery-1.png", kind: cutout_top }
@@ -771,6 +797,7 @@
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07W6J1D4B
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g413-se/g413-se-gallery-4-new.png", kind: cutout_top }
@@ -792,6 +819,7 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B01L6L45ES
   images:
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/g213-finch/g213-gallery-1-nb.png", kind: cutout_top }

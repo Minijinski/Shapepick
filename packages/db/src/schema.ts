@@ -85,6 +85,8 @@ export const products = pgTable(
     msrpUsd: money(),
     popularity: real().notNull().default(0.5),
     editorialScore: real().notNull().default(0.5),
+    /** Amazon.fr product id for the buy link; null: the link searches for the model. */
+    amazonAsin: text(),
     ...timestamps,
   },
   (t) => [index().on(t.category, t.status)],

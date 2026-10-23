@@ -13,6 +13,7 @@
   msrpUsd: 325
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B082TQK2SB
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3442-AX52Q-Hybrid-Type-S-White.jpg?v=1764685453, kind: cutout_top, width: 1228, height: 500, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3445-BZ4N2-Hybrid-Type-S-Charcoal-Topre-Silent-45g.jpg?v=1764685453, kind: cutout_top, width: 1236, height: 497 }

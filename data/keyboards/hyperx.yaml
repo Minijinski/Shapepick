@@ -14,6 +14,7 @@
   msrpUsd: 150
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H6K32Q75
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_origins_2_pro_65_us_bn7s3aa_main_1.jpg?v=1787066269, kind: cutout_top, width: 1500, height: 1500, primary: true }
   sources:
@@ -31,6 +32,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G95GWKVY
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_origins_2_65_us_b4qs3aa_main_1.jpg?v=1787066255, kind: cutout_top, width: 1500, height: 1500, primary: true }
   sources:
@@ -82,6 +84,7 @@
   msrpUsd: 200
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F2GL93ZD
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_rise_us_7g7a3aa_23aba_main_1.jpg?v=1784821569, kind: cutout_top, width: 4000, height: 4000, primary: true }
   sources:
@@ -115,6 +118,7 @@
   msrpUsd: 55
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07JHZ2RS2
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_core_rgb_us_1_main.jpg?v=1784821560, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_core_rgb_us_1_main_renamed_0.jpg?v=1784821560, kind: cutout_top, width: 1600, height: 1600 }
@@ -134,6 +138,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B09RB7XB8Q
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_65_english_us_aqua_1_top_down.jpg?v=1763563176, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_65_english_us_1_top_down.jpg?v=1763563176, kind: cutout_top, width: 1600, height: 1600 }
@@ -153,6 +158,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B08XBQ79MN
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_60_us_1_top_down_renamed_6_4ad0353b-41b4-45c9-8ef5-8ee2889bb384.jpg?v=1763563190, kind: cutout_top, width: 1600, height: 1600, primary: true }
   sources:
@@ -171,6 +177,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0B3Y94KZT
   images:
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_alloy_origins_core_us_1_top_down_renamed_0.jpg?v=1774442094, kind: cutout_top, width: 1600, height: 1600, primary: true }
   sources:

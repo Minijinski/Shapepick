@@ -316,6 +316,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B07G3J3872
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3950-74AKS-VA87M-Chicken-Dinner.png?v=1713289507, kind: cutout_top, width: 1600, height: 634, primary: true }
   sources:

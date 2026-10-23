@@ -35,6 +35,7 @@
   msrpUsd: 205
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0BP1W1PRL
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/22138-4RAS5-Wooting-60HE.png?v=1721058249, kind: cutout_top, width: 1000, height: 500, primary: true }
   sources:

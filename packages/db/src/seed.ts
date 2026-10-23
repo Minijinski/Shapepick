@@ -60,6 +60,7 @@ await db.transaction(async (tx) => {
       msrpUsd: p.msrpUsd,
       popularity: p.popularity,
       editorialScore: p.editorialScore,
+      amazonAsin: p.amazonAsin ?? null,
     }
     const { slug: _, ...rest } = values
     const [row] = await tx

@@ -54,6 +54,7 @@
   msrpUsd: 65
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H5KBT23Y
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH65White_8.webp?v=1782197422, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH65black_8.webp?v=1782197422, kind: cutout_top, width: 1600, height: 1600 }
@@ -75,6 +76,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0H3TYLZK2
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EpomakerHE65v2TMR_black_08.png?v=1781503759, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EpomakerHE65v2TMR_black_04.png?v=1781503759, kind: cutout_top, width: 1600, height: 1600 }
@@ -95,6 +97,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GVJ5JJ37
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHE75V2_05_332cd3dd-04a7-4a2d-ad98-499c8d706a60.webp?v=1778466686, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHE75V2_05.webp?v=1778466686, kind: cutout_top, width: 1600, height: 1600 }
@@ -160,6 +163,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GLY9S2F9
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_x_Human_Fall_Flat_03.webp?v=1791774361, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/he108.png?v=1775200934, kind: cutout_top, width: 1600, height: 1600 }
@@ -218,6 +222,7 @@
   msrpUsd: 120
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GL896CZG
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERRT100PRO_13.webp?v=1777429324, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERRT100PROPink_10.webp?v=1783066829, kind: cutout_top, width: 1600, height: 1600 }
@@ -238,6 +243,7 @@
   msrpUsd: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GL8DCYV1
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/TH80V2.png?v=1773121903, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH80V2PRO_v2_06.png?v=1773121903, kind: cutout_top, width: 1600, height: 1600 }
@@ -281,6 +287,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0G4LGMX8M
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH99Pro_18_bf2ac0c1-a401-4103-9bc4-79b2bee3c00f.png?v=1773129686, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH99Pro_3_79dd16f0-141f-4e29-a348-71d372459874.png?v=1773129686, kind: cutout_top, width: 1600, height: 1600 }
@@ -303,6 +310,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0GCLMLCQV
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/G84PRO.png?v=1773129893, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERG84Pro_3.2.png?v=1773129893, kind: cutout_top, width: 1600, height: 1600 }
@@ -327,6 +335,7 @@
   msrpUsd: 95
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FXLTJT7N
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/TH87-ANSI-9.webp?v=1761796402, kind: cutout_top, width: 1080, height: 1080, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_TH87_ISO_DE_1.webp?v=1766138196, kind: cutout_top, width: 1600, height: 1600 }
@@ -351,6 +360,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FVFS4FCM
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERQK108_10.png?v=1763716377, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_QK108_V2_03_c1ad0a73-286d-4028-9bef-a1e67e7eb84c.png?v=1773645359, kind: cutout_top, width: 1600, height: 1600 }
@@ -372,6 +382,7 @@
   msrpUsd: 100
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FVLV2PRJ
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/TH108_Pro-Hartware_Editor_s_Choice.png?v=1790752843, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_TH108_Pro_6.webp?v=1773508796, kind: cutout_top, width: 1600, height: 1600 }
@@ -398,6 +409,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FS1GW625
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/RT82-Gadgety_Awards_2026.png?v=1790752842, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_RT82_2.webp?v=1763628989, kind: cutout_top, width: 1600, height: 1600 }
@@ -416,6 +428,7 @@
   msrpUsd: 115
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FPQWH5MF
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_Split70-white_blue-bip_3.webp?v=1758767386, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_Split70-black-bip_02.webp?v=1758768073, kind: cutout_top, width: 1600, height: 1600 }
@@ -453,6 +466,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FK56NHHC
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_Galaxy_100_Lite_Creamy_White_3.webp?v=1763521588, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERGalaxy100Liteblack_3.webp?v=1763521588, kind: cutout_top, width: 1600, height: 1600 }
@@ -493,6 +507,7 @@
   msrpUsd: 85
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FJXHJZG2
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERRT85_V2_01.webp?v=1763629000, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERRT85_V2_03.webp?v=1763629000, kind: cutout_top, width: 1600, height: 1600 }
@@ -514,6 +529,7 @@
   msrpUsd: 85
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F32Q7B7Z
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_G84_HE_15.webp?v=1757928175, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_G84_HE_1.webp?v=1775530253, kind: cutout_top, width: 1600, height: 1600 }
@@ -535,6 +551,7 @@
   msrpUsd: 90
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F83RNHNV
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH108_v2_06_3e8c92fd-dc30-45d2-8f75-09356caa6709.png?v=1748946138, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_TH108_06.png?v=1760163661, kind: cutout_top, width: 1600, height: 1600 }
@@ -579,6 +596,7 @@
   msrpUsd: 85
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DPMDNY8C
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/th99.webp?v=1767777081, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_5195.png?v=1767777081, kind: cutout_top, width: 3000, height: 3000 }
@@ -601,6 +619,7 @@
   msrpUsd: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0F63CW4HT
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHE80PNG_18.png?v=1747708521, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/HE80-White.webp?v=1763523507, kind: cutout_top, width: 1600, height: 1600 }
@@ -675,6 +694,7 @@
   msrpUsd: 110
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DKNFMMZ4
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_1742.png?v=1773627520, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_3125.png?v=1773627520, kind: cutout_top, width: 1600, height: 1600 }
@@ -695,6 +715,7 @@
   msrpUsd: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0CWH4WNHW
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9495.jpg?v=1718864595, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9492_de4896a8-f27d-4f77-b59b-0bd18cd01c78.jpg?v=1746669807, kind: cutout_top, width: 1600, height: 1600 }

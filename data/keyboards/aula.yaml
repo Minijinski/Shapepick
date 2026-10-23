@@ -37,6 +37,7 @@
   msrpUsd: 75
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0D2TQL24M
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/products/203A6524.jpg?v=1700633294, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/products/203A6522.jpg?v=1700633294, kind: cutout_top, width: 1600, height: 1600 }
@@ -64,6 +65,7 @@
   msrpUsd: 80
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0FRSSK31D
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/F75_-_14_e425964e-25a6-4362-b369-28a1ee78fed0.png?v=1754892492, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/F75_-_1_f3b7915c-724f-4a2c-a64e-0f061a2e963f.png?v=1754892651, kind: cutout_top, width: 1600, height: 1600 }
@@ -227,6 +229,7 @@
   msrpUsd: 85
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0DKNDPKV3
   images:
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_0643.png?v=1746609754, kind: cutout_top, width: 1600, height: 1600, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_6908.png?v=1746609754, kind: cutout_top, width: 1600, height: 1600 }

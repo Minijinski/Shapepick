@@ -61,6 +61,7 @@
   msrpUsd: 70
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B0BXWBHFQK
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18639-HJA75-Ducky-Zero-6108-Classic.jpg?v=1715781655, kind: cutout_top, width: 2000, height: 657, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18640-YFKAR-Ducky-Zero-6108-White.jpg?v=1715781684, kind: cutout_top, width: 2600, height: 927 }
@@ -363,6 +364,7 @@
   msrpUsd: 105
   popularity: 0.5
   editorialScore: 0.5
+  amazonAsin: B09RGDYLNY
   images:
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/13591_63dac2f683383_One-3-Mini-Classic.jpg?v=1708367774, kind: cutout_top, width: 2400, height: 1072, primary: true }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14686_63ae05fcb3f41_One-3-Mini-Aura-White.jpg?v=1708570224, kind: cutout_top, width: 1980, height: 1107 }

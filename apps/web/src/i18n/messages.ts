@@ -145,6 +145,11 @@ export const messages = {
     "Shop offers are coming soon: today’s prices, stock and delivery, all in one place.",
   ),
   searchOnAmazon: text("Chercher sur Amazon", "Search on Amazon"),
+  viewOnAmazon: text("Voir sur Amazon", "View on Amazon"),
+  amazonProduct: text(
+    "La fiche du modèle sur Amazon.fr, en AZERTY quand il existe dans cette disposition.",
+    "The model’s page on Amazon.fr, in AZERTY when it comes in that layout.",
+  ),
   amazonQuery: (query: string, locale: Locale) =>
     locale === "fr"
       ? `Recherche « ${query} » sur Amazon.fr`
