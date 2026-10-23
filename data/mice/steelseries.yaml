@@ -1,0 +1,495 @@
+# SteelSeries : souris importées de steelseries.com (site français) par `pnpm ingest steelseries-mice`.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 23 modèles, steelseries.com/fr-fr (prix € du site français)
+# à vérifier : 9000 Hz seulement en option : non compté
+- slug: steelseries-sensei-pro
+  brand: steelseries
+  name: Sensei Pro
+  modelNumber: "62625"
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7fwfXrpfNNmf63VYbmTqnJ/dab0dd7e6460a904019d1acad6fc341e/sensei_pro_black_pdp_img_buy_primary.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/fT1J2mPdjoyxmO4yhpZe8/30d8e59d66e41f6b3df828313825cea2/sensei_pro_black_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3YZeQ1NChiO6vRTEnIPWoM/dea3187e7796824d5d5941022d93795d/sensei_pro_black_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/13l9shgvt59DwVLgIHsqg2/163295202a1f83ce54e7282ca2580ad3/sensei_pro_black_pdp_img_buy_01.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/64zQHcG5hh36Cn1fvmRjkt/831b966a182dd9aa7f49969016d6a5df/sensei_pro_black_pdp_img_buy_05.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=fullSize&mouse-shape=symmetrical&color=black
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125.6, widthMm: 66.5, heightMm: 38.6, weightG: 53, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62625:black, colorName: Black, colorFamily: black }
+    - { sku: 62625:white, colorName: White, colorFamily: white }
+
+# à vérifier : 9000 Hz seulement en option : non compté
+- slug: steelseries-sensei-pro-mini
+  brand: steelseries
+  name: Sensei Pro Mini
+  modelNumber: "62641"
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3Yb64wnkjiDftF42I16Vfh/712f880f0ada98e8968a6e14b5746f50/sensei_pro_mini_black_pdp_img_buy_primary.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3x1m4Y0vbUU0ruO3yW0Wca/3fba18aac45891cc797968aacc2412b9/sensei_pro_mini_black_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/32hTdXpd1iN6YqBuuaLXy/8a6031e5e8b0d997ffb0a9dda7c2124a/sensei_pro_mini_black_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4o4bxsyL7pwmJ00YiJMqkg/978a2d01a05647c9d69754b2c28c1cee/sensei_pro_mini_black_pdp_img_buy_01.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6x0fgs3f1fdAf3PGeiAqFg/771d3634cbf2786e483ae616794f5a46/sensei_pro_mini_black_pdp_img_buy_05.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=mini&mouse-shape=symmetrical&color=black
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 118, widthMm: 65.4, heightMm: 36.2, weightG: 49, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62641:black, colorName: Black, colorFamily: black }
+    - { sku: 62641:white, colorName: White, colorFamily: white }
+
+# à vérifier : 9000 Hz seulement en option : non compté
+- slug: steelseries-rival-pro
+  brand: steelseries
+  name: Rival Pro
+  modelNumber: "62660"
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2RWiMH3qrHHnoKCc0T6eBn/c4a57e8119d554edd83c9c0f6026f426/rival_pro_white_pdp_img_buy_primary.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4XGaukbIiXoRyzYNclDmUp/576291ccc664ce403f79e20afd74b332/rival_pro_white_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4NhxEczkv3NPAtrjK1YeVI/94fe928a9eaf295c2615cb86ab621f8f/rival_pro_white_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4g25T7vKqdtMv7GcAYUuD/b23519d163f80117c740ab549486c357/rival_pro_white_pdp_img_buy_01.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/43CAU82gPxCtotg1FSqj2v/9008f432dab84a02786b674d879025d1/rival_pro_white_pdp_img_buy_05.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=fullSize&mouse-shape=ergonomic&color=white
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.7, widthMm: 68.2, heightMm: 42.2, weightG: 53, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62660:white, colorName: White, colorFamily: white }
+    - { sku: 62660:black, colorName: Black, colorFamily: black }
+
+# à vérifier : 9000 Hz seulement en option : non compté
+- slug: steelseries-rival-pro-mini
+  brand: steelseries
+  name: Rival Pro Mini
+  modelNumber: "62673"
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4IqCRubXR8HOhPNtI0Ups6/aa282222dc9b0eebfd3249baa2c04829/rival_pro_mini_black_pdp_img_buy_primary.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4kFaBCyDLhG6zqncnm08Zo/2e327d8b58823f5cfeda47f6fbf89413/rival_pro_mini_black_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2AOblTljXSCjmTE9gf5YQt/dd0f25f51b0e05ceca5cb522d5897c9f/rival_pro_mini_black_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/sde7wFqc41qFhqWan4Ecn/acd2acf18c9a08be71b877b88c96b4c7/rival_pro_mini_black_pdp_img_buy_01.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/RGAP0y3xZHtdjulI6GFJB/46ead83cb19ef2a7d146176b7fbb25c7/rival_pro_mini_black_pdp_img_buy_05.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=mini&mouse-shape=ergonomic&color=black
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.7, widthMm: 65.4, heightMm: 40.5, weightG: 49, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62673:black, colorName: Black, colorFamily: black }
+    - { sku: 62673:white, colorName: White, colorFamily: white }
+
+- slug: steelseries-aerox-3-wireless-gen-2
+  brand: steelseries
+  name: Aerox 3 Wireless Gen 2
+  modelNumber: "62717"
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/4nXV3sAq5HSSmb5GFyNAhr/180697b49190a33cfdb0068e56d1c18c/aerox_3_wl_gen_2_shadow_img_buy_primary.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/6TVzxD4WXz6pJEYeOxYWuh/d413cf5d60353380205ab815bc9344ae/aerox_3_wl_gen_2_shadow_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/43EFJJ58dXgCE2ieuJv0ar/71f809fc7fb5425273f1e9fa23472790/aerox_3_wl_gen_2_shadow_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/7pfahKQYd0MigA1YUw1k97/8d5299a5d4cc13a585947c48fd27fcd2/aerox_3_wl_gen_2_shadow_pdp_img_buy_01.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/3MVyd6Sq7dg77UKYXjkQAj/7dd3fe8cbbc430af30e43911c013e33b/aerox_3_wl_gen_2_shadow_mouse_buysection_swatch.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-3-wireless-gen-2?color=shadow
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sensor: SteelSeries TrueMove, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: 62717:shadow, colorName: Shadow, colorFamily: color }
+    - { sku: 62717:magenta-haze, colorName: Magenta-haze, colorFamily: color }
+    - { sku: 62717:ghost, colorName: Ghost, colorFamily: color }
+
+- slug: steelseries-aerox-5-wireless
+  brand: steelseries
+  name: Aerox 5 Wireless
+  modelNumber: "62406"
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/zbwumnahr5I3cuixgIpyT/8ec84b69fc833c2a80c6c787c94d009c/d447dc561ffd4b45a8162f663464f34b-906.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7yqJuRlo7uOfj3fQJIrpCW/42b3a199f0f3293d1f4b9f760c04f615/aerox_5_wl_black_pdp_buyimg_2.png__1920x1080_crop-fit_optimize_subsampling-2-902.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1VSDvB3i8inVBsUCxtgjPJ/f9ac79dc5f979b5c9de14718b8631818/aerox_5_wl_black_pdp_buyimg_3.png__1920x1080_crop-fit_optimize_subsampling-2-903.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6Q75qHzrSeEskQRHClV7rf/00c33d6d8141f8f12e0f610f3c4ddaa5/aerox_5_wl_black_pdp_buyimg_4.png__1920x1080_crop-fit_optimize_subsampling-2-904.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4Qv4X4AHbvxTHUBXaPlR58/ec95e67f08e379257561802e9f81dc5f/aerox_5_wl_black_pdp_buyimg_5.png__1920x1080_crop-fit_optimize_subsampling-2-905.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/Y5b4NuEOsLlGhzxCjj9Vf/697e03b1c784f66cb82b3a529964666f/aerox_5_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-900.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-5?color=black&connectivityType=wireless
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 74, buttons: 9, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62406:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-aerox-5
+  brand: steelseries
+  name: Aerox 5
+  modelNumber: "62401"
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/11wghlxSQBUulaPG6450Z5/2c231e1df845f14a611c88109c22154e/4fc6959164d24b90a5ba63deb22bc5c3-899.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6HsIZclfnMWhMB7zPrvWVT/c4927331b2776ac8ce3366e1e604ad57/aerox_5_black_pdp_buyimg_2.png__1920x1080_crop-fit_optimize_subsampling-2-895.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5Bjd3ouHtwfUVs2dtki63B/415ffdf3203f676c4e177f65d6e19b2e/aerox_5_black_pdp_buyimg_3.png__1920x1080_crop-fit_optimize_subsampling-2-896.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/786op1TwwQipPn8zl19m8E/b16dec34c96141d5b7b7f7af5363272c/aerox_5_black_pdp_buyimg_4.png__1920x1080_crop-fit_optimize_subsampling-2-897.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/16IpPUgrrUHBUTxhneajF8/b60f19a57d1b0ebc67681320f151a28c/aerox_5_black_pdp_buyimg_5.png__1920x1080_crop-fit_optimize_subsampling-2-898.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/OpGHxMXODYWdxtKzoFMTW/956f4769f6c7f61fedbaf1156b07ada9/aerox_5_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-893.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-5?color=black&connectivityType=wired
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 66, buttons: 9, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62401:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-rival-3-gen-2
+  brand: steelseries
+  name: Rival 3 Gen 2
+  modelNumber: "62515"
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7JsManHQNJr1MlshQO3x1o/ffcb24ca3d58f20de25b510b66f3ff72/rival_3_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6JeTt3A36dChpcazQKyHbB/ad71640570dea931c42f1114b92d9993/rival_3_gen_2_black_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/72z5WLJdYrhOvZ256jmkq8/de05d604e0a6c85fda4a656a5e2b678b/rival_3_gen_2_black_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7c7FUyESCXCFYY1NojwhMR/2ae53df3f434428ea28f8ace5682037d/rival_3_gen_2_black_pdp_img_buy_04.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1e9vKjBDLHnPvfqtPIV2nm/b3f8e1522a2316f1caa95024b71add0e/rival_3_gen_2_black_pdp_img_buy_05.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5tCuR4QcYBghleNZoB2yFs/548dfe2f03e7d256050f6520011a729d/rival_3_gen_2_black_pdp_img_buy_01.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-3-gen-2?color=black&connectivityType=wired
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 38, weightG: 77, buttons: 6, sensor: "TrueMove Core (8,5K DPI)", rgb: true, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: 62515:black, colorName: Black, colorFamily: black }
+    - { sku: 62515:white, colorName: White, colorFamily: white }
+
+- slug: steelseries-rival-3-wireless-gen-2
+  brand: steelseries
+  name: Rival 3 Wireless Gen 2
+  modelNumber: "62523"
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/Cend6NMex8wf3fZZ8b0cR/ecdb507e7840c6ac60a82f7831bbb9f7/rival_3_wl_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/1VAQb1O4z8VMaSD2kNhAMy/1b79085222133df770b3b1c2b8fa54a0/rival_3_wl_gen_2_black_pdp_img_buy_02.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/127bMXtFr5Mg0pp8IQd09Y/c03da7726469649621feffb5ed5ca999/rival_3_wl_gen_2_black_pdp_img_buy_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/2ZZ12K7WawtnUUQN4t8RAQ/43c987f97e8cb2ceb9c2d3075b5c4c82/rival_3_wl_gen_2_black_pdp_img_buy_04.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/1634RpVgtwGZSQ0G1QraNx/0751d91623e8e89284ad0d5e139fcda6/rival_3_wl_gen_2_black_pdp_img_buy_05.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/5heFOFlRxDVgYHHhFO7ZXF/9459bc50970530d2562bddf583c944b9/rival_3_wl_gen_2_black_pdp_img_buy_01.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-3-gen-2?color=black&connectivityType=wireless
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.61, widthMm: 67.05, heightMm: 38, weightG: 83.5, buttons: 6, sensor: TrueMove Air (18K DPI), connWired: false, conn24ghz: true, connBt: true, power: aaa, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: 62523:black, colorName: Black, colorFamily: black }
+    - { sku: 62523:lavender, colorName: Lavender, colorFamily: color }
+    - { sku: 62523:white, colorName: White, colorFamily: white }
+    - { sku: 62523:aqua, colorName: Aqua, colorFamily: color }
+
+- slug: steelseries-aerox-3-wireless
+  brand: steelseries
+  name: Aerox 3 Wireless
+  modelNumber: "62612"
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3eB51XGWvRBRW2PPm4YTJn/f0f2110dc77ab7c0b75b76a3a1dc2136/f707609b4f0942168066704ab69c820a-2453.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3y6ZJnwrVOZDQpu98ibwx3/999e95f81e9d7e3f1c4385a085e0ce25/buy2.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/fLBQg2jpZwPPnaTDIn3gg/95f876743889bed2a4ec6faa1f32ec97/BuyImg_03.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/75b5uerCuplThI7S7NxQqw/51c5464125743b9a036fdbd8b4f9f7ea/BuyImg_04.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2VG0tOlhFVP9EfpinOULRf/7ef5b27030fd941ab44bf992dea5b9a4/BuyImg_05.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5HgkBzBn6smRlx1iRVmxgU/b73afd509ada7a986e28df9774ff608c/aerox_3_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3637.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-3-2022?color=onyx&connectivityType=wireless
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62612:onyx, colorName: Onyx, colorFamily: black }
+    - { sku: 62612:ghost, colorName: Ghost, colorFamily: color }
+    - { sku: 62612:snow, colorName: Snow, colorFamily: white }
+
+- slug: steelseries-aerox-3
+  brand: steelseries
+  name: Aerox 3
+  modelNumber: "62603"
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/39zqWz1yUuuYBkETjPuYPy/ce8d248f7f33b901dcfb984dcf06e451/b6588642852b45dba32447ae82aee21f-2471.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6KvA0yTeTr6bnjysjhS4SX/ef2b3fd669f40cb4c375f5fd5bb41fb6/imgbuy_aerox3_white_2.png__1920x1080_crop-fit_optimize_subsampling-2-2467.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/gniTDoVEh594wwCLkI95D/330022cb4affa79045b1939c300bb4dd/imgbuy_aerox3_white_3.png__1920x1080_crop-fit_optimize_subsampling-2-2468.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/30DKxTUvMpYyJHD4BAR8na/7742f276bbe744bdf92e0ce96fb1bba4/imgbuy_aerox3_white_4.png__1920x1080_crop-fit_optimize_subsampling-2-2469.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2aVuFx49CvYbmpova2s6gA/452dd46086397bb13a35c5188506767b/imgbuy_aerox3_white_5.png__1920x1080_crop-fit_optimize_subsampling-2-2470.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4r3eclmz899BBeamzvQ7oq/643697d9452ff0ebeefcec72fc6350a1/imgbuy_aerox3_white_1.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3639.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-3-2022?color=snow&connectivityType=wired
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 59, buttons: 6, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true }
+  variants:
+    - { sku: 62603:snow, colorName: Snow, colorFamily: white }
+    - { sku: 62603:onyx, colorName: Onyx, colorFamily: black }
+
+- slug: steelseries-prime-plus
+  brand: steelseries
+  name: Prime+
+  modelNumber: "62490"
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3Cr3LgGHa6RfTmhPIbP5XG/6a79da6a8a1d7e9d2a793632ce7eca0a/68b8b2de3a8f473b820be61533c3398c-1363.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/D0g6hH84LggnObzDefW2G/eb4693ec4a58ee4643bd2270c7c61e95/buyimg_prime__003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1359.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5qVm084I6nKgUd9ISewjmm/b4e00ebfc2caf0ae7b50ad8b7e0901dd/buyimg_prime__004.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1360.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6XA5EeEJmsx92wGIlqVz9r/8da5217ed8fcd1549301d9c37bc79385/buyimg_prime__005.png__1920x1080_crop-fit_optimize_subsampling-2-1361.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7K9YMRDXZh2OH3Y77ptSOC/a9970bfcc520a38e390db244010ef632/buyimg_prime__006.png__1920x1080_crop-fit_optimize_subsampling-2-1362.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5F4pbgGB9CMGwWx67wLePT/da8f9f12428b4c694bc45593ef1b365f/buyimg_prime__001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1357.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6A1e5arnkHrB8qmoNcaq7V/144b9eb41338d61abe7ef4c378352515/buyimg_prime__002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1358.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wired&model=Plus
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 71, buttons: 5, sensor: SteelSeries TrueMove Pro+, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62490:black, colorName: Black, colorFamily: black }
+
+# à vérifier : autonomie lue dans le texte (Autonomie de plus de 100 heures)
+- slug: steelseries-prime-mini-wireless
+  brand: steelseries
+  name: Prime Mini Wireless
+  modelNumber: "62426"
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/63MHpF74uZpXyMtxQaHx1F/5c9a9097f0907cd66ab711a32e056cf7/8b1374dcdfee465da3a35b36e7931cc3-776.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5kBUs0X1lt0ME07yUlFJS0/893c24c721b6ec5ee337198d0560e7c5/buyimg_prime_mini_wl_004.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-772.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4ADrkiJhkkz0Bhm5ApgQBR/4700b1737ad37ddf5881895132729839/buyimg_prime_mini_wl_005.png__1920x1080_crop-fit_optimize_subsampling-2-773.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7H9wClGxhlrC6tivtEJSQr/fb01e13271093a9c82ea5f98a67ef38d/buyimg_prime_mini_wl_006.png__1920x1080_crop-fit_optimize_subsampling-2-774.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4bcLa0dKnbAng66xImMtbd/2b51b195fb0542db510717f36f599667/buyimg_prime_mini_wl_007.png__1920x1080_crop-fit_optimize_subsampling-2-775.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6EwfPBExrnBewHFJUoGBnA/ef418e540555939d6ae2d990bed32f92/buyimg_prime_mini_wl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-769.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2da2jouPbn4C0CMrpAtEdJ/14988c43ef9cd1d47a8033baab34f03a/buyimg_prime_mini_wl_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-770.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7kOsXZvzS0cATTLQgxMFfC/5c0a42351a7861163ca11f6b3775fcec/buyimg_prime_mini_wl_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-771.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=mini&connectivityType=wireless&model=Regular
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 73, buttons: 5, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: magnetic, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62426:black, colorName: Black, colorFamily: black }
+
+# à vérifier : autonomie lue dans le texte (Autonomie de plus de 100 heures)
+- slug: steelseries-prime-wireless
+  brand: steelseries
+  name: Prime Wireless
+  modelNumber: "62593"
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4qU11xQjFcCdbxysehaS8s/49585532d57de95003f52c447b6dd171/a36972b8fa224405844aa629233854ce-783.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7q1dkOE8MPUzlPHrNgLjXD/5be41cd3deb6158038e7ba655e1cb9ed/buyimg_prime_wl_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-779.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6g8SSAp9E7ADtlu4oVnIz9/45fd4ffd135dde9f3a6a9f492364e8a8/buyimg_prime_wl_004.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-780.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3efDB6CHu0PycWNEvJ4eGT/eeb038610a169522f367f1ab6d040041/buyimg_prime_wl_005.png__1920x1080_crop-fit_optimize_subsampling-2-781.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1nUzaoYKvMvN50bf3eZ1jH/98cf3c213f8834ef81b9276b855ff743/buyimg_prime_wl_006.png__1920x1080_crop-fit_optimize_subsampling-2-782.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6EjPE5ZYMKLvsjgRVnm1T0/2def29516626e80825dd1653bd842d3e/buyimg_prime_wl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-777.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/423wip7P9Yli62WX6F6EYQ/849b32e5427486fc151ddaee4abb1ece/buyimg_prime_wl_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-778.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wireless&model=Regular
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 80, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62593:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-prime
+  brand: steelseries
+  name: Prime
+  modelNumber: "62533"
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1dCHq7I0m6H5Bm20XEGCJd/60a9f695c47468ba2b2a44457424d03f/0a6c3cd04e1345ce97ba5df12d92b6aa-798.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4x1KQnIZ2pPKdpc58ERJTT/df48501db6424b31378188f1d65b3805/buyimg_prime_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-794.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3bbkMV36fpYHBBwFHjItqR/88a22dc43ef8f790a3c53ff98b610d17/buyimg_prime_004_1.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-795.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/GYuJzWOeuteKLYNtxqcGv/496fa4a627f2e22dfad988cfb041e209/buyimg_prime_005.png__1920x1080_crop-fit_optimize_subsampling-2-796.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/YaZKzDzCQsqKuDlX75f0P/fc7c8e25e6a5be32fe91b0c28e0fb332/buyimg_prime_006.png__1920x1080_crop-fit_optimize_subsampling-2-797.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6B9mBpRg7iE3GttUAhm37P/4326c28479831c9890ff5c43ff41f533/buyimg_prime_001_1.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-792.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6zUWvVULK0Nn1spR0OBETi/a1a304bf32b9495024e2e29999c4537b/buyimg_prime_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-793.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wired&model=Regular
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 69, buttons: 6, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62533:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-prime-mini
+  brand: steelseries
+  name: Prime Mini
+  modelNumber: "62421"
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/N7SSewjrRnBLXFSmgsDkm/9477e18741f8da4cc73a4db84a0b04a4/5c94014f2c1e45a89b29308acbb2a423-791.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7nE4WJmr58FPwAWfzAUTSu/92f0b049c25a238e227f8b81d92ba9ed/buyimg_prime_mini_004.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-787.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4Uj9WtxVkRIQKlobOUMwl9/3ec9bdc2b74437ae4854465254227169/buyimg_prime_mini_005.png__1920x1080_crop-fit_optimize_subsampling-2-788.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/79qtX5VakDynqjc0kqAcMH/b50aac008f4f04b2030b0ec4cb4a79c3/buyimg_prime_mini_006.png__1920x1080_crop-fit_optimize_subsampling-2-789.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/66JGgS6EIuYhoHEv3d5RzA/9fd0d4224ecbcf0bfd49233945d3edb2/buyimg_prime_mini_007.png__1920x1080_crop-fit_optimize_subsampling-2-790.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7IzoupQ3XAUTs5D6Wfrmck/ba16c569c6b0df81e11847f1a6b3746e/buyimg_prime_mini_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-784.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3EDQNrThu9GGnX7Q8xctPR/e8457f650cc4d947540ebad9ca577008/buyimg_prime_mini_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-785.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4DyabOv0jDA0d2mQCbS67K/bfd44b19897a4276f67c82cc08fb1e9b/buyimg_prime_mini_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-786.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=mini&connectivityType=wired&model=Regular
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 61, buttons: 5, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: magnetic, rgb: true, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: 62421:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-sensei-ten
+  brand: steelseries
+  name: Sensei Ten
+  modelNumber: "62527"
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6hH7OOSpHrkZzDIvr6HnNH/4f9e78c958f48bd020002ecc08581a80/77cd3ab65eca48eaa7aae3f24d81b083-878.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/0h0i9oR3T8VfZ6U2ZBhN3/4dfd56778e4e651da54a70f707126e55/buyimg_senseiten_003.png__1920x1080_crop-fit_optimize_subsampling-2-876.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1szvpOCuZz5RB3dpzXC5Vz/b1b248dcc66e622f8c94f6f3451911a7/buyimg_senseiten_005.png__1920x1080_crop-fit_optimize_subsampling-2-877.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/e2NL0Gi11Sy0zkJPREWCb/9a5de2a2aa48720e5bc889e2596a4e42/buyimg_senseiten_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-872.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3t5oncws9stXSPPXlDV9wF/123964ea2a93eb0c0b2b7086f2dde801/buyimg_senseiten_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-873.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/67U94dttvenTumFJPKMHcE/1c3a6281e13b7a8fb051b255caddf5fd/buyimg_senseiten_004.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-874.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5m9bmKz8neS7YyCghW7eyn/bf6799ecb78295424cb940c25681e6c4/buyimg_senseiten_006.png__1920x1080_crop-fit_optimize_subsampling-2-875.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/sensei-ten
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 126, widthMm: 68, heightMm: 39, weightG: 92, buttons: 8, sensor: TrueMove Pro, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
+  variants:
+    - { sku: 62527:black, colorName: Black, colorFamily: black }
+
+# à vérifier : autonomie lue dans le texte (autonomie de 24 heures)
+- slug: steelseries-rival-650-wireless
+  brand: steelseries
+  name: Rival 650 Wireless
+  modelNumber: "62456"
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5MPea7kxhmmkxxQHXFoi54/3a44d9a15281b9c604948f69da3d0eca/a0fdbba64b844bce8bdf77c801ada302-2208.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/fEZqFKSUBwBZL5R17aSf6/8ce63061ebc4fa25788c09de55abc14d/purchase-gallery-650wl-top.png__1920x1080_crop-fit_optimize_subsampling-2-2206.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/59RaHXpf9CP4NBgg0Hnk2u/881c2cc967199f8a5b5a7f0373b44a33/purchase-gallery-650wl-bottom-annot02_white-bg.png__1920x1080_q100_crop-fit_optimize_subsampling-2-2207.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3p8Qy33DbUdvFuaYV4sYO8/21dbbe2e36104459c4222a2de6907022/650wl_web_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2202.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7vryW8V4Axa2YVuBh4sJOZ/a69a460008112fd1fdc47f38b0c49e35/purchase-gallery-650wl-liftoff-annot.png__1920x1080_q100_crop-fit_optimize_subsampling-2-2203.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2gOH6hc8PqQ2fFGUmGGcRG/71e7850a035685f1b42d08f5ea8e7c1a/650wl_web_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2204.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/42zbTX4U2WFssAmHoN1Pkm/49f70da20deccb03ff415d188956b9a6/r650_box-content-02.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2205.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-650
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 121, buttons: 7, dpiMax: 12000, connWired: false, conn24ghz: true, batteryHours: 24, power: rechargeable, rgb: true }
+  variants:
+    - { sku: 62456:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-rival-600
+  brand: steelseries
+  name: Rival 600
+  modelNumber: "62446"
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1KTPLbtKAomHoQIdN8gUQ6/7938f3d9d6691ca806301717cd1a5435/bb0a643f86414f49b04da758dd316d16-860.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4NxV9n4yWap1CKRhHzbhKM/16b3812c2a625a9769e95e5298f65838/001_techies_001_white-bg.png__1920x1080_q100_crop-fit_optimize_subsampling-2-858.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/40YXOfd920tkMqbv4fdUin/ef3f925af8f9144d848c4392d25c0b3a/05_rival600_kv_top_hero.png__1920x1080_crop-fit_optimize_subsampling-2-859.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1IQd3hBtvSh2f7mohyO0Ol/5c7913bfeff7a4af87f2b84575823732/03_rival600_kv_dual_hero.png__1920x1080_crop-fit_optimize_subsampling-2-854.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5pail9LZy0YDlfuds1Y6UL/799c9350403b15f14349c509031fc971/05_rival600_kv_photo1_hero.jpg__1920x1080_q100_crop-fit_subsampling-2-855.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6wmSx0uPZasBE57qUb6cox/11b0f6372a2273276881ab8b1431f969/001_acclaims_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-856.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1soMHlIZVMstjntLYGcYhg/bd5570e3ea266bbcc50aff8b3951f14c/001_esports.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-857.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-600
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 96, buttons: 7, dpiMax: 12000, rgb: true }
+  variants:
+    - { sku: 62446:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-rival-5
+  brand: steelseries
+  name: Rival 5
+  modelNumber: "62551"
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2fhiodqADjx9c7Vf1w5JW8/5dba72c5fc30f5ef2228c5f79c223ce2/43bea179306044d396b3b82273182916-1905.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2Jp8POdQ1oByljGc76zom1/c6e266293dd8571085aa831f249af1ab/imgbuy_rival5_002.png__1920x1080_crop-fit_optimize_subsampling-2-1901.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/tTo48SzLLVHXg1ujs3LTA/dcf06ca05db71589a6153c9155dd4569/imgbuy_rival5_003.png__1920x1080_crop-fit_optimize_subsampling-2-1902.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3wEscEM9tlunETQBu8Pasm/8ee2d52261950f02d1d4fdfba9e31b2b/imgbuy_rival5_004.png__1920x1080_crop-fit_optimize_subsampling-2-1903.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2S4Vc2dQt3KqPPRjpb9pGz/ca26984bdc548ad2cc3c63f144a72dfc/imgbuy_rival5_005.png__1920x1080_crop-fit_optimize_subsampling-2-1904.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4csGDZSusZa2hwhSlijszd/1125aaded0bf6964b93b21052a52d497/imgbuy_rival5_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1900.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 62.9, heightMm: 42.1, weightG: 85, buttons: 9, mmo: true, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
+  variants:
+    - { sku: 62551:black, colorName: Black, colorFamily: black }
+
+# à vérifier : autonomie lue dans le texte (autonomie de plus de 400 heures)
+- slug: steelseries-rival-3-wireless
+  brand: steelseries
+  name: Rival 3 Wireless
+  modelNumber: "62521"
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6yGonmItsYAsMK3R1eJ7L9/e311c1b1b96bd5e54fced566c0f47a5d/b733d471bd754fc294aeda4b82f60e30-1378.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7tdsmO2LJZGtXxyJbl97p1/abcca79d762a4743940f873bb691f235/buyimg_rival3wl_002.png__1920x1080_crop-fit_optimize_subsampling-2-1374.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2V4C4gnsb569Vel3pFVMrP/2a12553a04d9f78e4f2d9779111ebdb7/buyimg_rival3wl_003.png__1920x1080_crop-fit_optimize_subsampling-2-1375.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6VQqXWEFgSTNQrdXetKeev/d0bf704e6f6c6f0a182e1cb4cc7791dd/buyimg_rival3wl_004.png__1920x1080_crop-fit_optimize_subsampling-2-1376.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/uoYR01YJuSC6xBtuV3d01/afa49490acb84e3d78b761c0c907d597/buyimg_rival3wl_005.png__1920x1080_crop-fit_optimize_subsampling-2-1377.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/RkskM0xShu3B8X60CYisz/1651b15f5a04323b3ddfffe6462db9af/buyimg_rival3wl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1373.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-3?connectivityType=wireless
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 106, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 400, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: 62521:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-rival-3
+  brand: steelseries
+  name: Rival 3
+  modelNumber: "62513"
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2SLXWMcqacnd5gUmthodTW/007b1b20a7e18ff50f7f99aa43122849/480cb112a0c54bc39df42ab335424da3-1372.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/69MkTkxqkzTLkYYM2KXFtN/1365aca992871990379c310f33b3a557/buyimg_rival3_003.png__1920x1080_crop-fit_optimize_subsampling-2-1368.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1QKdOqxI0EutKeKRCQ0SWo/f6c64fc580476b8a2d8ccb7a42946d67/buyimg_rival3_004.png__1920x1080_crop-fit_optimize_subsampling-2-1369.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6nJ5mgKvyS8KXd1S4swACS/71e9265c1ea82fdf8250055c1a7f9ead/buyimg_rival3_005.png__1920x1080_crop-fit_optimize_subsampling-2-1370.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4RNrIgRDgoc9tIVPJNI4uR/6b79eaf9164ced876bba5242ecfe1cb9/buyimg_rival3_006.png__1920x1080_crop-fit_optimize_subsampling-2-1371.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4qNi65fCAOyPF0D09qQ2hn/ce41010bf5e733be72326287484391e0/buyimg_rival3_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1366.jpg, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/408TF4V9h9oLE7eqsRBld7/8767048a823087308e5bcdf008dc9fac/buyimg_rival3_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1367.jpg, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/rival-3?connectivityType=wired
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 77, buttons: 6, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: 62513:black, colorName: Black, colorFamily: black }
+
+- slug: steelseries-aerox-9-wireless
+  brand: steelseries
+  name: Aerox 9 Wireless
+  modelNumber: "62618"
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5OdlQsrRweJDlAR3OzkERY/3249c2a84d1a52bc3d7d2b892fa1162c/666a8680fbff440384dc74d49ed324b8-933.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1xr8SVGUzNAbBQhP3ykMd8/32b68f59f1a515c02f7427bcff22bd44/aerox_9_wl_black_pdp_buyimg_2.png__1920x1080_crop-fit_optimize_subsampling-2-929.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5fZ3lQ1j7J5wWd0aLvQKtJ/55dae3b3174f71f863d4a87c61838e79/aerox_9_wl_black_pdp_buyimg_3.png__1920x1080_crop-fit_optimize_subsampling-2-930.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3FdSj2RluEoC7RpDZT4zy3/839f3f07d7a93da50d2e3d2625600058/aerox_9_wl_black_pdp_buyimg_4.png__1920x1080_crop-fit_optimize_subsampling-2-931.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4PPNxLELwhtQB03uFAoo2k/76c40c6b3d4b45ac0b3f9d7b60b0bb28/aerox_9_wl_black_pdp_buyimg_5.png__1920x1080_crop-fit_optimize_subsampling-2-932.png, kind: cutout_top }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/fb3tdprKJoZuAhuBmeJKh/01d2325c8fb2279d7c0b58ae90ed7f6e/aerox_9_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-927.png, kind: cutout_top }
+  sources:
+    - https://steelseries.com/fr-fr/gaming-mice/aerox-9?color=black
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 89, buttons: 18, mmo: true, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm ] }
+  variants:
+    - { sku: 62618:black, colorName: Black, colorFamily: black }

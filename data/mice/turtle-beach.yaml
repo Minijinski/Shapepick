@@ -1,0 +1,185 @@
+# Turtle Beach : souris importées de turtlebeach.com par `pnpm ingest turtlebeach-mice`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 9 modèles, turtlebeach.com (prix € estimés depuis les prix US)
+# à vérifier : dimensions sans ordre (127.47 X 77.66 X 44.66mm) : la plus grande prise pour la longueur
+- slug: turtle-beach-command-series-mc3
+  brand: turtle-beach
+  name: Command Series MC3
+  modelNumber: TBM-1004-05
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_MC3_TopDown_1106x840_452d7be5-2d00-4932-8d82-6a1419919393.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC3_1106x840_dcca2e19-7df2-403f-b1b2-a87bb5dd21cc.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/command-series-mc3-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 85, sensor: Owl‑Eye 30K Optical Sensor, dpiMax: 30000, pollingHz: 1000, tiltWheel: true, thumbWheel: true, rgb: true }
+  variants:
+    - { sku: TBM-1004-05, colorName: Noir, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (127.47 X 77.66 X 44.66mm) : la plus grande prise pour la longueur
+# à vérifier : autonomie lue dans le texte (90 hours at 1K)
+- slug: turtle-beach-command-series-mc5
+  brand: turtle-beach
+  name: Command Series MC5
+  modelNumber: TBM-1105-05
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_MC5_TopDown_1106x840_faf140aa-d9c5-4f64-9ffb-0586c3fdbf18.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC5_1106x840_764e934b-4a7a-4770-870e-e7ccbf6c4ae8.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/command-series-mc5-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 100, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, tiltWheel: true, thumbWheel: true, rgb: true }
+  variants:
+    - { sku: TBM-1105-05, colorName: Noir, colorFamily: black }
+
+# à vérifier : dimensions sans ordre (127.66 × 85.33 × 45.87 mm) : la plus grande prise pour la longueur
+- slug: turtle-beach-command-series-mc7
+  brand: turtle-beach
+  name: Command Series MC7
+  modelNumber: TBM-1106-05
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_MC7_TopDown_1106x840_803c264c-f6df-4cf2-ab5e-445c72504b3c.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC7_1106x840_0d9caf95-56f0-4b37-aa67-ac249e2f853f.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/command-series-mc7-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.66, widthMm: 85.33, heightMm: 45.87, weightG: 135, buttons: 11, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: TBM-1106-05, colorName: Noir, colorFamily: black }
+
+- slug: turtle-beach-kone-ii-air
+  brand: turtle-beach
+  name: Kone II Air
+  modelNumber: TBM-1104-05
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLGalleryImageVariantImage_KONEIIAIR_Black.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLGalleryImageVariantImage_KONEIIAIR_White.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/kone-ii-air-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 44.1, weightG: 110, buttons: 7, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
+  variants:
+    - { sku: TBM-1104-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-1104-15, colorName: White, colorFamily: white }
+
+- slug: turtle-beach-kone-ii
+  brand: turtle-beach
+  name: Kone II
+  modelNumber: TBM-1003-05
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLGalleryImageVariantImage_KONEII_Black_e0622d4b-5940-4afd-b31c-0dc253319a2b.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLGalleryImageVariantImage_KONEII_White.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_Thumbnail_KONE_II_Black_03.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_VariantImage_KONE_II_White_04.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_VariantImage_KONE_II_Black_02.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_Thumbnail_KONE_II_White_03.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_Thumbnail_KONE_II_Black_04.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_Thumbnail_KONE_II_White_04.png, kind: cutout_top, width: 2400, height: 1350 }
+  sources:
+    - https://turtlebeach.com/products/kone-ii-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 43.6, weightG: 90, buttons: 7, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
+  variants:
+    - { sku: TBM-1003-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-1003-15, colorName: White, colorFamily: white }
+
+# à vérifier : dimensions sans ordre (121.1 x 69.3 x 38.3 mm (4.77 x 2.73 x 1.51 in) ; Weight: 54g) : la plus grande prise pour la longueur
+- slug: turtle-beach-pure-air
+  brand: turtle-beach
+  name: Pure Air
+  modelNumber: TBM-1102-05
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureAir-BLK.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureAir-WHT.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureAir-BLK_b5919bdf-bfd2-4997-b02e-901a7995d1ee.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureAir-WHT_9d0fec41-2d7d-488e-81d5-595354857fc4.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/2-TB-PureAir-BLK.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/9-TB-PureAir-BLK.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/6-TB-PureAir-WHT.png, kind: cutout_top, width: 2400, height: 1350 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/10-TB-PureAir-BLK.png, kind: cutout_top, width: 2400, height: 1350 }
+  sources:
+    - https://turtlebeach.com/products/pure-air-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 54, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 43, power: rechargeable, rgb: true }
+  variants:
+    - { sku: TBM-1102-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-1102-15, colorName: White, colorFamily: white }
+
+# à vérifier : dimensions sans ordre (121.1 x 69.3 x 38.3 mm (4.77 x 2.73 x 1.51 in) ; Weight: 49g) : la plus grande prise pour la longueur
+- slug: turtle-beach-pure-sel
+  brand: turtle-beach
+  name: Pure SEL
+  modelNumber: TBM-1001-05
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureSEL-BLK.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureSEL-WHT.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureSEL-BLK_0c80a1de-194a-4fac-a592-ab8918d20fec.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureSEL-WHT_16f62ec9-723e-4f0f-b629-e53fe44a4478.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/pure-sel-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 49, sensor: "PixArt PAW3318 Sensor, 8k DPI ; Adjustable lift-off distance", dpiMax: 8000, rgb: true }
+  variants:
+    - { sku: TBM-1001-05, colorName: Black, colorFamily: black, msrpEur: 50 }
+    - { sku: TBM-1001-15, colorName: White, colorFamily: white, msrpEur: 30 }
+
+# à vérifier : dimensions sans ordre (39.2mm x 67.3mm x 122.2 mm ; 1.55 x2.65 x4.81 in. ; Weight: 47g) : la plus grande prise pour la longueur
+# à vérifier : autonomie lue dans le texte (40hr 2.4GHz)
+- slug: turtle-beach-burst-ii-air
+  brand: turtle-beach
+  name: Burst II Air
+  modelNumber: TBM-2101-05
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/BurstIIAir-BLK.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/BurstIIAir-WHT.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/BurstIIAir-BLK_85a780e8-606e-4064-b73d-08897ba8afb1.png, kind: cutout_top, width: 1106, height: 840 }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/BurstIIAir-WHT_eef11bd8-aecf-4ae8-a6fc-0b8a4b85e944.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/burst-ii-air-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 67.3, heightMm: 39.2, weightG: 47, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 40, power: rechargeable }
+  variants:
+    - { sku: TBM-2101-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-2101-15, colorName: White, colorFamily: white }
+
+# à vérifier : dimensions sans ordre (126 x 72 x 40mm (4.96 x 2.83 x 1.58 in) ; Weight: 99g) : la plus grande prise pour la longueur
+# à vérifier : autonomie lue dans le texte (100 hours of battery)
+- slug: turtle-beach-kone-xp-air
+  brand: turtle-beach
+  name: Kone XP Air
+  modelNumber: TBM-1101-05
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/KoneXPAir-BLK.png, kind: cutout_top, width: 1106, height: 840, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/KoneXPAir-WHT.png, kind: cutout_top, width: 1106, height: 840 }
+  sources:
+    - https://turtlebeach.com/products/kone-xp-air-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 126, widthMm: 72, heightMm: 40, weightG: 99, buttons: 10, sensor: "Owl-Eye 19K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 19000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, tiltWheel: true, rgb: true }
+  variants:
+    - { sku: TBM-1101-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-1101-15, colorName: White, colorFamily: white }

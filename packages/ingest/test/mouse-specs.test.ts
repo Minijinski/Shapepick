@@ -89,6 +89,66 @@ describe('mouse sheets, brand by brand', () => {
     expect(notes.join(' ')).toMatch(/jours/)
   })
 
+  it('reads what Logitech office pages say aside (receiver sold apart, buttons on top, copy)', () => {
+    const mobiFold = read(
+      [
+        ['Longueur', '122 mm'],
+        ['Largeur', '57 mm'],
+        ['Hauteur', '33 mm'],
+        ['Poids', '79 g'],
+        [
+          'Nombre de boutons',
+          '4 boutons (clic gauche/droit et avant/arrière sous le défilement tactile)',
+        ],
+        ['Type de batterie', 'Batterie rechargeable Li-Po (100 mAh)'],
+        ['Longévité de la pile avec le récepteur USB Logi Bolt', '33 jours'],
+        ['Type de connexion', 'Sans fil'],
+        ['Technologie sans fil', 'Bluetooth Low Energy'],
+        ['Récepteur USB Logi Bolt', 'Compatible avec les récepteurs USB Logi Bolt (non inclus)'],
+        ['Défilement horizontal', 'Virtuel'],
+      ],
+      { name: 'Mobi Fold', segment: 'office', shape: 'symmetrical' },
+    )
+    expect(mobiFold.specs).toMatchObject({
+      hand: 'ambidextrous',
+      conn24ghz: false,
+      connBt: true,
+      power: 'rechargeable',
+      thumbWheel: false,
+    })
+
+    // One page sells the M650 and the M650 L, and says which hand each suits; the battery life
+    // is in its copy only, and the box holds the receiver.
+    const copy = [
+      'Nous recommandons la souris M650 pour les mains petites et moyennes, la souris M650 L pour les grandes mains.',
+      'Une autonomie pouvant aller jusqu’à 24 mois. Pas de dongle nécessaire en Bluetooth.',
+      'Contenu du coffret : Souris, Récepteur USB Logi Bolt, Pile AA',
+    ].join('\n')
+    const pairs: [string, string][] = [
+      ['Longueur', '118.7 mm'],
+      ['Largeur', '66.2 mm'],
+      ['Hauteur', '42 mm'],
+      ['Poids', '115.4 g'],
+      ['Type de connexion', 'Bluetooth Low Energy'],
+    ]
+    const large = read(pairs, { name: 'Signature M650 L', segment: 'office', text: copy })
+    expect(large.specs).toMatchObject({
+      makerHandMinCm: 19,
+      makerHandMaxCm: 21.5,
+      conn24ghz: true,
+      power: 'aa',
+      batteryHours: 24 * 30 * 8,
+    })
+    expect(read(pairs, { name: 'Signature M650', text: copy }).specs).toMatchObject({
+      makerHandMinCm: 15,
+      makerHandMaxCm: 19.5,
+    })
+    // Sold without its receiver, a "Bluetooth Edition" has no 2.4 GHz link.
+    expect(
+      read(pairs, { name: 'MX Master 3S Édition Bluetooth', text: copy }).specs.conn24ghz,
+    ).toBe(false)
+  })
+
   it('reads Razer (one size field, battery at 1 000 Hz, explicit "Non")', () => {
     const { specs } = read(
       [
@@ -332,6 +392,6 @@ describe('mouse sheets, brand by brand', () => {
       { segment: 'gaming', shape: 'symmetrical' },
     )
     expect(specs.pollingHz).toBe(4000)
-    expect(notes.join(' ')).toMatch(/vendu à part/)
+    expect(notes.join(' ')).toMatch(/8000 Hz seulement en option/)
   })
 })

@@ -1,0 +1,675 @@
+# Pulsar : souris importées de eu.pulsar.gg par `pnpm ingest pulsar-mice`.
+# Collaborations, éditions signées et coloris de tournoi écartés ; chaque taille est un produit.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 30 modèles, eu.pulsar.gg (prix € de la boutique européenne)
+# à vérifier : autonomie lue dans le texte (160 Hours of Battery)
+- slug: pulsar-es-xlite
+  brand: pulsar
+  name: eS Xlite
+  modelNumber: "41798"
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/eS-Xlite_thumbnail_front.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/eS-Xlite_thumbnail_bottom2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/eS-Xlite_thumbnail_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/eS-Xlite_thumbnail_right.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/pulsar-es-xlite-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123.5, widthMm: 66.3, heightMm: 42.1, weightG: 51, sensor: XS-2 Flagship Sensor, dpiMax: 42000, conn24ghz: true, batteryHours: 160, power: rechargeable }
+  variants:
+    - { sku: "41798", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-feinmann-f01
+  brand: pulsar
+  name: Feinmann F01
+  modelNumber: "41422"
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_001_a1a1808c-15b8-4ae0-aa07-a55541013614.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_002_1c9df90e-4960-4dc3-8090-40a4275f9f58.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_003_b398c1e9-66a0-47fc-a70c-4b04f98398fa.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_004_d7dff341-2d81-43bb-9485-1610fd71cf4e.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_005.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_006.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/feinmann-f01-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118.6, widthMm: 65.3, heightMm: 41.7, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable, wirelessCharging: true }
+  variants:
+    - { sku: "41422", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-x3-lhd-crazylight-medium
+  brand: pulsar
+  name: X3 LHD CrazyLight Medium
+  modelNumber: "39067"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_black_medium_Top_M.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_black_medium_bottom.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_black_medium_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_black_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_white_medium_Top_M.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_white_medium_bottom.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_white_medium_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_white_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-lhd-crazylight-medium-gaming-mouse
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "39067", colorName: Jet Black, colorFamily: black }
+    - { sku: "39068", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39531", colorName: Desert, colorFamily: color }
+
+# à vérifier : autonomie lue dans le texte (100 hours of battery)
+- slug: pulsar-x2h-mini
+  brand: pulsar
+  name: X2H Mini
+  modelNumber: "27895"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_Black_79b230ba-4012-4a73-83b5-465c22fd2d2c-323845.png, kind: cutout_top, width: 1024, height: 1024, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_Black_bottom_ffaea5a7-cd78-4bb7-8a6f-6a55dea534fd-821127.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_Black_leftside_f35109ba-0f70-483a-964b-97fdb2c88795-174668.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_Black_rightside_654e62bb-62b3-41b4-adc0-8dd75aa50665-483237.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_white_top_ed17536c-a22e-4108-a5ab-3365e446e9f9-556747.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_white_bottom_e2f6ef5d-678a-4735-8b57-d05942c32663-252516.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_white_leftside_a16bcc4a-0ffa-4d4b-89b4-59661dcc3406-876729.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_white_rightside_57167934-ee35-456b-bff7-c79df93bec0e-461520.png, kind: cutout_top, width: 1024, height: 1024 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 52, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
+  variants:
+    - { sku: "27895", colorName: White, colorFamily: white }
+
+- slug: pulsar-x3-crazylight-medium
+  brand: pulsar
+  name: X3 CrazyLight Medium
+  modelNumber: "39065"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_black_medium_Top_M.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_black_medium_Bottom.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_black_medium_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_black_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_white_medium_Top_M.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_white_medium_Bottom.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_white_medium_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_white_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-crazylight-medium-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "39065", colorName: Jet Black, colorFamily: black }
+    - { sku: "39066", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39530", colorName: Desert, colorFamily: color }
+
+- slug: pulsar-x2n-crazylight-medium
+  brand: pulsar
+  name: X2N CrazyLight Medium
+  modelNumber: "38442"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_BLACK_FRONT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_BACK-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_BLACK_LEFT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_BLACK_RIGHT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_OCEAN_FRONT-02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_OCEAN_BACK-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_OCEAN_LEFT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_OCEAN_RIGHT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2n-crazylight-medium-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 65.5, heightMm: 40, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "38442", colorName: Jet Black, colorFamily: black }
+    - { sku: "38443", colorName: Uyuni White, colorFamily: white }
+    - { sku: "38444", colorName: Ocean, colorFamily: color }
+
+- slug: pulsar-x2n-crazylight-mini
+  brand: pulsar
+  name: X2N CrazyLight Mini
+  modelNumber: "37759"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_FRONT-MINI.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_white_FRONT.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_ocean_top.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_BACK.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_LEFT.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_RIGHT.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_white_BACK.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_white_LEFT.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2n-crazylight-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 62.4, heightMm: 38.2, weightG: 38, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "37759", colorName: Jet Black, colorFamily: black }
+    - { sku: "37760", colorName: Uyuni White, colorFamily: white }
+    - { sku: "38441", colorName: Ocean, colorFamily: color }
+
+- slug: pulsar-es-fs-1
+  brand: pulsar
+  name: eS FS-1
+  modelNumber: "38478"
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-eS-fs1-top-medium.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-eS-fs1-bottom-medium.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-eS-fs1-left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-eS-fs1-right.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/pulsar-es-fs-1-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 37, weightG: 56, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "38478", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-x2h-crazylight-medium
+  brand: pulsar
+  name: X2H CrazyLight Medium
+  modelNumber: "38055"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_black_front-medium.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_black_back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_black_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_black_right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_white_front-medium.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_white_back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_white_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_white_right.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-crazylight-medium-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "38055", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39528", colorName: Volcano, colorFamily: color }
+
+- slug: pulsar-xlite-crazylight-medium
+  brand: pulsar
+  name: Xlite CrazyLight Medium
+  modelNumber: "37607"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Medium_01-medium.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Medium_02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Medium_03.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Medium_04.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Medium_01-medium.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Medium_02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Medium_03.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Medium_04.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-crazylight-medium-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 40.7, weightG: 44, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "37607", colorName: Jet Black, colorFamily: black }
+    - { sku: "37608", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39526", colorName: Rock, colorFamily: color }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: pulsar-x2-crazylight-medium
+  brand: pulsar
+  name: X2 CrazyLight Medium
+  modelNumber: "36933"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_black_01-medium_dd2c6e4e-f061-4fad-8f56-41c955c7e281.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_black_02_010741dc-49cd-47f4-be34-0eb5fa78d396.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_black_03_c989c587-ad08-493a-9354-3a6009c7cfc2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_black_04_f7aad076-cdbf-449c-bfda-95bc5b3725a4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_white_01-medium_6c699ecf-d086-4143-abf4-69a6da3c4646.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_white_02_11992406-8986-49ad-99c2-b4a0f74c132e.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_white_03_e38edfcc-408e-4aba-9133-705db62f07eb.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_white_04_d54bac24-3d18-4572-a58b-6923d3bf3a53.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2-crazylight-medium-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 39, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "36933", colorName: Jet Black, colorFamily: black }
+    - { sku: "36934", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39524", colorName: Forest, colorFamily: color }
+
+- slug: pulsar-x3-lhd-crazylight-mini
+  brand: pulsar
+  name: X3 LHD CrazyLight Mini
+  modelNumber: "36783"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-Top-mini_ecfb0971-9f3c-40f3-b491-c25d7fac7c61.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-Back_c137c6b5-9804-4d40-8c23-782364008400.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-Right_0ea5a0b2-1d00-4c51-a255-27f15ba5d083.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-Left_07c61448-de52-4f37-b006-87902005e442.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-white-front-mini_3cd57229-8383-472c-a3ac-94a4f17e8bc7.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-white-Back_12cf988a-5c70-4464-a604-ac06ce046ddd.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-white-Right_048397f2-7f40-41a7-8037-a728a5a2f6ef.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-white-Left_4959fc7c-bfb8-4b5b-bef4-688d05de4096.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-lhd-crazylight-gaming-mouse
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "36783", colorName: Jet Black, colorFamily: black }
+    - { sku: "36784", colorName: Uyuni White, colorFamily: white }
+
+- slug: pulsar-x3-crazylight-mini
+  brand: pulsar
+  name: X3 CrazyLight Mini
+  modelNumber: "36781"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-Top-mini.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-Back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-Right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-Left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-white-Top-mini.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-white-Back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-white-Right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-white-Left.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-crazylight-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "36781", colorName: Jet Black, colorFamily: black }
+    - { sku: "36782", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39529", colorName: Desert, colorFamily: color }
+
+- slug: pulsar-x2h-crazylight-mini
+  brand: pulsar
+  name: X2H CrazyLight Mini
+  modelNumber: "36416"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_black_front-mini.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_black_back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_black_right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_black_left.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_white_front.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_white_back.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_white_right.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_white_left.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-crazylight-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 37, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "36416", colorName: Jet Black, colorFamily: black }
+    - { sku: "36417", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39527", colorName: Volcano, colorFamily: color }
+
+- slug: pulsar-xlite-crazylight-mini
+  brand: pulsar
+  name: Xlite CrazyLight Mini
+  modelNumber: "35353"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Mini_01-mini.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Mini_02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Mini_03.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_Black_Mini_04.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Mini_01.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Mini_02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Mini_03.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Mini_04.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-crazylight-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 41, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "35353", colorName: Jet Black, colorFamily: black }
+    - { sku: "35354", colorName: Uyuni White, colorFamily: white }
+    - { sku: "39525", colorName: Rock, colorFamily: color }
+
+- slug: pulsar-xlite-v4-es-mini
+  brand: pulsar
+  name: Xlite v4 eS Mini
+  modelNumber: "33500"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-eS-Gaming-Mouse_Size1-Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-eS-Gaming-Mouse_Size1-Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-eS-Gaming-Mouse_Size1-Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-eS-Gaming-Mouse_Size1-Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-v4-es-mini-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 61, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33500", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-x2h-v3-es-medium
+  brand: pulsar
+  name: X2H v3 eS Medium
+  modelNumber: "35075"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_eS_Gaming_Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_eS_Gaming_Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_eS_Gaming_Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_eS_Gaming_Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-v3-es-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 65, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "35075", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-x2h-v3-es-mini
+  brand: pulsar
+  name: X2H v3 eS Mini
+  modelNumber: "33503"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-v3-es-Wireless-mouse_Size1_black-001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-v3-es-Wireless-mouse_Size1_black-005.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-v3-es-Wireless-mouse_Size1_black-003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-v3-es-Wireless-mouse_Size1_black-004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-v3-es-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 60, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33503", colorName: Noir, colorFamily: black }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: pulsar-x2a-v3-es-mini
+  brand: pulsar
+  name: X2A v3 eS Mini
+  modelNumber: "33502"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size2-Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size1-Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size2-Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size2-Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size1-Black_005.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2a-v3-es-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 64, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33502", colorName: Noir, colorFamily: black }
+
+- slug: pulsar-x2-v3-es-mini
+  brand: pulsar
+  name: X2 v3 eS Mini
+  modelNumber: "33501"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-v3-eS-Gaming-Mouse_Black_001_f9ad168d-d51d-4171-bc59-702308a0b914.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-v3-eS-Gaming-Mouse_Black_002_21d6e04e-a937-445e-875b-82020e781d23.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-v3-eS-Gaming-Mouse_Black_003_3ab4fe09-5164-4fd8-9abe-f957f7832214.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size2-Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2-v3-es-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 59, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33501", colorName: Noir, colorFamily: black }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: pulsar-x2a-v3-medium
+  brand: pulsar
+  name: X2A v3 Medium
+  modelNumber: "31986"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_Black_001_withsize.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2a-v3-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "31986", colorName: White, colorFamily: white }
+
+- slug: pulsar-x2h-v3-mini
+  brand: pulsar
+  name: X2H v3 Mini
+  modelNumber: "33675"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_v3_Gaming_Mouse_Black_Mini_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_v3_Gaming_Mouse_Black_Mini_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Hv3GamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Hv3GamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_v3_Gaming_Mouse_White_Mini_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_v3_Gaming_Mouse_White_Mini_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Hv3GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Hv3GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2h-v3-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 51, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33675", colorName: Black, colorFamily: black }
+    - { sku: "33674", colorName: White, colorFamily: white }
+
+- slug: pulsar-x2-v3-mini
+  brand: pulsar
+  name: X2 v3 Mini
+  modelNumber: "34052"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_Black_001_with_number_f99b4730-d742-49aa-b77b-539c32873bc2.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2-v3-mini-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 51, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "34052", colorName: White, colorFamily: white }
+
+- slug: pulsar-xlite-v4-mini
+  brand: pulsar
+  name: Xlite v4 Mini
+  modelNumber: "33673"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-Gaming-Mouse_size1-Black_001_e99337b6-cac9-4d7e-b817-b7238a6a9826.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-Gaming-Mouse_size1-Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-Gaming-Mouse_size1-White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-v4-mini-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 52, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33673", colorName: Black, colorFamily: black }
+    - { sku: "33672", colorName: White, colorFamily: white }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: pulsar-x2-crazylight-mini
+  brand: pulsar
+  name: X2 CrazyLight Mini
+  modelNumber: "33717"
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-jetblack_Gaming-Mouse_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-jetblack_Gaming-Mouse_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-jetblack_Gaming-Mouse_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-jetblack_Gaming-Mouse_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-X2-CL-Uyuni-White_Gaming-Mouse_001_6f72043f-36ee-4b3d-b18a-688eb7f98899.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-X2-CL-Uyuni-White_Gaming-Mouse_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-X2-CL-Uyuni-White_Gaming-Mouse_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-X2-CL-Uyuni-White_Gaming-Mouse_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2-crazylight-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 35, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33717", colorName: Jet Black, colorFamily: black }
+    - { sku: "33718", colorName: Uyuni White, colorFamily: white }
+    - { sku: "33721", colorName: Sunset Haze, colorFamily: color }
+    - { sku: "33719", colorName: Aqua Zest, colorFamily: color }
+    - { sku: "33720", colorName: Volt Shadow, colorFamily: color }
+    - { sku: "39523", colorName: Forest, colorFamily: color }
+
+- slug: pulsar-x3-medium
+  brand: pulsar
+  name: X3 Medium
+  modelNumber: "33364"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 55, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33364", colorName: White, colorFamily: white }
+
+- slug: pulsar-x3-mini
+  brand: pulsar
+  name: X3 Mini
+  modelNumber: "33362"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-mini-Gaming-Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-mini-Gaming-Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-mini-Gaming-Mouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-mini-Gaming-Mouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x3-mini-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 50, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33362", colorName: White, colorFamily: white }
+
+- slug: pulsar-xlite-v4-medium
+  brand: pulsar
+  name: Xlite v4 Medium
+  modelNumber: "31979"
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-v4-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 54, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "31979", colorName: Black, colorFamily: black }
+    - { sku: "31980", colorName: White, colorFamily: white }
+
+- slug: pulsar-xlite-wired-medium
+  brand: pulsar
+  name: Xlite Wired Medium
+  modelNumber: "31796"
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/xlite-v3-wired-gaming-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 52, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: "31796", colorName: White, colorFamily: white }
+
+- slug: pulsar-x2a-wired-medium
+  brand: pulsar
+  name: X2A Wired Medium
+  modelNumber: "31801"
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://eu.pulsar.gg/products/x2a-wired-gaming-mouse
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: "31801", colorName: Black, colorFamily: black }
+    - { sku: "31802", colorName: White, colorFamily: white }

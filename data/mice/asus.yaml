@@ -1,0 +1,174 @@
+# ASUS ROG : souris importées de rog.asus.com/fr par `pnpm ingest rog-mice` (prix de l’eStore ASUS).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-23 : 11 modèles, rog.asus.com/fr (prix € de l’eStore ASUS)
+- slug: asus-rog-harpe-ii-ace
+  brand: asus
+  name: Harpe II Ace
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/B067879B-6EDC-489E-BB31-9DA251D1D733, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ii-ace/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.1, widthMm: 63.9, heightMm: 39.7, weightG: 48, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, power: rechargeable, rgb: true }
+  variants:
+    - { sku: rog-harpe-ii-ace, colorName: Black, colorFamily: black }
+    - { sku: rog-harpe-ii-ace, colorName: White, colorFamily: white }
+
+# à vérifier : dimensions sans ordre (127.5(L)x63.7(w)x39.6(H) mm) : la plus grande prise pour la longueur
+# à vérifier : alimentation non dite
+- slug: asus-rog-harpe-ace-extreme
+  brand: asus
+  name: Harpe Ace Extreme
+  msrpEur: 250
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/A2A7EEA1-640E-427F-BD61-3895067F6E48, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ace-extreme/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 47, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, rgb: true }
+  variants:
+    - { sku: rog-harpe-ace-extreme, colorName: Black, colorFamily: black }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: asus-rog-strix-impact-iii-wireless
+  brand: asus
+  name: Strix Impact III Wireless
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/D23E776A-0090-43C8-8937-3918EE73C42F, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-strix-impact-iii-wireless/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 39, weightG: 57, sensor: ROG AimPoint, dpiMax: 36000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 450, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: rog-strix-impact-iii-wireless, colorName: Black, colorFamily: black }
+    - { sku: rog-strix-impact-iii-wireless, colorName: Moonlight White, colorFamily: white }
+
+- slug: asus-rog-keris-ii-ace
+  brand: asus
+  name: Keris II Ace
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/9B783ACB-999D-41F3-AC55-7859FB30C90B, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-keris-ii-ace/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 67, heightMm: 42, weightG: 54, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 107, power: rechargeable, rgb: true }
+  variants:
+    - { sku: rog-keris-ii-ace, colorName: Black, colorFamily: black }
+    - { sku: rog-keris-ii-ace, colorName: Moonlight White, colorFamily: white }
+
+- slug: asus-rog-strix-impact-iii
+  brand: asus
+  name: Strix Impact III
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/CC324895-9E79-43D2-93A3-F831273E21F9, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-strix-impact-iii-model/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 62, heightMm: 39, weightG: 59, sensor: "3311", dpiMax: 12000, pollingHz: 1000 }
+  variants:
+    - { sku: rog-strix-impact-iii-model, colorName: Black, colorFamily: black }
+
+# à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
+- slug: asus-rog-harpe-ace-aim-lab-edition
+  brand: asus
+  name: Harpe Ace Aim Lab Edition
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/0F9B888C-4649-4829-B3C9-BDD8734907A4, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-harpe-ace-aim-lab-edition-model/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 54, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable }
+  variants:
+    - { sku: rog-harpe-ace-aim-lab-edition-model, colorName: Black, colorFamily: black }
+    - { sku: rog-harpe-ace-aim-lab-edition-model, colorName: White, colorFamily: white }
+
+# à vérifier : alimentation non dite
+- slug: asus-rog-keris-wireless-aimpoint
+  brand: asus
+  name: Keris Wireless AimPoint
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/94A80239-F7E2-443F-BE90-3F2AF6DDEFFE, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-keris-wireless-aimpoint-model/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 39, weightG: 75, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: rog-keris-wireless-aimpoint-model, colorName: Black, colorFamily: black }
+    - { sku: rog-keris-wireless-aimpoint-model, colorName: White, colorFamily: white }
+
+# à vérifier : alimentation non dite
+- slug: asus-rog-gladius-iii-wireless-aimpoint
+  brand: asus
+  name: Gladius III Wireless AimPoint
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/293663B4-274A-413F-AE7F-3F343BCC4C51, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-wireless-aimpoint-model/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, sensor: ROG AimPoint sensor, dpiMax: 36000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ palm, fingertip ] }
+  variants:
+    - { sku: rog-gladius-iii-wireless-aimpoint-model, colorName: Black, colorFamily: black }
+    - { sku: rog-gladius-iii-wireless-aimpoint-model, colorName: Moonlight White, colorFamily: white }
+
+- slug: asus-rog-spatha-x
+  brand: asus
+  name: Spatha X
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/1D6EF918-6D35-4727-BD7A-1DA2908ABB58, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-spatha-x-model/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 137, widthMm: 89, heightMm: 45, weightG: 168, dpiMax: 19000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, makerGrips: [ palm ] }
+  variants:
+    - { sku: rog-spatha-x-model, colorName: Black, colorFamily: black }
+
+- slug: asus-rog-gladius-iii
+  brand: asus
+  name: Gladius III
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/56F8A13F-F1E2-4033-A216-5BAC89D0A205, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-model/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: rog-gladius-iii-model, colorName: Black, colorFamily: black }
+
+- slug: asus-rog-strix-carry
+  brand: asus
+  name: Strix Carry
+  msrpEur: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/41BF1F1D-BB96-4BF5-AF0D-8D98F46DABE3, kind: cutout_top, primary: true }
+  sources:
+    - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-strix-carry-model/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 101, widthMm: 62, heightMm: 36, weightG: 72.9, sensor: Pixart 3330, dpiMax: 7200, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, makerGrips: [ claw, fingertip ] }
+  variants:
+    - { sku: rog-strix-carry-model, colorName: Gun-metal grey, colorFamily: black }

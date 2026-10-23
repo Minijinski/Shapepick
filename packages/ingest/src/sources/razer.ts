@@ -122,17 +122,18 @@ export function read(url: string, html: string): OfficialProduct | undefined {
   return { url, name, facts, text, tags, variants, images: images.slice(0, 6) }
 }
 
-async function productUrls() {
+/** The French product sitemap's pages of a section (/fr-fr/<section>/<model>/<SKU>), by model. */
+export async function productUrls(section: string, skip: RegExp) {
   const index = await get(`${ORIGIN}/sitemap.xml`)
   const french = [...index.matchAll(/<loc>([^<]*Product-fr-FR[^<]*)<\/loc>/g)][0]?.[1]
   if (!french) return new Map<string, string[]>()
   const xml = await get(french.replace(/&amp;/g, '&'))
   const byModel = new Map<string, string[]>()
   for (const m of xml.matchAll(
-    /<loc>(https:\/\/www\.razer\.com\/fr-fr\/gaming-keyboards\/([^/<]+)\/[^<]+)<\/loc>/g,
+    new RegExp(`<loc>(https://www\\.razer\\.com/fr-fr/${section}/([^/<]+)/[^<]+)</loc>`, 'g'),
   )) {
     const [, url = '', model = ''] = m
-    if (NOT_A_KEYBOARD.test(model)) continue
+    if (skip.test(model)) continue
     byModel.set(model, [...(byModel.get(model) ?? []), url])
   }
   return byModel
@@ -140,7 +141,7 @@ async function productUrls() {
 
 async function models(): Promise<OfficialModel[]> {
   const out: OfficialModel[] = []
-  for (const urls of (await productUrls()).values()) {
+  for (const urls of (await productUrls('gaming-keyboards', NOT_A_KEYBOARD)).values()) {
     // Every page of a model lists all its variants: the first readable one is enough.
     for (const url of [...new Set(urls)]) {
       const p = read(url, await get(url))

@@ -68,3 +68,6 @@
 
 # Marques importées (pnpm ingest philips, 2026-10-23)
 - { slug: philips, name: Philips, website: https://www.philips.fr }
+
+# Marques importées (pnpm ingest pulsar-mice, 2026-10-23)
+- { slug: pulsar, name: Pulsar, website: https://www.pulsar.gg }

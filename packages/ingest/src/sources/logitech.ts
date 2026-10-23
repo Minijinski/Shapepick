@@ -43,7 +43,7 @@ const NOT_A_KEYBOARD =
   /creative-console|keypad|mx-master|mouse|souris|combo|education|numpad|pave-numerique|desk|stand|case|etui|repose|palm|keycap|switch|bundle|pack/i
 
 /** "/fr-fr/shop/p/mx-keys-s-for-mac.920-011626" → mx-keys-s: one model for its Mac and PC pages. */
-const modelKey = (path: string) =>
+export const modelKey = (path: string) =>
   (path.split('/').pop() ?? '')
     .replace(/\.\d{3}-\d{6}$/, '')
     .replace(/^buy-/, '')
@@ -65,7 +65,7 @@ async function productUrls(site: Site) {
 }
 
 /** JS string escapes of the serialized state ("/") decoded. */
-const decodeJs = (s: string) => {
+export const decodeJs = (s: string) => {
   try {
     return JSON.parse(`"${s}"`) as string
   } catch {
