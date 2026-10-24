@@ -647,7 +647,7 @@ Le lot 1 de l'audit du 24 octobre est en ligne depuis `959f780` (migration `0005
 | --- | --- | --- |
 | Classement | Ex æquo au moins cher, puis au plus récent, puis à l'ASIN ; a priori hors du fit tant qu'il est identique pour tous ; filaire neutre sur l'autonomie | `engine.ts`, `finder/settle.ts`, `keyboards.ts` |
 | Clics Amazon | Beacon vers `/api/out` au clic et au clic molette, écrit dans `outbound_clicks` : produit, catégorie, emplacement (`sheet`, `sheet-bar`, `best-match`, `runner-up`, `results-row`), type de lien, langue, page, pays (`Netlify.context.geo`), appareil. Robots et autres origines ignorés, GET en 405 | `features/product/clicks.ts`, `AmazonLink.tsx`, `routes/api/out.ts`, `server/clicks.server.ts` |
-| Umami Cloud | Script ajouté dès que `UMAMI_WEBSITE_ID` est renseigné (vide pour l'instant) ; `data-domains` = le domaine du site, `data-exclude-search` : une vue par chemin, aucune par réponse ; événement `amazon` | `site.ts`, `routes/__root.tsx` |
+| Umami Cloud | Retiré le 24 octobre au soir (`4e47f6a`), à la demande de l'utilisateur : script, ID, événement `amazon`, interrupteur « Compter mes visites » et section « Mesure d'audience » des mentions légales. Restent Search Console, la console Partenaires et le journal des clics | `site.ts`, `routes/__root.tsx`, `features/product/clicks.ts`, `features/legal/` |
 | Cache et adresses | `/assets/*` gardés un an ; slash final en 308, en un seul saut avec l'ancienne adresse | `netlify.toml`, `server.ts` |
 | Préchargeur | Absent d'une fiche atteinte directement (pas de `data-loading`) ; accueil et catégories le gardent | `__root.tsx`, `Preloader.tsx` |
 | Accueil | Liens des bandes sur une boîte fixe découpée par `clip-path`, étiquette placée par `translate` | `routes/$lang/index.tsx` |
@@ -668,7 +668,7 @@ order by clics desc;
 
 ## Soir du 24 octobre : mis en ligne et reste à faire
 
-Les trois chantiers ouverts pendant l'audit sont fusionnés dans `main` et mis en ligne le 24 octobre au soir, dans cet ordre : migration `0006` sur Neon, seed de production, push. Le seed passe avant le push parce que la question des boutons latéraux lit un champ neuf : déployée sur une base sans ce champ, elle écarterait toutes les souris. Le Store ID Amazon Partenaires a suivi le même soir.
+Les trois chantiers ouverts pendant l'audit sont fusionnés dans `main` et mis en ligne le 24 octobre au soir, dans cet ordre : migration `0006` sur Neon, seed de production, push. Le seed passe avant le push parce que la question des boutons latéraux lit un champ neuf : déployée sur une base sans ce champ, elle écarterait toutes les souris. Le Store ID Amazon Partenaires et le retrait d'Umami ont suivi le même soir.
 
 | Travail | Commit | Chiffres |
 | --- | --- | --- |
@@ -676,14 +676,15 @@ Les trois chantiers ouverts pendant l'audit sont fusionnés dans `main` et mis e
 | Question souris « boutons sur le côté », après le poids : champ `sideButtons` rempli pour les 149 souris avec sa source (flanc du pouce, un seul côté pour une ambidextre, 0 pour un trackball), migration `0006` ; les indispensables « 8 boutons et + » et « Pavé MMO » disparaissent | `bdb8eb9` | Aucun : 7 souris ; 2 : 108 ; 3 à 5 : 29 ; 6 et plus : 5 |
 | Catalogue A–Z par catégorie (`/fr/claviers/catalogue`, `/en/keyboards/catalogue`…), lié depuis le finder ; collections tirées des réponses du questionnaire (`/fr/claviers/catalogue/75-pourcent`…), classées par le moteur, avec ItemList et BreadcrumbList ; bloc « Classements » sur chaque fiche | `7af8928` | 92 collections par langue, 6 produits au moins chacune ; sitemap de 2 070 adresses contre 1 880 ; chaque fiche à deux clics d'une catégorie |
 | Amazon Partenaires : Store ID niji0a-21 dans `AMAZON_PARTNER_TAG`, donc le tag sur tous les liens amazon.fr, `rel="sponsored"`, la mention Partenaire sur la fiche et en pied des résultats ; mentions légales en texte d'affiliation, qui précise que les commissions n'entrent pas dans le classement | `a2d631a` | 27 liens taggés sur 27 dans les résultats, 2 sur 2 dans une fiche |
+| Umami retiré, à la demande de l'utilisateur : script, ID, événement de clic, interrupteur « Compter mes visites » et section « Mesure d'audience » des mentions légales, qui gardent 7 sections | `4e47f6a` | Plus aucune mention d'Umami dans les pages |
 | Proposée, pas lancée : photo de la fiche dès le premier rendu (`ProductPicture.tsx`, `photo.ts`, `ProductDrawer.tsx`) | — | LCP visé sous 2,5 s, contre ≈ 5 s |
 
 À faire par l'utilisateur :
 
-- [ ] Créer le compte Umami Cloud (offre gratuite), ajouter shapepick.com et donner l'ID du site, à mettre dans `UMAMI_WEBSITE_ID`. Pour ne pas compter ses visites : `localStorage.setItem('umami.disabled', 1)` dans la console, sur shapepick.com.
-- [ ] Valider la propriété Search Console et soumettre `https://shapepick.com/sitemap.xml` (2 070 adresses depuis le 24 octobre au soir) ; puis demander l'indexation des catalogues A–Z et de quelques collections avec l'outil d'inspection d'URL.
+- [x] Search Console : propriété validée et sitemap envoyé (2 070 adresses), faits le 24 octobre au soir. « Demander l'indexation » seulement pour quelques pages clés (une dizaine par jour au plus), puis suivre les rapports Sitemaps et Pages ; attendre 3 à 4 semaines avant d'ajouter d'autres pages SEO.
 - [ ] Obtenir quelques liens vers le site (forums et subreddits de claviers, annuaires d'outils) : un site neuf sans lien entrant est exploré lentement.
 - [ ] Amazon Partenaires : compte ouvert le 24 octobre, Store ID en ligne ; il faut 3 ventes dans les 180 jours, sinon le compte est fermé. Plus tard, un identifiant de suivi par emplacement (fiche, résultats, podium), créé dans la console Partenaires.
+- [ ] En option, Bing Webmaster Tools : importer la propriété Search Console (Bing alimente aussi DuckDuckGo et Ecosia).
 
 ## SEO et i18n
 
@@ -747,7 +748,7 @@ Mesuré sur le site en ligne (`curl`, Chrome headless en mobile émulé) et sur 
 
 **Priorité 3** : à prévoir avant le lancement.
 
-- [ ] Un domaine propre (fait le 24 octobre : shapepick.com), puis Google Search Console (propriété de domaine, TXT publié) et envoi du sitemap.
+- [x] Un domaine propre (shapepick.com), Google Search Console (propriété de domaine validée) et envoi du sitemap : faits le 24 octobre.
 - [ ] Ne plus envoyer tout le catalogue dans chaque page : top produits rendu côté serveur, catalogue chargé ensuite.
 
 ## Lancer le projet
@@ -842,7 +843,7 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Mobile (24 octobre) | Chrome headless piloté en CDP, tactile émulé, à 320 × 568, 360 × 780, 375 × 667, 390 × 844, 430 × 932, 667 × 375 et 844 × 390, en anglais à 320 px et en mouvement réduit : le script d'audit ne trouve aucun élément hors de l'écran ou de son conteneur, ni texte coupé. Défilement de l'accueil synchronisé (calque à −156 px pour 156 px défilés), retour depuis une catégorie à la même position, feuilles fermées en les tirant vers le bas, feuille Parcours par-dessus les résultats, les 12 noms Logitech les plus longs entiers sur deux lignes à 320 px. Bureau et tablette (768, 1024 et 1440 px) identiques à la production. Après le push de 19ed09a, même série sur le site en ligne (320, 375 et 390 px, paysage, anglais, mouvement réduit, bureau) : audit vide partout, aucune erreur relevée dans la console. |
 | Fiches produit, serveur local (24 octobre) | curl : head, JSON-LD Product (sans offers) et BreadcrumbList, fiche dans le HTML (h1, fiche technique, 4 modèles proches), 404 pour un slug inconnu ou d'une autre catégorie ; sitemap de 1 880 URL validé par xmllint. Chrome headless (CDP) 34/34 : ouverture depuis le podium, le canvas, les résultats et le n°1 mobile, flèches, modèles proches, Retour et Avant, ×, arrivée directe, langue, sans remontage du finder ni erreur d'hydratation. 85 tests du moteur et 26 de l'import, typecheck, Biome et build au vert. |
 | Fiches et shapepick.com en production (24 octobre) | Après 1e4d0bf : head, JSON-LD, og:image servie à sa taille, photo du noscript, 404 et sitemap contrôlés en ligne, navigateur 30/30. Après le passage du domaine (25 contrôles sur 25) : canonical, hreflang, og:url, JSON-LD et sitemap sur shapepick.com, og:image et photos relayées (Dell, Samsung, Logitech) servies, ancienne adresse en 301 page pour page, API sur place ; navigateur 30/30 sur shapepick.com, 68 photos d'écrans chargées sur le canvas, aucune requête photo en échec. |
-| Lot 1 de l'audit, local (24 octobre) | 84 tests du moteur, typecheck, Biome et build au vert. Route /api/out : 204, 400, 403 pour une autre origine, 405 en GET, robots ignorés ; lignes écrites en base locale pour les 5 emplacements. Slash final en 308, fiche atteinte directement sans préchargeur, script Umami rendu avec ses attributs (ID factice), CLS de l'accueil à 0,001 sur la build de production servie en local. |
+| Lot 1 de l'audit, local (24 octobre) | 84 tests du moteur, typecheck, Biome et build au vert. Route /api/out : 204, 400, 403 pour une autre origine, 405 en GET, robots ignorés ; lignes écrites en base locale pour les 5 emplacements. Slash final en 308, fiche atteinte directement sans préchargeur, script Umami rendu avec ses attributs (ID factice ; Umami retiré le soir même), CLS de l'accueil à 0,001 sur la build de production servie en local. |
 | Lot 1 et fac57c1 en production (24 octobre) | Assets en max-age=31536000, immutable ; slash final en 308 et ancienne adresse en 301 en un saut ; pages légales en 200, mauvaise langue en 301 ; image v2 servie ; fiche sans préchargeur ; GET /api/out en 405 et un clic de test écrit dans Neon, pays FR. CLS de l'accueil 0,001. Parcours souris en 9 questions, repères de main dans les tuiles, ancien lien avec handsize en 200. |
 | Fusion du soir, local (24 octobre) | Typecheck des 4 paquets, 89 tests du moteur, 46 de l'import, Biome et build au vert sur main ; seed local ; pages relues sur le serveur construit (question des boutons latéraux, comptes du ressenti, catalogues, collections, sitemap). |
 | Soir du 24 octobre, en production | Migration 0006, puis seed (38 marques, 227 switchs, 523 claviers, 264 écrans, 149 souris ; 149 avec boutons latéraux), puis push 411f8cd, en ligne une minute plus tard. API : 13 claviers mécaniques ou optiques sans switch ; ressenti linéaire 429, tactile 233 (Topre compris), clicky 117, silencieux 59 ; boutons latéraux 7, 108, 29 et 5 souris. Pages : « Combien de boutons sur le côté ? » affichée (sautée quand les souris restantes ont toutes le même nombre), titre « 149 modèles comparés en 10 questions », catalogues A–Z, collection 75 % (104 modèles), bloc « Classements » des fiches, sitemap de 2 070 adresses, pages principales en 200 ; aucune erreur console. |
@@ -927,6 +928,7 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 - **Inconnu compté comme « non »** (audit A2) : les champs à valeur par défaut (firmware, montage, Mac, insonorisation) pénalisent les fiches peu remplies et les excluent des indispensables.
 - **Pénalités binaires** (audit A5) : une option absente (USB-C, pied réglable, multi-appareils) tombe au plancher de 0,05 et divise le fit par deux environ ; le bonus « calibré usine » disparaît quand la couleur sature déjà à 1.
 - **Switchs** (24 octobre) : 13 claviers restent sans switch faute de nom publié (6 Ajazz, le Chilkey Foxy 65, 6 Womier) et sortent dès qu'on répond à « Ressenti ». 7 fiches de switchs viennent de sources non officielles (Keychron Apex Red, Brown et Banana, Gateron Sylva, Outemu Red, Durock Blue Lotus, HMX Silent Sakura), regroupées et sourcées dans `data/switches.yaml`.
+- **Pas d'outil d'audience** (depuis le 24 octobre au soir) : ni visiteurs ni pages vues. Search Console montre le trafic venu de Google, la console Partenaires les clics et ventes Amazon, `outbound_clicks` les clics par produit et emplacement, Netlify Observability les requêtes brutes des dernières 24 h.
 
 ## Prochaines étapes
 
@@ -957,10 +959,10 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [ ] **Vérifier sur un vrai iPhone** : zones sûres, barre de Safari qui se replie, inertie de l'accueil, feuilles tirées vers le bas.
 - [ ] **Troncatures bureau et tablette** : colonne du podium et lignes de résultats à 768 px (voir « Limites »).
 - [ ] **Décrire ici** les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`).
-- [ ] **Search Console** : valider la propriété shapepick.com (TXT en place) et soumettre `sitemap.xml`.
+- [x] **Search Console** : propriété validée et sitemap envoyé par l'utilisateur le 24 octobre au soir.
 - [ ] **SEO, phase 3** : guides tirés des questionnaires (collections faites le 24 octobre au soir) ; ne plus envoyer les trois catalogues dans chaque page.
 
-- [ ] **Umami** : mettre l'ID du site dans `UMAMI_WEBSITE_ID` dès que l'utilisateur l'a, pousser, puis vérifier la vue temps réel.
+- [x] **Umami** : abandonné le 24 octobre au soir et retiré du site (`4e47f6a`) ; la mesure passe par Search Console, la console Partenaires et le journal des clics.
 - [x] **Mettre en ligne les sessions en cours** : fait le 24 octobre au soir avec l'accord de l'utilisateur (migration 0006, seed, push ; voir « Soir du 24 octobre »).
 - [ ] **Lot 2 de l'audit** : inconnus dans le moteur (champs à trois états, `known` sur construction, confort, programmable, silence), firmware complété par les listes VIA et QMK.
 - [ ] **Lot 4 de l'audit** : catalogue compact par catégorie, snapshot précalculé (Netlify Blobs écrit par le seed), région des fonctions.
