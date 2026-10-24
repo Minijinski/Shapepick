@@ -7,9 +7,10 @@ import { ANY, type Answers, type FinderDefinition, type Option } from './types'
 // The mouse questionnaire. The use first (ranking profile only), then the hand and the shape, the
 // two answers that decide which shells can be used at all; then the fit: the grip steers the
 // ranking, the size (each tile says which hands it suits) and the weight narrow the catalogue; the
-// connection, the budget and must-haves last. No hand-size question: it read too much like the
-// mouse's own size, so its guidance went into the size tiles. No colour question, as for
-// keyboards: a colour rarely decides between mice. The grip model lives in mouse-fit.ts.
+// side buttons, the connection, the budget and must-haves last. No hand-size question: it read too
+// much like the mouse's own size, so its guidance went into the size tiles. No colour question, as
+// for keyboards: a colour rarely decides between mice. No "8 buttons" or "MMO grid" must-have: the
+// side-button question says it better. The grip model lives in mouse-fit.ts.
 
 type M = MouseItem
 const opt = (
@@ -33,11 +34,22 @@ const keepsShells = (answers: Answers) => {
   return !shapes.length || shapes.includes('sym') || shapes.includes('ergo')
 }
 
+/** Whether the answers keep a mouse with a flank under the thumb: trackballs alone have none. */
+const keepsFlanks = (answers: Answers) => {
+  const shapes = shapesOf(answers)
+  return !shapes.length || shapes.some((s) => !s.startsWith('tb_'))
+}
+
 const inBand = (band: SizeBand) => (m: M) => sizeBandOf(m) === band
 /** A few grams either side of a band are not another mouse: they still count. */
 const GRACE_G = 3
 const weighs = (lo: number, hi: number) => (m: M) =>
   m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G
+/** Buttons on the thumb's flank, between lo and hi. A mouse whose count is unknown answers none. */
+const sides =
+  (lo: number, hi = lo) =>
+  (m: M) =>
+    m.specs.sideButtons != null && m.specs.sideButtons >= lo && m.specs.sideButtons <= hi
 const wireless = (m: M) => m.specs.conn24ghz || m.specs.connBt
 const clamp01 = (v: number) => Math.min(1, Math.max(0, v))
 
@@ -227,6 +239,29 @@ export const mouseFinder: FinderDefinition<M> = {
       ],
     },
     {
+      key: 'sideButtons',
+      kind: 'multi',
+      applies: keepsFlanks,
+      label: text('Boutons', 'Buttons'),
+      title: text('Combien de boutons sur le côté ?', 'How many side buttons?'),
+      help: text(
+        'Les boutons sous le pouce : avant, arrière, et ceux qu’on ajoute pour jouer ou travailler (tir de précision, geste, pavé MMO). Une ambidextre compte ceux d’un seul côté. Choisis-en plusieurs si tu hésites.',
+        'The buttons under the thumb: back, forward, and those added for games or work (sniper, gesture, MMO grid). An ambidextrous mouse counts one side. Pick several if unsure.',
+      ),
+      options: [
+        opt('none', 'Aucun', 'None', sides(0), ['Rien sous le pouce', 'Nothing under the thumb']),
+        opt('two', '2', '2', sides(2), ['Avant et arrière', 'Back and forward']),
+        opt('few', '3 à 5', '3 to 5', sides(3, 5), [
+          'G502, Basilisk, MX Master',
+          'G502, Basilisk, MX Master',
+        ]),
+        opt('many', '6 et plus', '6 or more', sides(6, Number.POSITIVE_INFINITY), [
+          'Pavé MMO',
+          'MMO grid',
+        ]),
+      ],
+    },
+    {
       key: 'connection',
       kind: 'single',
       label: text('Connexion', 'Connection'),
@@ -315,14 +350,6 @@ export const mouseFinder: FinderDefinition<M> = {
           (m) => m.specs.power === 'rechargeable',
           ['Pas de piles à changer', 'No batteries to swap'],
         ),
-        opt('buttons8', '8 boutons et +', '8+ buttons', (m) => (m.specs.buttons ?? 0) >= 8, [
-          'Raccourcis sous la main',
-          'Shortcuts under your hand',
-        ]),
-        opt('mmo', 'Pavé MMO', 'MMO side grid', (m) => m.specs.mmo, [
-          'Six boutons de côté ou plus',
-          'Six side buttons or more',
-        ]),
         opt(
           'optical',
           'Switchs optiques',

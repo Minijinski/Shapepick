@@ -129,11 +129,12 @@ export function read(url: string, html: string, colors: string[] = []): Official
     modelNumber: p.id,
     facts,
     text,
-    // The Sensei's side buttons sit on both sides: a true ambidextrous mouse.
+    // The Sensei Ten's side buttons sit on both sides: a true ambidextrous mouse. The Sensei Pro's
+    // sit on the left only: the mapper reads it as a right-hand mouse with an ambidextrous shell.
     hints: {
       segment: 'gaming',
       shape: shape ?? undefined,
-      hand: /sensei/i.test(name) ? 'ambidextrous' : undefined,
+      hand: /sensei(?! pro)/i.test(name) ? 'ambidextrous' : undefined,
     },
     variants,
     images: picturesOf(p),

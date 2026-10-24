@@ -26,7 +26,8 @@
     - { url: https://assets3.razerzone.com/wMiYffvbRm1XwkDFn5hXiUe5dik=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhad%2Fh60%2F9434918944798%2F220823-basilisk-v3-pro-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-pro/RZ01-04620100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.4, heightMm: 42.5, weightG: 112, buttons: 11, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : avant, arrière et palette (« 10 + 1 boutons programmables », razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.4, heightMm: 42.5, weightG: 112, buttons: 11, sideButtons: 3, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-04620100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-04620200-R3G1, colorName: Blanc, colorFamily: white }
@@ -49,7 +50,8 @@
     - { url: https://assets3.razerzone.com/ZI5YRnqX_m2x1-XQ0nAR7ctDrog=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe6%2Fh1b%2F9451886706718%2F221110-naga-v2-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-naga-v2-hyperspeed/RZ01-03600100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75, heightMm: 43.5, weightG: 95, buttons: 19, mmo: true, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 250, freeSpinWheel: true, tiltWheel: true }
+  # sideButtons : pavé de 12 (photo de profil razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75, heightMm: 43.5, weightG: 95, buttons: 19, sideButtons: 12, mmo: true, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 250, freeSpinWheel: true, tiltWheel: true }
   variants:
     - { sku: RZ01-03600100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -71,7 +73,8 @@
     - { url: https://assets3.razerzone.com/-5MtOByYeLpblOfghHTJXueulas=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha1%2Fh08%2F9765619171358%2F240423-viper-v3-pro-black-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-pro/RZ01-05120100-R3G1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
+  # sideButtons : photo de dessus : 2 à gauche (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sideButtons: 2, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
   variants:
     - { sku: RZ01-05120100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05120200-R3G1, colorName: Blanc, colorFamily: white }
@@ -94,7 +97,8 @@
     - { url: https://assets3.razerzone.com/1YscQiPT-s9OeNmZL0cogQeYgwo=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh34%2Fhf1%2F9821719855134%2F241001-basilisk-v3-pro-35k-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-pro-35k/RZ01-05240100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 112, buttons: 11, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : avant, arrière et palette (photo de profil razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 112, buttons: 11, sideButtons: 3, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-05240100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05240200-R3G1, colorName: Blanc, colorFamily: white }
@@ -116,7 +120,8 @@
     - { url: https://assets3.razerzone.com/BMF6rIRQPVfgZHhsQi2lquleYa8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhfc%2Fhda%2F9980074623006%2F251024-da-v4-pro-esports-gr-1500x1000-5.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v4-pro/RZ01-05330500-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 58, buttons: 6, sensor: 45K Focus Pro de 2e génération, dpiMax: 45000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 150, power: rechargeable }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 58, buttons: 6, sideButtons: 2, sensor: 45K Focus Pro de 2e génération, dpiMax: 45000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 150, power: rechargeable }
   variants:
     - { sku: RZ01-05330100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05330200-R3G1, colorName: Blanc, colorFamily: white }
@@ -139,7 +144,8 @@
     - { url: https://assets3.razerzone.com/k7AOAGFkrjlT3EIO2tWk3DanpWs=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh0f%2Fhbe%2F10458042499102%2F261008-basilisk-v4-pro-white-1500X1000-6.png, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v4-pro/RZ01-05670200-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 101, buttons: 12, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 101, buttons: 12, sideButtons: 4, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-05670100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05670200-R3G1, colorName: Blanc, colorFamily: white }
@@ -162,7 +168,8 @@
     - { url: https://assets3.razerzone.com/Wr51QT6N4Z5aVC5MBq1kFxserbI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh70%2Fhdc%2F10458043318302%2F261008-basilisk-v4-hyperspeed-white-1500X1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v4-hyperspeed/RZ01-05680200-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 95, buttons: 10, sensor: 33 K Focus X de 3e génération, dpiMax: 33000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 75.8, heightMm: 42.7, weightG: 95, buttons: 10, sideButtons: 4, sensor: 33 K Focus X de 3e génération, dpiMax: 33000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-05680100-R3M1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05680200-R3M1, colorName: Blanc, colorFamily: white }
@@ -182,7 +189,8 @@
     - { url: https://assets3.razerzone.com/9NAIe5Ijdo7WnYAnQXeNpwHmWK4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fha9%2Fhe6%2F9234225496094%2Fdeathadder-essential-2021-black-1500x1000-3.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-essential/RZ01-03850100-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.3, widthMm: 72.7, heightMm: 42.8, weightG: 96, buttons: 5, dpiMax: 6400, switchType: mechanical }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.3, widthMm: 72.7, heightMm: 42.8, weightG: 96, buttons: 5, sideButtons: 2, dpiMax: 6400, switchType: mechanical }
   variants:
     - { sku: RZ01-03850100-R3M1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-03850200-R3M1, colorName: Blanc, colorFamily: white }
@@ -204,7 +212,8 @@
     - { url: https://assets3.razerzone.com/rpRxmeB0BRFGSLLR75rpXKOyhik=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh34%2Fhdb%2F9497493176350%2F230330-basilisk-v3-x-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-x-hyperspeed/RZ01-04870100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.1, widthMm: 75.1, heightMm: 42.5, weightG: 110, buttons: 7, sensor: avancé 5G 18K DPI Razer, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 285, power: aa, rgb: true }
+  # sideButtons : rtings.com/mouse/reviews/razer/basilisk-v3-x-hyperspeed
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.1, widthMm: 75.1, heightMm: 42.5, weightG: 110, buttons: 7, sideButtons: 3, sensor: avancé 5G 18K DPI Razer, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 285, power: aa, rgb: true }
   variants:
     - { sku: RZ01-04870100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -226,7 +235,8 @@
     - { url: https://assets3.razerzone.com/KK2tYr26A_Zr67of6EqY3ErDIec=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7b%2Fh36%2F9592669536286%2F230629-cobra-pro-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-cobra-pro/RZ01-04660100-R3G1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 77, buttons: 8, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, rgb: true }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 77, buttons: 8, sideButtons: 2, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, rgb: true }
   variants:
     - { sku: RZ01-04660100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-04660200-R3G1, colorName: Blanc, colorFamily: white }
@@ -249,7 +259,8 @@
     - { url: https://assets3.razerzone.com/rhNmOYCPyW37V03qY3zbKQoZs_g=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh64%2Fh49%2F10011388608542%2F260115-viper-v3-pro-se-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-pro-se/RZ01-04550100-R3G1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
+  # sideButtons : photo de dessus : 2 à gauche (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 54, buttons: 6, sideButtons: 2, sensor: 35K Focus Pro de 2e génération, dpiMax: 35000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 95, power: rechargeable }
   variants:
     - { sku: RZ01-04550100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -269,7 +280,8 @@
     - { url: https://assets3.razerzone.com/TF5VOIUbmid7QEz82uAZiCppkKA=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh40%2Fhf2%2F10172282077214%2F260706-cobra-espeon-umbreon-1500x1000-5.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-cobra/RZ01-04650800-RUEA
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 58, buttons: 6, sensor: 8 500 DPI, dpiMax: 8500, switchType: optical, rgb: true }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 58, buttons: 6, sideButtons: 2, sensor: 8 500 DPI, dpiMax: 8500, switchType: optical, rgb: true }
   variants:
     - { sku: RZ01-04650100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -290,7 +302,8 @@
     - { url: https://assets3.razerzone.com/CsotVh_8q2UAP_tx8sN42NEBfsM=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4c%2Fheb%2F10268566978590%2F260811-naga-v3-pro-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-naga-v3-pro/RZ01-05660100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75.5, heightMm: 43.5, weightG: 117, buttons: 23, mmo: true, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 155, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : plaques de 2, 6 ou 12 boutons : la plus fournie (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75.5, heightMm: 43.5, weightG: 117, buttons: 23, sideButtons: 12, mmo: true, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 155, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-05660100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -312,7 +325,8 @@
     - { url: https://assets3.razerzone.com/ERw0iyroNuubX8Y05r2YW808Rno=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhec%2Fhdf%2F10302623219742%2F260818-viper-v4-pro-esports-gr-2-1500x1000-6.png, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v4-pro/RZ01-05630300-R3M1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 52, buttons: 6, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 180, power: rechargeable }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 52, buttons: 6, sideButtons: 2, sensor: 50 K Focus Pro de 3e génération, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 180, power: rechargeable }
   variants:
     - { sku: RZ01-05630100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05630200-R3G1, colorName: Blanc, colorFamily: white }
@@ -334,7 +348,8 @@
     - { url: https://assets3.razerzone.com/R9C1IWV6QV8j7tb1383afq5eCD0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1b%2Fh12%2F9081451184158%2FRazer-Naga-Left-Handed-Edition-Gallery5.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-naga-left-handed-edition/RZ01-03410100-R3M1
-  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119, widthMm: 75, heightMm: 43, weightG: 109, buttons: 20, mmo: true, dpiMax: 20000, switchType: mechanical, tiltWheel: true, rgb: true }
+  # sideButtons : pavé de 12, à droite (photo de profil razer.com)
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119, widthMm: 75, heightMm: 43, weightG: 109, buttons: 20, sideButtons: 12, mmo: true, dpiMax: 20000, switchType: mechanical, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-03410100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -355,7 +370,8 @@
     - { url: https://assets3.razerzone.com/v172IG4vHlklURkQ4pSa9olaef4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhda%2Fhfa%2F9935791226910%2F250722-cobra-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-cobra-hyperspeed/RZ01-05570100-R3G1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 62, buttons: 7, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, rgb: true }
+  # sideButtons : photo de dessus : 2 à gauche (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 62.5, heightMm: 38.1, weightG: 62, buttons: 7, sideButtons: 2, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable, wirelessCharging: true, rgb: true }
   variants:
     - { sku: RZ01-05570100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -377,7 +393,8 @@
     - { url: https://assets3.razerzone.com/ZNFMwaXvlV7k0IIMN7U5YEtlTDk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc0%2Fh92%2F9910831120414%2F250521-deathadder-v3-pro-black-1500x1000-3.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-pro/RZ01-04630100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
+  # sideButtons : photo de dessus : 2 à gauche (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sideButtons: 2, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
   variants:
     - { sku: RZ01-04630100-R3G1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-04630200-R3G1, colorName: Blanc, colorFamily: white }
@@ -400,7 +417,8 @@
     - { url: https://assets3.razerzone.com/ZNFMwaXvlV7k0IIMN7U5YEtlTDk=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc0%2Fh92%2F9910831120414%2F250521-deathadder-v3-pro-black-1500x1000-3.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-pro/RZ01-04630100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
+  # sideButtons : photo de dessus : 2 à gauche (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 63, buttons: 6, sideButtons: 2, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 90, power: rechargeable }
   variants:
     - { sku: RZ01-04630300-R3WL, colorName: "Noir, Toucher lisse", colorFamily: black }
     - { sku: RZHB-230201-21, colorName: Noir, colorFamily: black }
@@ -423,7 +441,8 @@
     - { url: https://assets3.razerzone.com/swf63mS4DyOf7FGogcAeo5jsDlI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc2%2Fhfe%2F9821719461918%2F241001-basilisk-v3-35k-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3-35k/RZ01-05230100-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 101, buttons: 11, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : avant, arrière et palette (photo de profil razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75.1, heightMm: 42.5, weightG: 101, buttons: 11, sideButtons: 3, sensor: 35 K Focus Pro de 2e gén., dpiMax: 35000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-05230100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -444,7 +463,8 @@
     - { url: https://assets3.razerzone.com/GhXiFbzGyzCRWG9YjXP7K9fRNcQ=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh5d%2Fhf9%2F9904338337822%2F250508-basilisk-mobile-black-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-mobile/RZ01-04310100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 111.5, widthMm: 75.9, heightMm: 41.4, weightG: 76, buttons: 10, sensor: 18 K Razer Focus X, dpiMax: 18000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 105, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : techradar.com/computing/mice/razer-basilisk-mobile-review
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 111.5, widthMm: 75.9, heightMm: 41.4, weightG: 76, buttons: 10, sideButtons: 3, sensor: 18 K Razer Focus X, dpiMax: 18000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 105, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-04310100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -463,7 +483,8 @@
     - { url: https://assets3.razerzone.com/FLElmKtz-s9pogYN3VIFmh5rzzY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhef%2Fh2a%2F9234032558110%2Fbasiliskv-3-1500x1000-4.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-basilisk-v3/RZ01-04000100-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42.5, weightG: 101, buttons: 11, dpiMax: 26000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : avant, arrière et palette (photo de profil razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42.5, weightG: 101, buttons: 11, sideButtons: 3, dpiMax: 26000, switchType: optical, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-04000100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -484,7 +505,8 @@
     - { url: https://assets3.razerzone.com/-MuSilbLn67cSRkmnKnIT_0aDfE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6a%2Fh7e%2F9785428541470%2F240620-deathadder-v3-hyperspeed-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3-hyperspeed/RZ01-05140100-R3G1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 64.8, heightMm: 41.3, weightG: 55, buttons: 6, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 100, power: rechargeable }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 64.8, heightMm: 41.3, weightG: 55, buttons: 6, sideButtons: 2, sensor: 26 K Razer Focus X, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: RZ01-05140100-R3G1, colorName: Noir, colorFamily: black }
 
@@ -506,7 +528,8 @@
     - { url: https://assets3.razerzone.com/yllAtBAeDDPF1AFq3TRCvlrS8x4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh1c%2Fh73%2F10071823646750%2F260526-orochi-v2-2026-black-1500x1000-5.png, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-orochi-v2/RZ01-05690100-R3M1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 108, widthMm: 62.6, heightMm: 38.5, weightG: 60, buttons: 6, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 445, power: aa }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 108, widthMm: 62.6, heightMm: 38.5, weightG: 60, buttons: 6, sideButtons: 2, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 445, power: aa }
   variants:
     - { sku: RZ01-05690100-R3M1, colorName: Noir, colorFamily: black }
     - { sku: RZ01-05690200-R3M1, colorName: Blanc, colorFamily: white }
@@ -529,7 +552,8 @@
     - { url: https://assets3.razerzone.com/SA0MMpD8Sh2HBwMnSwSZr9k_CoI=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh42%2Fh4f%2F9481236283422%2F230221-da-v3-1500X1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-deathadder-v3/RZ01-04640100-R3M1
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 59, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: optical }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 59, buttons: 6, sideButtons: 2, sensor: 30 K Focus Pro, dpiMax: 30000, switchType: optical }
   variants:
     - { sku: RZ01-04640100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -550,7 +574,8 @@
     - { url: https://assets3.razerzone.com/QVV5gs0ORX9XjdjcnUkzP5eLSro=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3b%2Fhf8%2F9657631342622%2F230914-viper-v3-hyperspeed-black-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-viper-v3-hyperspeed/RZ01-04910100-R3M1
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 82, buttons: 6, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 280, power: aa }
+  # sideButtons : photo de profil (razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 63.9, heightMm: 39.9, weightG: 82, buttons: 6, sideButtons: 2, sensor: 30 K Focus Pro, dpiMax: 30000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 280, power: aa }
   variants:
     - { sku: RZ01-04910100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -571,7 +596,8 @@
     - { url: https://assets3.razerzone.com/iB4z5FmIUz5d-C6umKNINPn8AJ4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhf9%2Fh0c%2F9899954700318%2F250424-pro-click-v2-black-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-pro-click-v2/RZ01-03900100-R3M1
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 80, heightMm: 46, weightG: 110, buttons: 9, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1200, power: rechargeable, tiltWheel: true, rgb: true }
+  # sideButtons : « two side buttons », tech.yahoo.com/computing/articles/razer-pro-click-v2-productivity-203946467.html
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 80, heightMm: 46, weightG: 110, buttons: 9, sideButtons: 2, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1200, power: rechargeable, tiltWheel: true, rgb: true }
   variants:
     - { sku: RZ01-03900100-R3M1, colorName: Noir, colorFamily: black }
 
@@ -592,6 +618,7 @@
     - { url: https://assets3.razerzone.com/i4eiZOWA-y_KQRrfaAHODrd1Nso=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe3%2Fh08%2F9899954864158%2F250424-pro-click-v2-vertical-black-1500x1000-6.jpg, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-mice/razer-pro-click-v2-vertical/RZ01-05250100-R3G1
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 111, widthMm: 88, heightMm: 79, weightG: 150, buttons: 8, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1440, power: rechargeable, rgb: true }
+  # sideButtons : rtings.com/mouse/reviews/razer/pro-click-v2-vertical
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 111, widthMm: 88, heightMm: 79, weightG: 150, buttons: 8, sideButtons: 2, sensor: Razer Focus Pro, dpiMax: 30000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1440, power: rechargeable, rgb: true }
   variants:
     - { sku: RZ01-05250100-R3G1, colorName: Noir, colorFamily: black }

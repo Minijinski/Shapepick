@@ -27,7 +27,8 @@
     - https://fr-store.msi.com/products/clutch-gm08-gaming-gear
   gtins:
     - "4719072731151"
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 68.5, heightMm: 40.5, weightG: 92, buttons: 6, sensor: PAW-3519, dpiMax: 4200, pollingHz: 1000 }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 68.5, heightMm: 40.5, weightG: 92, buttons: 6, sideButtons: 2, sensor: PAW-3519, dpiMax: 4200, pollingHz: 1000 }
   variants:
     - { sku: S12-0401800-CLA, colorName: Black, colorFamily: black }
 
@@ -50,7 +51,8 @@
     - https://fr-store.msi.com/products/forge-gm300-gaming-gear
   gtins:
     - "4711377175487"
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 41, weightG: 118, buttons: 7, dpiMax: 7200, rgb: true }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 41, weightG: 118, buttons: 7, sideButtons: 2, dpiMax: 7200, rgb: true }
   variants:
     - { sku: S12-0402300-HH9, colorName: Black, colorFamily: black }
 
@@ -73,7 +75,8 @@
     - https://fr-store.msi.com/products/versa-300-elite-gaming-gear
   gtins:
     - "4711377245951"
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 65, buttons: 6, sensor: PixArt PAW3395DM, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 65, buttons: 6, sideButtons: 2, sensor: PixArt PAW3395DM, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable, rgb: true }
   variants:
     - { sku: S12-4301290-CLA, colorName: Black, colorFamily: black }
 
@@ -96,7 +99,8 @@
     - https://fr-store.msi.com/products/versa-300-w-8k-gaming-gear
   gtins:
     - "4711377395991"
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 66, buttons: 6, sensor: PixArt PAW339, dpiMax: 26000, pollingHz: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 196, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 41, weightG: 66, buttons: 6, sideButtons: 2, sensor: PixArt PAW339, dpiMax: 26000, pollingHz: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 196, power: rechargeable, rgb: true }
   variants:
     - { sku: S12-4301600-CLA, colorName: Black, colorFamily: black }
 
@@ -119,7 +123,8 @@
     - https://fr-store.msi.com/products/forge-gm100-gaming-gear
   gtins:
     - "4711377176873"
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 60, heightMm: 40, weightG: 108, buttons: 7, dpiMax: 6400, rgb: true }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 60, heightMm: 40, weightG: 108, buttons: 7, sideButtons: 2, dpiMax: 6400, rgb: true }
   variants:
     - { sku: S12-0402310-HH9, colorName: Black, colorFamily: black }
 
@@ -142,6 +147,7 @@
     - https://fr-store.msi.com/products/forge-gm320-gaming-gear
   gtins:
     - "4711377367523"
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 40, weightG: 126, buttons: 7, dpiMax: 12800, rgb: true }
+  # sideButtons : photo de profil (fr-store.msi.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 40, weightG: 126, buttons: 7, sideButtons: 2, dpiMax: 12800, rgb: true }
   variants:
     - { sku: S12-0402420-HH9, colorName: Black, colorFamily: black }

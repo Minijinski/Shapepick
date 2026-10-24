@@ -25,7 +25,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_wireless_d9ls2aa_angle_7_a40446a4-2fc5-4b20-bde5-f8559b2b5f2a.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-3-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 51, buttons: 6, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 51, buttons: 6, sideButtons: 2, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
   variants:
     - { sku: D9LS1AA, colorName: Black, colorFamily: black }
 
@@ -46,7 +47,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_3_pro_d6gj3aa_angle_7_d3baa308-b2a4-4318-939d-53665b5100f0.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-3-pro-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 47, buttons: 6, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.1, widthMm: 66.9, heightMm: 38.3, weightG: 47, buttons: 6, sideButtons: 2, sensor: HyperX Performance Sensor, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 150, power: rechargeable }
   variants:
     - { sku: D6GJ3AA, colorName: Black, colorFamily: black }
 
@@ -68,7 +70,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_a2pb3aa_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-saga-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 69, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, switchType: optical, rgb: true }
+  # sideButtons : photo de profil (hyperx.com), paires interchangeables fournies
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 69, buttons: 6, sideButtons: 2, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, switchType: optical, rgb: true }
   variants:
     - { sku: A2PB3AA, colorName: Black, colorFamily: black }
 
@@ -91,7 +94,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_fuse_wireless_a1ky6aa_angle_8_f675a0c4-72c4-4332-9d28-238e87eb9db1.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-fuse-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.4, widthMm: 64, heightMm: 39.7, weightG: 75, buttons: 6, sensor: Pixart PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 85, power: aaa, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.4, widthMm: 64, heightMm: 39.7, weightG: 75, buttons: 6, sideButtons: 2, sensor: Pixart PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 85, power: aaa, rgb: true }
   variants:
     - { sku: A1KY6AA, colorName: Black, colorFamily: black }
 
@@ -113,7 +117,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_s_wireless_blue_66x0197a_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-2-s-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 66.5, heightMm: 38.5, weightG: 64, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 66.5, heightMm: 38.5, weightG: 64, buttons: 6, sideButtons: 2, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true }
   variants:
     - { sku: 9B001AA, colorName: Navy, colorFamily: color }
     - { sku: 9B002AA, colorName: Silver, colorFamily: white }
@@ -136,7 +141,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_saga_pro_wireless_a2pb2aa_angle_8.jpg, kind: cutout_top, width: 1500, height: 1500 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-saga-pro-wireless-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 72, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (hyperx.com), paires interchangeables fournies
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 67.2, heightMm: 39.8, weightG: 72, buttons: 6, sideButtons: 2, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
   variants:
     - { sku: A2PB2AA, colorName: Black, colorFamily: black }
 
@@ -158,7 +164,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_pro_4k_wireless_a1ky5aa_angle_8_f3de8e70-cc91-42f6-95b2-22ab16dd973e.jpg, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-2-pro-4k-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HyperX 26K, dpiMax: 26000, pollingHz: 4000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sideButtons: 2, sensor: HyperX 26K, dpiMax: 26000, pollingHz: 4000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, rgb: true }
   variants:
     - { sku: A1KY5AA, colorName: Slate Gray, colorFamily: black }
 
@@ -180,7 +187,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-2-core-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 70, buttons: 6, sensor: HyperX Core Sensor, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: aaa, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 70, buttons: 6, sideButtons: 2, sensor: HyperX Core Sensor, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: aaa, rgb: true }
   variants:
     - { sku: 8R2E6AA, colorName: Black, colorFamily: black }
     - { sku: 8R2E7AA, colorName: White, colorFamily: white }
@@ -203,7 +211,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_8_grips.jpg, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-2-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 53, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 53, buttons: 6, sideButtons: 2, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 8000, rgb: true }
   variants:
     - { sku: 6N0A8AA, colorName: White, colorFamily: white }
     - { sku: 6N0A7AA, colorName: Black, colorFamily: black }
@@ -226,7 +235,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://hyperx.com/products/hyperx-pulsefire-haste-2-wireless-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.3, widthMm: 66.8, heightMm: 38.2, weightG: 61, buttons: 6, sideButtons: 2, sensor: HyperX 26K Sensor, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, rgb: true }
   variants:
     - { sku: 6N0B0AA, colorName: Black, colorFamily: black }
     - { sku: 6N0A9AA, colorName: White, colorFamily: white }

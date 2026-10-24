@@ -1,0 +1,1 @@
+ALTER TABLE "mouse_specs" ADD COLUMN "side_buttons" smallint;

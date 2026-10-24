@@ -98,7 +98,7 @@ describe('mouse finder', () => {
     expect(
       filter(mouseFinder, mice, { musts: 'poll8k' }).every((m) => (m.specs.pollingHz ?? 0) >= 8000),
     ).toBe(true)
-    expect(slugs({ musts: 'mmo' })).toEqual(['nimbus-legion', 'nimbus-legion-left'])
+    expect(slugs({ musts: 'charging' })).toEqual(['ardent-rook', 'nimbus-titan'])
     const quietMultiDevice = filter(mouseFinder, mice, { musts: 'silent,multidevice' })
     expect(quietMultiDevice.length).toBeGreaterThan(0)
     expect(quietMultiDevice.every((m) => m.specs.silentClicks && m.specs.hosts >= 2)).toBe(true)
@@ -107,6 +107,71 @@ describe('mouse finder', () => {
   it('says "not sure" rather than "no preference" for the grip', () => {
     expect(describeAnswer(stepOf(mouseFinder, 'grip'), 'any', 'fr')).toBe('Je ne sais pas')
     expect(describeAnswer(stepOf(mouseFinder, 'grip'), 'any', 'en')).toBe('Not sure')
+  })
+})
+
+describe('side buttons', () => {
+  it('asks them after the weight', () => {
+    const keys = mouseFinder.steps.map((s) => s.key)
+    expect(keys.indexOf('sideButtons')).toBe(keys.indexOf('weight') + 1)
+  })
+
+  it('counts the buttons under the thumb: none, back and forward, a few more, a grid', () => {
+    expect(slugs({ sideButtons: 'many' })).toEqual(['nimbus-legion', 'nimbus-legion-left'])
+    expect(slugs({ sideButtons: 'few' })).toEqual([
+      'ardent-rook-left',
+      'ardent-rook-xl',
+      'nimbus-titan',
+      'pebblework-master',
+    ])
+    const none = slugs({ sideButtons: 'none' })
+    expect(none).toContain('pebblework-dot')
+    expect(none).toContain('pebblework-thumbball')
+    // Several tiles: any of them.
+    expect(slugs({ sideButtons: 'few,many' })).toEqual(
+      [...slugs({ sideButtons: 'few' }), ...slugs({ sideButtons: 'many' })].sort(),
+    )
+  })
+
+  it('skips the question when only trackballs are left', () => {
+    const step = stepOf(mouseFinder, 'sideButtons')
+    expect(step.applies?.({ shape: 'tb_thumb,tb_finger' })).toBe(false)
+    expect(step.applies?.({ shape: 'vertical' })).toBe(true)
+    expect(step.applies?.({ shape: 'sym,tb_thumb' })).toBe(true)
+    const base = { use: 'gaming', hand: 'right' }
+    expect(askedSteps(mouseFinder, mice, { ...base, shape: 'tb_thumb' })).not.toContain(
+      'sideButtons',
+    )
+    expect(askedSteps(mouseFinder, mice, { ...base, shape: 'ergo,tb_thumb' })).toContain(
+      'sideButtons',
+    )
+  })
+
+  it('rules out a mouse whose count is unknown once the question is answered', () => {
+    const known = mice.find((m) => m.slug === 'ardent-swift')
+    if (!known) throw new Error('demo mouse missing')
+    const unknown = {
+      ...known,
+      slug: 'ardent-swift-unknown',
+      specs: { ...known.specs, sideButtons: undefined },
+    }
+    const pool = [...mice, unknown]
+    const kept = (answers: Answers) =>
+      filter(mouseFinder, pool, answers).some((m) => m.slug === unknown.slug)
+    expect(kept({ sideButtons: 'two' })).toBe(false)
+    expect(kept({ sideButtons: 'any' })).toBe(true)
+    expect(kept({})).toBe(true)
+  })
+
+  it('no longer offers the "8 buttons" and "MMO grid" must-haves, and old links still read', () => {
+    const musts = stepOf(mouseFinder, 'musts')
+    const ids = musts.kind === 'range' ? [] : musts.options.map((o) => o.id)
+    expect(ids).not.toContain('buttons8')
+    expect(ids).not.toContain('mmo')
+    expect(sanitizeAnswers(mouseFinder, { use: 'gaming', musts: 'mmo,rgb' })).toEqual({
+      use: 'gaming',
+      musts: 'rgb',
+    })
   })
 })
 

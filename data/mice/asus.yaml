@@ -17,7 +17,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/B067879B-6EDC-489E-BB31-9DA251D1D733, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ii-ace/
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.1, widthMm: 63.9, heightMm: 39.7, weightG: 48, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, power: rechargeable, rgb: true }
+  # sideButtons : « les deux boutons latéraux » (rog.asus.com)
+  # buttons : « 5 programmable buttons » (directcomputers.co.uk)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.1, widthMm: 63.9, heightMm: 39.7, weightG: 48, buttons: 5, sideButtons: 2, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, power: rechargeable, rgb: true }
   variants:
     - { sku: rog-harpe-ii-ace, colorName: Black, colorFamily: black }
     - { sku: rog-harpe-ii-ace, colorName: White, colorFamily: white }
@@ -34,7 +36,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/A2A7EEA1-640E-427F-BD61-3895067F6E48, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ace-extreme/
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 47, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, rgb: true }
+  # sideButtons : 2 latéraux, turbovs.com/review/asus-rog-harpe-ace-extreme-21304
+  # buttons : « Number of Programmable Buttons: 5 », mezha.ua/en/reviews/asus-rog-harpe-ace-extreme-review-flagship-gaming-mouse-with-a-carbon-fiber-body
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 47, buttons: 5, sideButtons: 2, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, rgb: true }
   variants:
     - { sku: rog-harpe-ace-extreme, colorName: Black, colorFamily: black }
 
@@ -49,7 +53,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/D23E776A-0090-43C8-8937-3918EE73C42F, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-strix-impact-iii-wireless/
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 39, weightG: 57, sensor: ROG AimPoint, dpiMax: 36000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 450, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
+  # sideButtons : 2 latéraux, turbovs.com/review/asus-rog-strix-impact-iii-81634
+  # buttons : 5 programmables, turbovs.com/review/asus-rog-strix-impact-iii-81634
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 39, weightG: 57, buttons: 5, sideButtons: 2, sensor: ROG AimPoint, dpiMax: 36000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 450, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: rog-strix-impact-iii-wireless, colorName: Black, colorFamily: black }
     - { sku: rog-strix-impact-iii-wireless, colorName: Moonlight White, colorFamily: white }
@@ -64,7 +70,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/9B783ACB-999D-41F3-AC55-7859FB30C90B, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-keris-ii-ace/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 67, heightMm: 42, weightG: 54, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 107, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (galerie rog.asus.com)
+  # buttons : « 5 Buttons » (scan.co.uk)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 67, heightMm: 42, weightG: 54, buttons: 5, sideButtons: 2, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 107, power: rechargeable, rgb: true }
   variants:
     - { sku: rog-keris-ii-ace, colorName: Black, colorFamily: black }
     - { sku: rog-keris-ii-ace, colorName: Moonlight White, colorFamily: white }
@@ -79,7 +87,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/CC324895-9E79-43D2-93A3-F831273E21F9, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-strix-impact-iii-model/
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 62, heightMm: 39, weightG: 59, sensor: "3311", dpiMax: 12000, pollingHz: 1000 }
+  # sideButtons : fiche rog.asus.com : 5 boutons (clics, molette, 2 latéraux), DPI dessous
+  # buttons : fiche rog.asus.com, « 5 programmable buttons+1 DPI button »
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 62, heightMm: 39, weightG: 59, buttons: 5, sideButtons: 2, sensor: "3311", dpiMax: 12000, pollingHz: 1000 }
   variants:
     - { sku: rog-strix-impact-iii-model, colorName: Black, colorFamily: black }
 
@@ -94,7 +104,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/0F9B888C-4649-4829-B3C9-BDD8734907A4, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-harpe-ace-aim-lab-edition-model/
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 54, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable }
+  # sideButtons : « only two extra buttons » (test cité sur rog.asus.com)
+  # buttons : fiche rog.asus.com, « Bouton : 5 »
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.5, widthMm: 63.7, heightMm: 39.6, weightG: 54, buttons: 5, sideButtons: 2, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable }
   variants:
     - { sku: rog-harpe-ace-aim-lab-edition-model, colorName: Black, colorFamily: black }
     - { sku: rog-harpe-ace-aim-lab-edition-model, colorName: White, colorFamily: white }
@@ -110,7 +122,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/94A80239-F7E2-443F-BE90-3F2AF6DDEFFE, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-keris-wireless-aimpoint-model/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 39, weightG: 75, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (galerie rog.asus.com)
+  # buttons : « cinq boutons programmables » (rog.asus.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 39, weightG: 75, buttons: 5, sideButtons: 2, sensor: ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: rog-keris-wireless-aimpoint-model, colorName: Black, colorFamily: black }
     - { sku: rog-keris-wireless-aimpoint-model, colorName: White, colorFamily: white }
@@ -126,7 +140,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/293663B4-274A-413F-AE7F-3F343BCC4C51, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-wireless-aimpoint-model/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, sensor: ROG AimPoint sensor, dpiMax: 36000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ palm, fingertip ] }
+  # sideButtons : photo de profil (galerie rog.asus.com)
+  # buttons : « six boutons programmables » (rog.asus.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, buttons: 6, sideButtons: 2, sensor: ROG AimPoint sensor, dpiMax: 36000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 119, makerGrips: [ palm, fingertip ] }
   variants:
     - { sku: rog-gladius-iii-wireless-aimpoint-model, colorName: Black, colorFamily: black }
     - { sku: rog-gladius-iii-wireless-aimpoint-model, colorName: Moonlight White, colorFamily: white }
@@ -141,7 +157,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/1D6EF918-6D35-4727-BD7A-1DA2908ABB58, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-spatha-x-model/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 137, widthMm: 89, heightMm: 45, weightG: 168, dpiMax: 19000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, makerGrips: [ palm ] }
+  # sideButtons : grappe de 6 sous le pouce, rtings.com/mouse/reviews/asus/rog-spatha-x
+  # buttons : fiche rog.asus.com, « Bouton : 12 »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 137, widthMm: 89, heightMm: 45, weightG: 168, buttons: 12, sideButtons: 6, mmo: true, dpiMax: 19000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, makerGrips: [ palm ] }
   variants:
     - { sku: rog-spatha-x-model, colorName: Black, colorFamily: black }
 
@@ -155,7 +173,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/56F8A13F-F1E2-4033-A216-5BAC89D0A205, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-model/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, dpiMax: 26000, pollingHz: 1000 }
+  # sideButtons : coque de la Gladius III Wireless AimPoint (photo de profil rog.asus.com)
+  # buttons : fiche rog.asus.com, « 6 programmable buttons & scroll wheel + 1 profile button »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 79, buttons: 6, sideButtons: 2, dpiMax: 26000, pollingHz: 1000 }
   variants:
     - { sku: rog-gladius-iii-model, colorName: Black, colorFamily: black }
 
@@ -169,6 +189,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/41BF1F1D-BB96-4BF5-AF0D-8D98F46DABE3, kind: cutout_top, primary: true }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-strix-carry-model/
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 101, widthMm: 62, heightMm: 36, weightG: 72.9, sensor: Pixart 3330, dpiMax: 7200, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (galerie rog.asus.com)
+  # buttons : fiche rog.asus.com, « 5 programmable buttons + 1 scroll wheel + 1 connection mode switch »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 101, widthMm: 62, heightMm: 36, weightG: 72.9, buttons: 5, sideButtons: 2, sensor: Pixart 3330, dpiMax: 7200, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: rog-strix-carry-model, colorName: Gun-metal grey, colorFamily: black }

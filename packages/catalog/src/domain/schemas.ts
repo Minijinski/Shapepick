@@ -197,6 +197,12 @@ const mouseSpecsShape = z.object({
   ballPosition: z.enum(E.ballPositions).optional(),
   /** Programmable buttons in all, the two main clicks and the wheel click included. */
   buttons: positiveInt.optional(),
+  /**
+   * Buttons on the thumb's flank (back, forward, a sniper button, an MMO grid); for an
+   * ambidextrous mouse with buttons on both flanks, those of one flank. Neither a thumb wheel nor
+   * the buttons on top count.
+   */
+  sideButtons: z.number().int().min(0).optional(),
   /** A grid of six side buttons or more, for MMO games (Naga, Scimitar). */
   mmo: z.boolean().default(false),
   sensor: z.string().optional(),

@@ -23,7 +23,9 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/64zQHcG5hh36Cn1fvmRjkt/831b966a182dd9aa7f49969016d6a5df/sensei_pro_black_pdp_img_buy_05.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=fullSize&mouse-shape=symmetrical&color=black
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125.6, widthMm: 66.5, heightMm: 38.6, weightG: 53, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  # sideButtons : photo de dessus : 2 à gauche, aucun à droite (steelseries.com)
+  # hand : boutons latéraux à gauche seulement, aucun à droite (photos steelseries.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.6, widthMm: 66.5, heightMm: 38.6, weightG: 53, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
   variants:
     - { sku: 62625:black, colorName: Black, colorFamily: black }
     - { sku: 62625:white, colorName: White, colorFamily: white }
@@ -44,7 +46,9 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6x0fgs3f1fdAf3PGeiAqFg/771d3634cbf2786e483ae616794f5a46/sensei_pro_mini_black_pdp_img_buy_05.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=mini&mouse-shape=symmetrical&color=black
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 118, widthMm: 65.4, heightMm: 36.2, weightG: 49, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (steelseries.com)
+  # hand : boutons latéraux à gauche seulement, aucun à droite (photos steelseries.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 65.4, heightMm: 36.2, weightG: 49, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
   variants:
     - { sku: 62641:black, colorName: Black, colorFamily: black }
     - { sku: 62641:white, colorName: White, colorFamily: white }
@@ -65,7 +69,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/43CAU82gPxCtotg1FSqj2v/9008f432dab84a02786b674d879025d1/rival_pro_white_pdp_img_buy_05.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=fullSize&mouse-shape=ergonomic&color=white
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.7, widthMm: 68.2, heightMm: 42.2, weightG: 53, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.7, widthMm: 68.2, heightMm: 42.2, weightG: 53, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
   variants:
     - { sku: 62660:white, colorName: White, colorFamily: white }
     - { sku: 62660:black, colorName: Black, colorFamily: black }
@@ -86,7 +91,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/RGAP0y3xZHtdjulI6GFJB/46ead83cb19ef2a7d146176b7fbb25c7/rival_pro_mini_black_pdp_img_buy_05.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/sensei-rival-pro?mouseSize=mini&mouse-shape=ergonomic&color=black
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.7, widthMm: 65.4, heightMm: 40.5, weightG: 49, buttons: 6, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.7, widthMm: 65.4, heightMm: 40.5, weightG: 49, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove 42K Pro (PixArt PAW3955 personnalisé), dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, batteryHours: 120, power: rechargeable, rgb: true }
   variants:
     - { sku: 62673:black, colorName: Black, colorFamily: black }
     - { sku: 62673:white, colorName: White, colorFamily: white }
@@ -106,7 +112,8 @@
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/3MVyd6Sq7dg77UKYXjkQAj/7dd3fe8cbbc430af30e43911c013e33b/aerox_3_wl_gen_2_shadow_mouse_buysection_swatch.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-3-wireless-gen-2?color=shadow
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sensor: SteelSeries TrueMove, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: 62717:shadow, colorName: Shadow, colorFamily: color }
     - { sku: 62717:magenta-haze, colorName: Magenta-haze, colorFamily: color }
@@ -128,7 +135,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/Y5b4NuEOsLlGhzxCjj9Vf/697e03b1c784f66cb82b3a529964666f/aerox_5_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-900.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-5?color=black&connectivityType=wireless
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 74, buttons: 9, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : « panneau latéral à 5 boutons » (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 74, buttons: 9, sideButtons: 5, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62406:black, colorName: Black, colorFamily: black }
 
@@ -148,7 +156,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/OpGHxMXODYWdxtKzoFMTW/956f4769f6c7f61fedbaf1156b07ada9/aerox_5_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-893.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-5?color=black&connectivityType=wired
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 66, buttons: 9, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : « panneau latéral à 5 boutons » (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 66, buttons: 9, sideButtons: 5, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62401:black, colorName: Black, colorFamily: black }
 
@@ -168,7 +177,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5tCuR4QcYBghleNZoB2yFs/548dfe2f03e7d256050f6520011a729d/rival_3_gen_2_black_pdp_img_buy_01.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-3-gen-2?color=black&connectivityType=wired
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 38, weightG: 77, buttons: 6, sensor: "TrueMove Core (8,5K DPI)", rgb: true, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 38, weightG: 77, buttons: 6, sideButtons: 2, sensor: "TrueMove Core (8,5K DPI)", rgb: true, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: 62515:black, colorName: Black, colorFamily: black }
     - { sku: 62515:white, colorName: White, colorFamily: white }
@@ -189,7 +199,8 @@
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/5heFOFlRxDVgYHHhFO7ZXF/9459bc50970530d2562bddf583c944b9/rival_3_wl_gen_2_black_pdp_img_buy_01.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-3-gen-2?color=black&connectivityType=wireless
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.61, widthMm: 67.05, heightMm: 38, weightG: 83.5, buttons: 6, sensor: TrueMove Air (18K DPI), connWired: false, conn24ghz: true, connBt: true, power: aaa, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.61, widthMm: 67.05, heightMm: 38, weightG: 83.5, buttons: 6, sideButtons: 2, sensor: TrueMove Air (18K DPI), connWired: false, conn24ghz: true, connBt: true, power: aaa, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: 62523:black, colorName: Black, colorFamily: black }
     - { sku: 62523:lavender, colorName: Lavender, colorFamily: color }
@@ -212,7 +223,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5HgkBzBn6smRlx1iRVmxgU/b73afd509ada7a986e28df9774ff608c/aerox_3_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3637.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-3-2022?color=onyx&connectivityType=wireless
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 68, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true }
   variants:
     - { sku: 62612:onyx, colorName: Onyx, colorFamily: black }
     - { sku: 62612:ghost, colorName: Ghost, colorFamily: color }
@@ -234,7 +246,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4r3eclmz899BBeamzvQ7oq/643697d9452ff0ebeefcec72fc6350a1/imgbuy_aerox3_white_1.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3639.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-3-2022?color=snow&connectivityType=wired
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 59, buttons: 6, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.55, widthMm: 67.03, heightMm: 37.98, weightG: 59, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true }
   variants:
     - { sku: 62603:snow, colorName: Snow, colorFamily: white }
     - { sku: 62603:onyx, colorName: Onyx, colorFamily: black }
@@ -256,7 +269,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6A1e5arnkHrB8qmoNcaq7V/144b9eb41338d61abe7ef4c378352515/buyimg_prime__002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1358.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wired&model=Plus
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 71, buttons: 5, sensor: SteelSeries TrueMove Pro+, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 71, buttons: 5, sideButtons: 2, sensor: SteelSeries TrueMove Pro+, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62490:black, colorName: Black, colorFamily: black }
 
@@ -279,7 +293,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7kOsXZvzS0cATTLQgxMFfC/5c0a42351a7861163ca11f6b3775fcec/buyimg_prime_mini_wl_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-771.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=mini&connectivityType=wireless&model=Regular
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 73, buttons: 5, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: magnetic, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 73, buttons: 5, sideButtons: 2, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: magnetic, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62426:black, colorName: Black, colorFamily: black }
 
@@ -301,7 +316,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/423wip7P9Yli62WX6F6EYQ/849b32e5427486fc151ddaee4abb1ece/buyimg_prime_wl_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-778.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wireless&model=Regular
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 80, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 80, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Air, dpiMax: 18000, switchType: mechanical, connWired: false, conn24ghz: true, batteryHours: 100, power: rechargeable, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62593:black, colorName: Black, colorFamily: black }
 
@@ -322,7 +338,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6zUWvVULK0Nn1spR0OBETi/a1a304bf32b9495024e2e29999c4537b/buyimg_prime_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-793.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=fullSize&connectivityType=wired&model=Regular
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 69, buttons: 6, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.3, widthMm: 67.9, heightMm: 42.4, weightG: 69, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: mechanical, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62533:black, colorName: Black, colorFamily: black }
 
@@ -344,7 +361,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4DyabOv0jDA0d2mQCbS67K/bfd44b19897a4276f67c82cc08fb1e9b/buyimg_prime_mini_003.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-786.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/prime?mouseSize=mini&connectivityType=wired&model=Regular
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 61, buttons: 5, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: magnetic, rgb: true, makerGrips: [ palm, claw ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.3, widthMm: 66.2, heightMm: 40.7, weightG: 61, buttons: 5, sideButtons: 2, sensor: SteelSeries TrueMove Pro, dpiMax: 18000, switchType: magnetic, rgb: true, makerGrips: [ palm, claw ] }
   variants:
     - { sku: 62421:black, colorName: Black, colorFamily: black }
 
@@ -365,7 +383,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5m9bmKz8neS7YyCghW7eyn/bf6799ecb78295424cb940c25681e6c4/buyimg_senseiten_006.png__1920x1080_crop-fit_optimize_subsampling-2-875.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/sensei-ten
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 126, widthMm: 68, heightMm: 39, weightG: 92, buttons: 8, sensor: TrueMove Pro, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
+  # sideButtons : 2 de chaque côté, rtings.com/mouse/reviews/steelseries/sensei-ten
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 126, widthMm: 68, heightMm: 39, weightG: 92, buttons: 8, sideButtons: 2, sensor: TrueMove Pro, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
   variants:
     - { sku: 62527:black, colorName: Black, colorFamily: black }
 
@@ -387,7 +406,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/42zbTX4U2WFssAmHoN1Pkm/49f70da20deccb03ff415d188956b9a6/r650_box-content-02.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2205.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-650
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 121, buttons: 7, dpiMax: 12000, connWired: false, conn24ghz: true, batteryHours: 24, power: rechargeable, rgb: true }
+  # sideButtons : rtings.com/mouse/reviews/steelseries/rival-650
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 121, buttons: 7, sideButtons: 3, dpiMax: 12000, connWired: false, conn24ghz: true, batteryHours: 24, power: rechargeable, rgb: true }
   variants:
     - { sku: 62456:black, colorName: Black, colorFamily: black }
 
@@ -408,7 +428,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1soMHlIZVMstjntLYGcYhg/bd5570e3ea266bbcc50aff8b3951f14c/001_esports.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-857.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-600
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 96, buttons: 7, dpiMax: 12000, rgb: true }
+  # sideButtons : rtings.com/mouse/tools/compare/steelseries-sensei-ten-steelseries-rival-600/5809/1608
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 69, heightMm: 43, weightG: 96, buttons: 7, sideButtons: 3, dpiMax: 12000, rgb: true }
   variants:
     - { sku: 62446:black, colorName: Black, colorFamily: black }
 
@@ -428,7 +449,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4csGDZSusZa2hwhSlijszd/1125aaded0bf6964b93b21052a52d497/imgbuy_rival5_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1900.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-5
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 62.9, heightMm: 42.1, weightG: 85, buttons: 9, mmo: true, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
+  # sideButtons : « panneau latéral à 5 boutons » (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 62.9, heightMm: 42.1, weightG: 85, buttons: 9, sideButtons: 5, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, rgb: true }
   variants:
     - { sku: 62551:black, colorName: Black, colorFamily: black }
 
@@ -449,7 +471,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/RkskM0xShu3B8X60CYisz/1651b15f5a04323b3ddfffe6462db9af/buyimg_rival3wl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1373.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-3?connectivityType=wireless
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 106, buttons: 6, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 400, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 106, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 400, power: aaa, rgb: true, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: 62521:black, colorName: Black, colorFamily: black }
 
@@ -470,7 +493,8 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/408TF4V9h9oLE7eqsRBld7/8767048a823087308e5bcdf008dc9fac/buyimg_rival3_002.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1367.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/rival-3?connectivityType=wired
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 77, buttons: 6, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ claw, fingertip ] }
+  # sideButtons : photo de profil (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 67, heightMm: 37.9, weightG: 77, buttons: 6, sideButtons: 2, sensor: SteelSeries TrueMove Core, dpiMax: 8500, pollingHz: 1000, switchType: mechanical, rgb: true, makerGrips: [ claw, fingertip ] }
   variants:
     - { sku: 62513:black, colorName: Black, colorFamily: black }
 
@@ -490,6 +514,7 @@
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/fb3tdprKJoZuAhuBmeJKh/01d2325c8fb2279d7c0b58ae90ed7f6e/aerox_9_wl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-927.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-mice/aerox-9?color=black
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 89, buttons: 18, mmo: true, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm ] }
+  # sideButtons : « panneau latéral à 12 boutons » (steelseries.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128.8, widthMm: 68.2, heightMm: 42.1, weightG: 89, buttons: 18, sideButtons: 12, mmo: true, sensor: SteelSeries TrueMove Air, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 80, power: rechargeable, rgb: true, makerGrips: [ palm ] }
   variants:
     - { sku: 62618:black, colorName: Black, colorFamily: black }

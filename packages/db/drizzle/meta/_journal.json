@@ -43,6 +43,13 @@
       "when": 1792841935943,
       "tag": "0005_outbound_clicks",
       "breakpoints": true
+    },
+    {
+      "idx": 6,
+      "version": "7",
+      "when": 1792846407803,
+      "tag": "0006_mouse_side_buttons",
+      "breakpoints": true
     }
   ]
 }

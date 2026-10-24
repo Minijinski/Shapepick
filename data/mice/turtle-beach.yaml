@@ -21,7 +21,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC3_1106x840_dcca2e19-7df2-403f-b1b2-a87bb5dd21cc.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/command-series-mc3-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 85, sensor: Owl‑Eye 30K Optical Sensor, dpiMax: 30000, pollingHz: 1000, tiltWheel: true, thumbWheel: true, rgb: true }
+  # sideButtons : M4, M5 et Easy-Shift, plus la molette latérale (photos turtlebeach.com)
+  # buttons : 15 fonctions physiques (turtlebeach.com) moins les 4 sens de défilement : clics, molette (clic, inclinaisons), M4 à M8, clic de la molette latérale
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 85, buttons: 11, sideButtons: 3, sensor: Owl‑Eye 30K Optical Sensor, dpiMax: 30000, pollingHz: 1000, tiltWheel: true, thumbWheel: true, rgb: true }
   variants:
     - { sku: TBM-1004-05, colorName: Noir, colorFamily: black }
 
@@ -39,7 +41,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC5_1106x840_764e934b-4a7a-4770-870e-e7ccbf6c4ae8.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/command-series-mc5-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 100, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, tiltWheel: true, thumbWheel: true, rgb: true }
+  # sideButtons : M4, M5 et Easy-Shift, plus la molette latérale (photos turtlebeach.com)
+  # buttons : 15 fonctions physiques (turtlebeach.com) moins les 4 sens de défilement : clics, molette (clic, inclinaisons), M4 à M8, clic de la molette latérale
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.47, widthMm: 77.66, heightMm: 44.66, weightG: 100, buttons: 11, sideButtons: 3, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 90, power: rechargeable, tiltWheel: true, thumbWheel: true, rgb: true }
   variants:
     - { sku: TBM-1105-05, colorName: Noir, colorFamily: black }
 
@@ -56,7 +60,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_Command_Series_MC7_1106x840_0d9caf95-56f0-4b37-aa67-ac249e2f853f.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/command-series-mc7-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.66, widthMm: 85.33, heightMm: 45.87, weightG: 135, buttons: 11, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : M4, M5 et Easy-Shift sous l'écran tactile (photos turtlebeach.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.66, widthMm: 85.33, heightMm: 45.87, weightG: 135, buttons: 11, sideButtons: 3, sensor: "Owl‑Eye 30K Optical, Glass Surface Compatible", dpiMax: 30000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: TBM-1106-05, colorName: Noir, colorFamily: black }
 
@@ -72,7 +77,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTLGalleryImageVariantImage_KONEIIAIR_White.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/kone-ii-air-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 44.1, weightG: 110, buttons: 7, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
+  # sideButtons : 2 et Easy-Shift, cgmagonline.com/review/hardware/turtle-beach-kone-ii-air-mouse
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 44.1, weightG: 110, buttons: 7, sideButtons: 3, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, freeSpinWheel: true, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
   variants:
     - { sku: TBM-1104-05, colorName: Black, colorFamily: black }
     - { sku: TBM-1104-15, colorName: White, colorFamily: white }
@@ -95,7 +101,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/US_INTL_Gallery_Image_Thumbnail_KONE_II_White_04.png, kind: cutout_top, width: 2400, height: 1350 }
   sources:
     - https://turtlebeach.com/products/kone-ii-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 43.6, weightG: 90, buttons: 7, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
+  # sideButtons : 2 et Easy-Shift (photo de profil turtlebeach.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130.2, widthMm: 82.6, heightMm: 43.6, weightG: 90, buttons: 7, sideButtons: 3, sensor: "Owl-Eye 26K optical sensor ; Minimum DPI: 50 ; Maximum DPI: ", dpiMax: 26000, pollingHz: 1000, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 21.5 }
   variants:
     - { sku: TBM-1003-05, colorName: Black, colorFamily: black }
     - { sku: TBM-1003-15, colorName: White, colorFamily: white }
@@ -119,7 +126,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/10-TB-PureAir-BLK.png, kind: cutout_top, width: 2400, height: 1350 }
   sources:
     - https://turtlebeach.com/products/pure-air-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 54, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 43, power: rechargeable, rgb: true }
+  # sideButtons : 2 et le bouton DPI en bas du flanc (photo de profil turtlebeach.com)
+  # buttons : « six boutons entièrement programmables » (cybertek.fr)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 54, buttons: 6, sideButtons: 3, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 43, power: rechargeable, rgb: true }
   variants:
     - { sku: TBM-1102-05, colorName: Black, colorFamily: black }
     - { sku: TBM-1102-15, colorName: White, colorFamily: white }
@@ -139,7 +148,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/PureSEL-WHT_16f62ec9-723e-4f0f-b629-e53fe44a4478.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/pure-sel-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 49, sensor: "PixArt PAW3318 Sensor, 8k DPI ; Adjustable lift-off distance", dpiMax: 8000, rgb: true }
+  # sideButtons : 2 et le bouton DPI du flanc (« Side-positioned button », turtlebeach.com)
+  # buttons : « 6 buttons » (ldlc.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.1, widthMm: 69.3, heightMm: 38.3, weightG: 49, buttons: 6, sideButtons: 3, sensor: "PixArt PAW3318 Sensor, 8k DPI ; Adjustable lift-off distance", dpiMax: 8000, rgb: true }
   variants:
     - { sku: TBM-1001-05, colorName: Black, colorFamily: black, msrpEur: 50 }
     - { sku: TBM-1001-15, colorName: White, colorFamily: white, msrpEur: 30 }
@@ -160,7 +171,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/BurstIIAir-WHT_eef11bd8-aecf-4ae8-a6fc-0b8a4b85e944.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/burst-ii-air-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 67.3, heightMm: 39.2, weightG: 47, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 40, power: rechargeable }
+  # sideButtons : 2 et le bouton DPI en bas du flanc (photo de profil turtlebeach.com)
+  # buttons : « 6 programmable buttons including side DPI button » (turtlebeach.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 67.3, heightMm: 39.2, weightG: 47, buttons: 6, sideButtons: 3, sensor: "Owl-Eye 26K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 40, power: rechargeable }
   variants:
     - { sku: TBM-2101-05, colorName: Black, colorFamily: black }
     - { sku: TBM-2101-15, colorName: White, colorFamily: white }
@@ -179,7 +192,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/KoneXPAir-WHT.png, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/kone-xp-air-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 126, widthMm: 72, heightMm: 40, weightG: 99, buttons: 10, sensor: "Owl-Eye 19K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 19000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, tiltWheel: true, rgb: true }
+  # sideButtons : grille de 4 et Easy-Shift, tomshardware.com/reviews/roccat-kone-xp-air
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 126, widthMm: 72, heightMm: 40, weightG: 99, buttons: 10, sideButtons: 5, sensor: "Owl-Eye 19K optical sensor ; Adjustable lift-off distance ; ", dpiMax: 19000, pollingHz: 1000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable, wirelessCharging: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: TBM-1101-05, colorName: Black, colorFamily: black }
     - { sku: TBM-1101-15, colorName: White, colorFamily: white }

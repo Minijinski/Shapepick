@@ -111,6 +111,7 @@ describe('mouse sheets, brand by brand', () => {
     )
     expect(mobiFold.specs).toMatchObject({
       hand: 'ambidextrous',
+      sideButtons: 0,
       conn24ghz: false,
       connBt: true,
       power: 'rechargeable',
@@ -393,5 +394,159 @@ describe('mouse sheets, brand by brand', () => {
     )
     expect(specs.pollingHz).toBe(4000)
     expect(notes.join(' ')).toMatch(/8000 Hz seulement en option/)
+  })
+
+  it('tells an ambidextrous shell from buttons on both sides (read on 24 October 2026)', () => {
+    const shell: [string, string][] = [
+      ['Longueur', '120 mm'],
+      ['Largeur', '63 mm'],
+      ['Hauteur', '38 mm'],
+      ['Poids', '56 g'],
+    ]
+    // Pulsar's X2A: covers for the side buttons it does not use.
+    const x2a = read(shell, {
+      segment: 'gaming',
+      shape: 'symmetrical',
+      text: 'Ambidextrous for both left and right hand\nSide button cover (4pcs) Included',
+    })
+    expect(x2a.specs.hand).toBe('ambidextrous')
+    // The Sensei Pro: an ambidextrous shell, its side buttons on the left; a buttons line that
+    // names two of its six buttons says nothing of the sides.
+    const sensei = read(
+      [
+        ...shell,
+        ['Forme', 'Symétrique, ambidextre'],
+        [
+          'Nombre de boutons',
+          "6 boutons programmables (y compris les boutons d'alimentation et de réglage du DPI)",
+        ],
+      ],
+      { segment: 'gaming', shape: 'symmetrical', text: 'Forme symétrique – Ambidextre.' },
+    )
+    expect(sensei.specs.hand).toBe('right')
+    expect(sensei.notes.join(' ')).toMatch(/dite ambidextre/)
+  })
+
+  it('reads an MMO grid and a thumb wheel from the buttons, not from the words', () => {
+    const size: [string, string][] = [
+      ['Longueur', '128 mm'],
+      ['Largeur', '68 mm'],
+      ['Hauteur', '42 mm'],
+      ['Poids', '80 g'],
+    ]
+    // "MMO" names a genre: the Rival 5 has five side buttons.
+    const rival5 = read(size, {
+      segment: 'gaming',
+      text: 'Idéal pour tous les jeux Battle Royale, FPS, MOBA, MMO et autres jeux rapides. Disposition ergonomique programmable à 9 boutons avec 5 boutons latéraux pour une action rapide.',
+    })
+    expect(rival5.specs).toMatchObject({ sideButtons: 5, mmo: false })
+    const aerox9 = read(size, {
+      segment: 'gaming',
+      text: 'Un arsenal de commandes à portée de main, le panneau latéral à 12 boutons placé de manière optimale.',
+    })
+    expect(aerox9.specs).toMatchObject({ sideButtons: 12, mmo: true })
+    expect(read(size, { name: 'Naga V2 HyperSpeed', segment: 'gaming' }).specs.mmo).toBe(true)
+    // Horizontal scrolling with a side button held is no thumb wheel (MX Anywhere 3S).
+    const office = { segment: 'office' as const, shape: 'ergonomic' as const }
+    expect(
+      read(
+        [
+          ...size,
+          [
+            'Défilement horizontal',
+            'Oui, en maintenant le bouton latéral tout en faisant tourner la roulette',
+          ],
+        ],
+        office,
+      ).specs.thumbWheel,
+    ).toBe(false)
+    expect(read([...size, ['Molette pour le pouce', 'Oui']], office).specs.thumbWheel).toBe(true)
+  })
+
+  it('counts the side buttons a page names or counts (read on 24 October 2026)', () => {
+    const size: [string, string][] = [
+      ['Longueur', '125 mm'],
+      ['Largeur', '84 mm'],
+      ['Hauteur', '51 mm'],
+      ['Poids', '141 g'],
+    ]
+    const side = (pairs: [string, string][], text = '') =>
+      read([...size, ...pairs], { segment: 'office', shape: 'ergonomic', text }).specs.sideButtons
+    // Logitech names its buttons; the gesture button under the thumb is a line of its own.
+    expect(
+      side([
+        [
+          'Nombre de boutons',
+          "7 boutons (clic gauche/droit, avant/arrière, changement d'application, changement de mode de défilement, clic central)",
+        ],
+        ['Bouton de geste', 'Oui'],
+      ]),
+    ).toBe(3)
+    expect(
+      side([
+        [
+          'Nombre de boutons',
+          '6 (clic droit/gauche, Suivant/Précédent, roulette de défilement avec clic central)',
+        ],
+      ]),
+    ).toBe(2)
+    // "Boutons latéraux" without a count: what the others leave of the six.
+    expect(
+      side([
+        [
+          'Nombre de boutons',
+          '6 (clic gauche/droit, clic central de la molette de défilement, boutons latéraux, bouton DPI)',
+        ],
+      ]),
+    ).toBe(2)
+    // Every button named, none on a side.
+    expect(
+      side([
+        [
+          'Nombre de boutons',
+          '4 (clic droit/gauche, roulette de défilement avec clic central, bouton supérieur)',
+        ],
+      ]),
+    ).toBe(0)
+    // A trackball's back and forward sit by its left click: its thumb is on the ball.
+    const trackball = read(
+      [
+        [
+          'Nombre de boutons',
+          '5 (clic droit/gauche, Suivant/Précédent, roulette de défilement avec clic central)',
+        ],
+      ],
+      { segment: 'office', shape: 'trackball', text: 'Contrôle par le pouce.' },
+    )
+    expect(trackball.specs.sideButtons).toBe(0)
+    // The copy's counts: SteelSeries' side panel, Logitech's M720 and its hidden thumb button.
+    expect(
+      side(
+        [['Nombre de boutons', '9']],
+        'Exécute instantanément des actions décisives grâce à un panneau latéral à 5 boutons, dont un commutateur haut/bas personnalisé.',
+      ),
+    ).toBe(5)
+    expect(
+      side(
+        [],
+        'Deux boutons latéraux plus un bouton caché actionné par le pouce vous offrent des commandes supplémentaires.',
+      ),
+    ).toBe(3)
+    expect(side([], 'Clicks, a scroll wheel and two side buttons.')).toBe(2)
+    // A count of spare parts, or a sheet that only counts, says nothing of the sides.
+    expect(side([], 'In the box: Two Shells, Two Side Button Pairs.')).toBeUndefined()
+    // ASUS heads its count "Bouton".
+    expect(
+      read([...size, ['Bouton', '5 programmable buttons+1 DPI button']], { segment: 'gaming' })
+        .specs.buttons,
+    ).toBe(5)
+    expect(
+      side([
+        [
+          'Nombre de boutons',
+          "6 boutons programmables (y compris les boutons d'alimentation et de réglage du DPI)",
+        ],
+      ]),
+    ).toBeUndefined()
   })
 })

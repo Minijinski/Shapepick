@@ -97,7 +97,11 @@ function officialOf(p: ShopifyProduct, page: string): OfficialMouse {
     name,
     modelNumber: variants[0]?.sku,
     facts: factsOf(sections, p.tags),
-    text: [...(sections.get('Benefits') ?? []), ...(sections.get('Feature') ?? [])].join('\n'),
+    // "Feature" or "FEATURE", depending on the page.
+    text: [...sections]
+      .filter(([title]) => /^(benefits|features?)$/i.test(title))
+      .flatMap(([, lines]) => lines)
+      .join('\n'),
     // "X3 LHD": the left-hand design.
     hints: { segment: 'gaming', shape, hand: /\bLHD\b/.test(name) ? 'left' : undefined },
     variants,

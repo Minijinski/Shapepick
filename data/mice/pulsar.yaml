@@ -23,7 +23,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/eS-Xlite_thumbnail_right.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/pulsar-es-xlite-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123.5, widthMm: 66.3, heightMm: 42.1, weightG: 51, sensor: XS-2 Flagship Sensor, dpiMax: 42000, conn24ghz: true, batteryHours: 160, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123.5, widthMm: 66.3, heightMm: 42.1, weightG: 51, buttons: 5, sideButtons: 2, sensor: XS-2 Flagship Sensor, dpiMax: 42000, conn24ghz: true, batteryHours: 160, power: rechargeable }
   variants:
     - { sku: "41798", colorName: Noir, colorFamily: black }
 
@@ -43,7 +45,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_006.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/feinmann-f01-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118.6, widthMm: 65.3, heightMm: 41.7, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable, wirelessCharging: true }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118.6, widthMm: 65.3, heightMm: 41.7, weightG: 46, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: "41422", colorName: Noir, colorFamily: black }
 
@@ -65,7 +69,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_LHD_crazylight_white_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-lhd-crazylight-medium-gaming-mouse
-  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à droite, aucun à gauche
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "39067", colorName: Jet Black, colorFamily: black }
     - { sku: "39068", colorName: Uyuni White, colorFamily: white }
@@ -90,7 +96,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/products/X2hgamingmouse_mini_white_rightside_57167934-ee35-456b-bff7-c79df93bec0e-461520.png, kind: cutout_top, width: 1024, height: 1024 }
   sources:
     - https://eu.pulsar.gg/products/x2h-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 52, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 52, buttons: 5, sideButtons: 2, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "27895", colorName: White, colorFamily: white }
 
@@ -112,7 +120,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/X3_crazylight_white_medium_right.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-crazylight-medium-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "39065", colorName: Jet Black, colorFamily: black }
     - { sku: "39066", colorName: Uyuni White, colorFamily: white }
@@ -136,7 +146,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_OCEAN_RIGHT-MEDIUM.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2n-crazylight-medium-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 65.5, heightMm: 40, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 65.5, heightMm: 40, weightG: 43, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "38442", colorName: Jet Black, colorFamily: black }
     - { sku: "38443", colorName: Uyuni White, colorFamily: white }
@@ -160,7 +172,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2N_white_LEFT.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2n-crazylight-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 62.4, heightMm: 38.2, weightG: 38, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photo de dessus (eu.pulsar.gg) : 2 à gauche
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 62.4, heightMm: 38.2, weightG: 38, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "37759", colorName: Jet Black, colorFamily: black }
     - { sku: "37760", colorName: Uyuni White, colorFamily: white }
@@ -180,7 +194,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-eS-fs1-right.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/pulsar-es-fs-1-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 37, weightG: 56, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 37, weightG: 56, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "38478", colorName: Noir, colorFamily: black }
 
@@ -202,7 +218,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_medium_white_right.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2h-crazylight-medium-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 43, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "38055", colorName: Uyuni White, colorFamily: white }
     - { sku: "39528", colorName: Volcano, colorFamily: color }
@@ -225,7 +243,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Medium_04.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-crazylight-medium-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 40.7, weightG: 44, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 40.7, weightG: 44, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "37607", colorName: Jet Black, colorFamily: black }
     - { sku: "37608", colorName: Uyuni White, colorFamily: white }
@@ -250,7 +270,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CrazyLight_medium_white_04_d54bac24-3d18-4572-a58b-6923d3bf3a53.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2-crazylight-medium-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 39, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 39, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "36933", colorName: Jet Black, colorFamily: black }
     - { sku: "36934", colorName: Uyuni White, colorFamily: white }
@@ -274,7 +296,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_lhd-white-Left_4959fc7c-bfb8-4b5b-bef4-688d05de4096.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-lhd-crazylight-gaming-mouse
-  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à droite, aucun à gauche
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "36783", colorName: Jet Black, colorFamily: black }
     - { sku: "36784", colorName: Uyuni White, colorFamily: white }
@@ -297,7 +321,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3_rhd-white-Left.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-crazylight-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 43, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "36781", colorName: Jet Black, colorFamily: black }
     - { sku: "36782", colorName: Uyuni White, colorFamily: white }
@@ -321,7 +347,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H_white_left.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2h-crazylight-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 37, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 37, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "36416", colorName: Jet Black, colorFamily: black }
     - { sku: "36417", colorName: Uyuni White, colorFamily: white }
@@ -345,7 +373,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-CrazyLight_White_Mini_04.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-crazylight-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 41, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 41, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "35353", colorName: Jet Black, colorFamily: black }
     - { sku: "35354", colorName: Uyuni White, colorFamily: white }
@@ -365,7 +395,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-Xlite-v4-eS-Gaming-Mouse_Size1-Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-v4-es-mini-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 61, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 61, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33500", colorName: Noir, colorFamily: black }
 
@@ -383,7 +415,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2H_eS_Gaming_Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2h-v3-es-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 65, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 65, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "35075", colorName: Noir, colorFamily: black }
 
@@ -401,7 +435,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-v3-es-Wireless-mouse_Size1_black-004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2h-v3-es-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 60, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 60, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33503", colorName: Noir, colorFamily: black }
 
@@ -421,7 +457,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size1-Black_005.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2a-v3-es-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 64, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 de chaque côté, caches fournis
+  # hand : « Ambidextrous for both left and right hand », caches de boutons fournis (eu.pulsar.gg)
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 64, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33502", colorName: Noir, colorFamily: black }
 
@@ -439,7 +478,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-eS-v3-Gaming-Mouse_Size2-Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2-v3-es-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 59, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 59, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33501", colorName: Noir, colorFamily: black }
 
@@ -462,7 +503,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Av3GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2a-v3-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 de chaque côté, caches fournis
+  # hand : « Ambidextrous for both left and right hand », caches de boutons fournis (eu.pulsar.gg)
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "31986", colorName: White, colorFamily: white }
 
@@ -484,7 +528,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2Hv3GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2h-v3-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 51, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 51, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33675", colorName: Black, colorFamily: black }
     - { sku: "33674", colorName: White, colorFamily: white }
@@ -507,7 +553,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar_X2_v3_mini_Gaming_Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2-v3-mini-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 51, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 51, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "34052", colorName: White, colorFamily: white }
 
@@ -529,7 +577,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-v4-mini-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 52, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 52, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33673", colorName: Black, colorFamily: black }
     - { sku: "33672", colorName: White, colorFamily: white }
@@ -553,7 +603,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-CL-X2-CL-Uyuni-White_Gaming-Mouse_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2-crazylight-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 35, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 35, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33717", colorName: Jet Black, colorFamily: black }
     - { sku: "33718", colorName: Uyuni White, colorFamily: white }
@@ -580,7 +632,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 55, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 55, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33364", colorName: White, colorFamily: white }
 
@@ -602,7 +656,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x3-mini-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 50, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 67.1, heightMm: 41, weightG: 50, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "33362", colorName: White, colorFamily: white }
 
@@ -624,7 +680,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev4GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-v4-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 54, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 54, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "31979", colorName: Black, colorFamily: black }
     - { sku: "31980", colorName: White, colorFamily: white }
@@ -647,7 +705,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarXlitev3WiredGamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/xlite-v3-wired-gaming-mouse
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 52, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 52, buttons: 5, sideButtons: 2, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
   variants:
     - { sku: "31796", colorName: White, colorFamily: white }
 
@@ -669,7 +729,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2A-Wired-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://eu.pulsar.gg/products/x2a-wired-gaming-mouse
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
+  # sideButtons : photos de profil (eu.pulsar.gg) : 2 de chaque côté, caches fournis
+  # hand : « Ambidextrous for both left and right hand », caches de boutons fournis (eu.pulsar.gg)
+  # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 120.4, widthMm: 63, heightMm: 38, weightG: 56, buttons: 5, sideButtons: 2, sensor: PAW3395, dpiMax: 26000, pollingHz: 1000 }
   variants:
     - { sku: "31801", colorName: Black, colorFamily: black }
     - { sku: "31802", colorName: White, colorFamily: white }

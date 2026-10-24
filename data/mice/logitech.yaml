@@ -26,7 +26,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x3-superstrike-pdp/gallery/pro-x3-superstrike-mouse-midnight-black-bottom-open-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x3-superstrike-mouse.910-007879
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sensor: HERO 2, dpiMax: 48000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true }
+  # sideButtons : photos de profil (logitechg.com) : 2 à gauche, aucun à droite
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sideButtons: 2, sensor: HERO 2, dpiMax: 48000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: 910-007879, colorName: Noir nuit, colorFamily: black }
     - { sku: 910-007870, colorName: Éclipse magenta, colorFamily: color }
@@ -44,7 +45,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-bottom-angle-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x2-superstrike-mouse.910-007777
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 90, power: rechargeable, wirelessCharging: true }
+  # sideButtons : photos de profil (logitechg.com) : 2 à gauche, aucun à droite
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 61, buttons: 5, sideButtons: 2, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 90, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: 910-007777, colorName: Éclipse lunaire, colorFamily: color }
 
@@ -66,7 +68,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-plus/2026-update/gallery/g502-x-plus-top-profile-angle-white-mint-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g502-x-plus-wireless-lightforce.910-006163
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 106, buttons: 13, sensor: HERO 44K, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
+  # sideButtons : avant, arrière et DPI Shift (logitechg.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 106, buttons: 13, sideButtons: 3, sensor: HERO 44K, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 130, power: rechargeable, wirelessCharging: true, freeSpinWheel: true, tiltWheel: true, rgb: true }
   variants:
     - { sku: 910-006163, colorName: Noir, colorFamily: black }
     - { sku: 910-006172, colorName: Blanc, colorFamily: white }
@@ -92,7 +95,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305-x-superlight-pdp/gallery/g305-x-superlight-3qtr-high-back-angle-black-gallery-8.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g305-x-superlight.910-007740
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117.3, widthMm: 63.9, heightMm: 38.2, weightG: 61, buttons: 6, sensor: HERO, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, rgb: true }
+  # sideButtons : photo de profil (logitechg.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117.3, widthMm: 63.9, heightMm: 38.2, weightG: 61, buttons: 6, sideButtons: 2, sensor: HERO, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable, rgb: true }
   variants:
     - { sku: 910-007740, colorName: Noir, colorFamily: black }
     - { sku: 910-007748, colorName: Blanc, colorFamily: white }
@@ -116,7 +120,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2c-pdp/gallery/pro-x-superlight-2c-mouse-3qtr-right-angle-offwhite-gallery-9.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x-superlight-2c.910-007539
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 61.4, heightMm: 38.5, weightG: 51, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  # sideButtons : fiche logitechg.com : 5 boutons (clics, molette, 2 latéraux)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 61.4, heightMm: 38.5, weightG: 51, buttons: 5, sideButtons: 2, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: 910-007539, colorName: Blanc, colorFamily: white }
     - { sku: 910-007532, colorName: Noir, colorFamily: black }
@@ -140,7 +145,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2/new-gallery-assets-2025/pro-x-superlight-2-mice-bottom-angle-black-gallery-6.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x2-superlight-wireless-mouse.910-006639
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 60, buttons: 5, sensor: HERO 2, dpiMax: 32000, pollingHz: 8000, switchType: hybrid, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  # sideButtons : fiche logitechg.com : 5 boutons (clics, molette, 2 latéraux)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 60, buttons: 5, sideButtons: 2, sensor: HERO 2, dpiMax: 32000, pollingHz: 8000, switchType: hybrid, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: 910-006639, colorName: Blanc, colorFamily: white }
     - { sku: 910-006631, colorName: Noir, colorFamily: black }
@@ -164,7 +170,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x-superlight-2-dex/gallery/new-gallery-assets-2025/pro-x-superlight-2-dex-mouse-bottom-angle-black-gallery-6.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-x-superlight-2-dex.910-007358
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 67.7, heightMm: 43.9, weightG: 60, buttons: 5, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
+  # sideButtons : fiche logitechg.com : 5 boutons (clics, molette, 2 latéraux)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 67.7, heightMm: 43.9, weightG: 60, buttons: 5, sideButtons: 2, sensor: HERO 2, dpiMax: 44000, pollingHz: 8000, connWired: false, conn24ghz: true, batteryHours: 95, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: 910-007358, colorName: Noir, colorFamily: black }
     - { sku: 910-007366, colorName: Blanc, colorFamily: white }
@@ -186,7 +193,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-black-new-gallery1.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/pro-2-lightspeed.910-007310
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 80, buttons: 4, sensor: HERO 2, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, rgb: true }
+  # sideButtons : aimantés, 2 de chaque côté (« 4 à 8 boutons », logitechg.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 80, buttons: 4, sideButtons: 2, sensor: HERO 2, dpiMax: 44000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, rgb: true }
   variants:
     - { sku: 910-007310, colorName: Magenta, colorFamily: color }
     - { sku: 910-007303, colorName: Blanc, colorFamily: white }
@@ -210,7 +218,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g502x-corded/gallery/g502x-corded-gallery-2-black.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g502-x-wired-lightforce.910-006147
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 89, buttons: 13, sensor: HERO 25K, dpiMax: 25600, freeSpinWheel: true, tiltWheel: true }
+  # sideButtons : avant, arrière et DPI Shift réversible (logitechg.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 89, buttons: 13, sideButtons: 3, sensor: HERO 25K, dpiMax: 25600, freeSpinWheel: true, tiltWheel: true }
   variants:
     - { sku: 910-006147, colorName: Blanc, colorFamily: white }
     - { sku: 910-006139, colorName: Noir, colorFamily: black }
@@ -231,7 +240,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/non-braid/hyjal-g502-hero/2025/g502-hero-mouse-high-back-angle-gallery-4.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g502-hero-gaming-mouse.910-005471
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.2, widthMm: 75, heightMm: 40, weightG: 121, buttons: 11, sensor: HERO, dpiMax: 25600, pollingHz: 1000, freeSpinWheel: true, rgb: true }
+  # sideButtons : avant, arrière et DPI Shift « sur le côté gauche » (logitechg.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.2, widthMm: 75, heightMm: 40, weightG: 121, buttons: 11, sideButtons: 3, sensor: HERO, dpiMax: 25600, pollingHz: 1000, freeSpinWheel: true, rgb: true }
   variants:
     - { sku: 910-005471, colorName: Noir, colorFamily: black }
 
@@ -246,7 +256,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g402/gallery-5.png", kind: cutout_top, primary: true }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g402-hyperion-fury-fps-gaming-mouse.910-004068
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 136, widthMm: 72, heightMm: 41, weightG: 108, buttons: 8, dpiMax: 4000, pollingHz: 1000 }
+  # sideButtons : avant, arrière et sniper, shacknews.com/article/86480/g402-hyperion-fury-gaming-mouse-review
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 136, widthMm: 72, heightMm: 41, weightG: 108, buttons: 8, sideButtons: 3, dpiMax: 4000, pollingHz: 1000 }
   variants:
     - { sku: 910-004068, colorName: Noir, colorFamily: black }
 
@@ -268,7 +279,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/G309-Lightspeed-Gaming-Mouse/gallery/g309-lightspeed-wireless-mouse-black-gallery-3.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g309-lightspeed-gaming-mouse.910-007208
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64, heightMm: 39, weightG: 86, buttons: 6, sensor: HERO 25K, dpiMax: 25600, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, wirelessCharging: true }
+  # sideButtons : photo de profil (logitechg.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64, heightMm: 39, weightG: 86, buttons: 6, sideButtons: 2, sensor: HERO 25K, dpiMax: 25600, connWired: false, conn24ghz: true, connBt: true, batteryHours: 300, power: aa, wirelessCharging: true }
   variants:
     - { sku: 910-007208, colorName: Blanc, colorFamily: white }
     - { sku: 910-007200, colorName: Noir, colorFamily: black }
@@ -291,7 +303,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g305/2025-update/g305-lightspeed-mouse-3qtr-high-back-angle-white-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g305-lightspeed-wireless-gaming-mouse.910-005292
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.1, heightMm: 38.2, weightG: 99, buttons: 6, sensor: HERO, dpiMax: 12000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 250, power: aa }
+  # sideButtons : « deux boutons latéraux » (logitechg.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.1, heightMm: 38.2, weightG: 99, buttons: 6, sideButtons: 2, sensor: HERO, dpiMax: 12000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 250, power: aa }
   variants:
     - { sku: 910-005292, colorName: Blanc, colorFamily: white }
     - { sku: 910-006023, colorName: Lilas, colorFamily: color }
@@ -318,7 +331,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mobi-fold-mouse/gallery/mobi-fold-lilac-3qtr-fold-angle-gallery-8.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mobi-fold-mouse.910-007624
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 122, widthMm: 57, heightMm: 33, weightG: 79, buttons: 4, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 256, power: rechargeable }
+  # sideButtons : avant/arrière « sous le défilement tactile », sur le dessus (fiche logitech.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 122, widthMm: 57, heightMm: 33, weightG: 79, buttons: 4, sideButtons: 0, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 256, power: rechargeable }
   variants:
     - { sku: 910-007624, colorName: Lilas, colorFamily: color }
     - { sku: 910-007604, colorName: Graphite, colorFamily: black }
@@ -337,7 +351,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/signature-comfort-plus-m850l/gallery/black/signature-comfort-plus-m850-l-mouse-black-top-angle-gallery-1.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/signature-comfort-plus-m850l.910-007715
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 121.8, widthMm: 74.3, heightMm: 44.2, weightG: 107.9, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
+  # sideButtons : fiche logitech.com : 6 boutons (clics, molette, DPI, « boutons latéraux »)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 121.8, widthMm: 74.3, heightMm: 44.2, weightG: 107.9, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
   variants:
     - { sku: 910-007715, colorName: Graphite, colorFamily: black }
     - { sku: 910-007716, colorName: Blanc cassé, colorFamily: white }
@@ -362,7 +377,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-4/gallery/mx-master-4-graphite-front-angle-gallery-9.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-master-4.910-007562
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 128.15, widthMm: 88.35, heightMm: 50.8, weightG: 150, buttons: 8, dpiMax: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  # sideButtons : avant, arrière, geste et panneau haptique, gigazine.net/gsc_news/en/20251002-logicool-mx-master-4-setup
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 128.15, widthMm: 88.35, heightMm: 50.8, weightG: 150, buttons: 8, sideButtons: 4, dpiMax: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
   variants:
     - { sku: 910-007562, colorName: Graphite, colorFamily: black }
     - { sku: 910-007563, colorName: Pale Gray, colorFamily: white }
@@ -380,7 +396,8 @@
     - { url: "https://resource.logitech.com/w_544,h_544,ar_1,c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-master-3s/2025-update/mx-master-3s-graphite-sustainability-gallery-4.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-master-3s.910-007501
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 124.9, widthMm: 84.3, heightMm: 51, weightG: 141, buttons: 7, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  # sideButtons : avant/arrière et bouton de geste (fiche logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 124.9, widthMm: 84.3, heightMm: 51, weightG: 141, buttons: 7, sideButtons: 3, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
   variants:
     - { sku: 910-007501, colorName: Graphite, colorFamily: black }
 
@@ -398,7 +415,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-anywhere-3s/product-gallery/pale-grey/mx-anywhere-3s-mouse-top-view-pale-grey.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-anywhere-3s.910-006929
-  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 100.5, widthMm: 65, heightMm: 34.4, weightG: 99, buttons: 6, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  # sideButtons : avant/arrière (fiche logitech.com)
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 100.5, widthMm: 65, heightMm: 34.4, weightG: 99, buttons: 6, sideButtons: 2, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true }
   variants:
     - { sku: 910-006929, colorName: Graphite, colorFamily: black }
     - { sku: 910-006931, colorName: Rose, colorFamily: color }
@@ -422,7 +440,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pop-wireless-mouse/2026-refresh/gallery/pop-mouse-profile-angle-graphite-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/pop-wireless-mouse.910-007413
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 104.8, widthMm: 59.4, heightMm: 35.2, weightG: 82, buttons: 4, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
+  # sideButtons : fiche logitech.com : clics, molette, bouton du dessus
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 104.8, widthMm: 59.4, heightMm: 35.2, weightG: 82, buttons: 4, sideButtons: 0, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true }
   variants:
     - { sku: 910-007413, colorName: Rose, colorFamily: color }
     - { sku: 910-007414, colorName: Lilac, colorFamily: color }
@@ -447,7 +466,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-ergo-s-wireless-trackball-mouse/gallery/mx-ergo-s-graphite-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-ergo-s-wireless-trackball-mouse.910-007260
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 132.5, widthMm: 99.8, heightMm: 51.4, weightG: 164, ballPosition: thumb, buttons: 8, dpiMax: 2048, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable, tiltWheel: true }
+  # sideButtons : trackball : avant/arrière sur le dessus, près du clic gauche (photos logitech.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 132.5, widthMm: 99.8, heightMm: 51.4, weightG: 164, ballPosition: thumb, buttons: 8, sideButtons: 0, dpiMax: 2048, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable, tiltWheel: true }
   variants:
     - { sku: 910-007260, colorName: Graphite, colorFamily: black }
 
@@ -469,7 +489,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # sideButtons : Suivant/Précédent (fiche logitech.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006473, colorName: Graphite, colorFamily: black }
     - { sku: 910-006475, colorName: Blanc cassé, colorFamily: white }
@@ -494,7 +515,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/lift-vertical-ergonomic-mouse/2026-update/gallery/graphite-left/lift-left-mouse-profile-left-graphite-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
-  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # sideButtons : Suivant/Précédent (fiche logitech.com)
+  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006474, colorName: Graphite, colorFamily: black }
 
@@ -513,7 +535,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/mx-vertical/gallery/mx-vertical-gallery-05.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-vertical-ergonomic-mouse.910-005448
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78.5, weightG: 125, buttons: 4, dpiMax: 4000, connWired: false, conn24ghz: true, connBt: true, power: rechargeable }
+  # sideButtons : Précédent/Suivant (fiche logitech.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78.5, weightG: 125, buttons: 4, sideButtons: 2, dpiMax: 4000, connWired: false, conn24ghz: true, connBt: true, power: rechargeable }
   variants:
     - { sku: 910-005448, colorName: Graphite, colorFamily: black }
 
@@ -535,7 +558,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/pebble-mouse-2-m350s/2026-refresh/gallery/pebble-mouse-2-m350s-tonal-rose-front-angle-gallery-9.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/pebble-2-m350s-wireless-mouse.910-007014
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 106, widthMm: 58.7, heightMm: 26.62, weightG: 76, buttons: 3, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa }
+  # sideButtons : fiche logitech.com : 3 boutons (clics, molette)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 106, widthMm: 58.7, heightMm: 26.62, weightG: 76, buttons: 3, sideButtons: 0, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 5760, power: aa }
   variants:
     - { sku: 910-007014, colorName: Tons de rose, colorFamily: color }
     - { sku: 910-007015, colorName: Tons de graphite, colorFamily: black }
@@ -559,7 +583,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m575s-ergo-wireless-trackball/gallery/ergo-m575sp-off-white-blue-ball-gallery-7.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/ergo-m575s-wireless-trackball.910-007030
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 134, widthMm: 100, heightMm: 48, weightG: 145, ballPosition: thumb, buttons: 5, dpiMax: 2000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 4320, power: aa }
+  # sideButtons : trackball : avant/arrière sur le dessus, près du clic gauche (photos logitech.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 134, widthMm: 100, heightMm: 48, weightG: 145, ballPosition: thumb, buttons: 5, sideButtons: 0, dpiMax: 2000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 4320, power: aa }
   variants:
     - { sku: 910-007030, colorName: Blanc cassé +boule bleue, colorFamily: white }
     - { sku: 910-007029, colorName: Graphite + boule bleue, colorFamily: black }
@@ -580,7 +605,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m720/gallery/m720-gallery-video-poster.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m720-triathlon.910-004791
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 115, widthMm: 74, heightMm: 45, weightG: 135, buttons: 8, dpiMax: 1000, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true, tiltWheel: true }
+  # sideButtons : « Deux boutons latéraux plus un bouton caché actionné par le pouce » (logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 115, widthMm: 74, heightMm: 45, weightG: 135, buttons: 8, sideButtons: 3, dpiMax: 1000, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true, tiltWheel: true }
   variants:
     - { sku: 910-004791, colorName: Noir, colorFamily: black }
 
@@ -602,7 +628,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # sideButtons : « deux boutons latéraux personnalisables pour le pouce » (logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006253, colorName: Graphite, colorFamily: black }
     - { sku: 910-006254, colorName: Rose, colorFamily: color }
@@ -626,7 +653,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  # sideButtons : « deux boutons latéraux personnalisables pour le pouce » (logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
   variants:
     - { sku: 910-006236, colorName: Graphite, colorFamily: black }
     - { sku: 910-006237, colorName: Rose, colorFamily: color }
@@ -650,7 +678,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m650/update-2025/gallery/off-white-large-left/m650-off-white-large-left-top-angle-gallery-1.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
-  specs: { shape: ergonomic, hand: left, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  # sideButtons : deux boutons latéraux, « placés sur le côté droit » (logitech.com)
+  specs: { shape: ergonomic, hand: left, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
   variants:
     - { sku: 910-006239, colorName: Graphite, colorFamily: black }
     - { sku: 910-006240, colorName: Blanc cassé, colorFamily: white }
@@ -669,7 +698,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m705/gallery/m705-gallery-4.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m705-wireless-mouse.910-001949
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 109, widthMm: 71, heightMm: 42, weightG: 135, buttons: 5, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 8640, power: aa, freeSpinWheel: true, tiltWheel: true }
+  # sideButtons : photo de profil (logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 109, widthMm: 71, heightMm: 42, weightG: 135, buttons: 5, sideButtons: 2, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 8640, power: aa, freeSpinWheel: true, tiltWheel: true }
   variants:
     - { sku: 910-001949, colorName: Charbon, colorFamily: black }
 
@@ -687,7 +717,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m500s/gallery/m500s-gallery-04.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m500s-corded-mouse.910-005784
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 69, heightMm: 42, weightG: 144, buttons: 7, dpiMax: 4000, freeSpinWheel: true, tiltWheel: true }
+  # sideButtons : photo de profil (logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 126, widthMm: 69, heightMm: 42, weightG: 144, buttons: 7, sideButtons: 2, dpiMax: 4000, freeSpinWheel: true, tiltWheel: true }
   variants:
     - { sku: 910-005784, colorName: Noir, colorFamily: black }
 
@@ -704,7 +735,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m240/product-gallery/m240-mouse-top-view-rose.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m240-silent-bluetooth-mouse.910-007120
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 73.8, buttons: 3, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, batteryHours: 4320, power: aa }
+  # sideButtons : fiche logitech.com : 3 boutons (clics, clic central)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 73.8, buttons: 3, sideButtons: 0, dpiMax: 4000, silentClicks: true, connWired: false, connBt: true, batteryHours: 4320, power: aa }
   variants:
     - { sku: 910-007120, colorName: Blanc cassé, colorFamily: white }
     - { sku: 910-007119, colorName: Graphite, colorFamily: black }
@@ -726,7 +758,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m171/gallery/m171-mouse-top-view-bluegrey.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m171-wireless-mouse.910-006867
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 97.7, widthMm: 61.5, heightMm: 35.2, weightG: 69.3, buttons: 3, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 2880, power: aa }
+  # sideButtons : photos (logitech.com) : clics et molette seulement
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 97.7, widthMm: 61.5, heightMm: 35.2, weightG: 69.3, buttons: 3, sideButtons: 0, dpiMax: 1000, connWired: false, conn24ghz: true, batteryHours: 2880, power: aa }
   variants:
     - { sku: 910-006867, colorName: Blanc cassé, colorFamily: white }
     - { sku: 910-006865, colorName: Rose, colorFamily: color }

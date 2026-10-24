@@ -260,6 +260,7 @@ export const mouseSpecs = pgTable('mouse_specs', {
   weightG: real(),
   ballPosition: ballPosition(),
   buttons: smallint(),
+  sideButtons: smallint(),
   mmo: boolean().notNull().default(false),
   sensor: text(),
   dpiMax: integer(),

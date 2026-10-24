@@ -51,7 +51,8 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
       .select({ variant: t.productVariants, switch: t.switches })
       .from(t.productVariants)
       .leftJoin(t.switches, eq(t.productVariants.switchId, t.switches.id))
-      .where(inArray(t.productVariants.productId, ids)),
+      .where(inArray(t.productVariants.productId, ids))
+      .orderBy(t.productVariants.id),
     // In the seed's order, which the ids follow.
     db
       .select()

@@ -38,8 +38,12 @@ const LABEL = {
   dpi: /^(resolution\w*|\w*dpi\w*|cpi\w*|ppp\w*|sensibilite\w*|maxsensitivity|sensitivity)$/,
   polling:
     /^(tauxderapport\w*|tauxdinterrogation\w*|frequencedinterrogation\w*|\w*pollingrate\w*|\w*reportrate\w*|frequencedechantillonnage\w*|frequencedesondage\w*)$/,
+  sideButtons:
+    /^(boutonslateraux|nombredeboutonslateraux|boutonsdecote|sidebuttons|numberofsidebuttons)$/,
+  gesture: /^(boutondegeste|gesturebutton)$/,
+  // ASUS heads its count "Bouton".
   buttons:
-    /^(boutons\w*|nombredeboutons\w*|buttons?|numberofbuttons|programmablebuttons|boutonsprogrammables|commandesprogrammables|nombredecommandes\w*)$/,
+    /^(bouton|boutons\w*|nombredeboutons\w*|buttons?|numberofbuttons|programmablebuttons|boutonsprogrammables|commandesprogrammables|nombredecommandes\w*)$/,
   switches:
     /^(typedecommutateur\w*|commutateurs?\w*|switchtype|switches|typedeswitch\w*|typedinterrupteur\w*|interrupteurs?\w*|boutonsprincipaux|mainbuttons?|\w*buttonswitch\w*)$/,
   battery:
@@ -474,32 +478,93 @@ const BUTTONS_IN_COPY = [
   ),
 ]
 
+/** A count as written: "6", "six". */
+function countOf(word: string): number | undefined {
+  const spelt = COUNT_WORDS.findIndex((w) => w.split('|').includes(word.toLowerCase()))
+  return Number(word) || (spelt >= 0 ? spelt + 2 : undefined)
+}
+
 /** The copy's count when the sheet gives none: "11 boutons programmables", "6 programmable buttons". */
 function buttonsInCopy(text: string): number | undefined {
   const word = BUTTONS_IN_COPY.map((re) => re.exec(text)?.[1]).find(Boolean)
-  if (!word) return undefined
-  const spelt = COUNT_WORDS.findIndex((w) => w.split('|').includes(word.toLowerCase()))
-  return Number(word) || (spelt >= 0 ? spelt + 2 : undefined)
+  return word ? countOf(word) : undefined
 }
 
 const noSideButtons = (shape: Shape, buttons: number | undefined) =>
   shape === 'symmetrical' && buttons != null && buttons <= 3
 
+/** Counts the copy ties to the side: "deux boutons latéraux", "panneau latéral à 5 boutons", "two side buttons". */
+const SIDE_IN_COPY = [
+  new RegExp(`\\b${COUNT}\\s+boutons\\s+(?:lat[ée]raux|de c[ôo]t[ée]|sur le c[ôo]t[ée])`, 'gi'),
+  new RegExp(`panneau lat[ée]ral\\s+(?:à|de)\\s+${COUNT}\\s+boutons`, 'gi'),
+  // Not "Two Side Button Pairs" in a box's contents.
+  new RegExp(`\\b${COUNT}[\\s-]+side[\\s-]+buttons?\\b(?!\\s*(?:pairs?|covers?))`, 'gi'),
+  new RegExp(`\\b${COUNT}-button\\s+(?:side|thumb)\\s+(?:panel|grid|cluster)`, 'gi'),
+]
+/** A back/forward pair in a buttons line ("avant/arrière", "Suivant/Précédent"). */
+const SIDE_PAIR =
+  /(avant|pr[ée]c[ée]dent|suivant|retour|back|forward)\s*\/\s*(arri[èe]re|suivant|pr[ée]c[ée]dent|avance|forward|back)/i
+const ON_TOP = /sous (le|la) (d[ée]filement|molette|roulette|panneau)|sur le dessus|on top/i
+
 /**
- * Whether a buttons line that names them ("4 (clic droit/gauche, clic central, bouton supérieur)")
- * puts one on a side; undefined when it only counts them. Back and forward buttons "sous le
- * défilement tactile" sit on top.
+ * Side buttons a buttons line names: "7 boutons (clic gauche/droit, avant/arrière, …)" has a pair
+ * on a side, a gesture button the sheet lists apart adds one; "boutons latéraux" without a count are
+ * what the other buttons leave of the total. None when the line names every button and puts none on
+ * a side (back and forward "sous le défilement tactile" sit on top, as a trackball's beside its
+ * left click do: its thumb is on the ball).
  */
-function sideButtonsNamed(facts: Facts): boolean | undefined {
-  const named = entries(facts, LABEL.buttons)
-    .map((e) => e.value)
-    .find((v) => /\(.*(clic|bouton|click|button)/i.test(v))
-  if (!named) return undefined
-  if (/sous (le|la) (d[ée]filement|molette|roulette|panneau)|sur le dessus|on top/i.test(named))
-    return false
-  return /lat[ée]ra|c[ôo]t[ée]|side|avant|arri[èe]re|retour|suivant|pr[ée]c[ée]dent|back|forward|pouce|thumb/i.test(
-    named,
-  )
+function namedSideButtons(facts: Facts, shape: Shape): number | undefined {
+  const line = entries(facts, LABEL.buttons)
+    .map((e) => /^\s*(\d+)?[^(]*\((.*)\)/.exec(e.value))
+    .find((m) => m?.[2] && /clic|bouton|click|button/i.test(m[2]))
+  if (!line?.[2]) return undefined
+  const total = line[1] ? Number(line[1]) : undefined
+  let side = 0
+  let others = 0
+  let unsaid = false
+  for (const item of line[2].split(/,|;|\s+et\s+|\s+and\s+/)) {
+    if (!item.trim()) continue
+    if (SIDE_PAIR.test(item) && shape !== 'trackball' && !ON_TOP.test(item)) side += 2
+    else if (/boutons lat[ée]raux|side buttons/i.test(item)) unsaid = true
+    else others += item.includes('/') ? 2 : 1
+  }
+  if (said(firstValue(facts, LABEL.gesture))) side += 1
+  if (unsaid) {
+    const rest = total != null ? total - others - side : 0
+    return rest > 0 ? side + rest : undefined
+  }
+  if (side) return side
+  return total != null && others === total ? 0 : undefined
+}
+
+/** Buttons on the thumb's flank: the sheet's own line, a buttons line that names them, else the copy. */
+function sideButtonsOf(
+  facts: Facts,
+  text: string,
+  shape: Shape,
+  notes: string[],
+): number | undefined {
+  const sheet = entries(facts, LABEL.sideButtons)
+    .map((e) => n(e.value))
+    .find((v) => v != null)
+  if (sheet != null) return sheet
+  const named = namedSideButtons(facts, shape)
+  if (named != null) return named
+  let best: { count: number; phrase: string } | undefined
+  for (const re of SIDE_IN_COPY) {
+    for (const m of text.matchAll(re)) {
+      let count = countOf(m[1] ?? '')
+      if (!count) continue
+      // "Deux boutons latéraux plus un bouton caché actionné par le pouce" (M720).
+      if (
+        /^\s*(?:plus|et)\s+un\s+bouton[^.;\n]{0,40}pouce/i.test(text.slice(m.index + m[0].length))
+      )
+        count += 1
+      if (!best || count > best.count) best = { count, phrase: m[0] }
+    }
+  }
+  if (best) notes.push(`boutons latéraux lus dans le texte (${best.phrase.trim()})`)
+  return best?.count
 }
 
 /** The shape and the hand: the adapter's hints first, the sheet's words, then the copy. */
@@ -539,13 +604,14 @@ function shapeOf(
     // A symmetrical shell without side buttons (left, right, wheel, a button on top) suits either hand.
     else if (
       noSideButtons(shape, buttons) ||
-      (shape === 'symmetrical' && sideButtonsNamed(facts) === false)
+      (shape === 'symmetrical' && namedSideButtons(facts, shape) === 0)
     )
       hand = 'ambidextrous'
     else if (/ambidextr/i.test(form) || (shape !== 'ergonomic' && /ambidextr/i.test(words))) {
       // An "ambidextrous" shell with its side buttons on the left only still suits the right hand.
+      // Pulsar's X2A: "Ambidextrous for both left and right hand", "Side Button Cover (4pcs)".
       const bothSides =
-        /des deux c[ôo]t[ée]s|both sides|droitiers? et (aux )?gauchers?|gauchers? et (aux )?droitiers?|left and right[\s-]handed|boutons? (lat[ée]raux )?(magn[ée]tiques|amovibles|interchangeables)|(magnetic|removable|swappable) (side )?buttons/i.test(
+        /des deux c[ôo]t[ée]s|both sides|droitiers? et (aux )?gauchers?|gauchers? et (aux )?droitiers?|left and right[\s-]handed|left (hand )?and right hands?\b|side button covers?|boutons? (lat[ée]raux )?(magn[ée]tiques|amovibles|interchangeables)|(magnetic|removable|swappable) (side )?buttons/i.test(
           words,
         )
       hand = bothSides || shape === 'trackball' ? 'ambidextrous' : 'right'
@@ -576,6 +642,7 @@ export function mouseSpecsOf(facts: Facts, hints: MouseHints): { specs: Specs; n
       )?.value,
     ) ?? buttonsInCopy(text)
   const { shape, hand } = shapeOf(facts, hints, buttons, notes)
+  const sideButtons = sideButtonsOf(facts, text, shape, notes)
   const dims = dimsOf(facts, shape, notes)
   const weightG = weightOf(facts, notes)
   if (shape !== 'trackball' && (!dims.lengthMm || !dims.widthMm || !dims.heightMm || !weightG))
@@ -612,9 +679,10 @@ export function mouseSpecsOf(facts: Facts, hints: MouseHints): { specs: Specs; n
     weightG,
     ballPosition: shape === 'trackball' ? ballOf(`${hints.name}\n${all}`, notes) : undefined,
     buttons: buttons && buttons <= 30 ? buttons : undefined,
-    mmo: /\bmmo\b|naga|scimitar|g600|\b(1[0-2]|[6-9])\s*boutons? (lat[ée]raux|de c[ôo]t[ée])/i.test(
-      `${hints.name}\n${text}`,
-    ),
+    sideButtons,
+    // A grid of six side buttons or more: counted on the page, or an MMO line by its name. "MMO" in
+    // the copy names a genre, not a grid (the Rival 5 has five side buttons).
+    mmo: (sideButtons ?? 0) >= 6 || /naga|scimitar|g600/i.test(hints.name),
     sensor: sensorOf(facts),
     dpiMax: dpiOf(facts),
     pollingHz,
@@ -644,8 +712,10 @@ export function mouseSpecsOf(facts: Facts, hints: MouseHints): { specs: Specs; n
       : /(molette|roulette|d[ée]filement) (multidirectionnel|inclinable)|(molette|roulette)[^.;\n]{0,40}inclin|inclin\w* (la )?(roulette|molette|souris)[^.;\n]{0,30}(à|vers la) gauche|tilt[\s-]?(wheel|scroll)|wheel[^.;\n]{0,20}\btilt|\btilt (left|right)|\b4d\b[^.;\n]{0,20}wheel|4[\s-]?way scroll/i.test(
           all,
         ),
+    // A wheel, not horizontal scrolling alone: the MX Anywhere 3S scrolls sideways with a side
+    // button held while the main wheel turns.
     thumbWheel:
-      /molette (lat[ée]rale|horizontale|(du|de|pour le) pouce)|thumb[\s-]?wheel|side[\s-]?scroll|d[ée]filement horizontal|horizontal scroll/i.test(
+      /molette (lat[ée]rale|horizontale|(du|de|pour le) pouce)|thumb[\s-]?wheel|side[\s-]?scroll/i.test(
         all,
       ),
     // "Éclairage vert à couleur unique" is lighting, not RGB.
