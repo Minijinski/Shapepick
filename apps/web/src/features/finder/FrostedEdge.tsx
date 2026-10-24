@@ -13,7 +13,7 @@ import { css, cx } from 'styled-system/css'
 /** Each layer's blur (px), from the inner end of the frost to where it is whole. */
 const BLURS = [1, 2.5, 5]
 /** How much of the width, from the screen's edge, the frost is whole: under the column's words. */
-const WHOLE = 0.56
+const WHOLE = 0.62
 /** The paper over the canvas where the frost is whole: enough for the words, not a wall. */
 const TINT = 0.66
 /** How tall the frost's rise along its top edge is (rem). */

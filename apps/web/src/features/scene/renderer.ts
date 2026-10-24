@@ -136,11 +136,11 @@ const APPEAR_MS = 280
 /**
  * Where a product on the field takes the pointer (screen px): half of it (`share`) clear of the
  * screen’s edges and of the paper fading under the header (the finder's top gradient is still
- * mostly opaque down to `veil` of its height, `topVeil`; on a phone down to `topCompact`). The
+ * about half opaque at `veil` of its height, `topVeil`; on a phone down to `topCompact`). The
  * widgets, the counter among them, are left out on their own (`keepClear`). One showing less than
  * that is only a glimpse.
  */
-const PICK = { veil: 0.6, topCompact: 118, side: 8, bottom: 8, share: 0.5 }
+const PICK = { veil: 0.5, topCompact: 118, side: 8, bottom: 8, share: 0.5 }
 /** How far ahead (s) the canvas looks for products coming into view, along its motion. */
 const AHEAD_S = 0.9
 /**

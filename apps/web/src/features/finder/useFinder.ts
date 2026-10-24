@@ -446,7 +446,10 @@ export function useFinder(
     const base = filter(def, items, answers, { without: step.key });
     // A must-have adds to the ones already picked, so those stay applied.
     const pool = step.kind === "musts" ? filter(def, base, effective) : base;
-    return new Set(pool.filter(option.match).map(def.id));
+    // What the question leaves aside (a trackball, for a mouse's size) stays whatever is picked.
+    const keeps = (item: CatalogItem) =>
+      !!step.exempt?.(item, effective) || option.match(item);
+    return new Set(pool.filter(keeps).map(def.id));
   }, [def, items, answers, effective, step, hovered, hoveredBrand]);
 
   /** What the product popup prints: rank and match for a kept product, the blocking answer otherwise. */

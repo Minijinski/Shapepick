@@ -307,13 +307,16 @@ export function Finder({ category, items, search, product, locale }: Props) {
   );
 
   // Each category remembers where its questionnaire was left. Reached with no answer at all (a
-  // search result, a link from a page outside the finder), it keeps that until the visitor answers
-  // here; from then on every change counts, starting over included.
+  // search result, a link from a page outside the finder, whatever else its address carries), it
+  // keeps that until the visitor answers here; from then on every change counts, starting over
+  // included.
   const answered = useRef(false);
+  const journeyStarted =
+    Object.keys(finder.answers).length > 0 || !!search.order || !!search.at;
   useEffect(() => {
-    if (Object.keys(search).length > 0) answered.current = true;
+    if (journeyStarted) answered.current = true;
     if (answered.current) saveJourney(category, search);
-  }, [category, search]);
+  }, [category, search, journeyStarted]);
 
   // The canvas shows what the answers keep; a new answer ripples out from the console. Ranks only
   // show once there is something to rank on.
@@ -615,7 +618,8 @@ export function Finder({ category, items, search, product, locale }: Props) {
             position: "absolute",
             // Over the journey's frost, the console and the podium: the brands' list it opens
             // drops in front of them (its own z-index only counts inside the halo's isolation).
-            zIndex: "2",
+            // A phone opens that list in a sheet of its own.
+            zIndex: { md: "2" },
             top: { base: "16", md: "20" },
             left: { base: "4", md: "8" },
             right: { base: "4", lg: "96" },
