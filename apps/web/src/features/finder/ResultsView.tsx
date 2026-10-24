@@ -20,13 +20,14 @@ import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, specCells } from "../product/specs";
 import { SpecValue } from "../product/SpecValue";
 import { useDockHeight } from "./DockPanel";
+import { ProductLink } from "./ProductLink";
 
 // The end of the questionnaire, in the dock's panel: the console grows into it and shrinks back
 // out of it. It takes the height of the page down from the site header, the finder's counter and
 // answers giving it their place: they come with it, under its title (how many products, the
 // brands, a chip per answer that reopens its question). The best match as a product card (its
 // photo beside its name, price, match and key specs, then what its match is made of), the next two
-// below it, every other match in a list. Every product opens its sheet: the best match from its
+// below it, every other match in a list. Every product links to its sheet: the best match from its
 // photo or its button, the others from anywhere on their card or row; each also links to Amazon
 // (keyboards). The list can hold the whole catalogue: only the rows in view (and a few around
 // them) are rendered, each the same height, so opening the results costs the same for 5 products
@@ -49,7 +50,6 @@ type Props = {
   /** Opens the whole journey (a phone's sheet), where "Edit" leads on a phone. */
   onJourney?: () => void;
   onReset: () => void;
-  onOpen: (slug: string) => void;
 };
 
 /**
@@ -284,7 +284,6 @@ export function ResultsView({
   onEdit,
   onJourney,
   onReset,
-  onOpen,
 }: Props) {
   const root = useRef<HTMLElement>(null);
   const list = useRef<HTMLOListElement>(null);
@@ -489,14 +488,13 @@ export function ResultsView({
                 gap: { base: "4", md: "8" },
               })}
             >
-              <button
-                type="button"
+              <ProductLink
+                slug={first.item.slug}
                 className={cx("group", photoCard)}
                 aria-label={m.sheetOf(
                   `${first.item.brand.name} ${first.item.name}`,
                   locale,
                 )}
-                onClick={() => onOpen(first.item.slug)}
               >
                 <span className={photoFrame}>
                   <ProductPicture
@@ -505,7 +503,7 @@ export function ResultsView({
                     className={css({ w: "100%", h: "100%" })}
                   />
                 </span>
-              </button>
+              </ProductLink>
               <div
                 className={css({
                   display: "grid",
@@ -572,16 +570,15 @@ export function ResultsView({
                         layouts={layouts}
                         className={actionButton}
                       />
-                      <button
-                        type="button"
+                      <ProductLink
+                        slug={first.item.slug}
                         className={cx(
                           button({ tone: "line", size: "md" }),
                           actionButton,
                         )}
-                        onClick={() => onOpen(first.item.slug)}
                       >
                         {m.viewSheet[locale]} →
-                      </button>
+                      </ProductLink>
                     </div>
                   }
                 />
@@ -804,14 +801,13 @@ export function ResultsView({
                         </div>
                       ))}
                     </dl>
-                    <button
-                      type="button"
+                    <ProductLink
+                      slug={entry.item.slug}
                       className={opener}
                       aria-label={m.sheetOf(
                         `${entry.item.brand.name} ${entry.item.name}`,
                         locale,
                       )}
-                      onClick={() => onOpen(entry.item.slug)}
                     />
                   </article>
                 ))}
@@ -1024,14 +1020,13 @@ export function ResultsView({
                         layouts={layouts}
                         variant="icon"
                       />
-                      <button
-                        type="button"
+                      <ProductLink
+                        slug={entry.item.slug}
                         className={opener}
                         aria-label={m.sheetOf(
                           `${entry.item.brand.name} ${entry.item.name}`,
                           locale,
                         )}
-                        onClick={() => onOpen(entry.item.slug)}
                       />
                     </li>
                   );

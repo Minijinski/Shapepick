@@ -19,11 +19,18 @@ export const homePaths = inEachLocale((locale) => `/${locale}`)
 export const categoryPaths = (category: Category) =>
   inEachLocale((locale) => `/${locale}/${categorySlugs[category][locale]}`)
 
+/** A product page's path in each locale: the same slug under its category's name. */
+export const productPaths = (category: Category, slug: string) =>
+  inEachLocale((locale) => `/${locale}/${categorySlugs[category][locale]}/${slug}`)
+
 /** Where the home page sends a language the site does not speak: "/" picks one of its own. */
 export const HOME_FALLBACK = '/'
 
 /** Structured data as a script's text: nothing in it can close the tag. */
 const jsonLd = (data: Schema) => JSON.stringify(data).replace(/</g, '\\u003c')
+
+/** A page's own share picture (a product's photo), as a full address; its size when known. */
+export type ShareImage = { url: string; width?: number; height?: number; alt: string }
 
 type PageHead = {
   locale: Locale
@@ -39,6 +46,8 @@ type PageHead = {
   /** The site's name before the title rather than after it (the home page). */
   brandFirst?: boolean
   description: string
+  /** The page's own share picture; the site's card otherwise. */
+  image?: ShareImage
   schema?: Schema[]
 }
 
@@ -49,9 +58,18 @@ export function pageHead({
   title,
   brandFirst = false,
   description,
+  image,
   schema = [],
 }: PageHead) {
   const url = absolute(paths[locale])
+  // The same picture for every page of a locale, without the site's name on it: the card shows
+  // the name beside it (og:site_name), so renaming the site leaves it as it is.
+  const card = image ?? {
+    url: absolute(`/og/default-${locale}.png`),
+    width: 1200,
+    height: 630,
+    alt: m.shareImageAlt[locale],
+  }
   return {
     meta: [
       { title: brandFirst ? `${SITE.name} · ${title}` : `${title} · ${SITE.name}` },
@@ -65,12 +83,14 @@ export function pageHead({
       ...locales
         .filter((other) => other !== locale)
         .map((other) => ({ property: 'og:locale:alternate', content: SITE.ogLocale[other] })),
-      // The same picture for every page of a locale, without the site's name on it: the card
-      // shows the name beside it (og:site_name), so renaming the site leaves it as it is.
-      { property: 'og:image', content: absolute(`/og/default-${locale}.png`) },
-      { property: 'og:image:width', content: '1200' },
-      { property: 'og:image:height', content: '630' },
-      { property: 'og:image:alt', content: m.shareImageAlt[locale] },
+      { property: 'og:image', content: card.url },
+      ...(card.width && card.height
+        ? [
+            { property: 'og:image:width', content: String(card.width) },
+            { property: 'og:image:height', content: String(card.height) },
+          ]
+        : []),
+      { property: 'og:image:alt', content: card.alt },
       { name: 'twitter:card', content: 'summary_large_image' },
     ],
     links: [
@@ -97,6 +117,45 @@ export const websiteSchema = (locale: Locale): Schema => ({
   name: SITE.name,
   url: absolute('/'),
   inLanguage: locale,
+})
+
+/**
+ * A product, on its own page: what it is and who makes it, its photo, and the products its sheet
+ * suggests beside it. No offer: its price is a typical public one, not a price anyone sells it at
+ * here, so search results show it without a price or a rating.
+ */
+export const productSchema = ({
+  name,
+  brand,
+  model,
+  description,
+  url,
+  image,
+  category,
+  similar,
+}: {
+  name: string
+  brand: string
+  /** The maker's reference, when known. */
+  model?: string
+  description: string
+  url: string
+  image?: string
+  category: string
+  similar: { name: string; url: string }[]
+}): Schema => ({
+  '@context': 'https://schema.org',
+  '@type': 'Product',
+  name,
+  brand: { '@type': 'Brand', name: brand },
+  ...(model ? { mpn: model } : {}),
+  description,
+  url,
+  ...(image ? { image } : {}),
+  category,
+  ...(similar.length > 0
+    ? { isSimilarTo: similar.map((other) => ({ '@type': 'Product', ...other })) }
+    : {}),
 })
 
 /** Where a page sits, from the home page down, as search results show it. */

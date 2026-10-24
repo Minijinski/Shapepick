@@ -4,9 +4,11 @@ import { messages as m } from '~/i18n/messages'
 import { Match } from '../product/Match'
 import { ProductPicture } from '../product/ProductPicture'
 import { formatPrice } from '../product/specs'
+import { ProductLink } from './ProductLink'
 
 // The best match so far, above a phone's console, where the podium has no room: one line that
-// changes as the answers do. A tap opens its sheet, whose arrows go on to the next ones.
+// changes as the answers do. A tap opens its sheet (a link to it), whose arrows go on to the next
+// ones.
 
 const card = css({
   display: 'grid',
@@ -29,22 +31,13 @@ const card = css({
   _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '2px' },
 })
 
-export function TopPick({
-  entry,
-  locale,
-  onOpen,
-}: {
-  entry: Ranked<CatalogItem>
-  locale: Locale
-  onOpen: (slug: string) => void
-}) {
+export function TopPick({ entry, locale }: { entry: Ranked<CatalogItem>; locale: Locale }) {
   const { item } = entry
   return (
-    <button
-      type="button"
+    <ProductLink
+      slug={item.slug}
       className={card}
       aria-label={m.sheetOf(`${item.brand.name} ${item.name}`, locale)}
-      onClick={() => onOpen(item.slug)}
     >
       {/* A new best match comes in on its own. */}
       <span
@@ -117,6 +110,6 @@ export function TopPick({
       >
         <path d="M9 6l6 6-6 6" />
       </svg>
-    </button>
+    </ProductLink>
   )
 }

@@ -100,6 +100,13 @@ export type Criterion<I> = {
   active?: (answers: Answers) => boolean
 }
 
+/**
+ * A question that says what a product is (its size, its technology), and how much answering it
+ * alike makes two products alike. `hard`: two products that answer it with nothing in common are
+ * never alike, however close the rest (a mouse for the other hand).
+ */
+export type Likeness = { key: string; weight: number; hard?: boolean }
+
 export type FinderDefinition<I> = {
   category: Category
   steps: Step<I>[]
@@ -113,6 +120,8 @@ export type FinderDefinition<I> = {
   prior: (item: I) => number
   /** Who makes the item: among items with the same match, the ranking takes makers in turn. */
   maker?: (item: I) => string
+  /** The questions a product's sheet reads to suggest products like it (similar.ts). */
+  likeness?: Likeness[]
 }
 
 export type Ranked<I> = {

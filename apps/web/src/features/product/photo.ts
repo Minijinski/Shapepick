@@ -65,11 +65,26 @@ function original(url: string, width: number) {
  * also stands in for the image CDN where there is none (a second dev server): every shop's photo
  * then comes from our origin, so its pixels stay readable whatever the shop allows.
  */
-export function photoSrc(photo: Photo, width: number, through = proxied) {
+export function photoSrc(
+  photo: Photo,
+  width: number,
+  through = proxied,
+  format: 'webp' | 'jpg' = 'webp',
+) {
   const w = Math.min(width, photo.width ?? width)
   const source = original(photo.url, w)
   if (!through) return isShopPhoto(source) ? relayOf(source) : direct(photo, w)
-  return `/.netlify/images?url=${encodeURIComponent(relayed(source) ?? source)}&w=${w}&fm=webp&q=90`
+  return `/.netlify/images?url=${encodeURIComponent(relayed(source) ?? source)}&w=${w}&fm=${format}&q=90`
+}
+
+/**
+ * The photo as a page shares it (link previews, structured data): uncut, as a JPEG every app
+ * reads, through the image CDN, at most `width` px wide; its height when the photo's size is known.
+ */
+export function sharedPhoto(photo: Photo, width = 1200) {
+  const w = Math.min(width, photo.width ?? width)
+  const h = photo.width && photo.height ? Math.round((w * photo.height) / photo.width) : undefined
+  return { src: photoSrc(photo, w, true, 'jpg'), width: w, height: h }
 }
 
 /**

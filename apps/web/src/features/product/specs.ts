@@ -517,3 +517,121 @@ export function specCells(item: CatalogItem, locale: Locale): SpecCell[] {
     },
   ];
 }
+
+// ---- What a product is, in words ----------------------------------------------------------------
+
+/** A keyboard's size as the name of a kind of keyboard says it. */
+const kindSize: Record<string, [string, string]> = {
+  full: ["100 %", "full-size"],
+  f96: ["96 %", "96%"],
+  tkl: ["TKL", "TKL"],
+  f75: ["75 %", "75%"],
+  f65: ["65 %", "65%"],
+  f60: ["60 %", "60%"],
+  f40: ["40 %", "40%"],
+  split: ["split", "split"],
+  alice: ["Alice", "Alice"],
+};
+/** A keyboard's keys as the name of a kind of keyboard says them. */
+const kindTech: Record<string, [string, string]> = {
+  mechanical: ["mécanique", "mechanical"],
+  magnetic: ["magnétique", "magnetic"],
+  optical: ["optique", "optical"],
+  membrane: ["à membrane", "membrane"],
+  scissor: ["à ciseaux", "scissor-switch"],
+  topre: ["Topre", "Topre"],
+};
+const kindShape: Record<string, [string, string]> = {
+  symmetrical: ["souris symétrique", "symmetrical"],
+  ergonomic: ["souris ergonomique", "ergonomic"],
+  vertical: ["souris verticale", "vertical"],
+};
+const kindBall: Record<string, [string, string]> = {
+  thumb: ["trackball au pouce", "thumb trackball"],
+  finger: ["trackball aux doigts", "finger trackball"],
+};
+const kindAspect: Record<string, [string, string]> = {
+  "21:9": ["ultra-large", "ultrawide"],
+  "32:9": ["super-ultra-large", "super ultrawide"],
+};
+/** A monitor's sharpness, read on its height in pixels as the questionnaire reads it. */
+const sharpness = (resH: number) =>
+  resH < 1300 ? "1080p" : resH < 2000 ? "1440p" : resH < 2800 ? "4K" : "5K";
+
+/**
+ * What a product is, in the few words a title or a sentence carries after its name: "clavier
+ * 60 % magnétique", "écran 27" 1440p IPS", "souris symétrique de 60 g". A monitor whose name
+ * gives its diagonal (UltraSharp U2724DE 27") does not get it twice.
+ */
+export function productKind(item: CatalogItem, locale: Locale): string {
+  const fr = locale === "fr";
+  if (item.category === "keyboard") {
+    const s = item.specs;
+    const tech = pick(kindTech[s.technology], locale);
+    if (s.formFactor === "numpad")
+      return fr ? `pavé numérique ${tech}` : `${tech} numpad`;
+    const size = pick(kindSize[s.formFactor], locale);
+    return fr
+      ? `clavier ${size} ${tech}${s.lowProfile ? " extra-plat" : ""}`
+      : `${size}${s.lowProfile ? " low-profile" : ""} ${tech} keyboard`;
+  }
+  if (item.category === "monitor") {
+    const s = item.specs;
+    const diagonal = /\d"/.test(item.name)
+      ? ""
+      : `${num(s.diagonalIn, locale)}"`;
+    const words = [
+      pick(kindAspect[s.aspect], locale),
+      diagonal,
+      sharpness(s.resH),
+      panelName[s.panel] ?? s.panel,
+    ].filter(Boolean);
+    return fr ? `écran ${words.join(" ")}` : `${words.join(" ")} monitor`;
+  }
+  const s = item.specs;
+  const left = s.hand === "left";
+  if (s.shape === "trackball") {
+    const ball = pick(kindBall[s.ballPosition ?? "thumb"], locale);
+    if (!left) return ball;
+    return fr ? `${ball} pour gaucher` : `left-handed ${ball}`;
+  }
+  const weight = s.weightG ? `${num(s.weightG, locale)} g` : "";
+  const shape = pick(kindShape[s.shape], locale);
+  return fr
+    ? `${shape}${left ? " pour gaucher" : ""}${weight ? ` de ${weight}` : ""}`
+    : [weight, left && "left-handed", shape, "mouse"].filter(Boolean).join(" ");
+}
+
+/** How a product connects, as a sentence says it: "filaire", "sans fil 2,4 GHz et Bluetooth". */
+function linkWords(radio: boolean, bluetooth: boolean, fr: boolean) {
+  if (radio && bluetooth)
+    return fr
+      ? "sans fil 2,4 GHz et Bluetooth"
+      : "2.4 GHz wireless and Bluetooth";
+  if (radio) return fr ? "sans fil 2,4 GHz" : "2.4 GHz wireless";
+  if (bluetooth) return "Bluetooth";
+  return fr ? "filaire" : "wired";
+}
+
+/**
+ * What a product is and the little that sets it apart, for its page's description: "clavier
+ * 60 % magnétique, filaire, rapid trigger", "écran 34" 1440p VA, 165 Hz, incurvé".
+ */
+export function productSummary(item: CatalogItem, locale: Locale): string {
+  const fr = locale === "fr";
+  const kind = productKind(item, locale);
+  if (item.category === "monitor") {
+    const s = item.specs;
+    return present([
+      kind,
+      `${s.refreshHzMax} Hz`,
+      s.curvatureR != null && (fr ? "incurvé" : "curved"),
+    ]).join(", ");
+  }
+  const s = item.specs;
+  return present([
+    kind,
+    linkWords(s.conn24ghz, s.connBt, fr),
+    item.category === "keyboard" && item.specs.rapidTrigger && "rapid trigger",
+  ]).join(", ");
+}

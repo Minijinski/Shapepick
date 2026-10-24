@@ -113,8 +113,9 @@ export function useSceneNavigation() {
         if (!category)
           return navigate({ to: '/$lang', params: { lang: locale }, resetScroll: false })
         return navigate({
-          to: '/$lang/$category',
-          params: { lang: locale, category: categorySlugs[category][locale] },
+          to: '/$lang/$category/{-$product}',
+          // The category's finder, without the product of a sheet open on the page left.
+          params: { lang: locale, category: categorySlugs[category][locale], product: undefined },
           search: journey,
         })
       })

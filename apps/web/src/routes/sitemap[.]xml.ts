@@ -1,13 +1,14 @@
 import { type CatalogItem, type Category, categories, type Locale, locales } from '@choose/catalog'
 import type { Snapshot } from '@choose/db'
 import { createFileRoute } from '@tanstack/react-router'
-import { categoryPaths, HOME_FALLBACK, homePaths } from '~/seo'
+import { categoryPaths, HOME_FALLBACK, homePaths, productPaths } from '~/seo'
 import { shownCategories } from '~/server/catalog'
 import { absolute } from '~/site'
 
-// The pages search engines should know, in every locale: the home page and each category the site
-// offers, each with its other languages (hreflang, as in its head) and when its catalogue last
-// changed. A catalogue that fails to load would leave its pages out: no sitemap rather than a
+// The pages search engines should know, in every locale: the home page, each category the site
+// offers and each of its products, each with its other languages (hreflang, as in its head) and
+// when its catalogue last changed (a product's own date would say no more: every seed stamps every
+// product). A catalogue that fails to load would leave its pages out: no sitemap rather than a
 // short one, and nothing kept by the CDN.
 
 type Page = { paths: Record<Locale, string>; fallback: string; lastmod: string | null }
@@ -60,6 +61,12 @@ export const Route = createFileRoute('/sitemap.xml')({
             const paths = categoryPaths(category)
             return { paths, fallback: paths.en, lastmod: updated.get(category) ?? null }
           }),
+          ...shown.flatMap((category) =>
+            catalogs[category].map((item) => {
+              const paths = productPaths(category, item.slug)
+              return { paths, fallback: paths.en, lastmod: updated.get(category) ?? null }
+            }),
+          ),
         ]
         return new Response(urlset(pages), {
           headers: {

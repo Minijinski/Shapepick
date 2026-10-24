@@ -30,4 +30,8 @@ declare module '@tanstack/react-router' {
   interface Register {
     router: ReturnType<typeof getRouter>
   }
+  interface HistoryState {
+    /** A product's sheet opened over its finder (not reached directly): closing it goes back. */
+    sheet?: boolean
+  }
 }

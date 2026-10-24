@@ -44,6 +44,15 @@ export const monitorFinder: FinderDefinition<M> = {
   price: (m) => m.priceEur,
   prior: (m) => 0.6 * m.editorialScore + 0.4 * m.popularity,
   maker: (m) => m.brand.slug,
+  // A monitor like another is first of its size, then of its sharpness and panel, then as smooth
+  // and as flat (or curved).
+  likeness: [
+    { key: 'format', weight: 3 },
+    { key: 'resolution', weight: 2 },
+    { key: 'panel', weight: 2 },
+    { key: 'refresh', weight: 1 },
+    { key: 'curve', weight: 1 },
+  ],
   steps: [
     {
       key: 'use',

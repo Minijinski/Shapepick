@@ -620,8 +620,12 @@ function BandLink({
       style={{ "--i": index } as CSSProperties}
     >
       <Link
-        to="/$lang/$category"
-        params={{ lang: locale, category: categorySlugs[category][locale] }}
+        to="/$lang/$category/{-$product}"
+        params={{
+          lang: locale,
+          category: categorySlugs[category][locale],
+          product: undefined,
+        }}
         data-band={category}
         draggable={false}
         className={bandLink}

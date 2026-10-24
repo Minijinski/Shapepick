@@ -1,8 +1,16 @@
-import type { CatalogItem, Category, Locale } from "@choose/catalog";
+import {
+  type CatalogItem,
+  type Category,
+  finderOf,
+  type Locale,
+  similar,
+} from "@choose/catalog";
+import { useNavigate, useRouter } from "@tanstack/react-router";
 import {
   type CSSProperties,
   useCallback,
   useEffect,
+  useMemo,
   useRef,
   useState,
 } from "react";
@@ -41,14 +49,20 @@ import { type FinderSearch, useFinder } from "./useFinder";
 // itself is the layout's scene: the finder only tells it which products the answers keep,
 // which ones the hovered option would keep, and the podium. Only the widgets take the pointer, so
 // dragging anywhere else browses the canvas. Any product, on the canvas, the podium or the
-// results, opens its sheet over the page.
+// results, opens its sheet over the page: the page's own path with the product in it
+// (/fr/claviers/<slug>), which the server renders with the sheet open.
 
 type Props = {
   category: Category;
   items: CatalogItem[];
   search: FinderSearch;
+  /** The product whose sheet the page's path opens. */
+  product: string | null;
   locale: Locale;
 };
+
+/** The finder's route, with or without a product's sheet open. */
+const PAGE = "/$lang/$category/{-$product}";
 
 // One-time hints, remembered in the browser only: a blocked storage just shows them again.
 const SHEET_SEEN = "choose-a-device:sheet-seen";
@@ -113,7 +127,7 @@ const fadesWithResults = css({
   _motionReduce: { transition: "none" },
 });
 
-export function Finder({ category, items, search, locale }: Props) {
+export function Finder({ category, items, search, product, locale }: Props) {
   const finder = useFinder(category, items, search, locale);
   const stage = useRef<HTMLElement>(null);
   const hud = useRef<HTMLDivElement>(null);
@@ -144,21 +158,87 @@ export function Finder({ category, items, search, locale }: Props) {
     wasDone.current = done;
   }, [done]);
 
-  // The product whose sheet is open, and where it stands among the kept ones.
-  const [open, setOpen] = useState<string | null>(null);
-  const sheet = open ? finder.sheetOf(open) : null;
+  // The sheet on screen is the path's product, and where it stands among the kept ones. Once the
+  // path drops it (closed, or Back), it stays the time it takes to fold away; a sheet opened
+  // again meanwhile is a new one (`opening`). Stepping to another product keeps the sheet open.
+  const [view, setView] = useState({ product, shown: product, opening: 0 });
+  if (view.product !== product) {
+    const opens = product != null && view.product == null;
+    setView({
+      product,
+      shown: product ?? view.shown,
+      opening: opens ? view.opening + 1 : view.opening,
+    });
+  }
+  const shown = product ?? view.shown;
+  const sheet = shown ? finder.sheetOf(shown) : null;
+  const leaving = product == null && sheet != null;
+  const gone = useCallback(
+    () => setView((v) => (v.product == null ? { ...v, shown: null } : v)),
+    [],
+  );
+  // The products its sheet suggests beside it: like it whatever the answers, so its links (and
+  // the page's structured data, which names them) stay put.
+  const sheetItem = sheet?.item;
+  const similarModels = useMemo(
+    () => (sheetItem ? similar(finderOf(category), items, sheetItem) : []),
+    [category, items, sheetItem],
+  );
+
+  // Opening a sheet from the finder takes an entry of the history (marked, so that closing it goes
+  // back to the finder rather than adding another); stepping through the ranking swaps the product
+  // in that entry. Reached directly (a search result, a shared link), closing it shows the finder
+  // in place of the sheet.
+  const navigate = useNavigate();
+  const router = useRouter();
+  const openSheet = useCallback(
+    (slug: string) =>
+      navigate({
+        from: PAGE,
+        to: PAGE,
+        params: (prev) => ({ ...prev, product: slug }),
+        search: (prev) => prev,
+        state: { sheet: true },
+        resetScroll: false,
+      }),
+    [navigate],
+  );
   const stepSheet = useCallback(
     (delta: -1 | 1) => {
       const next =
         sheet?.rank != null ? finder.ranked[sheet.rank + delta] : undefined;
-      if (next) setOpen(next.item.slug);
+      if (next)
+        navigate({
+          from: PAGE,
+          to: PAGE,
+          params: (prev) => ({ ...prev, product: next.item.slug }),
+          search: (prev) => prev,
+          state: (prev) => ({ sheet: prev.sheet }),
+          replace: true,
+          resetScroll: false,
+        });
     },
-    [sheet?.rank, finder.ranked],
+    [sheet?.rank, finder.ranked, navigate],
   );
-  const closeSheet = useCallback(() => setOpen(null), []);
+  const closeSheet = useCallback(() => {
+    if (router.state.location.state.sheet) return router.history.back();
+    navigate({
+      from: PAGE,
+      to: PAGE,
+      params: (prev) => ({ ...prev, product: undefined }),
+      search: (prev) => prev,
+      replace: true,
+      resetScroll: false,
+    });
+  }, [navigate, router]);
   // Until the visitor has opened a sheet once, the podium's best match shows how.
   const [hint, setHint] = useState(false);
   useEffect(() => setHint(!seen(SHEET_SEEN)), []);
+  useEffect(() => {
+    if (!product) return;
+    setHint(false);
+    markSeen(SHEET_SEEN);
+  }, [product]);
   // On a phone the journey opens in a sheet, from the console's step or the results' "Edit".
   const [journeyOpen, setJourneyOpen] = useState(false);
   const openJourney = useCallback(() => setJourneyOpen(true), []);
@@ -172,11 +252,6 @@ export function Finder({ category, items, search, locale }: Props) {
       setCanvasKnown(true);
       markSeen(CANVAS_HINT_SEEN);
     });
-  }, []);
-  const openSheet = useCallback((slug: string) => {
-    setOpen(slug);
-    setHint(false);
-    markSeen(SHEET_SEEN);
   }, []);
 
   useEffect(() => {
@@ -430,9 +505,16 @@ export function Finder({ category, items, search, locale }: Props) {
         "--dock-h": "320px",
       })}
     >
-      <h1 className={css({ srOnly: true })}>
-        {m.categoryQuestion[category][locale]}
-      </h1>
+      {/* The page's heading, unless a product's sheet is open: its name is then the heading. */}
+      {sheet ? (
+        <p className={css({ srOnly: true })}>
+          {m.categoryQuestion[category][locale]}
+        </p>
+      ) : (
+        <h1 className={css({ srOnly: true })}>
+          {m.categoryQuestion[category][locale]}
+        </h1>
+      )}
 
       {/* The canvas fades into paper under the header and the counter, which stay legible. */}
       <div
@@ -510,7 +592,7 @@ export function Finder({ category, items, search, locale }: Props) {
             w: "72",
             display: { base: "none", lg: "block" },
             containerType: "size",
-            "& button": { pointerEvents: "auto" },
+            "& button, & a": { pointerEvents: "auto" },
           }),
         )}
         style={{ animationDelay: `${delay + 0.2}s` }}
@@ -531,7 +613,6 @@ export function Finder({ category, items, search, locale }: Props) {
             locale={locale}
             hint={hint}
             carryOver={!!carried?.podium}
-            onOpen={openSheet}
             onShowAll={finder.showResults}
           />
         </div>
@@ -680,11 +761,7 @@ export function Finder({ category, items, search, locale }: Props) {
                 "@media (max-height: 43.75rem)": { display: "none" },
               })}
             >
-              <TopPick
-                entry={finder.ranked[0]}
-                locale={locale}
-                onOpen={openSheet}
-              />
+              <TopPick entry={finder.ranked[0]} locale={locale} />
             </div>
           )}
           {ranking && (
@@ -705,7 +782,6 @@ export function Finder({ category, items, search, locale }: Props) {
                 locale={locale}
                 layout="row"
                 hint={hint}
-                onOpen={openSheet}
                 onShowAll={finder.showResults}
               />
             </div>
@@ -723,7 +799,6 @@ export function Finder({ category, items, search, locale }: Props) {
                 onEdit={finder.editAnswers}
                 onJourney={openJourney}
                 onReset={finder.reset}
-                onOpen={openSheet}
               />
             ) : (
               <Console
@@ -775,9 +850,12 @@ export function Finder({ category, items, search, locale }: Props) {
         />
       )}
 
+      {/* In the page itself rather than in a portal, so that the server renders it. */}
       {sheet && (
         <ProductDrawer
+          key={view.opening}
           sheet={sheet}
+          similar={similarModels}
           use={finder.useLabel}
           layouts={layouts}
           locale={locale}
@@ -786,8 +864,10 @@ export function Finder({ category, items, search, locale }: Props) {
               ? { index: sheet.rank, total: finder.ranked.length }
               : null
           }
+          leaving={leaving}
           onStep={stepSheet}
           onClose={closeSheet}
+          onGone={gone}
         />
       )}
     </main>

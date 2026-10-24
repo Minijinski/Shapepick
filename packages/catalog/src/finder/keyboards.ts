@@ -43,6 +43,13 @@ export const keyboardFinder: FinderDefinition<K> = {
   price: (k) => k.priceEur,
   prior: (k) => 0.6 * k.editorialScore + 0.4 * k.popularity,
   maker: (k) => k.brand.slug,
+  // A board like another is first of its size, then of its kind of keys, its height, its link.
+  likeness: [
+    { key: "size", weight: 3 },
+    { key: "tech", weight: 2 },
+    { key: "profile", weight: 1 },
+    { key: "connection", weight: 1 },
+  ],
   steps: [
     {
       key: "use",

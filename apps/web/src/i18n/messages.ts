@@ -61,6 +61,49 @@ export const messages = {
     locale === "fr"
       ? `${pitch} : réponds à ${questions} questions et ${count(models, locale)} ${name} se resserrent en direct jusqu’aux trois modèles faits pour toi.`
       : `${pitch}: answer ${questions} questions and ${count(models, locale)} ${name} narrow down live to the three models made for you.`,
+  /** A product page's title, before the site's name: its name, then what it is. */
+  productTitle: (name: string, kind: string) => `${name}, ${kind}`,
+  /** How many products of a category the site compares, closing a product page's description. */
+  amongCompared: {
+    keyboard: (n: number, locale: Locale) =>
+      locale === "fr"
+        ? `parmi ${count(n, locale)} claviers comparés`
+        : `among ${count(n, locale)} keyboards compared`,
+    monitor: (n: number, locale: Locale) =>
+      locale === "fr"
+        ? `parmi ${count(n, locale)} écrans comparés`
+        : `among ${count(n, locale)} monitors compared`,
+    mouse: (n: number, locale: Locale) =>
+      locale === "fr"
+        ? `parmi ${count(n, locale)} souris comparées`
+        : `among ${count(n, locale)} mice compared`,
+  } satisfies Record<Category, (n: number, locale: Locale) => string>,
+  /** A product page's description, for search results and share cards. */
+  productDescription: (
+    name: string,
+    summary: string,
+    price: string,
+    similar: number,
+    among: string,
+    locale: Locale,
+  ) => {
+    if (locale === "fr") {
+      const like =
+        similar > 1
+          ? ` et ${similar} modèles proches`
+          : similar === 1
+            ? " et un modèle proche"
+            : "";
+      return `${name} : ${summary}, autour de ${price}. Sa fiche technique, ses points forts${like}, ${among}.`;
+    }
+    const like =
+      similar > 1
+        ? ` and ${similar} similar models`
+        : similar === 1
+          ? " and a similar model"
+          : "";
+    return `${name}: ${summary}, around ${price}. Its spec sheet, strengths${like}, ${among}.`;
+  },
   /** The home page's title, after the site's name. */
   homeHeadline: text(
     "Le bon clavier, écran ou souris en quelques questions",
@@ -175,6 +218,7 @@ export const messages = {
   previous: text("Précédent", "Previous"),
   next: text("Suivant", "Next"),
   specSheet: text("Fiche technique", "Spec sheet"),
+  similarModels: text("Modèles proches", "Similar models"),
   listPrice: text("Prix indicatif", "Typical price"),
   price: text("Prix", "Price"),
   runnersUp: text("Juste derrière", "Close behind"),

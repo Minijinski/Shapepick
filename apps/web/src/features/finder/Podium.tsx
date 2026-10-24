@@ -8,10 +8,11 @@ import { motion } from "../motion/tokens";
 import { Match } from "../product/Match";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice } from "../product/specs";
+import { ProductLink } from "./ProductLink";
 
 // The best matches for the answers so far, under a header that says what the numbers are: the
 // rank on each drawing, the match as a ring. Three cards, no more (the canvas stays the main
-// thing to look at), then a way to the whole ranking. Every entry opens its product's sheet: hovered, the
+// thing to look at), then a way to the whole ranking. Every entry links to its product's sheet: hovered, the
 // drawing lifts and the price gives way to "View details"; until the visitor has opened a sheet,
 // the best match plays that once by itself. When the ranking changes, GSAP Flip moves each entry
 // from where it was to where it now belongs, so a product visibly climbs or drops. Before the first
@@ -206,7 +207,6 @@ export function Podium({
   layout = "column",
   hint = false,
   carryOver = false,
-  onOpen,
   onShowAll,
 }: {
   top: Ranked<CatalogItem>[];
@@ -220,7 +220,6 @@ export function Podium({
   hint?: boolean;
   /** The page replaces another category's, whose podium showed as many cards: they stay. */
   carryOver?: boolean;
-  onOpen: (slug: string) => void;
   onShowAll: () => void;
 }) {
   const root = useRef<HTMLOListElement>(null);
@@ -365,12 +364,11 @@ export function Podium({
                 )}
               >
                 {asCard ? (
-                  <button
-                    type="button"
+                  <ProductLink
+                    slug={entry.item.slug}
                     className={card}
                     data-first={first || undefined}
                     data-hint={(hint && first) || undefined}
-                    onClick={() => onOpen(entry.item.slug)}
                   >
                     <span
                       className={css({
@@ -490,13 +488,9 @@ export function Podium({
                         label={false}
                       />
                     </span>
-                  </button>
+                  </ProductLink>
                 ) : (
-                  <button
-                    type="button"
-                    className={compact}
-                    onClick={() => onOpen(entry.item.slug)}
-                  >
+                  <ProductLink slug={entry.item.slug} className={compact}>
                     <span
                       className={css({
                         fontFamily: "mono",
@@ -535,7 +529,7 @@ export function Podium({
                     >
                       {Math.round(entry.score * 100)} %
                     </span>
-                  </button>
+                  </ProductLink>
                 )}
               </li>
             );

@@ -61,6 +61,15 @@ export const mouseFinder: FinderDefinition<M> = {
   price: (m) => m.priceEur,
   prior: (m) => 0.6 * m.editorialScore + 0.4 * m.popularity,
   maker: (m) => m.brand.slug,
+  // A mouse like another fits the same hand (never one for the other hand), then has its shape,
+  // its size, its weight and its link.
+  likeness: [
+    { key: 'hand', weight: 1, hard: true },
+    { key: 'shape', weight: 3 },
+    { key: 'size', weight: 2 },
+    { key: 'weight', weight: 2 },
+    { key: 'connection', weight: 1 },
+  ],
   steps: [
     {
       key: 'use',

@@ -1,4 +1,4 @@
-import type { Locale } from '@choose/catalog'
+import type { CatalogItem, Locale } from '@choose/catalog'
 import {
   type PointerEvent as ReactPointerEvent,
   useCallback,
@@ -6,7 +6,6 @@ import {
   useRef,
   useState,
 } from 'react'
-import { createPortal } from 'react-dom'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
@@ -14,22 +13,29 @@ import { AmazonLink } from '../product/AmazonLink'
 import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
+import { ProductPicture } from '../product/ProductPicture'
+import { photoSrc } from '../product/photo'
 import { amazonLink } from '../product/shops'
-import { formatPrice, sheetSpecs } from '../product/specs'
+import { formatPrice, productKind, sheetSpecs } from '../product/specs'
+import { ProductLink } from './ProductLink'
 import { foldAway, useSheetDrag } from './Sheet'
 import type { ProductSheet } from './useFinder'
 
-// One product's sheet, opened from wherever a product shows: the canvas, the podium, the results.
-// It reads like the results' best match (the product and its key specs, strengths, caveats), says
-// what its match is made of and adds the full spec sheet. Where to buy it sits on the line of its
-// price, and once that line has scrolled away a bar slides up at the foot of the sheet with the
-// price and the shop again. A side panel on wide screens, a bottom sheet on phones; Escape, the
-// backdrop and the close button fold it away, the arrows step through the ranking. Its text can be
-// selected and copied (a name, a spec), unlike the rest of the site, where a press and drag
-// browses the canvas.
+// One product's sheet, opened from wherever a product shows: the canvas, the podium, the results,
+// or straight from its own address (/fr/claviers/<slug>), the page's path saying which product is
+// open. It reads like the results' best match (the product and its key specs, strengths, caveats),
+// says what its match is made of and adds the full spec sheet, then the products most like it.
+// Where to buy it sits on the line of its price, and once that line has scrolled away a bar slides
+// up at the foot of the sheet with the price and the shop again. A side panel on wide screens, a
+// bottom sheet on phones; Escape, the backdrop and the close button close it (the page then drops
+// it from its path, and it folds away), the arrows step through the ranking. Rendered in the page
+// rather than in a portal, so that the server sends it. Its text can be selected and copied (a
+// name, a spec), unlike the rest of the site, where a press and drag browses the canvas.
 
 type Props = {
   sheet: ProductSheet
+  /** The products most like it, which it links to. */
+  similar: CatalogItem[]
   /** The use the visitor picked, which the match is measured against. */
   use: string | null
   /** The visitor's layout answer (azerty, ansi, iso), which the shop search follows. */
@@ -37,8 +43,11 @@ type Props = {
   locale: Locale
   /** Place among the kept products, for stepping through them; null for a ruled-out product. */
   position: { index: number; total: number } | null
+  /** The page has closed it: it folds away, then says it is gone. */
+  leaving: boolean
   onStep: (delta: -1 | 1) => void
   onClose: () => void
+  onGone: () => void
 }
 
 const sectionLabel = css({
@@ -87,6 +96,67 @@ const buyBar = css({
   _motionReduce: { transition: 'none' },
 })
 
+/** A product like this one: its picture on the canvas's dotted paper, its name, its price. */
+const similarCard = cx(
+  'group',
+  css({
+    display: 'grid',
+    gridTemplateRows: 'auto 1fr',
+    h: '100%',
+    borderRadius: 'card',
+    borderWidth: '1px',
+    borderColor: 'line',
+    bg: 'surface',
+    overflow: 'hidden',
+    transition: 'border-color 160ms, background 160ms',
+    _hover: { borderColor: 'line.strong', bg: 'surface.raised' },
+    _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '2px' },
+  }),
+)
+const similarPicture = css({
+  display: 'grid',
+  gridTemplateColumns: 'minmax(0, 1fr)',
+  gridTemplateRows: 'minmax(0, 1fr)',
+  placeItems: 'center',
+  h: { base: '20', md: '24' },
+  p: '3',
+  bg: 'paper',
+  backgroundImage: 'radial-gradient(#CFCBC2 1.1px, transparent 1.3px)',
+  backgroundSize: '14px 14px',
+  borderBottomWidth: '1px',
+  borderColor: 'line',
+})
+/** The picture lifts under the pointer: the card is something to open. */
+const similarLift = css({
+  w: '100%',
+  h: '100%',
+  transition: 'transform 450ms token(easings.signal)',
+  _groupHover: { transform: 'translateY(-3px) scale(1.04)' },
+  _groupFocusVisible: { transform: 'translateY(-3px) scale(1.04)' },
+  _motionReduce: { transition: 'none' },
+})
+
+/** Text for an HTML attribute. */
+const attribute = (text: string) =>
+  text.replace(/&/g, '&amp;').replace(/"/g, '&quot;').replace(/</g, '&lt;').replace(/>/g, '&gt;')
+
+/**
+ * The product's photo as a plain image, for readers that run no script (some search engines): the
+ * page shows its drawing until the photo is cut out in the browser, which they would never see.
+ */
+function photoTag(item: CatalogItem) {
+  if (!item.photo) return ''
+  const width = Math.min(800, item.photo.width ?? 800)
+  const height =
+    item.photo.width && item.photo.height
+      ? ` width="${width}" height="${Math.round((width * item.photo.height) / item.photo.width)}"`
+      : ''
+  const alt = `${item.brand.name} ${item.name}`
+  return `<img src="${attribute(photoSrc(item.photo, width, true))}" alt="${attribute(alt)}"${height} loading="lazy" style="display:block;max-width:100%;height:auto;margin:0 auto">`
+}
+
+const capitalized = (text: string) => text.charAt(0).toUpperCase() + text.slice(1)
+
 const Icon = ({ d }: { d: string }) => (
   <svg
     viewBox="0 0 24 24"
@@ -103,7 +173,18 @@ const Icon = ({ d }: { d: string }) => (
   </svg>
 )
 
-export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, onClose }: Props) {
+export function ProductDrawer({
+  sheet,
+  similar,
+  use,
+  layouts,
+  locale,
+  position,
+  leaving,
+  onStep,
+  onClose,
+  onGone,
+}: Props) {
   const panel = useRef<HTMLElement>(null)
   const backdrop = useRef<HTMLDivElement>(null)
   const figures = useRef<HTMLDivElement>(null)
@@ -112,18 +193,26 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
   const amazon = amazonLink(item, locale, layouts)
   const [barShown, setBarShown] = useState(false)
 
-  /** Plays the sheet out, then closes it. A timer backs the animation up in a hidden tab. */
+  /** Asks the page to close it, once: the page drops it from its path, and it folds away. */
   const close = useCallback(() => {
     if (closing.current) return
     closing.current = true
-    const wide = window.matchMedia('(min-width: 48rem)').matches
-    foldAway(panel.current, backdrop.current, onClose, wide)
+    onClose()
   }, [onClose])
   // On a phone the sheet comes from the bottom: its head can be pulled down to fold it away.
   const pull = useSheetDrag(panel, close)
   const pullOnPhone = (e: ReactPointerEvent) => {
     if (window.matchMedia('(max-width: 47.99rem)').matches) pull(e)
   }
+
+  // However it was closed (its button, Escape, Back), it plays out, then goes. A timer backs the
+  // animation up in a hidden tab.
+  useEffect(() => {
+    if (!leaving) return
+    closing.current = true
+    const wide = window.matchMedia('(min-width: 48rem)').matches
+    foldAway(panel.current, backdrop.current, onGone, wide)
+  }, [leaving, onGone])
 
   // Focus moves into the sheet and back to whatever had it once the sheet closes.
   useEffect(() => {
@@ -136,6 +225,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
 
   useEffect(() => {
     const onKey = (e: KeyboardEvent) => {
+      if (closing.current) return
       if (e.key === 'Escape') close()
       else if (position && e.key === 'ArrowLeft') onStep(-1)
       else if (position && e.key === 'ArrowRight') onStep(1)
@@ -144,10 +234,13 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
     return () => window.removeEventListener('keydown', onKey)
   }, [close, onStep, position])
 
-  // A new product starts at the top of the sheet.
+  // A new product starts at the top of the sheet; picked among the similar models, whose link
+  // goes with the old product, it takes the focus back.
   // biome-ignore lint/correctness/useExhaustiveDependencies: the slug is the trigger
   useEffect(() => {
     panel.current?.querySelector('[data-sheet-scroll]')?.scrollTo({ top: 0 })
+    const focused = document.activeElement
+    if (!focused || focused === document.body) panel.current?.focus({ preventScroll: true })
   }, [item.slug])
 
   // The buying bar shows while the line of the price is scrolled away above the sheet's top (not
@@ -170,10 +263,10 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
     return () => observer.disconnect()
   }, [item.slug])
 
-  if (typeof document === 'undefined') return null
   const kept = sheet.rank != null
 
-  return createPortal(
+  // Inside the finder's page, which leaves the pointer to the canvas: the sheet takes it back.
+  return (
     <>
       <div
         ref={backdrop}
@@ -183,6 +276,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
           position: 'fixed',
           inset: '0',
           zIndex: '40',
+          pointerEvents: 'auto',
           bg: 'rgba(243, 241, 236, 0.55)',
           backdropFilter: 'blur(2px)',
           animation: 'fadeIn 0.3s ease backwards',
@@ -198,6 +292,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
         className={css({
           position: 'fixed',
           zIndex: '41',
+          pointerEvents: 'auto',
           left: { base: 'max(0.5rem, env(safe-area-inset-left))', md: 'auto' },
           right: { base: 'max(0.5rem, env(safe-area-inset-right))', md: '3' },
           top: { base: 'auto', md: '3' },
@@ -335,8 +430,9 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
               css({ pb: { base: '24', md: '24' } }),
             )}
           >
+            {/* The page's heading while the sheet is open, then what the product is. */}
             <div className={css({ display: 'grid', gap: '3' })}>
-              <h2
+              <h1
                 id="sheet-title"
                 className={css({
                   fontSize: { base: '2xl', md: '3xl' },
@@ -349,12 +445,10 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                   {item.brand.name}
                 </span>{' '}
                 {item.name}
-              </h2>
-              {item.tagline && (
-                <p className={css({ color: 'ink.muted', lineHeight: '1.45' })}>
-                  {item.tagline[locale]}
-                </p>
-              )}
+              </h1>
+              <p className={css({ color: 'ink.muted', lineHeight: '1.45' })}>
+                {item.tagline ? item.tagline[locale] : capitalized(productKind(item, locale))}
+              </p>
             </div>
             {/* Right under the name, wider (the grid's gap, less the title block's). */}
             <div
@@ -396,6 +490,10 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                 }),
               )}
             >
+              {item.photo && (
+                // biome-ignore lint/security/noDangerouslySetInnerHtml: our own tag, its text escaped
+                <noscript dangerouslySetInnerHTML={{ __html: photoTag(item) }} />
+              )}
               <ProductHero item={item} locale={locale} />
             </div>
 
@@ -412,7 +510,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
               >
                 {sheet.pros.length > 0 && (
                   <div className={css({ display: 'grid', gap: '2', alignContent: 'start' })}>
-                    <h3 className={sectionLabel}>{m.strengths[locale]}</h3>
+                    <h2 className={sectionLabel}>{m.strengths[locale]}</h2>
                     <ul className={css({ display: 'grid', gap: '1', fontSize: 'sm' })}>
                       {sheet.pros.map((p) => (
                         <li key={p.en}>+ {p[locale]}</li>
@@ -422,7 +520,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                 )}
                 {sheet.cons.length > 0 && (
                   <div className={css({ display: 'grid', gap: '2', alignContent: 'start' })}>
-                    <h3 className={sectionLabel}>{m.caveats[locale]}</h3>
+                    <h2 className={sectionLabel}>{m.caveats[locale]}</h2>
                     <ul
                       className={css({
                         display: 'grid',
@@ -441,7 +539,7 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
             )}
 
             <section className={cx(onPhoneAt.rest, css({ display: 'grid', gap: '2' }))}>
-              <h3 className={sectionLabel}>{m.specSheet[locale]}</h3>
+              <h2 className={sectionLabel}>{m.specSheet[locale]}</h2>
               <dl className={css({ display: 'grid' })}>
                 {sheetSpecs(item, locale).map((spec) => (
                   <div
@@ -462,6 +560,76 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
                 ))}
               </dl>
             </section>
+
+            {/* The products most like it, two by two: each opens in this sheet, in its place. */}
+            {similar.length > 0 && (
+              <section className={cx(onPhoneAt.rest, css({ display: 'grid', gap: '2.5' }))}>
+                <h2 className={sectionLabel}>{m.similarModels[locale]}</h2>
+                <ul
+                  className={css({
+                    display: 'grid',
+                    gridTemplateColumns: 'repeat(2, minmax(0, 1fr))',
+                    gap: '2.5',
+                  })}
+                >
+                  {similar.map((other) => (
+                    <li key={other.slug}>
+                      <ProductLink slug={other.slug} swap className={similarCard}>
+                        <span className={similarPicture}>
+                          <span className={similarLift}>
+                            <ProductPicture
+                              item={other}
+                              className={css({ w: '100%', h: '100%' })}
+                            />
+                          </span>
+                        </span>
+                        <span
+                          className={css({
+                            display: 'grid',
+                            alignContent: 'start',
+                            gap: '0.5',
+                            px: '3',
+                            pt: '2.5',
+                            pb: '3',
+                          })}
+                        >
+                          <span
+                            className={css({
+                              fontSize: '2xs',
+                              lineHeight: '1.35',
+                              color: 'ink.muted',
+                              truncate: true,
+                            })}
+                          >
+                            {other.brand.name}
+                          </span>
+                          <span
+                            className={css({
+                              fontSize: 'sm',
+                              fontWeight: '600',
+                              lineHeight: '1.25',
+                              lineClamp: '2',
+                            })}
+                          >
+                            {other.name}
+                          </span>
+                          <span
+                            className={css({
+                              mt: '1',
+                              fontFamily: 'mono',
+                              fontSize: 'xs',
+                              color: 'ink.muted',
+                            })}
+                          >
+                            {formatPrice(other.priceEur, locale)}
+                          </span>
+                        </span>
+                      </ProductLink>
+                    </li>
+                  ))}
+                </ul>
+              </section>
+            )}
           </div>
         </div>
 
@@ -489,7 +657,6 @@ export function ProductDrawer({ sheet, use, layouts, locale, position, onStep, o
           <AmazonLink item={item} locale={locale} layouts={layouts} />
         </div>
       </aside>
-    </>,
-    document.body,
+    </>
   )
 }

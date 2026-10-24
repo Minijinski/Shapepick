@@ -88,7 +88,10 @@ const tip = css({
 /** `shown`: the categories the site offers (those with products), in panel order. */
 export function SiteHeader({ shown }: { shown: readonly Category[] }) {
   const locale = useLocale();
-  const params = useParams({ strict: false }) as { category?: string };
+  const params = useParams({ strict: false }) as {
+    category?: string;
+    product?: string;
+  };
   const { searchStr } = useLocation();
   const current = params.category
     ? categoryFromSlug(params.category, locale)
@@ -177,8 +180,13 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         {shown.map((category) => (
           <Link
             key={category}
-            to="/$lang/$category"
-            params={{ lang: locale, category: categorySlugs[category][locale] }}
+            to="/$lang/$category/{-$product}"
+            // The category itself, without the product of a sheet open on the page.
+            params={{
+              lang: locale,
+              category: categorySlugs[category][locale],
+              product: undefined,
+            }}
             onClick={via(category)}
             aria-label={m.category[category][locale]}
             data-slot
@@ -193,7 +201,8 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         ))}
       </nav>
 
-      {/* Always in the last column, so it stays at the right when the categories are hidden. */}
+      {/* Always in the last column, so it stays at the right when the categories are hidden. The
+          other language keeps the page: the category, its answers and the product open. */}
       <nav
         aria-label={m.language[locale]}
         className={css({
@@ -208,7 +217,7 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
             key={other}
             href={
               current
-                ? `/${other}/${categorySlugs[current][other]}${searchStr}`
+                ? `/${other}/${categorySlugs[current][other]}${params.product ? `/${params.product}` : ""}${searchStr}`
                 : `/${other}`
             }
             hrefLang={other}
