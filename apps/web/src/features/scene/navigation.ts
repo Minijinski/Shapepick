@@ -1,8 +1,8 @@
 import { type Category, categorySlugs } from '@choose/catalog'
 import { getRouteApi, useNavigate } from '@tanstack/react-router'
 import { type MouseEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { loadJourney } from '~/features/finder/journey'
 import { type FinderAhead, journeyAhead } from '~/features/finder/targets'
-import type { FinderSearch } from '~/features/finder/useFinder'
 import { useLocale } from '~/i18n/locale'
 import { type Arrival, scene } from './controller'
 import type { Pt, Viewport } from './geometry'
@@ -59,30 +59,7 @@ export const isPlainClick = (e: MouseEvent) =>
 
 // ---- Journeys ---------------------------------------------------------------------------------
 
-// Each category remembers where the visitor left its questionnaire, so switching to monitors and
-// back to keyboards resumes the keyboard answers. Browser storage only: a convenience, never
-// required (private windows and blocked storage simply start afresh).
-
-const journeyKey = (category: Category) => `choose-a-device:journey:${category}`
-
-export function saveJourney(category: Category, search: FinderSearch) {
-  try {
-    localStorage.setItem(journeyKey(category), JSON.stringify(search))
-  } catch {}
-}
-
-function loadJourney(category: Category): FinderSearch {
-  try {
-    const raw = localStorage.getItem(journeyKey(category))
-    const value: unknown = raw ? JSON.parse(raw) : null
-    if (!value || typeof value !== 'object') return {}
-    return Object.fromEntries(
-      Object.entries(value).filter(([, v]) => typeof v === 'string'),
-    ) as FinderSearch
-  } catch {
-    return {}
-  }
-}
+// Each category's questionnaire is resumed where the visitor left it (finder/journey.ts).
 
 const layout = getRouteApi('/$lang')
 
@@ -141,6 +118,15 @@ export const markHydrated = () => {
 export function useEnterDelay(target: SceneTarget, share = 1, base = 0.1) {
   const [delay] = useState(() => (hydrated ? Math.max(base, scene.until(target) * share) : base))
   return delay
+}
+
+/**
+ * Seconds left, as the page mounts, until the scene shows `target` (0 while hydrating): an
+ * entrance spread over them ends as the scene settles.
+ */
+export function useArrivalSpan(target: SceneTarget) {
+  const [span] = useState(() => (hydrated ? scene.until(target) : 0))
+  return span
 }
 
 /** How the scene brings this page in (`intro` on the first paint, server render included). */

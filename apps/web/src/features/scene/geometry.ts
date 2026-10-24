@@ -16,10 +16,10 @@ export const isCompact = (vp: Viewport) => vp.w < 768
 
 /**
  * How far down a category's canvas fades into paper under the header (px), past a phone's width:
- * the finder's top gradient, whose height in Finder.tsx (`clamp(8.5rem, 17dvh, 15rem)`) says the
+ * the finder's top gradient, whose height in Finder.tsx (`clamp(10rem, 24dvh, 16rem)`) says the
  * same. A shorter screen gives it less of its height.
  */
-export const topVeil = (vp: Viewport) => Math.min(240, Math.max(136, vp.h * 0.17))
+export const topVeil = (vp: Viewport) => Math.min(256, Math.max(160, vp.h * 0.24))
 
 /**
  * On a phone the home's panels are rows, one under the other below the title, and the page

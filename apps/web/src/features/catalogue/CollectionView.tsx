@@ -16,6 +16,7 @@ import {
   finderLink,
   primaryAction,
   secondaryAction,
+  useJourneyQueries,
 } from './CataloguePage'
 import { type Collection, collections } from './collections'
 
@@ -61,17 +62,20 @@ function PodiumCard({
   rank,
   shared,
   locale,
+  journey,
 }: {
   item: CatalogItem
   row: Row
   rank: number
   shared: ReadonlySet<string>
   locale: Locale
+  /** The visitor's answers in this category, as a query: the sheet opens over that journey. */
+  journey: string
 }) {
   return (
     <li>
       <a
-        href={productPaths(item.category, item.slug)[locale]}
+        href={productPaths(item.category, item.slug)[locale] + journey}
         className={cx(
           'group',
           css({
@@ -258,6 +262,7 @@ function ListRow({
   columns,
   shared,
   locale,
+  journey,
 }: {
   row: Row
   rank: number
@@ -267,12 +272,14 @@ function ListRow({
   /** Tags every product listed has (AZERTY, in "Magnétiques AZERTY"): not worth repeating. */
   shared: ReadonlySet<string>
   locale: Locale
+  /** The visitor's answers in this category, as a query: the sheet opens over that journey. */
+  journey: string
 }) {
   const tags = row.tags.filter((t) => !shared.has(t))
   return (
     <li className={css({ borderTopWidth: '1px', borderColor: 'line' })}>
       <a
-        href={productPaths(collection.category, row.slug)[locale]}
+        href={productPaths(collection.category, row.slug)[locale] + journey}
         className={cx(
           rowColumns,
           css({
@@ -362,6 +369,7 @@ export function CollectionView({
 }) {
   const { category } = collection
   const ranking = rankingOf(collection, locale)
+  const journey = useJourneyQueries([category])[category] ?? ''
   const [first] = page.rows
   // A spec every product listed shares (the 75 % of "Claviers 75 % sans fil") says nothing in a
   // column: only those that change are printed.
@@ -383,7 +391,7 @@ export function CollectionView({
       shown={page.shown}
       paths={collectionPaths(collection)}
       crumbs={[
-        { name: m.category[category][locale], path: categoryPaths(category)[locale] },
+        { name: m.category[category][locale], path: categoryPaths(category)[locale], finder: true },
         { name: m.catalogue[locale], path: cataloguePaths(category)[locale] },
         { name: collection.short[locale] },
       ]}
@@ -443,6 +451,7 @@ export function CollectionView({
                 rank={i + 1}
                 shared={shared}
                 locale={locale}
+                journey={journey}
               />
             ) : null
           })}
@@ -477,6 +486,7 @@ export function CollectionView({
                   columns={columns}
                   shared={shared}
                   locale={locale}
+                  journey={journey}
                 />
               ))}
             </ol>

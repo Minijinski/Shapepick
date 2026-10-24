@@ -1,20 +1,21 @@
 import type { CSSProperties } from 'react'
 import { css, cx } from 'styled-system/css'
 
-// The canvas frosting over into paper along the screen's left edge, under the journey's column:
-// the steps stay legible over the products drifting behind, and nothing shows where the frost
-// starts. A single blur faded out leaves a line there (a product's sharp half beside a blurred copy
-// of the other); here each layer blurs twice as much as the one before, over a band overlapping
-// its neighbours', so the blur grows steadily towards the edge while a paper tint, eased too, takes
-// over from it. A blur only sees the canvas while no ancestor fades, masks or filters (a "backdrop
-// root"): the layers fade in and out themselves (`data-enter="veil"`), never their box.
+// The canvas frosting lightly along the screen's left edge, under the journey's column: the steps
+// stay legible over the products drifting behind, which still show through, and nothing shows
+// where the frost starts. A single blur faded out leaves a line there (a product's sharp half
+// beside a blurred copy of the other); here three layers, each blurring more than the one before,
+// lie over bands overlapping their neighbours', so the blur grows steadily towards the edge while a
+// light paper tint, eased too, joins it. A blur only sees the canvas while no ancestor fades, masks
+// or filters (a "backdrop root"): the layers fade in and out themselves (`data-enter="veil"`),
+// never their box.
 
 /** Each layer's blur (px), from the inner end of the frost to where it is whole. */
-const BLURS = [0.5, 1, 2, 4, 8, 16]
+const BLURS = [1, 2.5, 5]
 /** How much of the width, from the screen's edge, the frost is whole: under the column's words. */
-const WHOLE = 0.64
-/** The paper over the canvas where the frost is whole. */
-const TINT = 0.92
+const WHOLE = 0.56
+/** The paper over the canvas where the frost is whole: enough for the words, not a wall. */
+const TINT = 0.66
 /** How tall the frost's rise along its top edge is (rem). */
 const RISE = 6
 

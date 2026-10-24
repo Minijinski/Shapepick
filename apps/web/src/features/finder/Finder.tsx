@@ -20,8 +20,8 @@ import { CatalogueLink } from "../catalogue/CatalogueLink";
 import { gsap, prefersReducedMotion } from "../motion/gsap";
 import { scene } from "../scene/controller";
 import {
-  saveJourney,
   useArrival,
+  useArrivalSpan,
   useEnterDelay,
   usePageExit,
 } from "../scene/navigation";
@@ -29,6 +29,7 @@ import { BrandFilter } from "./BrandFilter";
 import { Console } from "./Console";
 import { DockPanel } from "./DockPanel";
 import { FrostedEdge } from "./FrostedEdge";
+import { saveJourney } from "./journey";
 import { JourneyBar } from "./JourneyBar";
 import { JourneyRail } from "./JourneyRail";
 import { JourneySheet } from "./JourneySheet";
@@ -116,6 +117,24 @@ const enterFade = css({
   animation: "fadeUp 0.8s token(easings.signal) backwards",
   _motionReduce: { animation: "none" },
 });
+/** The top band only fades: sliding in, its upper edge would show as a line moving up. */
+const enterVeil = css({
+  animation: "fadeIn 0.8s token(easings.signal) backwards",
+  _motionReduce: { animation: "none" },
+});
+/**
+ * The top band's paper down its height, past a phone's width: one smooth curve (smootherstep),
+ * with no flat stretch and no corner, so that nothing reads as the edge of a bar under the header,
+ * and the rows of dots and the products come out of it over five rows rather than two.
+ */
+const TOP_VEIL = `linear-gradient(to bottom, ${Array.from(
+  { length: 17 },
+  (_, i) => {
+    const t = i / 16;
+    const eased = t * t * t * (t * (t * 6 - 15) + 10);
+    return `rgba(243,241,236,${(0.96 * (1 - eased)).toFixed(3)}) ${(t * 100).toFixed(2)}%`;
+  },
+).join(", ")})`;
 /**
  * The counter gives way to the results: it lifts away while the results rise. As wide as what it
  * shows, which the canvas's popup keeps clear of. Past a phone's width the top gradient stops
@@ -135,11 +154,11 @@ const fadesWithResults = css({
     _before: {
       content: '""',
       position: "absolute",
-      inset: "-0.5rem -2rem -0.75rem -1.5rem",
+      inset: "-0.75rem -2.5rem -1rem -2rem",
       zIndex: "-1",
-      borderRadius: "2rem",
-      bg: "rgba(243,241,236,0.84)",
-      filter: "blur(18px)",
+      borderRadius: "2.5rem",
+      bg: "rgba(243,241,236,0.74)",
+      filter: "blur(24px)",
       pointerEvents: "none",
     },
   },
@@ -162,6 +181,8 @@ export function Finder({ category, items, search, product, locale }: Props) {
   const arrival = useArrival(target);
   const swapped = arrival === "swap";
   const delay = useEnterDelay(target, swapped ? 0.3 : 0.92, 0.1);
+  // What is left of the panel opening from the home page: the top band fades in over it.
+  const span = useArrivalSpan(target);
   const [carried] = useState(() =>
     swapped &&
     kept?.category === category &&
@@ -285,9 +306,13 @@ export function Finder({ category, items, search, product, locale }: Props) {
     [category, openSheet],
   );
 
-  // Each category remembers where its questionnaire was left.
+  // Each category remembers where its questionnaire was left. Reached with no answer at all (a
+  // search result, a link from a page outside the finder), it keeps that until the visitor answers
+  // here; from then on every change counts, starting over included.
+  const answered = useRef(false);
   useEffect(() => {
-    saveJourney(category, search);
+    if (Object.keys(search).length > 0) answered.current = true;
+    if (answered.current) saveJourney(category, search);
   }, [category, search]);
 
   // The canvas shows what the answers keep; a new answer ripples out from the console. Ranks only
@@ -497,9 +522,10 @@ export function Finder({ category, items, search, product, locale }: Props) {
             { opacity: 0, y: -10, duration: 0.3 },
             0,
           )
-          // The frost behind the journey fades layer by layer: a fading box would blind them.
+          // The frost behind the journey fades layer by layer (a fading box would blind them),
+          // and the paper under the header with it, in place: a moving edge would show.
           .to(
-            el.querySelectorAll("[data-enter=veil]"),
+            el.querySelectorAll("[data-enter=veil], [data-enter=topveil]"),
             { opacity: 0, duration: 0.3 },
             0,
           );
@@ -542,26 +568,37 @@ export function Finder({ category, items, search, product, locale }: Props) {
       )}
 
       {/* The canvas fades into paper under the header and the counter, which stay legible. Past
-          a phone's width the fade is eased, so that no line shows where it ends, and a shorter
-          screen gives it less of its height, the counter keeping a halo of its own
-          (`fadesWithResults`); `topVeil` in scene/geometry.ts says the same height, for the
-          products it leaves out of reach. */}
+          a phone's width the fade is one smooth curve (`TOP_VEIL`), so that no line shows under
+          the header nor where it ends, and a shorter screen gives it less of its height, the
+          counter keeping a halo of its own (`fadesWithResults`); `topVeil` in scene/geometry.ts
+          says the same height, for the products it leaves out of reach. Coming from the home
+          page it fades in while the panel opens, and is whole once the canvas settles; it leaves
+          with the page, and stays put from one category to the next. */}
       <div
         aria-hidden
+        data-enter="topveil"
         className={cx(
-          !swapped && enterFade,
+          !swapped && enterVeil,
           css({
             position: "absolute",
             insetInline: "0",
             top: "0",
-            h: { base: "48", md: "clamp(8.5rem, 17dvh, 15rem)" },
+            h: { base: "48", md: "clamp(10rem, 24dvh, 16rem)" },
             background: {
               base: "linear-gradient(to bottom, rgba(243,241,236,0.94) 35%, rgba(243,241,236,0.6) 70%, rgba(243,241,236,0))",
-              md: "linear-gradient(to bottom, rgba(243,241,236,0.94) 25%, rgba(243,241,236,0.89) 35%, rgba(243,241,236,0.78) 45%, rgba(243,241,236,0.61) 55%, rgba(243,241,236,0.42) 65%, rgba(243,241,236,0.24) 75%, rgba(243,241,236,0.1) 85%, rgba(243,241,236,0.02) 92%, rgba(243,241,236,0))",
+              md: "var(--top-veil)",
             },
           }),
         )}
-        style={{ animationDelay: `${delay}s` }}
+        style={{
+          ...({ "--top-veil": TOP_VEIL } as CSSProperties),
+          ...(span > 0
+            ? {
+                animationDelay: "0s",
+                animationDuration: `${Math.max(0.5, span)}s`,
+              }
+            : { animationDelay: `${delay}s` }),
+        }}
       />
 
       {/* The results rise over its place, its counter and answers with them: it lifts away
@@ -576,6 +613,9 @@ export function Finder({ category, items, search, product, locale }: Props) {
           !carried?.hud && (swapped ? enterFade : enterLeft),
           css({
             position: "absolute",
+            // Over the journey's frost, the console and the podium: the brands' list it opens
+            // drops in front of them (its own z-index only counts inside the halo's isolation).
+            zIndex: "2",
             top: { base: "16", md: "20" },
             left: { base: "4", md: "8" },
             right: { base: "4", lg: "96" },
@@ -737,7 +777,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
             blind its blur. */}
         <FrostedEdge
           delay={swapped ? null : delay + 0.35}
-          className={css({ inset: "-6rem -7rem -1.5rem -2rem", zIndex: "-1" })}
+          className={css({ inset: "-6rem -5rem -1.5rem -2rem", zIndex: "-1" })}
         />
         <div
           data-enter="rail"

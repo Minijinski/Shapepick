@@ -172,6 +172,11 @@ const words = css({
   lineHeight: '1.25',
   transform: 'translateY(0.4375rem)',
   transition: 'transform 320ms token(easings.signal)',
+  // A breath of paper around the letters, so that they read over a dark product the light frost
+  // lets through (FrostedEdge); on the paper itself it does not show. Not on the bar: its words
+  // are paper already.
+  filter: 'drop-shadow(0 0 2px rgba(243,241,236,0.95)) drop-shadow(0 0 6px rgba(243,241,236,0.85))',
+  '[data-state=current] &': { filter: 'none' },
   '&[data-answered]': { transform: 'none' },
   _motionReduce: { transition: 'none' },
 })

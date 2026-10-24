@@ -12,6 +12,7 @@ import {
   chips,
   primaryAction,
   questionsOf,
+  useJourneyQueries,
 } from './CataloguePage'
 import { type Collection, type CollectionGroup, collections } from './collections'
 
@@ -83,14 +84,17 @@ function ProductRow({
   row: item,
   category,
   locale,
+  journey,
 }: {
   row: CatalogueRow
   category: Category
   locale: Locale
+  /** The visitor's answers in this category, as a query: the sheet opens over that journey. */
+  journey: string
 }) {
   return (
     <li className={css({ breakInside: 'avoid', borderBottomWidth: '1px', borderColor: 'line' })}>
-      <a href={productPaths(category, item.slug)[locale]} className={row}>
+      <a href={productPaths(category, item.slug)[locale] + journey} className={row}>
         <span className={css({ fontSize: 'sm', fontWeight: '600', lineHeight: '1.3' })}>
           {item.name}
         </span>
@@ -141,6 +145,7 @@ export function CatalogueIndex({
     .filter(({ list }) => list.length > 0)
   const groupNames = m.collectionGroups[category] as Partial<Record<CollectionGroup, Text>>
   const name = m.category[category][locale]
+  const journey = useJourneyQueries([category])[category] ?? ''
   const chipOf = (c: Collection) => (
     <CollectionChip
       key={c.id}
@@ -155,7 +160,10 @@ export function CatalogueIndex({
       category={category}
       shown={page.shown}
       paths={cataloguePaths(category)}
-      crumbs={[{ name, path: categoryPaths(category)[locale] }, { name: m.catalogue[locale] }]}
+      crumbs={[
+        { name, path: categoryPaths(category)[locale], finder: true },
+        { name: m.catalogue[locale] },
+      ]}
       title={m.catalogueTitle[category][locale]}
       lead={m.catalogueFacts(
         page.total,
@@ -165,7 +173,7 @@ export function CatalogueIndex({
         locale,
       )}
       actions={
-        <a href={categoryPaths(category)[locale]} className={primaryAction}>
+        <a href={categoryPaths(category)[locale] + journey} className={primaryAction}>
           {m.chooseIn(questionsOf(category), locale)} →
         </a>
       }
@@ -210,7 +218,13 @@ export function CatalogueIndex({
             })}
           >
             {brand.rows.map((item) => (
-              <ProductRow key={item.slug} row={item} category={category} locale={locale} />
+              <ProductRow
+                key={item.slug}
+                row={item}
+                category={category}
+                locale={locale}
+                journey={journey}
+              />
             ))}
           </ul>
         </CatalogueSection>

@@ -7,12 +7,14 @@ import {
   locales,
   stepOf,
 } from '@choose/catalog'
-import { type ReactNode, useEffect } from 'react'
+import { type ReactNode, useEffect, useState } from 'react'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { CategoryIcon } from '~/components/CategoryIcon'
+import { loadJourney } from '~/features/finder/journey'
 import { legalPaths } from '~/features/legal/legal'
 import { messages as m } from '~/i18n/messages'
+import { stringifySearch } from '~/search'
 import { categoryPaths } from '~/seo'
 import type { Collection } from './collections'
 
@@ -32,6 +34,22 @@ export const gutter = css({
 
 /** A document's width, the legal page's. */
 export const column = css({ w: '100%', maxW: '72rem', mx: 'auto' })
+
+/**
+ * What takes a link from these pages back into each category's finder where the visitor left it:
+ * the answers it remembers (finder/journey.ts), as a query. Nothing on the server nor on the first
+ * render, so the page served keeps plain links; the answers once it is in the browser. A product's
+ * sheet reached so opens over that journey, its rank and match as the finder would give them.
+ */
+export function useJourneyQueries(categories: readonly Category[]) {
+  const [queries, setQueries] = useState<Partial<Record<Category, string>>>({})
+  const key = categories.join(',')
+  useEffect(() => {
+    const list = key.split(',') as Category[]
+    setQueries(Object.fromEntries(list.map((c) => [c, stringifySearch(loadJourney(c))])))
+  }, [key])
+  return queries
+}
 
 /** A label in mono capitals, as the sheet and the results title their parts. */
 export const caption = css({
@@ -92,6 +110,7 @@ function CatalogueHeader({
   shown: readonly Category[]
   paths: Record<Locale, string>
 }) {
+  const journeys = useJourneyQueries(shown)
   return (
     <header
       className={cx(
@@ -135,7 +154,7 @@ function CatalogueHeader({
         {shown.map((other) => (
           <a
             key={other}
-            href={categoryPaths(other)[locale]}
+            href={categoryPaths(other)[locale] + (journeys[other] ?? '')}
             aria-label={m.category[other][locale]}
             title={m.category[other][locale]}
             data-picked={other === category || undefined}
@@ -166,7 +185,8 @@ function CatalogueHeader({
   )
 }
 
-type Crumb = { name: string; path?: string }
+/** `finder`: the category's finder, which the link resumes where the visitor left it. */
+type Crumb = { name: string; path?: string; finder?: boolean }
 
 type ShellProps = {
   locale: Locale
@@ -198,6 +218,7 @@ export function CatalogueShell({
   // The root marks every page of a locale as held under the preloader, and only the locale's
   // layout lifts the hold: this page has neither, and nothing of it waits.
   useEffect(() => document.documentElement.removeAttribute('data-loading'), [])
+  const journey = useJourneyQueries([category])[category] ?? ''
   return (
     // A document, unlike the finder: its text can be selected and copied.
     <div
@@ -245,7 +266,7 @@ export function CatalogueShell({
                     )}
                     {crumb.path ? (
                       <a
-                        href={crumb.path}
+                        href={crumb.finder ? crumb.path + journey : crumb.path}
                         className={css({ transition: 'color 160ms', _hover: { color: 'ink' } })}
                       >
                         {crumb.name}
