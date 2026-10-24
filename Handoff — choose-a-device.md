@@ -1,16 +1,16 @@
 # Handoff — choose-a-device
 
-Oct 23, 2026 · @Eddy
+Oct 24, 2026 · @Eddy
 
 ## En bref
 
 choose-a-device est un « finder » de claviers, d'écrans et de souris inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (9 questions), écrans (8) et souris (11) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur.
+- **Ce qui marche** : accueil, parcours claviers (9 questions), écrans (8) et souris (11) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur ; repensé pour les téléphones le 24 octobre (voir « Mobile (24 octobre) »).
 - **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
 - **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources), 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles ») et 149 vraies souris de 8 marques (voir « Souris : troisième catégorie »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
 - **Qualité** : 72 tests du moteur et des parcours (19 pour les souris), 26 de l'import (15 du mapper écrans, 11 du mapper souris), typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` sur origin = la fusion `184fc39` de feat/souris (`e6a01d9`, `3760b9e`) sur les retours du 23 octobre au soir (`bd1fcfb`, `bad913f`), puis la mise à jour de ce handoff ; poussé et déployé le 23 octobre au soir. La migration `0004` est passée sur Neon avant le push et le seed après : le site en ligne montre les 149 souris (voir « Souris : troisième catégorie »). Plus tôt le 23 octobre : les vrais écrans (`ad9f146`) en ligne avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
+- **État du dépôt** : `main` sur origin = `19ed09a`, la fusion de feat/mobile (`b2d2cc0` à `44699c9`, voir « Mobile (24 octobre) ») sur `c15905f` ; poussé et déployé le 24 octobre, sans migration ni seed. `main` contient aussi les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`), pas encore décrits ici. Le 23 octobre au soir : la fusion `184fc39` de feat/souris, avec la migration `0004` passée sur Neon avant le push et le seed après (voir « Souris : troisième catégorie ») ; plus tôt le 23 octobre, les vrais écrans (`ad9f146`) avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -214,7 +214,7 @@ Chaque catégorie tient sur un seul écran : compteur et rail en haut à gauche,
 
 &#91;embedded content: maquette de la scène · écran de bureau\]
 
-Le bleu tient ici la place de l'orange du site : n°1 du podium et option survolée. Sur mobile, le podium passe en rangée défilante au-dessus de la console, qui devient un panneau du bas.
+Le bleu tient ici la place de l'orange du site : n°1 du podium et option survolée. Sur téléphone, le bandeau n°1 prend la place du podium au-dessus de la console, qui devient un panneau du bas (voir « Mobile (24 octobre) »).
 
 Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a depuis laissé place au canvas des produits.
 
@@ -226,12 +226,12 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 | Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide dans une bulle au-dessus de la console (ⓘ devient ✕), tuiles en rangées égales avec une indication de deux lignes au plus, compteur et coche, impasse « Bloqué par … » + « Changer → », « Peu importe » qui devient « Continuer » au premier choix | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade, rejoués seulement quand la question change ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
 | Résultats (`ResultsView`) | Du header à la barre d'étapes ; total, marques et réponses sous le titre ; n°1 en carte produit (la photo ouvre la fiche ; prix et compatibilité, puis « Voir sur Amazon » et « Voir la fiche » ; 4 specs), détail du %, points forts et « à savoir », n°2 et n°3 (pastille Amazon), liste des autres (flèche Amazon par ligne) ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Le panneau de la console s'étire jusqu'aux résultats ; specs et lignes en fondu ; compteur et réponses du haut s'effacent |
-| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Voir sur Amazon » sur la ligne du prix, repris dans une barre collante une fois cette ligne passée (écrans : « Où l'acheter », offres à venir) ; précédent / suivant dans le classement | Glisse depuis la droite (feuille du bas sur mobile) ; Échap, fond ou croix pour fermer ; la barre d'achat glisse du bas |
+| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Voir sur Amazon » sur la ligne du prix, repris dans une barre collante une fois cette ligne passée (écrans : « Où l'acheter », offres à venir) ; précédent / suivant dans le classement | Glisse depuis la droite (sur téléphone, feuille du bas qu'on ferme en la tirant vers le bas) ; Échap, fond ou croix pour fermer ; la barre d'achat glisse du bas |
 | Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, bande de la plage, double curseur portant ses prix (fusionnés quand ils se touchent), échelle de prix ; tout en haut signifie sans plafond | Les barres montent en vague à l'entrée et passent à l'encre au fil du curseur ; les prix défilent ; le curseur saisi grossit, avec un halo |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
-| Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
+| Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie (sur téléphone, des bandes droites empilées sous le titre, dans une page qui défile) | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
 
-- **Mobile** : la console devient un panneau du bas limité à 56 % de la hauteur, avec défilement interne. Podium et rail défilent horizontalement, les tuiles sont compactes. Vérifié à 375 px : aucun défilement horizontal.
+- **Mobile** (moins de 768 px de large) : accueil en bandes droites dans une page qui défile, réponses en liste pleine largeur, pastille « 04/10 · Parcours » qui ouvre une feuille à la place de la barre d'étapes, bandeau n°1 au-dessus de la console, résultats et fiche en pleine hauteur. Détail dans « Mobile (24 octobre) ».
 - **Mouvement réduit** : chaque animation teste `prefersReducedMotion()` et pose directement l'état final.
 - **Onglet masqué** : le navigateur suspend les animations, donc la sortie de la console a une minuterie de secours. La navigation ne dépend jamais d'une animation.
 - **Style** : tout passe par les tokens et recettes Panda ; seuls le canvas et les silhouettes ont des couleurs en dur.
@@ -240,7 +240,7 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 
 Depuis le 20 octobre 2026, l'accueil et les pages catégorie partagent une seule scène, un `<canvas>` 2D monté dans le layout `/$lang`. Comme c'est le même dessin des deux côtés, passer de l'un à l'autre n'est qu'une interpolation : rien n'est démonté, donc rien ne clignote.
 
-- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée. Cette étiquette est posée à côté du lien, donc jamais coupée par sa découpe ; elle penche avec le bord gauche de sa bande et prend la largeur que la bande lui laisse, si bien qu'elle y tient quel que soit le nombre de catégories.
+- **Accueil** : une bande inclinée par catégorie (donc 2 aujourd'hui ; une catégorie ajoutée ajoute sa bande). Chaque bande est une fenêtre sur le « monde » de sa catégorie, qui dérive le long de la bande. Les bandes sont aussi de vrais liens posés par-dessus avec la même forme (`clip-path`), d'où survol, focus, clic du milieu et SEO. Au survol, la bande zoome, les autres se voilent et le nom de la catégorie apparaît sur une plaque floutée. Cette étiquette est posée à côté du lien, donc jamais coupée par sa découpe ; elle penche avec le bord gauche de sa bande et prend la largeur que la bande lui laisse, si bien qu'elle y tient quel que soit le nombre de catégories. Sur téléphone, les bandes sont droites, empilées sous le titre, et la page défile (voir « Mobile (24 octobre) »).
 - **Ouverture** : au clic, la bande s'étend en masque par-dessus les autres (ombre portée pendant le mouvement) tandis que son monde zoome autour du point cliqué (1,25 s, `expo.inOut`). La page sort, la route change à mi-course, puis la console du parcours se relève en 3D quand la scène se pose. Le retour (logo, retour du navigateur) replie la bande dans son emplacement.
 - **Canvas** : motif répété à l'infini (le catalogue y est posé plusieurs fois, mélangé, pour espacer les répétitions), dérive en diagonale du coin haut droit vers le bas gauche, drag avec inertie, molette. Survoler un produit arrête la dérive et ouvre une fiche (rang, compatibilité, specs) reliée au produit par un trait de rappel. Un clic (ou un tap) ouvre la fiche produit complète ; le curseur devient une main au survol d'un produit.
 - **Filtres** : depuis le 22 octobre, le canvas ne montre que les produits retenus. Un produit écarté s'efface, les retenus glissent vers leur place dans un motif recomposé sans trous, le tout en vague depuis la console. Survoler une option entoure en orange les produits qu'elle garde.
@@ -573,6 +573,35 @@ Deux commits de la session canvas, poussés sur origin le 23 octobre au soir : b
 - **Une seule navigation** : la barre de parcours montre chaque réponse ; les puces de réponses et la bulle d'astuce sont retirées ; le podium n'affiche que les 3 premiers. Les claviers perdent la question de couleur (9 questions, les anciens liens `look=` sont ignorés).
 - **Tuiles des questions** : chaque option montre le meilleur modèle qu'elle garde selon les autres réponses (un différent par tuile, photographié d'abord), à l'échelle pour la taille des claviers et le format des écrans ; `OptionVisual` est retiré. Nouvelle accroche : « Le bon appareil, en quelques questions ».
 
+## Mobile (24 octobre)
+
+Le site est repensé pour les téléphones (moins de 768 px de large, en portrait comme en paysage) ; le bureau et la tablette ne changent pas. Fait dans la branche feat/mobile (5 commits, de `b2d2cc0` à `44699c9`), fusionnée avec `main` (`19ed09a`), puis poussée et déployée le 24 octobre, sans migration ni seed. Le plan et l'audit de départ (20 constats mesurés sur le site en ligne) sont dans `~/.claude/plans/j-aimerai-que-tu-explores-binary-pine.md`.
+
+| Avant | Après | Fichiers |
+| --- | --- | --- |
+| Accueil : trois bandes verticales d'environ 120 px sous le titre ; plaques qui se chevauchent à 320 px ; page figée | Le titre a son espace, puis une bande droite par catégorie, empilées ; la page défile, prête pour d'autres catégories. Plaque toujours visible en bas à gauche (compteur, nom, accroche, « Explorer → ») ; le retour depuis une catégorie revient à la position quittée | `routes/$lang/index.tsx`, `scene/geometry.ts`, `scene/renderer.ts`, `scene/controller.ts`, `styles.css` |
+| Preloader : libellés coupés dans les bandes étroites | Les mêmes lignes que l'accueil, le dessin à droite et le compteur à gauche | `scene/Preloader.tsx`, `styles.css` |
+| Header : FR/EN au centre sous 640 px ; rien ne tient compte de l'encoche ni de l'indicateur d'accueil | FR/EN toujours à droite ; header, dock, feuilles et barre d'achat dans les zones sûres (`env(safe-area-inset-*)`) | `components/SiteHeader.tsx`, `finder/Finder.tsx`, `finder/ProductDrawer.tsx` |
+| Console : titre coincé à droite de ← ↻ 04/10, jusqu'à quatre lignes à 320 px | Deux rangées : ← ↻, la pastille « 04/10 · Parcours » remplie selon la progression, ⓘ ; puis le titre sur toute la largeur, avec « Une seule réponse », « Plusieurs réponses possibles » ou, au budget, « Glisse l'un ou l'autre curseur » | `finder/Console.tsx` |
+| Réponses : grille de deux colonnes, explications et photos masquées, longues listes coupées net, pied qui déborde sous 360 px | Liste pleine largeur : nom, explication entière, photo d'exemple, nombre de modèles ; fondu en bas tant qu'il reste à défiler ; le pied passe à la ligne | `finder/Console.tsx`, recette `optionTile` (`panda.config.ts`) |
+| Barre d'étapes : étapes tronquées, cibles de 28 px | Masquée : la pastille ouvre la feuille Parcours, chaque étape avec sa réponse ou la raison d'un saut, puis « Résultats » | `finder/JourneySheet.tsx`, `finder/Sheet.tsx` |
+| Podium : rangée défilante, 2e carte coupée, « Voir tout » hors écran | Bandeau n°1 au-dessus de la console (photo, marque, prix, nom, % de compatibilité) une fois le classement informé ; masqué sous 700 px de haut | `finder/TopPick.tsx`, `finder/Finder.tsx` |
+| Tactile : survol collé après un tap ; cibles sous 44 px | Le survol ne vaut que pour une souris (`(hover: hover)`) ; boutons icônes, flèche Amazon et FR/EN à 40 px au doigt, lignes de marques à 44 px, curseurs du budget à 28 px | `panda.config.ts`, `finder/BudgetControl.tsx`, `product/AmazonLink.tsx` |
+| Marques : liste ancrée en haut à gauche, clavier qui surgit à l'ouverture | Feuille du bas, sans focus automatique au doigt ; recherche en 16 px, sans zoom d'iOS | `finder/BrandFilter.tsx` |
+| Canvas : environ 70 px visibles sur iPhone SE ; indice toujours affiché | Barre d'étapes et podium retirés, la place revient au canvas ; au doigt, l'indice disparaît au premier geste, retenu dans le stockage du navigateur (`choose-a-device:canvas-hint-seen`) | `finder/Finder.tsx`, `scene/Scene.tsx` |
+| Résultats : noms tronqués (« PRO X SUP… »), lignes de 56 px sans spec | Lignes de 88 px : vignette avec le rang, nom entier sur deux lignes, « prix · % » ; panneau du header au bas de l'écran ; « Modifier » ouvre la feuille Parcours par-dessus les résultats ; n°2 et 3 : prix et Amazon sous le nom | `finder/ResultsView.tsx` |
+| Fiche : ni poignée ni glisser ; rang affiché deux fois ; photo après le détail du % | Poignée, fermeture en la tirant vers le bas ; rang une seule fois ; photo juste après le titre, puis chiffres et Amazon | `finder/ProductDrawer.tsx`, `product/KeyFigures.tsx` |
+| Paysage : console sous le pli (`min-height: 560px`), canvas qui bloque le défilement | Accueil en lignes sous 480 px de haut ; compteur, bandeau et indice masqués ; console plafonnée à la hauteur de l'écran | `finder/Finder.tsx`, `finder/Console.tsx` |
+
+Comment ça marche :
+
+- **Seuils** : téléphone = moins de 768 px de large (`isCompact`) ; l'accueil passe aussi en lignes sous 480 px de haut (`bandsInRows`). Conditions Panda : `_coarse` (doigt), `_short` (moins de 30rem de haut), `_slats` (l'inverse de `bandsInRows` : bureau et tablette).
+- **Accueil qui défile** : le défilement reste natif (inertie, rebond). À chaque image, le renderer lit `window.scrollY`, dessine les bandes décalées d'autant et déplace le calque fixe des liens dans la même image (`scene.followHome`) : plaques et dessin ne se décalent jamais, même pendant un lancer. À l'ouverture, le défilement passe dans la caméra (`foldHover`) ; il est rendu au retour (`unfoldScroll`) et l'accueil revient où on l'a quitté (`resetScroll: false`, `scene.homeScroll()`).
+- **Canvas en `100lvh`** : la barre de Safari qui se replie ne redimensionne plus le canvas (`resize` sans effet quand la taille ne change pas ; hauteur de dessin distincte de la mise en page).
+- **Rendu serveur** : les variables CSS `--rows-*` reprennent `rowsFrame` (`geometry.ts`) pour le premier rendu et le preloader.
+- **Feuilles** : `finder/Sheet.tsx` (portail, fond, Échap, focus, poignée ; tirée de 80 px ou à 0,5 px/ms, elle se ferme : `useSheetDrag`) sert au Parcours et aux Marques ; la fiche produit reprend `useSheetDrag` et `foldAway`.
+- **Liste virtualisée** : hauteur de ligne fixe par taille d'écran (`ROW` : 56 px, 88 px sur téléphone), lue par `matchMedia`.
+
 ## SEO et i18n
 
 Le site a les bases techniques du SEO mais n'est pas encore prêt à se classer : 6 pages indexables, aucune page produit, ni `robots.txt`, ni `sitemap.xml`, ni données structurées (audit du 23 octobre 2026, ci-dessous).
@@ -715,6 +744,7 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Écrans réels, base locale (23 octobre) | Chrome headless à 1440, 1024 et 390 px, FR et EN : 235 écrans (264 depuis l'ajout des prix ASUS, BenQ, Philips), photos de face sur le canvas, podium, résultats, fiche (luminosité, couleurs, pied), liens Amazon par référence, impasses « Bloqué par Budget », tuile TN masquée |
 | Souris, base locale (23 octobre) | 149 souris de 8 marques : seed relancé sans écart, snapshot identique au YAML (523 claviers, 264 écrans, 149 souris) ; parcours essayé sur 7 profils (tableau dans « Souris ») ; 72 tests du moteur dont 19 souris, 26 de l'import ; lecture des claviers inchangée (exports seulement, mêmes 30 claviers Razer). Le site avec des souris n'a été vu que sur la base de démo (29 souris fictives) : catégorie vide ou en échec masquée, /fr/ecrans en 404 quand les écrans manquent, podium et fiche. |
 | Souris en production (23 octobre au soir) | Migration 0004 sur Neon (5 migrations, valeur mouse ajoutée) ; build de 184fc39 en ligne en une minute, /fr/souris en 404 tant que la catégorie était vide ; seed : 523 claviers, 264 écrans, 149 souris, aucun produit supprimé ; snapshot de Neon identique au YAML (523, 264, 149) ; /fr/souris et /en/mice en 200 après la revalidation du CDN ; la page en ligne montre « 149 souris correspondent » et la question 1 sur 11, sans erreur dans la console. |
+| Mobile (24 octobre) | Chrome headless piloté en CDP, tactile émulé, à 320 × 568, 360 × 780, 375 × 667, 390 × 844, 430 × 932, 667 × 375 et 844 × 390, en anglais à 320 px et en mouvement réduit : le script d'audit ne trouve aucun élément hors de l'écran ou de son conteneur, ni texte coupé. Défilement de l'accueil synchronisé (calque à −156 px pour 156 px défilés), retour depuis une catégorie à la même position, feuilles fermées en les tirant vers le bas, feuille Parcours par-dessus les résultats, les 12 noms Logitech les plus longs entiers sur deux lignes à 320 px. Bureau et tablette (768, 1024 et 1440 px) identiques à la production. Après le push de 19ed09a, même série sur le site en ligne (320, 375 et 390 px, paysage, anglais, mouvement réduit, bureau) : audit vide partout, aucune erreur relevée dans la console. |
 
 Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
@@ -753,26 +783,32 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 * **Shopify et le 429** : une rafale de sondages a fait limiter l'agent sur toutes les boutiques Shopify le 23 octobre au matin (levé le soir). 4 s entre deux pages pour turtlebeach.com, keychron.com et eu.pulsar.gg (http.ts), cache d'abord.
 * **Seed sans data/mice** : un seed lancé d'un dossier qui n'a pas encore les souris voudrait les supprimer toutes ; le garde-fou par catégorie refuse, ne jamais le forcer. Toujours seeder la production depuis le main à jour.
 
+- **Panda, ordre des media queries** : `md` et une condition maison (`_short`, `_coarse`…) n'ont pas d'ordre garanti dans le CSS généré ; quand deux règles se contredisent, écrire une requête combinée explicite (`@media (min-width: 48rem) and (min-height: 30.01rem)`). Pas de clé calculée dans `css()` non plus : l'extraction statique ne la voit pas.
+- **Survol au doigt** : `_hover` et `_groupHover` ne s'appliquent que sous `(hover: hover)` (conditions redéfinies dans `panda.config.ts`) ; les aperçus au survol (tuiles, marques, bandes de l'accueil) ne réagissent qu'à `pointerType === 'mouse'`.
+- **Accueil qui défile** : ne jamais placer les bandes depuis un écouteur `scroll` ; le renderer lit `window.scrollY` dans sa boucle et déplace le calque des liens dans la même image, sinon plaques et dessin se décalent pendant un lancer.
+
 ## Limites connues et dette technique
 
 La principale limite tient aux données : avec 25 produits fictifs par catégorie, le motif du canvas se répète vite et plusieurs étapes se sautent. Le reste est une dette assumée pour cette première version.
 
 - **Données** : les écrans sont 264 modèles de 8 marques : Acer et Gigabyte bloquent les robots, 104 écrans d'ASUS, BenQ et Philips n'ont aucun prix conseillé publié (voir « Écrans : vrais modèles ») ; 41 claviers n'ont aucune vue de dessus détourable chez leur boutique et gardent leur dessin sur le canvas (leur fiche montre la photo). Les photos Razer font 500 px : un peu justes dans la fiche sur écran Retina.
 - **Classement** : popularité et note éditoriale valent 0,5 partout, donc l'a priori ne départage rien ; le firmware « propriétaire » est la valeur par défaut de l'ingest quand une page ne cite ni QMK ni VIA, ce qui avantage Keychron sur « Code ». Les fiches d'écrans ne donnent ni couverture Adobe RGB ni uniformité : en « Création », un écran de jeu calibré à large gamut vaut un écran pro.
-- **Liste courte sur téléphone** : l'espace libre au-dessus de la console est trop petit pour regrouper les produits retenus ; les retenus restent alors serrés sur le canvas.
+- **Liste courte sur téléphone** : l'espace libre au-dessus de la console était trop petit pour regrouper les produits retenus, qui restaient serrés sur le canvas. Depuis le 24 octobre, la barre d'étapes a quitté le dock et le bandeau n°1 remplace la rangée du podium ; le regroupement et l'indice « Glisse pour explorer » (masqué quand la place manque) n'ont pas été revérifiés sur téléphone.
 - **Canvas 2D** : à l'aise avec des centaines de produits depuis les dessins partagés (45 Mo en DPR 2) et le budget des photos (64 Mo au plus) ; WebGL n'est plus nécessaire à cette échelle.
 - **Catalogue entier dans le HTML** : le loader envoie tout le snapshot au premier rendu, soit 724 Ko bruts (68 Ko en brotli) avec 523 claviers ; l'API en fait 909 Ko, dont 235 Ko de switchs recopiés dans chaque variante. Format compact à prévoir (switchs et marques en dictionnaire).
 - **Poids du bundle** : un morceau partagé d'environ 120 Ko contient probablement Zod et le catalogue. Une entrée « moteur seul » sans Zod côté client l'allégerait, à mesurer.
 - **Pas de prix boutiques** : la table `offers` est vide : les claviers et les écrans n'ont que le lien Amazon (prix indicatif, pas celui du jour) ; un écran sans ASIN mène à une recherche par sa référence.
 - **Accessibilité** : tuiles et canvas non audités (le canvas est masqué aux lecteurs d'écran ; les bandes sont de vrais liens focalisables), pas de test au clavier seul.
-- **Podium rendu deux fois** : colonne sur grand écran, rangée sur mobile, l'une masquée en CSS.
+- **Podium rendu deux fois** : colonne sur grand écran, rangée entre 768 et 1 023 px de large, plus le bandeau n°1 sur téléphone ; deux des trois sont masqués en CSS.
 - **Le seed supprime** ce que data/ ne liste plus, avec un garde-fou (SEED\_PRUNE=force au-delà de max(30, la moitié du catalogue), et par catégorie au-delà de max(10, la moitié de la catégorie)).
 - **Ni tests d'interface ni CI.**
 - **Prévu mais pas encore utilisé** : ScrollTrigger, three et React Three Fiber.
 - **Souris** : 149 modèles de 8 marques ; Zowie, Keychron, Corsair et Kensington attendent (voir « Souris : troisième catégorie »). La forme n'est connue que par longueur, largeur, hauteur et poids (ni bosse ni courbure) et les constantes du modèle de prise ne sont pas calées. Pas encore de photo principale choisie, ni d'ASIN ; les prix HyperX et Turtle Beach sont estimés depuis les prix US (× 1,2). Pulsar touche le plafond de 30 et compte plusieurs générations d'une même coque (X2H, X2H v3, X2H CrazyLight).
 
 * **« À savoir » mal formulé** : la rubrique reprend le nom des critères où le produit est faible, ce qui donne des lignes qui se lisent comme des qualités (« Taille idéale pour l'e-sport »). Il faut un libellé négatif par critère.
-* **Liste courte sur téléphone** : avec le module « Parcours », le dock est plus haut et l'indice « Glisse pour explorer » se masque faute de place.
+
+- **Mobile vu seulement en émulation** : Chrome headless avec tactile émulé ; zones sûres, barre de Safari qui se replie, inertie du défilement de l'accueil et feuilles tirées au doigt jamais vus sur un vrai iPhone.
+- **Troncatures sur bureau et tablette** (déjà en production, laissées telles quelles le 24 octobre) : noms longs dans la colonne du podium (« Pulsefire Haste 3 Pr… » à 1440 et 1024 px), nom et « Symétrique » coupés dans les lignes de résultats à 768 px.
 
 ## Prochaines étapes
 
@@ -799,3 +835,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 * [ ] **Profil « Code »** : décider si le bonus de confort des dispositions Alice doit peser autant.
 * [ ] **Netlify** : suivre les crédits de l'Image CDN ; corriger « Données de démonstration » sur l'accueil.
 * [ ] **Souris** : lots E (photos principales, prix, curation), F (le site), G (calage du modèle et audit des personas), marques en attente et ASIN Amazon (voir « Souris : troisième catégorie »).
+
+- [ ] **Vérifier sur un vrai iPhone** : zones sûres, barre de Safari qui se replie, inertie de l'accueil, feuilles tirées vers le bas.
+- [ ] **Troncatures bureau et tablette** : colonne du podium et lignes de résultats à 768 px (voir « Limites »).
+- [ ] **Décrire ici** les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`).
