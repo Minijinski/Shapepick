@@ -8,7 +8,9 @@ import type { Locale } from '@choose/catalog'
 declare const __SITE_URL__: string
 
 export const SITE = {
-  name: 'choose-a-device',
+  name: 'shapepick',
+  /** The name it went by before, which search engines may still know it by for a while. */
+  formerName: 'choose-a-device',
   /** The public address, without a trailing slash. */
   url: __SITE_URL__,
   /** Each locale as Open Graph names it. */

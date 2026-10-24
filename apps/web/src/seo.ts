@@ -108,13 +108,14 @@ export function pageHead({
 }
 
 /**
- * The site itself, on its home pages: the name search results show for it. On renaming, the old
- * name goes into `alternateName` for a while.
+ * The site itself, on its home pages: the name search results show for it, and the one it went
+ * by before (`alternateName`), kept for a while after a renaming.
  */
 export const websiteSchema = (locale: Locale): Schema => ({
   '@context': 'https://schema.org',
   '@type': 'WebSite',
   name: SITE.name,
+  alternateName: SITE.formerName,
   url: absolute('/'),
   inLanguage: locale,
 })

@@ -13,6 +13,7 @@ import { atWidth, isolate, squareOn } from '@choose/catalog/media'
 import { loadData } from '@choose/catalog/node'
 import sharp from 'sharp'
 import { type Document, isMap, isSeq, parse, parseDocument, type YAMLMap } from 'yaml'
+import { userAgent } from './http'
 import type { ShopifyProduct } from './shopify'
 
 // pnpm ingest photos [--dry-run]: picks each product's primary photo, the one the site shows. The
@@ -72,9 +73,7 @@ async function bytesOf(url: string): Promise<Buffer | null> {
   for (let attempt = 0; attempt < 3; attempt++) {
     try {
       const res = await fetch(url, {
-        headers: {
-          'user-agent': 'choose-a-device-ingest/0.1 (+https://choose-a-device.netlify.app)',
-        },
+        headers: { 'user-agent': userAgent },
         signal: AbortSignal.timeout(20_000),
       })
       if (res.ok) {

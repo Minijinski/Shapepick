@@ -8,7 +8,8 @@ import { fileURLToPath } from 'node:url'
 // tweaking a mapper never hits the shop again. `--refresh` re-downloads what the run touches.
 
 const cacheDir = fileURLToPath(new URL('../.cache', import.meta.url))
-const userAgent = 'choose-a-device-ingest/0.1 (+https://choose-a-device.netlify.app)'
+/** Who fetches, and where to find out: every request of the import says it. */
+export const userAgent = 'shapepick-ingest/0.1 (+https://shapepick.com)'
 const gapMs = 1500
 /** Slower sites: corsair.com's robots.txt suggests 10 s (commented out), heavier pages elsewhere. */
 const gaps: Record<string, number> = {
