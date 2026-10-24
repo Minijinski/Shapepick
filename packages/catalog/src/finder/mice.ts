@@ -1,24 +1,15 @@
 import type { MouseItem } from '../domain/items'
 import { text } from '../i18n'
-import {
-  gripFit,
-  gripOf,
-  handFit,
-  handMismatch,
-  recommendSize,
-  SIZE_BANDS,
-  type SizeBand,
-  sizeBandOf,
-  sizeIndex,
-} from './mouse-fit'
+import { gripFit, gripOf, type SizeBand, sizeBandOf, sizeIndex } from './mouse-fit'
 import { settleTies } from './settle'
 import { ANY, type Answers, type FinderDefinition, type Option } from './types'
 
 // The mouse questionnaire. The use first (ranking profile only), then the hand and the shape, the
-// two answers that decide which shells can be used at all; then the fit: the hand size and the grip
-// steer the ranking and suggest a mouse size, the size and the weight narrow the catalogue; the
-// connection, the budget and must-haves last. No colour question, as for keyboards: a colour rarely
-// decides between mice. The fit model lives in mouse-fit.ts.
+// two answers that decide which shells can be used at all; then the fit: the grip steers the
+// ranking, the size (each tile says which hands it suits) and the weight narrow the catalogue; the
+// connection, the budget and must-haves last. No hand-size question: it read too much like the
+// mouse's own size, so its guidance went into the size tiles. No colour question, as for
+// keyboards: a colour rarely decides between mice. The grip model lives in mouse-fit.ts.
 
 type M = MouseItem
 const opt = (
@@ -40,11 +31,6 @@ const shapesOf = (answers: Answers) =>
 const keepsShells = (answers: Answers) => {
   const shapes = shapesOf(answers)
   return !shapes.length || shapes.includes('sym') || shapes.includes('ergo')
-}
-/** Whether only trackballs are left: no hand to size them to. */
-const onlyTrackballs = (answers: Answers) => {
-  const shapes = shapesOf(answers)
-  return shapes.length > 0 && shapes.every((s) => s === 'tb_thumb' || s === 'tb_finger')
 }
 
 const inBand = (band: SizeBand) => (m: M) => sizeBandOf(m) === band
@@ -87,8 +73,8 @@ export const mouseFinder: FinderDefinition<M> = {
       // Each hint says what the ranking looks for first for this use.
       options: [
         opt('competitive', 'Jeu compétitif', 'Competitive gaming', () => true, [
-          'Légère, réactive, à ta main',
-          'Light, fast, fits your hand',
+          'Légère, capteur de pointe',
+          'Light, top sensor',
         ]),
         opt('gaming', 'Jeu polyvalent', 'All-round gaming', () => true, [
           'Boutons, autonomie, confort',
@@ -166,25 +152,6 @@ export const mouseFinder: FinderDefinition<M> = {
       ],
     },
     {
-      key: 'handsize',
-      kind: 'single',
-      weightOnly: true,
-      anyLabel: text('Je ne sais pas', 'Not sure'),
-      applies: (a) => !onlyTrackballs(a),
-      label: text('Taille de main', 'Hand size'),
-      title: text('Quelle taille de main ?', 'How big is your hand?'),
-      help: text(
-        'Mesure du pli du poignet au bout du majeur, main à plat. Avec ta prise, elle donne la longueur de souris qui te va le mieux et la taille qu’on te conseille ; elle n’écarte aucune souris. **Petite** : moins de 17 cm. **Moyenne** : de 17 à 19 cm. **Grande** : de 19 à 21 cm. **Très grande** : plus de 21 cm.',
-        'Measure from the wrist crease to the tip of your middle finger, hand flat. With your grip, it gives the mouse length that suits you best and the size we suggest; it rules no mouse out. **Small**: under 17 cm. **Medium**: 17 to 19 cm. **Large**: 19 to 21 cm. **Extra large**: over 21 cm.',
-      ),
-      options: [
-        opt('s', 'Petite', 'Small', () => true, ['Moins de 17 cm', 'Under 17 cm']),
-        opt('m', 'Moyenne', 'Medium', () => true, ['De 17 à 19 cm', '17 to 19 cm']),
-        opt('l', 'Grande', 'Large', () => true, ['De 19 à 21 cm', '19 to 21 cm']),
-        opt('xl', 'Très grande', 'Extra large', () => true, ['Plus de 21 cm', 'Over 21 cm']),
-      ],
-    },
-    {
       key: 'grip',
       kind: 'multi',
       weightOnly: true,
@@ -212,24 +179,26 @@ export const mouseFinder: FinderDefinition<M> = {
       label: text('Taille', 'Size'),
       title: text('Quelle taille de souris ?', 'How big should the mouse be?'),
       help: text(
-        'Ce que tu préfères, pas une mesure : on marque la taille conseillée pour ta main et ta prise, libre à toi d’en choisir une autre. Les tailles se lisent sur la longueur : **Petite** : jusqu’à 119 mm. **Moyenne** : de 119 à 126 mm. **Grande** : de 126 à 130 mm. **Très grande** : au-delà, ou une coque très large.',
-        'What you prefer, not a measurement: we mark the size we suggest for your hand and grip, and you are free to pick another. Sizes go by length: **Small**: up to 119 mm. **Medium**: 119 to 126 mm. **Large**: 126 to 130 mm. **Extra large**: beyond, or a very wide shell.',
+        'Main mesurée du poignet au bout du majeur. En prise paume, prends la taille au-dessus ; du bout des doigts, celle en dessous. **Petite** : jusqu’à 119 mm. **Moyenne** : 119 à 126 mm. **Grande** : 126 à 130 mm. **Très grande** : au-delà.',
+        'Hand measured from wrist to middle fingertip. In a palm grip, go one size up; at the fingertips, one down. **Small**: up to 119 mm. **Medium**: 119 to 126 mm. **Large**: 126 to 130 mm. **Extra large**: beyond.',
       ),
-      recommend: recommendSize,
-      // The drawing shows the size: one short line each.
+      // The drawing shows the size; the line under it, the hands it suits.
       options: [
         opt('small', 'Petite', 'Small', inBand('small'), [
-          `Jusqu’à ${SIZE_BANDS.small[1]} mm`,
-          `Up to ${SIZE_BANDS.small[1]} mm`,
+          'Main de moins de 17 cm',
+          'Hand under 17 cm',
         ]),
-        opt('medium', 'Moyenne', 'Medium', inBand('medium'), ['La plus courante', 'Most common']),
+        opt('medium', 'Moyenne', 'Medium', inBand('medium'), [
+          'Main de 17 à 19 cm',
+          'Hand 17 to 19 cm',
+        ]),
         opt('large', 'Grande', 'Large', inBand('large'), [
-          'Coque pleine taille',
-          'Full-size shell',
+          'Main de 19 à 21 cm',
+          'Hand 19 to 21 cm',
         ]),
         opt('xl', 'Très grande', 'Extra large', inBand('xl'), [
-          'Grandes mains, paume',
-          'Big hands, palm grip',
+          'Main de plus de 21 cm',
+          'Hand over 21 cm',
         ]),
       ],
     },
@@ -369,16 +338,6 @@ export const mouseFinder: FinderDefinition<M> = {
   // ---- Ranking -------------------------------------------------------------------------------
   criteria: [
     {
-      key: 'handFit',
-      label: text('Taille faite pour ta main', 'Sized for your hand'),
-      weakLabel: (m, answers) =>
-        handMismatch(m, answers) === 'small'
-          ? text('Petite pour ta main', 'Small for your hand')
-          : text('Grande pour ta main', 'Large for your hand'),
-      active: (answers) => answers.handsize != null,
-      score: handFit,
-    },
-    {
       key: 'gripFit',
       label: text('Forme adaptée à ta prise', 'Shaped for your grip'),
       weakLabel: text('Forme moins adaptée à ta prise', 'Less suited to your grip'),
@@ -485,10 +444,9 @@ export const mouseFinder: FinderDefinition<M> = {
     },
   ],
   profiles: {
-    competitive: { handFit: 2, gripFit: 1, light: 2.5, sensor: 2, wireless: 1 },
-    gaming: { handFit: 2, gripFit: 1, sensor: 1, light: 1, wireless: 1, battery: 1, buttons: 1 },
+    competitive: { gripFit: 1, light: 2.5, sensor: 2, wireless: 1 },
+    gaming: { gripFit: 1, sensor: 1, light: 1, wireless: 1, battery: 1, buttons: 1 },
     office: {
-      handFit: 1.5,
       gripFit: 0.5,
       comfort: 2,
       multidevice: 2,
@@ -496,7 +454,7 @@ export const mouseFinder: FinderDefinition<M> = {
       quiet: 1.5,
       battery: 1.5,
     },
-    travel: { compact: 3, multidevice: 2, battery: 2, wireless: 2, light: 1, handFit: 1 },
-    default: { handFit: 2, gripFit: 1, sensor: 1, light: 1, wireless: 1 },
+    travel: { compact: 3, multidevice: 2, battery: 2, wireless: 2, light: 1 },
+    default: { gripFit: 1, sensor: 1, light: 1, wireless: 1 },
   },
 }

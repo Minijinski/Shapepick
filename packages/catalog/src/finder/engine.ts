@@ -7,7 +7,6 @@ import {
   type FinderDefinition,
   type RangeStep,
   type Ranked,
-  type Recommendation,
   type Step,
 } from './types'
 
@@ -319,7 +318,7 @@ export function liveAnswers<I>(def: FinderDefinition<I>, answers: Answers): Answ
   return live
 }
 
-/** The live answers that only steer the ranking (the use, a hand size): what strengths read. */
+/** The live answers that only steer the ranking (the use, a grip): what strengths read. */
 export function rankingAnswers<I>(def: FinderDefinition<I>, answers: Answers): Answers {
   const live = liveAnswers(def, answers)
   const kept: Answers = {}
@@ -331,22 +330,8 @@ export function rankingAnswers<I>(def: FinderDefinition<I>, answers: Answers): A
 }
 
 /**
- * What the other answers suggest picking at a step (a mouse size, from the hand and the grip), or
- * null: never read from the step's own answer.
- */
-export function recommended<I>(
-  def: FinderDefinition<I>,
-  answers: Answers,
-  key: string,
-): Recommendation | null {
-  const step = stepOf(def, key)
-  if (!isChoice(step) || !step.recommend) return null
-  return step.recommend(liveAnswers(def, withAnswer(answers, key, null)))
-}
-
-/**
  * Whether the answers say anything to rank on: the use, an answer that only steers the ranking (a
- * hand size), or one that narrows the catalogue.
+ * grip), or one that narrows the catalogue.
  */
 export function isInformed<I>(def: FinderDefinition<I>, answers: Answers): boolean {
   if ((answers[def.profileStep] ?? ANY) !== ANY) return true
@@ -442,7 +427,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
   const profileId = answers[def.profileStep]
   const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
   const live = liveAnswers(def, answers)
-  // A criterion with nothing to measure yet (a fit to a hand not given) sits out.
+  // A criterion with nothing to measure yet (a fit to a grip not given) sits out.
   const criteria = def.criteria.filter(
     (c) => (weights[c.key] ?? 0) > 0 && (c.active?.(live) ?? true),
   )

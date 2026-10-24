@@ -8,32 +8,20 @@ import {
   mouseFinder,
   rank,
   rankingAnswers,
-  recommended,
+  sanitizeAnswers,
   stepOf,
 } from '../src'
-import {
-  gripOf,
-  type HandSize,
-  handFit,
-  recommendSize,
-  type SizeBand,
-  sizeBandOf,
-} from '../src/finder/mouse-fit'
+import { gripFit, gripOf } from '../src/finder/mouse-fit'
 import type { Answers } from '../src/finder/types'
 import { mice } from './fixtures'
 
 // The mouse questionnaire against the frozen demo catalogue: every tile reachable, the branching of
-// the shape answer, the fit to a hand and the size it suggests.
+// the shape answer, the grip and the size tiles.
 
 const slugs = (answers: Answers) =>
   filter(mouseFinder, mice, answers)
     .map((m) => m.slug)
     .sort()
-const top = (answers: Answers, n = 3) =>
-  rank(mouseFinder, mice, answers)
-    .slice(0, n)
-    .map((r) => r.item.slug)
-
 describe('mouse finder', () => {
   it('loads the demo catalogue', () => {
     expect(mice.length).toBeGreaterThanOrEqual(25)
@@ -74,10 +62,9 @@ describe('mouse finder', () => {
     expect(vertical).not.toContain('grip')
     expect(vertical).not.toContain('size')
     expect(vertical).not.toContain('weight')
-    expect(vertical).toContain('handsize')
     const trackballs = askedSteps(mouseFinder, mice, { ...base, shape: 'tb_thumb,tb_finger' })
-    expect(trackballs).not.toContain('handsize')
     expect(trackballs).not.toContain('grip')
+    expect(trackballs).not.toContain('size')
     const mixed = askedSteps(mouseFinder, mice, { ...base, shape: 'sym,vertical' })
     expect(mixed).toContain('grip')
     expect(mixed).toContain('size')
@@ -86,9 +73,8 @@ describe('mouse finder', () => {
   it('ignores a grip answered before the shape ruled grips out', () => {
     const live = liveAnswers(mouseFinder, { use: 'office', shape: 'vertical', grip: 'claw' })
     expect(live.grip).toBeUndefined()
-    expect(rankingAnswers(mouseFinder, { use: 'office', handsize: 'm', grip: 'claw' })).toEqual({
+    expect(rankingAnswers(mouseFinder, { use: 'office', grip: 'claw' })).toEqual({
       use: 'office',
-      handsize: 'm',
       grip: 'claw',
     })
   })
@@ -118,111 +104,60 @@ describe('mouse finder', () => {
     expect(quietMultiDevice.every((m) => m.specs.silentClicks && m.specs.hosts >= 2)).toBe(true)
   })
 
-  it('says "not sure" rather than "no preference" for the hand size', () => {
-    expect(describeAnswer(stepOf(mouseFinder, 'handsize'), 'any', 'fr')).toBe('Je ne sais pas')
-    expect(describeAnswer(stepOf(mouseFinder, 'handsize'), 'any', 'en')).toBe('Not sure')
+  it('says "not sure" rather than "no preference" for the grip', () => {
+    expect(describeAnswer(stepOf(mouseFinder, 'grip'), 'any', 'fr')).toBe('Je ne sais pas')
+    expect(describeAnswer(stepOf(mouseFinder, 'grip'), 'any', 'en')).toBe('Not sure')
   })
 })
 
-describe('fit to the hand', () => {
-  const hands: HandSize[] = ['s', 'm', 'l', 'xl']
-  const order: SizeBand[] = ['small', 'medium', 'large', 'xl']
-  const index = (b: string) => order.indexOf(b as SizeBand)
-
-  it('suggests a size that grows with the hand and shrinks towards the fingertips', () => {
-    for (const grip of ['palm', 'claw', 'fingertip', undefined]) {
-      const sizes = hands.map((h) => {
-        const r = recommendSize({ handsize: h, ...(grip ? { grip } : {}) })
-        return index(r?.primary ?? '')
-      })
-      for (let i = 1; i < sizes.length; i++)
-        expect(sizes[i]).toBeGreaterThanOrEqual(sizes[i - 1] ?? 0)
-    }
-    for (const h of hands) {
-      const palm = index(recommendSize({ handsize: h, grip: 'palm' })?.primary ?? '')
-      const claw = index(recommendSize({ handsize: h, grip: 'claw' })?.primary ?? '')
-      const tip = index(recommendSize({ handsize: h, grip: 'fingertip' })?.primary ?? '')
-      expect(palm).toBeGreaterThanOrEqual(claw)
-      expect(claw).toBeGreaterThanOrEqual(tip)
-    }
+describe('size and grip', () => {
+  it('asks no hand size, and a link that still carries one keeps working', () => {
+    expect(mouseFinder.steps.some((s) => s.key === 'handsize')).toBe(false)
+    expect(sanitizeAnswers(mouseFinder, { use: 'office', handsize: 'm' })).toEqual({
+      use: 'office',
+    })
   })
 
-  it('suggests nothing without a hand size, and never reads the size answer itself', () => {
-    expect(recommendSize({ grip: 'claw' })).toBeNull()
-    const a = recommended(mouseFinder, { handsize: 'l', grip: 'palm' }, 'size')
-    const b = recommended(mouseFinder, { handsize: 'l', grip: 'palm', size: 'small' }, 'size')
-    expect(a).toEqual(b)
-    expect(a?.also).not.toContain(a?.primary)
+  it('says on each size tile which hands it suits', () => {
+    const size = stepOf(mouseFinder, 'size')
+    const hints = size.kind === 'range' ? [] : size.options.map((o) => o.hint?.fr)
+    expect(hints).toEqual([
+      'Main de moins de 17 cm',
+      'Main de 17 à 19 cm',
+      'Main de 19 à 21 cm',
+      'Main de plus de 21 cm',
+    ])
   })
 
   it('reads two neighbouring grips as the way between them, and far-apart grips as none', () => {
     const relaxed = gripOf({ grip: 'palm,claw' })
     const palm = gripOf({ grip: 'palm' })
     const claw = gripOf({ grip: 'claw' })
-    expect(relaxed?.offset).toBeGreaterThan(claw?.offset ?? 0)
-    expect(relaxed?.offset).toBeLessThan(palm?.offset ?? 0)
+    expect(relaxed?.hl).toBeGreaterThan(claw?.hl ?? 0)
+    expect(relaxed?.hl).toBeLessThan(palm?.hl ?? 0)
     expect(gripOf({ grip: 'palm,fingertip' })).toBeNull()
     expect(gripOf({ grip: 'palm,claw,fingertip' })).toBeNull()
   })
 
-  it('leaves the ranking alone until a hand size or a grip is given', () => {
-    expect(isInformed(mouseFinder, { handsize: 'm' })).toBe(true)
+  it('leaves the ranking alone until a grip is given', () => {
+    expect(isInformed(mouseFinder, { grip: 'claw' })).toBe(true)
     expect(isInformed(mouseFinder, {})).toBe(false)
     const [first] = rank(mouseFinder, mice, { use: 'competitive' })
-    expect(first?.pros.some((p) => p.fr === 'Taille faite pour ta main')).toBe(false)
+    expect(first?.pros.some((p) => p.fr === 'Forme adaptée à ta prise')).toBe(false)
   })
 
-  it('puts small light shells first for a small hand in a fingertip grip', () => {
-    const answers = {
-      use: 'competitive',
-      hand: 'right',
-      shape: 'sym',
-      handsize: 's',
-      grip: 'fingertip',
-    }
-    const [first] = top(answers, 1)
-    const mouse = mice.find((m) => m.slug === first)
-    expect(mouse && sizeBandOf(mouse)).toBe('small')
-  })
-
-  it('puts large ergonomic shells first for a large hand in a palm grip', () => {
-    const answers = { use: 'gaming', hand: 'right', shape: 'ergo', handsize: 'l', grip: 'palm' }
-    const leaders = top(answers, 2)
-    expect(leaders).toContain('ardent-rook')
-    for (const slug of leaders) {
-      const mouse = mice.find((m) => m.slug === slug)
-      expect(['large', 'xl']).toContain(mouse && sizeBandOf(mouse))
-    }
-  })
-
-  it('names the side a shell misses the hand on', () => {
-    const answers = {
-      use: 'competitive',
-      hand: 'right',
-      shape: 'sym',
-      handsize: 'xl',
-      grip: 'palm',
-    }
-    const ranked = rank(mouseFinder, mice, answers)
-    const tiny = ranked.find((r) => r.item.slug === 'pebblework-dot')
-    expect(tiny?.cons.map((c) => c.fr)).toContain('Petite pour ta main')
-    const mini = mice.find((m) => m.slug === 'ardent-swift-mini')
-    if (!mini) throw new Error('demo mouse missing')
-    expect(handFit(mini, { handsize: 's', grip: 'fingertip' })).toBeGreaterThan(
-      handFit(mini, { handsize: 'xl', grip: 'palm' }),
-    )
-  })
-
-  it('does not reproach a size the visitor picked on purpose', () => {
-    const mini = mice.find((m) => m.slug === 'ardent-swift-mini')
-    if (!mini) throw new Error('demo mouse missing')
-    const big = { handsize: 'xl', grip: 'palm' }
-    expect(handFit(mini, { ...big, size: 'small' })).toBeGreaterThan(handFit(mini, big))
-  })
-
-  it('reads a maker’s recommended hand range', () => {
-    const mini = mice.find((m) => m.slug === 'ardent-rook-mini')
-    if (!mini) throw new Error('demo mouse missing')
-    expect(handFit(mini, { handsize: 's' })).toBeGreaterThan(handFit(mini, { handsize: 'l' }))
+  it('weighs the body as the grip wants it: ergonomic for the palm, symmetrical at the tips', () => {
+    // The same shell, sculpted or symmetrical: only the body tells them apart.
+    const base = mice.find((m) => m.specs.shape === 'symmetrical' && m.specs.heightMm)
+    if (!base) throw new Error('demo mouse missing')
+    const sculpted = { ...base, specs: { ...base.specs, shape: 'ergonomic' as const } }
+    const ratio = (grip: string) => gripFit(sculpted, { grip }) / gripFit(base, { grip })
+    expect(ratio('palm')).toBeGreaterThan(1)
+    expect(ratio('fingertip')).toBeLessThan(1)
+    // Held another way, a vertical shell or a trackball is neither rewarded nor ruled out.
+    const vertical = mice.find((m) => m.specs.shape === 'vertical')
+    if (!vertical) throw new Error('demo mouse missing')
+    expect(gripFit(vertical, { grip: 'claw' })).toBe(0.85)
+    expect(gripFit(vertical, {})).toBe(1)
   })
 })

@@ -27,7 +27,7 @@ type StepCommon<I> = {
   applies?: (answers: Answers) => boolean
   /**
    * Never filters: the answer only steers the ranking (the "use" question picks the profile; a
-   * hand size sets what a criterion measures).
+   * grip sets what a criterion measures).
    */
   weightOnly?: boolean
   /** No "no preference" tile: everyone can make this decision. */
@@ -47,15 +47,7 @@ export type ChoiceStep<I> = StepCommon<I> & {
   /** single: one option · multi: any of the picked options (OR) · musts: all of them (AND) */
   kind: 'single' | 'multi' | 'musts'
   options: Option<I>[]
-  /**
-   * What the other answers suggest picking here (a mouse size, from the hand and the grip), or
-   * null when they say nothing: the console marks those options.
-   */
-  recommend?: (answers: Answers) => Recommendation | null
 }
-
-/** The option to pick (`primary`) and the ones that would do too (`also`). */
-export type Recommendation = { primary: string; also: string[] }
 
 export type RangeStep<I> = StepCommon<I> & {
   kind: 'range'
@@ -82,7 +74,7 @@ export type Criterion<I> = {
   caveat?: boolean
   /**
    * 0 (worst) … 1 (best) for this item. Most criteria read the item alone; one that measures the
-   * item against an answer (a hand size) reads the live answers, those of questions that apply.
+   * item against an answer (a grip) reads the live answers, those of questions that apply.
    */
   score: (item: I, answers: Answers) => number
   /**
@@ -93,7 +85,7 @@ export type Criterion<I> = {
   /** Which items an item with a missing figure is compared with (default: all of them). */
   peers?: (item: I) => string
   /**
-   * Whether the answers give it something to measure (the fit to a hand, once its size is given):
+   * Whether the answers give it something to measure (the fit to a grip, once one is given):
    * until then it sits out of the fit. A criterion that reads the answers never declares `known`,
    * since what stands in for a missing figure is worked out once per catalogue.
    */
