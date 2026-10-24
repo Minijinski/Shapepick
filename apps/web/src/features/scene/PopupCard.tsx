@@ -1,5 +1,4 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
-import type { CSSProperties } from 'react'
 import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { Match } from '../product/Match'
@@ -11,8 +10,8 @@ import type { ItemDetail } from './controller'
 // where it stands among the answers (or which answer rules it out), what it is and costs, its key
 // specs laid out as in the results, and a last line saying that a click opens its full sheet. On a
 // screen too short for the whole card beside a product, the compact card leaves the specs to the
-// sheet. Its lines come in one after the other (`data-line`, see styles.css); the frame around it,
-// which unfolds from the leader line, belongs to the scene.
+// sheet. It comes in whole; gliding on to a neighbour, only its lines (`data-line`, see styles.css)
+// fade in again. The frame around it, and the leader line, belong to the scene.
 
 const card = css({
   w: { base: '64', md: '80' },
@@ -36,9 +35,6 @@ const mono = css({
 
 const ruled = css({ borderTopWidth: '1px', borderColor: 'line', pt: '3' })
 
-/** The place of a line in the cascade. */
-const at = (i: number) => ({ '--i': i }) as CSSProperties
-
 export function PopupCard({
   item,
   detail,
@@ -49,7 +45,7 @@ export function PopupCard({
   item: CatalogItem
   detail: ItemDetail | null
   locale: Locale
-  /** Replacing another product’s card as it glides over: its lines come in at once. */
+  /** Replacing another product’s card as it glides over: its lines fade in, the card stays. */
   swap?: boolean
   /** No room for the whole card: the specs are left out (the sheet has them). */
   compact?: boolean
@@ -61,7 +57,6 @@ export function PopupCard({
       {(ranked || detail?.ruledOut) && (
         <div
           data-line
-          style={at(0)}
           className={css({
             display: 'flex',
             alignItems: 'center',
@@ -89,7 +84,7 @@ export function PopupCard({
         </div>
       )}
 
-      <div data-line style={at(1)} className={css({ display: 'grid', gap: '1' })}>
+      <div data-line className={css({ display: 'grid', gap: '1' })}>
         <span className={cx(mono, css({ color: 'ink.muted' }))}>{item.brand.name}</span>
         <div
           className={css({
@@ -135,7 +130,7 @@ export function PopupCard({
       </div>
 
       {!compact && (
-        <div data-line style={at(2)} className={ruled}>
+        <div data-line className={ruled}>
           <KeySpecs item={item} locale={locale} />
         </div>
       )}
@@ -143,7 +138,6 @@ export function PopupCard({
       {/* The card follows the pointer; the product under it opens on a click. */}
       <div
         data-line
-        style={at(3)}
         className={css({
           display: 'flex',
           alignItems: 'center',

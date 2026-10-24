@@ -38,10 +38,11 @@ const clamp = (v: number, lo: number, hi: number) => Math.min(hi, Math.max(lo, v
 
 /**
  * The card waits this long once the pointer leaves its product (crossing the paper between two
- * products, it glides to the next one instead of folding), then folds away in this long (ms).
+ * products, it glides to the next one instead of leaving), then fades away in this long (ms): the
+ * `popupOut` animation in styles.css (140 ms), and the frame or two it waits to start.
  */
 const POPUP_GRACE_MS = 120
-const POPUP_OUT_MS = 190
+const POPUP_OUT_MS = 180
 /** How quickly the card catches up with its place (ms): it glides from one product to the next. */
 const POPUP_EASE_MS = 70
 /**
@@ -227,7 +228,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
     hit: Hit
     opening: number
     leaving: boolean
-    /** Moved on from another product of the same opening: its lines come in at once. */
+    /** Moved on from another product of the same opening: only its lines fade in again. */
     swap: boolean
   } | null>(null)
   const cardState = useRef(card)
@@ -276,7 +277,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
     }
   }, [hit])
 
-  // A new opening is placed before it paints, so its entrance unfolds from the right side. A card
+  // A new opening is placed before it paints, so its entrance drifts in on the right side. A card
   // larger than the room it was expected to fit turns compact, still before it paints.
   const opening = card && !card.leaving ? card.opening : null
   useIsoLayoutEffect(() => {
@@ -720,7 +721,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
           '&[data-dragging]': { cursor: 'grabbing' },
         })}
       />
-      {/* The popup: a leader line from the product to a card beside it. Its parts unfold in CSS
+      {/* The popup: a leader line from the product to a card beside it. Its parts come in in CSS
           (styles.css, data-popup-*), placed here every frame. */}
       <div
         ref={overlayRef}
