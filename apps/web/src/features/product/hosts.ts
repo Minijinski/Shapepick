@@ -22,11 +22,19 @@ const ALLOWED = [
   /^https:\/\/dlcdnwebimgs\.asus\.com\//,
   /^https:\/\/images\.philips\.com\//,
   /^https:\/\/image\.benq\.com\//,
+  // Retailers' copies of a brand's photo, for products their brand shows only at an angle or in a
+  // scene: Mercular and MakeWebEasy (Thailand), Euro RTV AGD (Poland).
+  /^https:\/\/mercular\.s3\.ap-southeast-1\.amazonaws\.com\//,
+  /^https:\/\/image\.makewebeasy\.net\//,
+  /^https:\/\/f00\.esfr\.pl\//,
 ]
 
-/** Shops whose CDN forbids keeping their photos (measured 2026-10-23): relayed by our route. */
+/**
+ * Shops whose CDN forbids keeping their photos (measured 2026-10-23), or says nothing about it
+ * (Mercular's bucket sends no cache header): relayed by our route.
+ */
 const UNCACHED =
-  /^https:\/\/(images\.samsung\.com|i\.dell\.com|www\.lg\.com|dlcdnwebimgs\.asus\.com|image\.benq\.com|images\.philips\.com|assets\.corsair\.com|res\.cloudinary\.com|resource\.logitechg?\.com)\//
+  /^https:\/\/(images\.samsung\.com|i\.dell\.com|www\.lg\.com|dlcdnwebimgs\.asus\.com|image\.benq\.com|images\.philips\.com|assets\.corsair\.com|res\.cloudinary\.com|resource\.logitechg?\.com|mercular\.s3\.ap-southeast-1\.amazonaws\.com)\//
 
 export const isShopPhoto = (url: string) => ALLOWED.some((pattern) => pattern.test(url))
 

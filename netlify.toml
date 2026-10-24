@@ -39,4 +39,9 @@
     'https://dlcdnwebimgs\.asus\.com/.*',
     'https://images\.philips\.com/.*',
     'https://image\.benq\.com/.*',
+    # Retailers' copies of a brand's photo, where the brand shows the product only at an angle or
+    # in a scene.
+    'https://mercular\.s3\.ap-southeast-1\.amazonaws\.com/.*',
+    'https://image\.makewebeasy\.net/.*',
+    'https://f00\.esfr\.pl/.*',
   ]

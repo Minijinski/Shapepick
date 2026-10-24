@@ -244,7 +244,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/500ae95e-4d30-4456-be4c-0a8c54916608, kind: cutout_front, primary: true }
+    # photo : vue de face, sur ses pieds, petit réticule au centre de l'écran, https://www.asus.com/fr/displays-desktops/monitors/proart/proart-display-oled-pa32usd/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/202603/c57362db-a245-4d9a-9ce4-bc63310d97f9/v1/img/built/central-marker.png, kind: cutout_front, width: 1000, height: 783, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/500ae95e-4d30-4456-be4c-0a8c54916608, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/0b6c2abb-b807-42a9-9a83-8b6bf107acb5, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/465f14b6-2d4c-496f-ab63-abececd51d06, kind: cutout_front }
   sources:
@@ -333,7 +335,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/9552c786-1ddf-4ace-8e17-750673c23ce2, kind: cutout_front, primary: true }
+    # photo : vue de face, sur ses pieds, petit réticule au centre de l'écran, https://www.asus.com/fr/displays-desktops/monitors/proart/proart-display-oled-pa27usd/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/202602/cd9c61a4-a4ce-4ed2-bd5e-545035a8753c/v1/img/built/central-marker.png, kind: cutout_front, width: 1000, height: 783, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9552c786-1ddf-4ace-8e17-750673c23ce2, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/d46392d5-5768-4d5d-806a-7a367b878d1a, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/2c7d8ac6-0103-4d64-9847-53aa9ff4ea19, kind: cutout_front }
   sources:

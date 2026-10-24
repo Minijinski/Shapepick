@@ -88,7 +88,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15079_63742675a784e_PC66-68-Key-Dark-Grey.jpg?v=1707271686, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    # photo : vue de dessus, boutique MakeWebEasy (revendeur, Thaïlande)
+    - { url: https://image.makewebeasy.net/makeweb/m_1920x0/f33oHmgTS/VORTEX/080x_ee6240bd27594632b3996bd1913f302b_0c97fb3e3cc842dc82e293c17907667c_37da2fa13a6d4319a75ebe7f7eb3e6ba_1024x1024.webp?v=202405291424, kind: cutout_top, width: 1024, height: 1024, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15079_63742675a784e_PC66-68-Key-Dark-Grey.jpg?v=1707271686, kind: cutout_top, width: 1080, height: 1080 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14517_63ae052327715_PC66-68-Key-Barebones-Dark-Grey-None.jpg?v=1707271685, kind: cutout_top, width: 1920, height: 1920 }
   sources:
     - https://mechanicalkeyboards.com/products/vortex-pc66-68-key-dark-grey-65-hotswap-wireless-mechanical-keyboard
@@ -158,7 +160,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15160_6374269c13fa3_PC66-66-Key-Dark-Grey.jpg?v=1707271806, kind: cutout_top, width: 1280, height: 1280, primary: true }
+    # photo : vue de dessus, Mercular (revendeur, Thaïlande)
+    - { url: https://mercular.s3.ap-southeast-1.amazonaws.com/images/products/2024/04/Product/vortex-pc66-66-key-wireless-mechanical-keyboard-top-view.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15160_6374269c13fa3_PC66-66-Key-Dark-Grey.jpg?v=1707271806, kind: cutout_top, width: 1280, height: 1280 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14520_633f18a4b650e_PC66-66-Key-Barebones-Dark-Gray-None.jpg?v=1707271805, kind: cutout_top, width: 1920, height: 1920 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/15161_6374269d895ad_PC66-66-Key-Beige.jpg?v=1707271807, kind: cutout_top, width: 1280, height: 1280 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/14519_633f18a487057_PC66-66-Key-Barebones-Beige-None.jpg?v=1707271806, kind: cutout_top, width: 1920, height: 1920 }

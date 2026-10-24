@@ -127,7 +127,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/94A80239-F7E2-443F-BE90-3F2AF6DDEFFE, kind: cutout_top, primary: true }
+    # photo : vue de dessus, galerie officielle ASUS (dlcdnwebimgs.asus.com)
+    - { url: https://dlcdnwebimgs.asus.com/gain/97F50658-7A98-4F0E-BCB7-B487DABFCCEB, kind: cutout_top, width: 2000, height: 1470, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/94A80239-F7E2-443F-BE90-3F2AF6DDEFFE, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-keris-wireless-aimpoint-model/
   # sideButtons : photo de profil (galerie rog.asus.com)

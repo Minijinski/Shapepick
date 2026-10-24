@@ -817,7 +817,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front, primary: true }
+    # photo : vue de face, Euro RTV AGD (revendeur, Pologne)
+    - { url: https://f00.esfr.pl/foto/7/148872287713/9590c9fbb5c3af2af163119d2db7e2f5/alienware-monitor-aw2725df%2C148872287713_5.webp, kind: cutout_front, width: 5000, height: 5000, primary: true }
+    - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-8.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
     - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-3.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
     - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-9.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
     - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/alienware/aw2725df/media-gallery/monitor-alienware-2725df-black-gallery-4.psd?fmt=png-alpha&wid=2000, kind: cutout_front }

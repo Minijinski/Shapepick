@@ -255,7 +255,9 @@
   editorialScore: 0.5
   amazonAsin: B0B917XLMZ
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/YoSfTqjuP7OmL0yMcYbs5/4135b8fd4e35d5a102fa02993daaf9b4/imgbuy_apex_9_mini_01.png__1920x1080_crop-fit_optimize_subsampling-2-3202.png, kind: cutout_top, primary: true }
+    # photo : vue de dessus, JB Hi-Fi (revendeur, Australie)
+    - { url: https://cdn.shopify.com/s/files/1/0024/9803/5810/products/610746-Product-0-I-638011823840681983.jpg, kind: cutout_top, width: 2048, height: 2048, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/YoSfTqjuP7OmL0yMcYbs5/4135b8fd4e35d5a102fa02993daaf9b4/imgbuy_apex_9_mini_01.png__1920x1080_crop-fit_optimize_subsampling-2-3202.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-9?keyboardSize=mini&keyboardLanguage=french
   specs: { formFactor: f60, technology: optical, hotSwap: none, caseMaterial: steel, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 676, widthMm: 293, depthMm: 103 }
