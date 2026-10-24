@@ -440,7 +440,7 @@ export function BrandFilter({
       )}
 
       {open && !phone && (
-        <div ref={list} id={listId} className={panel} style={{ left: shift }}>
+        <div ref={list} id={listId} data-keep-clear className={panel} style={{ left: shift }}>
           <div className={css({ px: '4', pt: '3.5', pb: '2' })}>{head}</div>
           {searchField}
           {brandList}

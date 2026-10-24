@@ -23,7 +23,12 @@ import * as t from './schema'
 const compact = <T extends Record<string, unknown>>(row: T) =>
   Object.fromEntries(Object.entries(row).filter(([, v]) => v != null)) as T
 
-export type Snapshot<C extends Category> = { version: string; items: ItemOf<C>[] }
+export type Snapshot<C extends Category> = {
+  version: string
+  /** When a product of the category last changed (ISO 8601), for the sitemap; null if never. */
+  updatedAt: string | null
+  items: ItemOf<C>[]
+}
 
 export async function loadSnapshot<C extends Category>(db: Db, category: C): Promise<Snapshot<C>> {
   const products = await db
@@ -37,7 +42,8 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
     .from(t.products)
     .where(eq(t.products.category, category))
   const version = `${ids.length}-${stamp?.updated?.getTime() ?? 0}`
-  if (!ids.length) return { version, items: [] }
+  const updatedAt = stamp?.updated?.toISOString() ?? null
+  if (!ids.length) return { version, updatedAt, items: [] }
 
   const [translations, variants, images] = await Promise.all([
     db.select().from(t.productTranslations).where(inArray(t.productTranslations.productId, ids)),
@@ -142,6 +148,7 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
       })
       return {
         version,
+        updatedAt,
         items: toKeyboardItems(inputs, [...brands.values()], [...switches.values()]) as ItemOf<C>[],
       }
     }
@@ -155,7 +162,11 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
         const { ppi: _, ...rest } = strip(row)
         return [monitorInputSchema.parse({ ...p.input, specs: rest, variants: p.variants })]
       })
-      return { version, items: toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[] }
+      return {
+        version,
+        updatedAt,
+        items: toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[],
+      }
     }
     case 'mouse': {
       const specs = specsOf(
@@ -167,7 +178,11 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
           ? [mouseInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
           : []
       })
-      return { version, items: toMouseItems(inputs, [...brands.values()]) as ItemOf<C>[] }
+      return {
+        version,
+        updatedAt,
+        items: toMouseItems(inputs, [...brands.values()]) as ItemOf<C>[],
+      }
     }
     default: {
       const unknown: never = kind

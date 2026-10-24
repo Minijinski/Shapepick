@@ -271,6 +271,7 @@ export function Preloader({
       <div
         ref={root}
         data-preloader
+        data-nosnippet
         className={cx(overlay, paper)}
         role="status"
         aria-live="polite"
@@ -294,7 +295,14 @@ export function Preloader({
   }
 
   return (
-    <div ref={root} data-preloader className={overlay} role="status" aria-live="polite">
+    <div
+      ref={root}
+      data-preloader
+      data-nosnippet
+      className={overlay}
+      role="status"
+      aria-live="polite"
+    >
       <span className={css({ srOnly: true })}>{m.loadingCatalogue[locale]}</span>
       <div data-split style={{ '--n': Math.max(shown.length, 1) } as CSSProperties}>
         {shown.map((category, i) => {

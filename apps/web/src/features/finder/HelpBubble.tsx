@@ -137,7 +137,7 @@ export function HelpBubble({ id, help, anchor, onToggle }: Props) {
   }, [anchor, onToggle])
 
   return (
-    <div ref={root} id={id} popover="auto" data-help-bubble className={bubble}>
+    <div ref={root} id={id} popover="auto" data-help-bubble data-keep-clear className={bubble}>
       <div className={body}>
         {intro && (
           <p data-line className={css({ color: 'ink.soft' })} style={{ '--i': 0 } as CSSProperties}>

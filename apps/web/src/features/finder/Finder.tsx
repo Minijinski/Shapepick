@@ -100,10 +100,14 @@ const enterFade = css({
   animation: "fadeUp 0.8s token(easings.signal) backwards",
   _motionReduce: { animation: "none" },
 });
-/** The counter gives way to the results: it lifts away while the results rise. */
+/**
+ * The counter gives way to the results: it lifts away while the results rise. As wide as what it
+ * shows, which the canvas's popup keeps clear of.
+ */
 const fadesWithResults = css({
   display: "grid",
   gap: "3",
+  w: "fit-content",
   transition: "opacity 300ms, transform 450ms token(easings.signal)",
   "&[data-done]": { opacity: 0, transform: "translateY(-12px)" },
   _motionReduce: { transition: "none" },
@@ -426,7 +430,9 @@ export function Finder({ category, items, search, locale }: Props) {
         "--dock-h": "320px",
       })}
     >
-      <h1 className={css({ srOnly: true })}>{m.category[category][locale]}</h1>
+      <h1 className={css({ srOnly: true })}>
+        {m.categoryQuestion[category][locale]}
+      </h1>
 
       {/* The canvas fades into paper under the header and the counter, which stay legible. */}
       <div
@@ -466,7 +472,11 @@ export function Finder({ category, items, search, locale }: Props) {
         )}
         style={{ animationDelay: `${delay + 0.1}s` }}
       >
-        <div data-done={done || undefined} className={fadesWithResults}>
+        <div
+          data-done={done || undefined}
+          data-keep-clear
+          className={fadesWithResults}
+        >
           <LiveCounter
             value={finder.matching}
             total={items.length}
@@ -531,6 +541,8 @@ export function Finder({ category, items, search, locale }: Props) {
         <p
           data-enter="hint"
           data-known={canvasKnown || undefined}
+          // Not a line for search results to quote.
+          data-nosnippet
           aria-hidden
           className={cx(
             !carried?.hud && enterFade,
@@ -583,6 +595,7 @@ export function Finder({ category, items, search, locale }: Props) {
         ref={rail}
         data-enter="rail"
         data-journey-rail
+        data-keep-clear
         className={cx(
           !swapped && enterLeft,
           css({
@@ -625,6 +638,7 @@ export function Finder({ category, items, search, locale }: Props) {
       <div
         ref={dock}
         data-dock
+        data-keep-clear
         className={css({
           position: "absolute",
           // Clear of the iPhone's home indicator.

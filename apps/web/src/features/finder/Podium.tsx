@@ -279,7 +279,9 @@ export function Podium({
   if (row && !informed) return null;
 
   return (
+    // The canvas's popup keeps clear of the podium.
     <div
+      data-keep-clear
       className={css({
         display: "flex",
         flexDirection: row ? "row" : "column",

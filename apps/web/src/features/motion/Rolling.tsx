@@ -5,7 +5,9 @@ import { motion } from './tokens'
 // A number that rolls to each new value rather than changing at once. React renders the first
 // value (server HTML included), GSAP writes the text after that. A number that stays on screen
 // from one page to the next (the counter, switching categories) leaves what it shows in a slot as
-// its page goes, and the next page's number rolls on from there.
+// its page goes, and the next page's number rolls on from there. A number given a width (`pad`)
+// keeps it: the zeros in front only hold the place, so they get a style of their own and are not
+// read out.
 
 const useIsoLayoutEffect = typeof window === 'undefined' ? () => {} : useLayoutEffect
 
@@ -22,6 +24,10 @@ type Props = AriaAttributes & {
   value: number
   format?: (n: number) => string
   className?: string
+  /** At least this many digits: zeros fill the front. */
+  pad?: number
+  /** The style of those zeros. */
+  padClassName?: string
   /** The slot this number leaves what it shows in as its page goes. */
   slot?: RollSlot
   /** The page replaces another one: roll on from what that one's number left in the slot. */
@@ -32,15 +38,30 @@ export function Rolling({
   value,
   format = whole,
   className,
+  pad,
+  padClassName,
   slot,
   carryOver = false,
   ...aria
 }: Props) {
   const el = useRef<HTMLSpanElement>(null)
+  const zerosEl = useRef<HTMLSpanElement>(null)
+  const digitsEl = useRef<HTMLSpanElement>(null)
   const [initial] = useState(value)
   const shown = useRef(value)
+  /** The zeros that fill the front, and the number itself. */
+  const split = (n: number) => {
+    const digits = format(n)
+    return { zeros: pad ? '0'.repeat(Math.max(0, pad - digits.length)) : '', digits }
+  }
   const paint = () => {
-    if (el.current) el.current.textContent = format(shown.current)
+    const { zeros, digits } = split(shown.current)
+    if (pad == null) {
+      if (el.current) el.current.textContent = digits
+      return
+    }
+    if (zerosEl.current) zerosEl.current.textContent = zeros
+    if (digitsEl.current) digitsEl.current.textContent = digits
   }
 
   // Before the roll below starts: taking over from the last page's number, start where it was.
@@ -78,9 +99,19 @@ export function Rolling({
     }
   }, [value])
 
+  const first = split(initial)
   return (
     <span ref={el} className={className} {...aria}>
-      {format(initial)}
+      {pad == null ? (
+        first.digits
+      ) : (
+        <>
+          <span ref={zerosEl} aria-hidden className={padClassName}>
+            {first.zeros}
+          </span>
+          <span ref={digitsEl}>{first.digits}</span>
+        </>
+      )}
     </span>
   )
 }

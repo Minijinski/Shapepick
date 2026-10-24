@@ -1,5 +1,6 @@
 import { Link } from '@tanstack/react-router'
 import { css } from 'styled-system/css'
+import { SITE } from '~/site'
 
 export function NotFound() {
   return (
@@ -7,7 +8,7 @@ export function NotFound() {
       <div className={css({ textAlign: 'center' })}>
         <p className={css({ fontFamily: 'mono', fontSize: 'display', lineHeight: '1' })}>404</p>
         <Link to="/" className={css({ textDecoration: 'underline', textUnderlineOffset: '4px' })}>
-          choose-a-device
+          {SITE.name}
         </Link>
       </div>
     </main>

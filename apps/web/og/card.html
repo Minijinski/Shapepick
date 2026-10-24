@@ -1,0 +1,184 @@
+<!doctype html>
+<!--
+  The share card of every page (og:image, src/seo.ts): 1200 × 630, one per locale, in the site's
+  "Labo clair" look, without the site's name on it (link previews print it beside the picture), so
+  a new name does not call for new cards. To make them again, from apps/web:
+
+    for lang in fr en; do
+      "/Applications/Google Chrome.app/Contents/MacOS/Google Chrome" --headless=new \
+        --hide-scrollbars --allow-file-access-from-files --force-device-scale-factor=1 \
+        --window-size=1200,630 --virtual-time-budget=3000 \
+        --screenshot="$PWD/public/og/default-$lang.png" "file://$PWD/og/card.html?lang=$lang"
+    done
+-->
+<html lang="fr">
+  <head>
+    <meta charset="utf-8" />
+    <style>
+      @font-face {
+        font-family: "Inter Tight";
+        src: url("../node_modules/@fontsource-variable/inter-tight/files/inter-tight-latin-wght-normal.woff2")
+          format("woff2");
+        font-weight: 100 900;
+      }
+      @font-face {
+        font-family: "Geist Mono";
+        src: url("../node_modules/@fontsource-variable/geist-mono/files/geist-mono-latin-wght-normal.woff2")
+          format("woff2");
+        font-weight: 100 900;
+      }
+      :root {
+        --paper: #f3f1ec;
+        --ink: #141414;
+        --muted: #625e56;
+        --signal: #ff5a1f;
+      }
+      html,
+      body {
+        margin: 0;
+        width: 1200px;
+        height: 630px;
+        overflow: hidden;
+      }
+      body {
+        position: relative;
+        background-color: var(--paper);
+        /* The canvas's dotted paper. */
+        background-image: radial-gradient(circle, rgba(20, 20, 20, 0.16) 1.3px, transparent 1.6px);
+        background-size: 28px 28px;
+        background-position: 14px 14px;
+        color: var(--ink);
+        font-family: "Inter Tight", sans-serif;
+        -webkit-font-smoothing: antialiased;
+      }
+      .bands {
+        position: absolute;
+        inset: 0;
+      }
+      .copy {
+        position: absolute;
+        left: 72px;
+        top: 0;
+        bottom: 0;
+        width: 570px;
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        gap: 30px;
+      }
+      .kicker {
+        margin: 0;
+        font-family: "Geist Mono", monospace;
+        font-size: 19px;
+        letter-spacing: 0.06em;
+        text-transform: uppercase;
+        color: var(--muted);
+      }
+      .kicker span {
+        color: var(--signal);
+      }
+      h1 {
+        margin: 0;
+        font-size: 62px;
+        font-weight: 650;
+        line-height: 1.02;
+        letter-spacing: -0.035em;
+      }
+      .label {
+        position: absolute;
+        bottom: 34px;
+        display: grid;
+        gap: 6px;
+      }
+      .label b {
+        font-family: "Geist Mono", monospace;
+        font-size: 15px;
+        font-weight: 500;
+        color: var(--signal);
+      }
+      .label span {
+        font-size: 26px;
+        font-weight: 650;
+        letter-spacing: -0.04em;
+        line-height: 1;
+      }
+    </style>
+  </head>
+  <body>
+    <!-- One tilted panel per category, as on the home page, each with its device drawn upright. -->
+    <svg class="bands" width="1200" height="630" viewBox="0 0 1200 630">
+      <g fill="#f8f7f4" stroke="#141414" stroke-opacity="0.14">
+        <polygon points="660,630 810,630 870,0 720,0" />
+        <polygon points="820,630 970,630 1030,0 880,0" />
+        <polygon points="980,630 1130,630 1190,0 1040,0" />
+      </g>
+      <!-- A mouse, from above. -->
+      <g transform="translate(738 222) scale(0.85)">
+        <path
+          d="M36 0C60 0 72 22 72 54v34c0 30-15 48-36 48S0 118 0 88V54C0 22 12 0 36 0z"
+          fill="#ecEAE4"
+          stroke="#141414"
+          stroke-width="2.5"
+        />
+        <path d="M36 2v46M2 50h68" stroke="#141414" stroke-width="2" />
+        <rect x="31" y="16" width="10" height="22" rx="5" fill="#ff5a1f" />
+      </g>
+      <!-- A keyboard, from above. -->
+      <g transform="translate(864 255) scale(0.8)">
+        <rect width="160" height="62" rx="7" fill="#141414" />
+        <g fill="#2e2e2e">
+          <rect x="22" y="7" width="128" height="9" rx="2" />
+          <rect x="8" y="20" width="144" height="9" rx="2" />
+          <rect x="8" y="33" width="118" height="9" rx="2" />
+          <rect x="8" y="46" width="30" height="9" rx="2" />
+          <rect x="42" y="46" width="76" height="9" rx="2" />
+          <rect x="122" y="46" width="30" height="9" rx="2" />
+        </g>
+        <g stroke="#141414" stroke-width="2.4">
+          <path d="M33 7v9M44 7v9M55 7v9M66 7v9M77 7v9M88 7v9M99 7v9M110 7v9M121 7v9M132 7v9M143 7v9" />
+          <path d="M19 20v9M30 20v9M41 20v9M52 20v9M63 20v9M74 20v9M85 20v9M96 20v9M107 20v9M118 20v9M129 20v9M140 20v9" />
+          <path d="M24 33v9M35 33v9M46 33v9M57 33v9M68 33v9M79 33v9M90 33v9M101 33v9M112 33v9" />
+        </g>
+        <rect x="8" y="7" width="11" height="9" rx="2" fill="#ff5a1f" />
+        <rect x="129" y="33" width="23" height="9" rx="2" fill="#ff5a1f" />
+      </g>
+      <!-- A monitor, from the front. -->
+      <g transform="translate(1028 231) scale(0.8)">
+        <rect width="150" height="94" rx="6" fill="#141414" />
+        <rect x="6" y="6" width="138" height="78" rx="3" fill="#2e2e2e" />
+        <circle cx="75" cy="89" r="2.2" fill="#ff5a1f" />
+        <path d="M66 94h18l4 22H62z" fill="#141414" />
+        <rect x="46" y="116" width="58" height="6" rx="3" fill="#141414" />
+      </g>
+    </svg>
+    <div class="label" style="left: 682px"><b>01</b><span data-name="0"></span></div>
+    <div class="label" style="left: 842px"><b>02</b><span data-name="1"></span></div>
+    <div class="label" style="left: 1002px"><b>03</b><span data-name="2"></span></div>
+
+    <div class="copy">
+      <p class="kicker"><span>●</span> <span data-kicker style="color: inherit"></span></p>
+      <h1 data-title></h1>
+    </div>
+
+    <script>
+      const copy = {
+        fr: {
+          kicker: "Le bon appareil, en quelques questions",
+          title: ["Arrêter de chercher.", "Commencer à choisir."],
+          names: ["Souris", "Claviers", "Écrans"],
+        },
+        en: {
+          kicker: "The right device, in a few questions",
+          title: ["Stop searching.", "Start choosing."],
+          names: ["Mice", "Keyboards", "Monitors"],
+        },
+      }
+      const lang = new URLSearchParams(location.search).get("lang") === "en" ? "en" : "fr"
+      const t = copy[lang]
+      document.documentElement.lang = lang
+      document.querySelector("[data-kicker]").textContent = t.kicker
+      document.querySelector("[data-title]").innerHTML = t.title.join("<br />")
+      for (const el of document.querySelectorAll("[data-name]")) el.textContent = t.names[el.dataset.name]
+    </script>
+  </body>
+</html>

@@ -1,4 +1,5 @@
 import { type Category, type Locale, type Text, text } from "@choose/catalog";
+import { SITE } from "~/site";
 
 // Interface copy in both locales. Catalog content (questions, options, criteria) carries its own
 // FR/EN text in @choose/catalog; this file is only the chrome around it.
@@ -7,7 +8,7 @@ const count = (n: number, locale: Locale) =>
   new Intl.NumberFormat(locale === "fr" ? "fr-FR" : "en-GB").format(n);
 
 export const messages = {
-  siteName: text("choose-a-device"),
+  siteName: text(SITE.name),
   homeKicker: text(
     "Le bon appareil, en quelques questions",
     "The right device, in a few questions",
@@ -38,6 +39,38 @@ export const messages = {
     ),
     mouse: text("Main, prise, poids, budget", "Hand, grip, weight, budget"),
   } satisfies Record<Category, Text>,
+  /** The question a category page answers: its heading, and the start of its title. */
+  categoryQuestion: {
+    keyboard: text("Quel clavier choisir ?", "Which keyboard should you buy?"),
+    monitor: text("Quel écran choisir ?", "Which monitor should you buy?"),
+    mouse: text("Quelle souris choisir ?", "Which mouse should you buy?"),
+  } satisfies Record<Category, Text>,
+  /** How a category page answers it: the rest of its title. */
+  modelsCompared: (models: number, questions: number, locale: Locale) =>
+    locale === "fr"
+      ? `${count(models, locale)} modèles comparés en ${questions} questions`
+      : `${count(models, locale)} models compared in ${questions} questions`,
+  /** A category page's description, for search results and share cards. */
+  categoryDescription: (
+    pitch: string,
+    name: string,
+    models: number,
+    questions: number,
+    locale: Locale,
+  ) =>
+    locale === "fr"
+      ? `${pitch} : réponds à ${questions} questions et ${count(models, locale)} ${name} se resserrent en direct jusqu’aux trois modèles faits pour toi.`
+      : `${pitch}: answer ${questions} questions and ${count(models, locale)} ${name} narrow down live to the three models made for you.`,
+  /** The home page's title, after the site's name. */
+  homeHeadline: text(
+    "Le bon clavier, écran ou souris en quelques questions",
+    "The right keyboard, monitor or mouse in a few questions",
+  ),
+  /** What the share card's picture shows. */
+  shareImageAlt: text(
+    "Arrêter de chercher. Commencer à choisir. Claviers, écrans et souris en quelques questions.",
+    "Stop searching. Start choosing. Keyboards, monitors and mice in a few questions.",
+  ),
   matching: {
     keyboard: text("claviers correspondent", "keyboards match"),
     monitor: text("écrans correspondent", "monitors match"),

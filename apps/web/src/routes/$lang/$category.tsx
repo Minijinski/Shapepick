@@ -1,8 +1,10 @@
-import { categoryFromSlug, categorySlugs, type Locale } from "@choose/catalog";
+import { categoryFromSlug, finders, type Locale } from "@choose/catalog";
 import { createFileRoute, getRouteApi, notFound } from "@tanstack/react-router";
 import { Finder } from "~/features/finder/Finder";
 import type { FinderSearch } from "~/features/finder/useFinder";
 import { messages as m } from "~/i18n/messages";
+import { breadcrumbSchema, categoryPaths, homePaths, pageHead } from "~/seo";
+import { SITE } from "~/site";
 
 export const Route = createFileRoute("/$lang/$category")({
   validateSearch: (search: Record<string, unknown>): FinderSearch =>
@@ -18,30 +20,34 @@ export const Route = createFileRoute("/$lang/$category")({
     if (!category) throw notFound();
     const { loaderData } = await parentMatchPromise;
     if (!loaderData?.shown.includes(category)) throw notFound();
-    return { category };
+    // How many models it holds, which its title and description tell.
+    return { category, count: loaderData.catalogs[category].length };
   },
   head: ({ params, loaderData }) => {
     const lang = params.lang as Locale;
     if (!loaderData) return {};
-    const name = m.category[loaderData.category][lang];
-    const title =
-      lang === "fr"
-        ? `${name} : trouve le tien en quelques questions`
-        : `${name}: find yours in a few questions`;
-    const alternate = (other: Locale) =>
-      `/${other}/${categorySlugs[loaderData.category][other]}`;
-    return {
-      meta: [
-        { title: `${title} · choose-a-device` },
-        { name: "description", content: m.homeLead[lang] },
-        { property: "og:title", content: title },
+    const { category, count } = loaderData;
+    const name = m.category[category][lang];
+    const questions = finders[category].steps.length;
+    const paths = categoryPaths(category);
+    return pageHead({
+      locale: lang,
+      paths,
+      title: `${m.categoryQuestion[category][lang]} ${m.modelsCompared(count, questions, lang)}`,
+      description: m.categoryDescription(
+        m.categoryPitch[category][lang],
+        name.toLocaleLowerCase(lang),
+        count,
+        questions,
+        lang,
+      ),
+      schema: [
+        breadcrumbSchema([
+          { name: SITE.name, path: homePaths[lang] },
+          { name, path: paths[lang] },
+        ]),
       ],
-      links: [
-        { rel: "canonical", href: alternate(lang) },
-        { rel: "alternate", hrefLang: "fr", href: alternate("fr") },
-        { rel: "alternate", hrefLang: "en", href: alternate("en") },
-      ],
-    };
+    });
   },
   component: FinderPage,
 });

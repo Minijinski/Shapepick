@@ -20,7 +20,9 @@ import { exposeStats, mark } from './stats'
 // The canvas behind the pages of a locale, mounted once by the layout so it survives every
 // navigation between the home page and the categories. It owns the pointer on the open canvas
 // (hover, drag, fling, wheel) and the popup that follows the product under the pointer; a click
-// (or a tap) on a product asks the page to open that product's sheet.
+// (or a tap) on a product asks the page to open that product's sheet. The page's widgets (marked
+// `data-keep-clear`) are left alone: the popup never covers them, nor opens for a product they
+// mostly hide.
 
 /** `shown`: the categories the site offers (with products), one band each, in this order. */
 type Props = {
@@ -57,29 +59,133 @@ const useIsoLayoutEffect = typeof window === 'undefined' ? useEffect : useLayout
 /** Which side of its product the card opens on. */
 type Side = 'right' | 'left' | 'below' | 'above'
 
-/** Where the card goes beside a product’s screen box, and where its leader line starts. */
-function placePopup(r: Rect, vw: number, vh: number, cw: number, ch: number) {
-  const gap = 36
-  const cy = r.y + r.h / 2
-  if (r.x + r.w + gap + cw <= vw - 12 || r.x - gap - cw >= 12) {
-    const right = r.x + r.w + gap + cw <= vw - 12
-    return {
-      side: (right ? 'right' : 'left') as Side,
-      x: right ? r.x + r.w + gap : r.x - gap - cw,
-      y: clamp(cy - 34, 76, vh - ch - 12),
-      ax: right ? r.x + r.w + 12 : r.x - 12,
-      ay: cy,
+/** Where the card goes, and where its leader line starts. */
+type Placement = { side: Side; x: number; y: number; ax: number; ay: number }
+
+/** Between a product and its card (px). */
+const POPUP_GAP = 36
+/** The room a card keeps from the screen's edges and from the page's widgets (px). */
+const POPUP_CLEAR = 12
+/** The card stays under the site header (px). */
+const POPUP_TOP = 76
+/** A card faces its product over at least this much (px), so its leader line stays short. */
+const POPUP_FACING = 18
+/**
+ * A card's size before one has been measured: its width (`w` 64, 80 from `md`) and less than any
+ * card's height, whole or compact. Too tall a guess would keep every card shut on a short screen,
+ * and never measured; a card opened on too short a one is measured before it paints, then turns
+ * compact, or stays hidden if it is still too big.
+ */
+const POPUP_SIZE = { w: 320, wCompact: 256, h: 200, hCompact: 140 }
+
+/** Faded out or hidden is not showing (both spellings: older browsers only know the first two). */
+const SHOWING: CheckVisibilityOptions = {
+  checkOpacity: true,
+  checkVisibilityCSS: true,
+  opacityProperty: true,
+  visibilityProperty: true,
+}
+
+/**
+ * The page's widgets on screen, marked `data-keep-clear` (the console, the podium, the journey,
+ * the counter, the popovers they open): those faded out, inert or not displayed do not count.
+ * Read at most once a frame.
+ */
+const widgets = (() => {
+  let frame = -1
+  let boxes: Rect[] = []
+  return (): readonly Rect[] => {
+    if (frame === gsap.ticker.frame) return boxes
+    frame = gsap.ticker.frame
+    boxes = []
+    for (const el of document.querySelectorAll<HTMLElement>('[data-keep-clear]')) {
+      if (el.closest('[inert]') || !el.checkVisibility(SHOWING)) continue
+      const box = el.getBoundingClientRect()
+      if (box.width > 0 && box.height > 0) {
+        boxes.push({ x: box.left, y: box.top, w: box.width, h: box.height })
+      }
     }
+    return boxes
   }
-  // No room beside it (a phone): above or below the product instead.
-  const below = r.y + r.h + gap + ch <= vh - 12
-  return {
-    side: (below ? 'below' : 'above') as Side,
-    x: clamp(r.x + r.w / 2 - cw / 2, 12, vw - cw - 12),
-    y: below ? r.y + r.h + gap : Math.max(76, r.y - gap - ch),
-    ax: r.x + r.w / 2,
-    ay: below ? r.y + r.h + 12 : r.y - 12,
+})()
+
+/**
+ * What a card sliding along one axis must stay out of: the stretches of that axis taken by the
+ * widgets in its way, with room to spare. `y`: the card slides up and down, from `at` to
+ * `at + size` across; `x`: it slides sideways, from `at` to `at + size` down.
+ */
+function blockedAlong(axis: 'x' | 'y', boxes: readonly Rect[], at: number, size: number) {
+  const spans: [number, number][] = []
+  for (const b of boxes) {
+    const [from, across, start, along] = axis === 'y' ? [b.x, b.w, b.y, b.h] : [b.y, b.h, b.x, b.w]
+    if (from - POPUP_CLEAR >= at + size || from + across + POPUP_CLEAR <= at) continue
+    spans.push([start - POPUP_CLEAR, start + along + POPUP_CLEAR])
   }
+  return spans
+}
+
+/** The place in `lo` … `hi` nearest `want` where a card `length` long overlaps no span. */
+function nearestClear(
+  want: number,
+  lo: number,
+  hi: number,
+  length: number,
+  spans: readonly [number, number][],
+) {
+  if (lo > hi) return null
+  const clear = (v: number) => spans.every(([a, b]) => v + length <= a || v >= b)
+  let best: number | null = null
+  for (const v of [clamp(want, lo, hi), ...spans.flatMap(([a, b]) => [a - length, b])]) {
+    if (v < lo || v > hi || !clear(v)) continue
+    if (best == null || Math.abs(v - want) < Math.abs(best - want)) best = v
+  }
+  return best
+}
+
+/**
+ * Where the card goes beside a product’s screen box, clear of the screen’s edges and of the page’s
+ * widgets, and where its leader line starts; null when it has room nowhere.
+ */
+function placePopup(
+  r: Rect,
+  vw: number,
+  vh: number,
+  cw: number,
+  ch: number,
+  boxes: readonly Rect[],
+): Placement | null {
+  const cx = r.x + r.w / 2
+  const cy = r.y + r.h / 2
+  // Beside it, on the right first: the card slides up or down out of the widgets' way, as long
+  // as it still faces its product.
+  for (const side of ['right', 'left'] as const) {
+    const x = side === 'right' ? r.x + r.w + POPUP_GAP : r.x - POPUP_GAP - cw
+    if (x < POPUP_CLEAR || x + cw > vw - POPUP_CLEAR) continue
+    const y = nearestClear(
+      cy - 34,
+      Math.max(POPUP_TOP, r.y + POPUP_FACING - ch),
+      Math.min(vh - POPUP_CLEAR - ch, r.y + r.h - POPUP_FACING),
+      ch,
+      blockedAlong('y', boxes, x, cw),
+    )
+    if (y == null) continue
+    return { side, x, y, ax: side === 'right' ? r.x + r.w + 12 : r.x - 12, ay: cy }
+  }
+  // No room beside it (a phone, or widgets on both sides): below or above it, sliding sideways.
+  for (const side of ['below', 'above'] as const) {
+    const y = side === 'below' ? r.y + r.h + POPUP_GAP : r.y - POPUP_GAP - ch
+    if (y < POPUP_TOP || y + ch > vh - POPUP_CLEAR) continue
+    const x = nearestClear(
+      cx - cw / 2,
+      Math.max(POPUP_CLEAR, r.x + POPUP_FACING - cw),
+      Math.min(vw - POPUP_CLEAR - cw, r.x + r.w - POPUP_FACING),
+      cw,
+      blockedAlong('x', boxes, y, ch),
+    )
+    if (x == null) continue
+    return { side, x, y, ax: cx, ay: side === 'below' ? r.y + r.h + 12 : r.y - 12 }
+  }
+  return null
 }
 
 /** Where the leader line meets the card, wherever the card is on its way. */
@@ -87,6 +193,15 @@ function lineEnd(side: Side, x: number, y: number, cw: number, ch: number, ax: n
   if (side === 'right') return { x: x, y: clamp(ay, y + 18, y + ch - 18) }
   if (side === 'left') return { x: x + cw, y: clamp(ay, y + 18, y + ch - 18) }
   return { x: clamp(ax, x + 18, x + cw - 18), y: side === 'below' ? y : y + ch }
+}
+
+/**
+ * Whether a product's card opens on its rank and match (or on the answer that rules it out): one
+ * line more, so a taller card.
+ */
+const headed = (hit: Hit) => {
+  const detail = scene.detailOf(hit.category, hit.slug)
+  return detail?.rank != null || detail?.ruledOut ? 1 : 0
 }
 
 /** Which screen the scene shows: the home panels, or a category’s canvas. */
@@ -117,8 +232,23 @@ export function Scene({ catalogs, shown, locale }: Props) {
   } | null>(null)
   const cardState = useRef(card)
   cardState.current = card
-  /** Where the card is drawn, eased towards its place, and on which side of its product. */
-  const placed = useRef({ x: 0, y: 0, side: 'right' as Side, at: 0 })
+  /**
+   * Whether the card leaves its specs out: there is no room for the whole card beside its product,
+   * clear of the page's widgets (a short screen).
+   */
+  const [compact, setCompact] = useState(false)
+  const compactState = useRef(compact)
+  compactState.current = compact
+  /**
+   * Where the card is drawn, eased towards its place, on which side of its product, and for which
+   * opening (0: none yet).
+   */
+  const placed = useRef({ x: 0, y: 0, side: 'right' as Side, at: 0, opening: 0 })
+  /**
+   * The last cards' sizes (0: none measured yet), which the next ones expect: whole or compact,
+   * each without and with the line of rank and match (see `headed`).
+   */
+  const cardSize = useRef({ w: 0, whole: [0, 0], compact: [0, 0] })
   // Re-render when the finder publishes new ranks, so an open popup stays current.
   useSyncExternalStore(scene.subscribe, scene.snapshot, () => 0)
 
@@ -146,7 +276,8 @@ export function Scene({ catalogs, shown, locale }: Props) {
     }
   }, [hit])
 
-  // A new opening is placed before it paints, so its entrance unfolds from the right side.
+  // A new opening is placed before it paints, so its entrance unfolds from the right side. A card
+  // larger than the room it was expected to fit turns compact, still before it paints.
   const opening = card && !card.leaving ? card.opening : null
   useIsoLayoutEffect(() => {
     if (opening == null) return
@@ -155,13 +286,36 @@ export function Scene({ catalogs, shown, locale }: Props) {
     const r = renderer?.focusRect()
     if (!renderer || !box || !r) return
     const { w: vw, h: vh } = renderer.viewport
-    const to = placePopup(r, vw, vh, box.offsetWidth, box.offsetHeight)
-    Object.assign(placed.current, { x: to.x, y: to.y, side: to.side, at: performance.now() })
+    const cw = box.offsetWidth
+    const ch = box.offsetHeight
+    cardSize.current.w = cw
+    if (card) cardSize.current[compact ? 'compact' : 'whole'][headed(card.hit)] = ch
+    const to = placePopup(r, vw, vh, cw, ch, widgets())
+    if (!to) {
+      if (overlayRef.current) overlayRef.current.style.visibility = 'hidden'
+      if (!compact) {
+        setCompact(true)
+        return
+      }
+      // Not even room for the compact card: no card after all.
+      renderer.setFocus(null)
+      setHit(null)
+      return
+    }
+    // A card already on screen (turning whole or compact as it glides on) eases to its place.
+    if (placed.current.opening === opening) return
+    Object.assign(placed.current, {
+      x: to.x,
+      y: to.y,
+      side: to.side,
+      at: performance.now(),
+      opening,
+    })
     box.style.transform = `translate3d(${to.x}px, ${to.y}px, 0)`
     const frame = box.firstElementChild as HTMLElement | null
     if (frame) frame.dataset.side = to.side
     renderer.onFrame?.()
-  }, [opening])
+  }, [opening, compact])
 
   useEffect(() => markHydrated(), [])
 
@@ -180,6 +334,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
     const drawings = new Drawings(resolution)
     const renderer = new SceneRenderer(canvas, shown, drawings)
     rendererRef.current = renderer
+    renderer.keepClear = widgets
     mark('scene')
     // The layout is the viewport's; the canvas paints down to the bottom of the largest one (its
     // CSS height, 100lvh), so a phone's toolbar folding away as the home scrolls never resizes it.
@@ -206,11 +361,24 @@ export function Scene({ catalogs, shown, locale }: Props) {
       const r = renderer.focusRect()
       // Between two products, or folding away: everything stays where it was.
       if (!box || !dot || !line || !frame || !r) return
-      root.style.visibility = 'visible'
       const { w: vw, h: vh } = renderer.viewport
       const cw = box.offsetWidth
       const ch = box.offsetHeight
-      const to = placePopup(r, vw, vh, cw, ch)
+      const size = cardSize.current
+      size.w = cw
+      size[compactState.current ? 'compact' : 'whole'][headed(cardState.current.hit)] = ch
+      const to = placePopup(r, vw, vh, cw, ch, widgets())
+      // Its room is gone (a widget opened beside it, the window shrank): the whole card turns
+      // compact, a compact one folds away.
+      if (!to) {
+        if (!compactState.current) setCompact(true)
+        else {
+          renderer.setFocus(null)
+          setHit(null)
+        }
+        return
+      }
+      root.style.visibility = 'visible'
       const p = placed.current
       const now = performance.now()
       const k = 1 - Math.exp(-Math.min(64, now - p.at) / POPUP_EASE_MS)
@@ -340,8 +508,10 @@ export function Scene({ catalogs, shown, locale }: Props) {
       if (next) canvas.dataset.hover = 'true'
       else delete canvas.dataset.hover
     }
-    const focus = (next: Hit | null) => {
+    /** Highlights a product and opens its card, compact if said so (null: none). */
+    const focus = (next: Hit | null, small = false) => {
       renderer.setFocus(next)
+      if (next) setCompact(small)
       setHit((prev) => (sameHit(prev, next) ? prev : next))
     }
     const forget = () => {
@@ -354,6 +524,25 @@ export function Scene({ catalogs, shown, locale }: Props) {
       forget()
       hover(next)
       focus(next)
+    }
+    /**
+     * Which card has room beside this product, clear of the page's widgets, sized as the last ones
+     * were: the whole card, else the compact one, else none. Without one the product opens no
+     * card, but its sheet still opens on a click.
+     */
+    const fitFor = (next: Hit) => {
+      const r = renderer.rectOf(next)
+      if (!r) return null
+      const { w: vw, h: vh } = renderer.viewport
+      const size = cardSize.current
+      const cw = size.w || (vw >= 768 ? POPUP_SIZE.w : POPUP_SIZE.wCompact)
+      const head = headed(next)
+      const boxes = widgets()
+      if (placePopup(r, vw, vh, cw, size.whole[head] || POPUP_SIZE.h, boxes)) return 'whole'
+      if (placePopup(r, vw, vh, cw, size.compact[head] || POPUP_SIZE.hCompact, boxes)) {
+        return 'compact'
+      }
+      return null
     }
     /** The pointer's speed: one that has stopped moving is at rest. */
     const speed = () => (performance.now() - pointer.t > 80 ? 0 : pointer.speed)
@@ -371,7 +560,8 @@ export function Scene({ catalogs, shown, locale }: Props) {
         // Still on its way: looked at again shortly.
         if (speed() > REST_SPEED) return arm(60)
         pending = null
-        focus(next)
+        const fit = fitFor(next)
+        if (fit) focus(next, fit === 'compact')
       }, ms)
     }
     /** Waits for the pointer to rest on this product before its card opens. */
@@ -438,10 +628,12 @@ export function Scene({ catalogs, shown, locale }: Props) {
       }
       const card = cardState.current
       if (!card || card.leaving) return waitFor(next)
-      // A card is open: a slow pointer takes it along to the next product, a quick one lets it go.
+      // A card is open: a slow pointer takes it along to the next product (if it has room
+      // there), a quick one lets it go.
       if (pointer.speed <= PASS_SPEED || sameHit(card.hit, next)) {
         forget()
-        focus(next)
+        const fit = fitFor(next)
+        focus(fit ? next : null, fit === 'compact')
         return
       }
       focus(null)
@@ -578,6 +770,7 @@ export function Scene({ catalogs, shown, locale }: Props) {
             <div key={card.opening} data-popup-frame data-state={state}>
               <PopupCard
                 swap={card.swap}
+                compact={compact}
                 key={hitKey(card.hit)}
                 item={item}
                 detail={scene.detailOf(card.hit.category, card.hit.slug)}

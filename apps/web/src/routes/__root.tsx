@@ -2,6 +2,7 @@
 import { isLocale } from '@choose/catalog'
 import { createRootRoute, HeadContent, Outlet, Scripts, useParams } from '@tanstack/react-router'
 import type { ReactNode } from 'react'
+import { SITE } from '~/site'
 import appCss from '~/styles.css?url'
 
 // React hydrates the whole document, <head> included. On *.netlify.app, Netlify's edge writes a
@@ -19,7 +20,7 @@ export const Route = createRootRoute({
       { charSet: 'utf-8' },
       { name: 'viewport', content: 'width=device-width, initial-scale=1, viewport-fit=cover' },
       { name: 'theme-color', content: '#F3F1EC' },
-      { title: 'choose-a-device' },
+      { title: SITE.name },
     ],
     links: [
       { rel: 'stylesheet', href: appCss },

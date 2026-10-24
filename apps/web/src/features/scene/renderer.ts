@@ -438,6 +438,11 @@ export class SceneRenderer {
    * after an answer, the results covering the canvas): its popup goes with it.
    */
   onFocusLost: (() => void) | null = null
+  /**
+   * The page's widgets on screen (the console, the podium, the journey, the counter): a product
+   * mostly under them is out of sight, as one at the screen's edges is.
+   */
+  keepClear: (() => readonly Rect[]) | null = null
 
   constructor(
     private readonly canvas: HTMLCanvasElement,
@@ -1631,11 +1636,12 @@ export class SceneRenderer {
         best = { category: band.category, slug: item.slug, spot: false, slot: index, kx, ky }
       }
     }
-    // One barely showing (in a corner, under the paper fading below the header) opens no card.
+    // One barely showing (in a corner, under the paper fading below the header, behind the
+    // console) opens no card.
     return best && this.inSight(band, best) ? best : null
   }
 
-  /** Whether most of a copy on the field is in sight, clear of the screen’s edges. */
+  /** Whether most of a copy on the field is in sight, clear of the screen’s edges and widgets. */
   private inSight(band: Band, hit: Hit) {
     const slot = band.world.slots[hit.slot]
     if (!slot) return false
@@ -1644,12 +1650,18 @@ export class SceneRenderer {
     const w = iw * pose.scale
     const h = ih * pose.scale
     const top = isCompact(this.vp) ? PICK.topCompact : PICK.top
-    const shown =
-      Math.max(
-        0,
-        Math.min(pose.x + w / 2, this.vp.w - PICK.side) - Math.max(pose.x - w / 2, PICK.side),
-      ) *
-      Math.max(0, Math.min(pose.y + h / 2, this.vp.h - PICK.bottom) - Math.max(pose.y - h / 2, top))
+    const x0 = Math.max(pose.x - w / 2, PICK.side)
+    const x1 = Math.min(pose.x + w / 2, this.vp.w - PICK.side)
+    const y0 = Math.max(pose.y - h / 2, top)
+    const y1 = Math.min(pose.y + h / 2, this.vp.h - PICK.bottom)
+    if (x1 <= x0 || y1 <= y0) return false
+    let shown = (x1 - x0) * (y1 - y0)
+    // What the widgets cover of it does not show either.
+    for (const r of this.keepClear?.() ?? []) {
+      shown -=
+        Math.max(0, Math.min(x1, r.x + r.w) - Math.max(x0, r.x)) *
+        Math.max(0, Math.min(y1, r.y + r.h) - Math.max(y0, r.y))
+    }
     return shown >= PICK.share * w * h
   }
 
@@ -1682,12 +1694,16 @@ export class SceneRenderer {
 
   /** Screen box of the focused product, for the popup. */
   focusRect() {
-    const focus = this.focus
-    const band = focus && this.activeBand()
-    if (!focus || !band || band.category !== focus.hit.category) return null
+    return this.focus ? this.rectOf(this.focus.hit) : null
+  }
+
+  /** Screen box of a product on the open canvas; null once it has left the place it was hit at. */
+  rectOf(hit: Hit): Rect | null {
+    const band = this.activeBand()
+    if (!band || band.category !== hit.category) return null
     const world = band.world
-    if (focus.hit.spot) {
-      const s = world.spot.find((x) => x.item.slug === focus.hit.slug && !x.leaving && !x.wait)
+    if (hit.spot) {
+      const s = world.spot.find((x) => x.item.slug === hit.slug && !x.leaving && !x.wait)
       if (!s) return null
       const pose = this.spotPose(band, s, performance.now())
       const { w: iw, h: ih } = this.sizeOf(s.item)
@@ -1695,10 +1711,10 @@ export class SceneRenderer {
       const h = ih * pose.scale
       return { x: pose.x - w / 2, y: pose.y - h / 2, w, h }
     }
-    const slot = world.slots[focus.hit.slot]
+    const slot = world.slots[hit.slot]
     // A product that just left the field (for the short list, or ruled out) has no popup here.
-    if (!slot || slot.item.slug !== focus.hit.slug || slot.item.field.to < 1) return null
-    const pose = this.copyPose(band, focus.hit)
+    if (!slot || slot.item.slug !== hit.slug || slot.item.field.to < 1) return null
+    const pose = this.copyPose(band, hit)
     const { w: iw, h: ih } = this.sizeOf(slot.item)
     const w = iw * pose.scale
     const h = ih * pose.scale

@@ -7,10 +7,8 @@ import { Rolling, rollSlot } from '../motion/Rolling'
 // categories it stays on screen: its digits roll on from the last category's count to the new
 // one, while the words under them give way to the new category's.
 
-const digits = (n: number) => {
-  const s = String(Math.max(0, Math.round(n))).padStart(4, '0')
-  return `${s.slice(0, 1)} ${s.slice(1)}`
-}
+/** The zeros that keep the count as wide as the total (045 of 523): they only hold the place. */
+const placeZeros = css({ color: 'ink.faint' })
 
 /** What the last category's counter showed as its page went. */
 const slots = { value: rollSlot(), total: rollSlot() }
@@ -50,7 +48,8 @@ export function LiveCounter({
       <div className={css({ display: 'flex', alignItems: 'baseline', gap: '3' })}>
         <Rolling
           value={value}
-          format={digits}
+          pad={String(total).length}
+          padClassName={placeZeros}
           slot={slots.value}
           carryOver={carryOver}
           aria-live="polite"

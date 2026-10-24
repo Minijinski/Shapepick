@@ -33,6 +33,7 @@ import {
   useViewport,
 } from "~/features/scene/navigation";
 import { messages as m } from "~/i18n/messages";
+import { HOME_FALLBACK, homePaths, pageHead, websiteSchema } from "~/seo";
 
 // The home page: the scene draws one tilted panel per category behind a single line of copy.
 // Each panel is a link laid over its drawing with the same shape, so hover, focus, a click and a
@@ -43,17 +44,15 @@ import { messages as m } from "~/i18n/messages";
 export const Route = createFileRoute("/$lang/")({
   head: ({ params }) => {
     const lang = params.lang as Locale;
-    return {
-      meta: [
-        { title: `choose-a-device · ${m.homeKicker[lang]}` },
-        { name: "description", content: m.homeLead[lang] },
-      ],
-      links: [
-        { rel: "canonical", href: `/${lang}` },
-        { rel: "alternate", hrefLang: "fr", href: "/fr" },
-        { rel: "alternate", hrefLang: "en", href: "/en" },
-      ],
-    };
+    return pageHead({
+      locale: lang,
+      paths: homePaths,
+      fallback: HOME_FALLBACK,
+      title: m.homeHeadline[lang],
+      brandFirst: true,
+      description: m.homeLead[lang],
+      schema: [websiteSchema(lang)],
+    });
   },
   component: Home,
 });
