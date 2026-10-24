@@ -736,6 +736,53 @@ Les modèles écartés n'ont pas de dimensions officielles (Corsair M65, KATAR, 
 
 Le catalogue s'est fait dans une session à part, sur sa branche `claude/stoic-yalow-e442fa`, fusionnée ensuite dans `main`. Seed de production en 10 min, à partir des données commitées (`SEED_DATA_DIR`) : 40 marques, 244 switchs, 545 claviers, 264 écrans, 174 souris. Sitemap : 2 070 → 2 164 URL.
 
+## Retours du 24 octobre (nuit) : bande du haut, givre, moteur et audit
+
+Cinq retours, traités le 24 octobre au soir : la jonction et l'entrée de la bande du haut, le givre du Parcours trop lourd avec la liste des marques dessous, « Continuer » qui pose encore une question quand il ne reste qu'un résultat, et un audit du moteur souris et écrans. Le passage catalogue ↔ canvas sans rechargement est reporté (choix de l'utilisateur). Commits `82a4962`, `429c0d2`, `114b043` et `49a8926` sur `main`, pas encore poussés. Plan : `~/.claude/plans/j-aimerai-que-tu-explores-mighty-quokka.md`.
+
+| Sujet | Changement | Fichiers |
+| --- | --- | --- |
+| Bande du haut | Une seule courbe lisse (smootherstep, 17 arrêts, 0,96 en haut), plus haute : `clamp(10rem, 24dvh, 16rem)`. Les rangées de points sortent sur cinq rangées au lieu de deux. Entrée en fondu seul dès le montage, sur ce qui reste de l'ouverture (`useArrivalSpan`) : plus de bord qui monte. Elle part avec la page vers l'accueil et reste en place d'une catégorie à l'autre. | `Finder.tsx`, `navigation.ts`, `geometry.ts` (`topVeil`), `renderer.ts` (`PICK.veil` 0,5) |
+| Givre du Parcours | Variante « B · Givre léger », choisie sur une maquette animée : 3 couches (1, 2,5 et 5 px) au lieu de 6 (jusqu'à 16 px), voile papier 0,66 au lieu de 0,92, partie pleine 62 %, plus étroit. Un halo papier léger entoure les mots de la colonne : à 0,55, un libellé gris sur une souris sombre tombait à 2,4:1 de contraste. | `FrostedEdge.tsx`, `JourneyRail.tsx` |
+| Liste des marques | Le halo du compteur isole son bloc : le z-index 30 de la liste n'y comptait plus et le givre la floutait. Le bloc compteur passe en z-index 2 dès md. | `Finder.tsx` |
+| Moteur | Une question qui ne peut rien changer saute : avec un seul produit (ou aucun), même une question qui ne fait que classer ; la prise quand son critère ne pèse pas (Nomade) ou note pareil tout ce qui reste (verticales, trackballs), via le champ `feeds` des étapes. Égalité pour le tour des marques : même % affiché et même % de fit. Ex æquo exacts départagés par une empreinte de l'id, plus par le nom. Champ `exempt` : la taille et le poids laissent passer les trackballs quand la forme répondue en garde. | `engine.ts`, `types.ts`, `mice.ts`, 112 tests |
+| Catalogue | Ses liens vers le finder et vers les fiches reprennent le parcours mémorisé (ajouté après hydratation, HTML servi inchangé). Un finder ouvert sans réponse n'écrase plus ce parcours. | `CataloguePage.tsx`, `CatalogueIndex.tsx`, `CollectionView.tsx`, `finder/journey.ts`, `search.ts`, `Finder.tsx` |
+
+### Audit du moteur (souris, écrans)
+
+Aucun produit n'est inatteignable : chacun a au moins une suite de réponses réalistes qui le garde. Audit délégué à un agent, sur le vrai moteur et les vraies données (174 souris, 264 écrans, 545 claviers) ; scripts relançables dans le scratchpad de la session (`audit/run.sh before|after`).
+
+| Meilleur rang atteignable | Souris (174) | Écrans (264) |
+| --- | --- | --- |
+| n°1 | 143 | 200 |
+| 2e ou 3e | 26 | 56 |
+| 4e à 12e | 5 : variantes dominées (ZOWIE FK2-DW, S2-DW, U2 ; Pulsar X3 CrazyLight Medium, X2H v3 ES Medium) | 8 : écrans de bureau d'entrée de gamme dans des usages de jeu |
+| n°1 avec le filtre sur sa marque | 161 | 238 |
+
+Efficience : une réponse coûte au plus 1,3 ms (souris), 2,5 ms (écrans) et 6,3 ms (claviers, question d'usage : un classement par tuile pour ses photos), au 95e centile sur 200 états en Node. Rien à optimiser.
+
+Bugs corrigés, avant → après : la prise posée avec une souris ou moins, 15 cas → 0 ; en Nomade, 434 visites simulées sur 2 000 → 0 (la prise est posée 1 487 fois au lieu de 1 934) ; le tour des marques qui inversait des fits différents d'au moins 1 point, 15 listes sur 188 → 0, diversité des marques du top 5 inchangée (3,22 contre 3,23) ; les 2 trackballs qu'une réponse de taille écartait restent quand la forme les garde.
+
+Propositions, à valider :
+
+| Proposition | Type | Constat |
+| --- | --- | --- |
+| Donner un usage aux collections SEO | Recalibrage | 17 collections souris sur 19 et 34 d'écrans sur 38 sont classées au profil par défaut, orienté jeu : « écrans USB-C », « KVM » et « pivot » n'ont aucun modèle sur 5 en commun avec le profil Bureau |
+| Montrer les plus proches sur une page de résultats vide | Interface | 139 états souris et 79 d'écrans tombent à 0 par le budget ; tous ont des produits proches, que le podium montre déjà |
+| Prise : peser plus, ou caler le modèle (lot G) | Recalibrage | Même n°1 quelle que soit la prise dans 19 personas sur 24 ; top 3 inchangé dans 35 % des visites |
+| Multi-appareils des souris | Données | 133 souris sans fil sur 140 ont la valeur par défaut ; Easy-Switch renseigné, la MX Master 3S passe de 90 à 98 % |
+| Écrans Création | Recalibrage, données | `color` vaut 1 pour 90 écrans sur 164 : des QD-OLED de jeu passent devant les BenQ SW (n°17) ; sans contraste et avec une couleur moins plafonnée, la SW272U remonte n°8 |
+| Pied des écrans | Données | 59 écrans sans information de pied comptent 0,1 en ergonomie |
+| Boutons en Jeu polyvalent | Recalibrage | 110 souris sur 174 sous 0,35 (6 boutons = 0,33), donc « Peu de boutons » |
+| Fiches des souris | Données | 22 souris de bureau sans fréquence (capteur à 0,5 par défaut), 4 sans fil sans `power`, année connue pour 6 sur 174 |
+| ZOWIE XL2586X+ | Données | Temps de réponse inconnu : n°6 en FPS 24 pouces derrière des 500 Hz |
+| Modèles proches | Code | `similar.ts` départage encore par ordre alphabétique |
+| Claviers de bureau (hors périmètre) | Recalibrage | 7 Epomaker dans le top 10 ; MX Keys S n°84 (construction 0,15) |
+
+Catalogue sans rechargement, cartographié mais reporté : passer les routes catalogue sous le layout `/$lang` (adresses inchangées), une scène en mode « document » (canvas en pause sous une feuille), un header qui suit la vue, le préchargeur exempté ; ces pages porteraient alors les 3 catalogues (≈ 1,2 Mo de HTML) jusqu'au lot « poids des pages ».
+
+Vérifié en Chrome headless (CDP) sur un serveur local : jonction header / canvas avant et après à 1440×900 ; opacité de la bande image par image (accueil → souris : 0 → 1 sans translation ; souris → accueil : 1 → 0 en 0,3 s ; souris → claviers : reste à 1) ; liste des marques nette au-dessus du givre à 1440×900 et 1280×720 ; libellés lisibles sur des formes sombres glissées dessous ; Logitech + main gauche + « Ergonomique » → Continuer → résultats ; liens du catalogue avec le parcours, HTML servi sans ; aucune erreur console ; 390×844 inchangé hors l'entrée.
+
 ## SEO et i18n
 
 Le site est prêt à se classer depuis le 24 octobre : 2 164 pages indexables (accueils, catégories, catalogues A–Z, 92 collections par langue et une fiche par produit, en français et en anglais) sur shapepick.com, avec `robots.txt`, `sitemap.xml`, données structurées et cartes de partage (socle `0b69127`, fiches `1e4d0bf`, voir « SEO : fiches produit, nom et domaine »). L'audit du 23 octobre, ci-dessous, décrit l'état d'avant ; celui du 24 octobre est dans « Audit et lot 1 (24 octobre) ».
