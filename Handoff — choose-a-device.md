@@ -738,7 +738,7 @@ Le catalogue s'est fait dans une session à part, sur sa branche `claude/stoic-y
 
 ## Retours du 24 octobre (nuit) : bande du haut, givre, moteur et audit
 
-Cinq retours, traités le 24 octobre au soir : la jonction et l'entrée de la bande du haut, le givre du Parcours trop lourd avec la liste des marques dessous, « Continuer » qui pose encore une question quand il ne reste qu'un résultat, et un audit du moteur souris et écrans. Le passage catalogue ↔ canvas sans rechargement est reporté (choix de l'utilisateur). Commits `82a4962`, `429c0d2`, `114b043` et `49a8926` sur `main`, pas encore poussés. Plan : `~/.claude/plans/j-aimerai-que-tu-explores-mighty-quokka.md`.
+Cinq retours, traités le 24 octobre au soir : la jonction et l'entrée de la bande du haut, le givre du Parcours trop lourd avec la liste des marques dessous, « Continuer » qui pose encore une question quand il ne reste qu'un résultat, et un audit du moteur souris et écrans. Le passage catalogue ↔ canvas sans rechargement est reporté (choix de l'utilisateur). Commits `82a4962`, `429c0d2`, `114b043` et `49a8926` sur `main` : les deux premiers sont partis avec le push d'une autre session (`73cf716`), les autres ont été poussés le 24 octobre à 20:08 UTC (`73cf716..24d7ce6`), en ligne 50 s plus tard. Plan : `~/.claude/plans/j-aimerai-que-tu-explores-mighty-quokka.md`.
 
 | Sujet | Changement | Fichiers |
 | --- | --- | --- |
@@ -781,7 +781,7 @@ Propositions, à valider :
 
 Catalogue sans rechargement, cartographié mais reporté : passer les routes catalogue sous le layout `/$lang` (adresses inchangées), une scène en mode « document » (canvas en pause sous une feuille), un header qui suit la vue, le préchargeur exempté ; ces pages porteraient alors les 3 catalogues (≈ 1,2 Mo de HTML) jusqu'au lot « poids des pages ».
 
-Vérifié en Chrome headless (CDP) sur un serveur local : jonction header / canvas avant et après à 1440×900 ; opacité de la bande image par image (accueil → souris : 0 → 1 sans translation ; souris → accueil : 1 → 0 en 0,3 s ; souris → claviers : reste à 1) ; liste des marques nette au-dessus du givre à 1440×900 et 1280×720 ; libellés lisibles sur des formes sombres glissées dessous ; Logitech + main gauche + « Ergonomique » → Continuer → résultats ; liens du catalogue avec le parcours, HTML servi sans ; aucune erreur console ; 390×844 inchangé hors l'entrée.
+Vérifié en Chrome headless (CDP) sur un serveur local : jonction header / canvas avant et après à 1440×900 ; opacité de la bande image par image (accueil → souris : 0 → 1 sans translation ; souris → accueil : 1 → 0 en 0,3 s ; souris → claviers : reste à 1) ; liste des marques nette au-dessus du givre à 1440×900 et 1280×720 ; libellés lisibles sur des formes sombres glissées dessous ; Logitech + main gauche + « Ergonomique » → Continuer → résultats ; liens du catalogue avec le parcours, HTML servi sans ; aucune erreur console ; 390×844 inchangé hors l'entrée. Rejoué sur shapepick.com après le push : mêmes résultats, collection « petites mains » sans trackball, aucune erreur console.
 
 ## SEO et i18n
 
