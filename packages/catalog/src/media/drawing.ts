@@ -191,10 +191,25 @@ const FLAT_FILL = { rest: 0.93, short: 0.9 }
 /** Below this detail, a board shows no keys: its underside, a plain case, a box. */
 const MIN_DETAIL = 0.035
 /**
+ * A split board's halves stand apart, joined by their cable: they leave the middle of their box
+ * empty and fill less of it than a one-piece board. Seen from above, the pair stays close to
+ * mirror-symmetric; seen at an angle, it does not. It stays about as wide as its drawing, give or
+ * take the gap between its halves (a round icon is symmetric too).
+ */
+const SPLIT_VIEW = { minFill: 0.65, minSymmetry: 0.85, minRatio: 0.7, maxRatio: 1.5 }
+/**
  * A monitor seen from the front is symmetric left to right (its stand centred); seen at an angle,
  * its mirror image covers it much less. Proportions alone let a three-quarter view through.
  */
 const MIN_SYMMETRY = 0.88
+/**
+ * A monitor wider than its drawing (side shields, BenQ ZOWIE) or much taller (a stand on wheels,
+ * LG Smart Monitor Swing) is still seen from the front when it is almost perfectly symmetric. The
+ * wide one leaves room around its stand (a plain rectangle is a banner); the tall one is thin below
+ * its screen (a monitor turned to portrait fills its box).
+ */
+const MONITOR_WIDE = { maxRatio: 1.3, minSymmetry: 0.97, maxFill: 0.85 }
+const MONITOR_TALL = { minRatio: 0.4, minSymmetry: 0.95, maxFill: 0.6 }
 /**
  * A mouse seen from above, lying upright, is close to an ellipse (π/4 of its box); a shot at an
  * angle leaves more of its box empty, a side view has other proportions. Only a symmetrical shell
@@ -222,17 +237,39 @@ export function squareOn(
   const ratio = cut.width / cut.height / (box.w / box.h)
   switch (item.category) {
     case 'keyboard': {
-      if (cut.fill < MIN_FILL || (cut.detail ?? 1) < MIN_DETAIL) return false
+      if ((cut.detail ?? 1) < MIN_DETAIL) return false
       // Three shapes and more: several boards, or a board among its parts.
       if ((cut.parts ?? 1) > 2) return false
-      if (item.specs.formFactor === 'split' || item.specs.formFactor === 'alice') return true
+      if (item.specs.formFactor === 'split' || item.specs.formFactor === 'alice') {
+        if (cut.fill >= MIN_FILL) return true
+        return (
+          cut.fill >= SPLIT_VIEW.minFill &&
+          (cut.symmetry ?? 1) >= SPLIT_VIEW.minSymmetry &&
+          ratio >= SPLIT_VIEW.minRatio &&
+          ratio <= SPLIT_VIEW.maxRatio
+        )
+      }
+      if (cut.fill < MIN_FILL) return false
       const min = cut.fill >= FLAT_FILL.rest ? PROPORTIONS.minFlat : PROPORTIONS.min
       const max = cut.fill >= FLAT_FILL.short ? PROPORTIONS.maxFlat : PROPORTIONS.max
       return ratio >= min && ratio <= max
     }
-    case 'monitor':
-      if ((cut.symmetry ?? 1) < MIN_SYMMETRY || (cut.parts ?? 1) > 2) return false
-      return ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max
+    case 'monitor': {
+      const symmetry = cut.symmetry ?? 1
+      if (symmetry < MIN_SYMMETRY || (cut.parts ?? 1) > 2) return false
+      if (ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max) return true
+      if (ratio > PROPORTIONS.max)
+        return (
+          ratio <= MONITOR_WIDE.maxRatio &&
+          symmetry >= MONITOR_WIDE.minSymmetry &&
+          cut.fill <= MONITOR_WIDE.maxFill
+        )
+      return (
+        ratio >= MONITOR_TALL.minRatio &&
+        symmetry >= MONITOR_TALL.minSymmetry &&
+        cut.fill <= MONITOR_TALL.maxFill
+      )
+    }
     case 'mouse':
       // One shape: a dongle, a cable or a second mouse alongside is no plain top view.
       if ((cut.parts ?? 1) > 1 || cut.fill < MOUSE_VIEW.minFill) return false

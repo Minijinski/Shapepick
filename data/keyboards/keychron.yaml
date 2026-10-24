@@ -358,7 +358,8 @@
   sources:
     - https://www.keychron.com/products/keychron-q11-qmk-custom-mechanical-keyboard
     - https://www.keychron.com/products/keychron-q11-qmk-custom-mechanical-keyboard-iso-layout-collection
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: tray, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: qmk, macSupport: true, weightG: 1186, widthMm: 345, depthMm: 134, heightFrontMm: 9.8, typingAngleDeg: 2.8 }
+  # formFactor : split, « 75% split custom mechanical keyboard » et « Split Design » (keychron.com) : deux moitiés séparées
+  specs: { formFactor: split, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: tray, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: qmk, macSupport: true, weightG: 1186, widthMm: 345, depthMm: 134, heightFrontMm: 9.8, typingAngleDeg: 2.8 }
   variants:
     - { sku: Q11-M1A, colorName: Carbon Black - A, colorFamily: black, layout: ansi_us, switch: keychron-super-red }
     - { sku: Q11-M3A, colorName: Carbon Black - A, colorFamily: black, layout: ansi_us, switch: keychron-super-brown }
