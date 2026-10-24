@@ -6,6 +6,7 @@ import * as pulsar from './pulsar'
 import * as razer from './razer'
 import * as steelseries from './steelseries'
 import * as stores from './stores'
+import * as zowie from './zowie'
 
 // The mouse sources, by the name `pnpm ingest <name>` takes. A name never clashes with a keyboard
 // or monitor source of the same site: `razer` imports keyboards, `razer-mice` mice.
@@ -16,5 +17,6 @@ export const mouseSources: Record<string, MouseSource> = {
   'rog-mice': asus.source,
   'msi-mice': msi.source,
   'pulsar-mice': pulsar.source,
+  zowie: zowie.source,
   ...stores.sources,
 }
