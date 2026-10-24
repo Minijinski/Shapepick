@@ -22,6 +22,8 @@ const ALLOWED = [
   /^https:\/\/dlcdnwebimgs\.asus\.com\//,
   /^https:\/\/images\.philips\.com\//,
   /^https:\/\/image\.benq\.com\//,
+  // Akko's own shop.
+  /^https:\/\/en\.akkogear\.com\/wp-content\/uploads\//,
   // Retailers' copies of a brand's photo, for products their brand shows only at an angle or in a
   // scene: Mercular and MakeWebEasy (Thailand), Euro RTV AGD (Poland).
   /^https:\/\/mercular\.s3\.ap-southeast-1\.amazonaws\.com\//,

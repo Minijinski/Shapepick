@@ -39,6 +39,8 @@
     'https://dlcdnwebimgs\.asus\.com/.*',
     'https://images\.philips\.com/.*',
     'https://image\.benq\.com/.*',
+    # Keyboards: Akko's own shop.
+    'https://en\.akkogear\.com/wp-content/uploads/.*',
     # Retailers' copies of a brand's photo, where the brand shows the product only at an angle or
     # in a scene.
     'https://mercular\.s3\.ap-southeast-1\.amazonaws\.com/.*',
