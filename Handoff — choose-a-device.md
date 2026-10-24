@@ -759,25 +759,28 @@ Aucun produit n'est inatteignable : chacun a au moins une suite de réponses ré
 | 4e à 12e | 5 : variantes dominées (ZOWIE FK2-DW, S2-DW, U2 ; Pulsar X3 CrazyLight Medium, X2H v3 ES Medium) | 8 : écrans de bureau d'entrée de gamme dans des usages de jeu |
 | n°1 avec le filtre sur sa marque | 161 | 238 |
 
-Efficience : une réponse coûte au plus 1,3 ms (souris), 2,5 ms (écrans) et 6,3 ms (claviers, question d'usage : un classement par tuile pour ses photos), au 95e centile sur 200 états en Node. Rien à optimiser.
+Efficience : une réponse coûte au plus 1,3 ms (souris), 2,5 ms (écrans) et 6,4 ms (claviers) au 95e centile sur 200 états en Node. Le pire, 7,1 ms, est la question d'usage des claviers : un classement complet par tuile pour ses photos. Rien au-delà de 8 ms ; sur un téléphone moyen, cette étape monterait vers 20 à 35 ms.
 
-Bugs corrigés, avant → après : la prise posée avec une souris ou moins, 15 cas → 0 ; en Nomade, 434 visites simulées sur 2 000 → 0 (la prise est posée 1 487 fois au lieu de 1 934) ; le tour des marques qui inversait des fits différents d'au moins 1 point, 15 listes sur 188 → 0, diversité des marques du top 5 inchangée (3,22 contre 3,23) ; les 2 trackballs qu'une réponse de taille écartait restent quand la forme les garde.
+Bugs corrigés, avant → après : la prise posée avec une souris ou moins, 15 cas → 0 ; en Nomade, 434 visites simulées sur 2 000 → 0 (la prise est posée 1 487 fois au lieu de 1 934) ; le tour des marques qui inversait des fits différents d'au moins 1 point, 15 listes sur 188 → 0, diversité des marques du top 5 inchangée (3,22 contre 3,23) ; 10 égalités exactes multi-marques dans un top 5, dont 8 rangées par ordre alphabétique (un n°1), départagées désormais sans le nom ; les 2 trackballs qu'une réponse de taille écartait restent quand la forme les garde. Les tops bougent à peine : même n°1 pour les 108 personas souris et 70 sur 72 côté écrans ; n°1 possibles 143 → 142 souris et 200 → 197 écrans, des AOC perdant leur avantage alphabétique sur des ex æquo exacts.
 
 Propositions, à valider :
 
 | Proposition | Type | Constat |
 | --- | --- | --- |
-| Donner un usage aux collections SEO | Recalibrage | 17 collections souris sur 19 et 34 d'écrans sur 38 sont classées au profil par défaut, orienté jeu : « écrans USB-C », « KVM » et « pivot » n'ont aucun modèle sur 5 en commun avec le profil Bureau |
+| Remplir le prior (note éditoriale, popularité) | Données | 0,5 pour les 983 produits : il ne joue jamais. Tops serrés (médiane de 3 à 6 produits à 3 points du n°1). C'est ce qui départagerait la Superlight 2 (n°14) ou la Viper V3 Pro (n°8) des Corsair Sabre, 4 sur 5 en compétitif taille moyenne |
+| Donner un usage aux collections SEO | Recalibrage | 84 collections sur 92 classées au profil par défaut : USB-C, KVM, pivot, HDR et OLED n'ont aucun modèle sur 5 en commun avec leur usage naturel ; claviers : Keychron et Lemokey prennent 7 places sur 10 en médiane |
+| Claviers de bureau sans `build` | Recalibrage | 7 Epomaker dans le top 10, MX Keys S n°84 ; sans ce critère, MX Keys S n°15 et Wave Keys n°4 |
+| Multi-appareils des souris | Données | `hosts` absent pour 133 souris sans fil sur 140 ; renseigné, la MX Master 3S passe de 90 à 98 % |
 | Montrer les plus proches sur une page de résultats vide | Interface | 139 états souris et 79 d'écrans tombent à 0 par le budget ; tous ont des produits proches, que le podium montre déjà |
+| Écrans Création | Recalibrage, données | `color` vaut 1 pour 90 écrans sur 164 : des OLED de jeu passent devant les BenQ SW (n°17) ; sans contraste et avec une couleur moins plafonnée, la SW272U remonte n°8. Il manque l'Adobe RGB |
+| Boutons en Jeu polyvalent | Recalibrage | Sous 0,35 pour 110 souris sur 174 mais jamais cité : une pénalité cachée de 13 à 26 % du fit face à une souris MMO |
+| Clavier nomade | Recalibrage, données | Autonomie lue en mAh : la MX Keys Mini est n°203 ; un score « basse consommation » la met n°13 |
+| Fiches des écrans | Données | 15 temps de réponse absents hors OLED (BenQ XL2586X+ n°6 en FPS 24 pouces), 100 couvertures P3, 54 versions HDMI, 58 pieds notés 0,1 ou moins |
 | Prise : peser plus, ou caler le modèle (lot G) | Recalibrage | Même n°1 quelle que soit la prise dans 19 personas sur 24 ; top 3 inchangé dans 35 % des visites |
-| Multi-appareils des souris | Données | 133 souris sans fil sur 140 ont la valeur par défaut ; Easy-Switch renseigné, la MX Master 3S passe de 90 à 98 % |
-| Écrans Création | Recalibrage, données | `color` vaut 1 pour 90 écrans sur 164 : des QD-OLED de jeu passent devant les BenQ SW (n°17) ; sans contraste et avec une couleur moins plafonnée, la SW272U remonte n°8 |
-| Pied des écrans | Données | 59 écrans sans information de pied comptent 0,1 en ergonomie |
-| Boutons en Jeu polyvalent | Recalibrage | 110 souris sur 174 sous 0,35 (6 boutons = 0,33), donc « Peu de boutons » |
-| Fiches des souris | Données | 22 souris de bureau sans fréquence (capteur à 0,5 par défaut), 4 sans fil sans `power`, année connue pour 6 sur 174 |
-| ZOWIE XL2586X+ | Données | Temps de réponse inconnu : n°6 en FPS 24 pouces derrière des 500 Hz |
+| Bandes de taille des souris | Recalibrage, données | Bande « grande » large de 4 mm ; G502 X, Basilisk V3 Pro et MX Master 4 en « très grande », M650 L en « petite » |
+| Fiches des souris | Données | 22 souris de bureau sans fréquence (capteur à 0,5), 4 sans fil sans `power`, 6 Corsair sans `buttons`, année connue pour 6 sur 174 |
+| Exemples des tuiles d'usage | Efficience | 4 ms au 95e centile chez les claviers : à mettre en cache |
 | Modèles proches | Code | `similar.ts` départage encore par ordre alphabétique |
-| Claviers de bureau (hors périmètre) | Recalibrage | 7 Epomaker dans le top 10 ; MX Keys S n°84 (construction 0,15) |
 
 Catalogue sans rechargement, cartographié mais reporté : passer les routes catalogue sous le layout `/$lang` (adresses inchangées), une scène en mode « document » (canvas en pause sous une feuille), un header qui suit la vue, le préchargeur exempté ; ces pages porteraient alors les 3 catalogues (≈ 1,2 Mo de HTML) jusqu'au lot « poids des pages ».
 
