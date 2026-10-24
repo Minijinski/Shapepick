@@ -24,7 +24,11 @@ export const PUBLISHER: {
   address: string
   phone: string
   registration?: string
-} | null = null
+} | null = {
+  name: 'Eddy Despagne',
+  address: '821 route de Saint-Léon, 24110 Saint-Astier, France',
+  phone: '+262 693 77 36 83',
+}
 
 /** Where to write: questions, corrections, requests about data. */
 export const CONTACT = 'contact@shapepick.com'

@@ -51,7 +51,10 @@ function MentionsLegales() {
               rows={[
                 ['Nom', PUBLISHER.name],
                 ['Adresse', PUBLISHER.address],
-                ['Téléphone', PUBLISHER.phone],
+                [
+                  'Téléphone',
+                  <a href={`tel:${PUBLISHER.phone.replace(/\s/g, '')}`}>{PUBLISHER.phone}</a>,
+                ],
                 ...(PUBLISHER.registration ? ([['SIREN', PUBLISHER.registration]] as const) : []),
                 ['Contact', mail],
               ]}

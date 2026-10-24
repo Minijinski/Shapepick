@@ -51,7 +51,10 @@ function Legal() {
               rows={[
                 ['Name', PUBLISHER.name],
                 ['Address', PUBLISHER.address],
-                ['Phone', PUBLISHER.phone],
+                [
+                  'Phone',
+                  <a href={`tel:${PUBLISHER.phone.replace(/\s/g, '')}`}>{PUBLISHER.phone}</a>,
+                ],
                 ...(PUBLISHER.registration ? ([['SIREN', PUBLISHER.registration]] as const) : []),
                 ['Contact', mail],
               ]}
