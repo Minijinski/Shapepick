@@ -3,19 +3,24 @@ import { SITE } from './site'
 
 // Every request the site answers comes through here (on Netlify, one function serves every path).
 // The site's first address, its Netlify subdomain, keeps working once the site has its own domain:
-// from then on (the build's address, SITE.url, being that domain), a request there is sent to the
-// same page on the domain for good (301), so that links and search results still pointing at it
-// follow. Netlify applies its redirect rules (netlify.toml) only after its functions, which is why
-// this is not one of them. Deploy previews have other subdomains and stay where they are.
+// from then on (the build's address, SITE.url, being that domain), a page asked for there is sent
+// to the same page on the domain for good (301), so that links and search results still pointing
+// at it follow. What pages call rather than show is answered wherever it is asked: the photo relay
+// the image CDN reads its sources from, the catalogue, the server functions of a page still open
+// at the old address. Netlify applies its redirect rules (netlify.toml) only after its functions,
+// which is why this is not one of them. Deploy previews have other subdomains and stay put.
 
 /** The site's first address. */
 const FIRST_HOST = 'choose-a-device.netlify.app'
+/** Paths that are no pages, never moved: `/_serverFn/` is where TanStack Start serves functions. */
+const NOT_PAGES = ['/api/', '/_serverFn/']
 
 export default createServerEntry({
   fetch(request, opts) {
     const url = new URL(request.url)
     const home = new URL(SITE.url)
-    if (url.hostname === FIRST_HOST && home.hostname !== FIRST_HOST) {
+    const page = !NOT_PAGES.some((prefix) => url.pathname.startsWith(prefix))
+    if (url.hostname === FIRST_HOST && home.hostname !== FIRST_HOST && page) {
       return new Response(null, {
         status: 301,
         headers: {
