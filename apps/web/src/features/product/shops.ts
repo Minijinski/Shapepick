@@ -3,10 +3,11 @@ import type { CatalogItem, Locale } from '@choose/catalog'
 // Where a product can be bought. For now one shop, Amazon.fr: the product page when the data gives
 // its ASIN (the AZERTY version when the model has one), otherwise a search for the model. ASINs are
 // read from search-engine results, never from Amazon itself, which is not crawled. The partner tag
-// makes these links affiliate ones; the product sheet then shows the notice Amazon requires.
+// makes these links affiliate ones; the product sheet and the results then show the notice Amazon
+// requires.
 
-/** Amazon Partenaires tracking ID ("monsite-21"): empty until the account is approved. */
-export const AMAZON_PARTNER_TAG = ''
+/** Amazon Partenaires tracking ID: the account's store ID. Empty, the links are plain ones. */
+export const AMAZON_PARTNER_TAG: string = 'niji0a-21'
 
 /**
  * The Amazon.fr link of a product. Its ASIN, unless the visitor asked for another layout than the

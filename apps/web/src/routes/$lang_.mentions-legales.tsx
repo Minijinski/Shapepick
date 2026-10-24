@@ -160,7 +160,8 @@ function MentionsLegales() {
               Les liens « Voir sur Amazon » et « Chercher sur Amazon » mènent à Amazon.fr. shapepick
               participe au programme Partenaires d’Amazon : ce sont des liens affiliés, et Amazon
               lui reverse une commission sur les achats faits après un clic, sans rien changer à ton
-              prix.
+              prix. Les commissions n’entrent pas dans le classement : il ne dépend que de tes
+              réponses et des fiches des produits.
             </p>
             <p>
               <strong>{m.amazonNotice.fr}</strong>

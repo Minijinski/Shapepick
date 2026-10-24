@@ -156,7 +156,8 @@ function Legal() {
             <p>
               The “View on Amazon” and “Search on Amazon” links lead to Amazon.fr. shapepick takes
               part in the Amazon Associates programme: these are affiliate links, and Amazon pays it
-              a commission on purchases made after a click, at no extra cost to you.
+              a commission on purchases made after a click, at no extra cost to you. Commissions
+              play no part in the ranking: it depends only on your answers and the products’ specs.
             </p>
             <p>
               <strong>{m.amazonNotice.en}</strong>

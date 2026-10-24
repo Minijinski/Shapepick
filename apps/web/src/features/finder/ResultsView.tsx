@@ -19,6 +19,7 @@ import { KeySpecs } from "../product/ProductHero";
 import { ProductPicture } from "../product/ProductPicture";
 import { formatPrice, specCells } from "../product/specs";
 import { SpecValue } from "../product/SpecValue";
+import { AMAZON_PARTNER_TAG } from "../product/shops";
 import { useDockHeight } from "./DockPanel";
 import { ProductLink } from "./ProductLink";
 
@@ -1036,6 +1037,19 @@ export function ResultsView({
                 })}
               </ol>
             </div>
+          )}
+
+          {/* The notice Amazon requires wherever its affiliate links are, as in the sheet. */}
+          {AMAZON_PARTNER_TAG && (
+            <p
+              className={css({
+                fontSize: "xs",
+                color: "ink.faint",
+                lineHeight: "1.45",
+              })}
+            >
+              {m.amazonNotice[locale]}
+            </p>
           )}
         </div>
       )}
