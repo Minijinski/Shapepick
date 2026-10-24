@@ -4,13 +4,13 @@ Oct 24, 2026 · @Eddy
 
 ## En bref
 
-choose-a-device est un « finder » de claviers, d'écrans et de souris inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
+shapepick (choose-a-device jusqu'au 24 octobre) est un « finder » de claviers, d'écrans et de souris inspiré de [shapefinder.cc](https://shapefinder.cc/) : une suite de questions qui resserre le catalogue en direct, sans tableau ni filtres. Les phases 0 à 3 du plan sont terminées. Le 20 octobre 2026, le nuage de données a laissé place à une scène en canvas : un accueil en bandes inclinées qui s'ouvrent en canvas infini (voir « Scène : bandes et canvas »).
 
-- **Ce qui marche** : accueil, parcours claviers (9 questions), écrans (8) et souris (11) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur ; repensé pour les téléphones le 24 octobre (voir « Mobile (24 octobre) »).
-- **En ligne** : [choose-a-device.netlify.app](https://choose-a-device.netlify.app) sur Netlify, base Postgres sur Neon (Francfort), depuis le 20 octobre 2026.
+- **Ce qui marche** : accueil, parcours claviers (9 questions), écrans (8) et souris (11) dans l'ordre que le visiteur choisit, filtre par marque, résultats, fiche produit (depuis le canvas, le podium ou les résultats), liens Amazon.fr dans la fiche et les résultats, en français et en anglais, avec rendu côté serveur ; repensé pour les téléphones le 24 octobre (voir « Mobile (24 octobre) ») ; une fiche indexable par produit depuis le même jour (voir « SEO : fiches produit, nom et domaine »).
+- **En ligne** : [shapepick.com](https://shapepick.com) depuis le 24 octobre 2026, sur Netlify, base Postgres sur Neon (Francfort). Le site tournait depuis le 20 octobre sur choose-a-device.netlify.app, qui redirige désormais vers le domaine.
 - **Données** : 523 vrais claviers (29 marques, importés par pnpm ingest depuis 12 sources), 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles ») et 149 vraies souris de 8 marques (voir « Souris : troisième catégorie »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir), 479 claviers montrent une vraie vue de dessus sur le canvas ; la fiche produit montre une photo pour 522 d'entre eux.
-- **Qualité** : 72 tests du moteur et des parcours (19 pour les souris), 26 de l'import (15 du mapper écrans, 11 du mapper souris), typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` sur origin = `19ed09a`, la fusion de feat/mobile (`b2d2cc0` à `44699c9`, voir « Mobile (24 octobre) ») sur `c15905f` ; poussé et déployé le 24 octobre, sans migration ni seed. `main` contient aussi les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`), pas encore décrits ici. Le 23 octobre au soir : la fusion `184fc39` de feat/souris, avec la migration `0004` passée sur Neon avant le push et le seed après (voir « Souris : troisième catégorie ») ; plus tôt le 23 octobre, les vrais écrans (`ad9f146`) avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
+- **Qualité** : 85 tests du moteur et des parcours (19 pour les souris, 13 pour les modèles proches), 26 de l'import (15 du mapper écrans, 11 du mapper souris), typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
+- **État du dépôt** : `main` sur origin = `287a219`, poussé et déployé le 24 octobre, sans migration ni seed : les fiches produit indexables (`1e4d0bf`), le nom shapepick (`709e57e`) et la redirection de l'ancienne adresse limitée aux pages (`287a219`), sur le fondu de la console (`1dfc469`) et le socle SEO (`0b69127` : `robots.txt`, `sitemap.xml`, JSON-LD, cartes de partage, avec le compteur et la popup revus). Avant, le même jour : `19ed09a`, la fusion de feat/mobile (`b2d2cc0` à `44699c9`, voir « Mobile (24 octobre) ») sur `c15905f`, qui porte aussi les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`), pas encore décrits ici. Le 23 octobre au soir : la fusion `184fc39` de feat/souris, avec la migration `0004` passée sur Neon avant le push et le seed après (voir « Souris : troisième catégorie ») ; plus tôt le 23 octobre, les vrais écrans (`ad9f146`) avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -90,6 +90,7 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | --- | --- |
 | `packages/catalog/src/domain/` | Énumérations partagées (Zod et Postgres), schémas Zod du seed, forme « item » lue par le moteur |
 | `packages/catalog/src/finder/engine.ts` | Moteur pur : filtres, compteurs, sauts, impasses, classement |
+| `packages/catalog/src/finder/similar.ts` | Modèles proches d'un produit : ressemblance pondérée sur les questions qui décrivent l'appareil (likeness de chaque questionnaire) et prix proche, 2 par marque au plus |
 | `packages/catalog/src/finder/keyboards.ts`, `monitors.ts` | Les deux questionnaires : étapes, options, critères, profils |
 | `packages/catalog/src/finder/mice.ts`, `mouse-fit.ts` | Le questionnaire souris et son modèle de prise : taille de main, prise, conseil de taille |
 | `packages/ingest/` | Import des catalogues (`pnpm ingest <source>`) : un adaptateur par site (`src/sources/`, `sources/monitors/`, `sources/mice/`), mappers testés (`mapping.ts`, `monitor-specs.ts`, `mouse-specs.ts`), fiches de relecture, photos et prix |
@@ -99,6 +100,7 @@ Les données vont du YAML versionné au navigateur en quatre étapes ; `packages
 | `packages/db/src/schema.ts`, `packages/db/drizzle/` | Tables Drizzle et première migration |
 | `packages/db/src/seed.ts`, `snapshot.ts` | YAML vers Postgres, puis Postgres vers items |
 | `apps/web/src/routes/` | Redirection de langue, accueil, parcours, API JSON |
+| `apps/web/src/site.ts`, `seo.ts`, `server.ts` | Nom et adresse du site (SITE : un seul endroit pour renommer), balises et JSON-LD de chaque page, point d'entrée serveur (301 de l'ancienne adresse vers le domaine) |
 | `apps/web/src/server/` | Server function `getCatalog` et accès à la base, côté serveur seulement |
 | `apps/web/src/features/finder/` | État du parcours (`useFinder`) et ses composants : console, podium, résultats, fiche produit en tiroir |
 | `apps/web/src/features/scene/` | Scène partagée accueil ↔ canvas : géométrie des bandes et du motif (`geometry.ts`), rendu (`renderer.ts`), pont routes ↔ scène (`controller.ts`), navigation chorégraphiée (`navigation.ts`), sprites des silhouettes, popup produit |
@@ -226,7 +228,7 @@ Cette maquette date d'avant le 20 octobre 2026 : le nuage de points au centre a 
 | Console (`Console`) | Hauteur de sa question, animée d'une question à l'autre, bord bas fixe ; titre, aide dans une bulle au-dessus de la console (ⓘ devient ✕), tuiles en rangées égales avec une indication de deux lignes au plus, compteur et coche, impasse « Bloqué par … » + « Changer → », « Peu importe » qui devient « Continuer » au premier choix | Se relève en 3D à l'arrivée depuis l'accueil ; titre lettre par lettre (SplitText), tuiles en cascade, rejoués seulement quand la question change ; sortie jouée avant la navigation |
 | Podium (`Podium`) | Top 5 : trois cartes (silhouette, % de compatibilité, prix), puis les n°4 et 5 en lignes compactes si la hauteur le permet ; « Voir tout » ouvre le classement complet ; un clic ouvre la fiche | Les cartes changent de place (Flip) |
 | Résultats (`ResultsView`) | Du header à la barre d'étapes ; total, marques et réponses sous le titre ; n°1 en carte produit (la photo ouvre la fiche ; prix et compatibilité, puis « Voir sur Amazon » et « Voir la fiche » ; 4 specs), détail du %, points forts et « à savoir », n°2 et n°3 (pastille Amazon), liste des autres (flèche Amazon par ligne) ; chaque produit ouvre sa fiche, « Modifier mes réponses » revient à l'étape quittée | Le panneau de la console s'étire jusqu'aux résultats ; specs et lignes en fondu ; compteur et réponses du haut s'effacent |
-| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Voir sur Amazon » sur la ligne du prix, repris dans une barre collante une fois cette ligne passée (écrans : « Où l'acheter », offres à venir) ; précédent / suivant dans le classement | Glisse depuis la droite (sur téléphone, feuille du bas qu'on ferme en la tirant vers le bas) ; Échap, fond ou croix pour fermer ; la barre d'achat glisse du bas |
+| Fiche produit (`ProductDrawer`) | Rang, ou « Écarté par … » ; prix indicatif et compatibilité alignés (KeyFigures), détail du % ; photo et 4 specs, points forts, « à savoir », fiche technique, « Voir sur Amazon » sur la ligne du prix, repris dans une barre collante une fois cette ligne passée (écrans : « Où l'acheter », offres à venir) ; précédent / suivant dans le classement ; « Modèles proches » (4 cartes) en fin de fiche ; une adresse par fiche (/fr/claviers/<slug>), rendue côté serveur | Glisse depuis la droite (sur téléphone, feuille du bas qu'on ferme en la tirant vers le bas) ; Échap, fond ou croix pour fermer ; la barre d'achat glisse du bas ; le bouton Retour du navigateur la replie aussi |
 | Budget (`BudgetControl`) | Histogramme des prix de ce que les autres réponses laissent, bande de la plage, double curseur portant ses prix (fusionnés quand ils se touchent), échelle de prix ; tout en haut signifie sans plafond | Les barres montent en vague à l'entrée et passent à l'encre au fil du curseur ; les prix défilent ; le curseur saisi grossit, avec un halo |
 | Silhouettes (`glyphs.tsx`) | Claviers dessinés selon format et couleur, écrans à l'échelle selon ratio, diagonale, courbure et dalle | Aucune |
 | Accueil | Accroche « Arrêter de chercher. Commencer à choisir. » sur une bande inclinée par catégorie (sur téléphone, des bandes droites empilées sous le titre, dans une page qui défile) | Bandes qui défilent ; au survol, nom et compteur de la catégorie sur une plaque floutée qui penche avec la bande ; au clic, la bande s'étend en masque par-dessus les autres et zoome jusqu'au canvas |
@@ -602,9 +604,28 @@ Comment ça marche :
 - **Feuilles** : `finder/Sheet.tsx` (portail, fond, Échap, focus, poignée ; tirée de 80 px ou à 0,5 px/ms, elle se ferme : `useSheetDrag`) sert au Parcours et aux Marques ; la fiche produit reprend `useSheetDrag` et `foldAway`.
 - **Liste virtualisée** : hauteur de ligne fixe par taille d'écran (`ROW` : 56 px, 88 px sur téléphone), lue par `matchMedia`.
 
+## SEO : fiches produit, nom et domaine (24 octobre)
+
+Depuis le 24 octobre, chaque produit a sa fiche indexable en français et en anglais, soit 1 880 pages dans le sitemap, et le site s'appelle shapepick, sur [shapepick.com](https://shapepick.com). Commits : `0b69127` (socle SEO), `1e4d0bf` (fiches), `709e57e` (nom), `287a219` (redirection limitée aux pages) ; plan dans `~/.claude/plans/effervescent-seeking-backus.md`. L'utilisateur a pris chaque option recommandée : Retour ferme la fiche, titre « nom + type d'appareil », grille 2 × 2, voisins par ressemblance + prix, nom en minuscules.
+
+| Sujet | Ce qui est en place |
+| --- | --- |
+| Adresses | `/fr/claviers/<slug>` ↔ `/en/keyboards/<slug>` (même slug), de même pour les écrans et les souris. Une seule route, `routes/$lang/$category.{-$product}.tsx` : le paramètre optionnel garde le finder monté. Slug inconnu ou d'une autre catégorie : 404 |
+| Fiche | `ProductDrawer` rendu dans la page (plus de portail), donc dans le HTML servi. h1 = le produit, ligne « Clavier 60 % magnétique » sous son nom, vraie photo dans un `noscript` |
+| Historique | Ouvrir ajoute une entrée marquée (`state.sheet`) ; flèches et modèles proches la remplacent ; Retour et × replient la fiche. Arrivé directement sur une fiche, × remplace par la catégorie. Le lien FR/EN garde la fiche |
+| Liens | Podium, n°1 mobile et résultats sont de vrais liens (`ProductLink`), réponses gardées ; le canvas ouvre la fiche par la même navigation |
+| Modèles proches | 4 cartes en grille 2 × 2 en fin de fiche. `similar()` (`packages/catalog/src/finder/similar.ts`) : ressemblance pondérée (Jaccard) sur les questions qui décrivent l'appareil (`likeness` de chaque questionnaire), moins 0,25 × \|ln(rapport des prix)\|, 2 par marque au plus, jamais une souris pour l'autre main ; 13 tests |
+| Head | Titre « Wooting 60HE V2, clavier 60 % magnétique · shapepick », description avec le prix indicatif, canonical sans réponses, og:image = la photo en JPEG par le CDN d'images. JSON-LD `Product` sans `offers` (prix publics approximatifs), avec `isSimilarTo`, et `BreadcrumbList` |
+| Sitemap | 8 pages + 936 produits × 2 langues = 1 880 URL, avec hreflang et x-default ; lastmod = celui de la catégorie, car le seed redate chaque produit à chaque passage |
+| Nom | `SITE.name` = shapepick (`apps/web/src/site.ts`) ; l'ancien nom reste en `alternateName` du JSON-LD WebSite. Les clés du stockage navigateur `choose-a-device:*` sont gardées (les renommer effacerait les parcours enregistrés) |
+| Domaine | shapepick.com, acheté via Netlify le 24 octobre (DNS chez Netlify), domaine principal ; www redirige vers la racine. L'ancienne adresse renvoie une 301 page pour page vers shapepick.com ; `/api/` et `/_serverFn/` répondent sur place |
+| Search Console | Propriété de domaine shapepick.com, TXT `google-site-verification` publié dans le DNS Netlify (à garder) ; `sitemap.xml` à soumettre |
+
+La 301 vit dans `apps/web/src/server.ts`, le point d'entrée serveur : chez Netlify, la fonction qui sert tout le site passe avant les redirections de `netlify.toml`. Elle ne s'active qu'au build où l'adresse du site (`SITE.url`, la variable `URL` de Netlify) est le nouveau domaine : après le rattachement de shapepick.com, il a fallu relancer un déploiement pour que canonical, sitemap et redirection basculent.
+
 ## SEO et i18n
 
-Le site a les bases techniques du SEO mais n'est pas encore prêt à se classer : 6 pages indexables, aucune page produit, ni `robots.txt`, ni `sitemap.xml`, ni données structurées (audit du 23 octobre 2026, ci-dessous).
+Le site est prêt à se classer depuis le 24 octobre : 1 880 pages indexables (accueils, catégories et une fiche par produit, en français et en anglais) sur shapepick.com, avec `robots.txt`, `sitemap.xml`, données structurées et cartes de partage (socle `0b69127`, fiches `1e4d0bf`, voir « SEO : fiches produit, nom et domaine »). L'audit du 23 octobre, ci-dessous, décrit l'état d'avant.
 
 Chaque page est rendue côté serveur avec son titre, sa description, une URL canonique et les liens `hreflang` FR/EN. Les chemins sont traduits ; les clés des paramètres restent en anglais dans les deux langues.
 
@@ -612,13 +633,16 @@ Chaque page est rendue côté serveur avec son titre, sa description, une URL ca
 | --- | --- |
 | `/` | Redirection 302 vers `/fr` ou `/en` selon `Accept-Language` |
 | `/fr`, `/en` | Accueil |
-| `/fr/claviers`, `/en/keyboards`, `/fr/ecrans`, `/en/monitors` | Parcours ; titre du type « Claviers : trouve le tien en quelques questions · choose-a-device » |
+| `/fr/claviers`, `/en/keyboards`, `/fr/ecrans`, `/en/monitors` | Parcours (de même /fr/souris, /en/mice) ; titre du type « Quel clavier choisir ? 523 modèles comparés en 9 questions · shapepick » |
+| `/fr/claviers/<slug>`, `/en/keyboards/<slug>` (de même écrans et souris) | Fiche produit ouverte par-dessus le parcours ; titre du type « Wooting 60HE V2, clavier 60 % magnétique · shapepick » ; 404 pour un slug inconnu ou d'une autre catégorie |
 | `/api/catalog/keyboard`, `/api/catalog/monitor` | Snapshot JSON avec ETag, cache 60 s puis 600 s en stale-while-revalidate |
+| `/sitemap.xml`, `/robots.txt` | 1 880 URL avec hreflang et x-default, lastmod de la catégorie ; robots.txt autorise tout sauf /api/ et donne l'adresse du sitemap |
 | Toute autre langue ou catégorie | 404 |
+| `choose-a-device.netlify.app/*` | 301 vers la même adresse sur shapepick.com (pages seulement : /api/ et /_serverFn/ répondent sur place) |
 
 - **Paramètres** : chaînes simples, virgules non encodées (`?size=full,f96&layout=azerty`). `at=<étape>` rouvre une étape, `at=done` affiche les résultats ; il s'accompagne de from=<étape>, l'étape d'où ils ont été ouverts, où « Modifier mes réponses » revient.
-- **Canonique** : une URL de parcours avec réponses pointe vers la page de catégorie, pour ne pas indexer chaque combinaison.
-- **Changement de langue** : garde la catégorie et les réponses (`/fr/claviers?…` ↔ `/en/keyboards?…`).
+- **Canonique** : une URL de parcours avec réponses pointe vers la page de catégorie, une fiche avec réponses vers sa propre adresse sans réponses, pour ne pas indexer chaque combinaison.
+- **Changement de langue** : garde la catégorie, la fiche ouverte et les réponses (`/fr/claviers?…` ↔ `/en/keyboards?…`).
 - **Textes** : interface dans `apps/web/src/i18n/messages.ts` ; questions, options et critères dans `packages/catalog`, toujours sous la forme `{ fr, en }`.
 
 ### Audit du 23 octobre
@@ -643,21 +667,21 @@ Mesuré sur le site en ligne (`curl`, Chrome headless en mobile émulé) et sur 
 
 **Priorité 1** : les bases techniques, avant de chercher du trafic.
 
-- [ ] Pousser le correctif d'hydratation, puis vérifier en ligne qu'aucune erreur #418 n'apparaît dans la console.
-- [ ] `robots.txt` (tout autoriser sauf `/api/`, lien vers le sitemap) et `sitemap.xml` (accueils et catégories FR/EN, puis les fiches produit), servis par des routes serveur.
-- [ ] `hreflang` et canonical en URL absolues, plus un `hreflang="x-default"`.
-- [ ] Open Graph et Twitter sur chaque page (titre, description, URL, image, `og:locale`) et une meta description propre à chaque page.
+- [x] Pousser le correctif d'hydratation, puis vérifier en ligne qu'aucune erreur #418 n'apparaît dans la console.
+- [x] `robots.txt` (tout autoriser sauf `/api/`, lien vers le sitemap) et `sitemap.xml` (accueils et catégories FR/EN, puis les fiches produit), servis par des routes serveur.
+- [x] `hreflang` et canonical en URL absolues, plus un `hreflang="x-default"`.
+- [x] Open Graph et Twitter sur chaque page (titre, description, URL, image, `og:locale`) et une meta description propre à chaque page.
 
 **Priorité 2** : le contenu qui peut se classer.
 
-- [ ] Phase 5 : une fiche produit indexable par produit (`/fr/claviers/<slug>`, `/en/keyboards/<slug>`) avec la photo en `<img alt>`, les specs, un JSON-LD `Product` et des liens `<a href>` depuis le podium, les résultats et la fiche (proposée comme session séparée le 23 octobre).
+- [x] Phase 5 : une fiche produit indexable par produit (`/fr/claviers/<slug>`, `/en/keyboards/<slug>`) avec la photo en `<img alt>`, les specs, un JSON-LD `Product` et des liens `<a href>` depuis le podium, les résultats et la fiche (proposée comme session séparée le 23 octobre).
 - [ ] Pages collections tirées des options du questionnaire (« Claviers 75 % sans fil », « OLED 27" 240 Hz »).
-- [ ] JSON-LD `WebSite` sur l'accueil, `ItemList` et `BreadcrumbList` sur les catégories.
+- [ ] JSON-LD `ItemList` sur les catégories (`WebSite` sur l'accueil et `BreadcrumbList` sont faits depuis le 24 octobre).
 - [ ] LCP mobile sous 2,5 s : preloader plus court quand tout est en cache, premier écran sans attendre le catalogue entier.
 
 **Priorité 3** : à prévoir avant le lancement.
 
-- [ ] Un domaine propre, puis Google Search Console et envoi du sitemap.
+- [ ] Un domaine propre (fait le 24 octobre : shapepick.com), puis Google Search Console (propriété de domaine, TXT publié) et envoi du sitemap.
 - [ ] Ne plus envoyer tout le catalogue dans chaque page : top produits rendu côté serveur, catalogue chargé ensuite.
 
 ## Lancer le projet
@@ -679,7 +703,7 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 | `pnpm dev` | Serveur de dev du site, port 3000 |
 | `pnpm build` | Build de production dans `apps/web/.output` |
 | `pnpm --filter @choose/web start` | Lance le build de production avec le `.env` racine |
-| `pnpm test` | 72 tests du moteur et des parcours (Vitest) ; pnpm --filter @choose/ingest test en lance 26 sur les mappers écrans et souris |
+| `pnpm test` | 85 tests du moteur, des parcours et des modèles proches (Vitest) ; pnpm --filter @choose/ingest test en lance 26 sur les mappers écrans et souris |
 | `pnpm typecheck` | `tsc` sur `catalog`, `db` et `web` |
 | `pnpm lint`, `pnpm format` | Biome : vérification, puis correction automatique |
 | `pnpm pg:local` (ou `stop`, `status`) | Postgres local : port 54329, données dans `.pgdata` |
@@ -694,7 +718,7 @@ Le site répond alors sur http://localhost:3000. Depuis le 20 octobre, le `.env`
 
 ## Mise en ligne : Netlify + Neon
 
-Le site tourne depuis le 20 octobre 2026 sur [choose-a-device.netlify.app](https://choose-a-device.netlify.app) : Netlify construit `main` du dépôt GitLab à chaque push, et la base est un Postgres 18 sur Neon (AWS eu-central-1, Francfort), migré et rempli avec les données de démo.
+Le site tourne depuis le 20 octobre 2026 sur Netlify, et depuis le 24 octobre sur son domaine, [shapepick.com](https://shapepick.com) (choose-a-device.netlify.app redirige vers lui) : Netlify construit `main` du dépôt GitLab à chaque push, et la base est un Postgres 18 sur Neon (AWS eu-central-1, Francfort), migré et rempli avec les données de démo.
 
 | Élément | Réglage |
 | --- | --- |
@@ -704,6 +728,9 @@ Le site tourne depuis le 20 octobre 2026 sur [choose-a-device.netlify.app](https
 | Variables | `DATABASE_URL` (pooler, lue par le site, aussi définie sur Netlify), `DATABASE_URL_UNPOOLED` (directe, migrations et seed) |
 | Driver du site | `@neondatabase/serverless` en HTTP quand l'hôte finit par `.neon.tech`, `postgres` en TCP sinon (`packages/db/src/client.ts`) |
 | Seed et migrations | TCP direct (`connectDirect`, drizzle-kit sur `DATABASE_URL_UNPOOLED`) : le seed tient en une transaction, ce que le driver HTTP ne sait pas faire |
+| Domaine | shapepick.com, acheté via Netlify le 24 octobre (registrar Name.com, DNS chez Netlify), domaine principal du site ; www redirige vers la racine ; certificat Let's Encrypt posé par Netlify |
+| Adresse du site | `SITE.url` = `SITE_URL`, sinon la variable `URL` de Netlify (le domaine principal), figée au build : un changement de domaine demande un redéploiement |
+| Ancienne adresse | choose-a-device.netlify.app : 301 page pour page vers shapepick.com, faite dans `apps/web/src/server.ts` (Netlify passe la fonction avant les redirections de netlify.toml) ; /api/ et /_serverFn/ répondent sur place |
 
 La CLI Neon passe par `npx` (l'installation globale est refusée sur cette machine) :
 
@@ -718,6 +745,7 @@ pnpm db:migrate && pnpm db:seed
 - La connexion navigateur de la CLI expire en 60 s quand un agent la lance : `neon login` se fait à la main.
 - Les fonctions Netlify tournent par défaut à us-east-2 (Ohio) et la base à Francfort : chaque requête traverse l'Atlantique. Si l'offre le permet, régler la région des fonctions sur eu-central-1.
 - Le snapshot (4 requêtes en série par catégorie) reste 60 s en mémoire par instance de fonction.
+- Search Console : propriété de domaine shapepick.com, validée par un TXT `google-site-verification` dans le DNS Netlify, à ne jamais supprimer ; `sitemap.xml` à soumettre depuis le rapport Sitemaps.
 
 ## Ce qui a été vérifié
 
@@ -745,6 +773,8 @@ Tout ce qui se vérifie sans regarder l'écran est au vert ; les animations en m
 | Souris, base locale (23 octobre) | 149 souris de 8 marques : seed relancé sans écart, snapshot identique au YAML (523 claviers, 264 écrans, 149 souris) ; parcours essayé sur 7 profils (tableau dans « Souris ») ; 72 tests du moteur dont 19 souris, 26 de l'import ; lecture des claviers inchangée (exports seulement, mêmes 30 claviers Razer). Le site avec des souris n'a été vu que sur la base de démo (29 souris fictives) : catégorie vide ou en échec masquée, /fr/ecrans en 404 quand les écrans manquent, podium et fiche. |
 | Souris en production (23 octobre au soir) | Migration 0004 sur Neon (5 migrations, valeur mouse ajoutée) ; build de 184fc39 en ligne en une minute, /fr/souris en 404 tant que la catégorie était vide ; seed : 523 claviers, 264 écrans, 149 souris, aucun produit supprimé ; snapshot de Neon identique au YAML (523, 264, 149) ; /fr/souris et /en/mice en 200 après la revalidation du CDN ; la page en ligne montre « 149 souris correspondent » et la question 1 sur 11, sans erreur dans la console. |
 | Mobile (24 octobre) | Chrome headless piloté en CDP, tactile émulé, à 320 × 568, 360 × 780, 375 × 667, 390 × 844, 430 × 932, 667 × 375 et 844 × 390, en anglais à 320 px et en mouvement réduit : le script d'audit ne trouve aucun élément hors de l'écran ou de son conteneur, ni texte coupé. Défilement de l'accueil synchronisé (calque à −156 px pour 156 px défilés), retour depuis une catégorie à la même position, feuilles fermées en les tirant vers le bas, feuille Parcours par-dessus les résultats, les 12 noms Logitech les plus longs entiers sur deux lignes à 320 px. Bureau et tablette (768, 1024 et 1440 px) identiques à la production. Après le push de 19ed09a, même série sur le site en ligne (320, 375 et 390 px, paysage, anglais, mouvement réduit, bureau) : audit vide partout, aucune erreur relevée dans la console. |
+| Fiches produit, serveur local (24 octobre) | curl : head, JSON-LD Product (sans offers) et BreadcrumbList, fiche dans le HTML (h1, fiche technique, 4 modèles proches), 404 pour un slug inconnu ou d'une autre catégorie ; sitemap de 1 880 URL validé par xmllint. Chrome headless (CDP) 34/34 : ouverture depuis le podium, le canvas, les résultats et le n°1 mobile, flèches, modèles proches, Retour et Avant, ×, arrivée directe, langue, sans remontage du finder ni erreur d'hydratation. 85 tests du moteur et 26 de l'import, typecheck, Biome et build au vert. |
+| Fiches et shapepick.com en production (24 octobre) | Après 1e4d0bf : head, JSON-LD, og:image servie à sa taille, photo du noscript, 404 et sitemap contrôlés en ligne, navigateur 30/30. Après le passage du domaine (25 contrôles sur 25) : canonical, hreflang, og:url, JSON-LD et sitemap sur shapepick.com, og:image et photos relayées (Dell, Samsung, Logitech) servies, ancienne adresse en 301 page pour page, API sur place ; navigateur 30/30 sur shapepick.com, 68 photos d'écrans chargées sur le canvas, aucune requête photo en échec. |
 
 Les animations n'ont pas été vues en temps réel : le panneau du navigateur intégré les ralentit fortement. Les états finaux et quelques images intermédiaires ont été contrôlés, en forçant la fin des animations depuis la console.
 
@@ -786,6 +816,9 @@ Chacun de ces pièges a coûté du temps pendant la mise en place ; les connaît
 - **Panda, ordre des media queries** : `md` et une condition maison (`_short`, `_coarse`…) n'ont pas d'ordre garanti dans le CSS généré ; quand deux règles se contredisent, écrire une requête combinée explicite (`@media (min-width: 48rem) and (min-height: 30.01rem)`). Pas de clé calculée dans `css()` non plus : l'extraction statique ne la voit pas.
 - **Survol au doigt** : `_hover` et `_groupHover` ne s'appliquent que sous `(hover: hover)` (conditions redéfinies dans `panda.config.ts`) ; les aperçus au survol (tuiles, marques, bandes de l'accueil) ne réagissent qu'à `pointerType === 'mouse'`.
 - **Accueil qui défile** : ne jamais placer les bandes depuis un écouteur `scroll` ; le renderer lit `window.scrollY` dans sa boucle et déplace le calque des liens dans la même image, sinon plaques et dessin se décalent pendant un lancer.
+- **Redirections chez Netlify** : la fonction qui sert tout le site (`path: "/*"`) passe avant les règles de `netlify.toml`, qui ne s'appliquent donc jamais aux pages ; une redirection de pages se fait dans `apps/web/src/server.ts`.
+- **Paramètres d'une route TanStack** : un lien ou un `navigate` reprend les paramètres en cours ; pour aller à la catégorie sans la fiche ouverte, passer `product: undefined`.
+- **Adresse figée au build** : `SITE.url` vient de `URL` au moment du build ; après un changement de domaine, relancer un déploiement, sinon canonical et sitemap gardent l'ancienne adresse.
 
 ## Limites connues et dette technique
 
@@ -809,6 +842,8 @@ La principale limite tient aux données : avec 25 produits fictifs par catégori
 
 - **Mobile vu seulement en émulation** : Chrome headless avec tactile émulé ; zones sûres, barre de Safari qui se replie, inertie du défilement de l'accueil et feuilles tirées au doigt jamais vus sur un vrai iPhone.
 - **Troncatures sur bureau et tablette** (déjà en production, laissées telles quelles le 24 octobre) : noms longs dans la colonne du podium (« Pulsefire Haste 3 Pr… » à 1440 et 1024 px), nom et « Symétrique » coupés dans les lignes de résultats à 768 px.
+- **Fiches sans offre** : le JSON-LD `Product` n'a pas d'`offers` (prix publics approximatifs) ; pas d'extrait enrichi chez Google, et la Search Console signalera « offers, review ou aggregateRating manquant ».
+- **Photo des fiches au premier rendu** : le HTML servi montre le dessin, la photo découpée n'arrive qu'au client ; la vraie photo est dans le JSON-LD, l'og:image et un `noscript`. 453 des 933 photos n'ont pas leur taille en base : leur og:image n'a pas de width/height.
 
 ## Prochaines étapes
 
@@ -816,7 +851,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 
 - [x] **Premier commit** sur `main` : fait (`e4ca02a`).
 - [ ] **Scène WebGL (si besoin)** : même rendu que `features/scene/renderer.ts` en shaders, si le catalogue dépasse quelques centaines de produits.
-- [ ] **Phase 5, pages SEO** : fiches produit `/fr/claviers/<slug>` avec JSON-LD, pages collections, `sitemap.xml`, `robots.txt`, images OG. Le détail et l'ordre sont dans « SEO et i18n » (audit du 23 octobre) ; les fiches produit sont proposées comme session séparée.
+- [ ] **Phase 5, pages SEO** : fiches produit, `sitemap.xml`, `robots.txt`, JSON-LD et images OG faits le 24 octobre (voir « SEO : fiches produit, nom et domaine ») ; restent les pages collections (« meilleurs… », guides) et le poids des pages, chacune portant encore les trois catalogues (1,24 Mo de HTML).
 - [ ] **Vraies données** : claviers faits (523, photos détourées, voir « Vraies données et photos ») et écrans de 8 marques (264, voir « Écrans : vrais modèles ») et souris de 8 marques (149, voir « Souris : troisième catégorie ») ; restent 104 écrans sans prix publié, les prix boutiques (`offers`) et liens d'affiliation.
 - [ ] **Offres et affiliation** : charger `offers` dans le snapshot, afficher les offres sur la ligne du prix et dans la barre d'achat de la fiche produit (liens `rel="sponsored"`, mention du programme d'affiliation Amazon), puis mesurer les clics.
 - [ ] **Performance** : entrée moteur sans Zod côté client ; top produits rendu côté serveur, catalogue chargé ensuite.
@@ -839,3 +874,5 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 - [ ] **Vérifier sur un vrai iPhone** : zones sûres, barre de Safari qui se replie, inertie de l'accueil, feuilles tirées vers le bas.
 - [ ] **Troncatures bureau et tablette** : colonne du podium et lignes de résultats à 768 px (voir « Limites »).
 - [ ] **Décrire ici** les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`).
+- [ ] **Search Console** : valider la propriété shapepick.com (TXT en place) et soumettre `sitemap.xml`.
+- [ ] **SEO, phase 3** : pages « meilleurs… » et guides tirés des questionnaires ; ne plus envoyer les trois catalogues dans chaque page.
