@@ -14,12 +14,17 @@ import { legalPaths } from './legal'
 export const UPDATED = '2026-10-24'
 
 /**
- * Who publishes the site and directs its publication. While the site earns nothing, a private
- * person may leave it out, the host holding their identity (LCEN, art. 1-1, II): `null`, and the
- * page says so. Affiliate links make the site a paid activity: before the Amazon partner tag goes
- * live (features/product/shops.ts), fill this in, a business address and a phone line included.
+ * Who publishes the site and directs its publication. Affiliate links (features/product/shops.ts)
+ * make the site a paid activity: the law then asks for a name, an address and a phone number
+ * (LCEN, art. 1-1, I), and the registration number when there is one (SIREN). `null` is for a
+ * site that earns nothing, whose private publisher may leave it to the host (art. 1-1, II).
  */
-export const PUBLISHER: { name: string; address: string; phone: string } | null = null
+export const PUBLISHER: {
+  name: string
+  address: string
+  phone: string
+  registration?: string
+} | null = null
 
 /** Where to write: questions, corrections, requests about data. */
 export const CONTACT = 'contact@shapepick.com'
@@ -138,9 +143,9 @@ function LegalHeader({ locale }: { locale: Locale }) {
 type Props = {
   locale: Locale
   title: string
-  /** What the page is about, under its title. */
-  lead: ReactNode
-  /** The short version, as tags under the lead. */
+  /** What the page is about, under its title, if it needs saying. */
+  lead?: ReactNode
+  /** The short version, as tags under the title. */
   facts: readonly string[]
   /** Its sections (`LegalSection`). */
   children: ReactNode
@@ -196,17 +201,19 @@ export function LegalPage({ locale, title, lead, facts, children }: Props) {
             >
               {title}
             </h1>
-            <p
-              className={css({
-                maxW: '38rem',
-                fontSize: { base: 'md', md: 'lg' },
-                lineHeight: '1.5',
-                color: 'ink.muted',
-                textWrap: 'pretty',
-              })}
-            >
-              {lead}
-            </p>
+            {lead && (
+              <p
+                className={css({
+                  maxW: '38rem',
+                  fontSize: { base: 'md', md: 'lg' },
+                  lineHeight: '1.5',
+                  color: 'ink.muted',
+                  textWrap: 'pretty',
+                })}
+              >
+                {lead}
+              </p>
+            )}
             <ul className={css({ display: 'flex', flexWrap: 'wrap', gap: '2', mt: '1' })}>
               {facts.map((fact) => (
                 <li

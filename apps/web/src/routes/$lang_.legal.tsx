@@ -20,7 +20,7 @@ import { pageHead } from '~/seo'
 
 const TITLE = 'Legal notice and privacy'
 const DESCRIPTION =
-  'Who publishes shapepick, who hosts it and what the site keeps of your visits: no cookies, only a count of clicks to Amazon, with no personal data.'
+  'Publisher, host and data of shapepick. No cookies, only an anonymous count of clicks to Amazon.'
 
 export const Route = createFileRoute('/$lang_/legal')({
   // In English only: in French the page has a name of its own, in any other language there is none.
@@ -41,7 +41,6 @@ function Legal() {
     <LegalPage
       locale="en"
       title={TITLE}
-      lead="Who publishes shapepick, who hosts it, and what the site keeps of your visits."
       facts={['No cookies', 'No account', 'Anonymous statistics']}
     >
       <LegalSection id="publisher" n={1} title="Publisher">
@@ -50,9 +49,10 @@ function Legal() {
             <p>shapepick is published by {PUBLISHER.name}, who is also its publication director.</p>
             <LegalFacts
               rows={[
-                ['Publisher', PUBLISHER.name],
+                ['Name', PUBLISHER.name],
                 ['Address', PUBLISHER.address],
                 ['Phone', PUBLISHER.phone],
+                ...(PUBLISHER.registration ? ([['SIREN', PUBLISHER.registration]] as const) : []),
                 ['Contact', mail],
               ]}
             />
@@ -60,9 +60,8 @@ function Legal() {
         ) : (
           <>
             <p>
-              shapepick is published by a private individual, not as a business. As French law
-              allows (loi pour la confiance dans l’économie numérique, article 1-1), their identity
-              is not published here: it has been given to the site’s host, below.
+              shapepick is published by a private individual. Our host knows who they are, as French
+              law allows (LCEN, article 1-1).
             </p>
             <LegalFacts rows={[['Contact', mail]]} />
           </>
@@ -95,28 +94,23 @@ function Legal() {
           ]}
         />
         <p>
-          Like any host, Netlify handles the IP address of each visit to deliver pages and protect
-          the site; shapepick does not record it anywhere. Product photos are served by the site
-          itself: your browser never contacts a brand’s website.
+          Netlify sees the IP address of each visit to serve the pages and protect the site. We
+          don’t keep it. Product photos come through our site, so your browser contacts no brand.
         </p>
       </LegalSection>
 
       <LegalSection id="clicks" n={3} title="Clicks to Amazon">
         <p>
-          When you open a link to Amazon, the site notes the click in its own database, to learn
-          which models people look at and which links help.
+          When you open a link to Amazon, we log the click. It shows us which models people look at.
         </p>
         <LegalFacts
           rows={[
             [
-              'Noted',
-              'The product, where the link sat on the page, the kind of link (product page or search), the site’s language and page, the date and time, the country and the kind of device (mobile or computer).',
+              'What we log',
+              'The product, the kind of link and where it sat, the page and its language, the date and time, the country, the kind of device.',
             ],
-            [
-              'Never',
-              'No IP address, no cookie, no identifier: there is no way to know who clicked.',
-            ],
-            ['Where', 'shapepick’s database, at Neon in Frankfurt.'],
+            ['Never', 'No IP address, no cookie, no identifier. We don’t know who clicked.'],
+            ['Where', 'Our database, at Neon, in Frankfurt.'],
             ['Kept for', `${KEPT.clicks} months`],
           ]}
         />
@@ -126,57 +120,44 @@ function Legal() {
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
-              The “View on Amazon” and “Search on Amazon” links lead to Amazon.fr. shapepick takes
-              part in the Amazon Associates programme: these are affiliate links, and Amazon pays it
-              a commission on purchases made after a click, at no extra cost to you. Commissions
-              play no part in the ranking: it depends only on your answers and the products’ specs.
+              Links to Amazon.fr are affiliate links. If you buy after a click, Amazon pays us a
+              commission. Your price doesn’t change. The ranking ignores it, it depends only on your
+              answers and the product sheets.
             </p>
             <p>
               <strong>{m.amazonNotice.en}</strong>
             </p>
           </>
         ) : (
-          <>
-            <p>
-              The “View on Amazon” and “Search on Amazon” links lead to Amazon.fr. They are plain
-              links: shapepick earns nothing from your purchases.
-            </p>
-            <p>
-              Should the site join the Amazon Associates programme, these links will become
-              affiliate links: Amazon will pay it a commission on purchases made after a click, at
-              no extra cost to you. This page and the product sheets will then say so.
-            </p>
-          </>
+          <p>Links to Amazon.fr are plain links. We earn nothing from your purchases.</p>
         )}
-        <p>On Amazon.fr, Amazon’s own privacy rules apply.</p>
+        <p>On Amazon.fr, Amazon’s privacy policy applies.</p>
       </LegalSection>
 
-      <LegalSection id="storage" n={5} title="Storage in your browser">
+      <LegalSection id="storage" n={5} title="In your browser">
         <p>
-          To save you time, the site keeps a little in your browser (local storage): your answers to
-          each category’s questionnaire, so you find them on your next visit, and the hints you have
-          already seen, so they are not repeated. None of it ever leaves your device.
+          Your browser keeps your answers to each questionnaire and the tips you’ve seen, for your
+          next visit. They stay on your device.
         </p>
-        <p>You can clear it at any time by deleting the site’s data in your browser’s settings.</p>
+        <p>To clear them, delete the site’s data in your browser settings.</p>
       </LegalSection>
 
       <LegalSection id="products" n={6} title="Products and brands">
         <p>
-          Specifications come from the makers and the specialist press. Prices are typical public
-          prices, not offers: only the seller’s price counts. Despite our care, mistakes happen:
-          check the seller’s page before you buy, and write to us if you spot one.
+          Specs come from the makers and the specialist press. Prices are indicative, only the
+          seller’s price counts. Check their page before you buy, and tell us about any mistake.
         </p>
         <p>
-          Product names, brands and photos belong to their owners; they are only used to identify
-          the models compared.
+          Product names, brands and photos belong to their owners. They only serve to identify the
+          models.
         </p>
       </LegalSection>
 
       <LegalSection id="contact" n={7} title="Contact and your rights">
         <p>
-          A question, a mistake to report, a request about your data (access, erasure, objection):
-          write to {mail}. You can also lodge a complaint with the CNIL, the French data protection
-          authority, at <a href="https://www.cnil.fr/en">cnil.fr</a>.
+          A question, a mistake, a request about your data (access, erasure, objection)? Write to{' '}
+          {mail}. You can also contact the CNIL, the French data protection authority, at{' '}
+          <a href="https://www.cnil.fr/en">cnil.fr</a>.
         </p>
       </LegalSection>
     </LegalPage>

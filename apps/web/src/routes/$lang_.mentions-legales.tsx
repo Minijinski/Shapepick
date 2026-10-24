@@ -20,7 +20,7 @@ import { pageHead } from '~/seo'
 
 const TITLE = 'Mentions légales et confidentialité'
 const DESCRIPTION =
-  'Qui édite shapepick, qui l’héberge et ce que le site garde de tes visites : aucun cookie, seulement un décompte des clics vers Amazon, sans donnée personnelle.'
+  'Éditeur, hébergeur et données de shapepick. Pas de cookie, seulement un décompte anonyme des clics vers Amazon.'
 
 export const Route = createFileRoute('/$lang_/mentions-legales')({
   // In French only: in English the page has a name of its own, in any other language there is none.
@@ -41,21 +41,18 @@ function MentionsLegales() {
     <LegalPage
       locale="fr"
       title={TITLE}
-      lead="Qui publie shapepick, qui l’héberge, et ce que le site garde de tes visites."
       facts={['Aucun cookie', 'Aucun compte', 'Statistiques anonymes']}
     >
       <LegalSection id="editeur" n={1} title="Éditeur">
         {PUBLISHER ? (
           <>
-            <p>
-              shapepick est édité par {PUBLISHER.name}, qui en est aussi le directeur de la
-              publication.
-            </p>
+            <p>shapepick est édité par {PUBLISHER.name}, qui dirige aussi sa publication.</p>
             <LegalFacts
               rows={[
-                ['Éditeur', PUBLISHER.name],
+                ['Nom', PUBLISHER.name],
                 ['Adresse', PUBLISHER.address],
                 ['Téléphone', PUBLISHER.phone],
+                ...(PUBLISHER.registration ? ([['SIREN', PUBLISHER.registration]] as const) : []),
                 ['Contact', mail],
               ]}
             />
@@ -63,9 +60,8 @@ function MentionsLegales() {
         ) : (
           <>
             <p>
-              shapepick est édité par un particulier, à titre non professionnel. Comme le permet la
-              loi pour la confiance dans l’économie numérique (article 1-1), son identité n’est pas
-              publiée ici : elle a été communiquée à l’hébergeur du site, ci-dessous.
+              shapepick est édité par un particulier. Son identité est connue de notre hébergeur,
+              comme le permet la loi (LCEN, article 1-1).
             </p>
             <LegalFacts rows={[['Contact', mail]]} />
           </>
@@ -98,29 +94,29 @@ function MentionsLegales() {
           ]}
         />
         <p>
-          Comme tout hébergeur, Netlify traite l’adresse IP de chaque visite pour acheminer les
-          pages et protéger le site ; shapepick ne l’enregistre nulle part. Les photos des produits
-          sont servies par le site lui-même : ton navigateur ne contacte aucun site de marque.
+          Netlify voit l’adresse IP de chaque visite pour servir les pages et protéger le site. Nous
+          ne la gardons pas. Les photos des produits passent par notre site, votre navigateur ne
+          contacte aucune marque.
         </p>
       </LegalSection>
 
       <LegalSection id="clics" n={3} title="Clics vers Amazon">
         <p>
-          Quand tu ouvres un lien vers Amazon, le site note ce clic dans sa propre base de données,
-          pour savoir quels modèles intéressent et quels liens servent.
+          Quand vous ouvrez un lien vers Amazon, nous notons le clic. Cela nous montre quels modèles
+          intéressent.
         </p>
         <LegalFacts
           rows={[
             [
-              'Ce qui est noté',
-              'Le produit, la place du lien sur la page, le type de lien (fiche du produit ou recherche), la langue et la page du site, la date et l’heure, le pays et le type d’appareil (mobile ou ordinateur).',
+              'Ce que nous notons',
+              'Le produit, le type de lien et sa place, la page et sa langue, la date et l’heure, le pays, le type d’appareil.',
             ],
             [
               'Jamais',
-              'Ni adresse IP, ni cookie, ni identifiant : impossible de savoir qui a cliqué.',
+              'Ni adresse IP, ni cookie, ni identifiant. Nous ne savons pas qui a cliqué.',
             ],
-            ['Où', 'La base de données de shapepick, chez Neon, à Francfort.'],
-            ['Conservation', `${KEPT.clicks} mois`],
+            ['Où', 'Notre base de données, chez Neon, à Francfort.'],
+            ['Durée', `${KEPT.clicks} mois`],
           ]}
         />
       </LegalSection>
@@ -129,63 +125,46 @@ function MentionsLegales() {
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
-              Les liens « Voir sur Amazon » et « Chercher sur Amazon » mènent à Amazon.fr. shapepick
-              participe au programme Partenaires d’Amazon : ce sont des liens affiliés, et Amazon
-              lui reverse une commission sur les achats faits après un clic, sans rien changer à ton
-              prix. Les commissions n’entrent pas dans le classement : il ne dépend que de tes
-              réponses et des fiches des produits.
+              Les liens vers Amazon.fr sont des liens affiliés. Si vous achetez après un clic,
+              Amazon nous verse une commission. Votre prix ne change pas. Le classement n’en tient
+              pas compte, il dépend seulement de vos réponses et des fiches produits.
             </p>
             <p>
               <strong>{m.amazonNotice.fr}</strong>
             </p>
           </>
         ) : (
-          <>
-            <p>
-              Les liens « Voir sur Amazon » et « Chercher sur Amazon » mènent à Amazon.fr. Ce sont
-              de simples liens : shapepick ne touche rien sur tes achats.
-            </p>
-            <p>
-              Si le site rejoint un jour le programme Partenaires d’Amazon, ces liens deviendront
-              des liens affiliés : Amazon lui reversera une commission sur les achats faits après un
-              clic, sans rien changer à ton prix. Cette page et les fiches des produits
-              l’indiqueront alors.
-            </p>
-          </>
+          <p>
+            Les liens vers Amazon.fr sont de simples liens. Nous ne touchons rien sur vos achats.
+          </p>
         )}
-        <p>Sur Amazon.fr, ce sont les règles de confidentialité d’Amazon qui s’appliquent.</p>
+        <p>Sur Amazon.fr, la politique de confidentialité d’Amazon s’applique.</p>
       </LegalSection>
 
-      <LegalSection id="stockage" n={5} title="Stockage dans ton navigateur">
+      <LegalSection id="stockage" n={5} title="Dans votre navigateur">
         <p>
-          Pour te faire gagner du temps, le site garde quelques informations dans ton navigateur
-          (stockage local) : tes réponses au questionnaire de chaque catégorie, pour les retrouver à
-          ta prochaine visite, et les astuces déjà vues, pour ne pas les répéter. Elles ne quittent
-          jamais ton appareil.
+          Votre navigateur garde vos réponses à chaque questionnaire et les astuces déjà vues, pour
+          votre prochaine visite. Elles restent sur votre appareil.
         </p>
-        <p>
-          Tu peux les effacer à tout moment en supprimant les données du site dans les réglages de
-          ton navigateur.
-        </p>
+        <p>Pour les effacer, supprimez les données du site dans les réglages du navigateur.</p>
       </LegalSection>
 
       <LegalSection id="produits" n={6} title="Produits et marques">
         <p>
           Les caractéristiques viennent des fabricants et de la presse spécialisée. Les prix sont
-          des prix publics indicatifs, pas des offres : seul le prix du vendeur fait foi. Malgré le
-          soin apporté, une erreur reste possible : vérifie la fiche du vendeur avant d’acheter, et
-          écris-nous si tu en repères une.
+          indicatifs, seul le prix du vendeur fait foi. Vérifiez sa fiche avant d’acheter, et
+          signalez-nous toute erreur.
         </p>
         <p>
-          Les noms, marques et photos des produits appartiennent à leurs propriétaires ; ils servent
-          seulement à identifier les modèles comparés.
+          Les noms, marques et photos appartiennent à leurs propriétaires. Ils servent seulement à
+          identifier les modèles.
         </p>
       </LegalSection>
 
       <LegalSection id="contact" n={7} title="Contact et droits">
         <p>
-          Une question, une erreur à signaler, une demande sur tes données (accès, effacement,
-          opposition) : écris à {mail}. Tu peux aussi adresser une réclamation à la CNIL, sur{' '}
+          Une question, une erreur, une demande sur vos données (accès, effacement, opposition) ?
+          Écrivez-nous à {mail}. Vous pouvez aussi saisir la CNIL sur{' '}
           <a href="https://www.cnil.fr">cnil.fr</a>.
         </p>
       </LegalSection>

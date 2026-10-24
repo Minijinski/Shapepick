@@ -203,14 +203,6 @@ export const messages = {
       : direct
         ? `View ${name} on Amazon`
         : `Search Amazon for ${name}`,
-  amazonProduct: text(
-    "La fiche du modèle sur Amazon.fr, en AZERTY quand il existe dans cette disposition.",
-    "The model’s page on Amazon.fr, in AZERTY when it comes in that layout.",
-  ),
-  amazonQuery: (query: string, locale: Locale) =>
-    locale === "fr"
-      ? `Recherche « ${query} » sur Amazon.fr`
-      : `Searches Amazon.fr for “${query}”`,
   amazonNotice: text(
     "En tant que Partenaire Amazon, je réalise un bénéfice sur les achats remplissant les conditions requises.",
     "As an Amazon Associate I earn from qualifying purchases.",

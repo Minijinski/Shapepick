@@ -16,7 +16,7 @@ import { MatchBreakdown } from '../product/MatchBreakdown'
 import { ProductHero } from '../product/ProductHero'
 import { ProductPicture } from '../product/ProductPicture'
 import { photoSrc } from '../product/photo'
-import { amazonLink } from '../product/shops'
+import { AMAZON_PARTNER_TAG } from '../product/shops'
 import { formatPrice, productKind, sheetSpecs } from '../product/specs'
 import { ProductLink } from './ProductLink'
 import { foldAway, useSheetDrag } from './Sheet'
@@ -194,7 +194,6 @@ export function ProductDrawer({
   const figures = useRef<HTMLDivElement>(null)
   const closing = useRef(false)
   const { item } = sheet
-  const amazon = amazonLink(item, locale, layouts)
   const [barShown, setBarShown] = useState(false)
 
   /** Asks the page to close it, once: the page drops it from its path, and it folds away. */
@@ -471,10 +470,13 @@ export function ProductDrawer({
                     <AmazonLink item={item} locale={locale} layouts={layouts} placement="sheet" />
                   }
                 />
-                <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
-                  {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
-                  {amazon.affiliate && ` ${m.amazonNotice[locale]}`}
-                </p>
+                {/* The notice Amazon requires wherever its affiliate links are, word for word:
+                    the button itself says whether it opens the model's page or a search. */}
+                {AMAZON_PARTNER_TAG && (
+                  <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
+                    {m.amazonNotice[locale]}
+                  </p>
+                )}
               </div>
               {sheet.fit != null && sheet.met != null && (
                 <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
