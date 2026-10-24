@@ -5,7 +5,7 @@ import { keyboards, monitors } from './fixtures'
 
 // The canvas lets a photo stand in for a product's drawing only when it shows the product square
 // on (`squareOn`). The cuts below were measured on real photos (2026-10-24): what must now pass,
-// and the angled shots, banners and turned screens that must still be refused.
+// and the angled shots, banners, turned screens and tall stands that must still be refused.
 
 type Measure = { fill: number; parts?: number; detail?: number; symmetry?: number }
 /** A cut whose proportions are `ratio` times those of the item's drawing. */
@@ -60,9 +60,9 @@ describe('squareOn, monitors', () => {
       true,
     )
   })
-  it('passes a front view on a tall, thin stand (LG Smart Monitor Swing)', () => {
+  it('keeps the drawing for a front view on a tall stand (LG Smart Monitor Swing)', () => {
     expect(squareOn(monitor, cut(monitor, 0.43, { fill: 0.455, symmetry: 0.982, parts: 1 }))).toBe(
-      true,
+      false,
     )
   })
   it('still refuses a wide banner', () => {

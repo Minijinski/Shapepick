@@ -203,13 +203,12 @@ const SPLIT_VIEW = { minFill: 0.65, minSymmetry: 0.85, minRatio: 0.7, maxRatio: 
  */
 const MIN_SYMMETRY = 0.88
 /**
- * A monitor wider than its drawing (side shields, BenQ ZOWIE) or much taller (a stand on wheels,
- * LG Smart Monitor Swing) is still seen from the front when it is almost perfectly symmetric. The
- * wide one leaves room around its stand (a plain rectangle is a banner); the tall one is thin below
- * its screen (a monitor turned to portrait fills its box).
+ * A monitor wider than its drawing (side shields, BenQ ZOWIE) is still seen from the front when it
+ * is almost perfectly symmetric and leaves room around its stand (a plain rectangle is a banner).
+ * One much taller than its drawing (a stand on wheels, LG Smart Monitor Swing) keeps its drawing:
+ * the canvas lays products out at their drawing's size, and its photo would cover its neighbours.
  */
 const MONITOR_WIDE = { maxRatio: 1.3, minSymmetry: 0.97, maxFill: 0.85 }
-const MONITOR_TALL = { minRatio: 0.4, minSymmetry: 0.95, maxFill: 0.6 }
 /**
  * A mouse seen from above, lying upright, is close to an ellipse (π/4 of its box); a shot at an
  * angle leaves more of its box empty, a side view has other proportions. Only a symmetrical shell
@@ -258,16 +257,11 @@ export function squareOn(
       const symmetry = cut.symmetry ?? 1
       if (symmetry < MIN_SYMMETRY || (cut.parts ?? 1) > 2) return false
       if (ratio >= PROPORTIONS.min && ratio <= PROPORTIONS.max) return true
-      if (ratio > PROPORTIONS.max)
-        return (
-          ratio <= MONITOR_WIDE.maxRatio &&
-          symmetry >= MONITOR_WIDE.minSymmetry &&
-          cut.fill <= MONITOR_WIDE.maxFill
-        )
       return (
-        ratio >= MONITOR_TALL.minRatio &&
-        symmetry >= MONITOR_TALL.minSymmetry &&
-        cut.fill <= MONITOR_TALL.maxFill
+        ratio > PROPORTIONS.max &&
+        ratio <= MONITOR_WIDE.maxRatio &&
+        symmetry >= MONITOR_WIDE.minSymmetry &&
+        cut.fill <= MONITOR_WIDE.maxFill
       )
     }
     case 'mouse':
