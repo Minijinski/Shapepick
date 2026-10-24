@@ -287,6 +287,72 @@ export function cutout(photo: Photo, width: number): Promise<Cutout | null> {
   return job
 }
 
+// ---- Cut-outs kept from one visit to the next ----------------------------------------------------
+
+/**
+ * The cut-outs made for small places (an option's tile, the podium, the results, a phone's sheet)
+ * are kept in the browser's cache storage: the next visit shows them at once rather than cutting
+ * them out again. The name changes with the way photos are cut out (`isolate`), and older shelves
+ * are dropped. Where there is no cache storage (or a private window refuses it), photos are just
+ * cut out again on every visit.
+ */
+const SHELF = 'shapepick-cutouts-v1'
+/** The widest cut-out kept (px): the sheet's large pictures stay for the visit only. */
+const SHELVED_UP_TO = 800
+/** How many cut-outs are kept, the oldest going first. */
+const SHELF_SIZE = 600
+
+let shelf: Promise<Cache | null> | null = null
+function openShelf(): Promise<Cache | null> {
+  shelf ??= (async () => {
+    try {
+      if (typeof caches === 'undefined') return null
+      for (const name of await caches.keys()) {
+        if (name.startsWith('shapepick-cutouts-') && name !== SHELF) void caches.delete(name)
+      }
+      return await caches.open(SHELF)
+    } catch {
+      return null
+    }
+  })()
+  return shelf
+}
+
+/** Where a cut-out is kept: an address of our own, which nothing ever fetches. */
+const shelfKey = (key: string) => `${location.origin}/__cutouts/${encodeURIComponent(key)}`
+
+/** A cut-out kept by an earlier visit, and the width of the photo it was cut from. */
+async function fromShelf(key: string, width: number) {
+  if (width > SHELVED_UP_TO) return null
+  try {
+    const kept = await (await openShelf())?.match(shelfKey(key))
+    if (!kept) return null
+    return { blob: await kept.blob(), source: Number(kept.headers.get('x-source')) || width }
+  } catch {
+    return null
+  }
+}
+
+let shelved = 0
+async function shelve(key: string, width: number, blob: Blob, source: number) {
+  if (width > SHELVED_UP_TO) return
+  try {
+    const kept = await openShelf()
+    if (!kept) return
+    const headers = { 'content-type': 'image/webp', 'x-source': String(source) }
+    await kept.put(shelfKey(key), new Response(blob, { headers }))
+    // Now and then, the oldest go.
+    shelved += 1
+    if (shelved % 25) return
+    const keys = await kept.keys()
+    for (const old of keys.slice(0, Math.max(0, keys.length - SHELF_SIZE))) await kept.delete(old)
+  } catch {
+    // A full or refused cache only means cutting out again next time.
+  }
+}
+
+// ---- Pictures ----------------------------------------------------------------------------------
+
 const pictures = new Map<string, Promise<Picture | null>>()
 /** The sharpest picture made so far for each photo, to show at once when it comes back. */
 const ready = new Map<string, Picture>()
@@ -294,13 +360,21 @@ const ready = new Map<string, Picture>()
 /** The sharpest cut-out of a photo made so far, if any. */
 export const readyPicture = (photo: Photo) => ready.get(photo.url)
 
-/** The photo at `width` px, cut out, as an image URL, once per session; null if it cannot be. */
+/** Whether a photo's picture is in, or never will be this visit (not a cut-out, out of reach). */
+export const pictureSettled = (photo: Photo) => ready.has(photo.url) || unusable.has(photo.url)
+
+/**
+ * The photo at `width` px, cut out, as an image URL, once per visit (kept from the last visit for
+ * small widths); null if it cannot be.
+ */
 export function picture(photo: Photo, width: number): Promise<Picture | null> {
   const key = `${photo.url}@${width}`
   let job = pictures.get(key)
   if (!job) {
-    job = cutout(photo, width)
-      .then(async (cut) => {
+    job = fromShelf(key, width)
+      .then(async (kept) => {
+        if (kept) return kept
+        const cut = await cutout(photo, width)
         if (!cut) return null
         let canvas: HTMLCanvasElement
         if (cut.image instanceof HTMLCanvasElement) {
@@ -315,7 +389,12 @@ export function picture(photo: Photo, width: number): Promise<Picture | null> {
           canvas.toBlob(resolve, 'image/webp', 0.92),
         )
         if (!blob) return null
-        const made = { src: URL.createObjectURL(blob), source: cut.source }
+        void shelve(key, width, blob, cut.source)
+        return { blob, source: cut.source }
+      })
+      .then((cut) => {
+        if (!cut) return null
+        const made = { src: URL.createObjectURL(cut.blob), source: cut.source }
         const best = ready.get(photo.url)
         if (!best || best.source < made.source) ready.set(photo.url, made)
         return made

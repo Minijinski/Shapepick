@@ -237,11 +237,13 @@ export function Preloader({
         part.value += (Math.max(part.value, Math.min(real, 0.96)) - part.value) * 0.14
         show(part, part.value)
       }
+      // The photos of the first screen, and of the first question's tiles if the page has some.
       const ready =
         fonts &&
         !!first &&
         first.drawings >= 1 &&
-        (first.photos >= 1 || now - (drawnAt ?? now) > TIMING.photosGrace)
+        ((first.photos >= 1 && (first.tiles ?? 1) >= 1) ||
+          now - (drawnAt ?? now) > TIMING.photosGrace)
       if (ready && now >= TIMING.min) leave('ready')
       else if (now >= Math.max(TIMING.max, woke + TIMING.afterWake)) leave('timeout')
     }

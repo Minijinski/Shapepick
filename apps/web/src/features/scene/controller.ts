@@ -35,8 +35,14 @@ export type Arrival = 'intro' | 'open' | 'swap' | 'close'
 /** How far some products are: their drawings and photos, 0 … 1. */
 export type Readiness = { drawings: number; photos: number }
 
-/** How far the products of the scene's first screen are, all of them and by category. */
-export type FirstScreen = Readiness & { byCategory: Partial<Record<Category, Readiness>> }
+/**
+ * How far the products of the scene's first screen are, all of them and by category; and the
+ * pictures of the finder's first question, when a finder shows one (0 … 1).
+ */
+export type FirstScreen = Readiness & {
+  byCategory: Partial<Record<Category, Readiness>>
+  tiles?: number
+}
 
 export const sameTarget = (a: SceneTarget | null, b: SceneTarget) =>
   !!a &&
@@ -59,6 +65,7 @@ class SceneController {
   private readonly touches = new Set<() => void>()
   private version = 0
   private firstScreen: (() => FirstScreen) | null = null
+  private tiles: (() => number) | null = null
   private homeLayer: HTMLElement | null = null
 
   attach(renderer: SceneRenderer) {
@@ -201,9 +208,21 @@ class SceneController {
     this.firstScreen = probe
   }
 
+  /**
+   * The finder's console says how to read how many of its question's pictures are in (0 … 1):
+   * the preloader waits for them too. Returns the way to take it back.
+   */
+  provideTiles(probe: () => number) {
+    this.tiles = probe
+    return () => {
+      if (this.tiles === probe) this.tiles = null
+    }
+  }
+
   /** How ready the scene's first screen is; null until the canvas exists. */
   firstScreenProgress(): FirstScreen | null {
-    return this.firstScreen?.() ?? null
+    const first = this.firstScreen?.() ?? null
+    return first && this.tiles ? { ...first, tiles: this.tiles() } : first
   }
 
   // ---- Products picked on the canvas -----------------------------------------------------------

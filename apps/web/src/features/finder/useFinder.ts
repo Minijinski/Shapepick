@@ -33,6 +33,7 @@ import { useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ItemDetail } from "../scene/controller";
 import type { JourneyStop } from "./JourneyBar";
+import { warmExamples } from "./OptionExample";
 
 // Everything a finder screen shows is derived here from three inputs: the catalogue, the answers
 // in the URL, and what the visitor is doing right now (a draft pick, a hovered tile). Committed
@@ -65,6 +66,36 @@ export function stepAt<I>(
   const explicit = def.steps.find((s) => s.key === at && !s.aside);
   if (explicit && (explicit.applies?.(answers) ?? true)) return explicit.key;
   return firstPending(def, items, answers);
+}
+
+/**
+ * A product to picture in each option's tile: the best match the option would keep, given the
+ * other answers (for a question that only steers the ranking, the best product for that answer),
+ * a different one in each tile where the catalogue allows.
+ */
+export function examplesFor(
+  def: FinderDefinition<CatalogItem>,
+  items: CatalogItem[],
+  answers: Answers,
+  step: Step<CatalogItem> | null,
+): Map<string, CatalogItem> | null {
+  if (!step || step.kind === "range") return null;
+  const others = withAnswer(answers, step.key, null);
+  const pool = step.weightOnly ? null : rank(def, items, others);
+  const used = new Set<string>();
+  const picked = new Map<string, CatalogItem>();
+  for (const option of step.options) {
+    const candidates = pool
+      ? pool.filter((r) => option.match(r.item))
+      : rank(def, items, withAnswer(others, step.key, option.id));
+    // One with a photo first: the tile shows a real device rather than a drawing.
+    const fresh = candidates.filter((r) => !used.has(def.id(r.item)));
+    const pick = fresh.find((r) => r.item.photo) ?? fresh[0] ?? candidates[0];
+    if (!pick) continue;
+    used.add(def.id(pick.item));
+    picked.set(option.id, pick.item);
+  }
+  return picked;
 }
 
 /**
@@ -347,32 +378,43 @@ export function useFinder(
     };
   }, [def, items, effective, answers, locale]);
 
-  /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
-  /**
-   * A product to picture in each option's tile: the best match the option would keep, given the
-   * other answers (for a question that only steers the ranking, the best product for that
-   * answer), a different one in each tile where the catalogue allows.
-   */
-  const examples = useMemo(() => {
-    if (!step || step.kind === "range") return null;
-    const others = withAnswer(answers, step.key, null);
-    const pool = step.weightOnly ? null : rank(def, items, others);
-    const used = new Set<string>();
-    const picked = new Map<string, CatalogItem>();
-    for (const option of step.options) {
-      const candidates = pool
-        ? pool.filter((r) => option.match(r.item))
-        : rank(def, items, withAnswer(others, step.key, option.id));
-      // One with a photo first: the tile shows a real device rather than a drawing.
-      const fresh = candidates.filter((r) => !used.has(def.id(r.item)));
-      const pick = fresh.find((r) => r.item.photo) ?? fresh[0] ?? candidates[0];
-      if (!pick) continue;
-      used.add(def.id(pick.item));
-      picked.set(option.id, pick.item);
-    }
-    return picked;
-  }, [def, items, answers, step]);
+  /** The product pictured in each option's tile (`examplesFor`). */
+  const examples = useMemo(
+    () => examplesFor(def, items, answers, step),
+    [def, items, answers, step],
+  );
 
+  /**
+   * Has the photos the next question's tiles will show cut out ahead of time, for this question
+   * answered `value`: the tiles then show them from their first frame. Left for a moment when the
+   * browser is busy (the ranking it takes is not free).
+   */
+  const warmNext = useCallback(
+    (value: string) => {
+      if (!step) return;
+      const after = withAnswer(answers, step.key, value);
+      const nextKey = firstPending(def, items, after);
+      const next = def.steps.find((s) => s.key === nextKey);
+      if (!next || next.key === step.key || next.kind === "range") return;
+      const picked = examplesFor(def, items, after, next);
+      if (picked?.size)
+        warmExamples([...picked.values()], next.options.length <= 3);
+    },
+    [def, items, answers, step],
+  );
+  // Once a question is on screen, the next one's tiles as they would be if it kept everything;
+  // then, the pointer resting on an option, as they would be with that answer.
+  useEffect(() => {
+    const later = setTimeout(() => warmNext(ANY), 600);
+    return () => clearTimeout(later);
+  }, [warmNext]);
+  useEffect(() => {
+    if (!hovered) return;
+    const later = setTimeout(() => warmNext(hovered), 120);
+    return () => clearTimeout(later);
+  }, [hovered, warmNext]);
+
+  /** Products the hovered option keeps, given every other answer: highlighted on the canvas. */
   const hotIds = useMemo(() => {
     if (hoveredBrand) {
       // A brand hovered in its panel: its products among those on the canvas, if it has any
@@ -478,6 +520,7 @@ export function useFinder(
     scores,
     hotIds,
     examples,
+    warmNext,
     details,
     commit,
     goTo,

@@ -1,5 +1,6 @@
 import {
   ANY,
+  type CatalogItem,
   type Category,
   type ChoiceStep,
   histogram,
@@ -9,6 +10,7 @@ import {
 import {
   type CSSProperties,
   type ReactNode,
+  useEffect,
   useId,
   useLayoutEffect,
   useRef,
@@ -19,6 +21,8 @@ import { button, optionTile } from "styled-system/recipes";
 import { messages as m } from "~/i18n/messages";
 import { gsap, prefersReducedMotion, SplitText, useGSAP } from "../motion/gsap";
 import { motion } from "../motion/tokens";
+import { pictureSettled } from "../product/photo";
+import { scene } from "../scene/controller";
 import { BudgetControl } from "./BudgetControl";
 import { useDockHeight } from "./DockPanel";
 import { HelpBubble, plainHelp } from "./HelpBubble";
@@ -303,6 +307,20 @@ export function Console({
    * never reflow the grid.
    */
   const columns = useRef({ visit: "", cols: 5, card: false });
+  /** The products the tiles picture: the preloader waits for their photos too. */
+  const pictured = useRef<CatalogItem[]>([]);
+  useEffect(
+    () =>
+      scene.provideTiles(() => {
+        const shown = pictured.current;
+        if (!shown.length) return 1;
+        const settled = shown.filter(
+          (item) => !item.photo || pictureSettled(item.photo),
+        );
+        return settled.length / shown.length;
+      }),
+    [],
+  );
   // The question plays in when it changes or gets a new answer, not when other answers do: a
   // brand picked or dropped only updates the counts on its tiles.
   const committed = step ? finder.answers[step.key] : undefined;
@@ -460,6 +478,14 @@ export function Console({
     });
     window.setTimeout(finish, (motion.fast + 0.2) * 1000);
   };
+  /**
+   * Answers the question: the photos of the next question's tiles are asked for at once, while
+   * these tiles play out.
+   */
+  const answer = (value: string) => {
+    finder.warmNext(value);
+    leave(() => finder.commit(value));
+  };
 
   if (!step) return null;
   const total = finder.matching;
@@ -495,6 +521,14 @@ export function Console({
 
   // Each tile pictures the product its option brings forward, to scale on a size question.
   const scale = examplesScale(category, step.key, finder.examples);
+  pictured.current = options.flatMap((option) => {
+    const example = finder.examples?.get(option.id);
+    const dead =
+      (counts?.counts[option.id] ?? 0) === 0 &&
+      !pickedIds.has(option.id) &&
+      !step.weightOnly;
+    return example && !dead ? [example] : [];
+  });
   const bins =
     step.kind === "range"
       ? histogram(finder.def, finder.items, finder.answers, step.key, 32)
@@ -513,7 +547,7 @@ export function Console({
         type="button"
         className={cx(button({ tone: "ink", size: "md" }), grow)}
         disabled={step.kind !== "range" && pickedIds.size === 0}
-        onClick={() => leave(() => finder.commit(draft ? draft : ANY))}
+        onClick={() => answer(draft ? draft : ANY)}
       >
         {m.continue[locale]}
       </button>
@@ -526,7 +560,7 @@ export function Console({
         className={cx(button({ tone: "ink", size: "md" }), skipOrGo, grow)}
         data-skip={skip || undefined}
         title={skip ? m.noPreferenceHint[locale] : undefined}
-        onClick={() => leave(() => finder.commit(!skip && draft ? draft : ANY))}
+        onClick={() => answer(!skip && draft ? draft : ANY)}
       >
         <span data-skip-label aria-hidden={!skip || undefined}>
           {skipLabel}
@@ -542,7 +576,7 @@ export function Console({
         type="button"
         className={cx(button({ tone: "dashed", size: "md" }), grow)}
         title={m.noPreferenceHint[locale]}
-        onClick={() => leave(() => finder.commit(ANY))}
+        onClick={() => answer(ANY)}
       >
         {skipLabel}
       </button>
@@ -789,7 +823,7 @@ export function Console({
                         onClick={() => {
                           if (isMulti)
                             finder.setDraft(toggled(step, draft, option.id));
-                          else leave(() => finder.commit(option.id));
+                          else answer(option.id);
                         }}
                       >
                         {example && (
