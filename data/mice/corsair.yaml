@@ -1,0 +1,339 @@
+# Corsair : souris importées de corsair.com (site français) par `pnpm ingest corsair-mice` ;
+# mesures, poids, boutons et fréquence lus dans les articles et FAQ de corsair.com (source au-dessus
+# de chaque fiche) : la fiche technique des pages n’en donne pas.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-24 : 14 modèles, corsair.com/fr/fr (prix € du site français ; mesures des articles corsair.com)
+- slug: corsair-sabre-v3-pro-purevector
+  brand: corsair
+  name: SABRE v3 PRO PureVector
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/v1789686272/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight/SABRE_V3_BLACK_03_TOP_LEFT.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/v1789686278/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight/SABRE_V3_BLACK_02_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686271/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight/SABRE_V3_BLACK_01_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686277/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight/SABRE_V3_WHITE_03_TOP_LEFT.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931g400-ww/sabre-v3-pro-purevector-ultralight-wireless-gaming-mouse-ch-931g400-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-sabre-v3-pro-purevector-sabre-v3-pro-purevector-ergo-everything-you-need-to-know/
+  # sideButtons : photo de profil officielle SABRE_V3_BLACK_01_LEFT (2 boutons à gauche)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.2, widthMm: 62.5, heightMm: 38.2, weightG: 37, sideButtons: 2, sensor: MARKSMAN X, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, batteryHours: 140, power: rechargeable }
+  variants:
+    - { sku: CH-931G401-WW, colorName: White, colorFamily: white }
+    - { sku: CH-931G400-WW, colorName: Black, colorFamily: black }
+
+- slug: corsair-sabre-v3-pro-purevector-ergo
+  brand: corsair
+  name: SABRE v3 PRO PureVector ERGO
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/v1789686304/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight-ergo/SABRE_V3_ERGO_BLACK_02_TOP.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/v1789686313/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight-ergo/SABRE_V3_ERGO_BLACK_03_TOP_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686306/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight-ergo/SABRE_V3_ERGO_BLACK_01_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686310/products/Gaming-Mice/sabre-v3-pro/gallery/ultralight-ergo/SABRE_V3_ERGO_WHITE_02_TOP_LEFT.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931h000-ww/sabre-v3-pro-purevector-ultralight-wireless-ergo-gaming-mouse-ch-931h000-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-sabre-v3-pro-purevector-sabre-v3-pro-purevector-ergo-everything-you-need-to-know/
+  # sideButtons : photo de profil officielle SABRE_V3_ERGO_BLACK_01_LEFT (2 boutons à gauche)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 64.5, heightMm: 41, weightG: 41, sideButtons: 2, sensor: MARKSMAN X, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, batteryHours: 140, power: rechargeable }
+  variants:
+    - { sku: CH-931H000-WW, colorName: Black, colorFamily: black }
+    - { sku: CH-931H001-WW, colorName: White, colorFamily: white }
+
+- slug: corsair-sabre-v3-pro-purevector-mg
+  brand: corsair
+  name: SABRE v3 PRO PureVector MG
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/v1789686495/products/Gaming-Mice/sabre-v3-pro/gallery/mg/SABRE_V3_MG_BLACK_03_TOP_LEFT.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/v1789686495/products/Gaming-Mice/sabre-v3-pro/gallery/mg/SABRE_V3_MG_BLACK_02_TOP.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686494/products/Gaming-Mice/sabre-v3-pro/gallery/mg/SABRE_V3_MG_BLACK_01_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686495/products/Gaming-Mice/sabre-v3-pro/gallery/mg/SABRE_V3_MG_WHITE_03_TOP_LEFT.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931g500-ww/sabre-v3-pro-purevector-mg-wireless-gaming-mouse-ch-931g500-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-sabre-v3-pro-purevector-sabre-v3-pro-purevector-ergo-everything-you-need-to-know/
+  # sideButtons : photo de profil officielle SABRE_V3_MG_BLACK_01_LEFT (2 boutons à gauche)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.9, widthMm: 64.1, heightMm: 38.8, weightG: 49, sideButtons: 2, sensor: MARKSMAN X, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable }
+  variants:
+    - { sku: CH-931G501-WW, colorName: White, colorFamily: white }
+    - { sku: CH-931G600-WW, colorName: Carbon, colorFamily: black, msrpEur: 230 }
+    - { sku: CH-931G500-WW, colorName: Black, colorFamily: black }
+
+- slug: corsair-sabre-v3-pro-purevector-mg-ergo
+  brand: corsair
+  name: SABRE v3 PRO PureVector MG ERGO
+  msrpEur: 200
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/v1789686514/products/Gaming-Mice/sabre-v3-pro/gallery/mg-ergo/SABRE_V3_MG_ERGO_BLACK_02_TOP.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/v1789686515/products/Gaming-Mice/sabre-v3-pro/gallery/mg-ergo/SABRE_V3_MG_ERGO_BLACK_03_TOP_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686514/products/Gaming-Mice/sabre-v3-pro/gallery/mg-ergo/SABRE_V3_MG_ERGO_BLACK_01_LEFT.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/v1789686515/products/Gaming-Mice/sabre-v3-pro/gallery/mg-ergo/SABRE_V3_MG_ERGO_WHITE_03_TOP_LEFT.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931h100-ww/sabre-v3-pro-purevector-mg-ergo-wireless-gaming-mouse-ch-931h100-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-sabre-v3-pro-purevector-sabre-v3-pro-purevector-ergo-everything-you-need-to-know/
+  # sideButtons : photo de profil officielle SABRE_V3_MG_ERGO_BLACK_01_LEFT (2 boutons à gauche)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125, widthMm: 67.5, heightMm: 44, weightG: 55, sideButtons: 2, sensor: MARKSMAN X, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable }
+  variants:
+    - { sku: CH-931H101-WW, colorName: White, colorFamily: white }
+    - { sku: CH-931H100-WW, colorName: Black, colorFamily: black }
+    - { sku: CH-931H200-WW, colorName: Carbon, colorFamily: black, msrpEur: 230 }
+
+- slug: corsair-sabre-v2-pro-ultralight-wireless
+  brand: corsair
+  name: SABRE v2 PRO ULTRALIGHT WIRELESS
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0FKJ2J2R8
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-config/CH-931G000-WW/CH-931G000-WW_08.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931g000-ww/sabre-v2-pro-ultralight-wireless-gaming-mouse-ch-931g000-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/p/gaming-mouse/ch-931g000-ww/sabre-v2-pro-ultralight-wireless-gaming-mouse-ch-931g000-ww (FAQ)
+  # sideButtons : infographie officielle « Optimized for all grips » (2 boutons à gauche)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.25, widthMm: 62.55, heightMm: 38.21, weightG: 36, sideButtons: 2, pollingHz: 8000, conn24ghz: true, batteryHours: 70, power: rechargeable }
+  variants:
+    - { sku: CH-931G001-WW, colorName: White, colorFamily: white }
+    - { sku: CH-931G000-WW, colorName: Black, colorFamily: black }
+    - { sku: CH-931G006-WW, colorName: Lilac, colorFamily: color }
+    - { sku: CH-931G007-WW, colorName: Pink, colorFamily: color }
+
+- slug: corsair-sabre-v2-pro-wireless-mg
+  brand: corsair
+  name: SABRE v2 PRO WIRELESS MG
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0G39J5KQQ
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_blk_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_blk_10.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_blk_11.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-sabre-v2-mg-config/gallery/sabre_v2_pro_wl_mg_blk_12.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931g100-ww/sabre-v2-pro-wireless-magnesium-alloy-gaming-mouse-black-ch-931g100-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/p/gaming-mouse/ch-931g100-ww/sabre-v2-pro-wireless-magnesium-alloy-gaming-mouse-black-ch-931g100-ww (FAQ)
+  # sideButtons : photo de profil officielle sabre_v2_pro_wl_mg_blk_11 (2 boutons à gauche)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.85, widthMm: 64.12, heightMm: 38.83, weightG: 56, sideButtons: 2, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable }
+  variants:
+    - { sku: CH-931G101-WW, colorName: White, colorFamily: white }
+    - { sku: CH-931G100-WW, colorName: Black, colorFamily: black }
+
+- slug: corsair-m75-air-wireless
+  brand: corsair
+  name: M75 AIR WIRELESS
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CHN2R8GY
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_RENDER_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_m_EN_AA_Artboard07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931D100/M75_AIR_BLACK_RENDER_04.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931d100-eu/corsair-m75-air-wireless-ultra-lightweight-gaming-mouse-black-ch-931d100-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-m75-vs-m75-air-whats-the-difference/
+  # sideButtons : « only properly suited to right-handed gamers », 5 boutons ; photo officielle M75_AIR_BLACK (2 boutons à gauche)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 65, heightMm: 42, weightG: 60, buttons: 5, sideButtons: 2, sensor: MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 34, power: rechargeable, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  variants:
+    - { sku: CH-931D102-EU, colorName: Gray, colorFamily: black }
+    - { sku: CH-931D100-EU, colorName: Black, colorFamily: black }
+
+# prix : corsair.com/fr affiche le blanc 161,82 € et le noir 129,99 € ; prix du produit = médiane, le noir garde le sien
+- slug: corsair-m75-wireless
+  brand: corsair
+  name: M75 WIRELESS
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CTKRMLWY
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wireless-config/gallery/black/M75_WIRELESS_BLACK_08.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931d010-eu/m75-wireless-lightweight-rgb-gaming-mouse-black-eu-ch-931d010-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-m75-and-m75-wireless-everything-you-need-to-know/
+  # sideButtons : « you get these buttons on both sides » (2 de chaque côté)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 128, widthMm: 65, heightMm: 42, weightG: 89, buttons: 7, sideButtons: 2, sensor: MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 105, power: rechargeable, rgb: true }
+  variants:
+    - { sku: CH-931D010-EU, colorName: Black, colorFamily: black, msrpEur: 130 }
+    - { sku: CH-931D011-EU, colorName: White, colorFamily: white, msrpEur: 160 }
+
+- slug: corsair-m75
+  brand: corsair
+  name: M75
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CTKSDDDJ
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m75-wired-config/black/gallery/M75_BLACK_10.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-930d010-eu/m75-lightweight-rgb-gaming-mouse-eu-ch-930d010-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-m75-and-m75-wireless-everything-you-need-to-know/
+  # sideButtons : « you get these buttons on both sides » (2 de chaque côté)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 128, widthMm: 65, heightMm: 42, weightG: 74, buttons: 7, sideButtons: 2, sensor: MARKSMAN 26K, dpiMax: 26000, pollingHz: 8000, rgb: true }
+  variants:
+    - { sku: CH-930D010-EU, colorName: Noir, colorFamily: black }
+
+- slug: corsair-nightsabre-wireless
+  brand: corsair
+  name: NIGHTSABRE WIRELESS
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CBVTZM9S
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard01_AB.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard02_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard03_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard04_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard05_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard06_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard07_AB.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931B011/NIGHTSABRE_WIRELESS_Artboard08_AB.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931b011-eu/nightsabre-wireless-rgb-gaming-mouse-ch-931b011-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-nightsabre-wireless-everything-you-need-to-know/
+  # sideButtons : manuel, FORWARD BUTTON et BACK BUTTON, https://www.corsair.com/us/en/explorer/gamer/mice/nightsabre-wireless/
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129.41, widthMm: 63, heightMm: 40.41, weightG: 99, buttons: 11, sideButtons: 2, sensor: MARKSMAN 26K, pollingHz: 2000, conn24ghz: true, connBt: true, batteryHours: 65, power: rechargeable, tiltWheel: true, rgb: true, makerHandMinCm: 17, makerHandMaxCm: 19.5 }
+  variants:
+    - { sku: CH-931B011-EU, colorName: Noir, colorFamily: black }
+
+- slug: corsair-darkstar-wireless
+  brand: corsair
+  name: DARKSTAR WIRELESS
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0C6R3CBJ5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_01.webp, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_02.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_03.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_04.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_05.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_06.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_10.webp, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931A011/DARKSTAR_WIRELESS_11.webp, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931a011-eu/darkstar-wireless-rgb-mmo-gaming-mouse-eu-ch-931a011-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-darkstar-wireless-everything-you-need-to-know/
+  # sideButtons : « Unique 6-button side cluster »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129.05, widthMm: 67.9, heightMm: 43.64, weightG: 96, buttons: 15, sideButtons: 6, mmo: true, sensor: MARKSMAN 26K, dpiMax: 26000, pollingHz: 2000, conn24ghz: true, connBt: true, batteryHours: 65, power: rechargeable, rgb: true, makerHandMinCm: 19, makerHandMaxCm: 21.5, makerGrips: [ palm, claw ] }
+  variants:
+    - { sku: CH-931A011-EU, colorName: Noir, colorFamily: black }
+
+- slug: corsair-scimitar-elite-wireless
+  brand: corsair
+  name: SCIMITAR ELITE WIRELESS
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CCB195GM
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_01.webp, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_02.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_03.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_04.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_05.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_06.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_10.webp, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/scimitar-elite-wireless/SCIMITAR_ELITE_WIRELESS_11.webp, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-9314311-eu/scimitar-elite-wireless-mmo-gaming-mouse-eu-ch-9314311-eu
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-scimitar-elite-wireless-everything-you-need-to-know/
+  # sideButtons : « 12 buttons, numbered, and arranged in a 3x4 grid »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.23, widthMm: 73.48, heightMm: 42.17, weightG: 114, buttons: 16, sideButtons: 12, mmo: true, pollingHz: 2000, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable, rgb: true, makerGrips: [ palm ] }
+  variants:
+    - { sku: CH-9314311-EU, colorName: Noir, colorFamily: black }
+
+- slug: corsair-nightsword-v2-wireless
+  brand: corsair
+  name: NIGHTSWORD v2 WIRELESS
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0GXVQLSGQ
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard01_AA.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard02_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard03_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard04_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard05_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard06_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard07_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/NIGHTSWORD-v2-WIRELESS/Gallery/NIGHTSWORLD_v2_WIRELESS_SD_Artboard08_AA.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-931e010-ww/nightsword-v2-wireless-stream-deck-gaming-mouse-ch-931e010-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/corsair-nightsword-v2-wireless-sd-stream-deck-gaming-mouse-everything-you-need-to-know/
+  # sideButtons : manuel (forward, back, bouton Stream Deck côté pouce : infographie « One button, infinite control »), https://www.corsair.com/us/en/explorer/gamer/mice/nightsword-v2-wireless-sd/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129.6, widthMm: 78, heightMm: 40.9, weightG: 89, buttons: 11, sideButtons: 3, pollingHz: 8000, conn24ghz: true, connBt: true, batteryHours: 170, power: rechargeable, tiltWheel: true, makerGrips: [ palm ] }
+  variants:
+    - { sku: CH-931E010-WW, colorName: Noir, colorFamily: black }
+
+- slug: corsair-harpoon-v2-wireless
+  brand: corsair
+  name: HARPOON v2 WIRELESS
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0H41HFWW5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard01_AA.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard02_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard03_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard04_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard05_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard06_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard07_AA.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/harpoon-v2-wl/Gallery/Harpoon_v2_Wireless_Artboard08_AA.png, kind: cutout_top }
+  sources:
+    - https://www.corsair.com/fr/fr/p/gaming-mouse/ch-9311110-ww/harpoon-v2-wireless-gaming-mouse-ch-9311110-ww
+  # mesures, poids, boutons, fréquence : https://www.corsair.com/us/en/explorer/gamer/mice/harpoon-v2-wireless-everything-you-need-to-know/
+  # sideButtons : « two side buttons »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.5, widthMm: 68.3, heightMm: 40.4, weightG: 80, buttons: 6, sideButtons: 2, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable, rgb: true }
+  variants:
+    - { sku: CH-9311110-WW, colorName: Noir, colorFamily: black }

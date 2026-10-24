@@ -1,5 +1,6 @@
 import type { MouseSource } from '../../source'
 import * as asus from './asus'
+import * as corsair from './corsair'
 import * as logitech from './logitech'
 import * as msi from './msi'
 import * as pulsar from './pulsar'
@@ -15,6 +16,7 @@ export const mouseSources: Record<string, MouseSource> = {
   'razer-mice': razer.source,
   'steelseries-mice': steelseries.source,
   'rog-mice': asus.source,
+  'corsair-mice': corsair.source,
   'msi-mice': msi.source,
   'pulsar-mice': pulsar.source,
   zowie: zowie.source,

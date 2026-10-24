@@ -173,7 +173,7 @@ async function read(model: Model, sizes: Map<string, string>, shop: Map<string, 
   const weight = /weight\s*:\s*(\d+(?:\.\d+)?)\s*g/i.exec(size ?? '')?.[1]
   if (weight && !facts.some((f) => /poids|weight/i.test(f.label)))
     facts.push({ label: 'Poids', value: `${weight} g` })
-  if (series) facts.push({ label: 'Boutons latéraux', value: String(series.sideButtons) })
+  if (series) facts.push({ label: 'Side buttons', value: String(series.sideButtons) })
   // The receiver doubles as a stand for the charging cable ("station de charge … charge
   // filaire"): a rechargeable battery, no wireless charging.
   if (/station de (re)?charge|charge filaire|chargement avec fil/i.test(page.text))
