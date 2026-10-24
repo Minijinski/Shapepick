@@ -1,0 +1,176 @@
+# Akko : claviers importés de en.akkogear.com (boutique internationale, WooCommerce) par `pnpm ingest akko`.
+# Prix € estimés (prix US × 1.2). Un produit par coloris chez Akko : ici une variante.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Couleurs : familles relues sur les photos (Glacier et « Glassy Carbon Fiber White » blancs, « Glassy Carbon Fiber Pink » en couleur).
+# Lot du 2026-10-24 : 8 modèles, en.akkogear.com (prix € estimés depuis les prix US)
+- slug: akko-5098-v5
+  brand: akko
+  name: 5098 V5
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/10/Glacier-5098-V5.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/10/Prunus-Lannesiana-5098-V5.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/10/BlackGold-5098-V5.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/glacier-5098-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/prunus-lannesiana-5098-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/blackgold-5098-v5-mechanical-keyboard/
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true, weightG: 1200, widthMm: 406, depthMm: 135 }
+  variants:
+    - { sku: 1058620-glacier-akko-v3-piano-pro, colorName: Glacier, colorFamily: white, layout: ansi_us, switch: akko-v3-piano-pro }
+    - { sku: 1058600-prunus-lannesiana-akko-v3-piano-pro, colorName: Prunus Lannesiana, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro }
+    - { sku: 1058580-black-gold-akko-v3-piano-pro, colorName: Black&Gold, colorFamily: black, layout: ansi_us, switch: akko-v3-piano-pro }
+
+- slug: akko-5087-v5
+  brand: akko
+  name: 5087 V5
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/10/Bun-Wonderland-5087-V5.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/10/My-Sweet-Piano-5087-V5.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/bun-wonderland-5087-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/my-sweet-piano-5087-v5-mechanical-keyboard/
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true, weightG: 1000, widthMm: 362, depthMm: 134 }
+  variants:
+    - { sku: 1058414-bun-wonderland-akko-v3-piano-pro, colorName: Bun Wonderland, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro }
+    - { sku: 1051109-my-sweet-piano-akko-v3-piano-pro, colorName: My Sweet Piano, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro }
+
+- slug: akko-5087-v5-tmr
+  brand: akko
+  name: 5087 V5 TMR
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-TMR-Carbon-Fiber-Black.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-TMR.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-TMR-Glassy-Carbon-Fiber-White.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/5087-v5-tmr-magnetic-switch-keyboard/
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 10000, widthMm: 362, depthMm: 134 }
+  variants:
+    - { sku: 1048045-carbon-fiber-black, colorName: Carbon Fiber Black, colorFamily: black, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1048045-glassy-carbon-fiber-white, colorName: Glassy Carbon Fiber White, colorFamily: white, layout: ansi_us, switch: akko-prism-magnetic }
+
+- slug: akko-5087-v5-he
+  brand: akko
+  name: 5087 V5 HE
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-HE-White-Z-Caps.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-HE-2.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/5087-V5-HE-Black-Z-Caps.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/5087-v5-he-magnetic-switch-keyboard/
+  # hotSwap, backlight : texte de la page (« Cross-Compatible with Mainstream Magnetic Switches », « Dual RGB Lighting, South- & North-Facing LEDs »)
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, batteryMah: 10000 }
+  variants:
+    - { sku: 1048080-white-z-caps, colorName: White Z Caps, colorFamily: white, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1048080-black-z-caps, colorName: Black Z Caps, colorFamily: black, layout: ansi_us, switch: akko-prism-magnetic }
+
+- slug: akko-5075-v5
+  brand: akko
+  name: 5075 V5
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/09/Bun-Wonderland-5075-V5.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/08/My-Sweet-Piano-5075-V5.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/bun-wonderland-5075-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/my-sweet-piano-5075-v5-mechanical-keyboard/
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true, weightG: 990, widthMm: 329, depthMm: 142 }
+  variants:
+    - { sku: 1039740-bun-wonderland-akko-v3-piano-pro, colorName: Bun Wonderland, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro }
+    - { sku: 1037096-my-sweet-piano-akko-v3-piano-pro, colorName: My Sweet Piano, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro }
+
+- slug: akko-5075-v5-he
+  brand: akko
+  name: 5075 V5 HE
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/5075-V5-HE-Comic.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/5075-V5-HE-HJ.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/5075-V5-HE-White-Z-Caps2.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/5075-V5-HE-Black-Z-Caps2.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/5075-v5-he-magnetic-switch-keyboard/
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 10000 }
+  variants:
+    - { sku: 1029401-comic-akko-prism-magnetic, colorName: Comic, colorFamily: color, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1029401-white-z-caps-akko-prism-magnetic, colorName: White Z Caps, colorFamily: white, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1029401-black-z-caps-akko-prism-magnetic, colorName: Black Z Caps, colorFamily: black, layout: ansi_us, switch: akko-prism-magnetic }
+
+- slug: akko-5108-v5
+  brand: akko
+  name: 5108 V5
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/2-Greedy-Bear-5108-V5-White-SP.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/2-Greedy-Bear-5108-V5-Pink-SP.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/Shiny-Kitten-5108-V5-Green.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/Shiny-Kitten-5108-V5-White.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/Shiny-Kitten-5108-V5-Pink.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/07/Shiny-Kitten-5108-V5-Yellow.png, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/greedy-bear-5108-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/shiny-kitten-5108-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/my-sweet-piano-5108-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/piggy-party-5108-v5-mechanical-keyboard/
+    - https://en.akkogear.com/product/bun-wonderland-5108-v5-mechanical-keyboard/
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true, weightG: 1410, widthMm: 441, depthMm: 130 }
+  variants:
+    - { sku: 1027543-greedy-bear-pink-sp, colorName: Greedy Bear Pink SP, colorFamily: color, layout: ansi_us, switch: akko-creamy-yellow-u1 }
+    - { sku: 1027543-greedy-bear-white-sp, colorName: Greedy Bear White SP, colorFamily: white, layout: ansi_us, switch: akko-creamy-yellow-u1 }
+    - { sku: 1026648-shiny-kitten-white-sp, colorName: Shiny Kitten White SP, colorFamily: white, layout: ansi_us, switch: akko-crystal-silver-u1 }
+    - { sku: 1026648-shiny-kitten-pink-sp, colorName: Shiny Kitten Pink SP, colorFamily: color, layout: ansi_us, switch: akko-crystal-silver-u1 }
+    - { sku: 1026648-shiny-kitten-green-sp, colorName: Shiny Kitten Green SP, colorFamily: color, layout: ansi_us, switch: akko-crystal-silver-u1 }
+    - { sku: 1026648-shiny-kitten-yellow-sp, colorName: Shiny Kitten Yellow SP, colorFamily: color, layout: ansi_us, switch: akko-crystal-silver-u1 }
+    - { sku: 1024689-my-sweet-piano-akko-v3-piano-pro, colorName: My Sweet Piano, colorFamily: color, layout: ansi_us, switch: akko-v3-piano-pro, msrpEur: 145 }
+    - { sku: 1009463-piggy-party-akko-creamy-yellow-u1, colorName: Piggy Party, colorFamily: color, layout: ansi_us, switch: akko-creamy-yellow-u1 }
+    - { sku: 1008248-bun-wonderland-akko-creamy-yellow-u1, colorName: Bun Wonderland, colorFamily: color, layout: ansi_us, switch: akko-creamy-yellow-u1 }
+
+- slug: akko-5075-v5-tmr
+  brand: akko
+  name: 5075 V5 TMR
+  msrpEur: 140
+  msrpUsd: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/06/5075-V5-TMR-Black.avif, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/06/5075-V5-TMR-Black-Kailh-Aurora.avif, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/06/5075-V5-TMR-Black-Akko-Prism.avif, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/06/5075-V5-TMR-White-Kailh-Aurora.avif, kind: cutout_top }
+  sources:
+    - https://en.akkogear.com/product/5075-v5-tmr-magnetic-switch-keyboard/
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 10000, weightG: 1100, widthMm: 329, depthMm: 142 }
+  variants:
+    - { sku: 1023068-glassy-carbon-fiber-black-kailh-aurora-magnetic, colorName: Glassy Carbon Fiber Black, colorFamily: black, layout: ansi_us, switch: kailh-aurora-magnetic }
+    - { sku: 1023068-glassy-carbon-fiber-black-akko-prism-magnetic, colorName: Glassy Carbon Fiber Black, colorFamily: black, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1023068-glassy-carbon-fiber-white-kailh-aurora-magnetic, colorName: Glassy Carbon Fiber White, colorFamily: white, layout: ansi_us, switch: kailh-aurora-magnetic }
+    - { sku: 1023068-glassy-carbon-fiber-white-akko-prism-magnetic, colorName: Glassy Carbon Fiber White, colorFamily: white, layout: ansi_us, switch: akko-prism-magnetic }
+    - { sku: 1023068-glassy-carbon-fiber-pink-kailh-aurora-magnetic, colorName: Glassy Carbon Fiber Pink, colorFamily: color, layout: ansi_us, switch: kailh-aurora-magnetic }
+    - { sku: 1023068-glassy-carbon-fiber-pink-akko-prism-magnetic, colorName: Glassy Carbon Fiber Pink, colorFamily: color, layout: ansi_us, switch: akko-prism-magnetic }

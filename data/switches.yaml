@@ -379,3 +379,16 @@
 - { slug: rog-hfx-magnetic, brand: ROG, name: HFX Magnetic, feel: linear, tech: magnetic, actuationForceG: 40, bottomOutG: 55, totalTravelMm: 4, factoryLubed: true }
 - { slug: rog-hfx-v2-magnetic, brand: ROG, name: HFX V2 Magnetic, feel: linear, tech: magnetic, actuationForceG: 32, bottomOutG: 49, totalTravelMm: 3.5, factoryLubed: true }
 - { slug: rog-hfx-v2x-magnetic, brand: ROG, name: HFX V2X Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 45, totalTravelMm: 3.5 }
+
+# Akko, cartes des switchs des pages produit de la boutique officielle (en.akkogear.com) ; force : « Operating Force »
+# (« Initial Force » pour un magnétique), fin de course : « End Force », courses : « Pre Travel » / « Total Travel ».
+# https://en.akkogear.com/product/blackgold-5098-v5-mechanical-keyboard/
+- { slug: akko-v3-piano-pro, brand: Akko, name: V3 Piano Pro, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 3.1 }
+# https://en.akkogear.com/product/piggy-party-5108-v5-mechanical-keyboard/
+- { slug: akko-creamy-yellow-u1, brand: Akko, name: Creamy Yellow U1, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.6 }
+# https://en.akkogear.com/product/shiny-kitten-5108-v5-mechanical-keyboard/
+- { slug: akko-crystal-silver-u1, brand: Akko, name: Crystal Silver U1, feel: linear, tech: mechanical, actuationForceG: 35, preTravelMm: 1, totalTravelMm: 3.6 }
+# https://en.akkogear.com/product/5075-v5-he-magnetic-switch-keyboard/
+- { slug: akko-prism-magnetic, brand: Akko, name: Prism Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }
+# https://en.akkogear.com/product/5075-v5-tmr-magnetic-switch-keyboard/
+- { slug: kailh-aurora-magnetic, brand: Kailh, name: Aurora Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }

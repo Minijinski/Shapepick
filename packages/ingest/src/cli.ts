@@ -11,6 +11,7 @@ import { importMonitors } from './import-monitors'
 import { pickPhotos } from './photos'
 import { refreshPrices } from './refresh-prices'
 import { type Draft, Skip, type Source } from './source'
+import * as akko from './sources/akko'
 import * as corsair from './sources/corsair'
 import * as keychron from './sources/keychron'
 import * as logitech from './sources/logitech'
@@ -26,7 +27,7 @@ import { rebuildVariants } from './variants'
 import { appendEntries, compact } from './yaml'
 
 // pnpm ingest <source> [--next 10] [--dry-run] [--refresh]   import the next N models
-//   keyboards: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, logitech,
+//   keyboards: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, akko, logitech,
 //   logitechg, corsair, razer, rog, steelseries, hyperx, turtlebeach
 //   monitors (sources/monitors/, written to data/monitors): see monitorSources
 //   mice (sources/mice/, written to data/mice): see mouseSources (razer-mice, zowie…)
@@ -42,6 +43,7 @@ import { appendEntries, compact } from './yaml'
 
 const sources: Record<string, Source> = {
   keychron: keychron.source,
+  akko: akko.source,
   mk: mk.source,
   ...stores.sources,
   ...logitech.sources,
