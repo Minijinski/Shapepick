@@ -152,10 +152,11 @@ const tileScroll = css({
   overscrollBehavior: "contain",
   scrollbarWidth: "thin",
   "&[data-entering]": { overflowY: "hidden" },
-  // More answers below: the list fades out at the bottom rather than stopping dead.
+  // More answers below: the list fades at the bottom rather than stopping dead, lightly enough
+  // that the last answer in view stays legible.
   "&[data-more-below]": {
     maskImage:
-      "linear-gradient(to bottom, #000 calc(100% - 2.5rem), transparent)",
+      "linear-gradient(to bottom, #000 calc(100% - 1.5rem), rgb(0 0 0 / 0.35))",
   },
 });
 
