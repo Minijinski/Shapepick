@@ -137,4 +137,9 @@ export type Ranked<I> = {
   met: number
   pros: Text[]
   cons: Text[]
+  /**
+   * The answers it misses, by their step's label: only a product the answers rule out but that
+   * comes close (`nearMisses`) has any. `met` then counts those it meets.
+   */
+  misses?: Text[]
 }

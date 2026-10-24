@@ -19,7 +19,10 @@ import { ProductLink } from "./ProductLink";
 // answer there is nothing to rank on: the page keeps the podium out of sight (Finder), and its
 // entries come in one after the other once there is a ranking. Switching categories, a podium as
 // long as the last one takes its place: the cards, their ranks, the header and the "See all"
-// button stay, only what the cards show gives way to the new category's (Finder decides).
+// button stay, only what the cards show gives way to the new category's (Finder decides). When
+// the answers keep fewer than three products, the closest of those they rule out fill the podium
+// (`nearMisses`): dashed, with a hollow rank, the answers they miss in place of the price, and no
+// match, since they do not meet every answer.
 
 const useIsoLayoutEffect =
   typeof window === "undefined" ? () => {} : useLayoutEffect;
@@ -82,6 +85,8 @@ const card = cx(
       borderColor: "signal",
       _hover: { borderColor: "signal" },
     },
+    // A product the answers rule out, there to fill the podium.
+    "&[data-near]": { borderStyle: "dashed", borderColor: "line.strong" },
   }),
 );
 
@@ -351,7 +356,8 @@ export function Podium({
         {informed &&
           top.map((entry, i) => {
             const asCard = row || i < 3;
-            const first = i === 0;
+            const near = !!entry.misses?.length;
+            const first = i === 0 && !near;
             return (
               <li
                 key={entry.item.slug}
@@ -368,6 +374,7 @@ export function Podium({
                     slug={entry.item.slug}
                     className={card}
                     data-first={first || undefined}
+                    data-near={near || undefined}
                     data-hint={(hint && first) || undefined}
                   >
                     <span
@@ -425,6 +432,12 @@ export function Podium({
                           color: "paper",
                           boxShadow: "0 0 0 2px token(colors.surface.raised)",
                           "[data-first] &": { bg: "signal", color: "white" },
+                          "[data-near] &": {
+                            bg: "surface.raised",
+                            color: "ink.muted",
+                            boxShadow:
+                              "inset 0 0 0 1px token(colors.line.strong), 0 0 0 2px token(colors.surface.raised)",
+                          },
                         })}
                       >
                         <span className={css({ srOnly: true })}>n° </span>
@@ -469,25 +482,32 @@ export function Podium({
                           className={css({
                             fontFamily: "mono",
                             color: "ink.muted",
+                            truncate: true,
                           })}
                         >
-                          {formatPrice(entry.item.priceEur, locale)}
+                          {near
+                            ? `${m.ruledOutBy[locale]} · ${entry.misses
+                                ?.map((label) => label[locale])
+                                .join(", ")}`
+                            : formatPrice(entry.item.priceEur, locale)}
                         </span>
                         <span aria-hidden>{m.viewSheet[locale]} →</span>
                       </span>
                     </span>
-                    <span
-                      data-swap-part
-                      className={cx(part, css({ display: "grid" }))}
-                    >
-                      <Match
-                        score={entry.score}
-                        locale={locale}
-                        size="sm"
-                        accent={first}
-                        label={false}
-                      />
-                    </span>
+                    {!near && (
+                      <span
+                        data-swap-part
+                        className={cx(part, css({ display: "grid" }))}
+                      >
+                        <Match
+                          score={entry.score}
+                          locale={locale}
+                          size="sm"
+                          accent={first}
+                          label={false}
+                        />
+                      </span>
+                    )}
                   </ProductLink>
                 ) : (
                   <ProductLink slug={entry.item.slug} className={compact}>

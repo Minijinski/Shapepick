@@ -28,7 +28,9 @@ import { ProductLink } from "./ProductLink";
 // answers giving it their place: they come with it, under its title (how many products, the
 // brands, a chip per answer that reopens its question). The best match as a product card (its
 // photo beside its name, price, match and key specs, then what its match is made of), the next two
-// below it, every other match in a list. Every product links to its sheet: the best match from its
+// below it, every other match in a list. When the answers keep fewer than three, the closest of
+// those they rule out fill the next two's free places: dashed, the answers they miss in place of
+// a match. Every product links to its sheet: the best match from its
 // photo or its button, the others from anywhere on their card or row; each also links to Amazon
 // (keyboards). The list can hold the whole catalogue: only the rows in view (and a few around
 // them) are rendered, each the same height, so opening the results costs the same for 5 products
@@ -36,6 +38,8 @@ import { ProductLink } from "./ProductLink";
 
 type Props = {
   ranked: Ranked<CatalogItem>[];
+  /** The closest products the answers rule out (`nearMisses`), when they keep fewer than three. */
+  near?: Ranked<CatalogItem>[];
   /** False until an answer gives the ranking something to go on: no match is printed then. */
   scored?: boolean;
   /** The use the visitor picked, which the match is measured against. */
@@ -276,6 +280,7 @@ const ResetIcon = () => (
 
 export function ResultsView({
   ranked,
+  near = [],
   scored = true,
   use,
   locale,
@@ -290,7 +295,7 @@ export function ResultsView({
   const list = useRef<HTMLOListElement>(null);
   const leaving = useRef(false);
   const [first, ...others] = ranked;
-  const runnersUp = others.slice(0, 2);
+  const runnersUp = [...others, ...near].slice(0, 2);
   const rest = others.slice(2);
   const rowHeight = useRowHeight();
   const rows = useRowsInView(root, list, rest.length, rowHeight);
@@ -677,6 +682,7 @@ export function ResultsView({
                   <article
                     key={entry.item.slug}
                     data-result
+                    data-near={entry.misses?.length ? true : undefined}
                     className={css({
                       position: "relative",
                       display: "grid",
@@ -691,6 +697,11 @@ export function ResultsView({
                         borderColor: "line.strong",
                         bg: "surface.raised",
                       },
+                      // A product the answers rule out, there to fill the places.
+                      "&[data-near]": {
+                        borderStyle: "dashed",
+                        borderColor: "line.strong",
+                      },
                     })}
                   >
                     <div
@@ -704,8 +715,26 @@ export function ResultsView({
                       })}
                     >
                       <span>{String(i + 2).padStart(2, "0")}</span>
-                      {scored && (
-                        <Match score={entry.score} locale={locale} size="sm" />
+                      {entry.misses?.length ? (
+                        <span
+                          className={css({
+                            minW: "0",
+                            color: "ink.muted",
+                            truncate: true,
+                          })}
+                        >
+                          {`${m.ruledOutBy[locale]} · ${entry.misses
+                            .map((label) => label[locale])
+                            .join(", ")}`}
+                        </span>
+                      ) : (
+                        scored && (
+                          <Match
+                            score={entry.score}
+                            locale={locale}
+                            size="sm"
+                          />
+                        )
                       )}
                     </div>
                     <div

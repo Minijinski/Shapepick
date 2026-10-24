@@ -424,6 +424,92 @@ function priorTellsApart<I>(def: FinderDefinition<I>, items: I[]): boolean {
 export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers): Ranked<I>[] {
   const pool = filter(def, items, answers)
   const met = def.steps.filter((s) => !s.aside && predicateOf(s, answers) != null).length
+  const judge = judgeFor(def, items, answers)
+  const ranked = pool.map((item) => {
+    const { fit, pros, cons } = judge(item)
+    return { item, score: (FIT_WEIGHT * fit + met) / (FIT_WEIGHT + met), fit, met, pros, cons }
+  })
+  ranked.sort(byMatch(def))
+  return def.maker ? takeTurns(ranked, def.maker) : ranked
+}
+
+/** A range answer missed by this ratio (a budget overshot by a quarter) is as far off as a choice. */
+const RANGE_SLACK = 1.25
+
+/**
+ * When the answers keep fewer products than a podium shows, up to `count` of those they rule out
+ * that come closest: the fewest answers missed first, a budget overshot by a little before one
+ * overshot by a lot, then the best match. What makes two products never alike (a mouse for the
+ * other hand) still rules a product out, and so do the brands picked aside. Each one names the
+ * answers it misses, which its match counts as unmet.
+ */
+export function nearMisses<I>(
+  def: FinderDefinition<I>,
+  items: I[],
+  answers: Answers,
+  count: number,
+): Ranked<I>[] {
+  const hard = new Set((def.likeness ?? []).filter((l) => l.hard).map((l) => l.key))
+  const tests = def.steps.flatMap((step) => {
+    const test = predicateOf(step, answers)
+    return test ? [{ step, test }] : []
+  })
+  const held = tests.filter((t) => t.step.aside || hard.has(t.step.key))
+  const loose = tests.filter((t) => !t.step.aside && !hard.has(t.step.key))
+  if (count <= 0 || !loose.length) return []
+  const answered = tests.filter((t) => !t.step.aside).length
+
+  const close = items.flatMap((item) => {
+    if (!held.every((t) => t.test(item))) return []
+    const missed = loose.filter((t) => !t.test(item))
+    if (!missed.length) return []
+    const off = missed.reduce((sum, t) => sum + offBy(t.step, item, answers), 0)
+    return [{ item, missed, off }]
+  })
+  close.sort((a, b) => a.off - b.off)
+  // Only those as close as the last one shown are worth scoring.
+  const last = close[count - 1]?.off ?? Number.POSITIVE_INFINITY
+  const judge = judgeFor(def, items, answers)
+  const near = close
+    .filter((c) => c.off <= last)
+    .map(({ item, missed, off }) => {
+      const { fit, pros, cons } = judge(item)
+      const met = answered - missed.length
+      const score = (FIT_WEIGHT * fit + met) / (FIT_WEIGHT + answered)
+      const misses = missed.map((t) => t.step.label)
+      return { entry: { item, score, fit, met, pros, cons, misses }, off }
+    })
+  const order = byMatch(def)
+  near.sort((a, b) => a.off - b.off || order(a.entry, b.entry))
+  return near.slice(0, count).map((n) => n.entry)
+}
+
+/** How far off an item is on a step it fails: 1 for a choice; for a range, as much as it misses by. */
+function offBy<I>(step: Step<I>, item: I, answers: Answers): number {
+  if (isChoice(step)) return 1
+  const range = readRange(answers[step.key])
+  if (!range || range === ANY) return 0
+  const [min, max] = range
+  const value = step.value(item)
+  const ratio = max != null && value > max ? value / Math.max(1, max) : min / Math.max(1, value)
+  return Math.min(2, Math.log(ratio) / Math.log(RANGE_SLACK))
+}
+
+/** Best match first; the same match, cheapest first, then as the definition settles it, then by id. */
+const byMatch =
+  <I>(def: FinderDefinition<I>) =>
+  (a: Ranked<I>, b: Ranked<I>) =>
+    b.score - a.score ||
+    def.price(a.item) - def.price(b.item) ||
+    (def.settle?.(a.item, b.item) ?? 0) ||
+    def.id(a.item).localeCompare(def.id(b.item))
+
+/**
+ * What the ranking reads off the answers, ready to judge one item: its fit to the visitor's use,
+ * with the strengths and weaknesses worth saying. `items` is the whole catalogue, which says what
+ * a figure missing from a sheet counts as.
+ */
+function judgeFor<I>(def: FinderDefinition<I>, items: I[], answers: Answers) {
   const profileId = answers[def.profileStep]
   const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
   const live = liveAnswers(def, answers)
@@ -438,7 +524,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
   const typical = typicalScores(def, items)
   const fitShare = priorTellsApart(def, items) ? FIT_SHARE : 1
 
-  const ranked = pool.map((item) => {
+  return (item: I): Pick<Ranked<I>, 'fit' | 'pros' | 'cons'> => {
     const scores = new Map<string, number>()
     const guessed = new Set<string>()
     for (const c of criteria) {
@@ -467,24 +553,12 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
     ]
       .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
-    const fit = fitShare * profileFit + (1 - fitShare) * prior
     return {
-      item,
-      score: (FIT_WEIGHT * fit + met) / (FIT_WEIGHT + met),
-      fit,
-      met,
+      fit: fitShare * profileFit + (1 - fitShare) * prior,
       pros: pros.map((c) => c.label),
       cons: cons.map((c) => weakLabelOf(c, item, live)),
     }
-  })
-  ranked.sort(
-    (a, b) =>
-      b.score - a.score ||
-      def.price(a.item) - def.price(b.item) ||
-      (def.settle?.(a.item, b.item) ?? 0) ||
-      def.id(a.item).localeCompare(def.id(b.item)),
-  )
-  return def.maker ? takeTurns(ranked, def.maker) : ranked
+  }
 }
 
 const weakLabelOf = <I>(c: Criterion<I>, item: I, answers: Answers) =>

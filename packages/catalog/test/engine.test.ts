@@ -11,6 +11,7 @@ import {
   isTrivial,
   journeyStates,
   keyboardFinder,
+  nearMisses,
   optionCounts,
   previousStep,
   priorAnswers,
@@ -370,6 +371,60 @@ describe('missing figures and ties', () => {
     const told = rank({ ...def, prior: (x) => (x.wifi ? 1 : 0) }, toys, { use: 'quality' })
     expect(told.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.75 * 0.9 + 0.25)
     expect(told.find((r) => r.item.id === 'c')?.fit).toBeCloseTo(0.75 * 0.7)
+  })
+})
+
+describe('near misses', () => {
+  const near = (d: FinderDefinition<Toy>, answers: Record<string, string>, count = 3) =>
+    nearMisses(d, toys, answers, count).map((r) => r.item.id)
+  it('offers what the answers rule out, fewest answers missed first, then the best match', () => {
+    const answers = { use: 'quality', color: 'blue', musts: 'wifi' }
+    expect(rank(def, toys, answers).map((r) => r.item.id)).toEqual(['d'])
+    // Each misses one answer: the best fit first.
+    expect(near(def, answers, 2)).toEqual(['a', 'c'])
+    const [a] = nearMisses(def, toys, answers, 1)
+    expect(a?.misses?.map((l) => l.en)).toEqual(['Colour'])
+    // The match counts the answer missed as unmet.
+    expect(a?.met).toBe(1)
+    expect(a?.score).toBeCloseTo((3 * 0.9 + 1) / (3 + 2))
+    // Kept products never have misses.
+    expect(rank(def, toys, answers)[0]?.misses).toBeUndefined()
+  })
+  it('puts a budget overshot by a little before a choice missed, and one overshot by a lot after', () => {
+    // d is 20 % over the budget: closer than a and b, which are red.
+    expect(near(def, { use: 'quality', color: 'blue', budget: '0-250' })).toEqual(['d', 'a', 'b'])
+    // e and d cost twice the budget or more: the red ones come first, b although over it too.
+    expect(near(def, { use: 'quality', color: 'blue', budget: '0-100' })).toEqual(['a', 'b', 'e'])
+  })
+  it('keeps the brands picked aside, and what makes two products never alike', () => {
+    const strict: FinderDefinition<Toy> = {
+      ...def,
+      likeness: [{ key: 'size', weight: 1, hard: true }],
+      steps: [
+        ...def.steps,
+        {
+          key: 'brand',
+          kind: 'multi',
+          aside: true,
+          label: t('Brand'),
+          title: t('Brand?'),
+          options: [
+            { id: 'bt', label: t('BT'), match: (x) => x.bt },
+            { id: 'plain', label: t('Plain'), match: (x) => !x.bt },
+          ],
+        },
+      ],
+    }
+    // Only what the brand picked makes: a and e never show.
+    expect(near(strict, { use: 'quality', brand: 'bt', color: 'red' })).toEqual(['c', 'd'])
+    // Another size is never close; without that rule, it would be.
+    const answers = { use: 'quality', color: 'blue', size: 'l', musts: 'wifi' }
+    expect(near(strict, answers)).toEqual(['e'])
+    expect(near(def, answers)).toEqual(['e', 'a', 'c'])
+  })
+  it('has nothing to offer while no answer narrows', () => {
+    expect(near(def, { use: 'quality' })).toEqual([])
+    expect(near(def, { use: 'quality', color: 'blue' }, 0)).toEqual([])
   })
 })
 

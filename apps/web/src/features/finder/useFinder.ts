@@ -15,6 +15,7 @@ import {
   isInformed,
   journeyStates,
   type Locale,
+  nearMisses,
   optionCounts,
   predicateOf,
   previousStep,
@@ -34,6 +35,7 @@ import { useCallback, useEffect, useMemo, useRef, useState } from "react";
 import type { ItemDetail } from "../scene/controller";
 import type { JourneyStop } from "./JourneyBar";
 import { warmExamples } from "./OptionExample";
+import { PODIUM_SIZE } from "./Podium";
 
 // Everything a finder screen shows is derived here from three inputs: the catalogue, the answers
 // in the URL, and what the visitor is doing right now (a draft pick, a hovered tile). Committed
@@ -170,6 +172,19 @@ export function useFinder(
   const ranked = useMemo(
     () => rank(def, items, effective),
     [def, items, effective],
+  );
+  /** When the answers keep fewer products than a podium shows, the closest they rule out. */
+  const near = useMemo(
+    () =>
+      ranked.length < PODIUM_SIZE
+        ? nearMisses(def, items, effective, PODIUM_SIZE - ranked.length)
+        : [],
+    [def, items, effective, ranked.length],
+  );
+  /** The podium: the best matches, completed by the closest products ruled out. */
+  const podium = useMemo(
+    () => [...ranked.slice(0, PODIUM_SIZE), ...near],
+    [ranked, near],
   );
   /** Whether the answers give the ranking anything to go on: until then, no podium, rank or match. */
   const informed = useMemo(() => isInformed(def, effective), [def, effective]);
@@ -507,6 +522,8 @@ export function useFinder(
     hovered,
     setHovered,
     ranked,
+    near,
+    podium,
     informed,
     useLabel,
     matching: ranked.length,

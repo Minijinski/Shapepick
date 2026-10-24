@@ -3,6 +3,7 @@ import {
   type Category,
   finderOf,
   isInformed,
+  nearMisses,
   predicateOf,
   rank,
   readOrder,
@@ -11,6 +12,7 @@ import {
   withOrder,
 } from '@choose/catalog'
 import type { ItemTargets } from '../scene/renderer'
+import { PODIUM_SIZE } from './Podium'
 import { type FinderSearch, stepAt } from './useFinder'
 
 // What a category's finder shows for a saved journey, worked out as the visitor heads there,
@@ -25,7 +27,10 @@ export type FinderAhead = {
   category: Category
   /** It opens on its results. */
   results: boolean
-  /** How many products its podium ranks; null when it shows none (no answer to rank on yet). */
+  /**
+   * How many products its podium shows, the closest ruled out included; null when it shows none
+   * (no answer to rank on yet).
+   */
   ranked: number | null
 }
 
@@ -42,6 +47,8 @@ export function journeyAhead(
   const informed = isInformed(def, answers)
   const results = stepAt(def, items, answers, search.at) == null
   const order = ranked.map((r) => def.id(r.item))
+  const short = PODIUM_SIZE - ranked.length
+  const podium = ranked.length + (short > 0 ? nearMisses(def, items, answers, short).length : 0)
   return {
     targets: {
       kept: filters ? new Set(order) : null,
@@ -49,6 +56,6 @@ export function journeyAhead(
       order: informed ? order : [],
       scores: informed ? ranked.map((r) => r.score) : [],
     },
-    finder: { category, results, ranked: informed && !results ? ranked.length : null },
+    finder: { category, results, ranked: informed && !results ? podium : null },
   }
 }

@@ -420,14 +420,14 @@ export function Finder({ category, items, search, product, locale }: Props) {
       new Promise<void>((resolve) => {
         const el = stage.current;
         // What the next category's finder shows in the same place stays: the counter and the
-        // canvas hint while its console shows, the podium when it ranks as many products.
+        // canvas hint while its console shows, the podium when it shows as many cards.
         const cards = (n: number) => Math.min(PODIUM_SIZE, n);
         const hud = kind === "switch" && !done && !!ahead && !ahead.results;
         const keepPodium =
           kind === "switch" &&
           ranking &&
           ahead?.ranked != null &&
-          cards(ahead.ranked) === cards(finder.ranked.length);
+          cards(ahead.ranked) === cards(finder.podium.length);
         kept =
           el && ahead && kind === "switch"
             ? {
@@ -654,7 +654,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
           })}
         >
           <Podium
-            top={finder.ranked.slice(0, PODIUM_SIZE)}
+            top={finder.podium}
             total={finder.matching}
             informed={finder.informed}
             locale={locale}
@@ -816,7 +816,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
               })}
             >
               <Podium
-                top={finder.ranked.slice(0, PODIUM_SIZE)}
+                top={finder.podium}
                 total={finder.matching}
                 locale={locale}
                 layout="row"
@@ -829,6 +829,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
             {done ? (
               <ResultsView
                 ranked={finder.ranked}
+                near={finder.near}
                 scored={finder.informed}
                 use={finder.useLabel}
                 locale={locale}
