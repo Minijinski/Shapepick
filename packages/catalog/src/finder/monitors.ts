@@ -1,5 +1,6 @@
 import type { MonitorItem } from '../domain/items'
 import { text } from '../i18n'
+import { settleTies } from './settle'
 import type { FinderDefinition, Option } from './types'
 
 // The monitor questionnaire. Same shape as the keyboard one: use first (ranking profile only),
@@ -43,6 +44,7 @@ export const monitorFinder: FinderDefinition<M> = {
   id: (m) => m.slug,
   price: (m) => m.priceEur,
   prior: (m) => 0.6 * m.editorialScore + 0.4 * m.popularity,
+  settle: settleTies,
   maker: (m) => m.brand.slug,
   // A monitor like another is first of its size, then of its sharpness and panel, then as smooth
   // and as flat (or curved).

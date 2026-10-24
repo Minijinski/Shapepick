@@ -7,6 +7,7 @@ import {
 import { Link, useLocation, useParams } from "@tanstack/react-router";
 import { type MouseEvent, useEffect, useState } from "react";
 import { css, cx } from "styled-system/css";
+import { legalPaths } from "~/features/legal/legal";
 import { isPlainClick, useSceneNavigation } from "~/features/scene/navigation";
 import { useLocale } from "~/i18n/locale";
 import { messages as m } from "~/i18n/messages";
@@ -29,6 +30,26 @@ const link = css({
     color: "ink",
     bg: "surface.raised",
     boxShadow: "0 0 0 1px token(colors.line)",
+  },
+});
+
+/** The legal notice: quieter than the languages beside it, a word rather than a code. */
+const legalLink = css({
+  display: "inline-flex",
+  alignItems: "center",
+  h: "8",
+  px: "2",
+  _coarse: { h: "10" },
+  borderRadius: "pill",
+  fontSize: "xs",
+  color: "ink.muted",
+  whiteSpace: "nowrap",
+  transition: "color 160ms",
+  _hover: { color: "ink" },
+  _focusVisible: {
+    outline: "2px solid",
+    outlineColor: "signal",
+    outlineOffset: "2px",
   },
 });
 
@@ -201,40 +222,60 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
         ))}
       </nav>
 
-      {/* Always in the last column, so it stays at the right when the categories are hidden. The
-          other language keeps the page: the category, its answers and the product open. */}
-      <nav
-        aria-label={m.language[locale]}
+      {/* Always in the last column, so it stays at the right when the categories are hidden: the
+          legal notice, then the other language, which keeps the page (the category, its answers
+          and the product open). */}
+      <div
         className={css({
           gridColumn: "3",
           justifySelf: "end",
           display: "flex",
+          alignItems: "center",
           gap: "1",
         })}
       >
-        {locales.map((other) => (
-          <a
-            key={other}
-            href={
-              current
-                ? `/${other}/${categorySlugs[current][other]}${params.product ? `/${params.product}` : ""}${searchStr}`
-                : `/${other}`
-            }
-            hrefLang={other}
-            data-status={other === locale ? "active" : undefined}
-            className={cx(
-              link,
-              css({
-                fontFamily: "mono",
-                textTransform: "uppercase",
-                fontSize: "xs",
-              }),
-            )}
-          >
-            {other}
-          </a>
-        ))}
-      </nav>
+        {/* A page of its own, outside the finder: an ordinary link, as the languages are. */}
+        <a href={legalPaths[locale]} className={legalLink}>
+          {m.legal[locale]}
+        </a>
+        <span
+          aria-hidden
+          className={css({
+            w: "1px",
+            h: "3.5",
+            ml: "0.5",
+            mr: "1",
+            bg: "grey.300",
+          })}
+        />
+        <nav
+          aria-label={m.language[locale]}
+          className={css({ display: "flex", gap: "1" })}
+        >
+          {locales.map((other) => (
+            <a
+              key={other}
+              href={
+                current
+                  ? `/${other}/${categorySlugs[current][other]}${params.product ? `/${params.product}` : ""}${searchStr}`
+                  : `/${other}`
+              }
+              hrefLang={other}
+              data-status={other === locale ? "active" : undefined}
+              className={cx(
+                link,
+                css({
+                  fontFamily: "mono",
+                  textTransform: "uppercase",
+                  fontSize: "xs",
+                }),
+              )}
+            >
+              {other}
+            </a>
+          ))}
+        </nav>
+      </div>
     </header>
   );
 }

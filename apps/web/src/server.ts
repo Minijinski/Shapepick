@@ -9,6 +9,8 @@ import { SITE } from './site'
 // the image CDN reads its sources from, the catalogue, the server functions of a page still open
 // at the old address. Netlify applies its redirect rules (netlify.toml) only after its functions,
 // which is why this is not one of them. Deploy previews have other subdomains and stay put.
+// A page's address never ends with a slash either: one asked for with it moves for good to the
+// address without it (the router would answer a temporary 307), in the same single redirect.
 
 /** The site's first address. */
 const FIRST_HOST = 'choose-a-device.netlify.app'
@@ -20,11 +22,13 @@ export default createServerEntry({
     const url = new URL(request.url)
     const home = new URL(SITE.url)
     const page = !NOT_PAGES.some((prefix) => url.pathname.startsWith(prefix))
-    if (url.hostname === FIRST_HOST && home.hostname !== FIRST_HOST && page) {
+    const moved = url.hostname === FIRST_HOST && home.hostname !== FIRST_HOST && page
+    const path = page ? url.pathname.replace(/(.)\/+$/, '$1') : url.pathname
+    if (moved || path !== url.pathname) {
       return new Response(null, {
-        status: 301,
+        status: moved ? 301 : 308,
         headers: {
-          location: `${home.origin}${url.pathname}${url.search}`,
+          location: `${moved ? home.origin : ''}${path}${url.search}`,
           'cache-control': 'public, max-age=86400',
         },
       })

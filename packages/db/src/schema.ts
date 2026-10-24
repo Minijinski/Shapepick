@@ -302,3 +302,32 @@ export const offers = pgTable(
   },
   (t) => [uniqueIndex().on(t.productId, t.shop, t.country, t.url)],
 )
+
+/**
+ * Clicks on a buy link, written by /api/out as they happen: which product, from where on the site,
+ * to its page at the shop or to a search. Nothing about the visitor beyond the country and the kind
+ * of device: no address, no cookie, no identifier. The product is kept by slug rather than by
+ * reference, so the history outlives a product's removal from the catalogue.
+ */
+export const outboundClicks = pgTable(
+  'outbound_clicks',
+  {
+    id: serial().primaryKey(),
+    at: timestamp({ withTimezone: true }).notNull().defaultNow(),
+    shop: text().notNull(),
+    productSlug: text().notNull(),
+    category: category().notNull(),
+    /** Where the link sat: the sheet, the best match, a runner-up, a row of the results… */
+    placement: text().notNull(),
+    /** `page` when it opened the product's page at the shop, `search` for a search. */
+    link: text().notNull(),
+    locale: text().notNull(),
+    /** The path the click came from. */
+    page: text(),
+    /** ISO 3166 code, from the CDN's geolocation. */
+    country: text(),
+    /** `mobile` or `desktop`, from the browser's user agent. */
+    device: text(),
+  },
+  (t) => [index().on(t.at), index().on(t.productSlug)],
+)

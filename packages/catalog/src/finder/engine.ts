@@ -300,6 +300,7 @@ export function deadEnd<I>(
 // ==== Ranking ==================================================================================
 
 const FLOOR = 0.05
+/** The profile's share of the fit once the prior tells items apart; the prior has the rest. */
 const FIT_SHARE = 0.75
 /** Weight of the fit in the match, against one answer that an item meets. */
 const FIT_WEIGHT = 3
@@ -396,17 +397,44 @@ function typicalScores<I>(def: FinderDefinition<I>, items: I[]): Typical {
   return typical
 }
 
+/** Per catalogue, whether its items' priors differ. */
+const priorCache = new WeakMap<object, WeakMap<object, boolean>>()
+
+/**
+ * Whether the prior tells any of the catalogue's items apart. Until editorial scores and
+ * popularity are filled in, every item has the same one: its share of the fit would then squeeze
+ * every match towards the middle without ever changing the order.
+ */
+function priorTellsApart<I>(def: FinderDefinition<I>, items: I[]): boolean {
+  let byPrior = priorCache.get(items)
+  if (!byPrior) {
+    byPrior = new WeakMap()
+    priorCache.set(items, byPrior)
+  }
+  let differs = byPrior.get(def.prior)
+  if (differs === undefined) {
+    const [first] = items
+    const level = first === undefined ? 0 : clamp(def.prior(first))
+    differs = items.some((item) => clamp(def.prior(item)) !== level)
+    byPrior.set(def.prior, differs)
+  }
+  return differs
+}
+
 /**
  * Scores the items that pass every filter. The fit is a weighted geometric mean of the profile's
  * criteria, so one catastrophic axis drags the whole score down instead of being averaged away. A
  * figure the item's sheet does not give counts as the catalogue's typical one (median), so a
  * sparse sheet is never ranked as a poor product, and it is never named as a strength or a
- * weakness. A prior from the editorial score and popularity settles near-ties between equally
- * fitting items. The match printed adds the answers: each one that narrows the catalogue is a
- * criterion every ranked item meets, so the match starts at the fit and fills up as the visitor
- * answers, without changing the order. Among items with the same match, makers take turns: a
- * brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses are said
- * in their own words, and a caveat (an OLED's burn-in at the office) only ever as a weakness.
+ * weakness. A prior from the editorial score and popularity takes a share of the fit once it
+ * tells the catalogue's items apart; while every item has the same one, it sits out. The match
+ * printed adds the answers: each one that narrows the catalogue is a criterion every ranked item
+ * meets, so the match starts at the fit and fills up as the visitor answers, without changing the
+ * order. Items with exactly the same match come cheapest first, then as the definition settles
+ * them (the newer model…), never by name. Among items printed with the same match, makers take
+ * turns: a brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses
+ * are said in their own words, and a caveat (an OLED's burn-in at the office) only ever as a
+ * weakness.
  */
 export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers): Ranked<I>[] {
   const pool = filter(def, items, answers)
@@ -423,6 +451,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
   /** The criteria whose weakness is worth saying: the heaviest half, at least three. */
   const weighty = new Set(heavy.slice(0, Math.max(3, Math.ceil(heavy.length / 2))))
   const typical = typicalScores(def, items)
+  const fitShare = priorTellsApart(def, items) ? FIT_SHARE : 1
 
   const ranked = pool.map((item) => {
     const scores = new Map<string, number>()
@@ -453,7 +482,7 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
     ]
       .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
-    const fit = FIT_SHARE * profileFit + (1 - FIT_SHARE) * prior
+    const fit = fitShare * profileFit + (1 - fitShare) * prior
     return {
       item,
       score: (FIT_WEIGHT * fit + met) / (FIT_WEIGHT + met),
@@ -463,7 +492,13 @@ export function rank<I>(def: FinderDefinition<I>, items: I[], answers: Answers):
       cons: cons.map((c) => weakLabelOf(c, item, live)),
     }
   })
-  ranked.sort((a, b) => b.score - a.score || def.id(a.item).localeCompare(def.id(b.item)))
+  ranked.sort(
+    (a, b) =>
+      b.score - a.score ||
+      def.price(a.item) - def.price(b.item) ||
+      (def.settle?.(a.item, b.item) ?? 0) ||
+      def.id(a.item).localeCompare(def.id(b.item)),
+  )
   return def.maker ? takeTurns(ranked, def.maker) : ranked
 }
 

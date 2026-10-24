@@ -11,6 +11,7 @@ import {
   sizeBandOf,
   sizeIndex,
 } from './mouse-fit'
+import { settleTies } from './settle'
 import { ANY, type Answers, type FinderDefinition, type Option } from './types'
 
 // The mouse questionnaire. The use first (ranking profile only), then the hand and the shape, the
@@ -60,6 +61,7 @@ export const mouseFinder: FinderDefinition<M> = {
   id: (m) => m.slug,
   price: (m) => m.priceEur,
   prior: (m) => 0.6 * m.editorialScore + 0.4 * m.popularity,
+  settle: settleTies,
   maker: (m) => m.brand.slug,
   // A mouse like another fits the same hand (never one for the other hand), then has its shape,
   // its size, its weight and its link.

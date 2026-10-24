@@ -18,8 +18,8 @@ export const messages = {
     "Stop searching.\nStart choosing.",
   ),
   homeLead: text(
-    "Réponds à quelques questions : le catalogue se resserre à chaque réponse, en direct, jusqu’aux trois modèles faits pour toi.",
-    "Answer a few questions: the catalogue narrows with every answer, live, down to the three models made for you.",
+    "Quelques questions, trois modèles. Claviers, écrans et souris.",
+    "A few questions, three models. Keyboards, monitors and mice.",
   ),
   start: text("Commencer", "Start"),
   models: text("modèles", "models"),
@@ -59,51 +59,20 @@ export const messages = {
     locale: Locale,
   ) =>
     locale === "fr"
-      ? `${pitch} : réponds à ${questions} questions et ${count(models, locale)} ${name} se resserrent en direct jusqu’aux trois modèles faits pour toi.`
-      : `${pitch}: answer ${questions} questions and ${count(models, locale)} ${name} narrow down live to the three models made for you.`,
+      ? `${pitch}. ${questions} questions pour choisir parmi ${count(models, locale)} ${name}.`
+      : `${pitch}. ${questions} questions to choose from ${count(models, locale)} ${name}.`,
   /** A product page's title, before the site's name: its name, then what it is. */
   productTitle: (name: string, kind: string) => `${name}, ${kind}`,
-  /** How many products of a category the site compares, closing a product page's description. */
-  amongCompared: {
-    keyboard: (n: number, locale: Locale) =>
-      locale === "fr"
-        ? `parmi ${count(n, locale)} claviers comparés`
-        : `among ${count(n, locale)} keyboards compared`,
-    monitor: (n: number, locale: Locale) =>
-      locale === "fr"
-        ? `parmi ${count(n, locale)} écrans comparés`
-        : `among ${count(n, locale)} monitors compared`,
-    mouse: (n: number, locale: Locale) =>
-      locale === "fr"
-        ? `parmi ${count(n, locale)} souris comparées`
-        : `among ${count(n, locale)} mice compared`,
-  } satisfies Record<Category, (n: number, locale: Locale) => string>,
-  /** A product page's description, for search results and share cards. */
+  /** A product page's description, for search results and share cards: what it is, its price. */
   productDescription: (
     name: string,
     summary: string,
     price: string,
-    similar: number,
-    among: string,
     locale: Locale,
-  ) => {
-    if (locale === "fr") {
-      const like =
-        similar > 1
-          ? ` et ${similar} modèles proches`
-          : similar === 1
-            ? " et un modèle proche"
-            : "";
-      return `${name} : ${summary}, autour de ${price}. Sa fiche technique, ses points forts${like}, ${among}.`;
-    }
-    const like =
-      similar > 1
-        ? ` and ${similar} similar models`
-        : similar === 1
-          ? " and a similar model"
-          : "";
-    return `${name}: ${summary}, around ${price}. Its spec sheet, strengths${like}, ${among}.`;
-  },
+  ) =>
+    locale === "fr"
+      ? `${name} : ${summary}. Autour de ${price}.`
+      : `${name}: ${summary}. Around ${price}.`,
   /** The home page's title, after the site's name. */
   homeHeadline: text(
     "Le bon clavier, écran ou souris en quelques questions",
@@ -111,8 +80,8 @@ export const messages = {
   ),
   /** What the share card's picture shows. */
   shareImageAlt: text(
-    "Arrêter de chercher. Commencer à choisir. Claviers, écrans et souris en quelques questions.",
-    "Stop searching. Start choosing. Keyboards, monitors and mice in a few questions.",
+    "Arrêter de chercher. Commencer à choisir. Une souris, un clavier et un écran, avec leurs dimensions.",
+    "Stop searching. Start choosing. A mouse, a keyboard and a monitor, with their sizes.",
   ),
   matching: {
     keyboard: text("claviers correspondent", "keyboards match"),
@@ -164,6 +133,8 @@ export const messages = {
   allResults: text("Tous les résultats", "All results"),
   from: text("à partir de", "from"),
   language: text("Langue", "Language"),
+  /** The header's link to the legal notice and privacy page. */
+  legal: text("Mentions légales", "Legal"),
   worlds: text("Univers", "Worlds"),
   categories: text("Catégories", "Categories"),
   explore: text("Explorer", "Explore"),

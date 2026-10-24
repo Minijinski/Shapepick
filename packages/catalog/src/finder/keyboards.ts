@@ -1,5 +1,6 @@
 import type { KeyboardItem } from "../domain/items";
 import { text } from "../i18n";
+import { settleTies } from "./settle";
 import { ANY, type Answers, type FinderDefinition, type Option } from "./types";
 
 // The keyboard questionnaire. Order: use (sets the ranking profile, never filters), then the big
@@ -42,6 +43,7 @@ export const keyboardFinder: FinderDefinition<K> = {
   id: (k) => k.slug,
   price: (k) => k.priceEur,
   prior: (k) => 0.6 * k.editorialScore + 0.4 * k.popularity,
+  settle: settleTies,
   maker: (k) => k.brand.slug,
   // A board like another is first of its size, then of its kind of keys, its height, its link.
   likeness: [
@@ -627,12 +629,13 @@ export const keyboardFinder: FinderDefinition<K> = {
       weakLabel: text("Autonomie courte", "Short battery life"),
       known: (k) => !wireless(k) || k.specs.batteryMah != null,
       peers: (k) => (wireless(k) ? "wireless" : "wired"),
+      // Wired: nothing to charge, nothing to praise, and never a short battery (as for mice).
       score: (k) =>
-        k.specs.batteryMah
-          ? Math.min(1, k.specs.batteryMah / 4000)
-          : wireless(k)
-            ? 0.3
-            : 0,
+        !wireless(k)
+          ? 0.7
+          : k.specs.batteryMah
+            ? Math.min(1, k.specs.batteryMah / 4000)
+            : 0.3,
     },
     {
       key: "rgb",

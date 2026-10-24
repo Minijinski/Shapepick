@@ -351,6 +351,34 @@ describe('missing figures and ties', () => {
     const mixed = rank({ ...def, maker: (x) => x.color }, toys, { use: 'quality' })
     expect(mixed.map((r) => r.item.id)).toEqual(['a', 'c', 'e', 'b', 'd'])
   })
+  it('settles exact ties cheapest first, then as the definition says, never by name', () => {
+    const like = (id: string, price: number, bt: boolean) => ({ ...toys[0], id, price, bt }) as Toy
+    const twins = [like('a1', 90, false), like('z1', 60, false), like('m1', 90, true)]
+    expect(rank(def, twins, { use: 'quality' }).map((r) => r.item.id)).toEqual(['z1', 'a1', 'm1'])
+    const settled = { ...def, settle: (a: Toy, b: Toy) => Number(b.bt) - Number(a.bt) }
+    expect(rank(settled, twins, { use: 'quality' }).map((r) => r.item.id)).toEqual([
+      'z1',
+      'm1',
+      'a1',
+    ])
+  })
+  it('leaves out of the fit a prior that every item shares', () => {
+    // The same prior for all (no editorial score yet): the fit is the profile's alone.
+    const level = rank(def, toys, { use: 'quality' })
+    expect(level.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.9)
+    // A prior that tells items apart takes its quarter.
+    const told = rank({ ...def, prior: (x) => (x.wifi ? 1 : 0) }, toys, { use: 'quality' })
+    expect(told.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.75 * 0.9 + 0.25)
+    expect(told.find((r) => r.item.id === 'c')?.fit).toBeCloseTo(0.75 * 0.7)
+  })
+})
+
+describe('keyboard ranking', () => {
+  it('never says a wired board has a short battery', () => {
+    const ranked = rank(keyboardFinder, keyboards, { use: 'travel', connection: 'wired' })
+    expect(ranked.length).toBeGreaterThan(0)
+    for (const r of ranked) expect(r.cons.map((c) => c.en)).not.toContain('Short battery life')
+  })
 })
 
 describe('brands, answered aside', () => {

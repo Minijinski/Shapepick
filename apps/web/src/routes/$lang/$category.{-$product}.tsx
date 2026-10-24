@@ -76,8 +76,6 @@ export const Route = createFileRoute("/$lang/$category/{-$product}")({
         title,
         productSummary(product, lang),
         formatAmount(product.priceEur, lang),
-        loaderData.similar.length,
-        m.amongCompared[category](count, lang),
         lang,
       );
       const photo = product.photo ? sharedPhoto(product.photo) : null;

@@ -102,9 +102,10 @@ export function Preloader({
   locale: Locale
 }) {
   const root = useRef<HTMLDivElement>(null)
-  const [gone, setGone] = useState(false)
+  const params = useParams({ strict: false }) as { category?: string; product?: string }
+  // Arriving straight on a product's page, none at all: its sheet opens at once (__root.tsx).
+  const [gone, setGone] = useState(() => params.product != null)
   // Arriving on a category's canvas, that category alone; anywhere else, every panel.
-  const params = useParams({ strict: false }) as { category?: string }
   const opened = params.category ? categoryFromSlug(params.category, locale) : null
   const single = opened && shown.includes(opened) ? opened : null
 

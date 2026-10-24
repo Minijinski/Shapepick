@@ -116,8 +116,16 @@ export type FinderDefinition<I> = {
   profileStep: string
   id: (item: I) => string
   price: (item: I) => number
-  /** 0 … 1 prior (editorial score, popularity) that settles near-ties between equal fits. */
+  /**
+   * 0 … 1 prior (editorial score, popularity): a quarter of the fit once it tells the catalogue's
+   * items apart. While every item has the same one, it sits out.
+   */
   prior: (item: I) => number
+  /**
+   * Between two items with exactly the same match and the same price, which comes first: negative
+   * for `a`, positive for `b`. What it leaves level goes by id.
+   */
+  settle?: (a: I, b: I) => number
   /** Who makes the item: among items with the same match, the ranking takes makers in turn. */
   maker?: (item: I) => string
   /** The questions a product's sheet reads to suggest products like it (similar.ts). */
@@ -128,7 +136,10 @@ export type Ranked<I> = {
   item: I
   /** 0 … 1, what the card prints as a match percentage. */
   score: number
-  /** 0 … 1, how well it suits the visitor's use: the profile's fit, with the editorial prior. */
+  /**
+   * 0 … 1, how well it suits the visitor's use: the profile's fit, with the editorial prior once it
+   * tells items apart.
+   */
   fit: number
   /** How many answers narrow the catalogue: a ranked item meets every one of them. */
   met: number

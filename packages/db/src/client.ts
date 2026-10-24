@@ -20,12 +20,19 @@ const required = (url: string | undefined) => {
 
 const isNeon = (url: string) => new URL(url).hostname.endsWith('.neon.tech')
 
-/** For the site, on the pooled URL. */
+/**
+ * For the site, on the pooled URL. Over TCP, a connection idle for 20 s closes: a pool left behind
+ * gives its connections back.
+ */
 export function createDb(url = process.env.DATABASE_URL): Db {
   const target = required(url)
   return isNeon(target)
     ? overHttp({ client: neon(target), schema, casing: 'snake_case' })
-    : overTcp({ client: postgres(target, { max: 10 }), schema, casing: 'snake_case' })
+    : overTcp({
+        client: postgres(target, { max: 10, idle_timeout: 20 }),
+        schema,
+        casing: 'snake_case',
+      })
 }
 
 /** For scripts (seed): one TCP connection, on Neon through the direct endpoint, not the pooler. */
@@ -34,9 +41,13 @@ export function connectDirect(url = process.env.DATABASE_URL_UNPOOLED ?? process
   return overTcp({ client, schema, casing: 'snake_case' })
 }
 
-let shared: Db | undefined
-/** One client per server process. */
+/**
+ * One client per server process, kept on `globalThis` rather than in this module: a dev server
+ * reloads the module after an edit (to the schema, say), and each reload would open a new pool
+ * without closing the old one, until the local Postgres refuses every connection.
+ */
+const kept = globalThis as typeof globalThis & { __chooseDb?: Db }
 export const getDb = () => {
-  shared ??= createDb()
-  return shared
+  kept.__chooseDb ??= createDb()
+  return kept.__chooseDb
 }

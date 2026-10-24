@@ -3,18 +3,21 @@ import type { MouseEvent } from 'react'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
+import { countClick, type Placement } from './clicks'
 import { amazonLink } from './shops'
 
 // A product's Amazon.fr link, wherever the product shows: a button in its sheet and on the best
 // match, a small pill on the runners-up, an arrow at the end of a row of the results. It sits above
 // the button stretched over a card or a row, and a click on it never opens the sheet. Its arrow
-// slides out under the pointer.
+// slides out under the pointer. Each click on it is counted (clicks.ts), with where it sat.
 
 type Props = {
   item: CatalogItem
   locale: Locale
   /** The visitor's layout answer (azerty, ansi, iso), which picks the listing or the search. */
   layouts?: readonly string[]
+  /** Where it sits, which the count of its clicks keeps. */
+  placement: Placement
   variant?: 'button' | 'pill' | 'icon'
   className?: string
 }
@@ -61,19 +64,40 @@ const Arrow = ({ size }: { size: number }) => (
   </svg>
 )
 
-/** A click on the link opens Amazon, never the sheet of the card or row it sits on. */
-const keepToItself = (e: MouseEvent) => e.stopPropagation()
-
-export function AmazonLink({ item, locale, layouts, variant = 'button', className }: Props) {
+export function AmazonLink({
+  item,
+  locale,
+  layouts,
+  placement,
+  variant = 'button',
+  className,
+}: Props) {
   const shop = amazonLink(item, locale, layouts)
   const rel = shop.affiliate ? 'sponsored nofollow noopener' : 'nofollow noopener'
+  /**
+   * A click on the link opens Amazon, never the sheet of the card or row it sits on, and is
+   * counted; so is a middle click, which opens it in a tab.
+   */
+  const opened = (e: MouseEvent) => {
+    e.stopPropagation()
+    if (e.type === 'auxclick' && e.button !== 1) return
+    countClick({
+      slug: item.slug,
+      category: item.category,
+      placement,
+      link: shop.direct ? 'page' : 'search',
+      locale,
+      page: window.location.pathname,
+    })
+  }
   if (variant === 'button')
     return (
       <a
         href={shop.url}
         target="_blank"
         rel={rel}
-        onClick={keepToItself}
+        onClick={opened}
+        onAuxClick={opened}
         className={cx(button({ tone: 'ink', size: 'md' }), link, className)}
       >
         {shop.direct ? m.viewOnAmazon[locale] : m.searchOnAmazon[locale]}
@@ -87,7 +111,8 @@ export function AmazonLink({ item, locale, layouts, variant = 'button', classNam
         href={shop.url}
         target="_blank"
         rel={rel}
-        onClick={keepToItself}
+        onClick={opened}
+        onAuxClick={opened}
         aria-label={name}
         className={cx(button({ tone: 'line', size: 'sm' }), pill, link, className)}
       >
@@ -100,7 +125,8 @@ export function AmazonLink({ item, locale, layouts, variant = 'button', classNam
       href={shop.url}
       target="_blank"
       rel={rel}
-      onClick={keepToItself}
+      onClick={opened}
+      onAuxClick={opened}
       aria-label={name}
       title={name}
       className={cx(icon, link, className)}

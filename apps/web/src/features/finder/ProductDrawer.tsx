@@ -463,7 +463,9 @@ export function ProductDrawer({
                   score={sheet.score}
                   accent={sheet.rank === 0}
                   locale={locale}
-                  action={<AmazonLink item={item} locale={locale} layouts={layouts} />}
+                  action={
+                    <AmazonLink item={item} locale={locale} layouts={layouts} placement="sheet" />
+                  }
                 />
                 <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
                   {amazon.direct ? m.amazonProduct[locale] : m.amazonQuery(amazon.query, locale)}
@@ -654,7 +656,7 @@ export function ProductDrawer({
               {item.brand.name} {item.name}
             </span>
           </span>
-          <AmazonLink item={item} locale={locale} layouts={layouts} />
+          <AmazonLink item={item} locale={locale} layouts={layouts} placement="sheet-bar" />
         </div>
       </aside>
     </>

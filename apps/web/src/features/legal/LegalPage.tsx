@@ -1,0 +1,515 @@
+import { type Locale, locales, text } from '@choose/catalog'
+import { type ReactNode, useEffect, useState } from 'react'
+import { css, cx } from 'styled-system/css'
+import { messages as m } from '~/i18n/messages'
+import { legalPaths } from './legal'
+
+// The legal notice and privacy page, one per language (routes/$lang_.mentions-legales.tsx,
+// routes/$lang_.legal.tsx), each route holding its own text: who publishes the site, who hosts it,
+// what it keeps of a visit. A plain document beside the finder rather than a page of it: outside
+// the locale's layout, it loads no catalogue, no canvas and no preloader, and the links between it
+// and the rest of the site are ordinary ones.
+
+/** When the text last changed, shown at its top. */
+export const UPDATED = '2026-10-24'
+
+/**
+ * Who publishes the site and directs its publication. While the site earns nothing, a private
+ * person may leave it out, the host holding their identity (LCEN, art. 1-1, II): `null`, and the
+ * page says so. Affiliate links make the site a paid activity: before the Amazon partner tag goes
+ * live (features/product/shops.ts), fill this in, a business address and a phone line included.
+ */
+export const PUBLISHER: { name: string; address: string; phone: string } | null = null
+
+/** Where to write: questions, corrections, requests about data. */
+export const CONTACT = 'contact@shapepick.com'
+
+/** The site's host, and the database's, as the law asks to name them (addresses from their sites). */
+export const HOST = {
+  name: 'Netlify, Inc.',
+  address: '101 2nd Street, San Francisco, CA 94105',
+  url: 'https://www.netlify.com',
+}
+export const DATABASE = {
+  name: 'Neon (Databricks, Inc.)',
+  address: '160 Spear Street, San Francisco, CA 94105',
+  url: 'https://neon.com',
+}
+
+/** How long each record is kept, in months: Umami Cloud's free plan, and our own click log. */
+export const KEPT = { audience: 6, clicks: 25 }
+
+const copy = {
+  updated: text('Version du', 'Updated'),
+  back: text('Revenir au site', 'Back to the site'),
+  count: text('Compter mes visites sur ce navigateur', 'Count my visits in this browser'),
+  counted: text('Oui', 'Yes'),
+  notCounted: text('Non', 'No'),
+  remembered: text(
+    'Ton choix reste dans ce navigateur, sans cookie.',
+    'Your choice stays in this browser, without a cookie.',
+  ),
+}
+
+const day = (iso: string, locale: Locale) =>
+  new Intl.DateTimeFormat(locale === 'fr' ? 'fr-FR' : 'en-GB', {
+    day: 'numeric',
+    month: 'long',
+    year: 'numeric',
+    timeZone: 'UTC',
+  }).format(new Date(`${iso}T00:00:00Z`))
+
+/** The page's gutter, the site header's: clear of a phone's notch and rounded corners. */
+const gutter = css({
+  pl: { base: 'max(1rem, env(safe-area-inset-left))', md: 'max(2rem, env(safe-area-inset-left))' },
+  pr: {
+    base: 'max(1rem, env(safe-area-inset-right))',
+    md: 'max(2rem, env(safe-area-inset-right))',
+  },
+})
+
+/** A document's width: the sections' labels at the left, their text beside them. */
+const column = css({ w: '100%', maxW: '72rem', mx: 'auto' })
+
+const languageLink = css({
+  display: 'inline-flex',
+  alignItems: 'center',
+  h: '8',
+  px: '3',
+  _coarse: { h: '10', px: '3.5' },
+  borderRadius: 'pill',
+  fontFamily: 'mono',
+  fontSize: 'xs',
+  textTransform: 'uppercase',
+  color: 'ink.muted',
+  transition: 'color 160ms, background 160ms',
+  _hover: { color: 'ink' },
+  '&[aria-current=page]': {
+    color: 'ink',
+    bg: 'surface.raised',
+    boxShadow: '0 0 0 1px token(colors.line)',
+  },
+})
+
+/** The site header's two ends: the name back to the site, the page in the other language. */
+function LegalHeader({ locale }: { locale: Locale }) {
+  return (
+    <header
+      className={cx(
+        gutter,
+        css({
+          boxSizing: 'content-box',
+          h: '16',
+          pt: 'env(safe-area-inset-top)',
+          display: 'flex',
+          alignItems: 'center',
+          justifyContent: 'space-between',
+          gap: '4',
+        }),
+      )}
+    >
+      <a
+        href={`/${locale}`}
+        className={css({ display: 'inline-flex', alignItems: 'center', gap: '2.5' })}
+      >
+        <span aria-hidden className={css({ w: '3', h: '3', borderRadius: 'full', bg: 'signal' })} />
+        <span
+          className={css({
+            fontFamily: 'mono',
+            fontSize: 'sm',
+            letterSpacing: '-0.02em',
+            whiteSpace: 'nowrap',
+          })}
+        >
+          {m.siteName[locale]}
+        </span>
+      </a>
+      <nav aria-label={m.language[locale]} className={css({ display: 'flex', gap: '1' })}>
+        {locales.map((other) => (
+          <a
+            key={other}
+            href={legalPaths[other]}
+            hrefLang={other}
+            lang={other}
+            aria-current={other === locale ? 'page' : undefined}
+            className={languageLink}
+          >
+            {other}
+          </a>
+        ))}
+      </nav>
+    </header>
+  )
+}
+
+type Props = {
+  locale: Locale
+  title: string
+  /** What the page is about, under its title. */
+  lead: ReactNode
+  /** The short version, as tags under the lead. */
+  facts: readonly string[]
+  /** Its sections (`LegalSection`). */
+  children: ReactNode
+}
+
+export function LegalPage({ locale, title, lead, facts, children }: Props) {
+  // The root marks every page of a locale as held under the preloader, and only the locale's layout
+  // lifts the hold: this page has neither, and nothing of it waits.
+  useEffect(() => document.documentElement.removeAttribute('data-loading'), [])
+  return (
+    // A document, unlike the rest of the site: its text can be selected and copied.
+    <div
+      className={css({ userSelect: 'text', minH: '100dvh', display: 'flex', flexDir: 'column' })}
+    >
+      <LegalHeader locale={locale} />
+      <main className={cx(gutter, css({ flex: '1' }))}>
+        <div className={column}>
+          <header
+            className={css({
+              display: 'grid',
+              justifyItems: 'start',
+              gap: { base: '4', md: '5' },
+              pt: { base: '10', md: '16' },
+              pb: { base: '10', md: '16' },
+            })}
+          >
+            <p
+              className={css({
+                fontFamily: 'mono',
+                fontSize: 'xs',
+                color: 'ink.muted',
+                textTransform: 'uppercase',
+                letterSpacing: '0.06em',
+              })}
+            >
+              <span aria-hidden className={css({ color: 'signal' })}>
+                ●
+              </span>{' '}
+              {copy.updated[locale]} <time dateTime={UPDATED}>{day(UPDATED, locale)}</time>
+            </p>
+            <h1
+              className={css({
+                maxW: '18ch',
+                fontSize: {
+                  base: 'clamp(2rem, 1.1rem + 4.2vw, 2.75rem)',
+                  md: 'clamp(2.75rem, 1.4rem + 3.2vw, 4.25rem)',
+                },
+                fontWeight: '650',
+                letterSpacing: '-0.035em',
+                lineHeight: '1.04',
+                textWrap: 'balance',
+              })}
+            >
+              {title}
+            </h1>
+            <p
+              className={css({
+                maxW: '38rem',
+                fontSize: { base: 'md', md: 'lg' },
+                lineHeight: '1.5',
+                color: 'ink.muted',
+                textWrap: 'pretty',
+              })}
+            >
+              {lead}
+            </p>
+            <ul className={css({ display: 'flex', flexWrap: 'wrap', gap: '2', mt: '1' })}>
+              {facts.map((fact) => (
+                <li
+                  key={fact}
+                  className={css({
+                    display: 'inline-flex',
+                    alignItems: 'center',
+                    gap: '2',
+                    h: '7',
+                    px: '3',
+                    borderRadius: 'pill',
+                    borderWidth: '1px',
+                    borderColor: 'line',
+                    bg: 'surface',
+                    fontSize: 'xs',
+                    color: 'ink.soft',
+                    whiteSpace: 'nowrap',
+                  })}
+                >
+                  <span
+                    aria-hidden
+                    className={css({ w: '1.5', h: '1.5', borderRadius: 'full', bg: 'ink' })}
+                  />
+                  {fact}
+                </li>
+              ))}
+            </ul>
+          </header>
+          <div className={css({ borderBottomWidth: '1px', borderColor: 'line' })}>{children}</div>
+        </div>
+      </main>
+      <footer className={gutter}>
+        <div
+          className={cx(
+            column,
+            css({
+              display: 'flex',
+              flexWrap: 'wrap',
+              justifyContent: 'space-between',
+              gap: '3',
+              py: { base: '8', md: '10' },
+              pb: { base: 'max(2rem, env(safe-area-inset-bottom))', md: '10' },
+              fontFamily: 'mono',
+              fontSize: '2xs',
+              textTransform: 'uppercase',
+              letterSpacing: '0.06em',
+              color: 'ink.faint',
+            }),
+          )}
+        >
+          <span>
+            {m.siteName[locale]} · {UPDATED.slice(0, 4)}
+          </span>
+          <a
+            href={`/${locale}`}
+            className={css({
+              color: 'ink.muted',
+              transition: 'color 160ms',
+              _hover: { color: 'ink' },
+            })}
+          >
+            ← {copy.back[locale]}
+          </a>
+        </div>
+      </footer>
+    </div>
+  )
+}
+
+/** One part of the page: its number and title at the left (above it on a phone), its text. */
+export function LegalSection({
+  id,
+  n,
+  title,
+  children,
+}: {
+  id: string
+  n: number
+  title: string
+  children: ReactNode
+}) {
+  return (
+    <section
+      id={id}
+      aria-labelledby={`${id}-title`}
+      className={css({
+        display: 'grid',
+        gridTemplateColumns: { base: 'minmax(0, 1fr)', md: '15rem minmax(0, 1fr)' },
+        columnGap: '10',
+        rowGap: '4',
+        py: { base: '7', md: '9' },
+        borderTopWidth: '1px',
+        borderColor: 'line',
+      })}
+    >
+      <h2
+        id={`${id}-title`}
+        className={css({
+          display: 'flex',
+          alignItems: 'baseline',
+          gap: '3',
+          fontSize: { base: 'lg', md: 'xl' },
+          fontWeight: '600',
+          letterSpacing: '-0.02em',
+          lineHeight: '1.2',
+        })}
+      >
+        <span
+          className={css({
+            fontFamily: 'mono',
+            fontSize: 'xs',
+            fontWeight: '400',
+            letterSpacing: '0',
+            color: 'ink.faint',
+            fontVariantNumeric: 'tabular-nums',
+          })}
+        >
+          {String(n).padStart(2, '0')}
+        </span>
+        {title}
+      </h2>
+      <div
+        className={css({
+          display: 'grid',
+          alignContent: 'start',
+          gap: '4',
+          maxW: '42rem',
+          fontSize: { base: '0.9375rem', md: 'md' },
+          lineHeight: '1.6',
+          color: 'ink.soft',
+          textWrap: 'pretty',
+          '& a': {
+            color: 'ink',
+            textDecoration: 'underline',
+            textDecorationColor: 'token(colors.line.strong)',
+            textUnderlineOffset: '3px',
+            transition: 'text-decoration-color 160ms',
+            _hover: { textDecorationColor: 'ink' },
+          },
+          '& strong': { color: 'ink', fontWeight: '600' },
+        })}
+      >
+        {children}
+      </div>
+    </section>
+  )
+}
+
+/** What a section states, label and value, as a product's spec sheet lists them. */
+export function LegalFacts({ rows }: { rows: readonly (readonly [string, ReactNode])[] }) {
+  return (
+    // Closed by a rule of its own only when text follows: at the end of a section, the next
+    // section's rule closes it.
+    <dl
+      className={css({
+        display: 'grid',
+        '&:not(:last-child) > :last-child': { borderBottomWidth: '1px' },
+      })}
+    >
+      {rows.map(([label, value]) => (
+        <div
+          key={label}
+          className={css({
+            display: 'grid',
+            gridTemplateColumns: { base: 'minmax(0, 1fr)', sm: '9.5rem minmax(0, 1fr)' },
+            columnGap: '4',
+            rowGap: '1',
+            alignItems: 'baseline',
+            py: '2.5',
+            borderTopWidth: '1px',
+            borderColor: 'line',
+          })}
+        >
+          <dt
+            className={css({
+              fontFamily: 'mono',
+              fontSize: '2xs',
+              color: 'ink.faint',
+              textTransform: 'uppercase',
+              letterSpacing: '0.04em',
+            })}
+          >
+            {label}
+          </dt>
+          <dd className={css({ fontSize: 'sm', lineHeight: '1.5', color: 'ink' })}>{value}</dd>
+        </div>
+      ))}
+    </dl>
+  )
+}
+
+/** Umami's own switch: its tracker sends nothing from a browser holding this key. */
+const OPT_OUT = 'umami.disabled'
+
+/**
+ * Whether this browser's visits are counted. Unknown on the server and until the page reads the
+ * browser's storage; a browser whose storage is blocked cannot keep the choice, and the switch
+ * stays off.
+ */
+export function AudienceSwitch({ locale }: { locale: Locale }) {
+  const [counted, setCounted] = useState<boolean | null>(null)
+  useEffect(() => {
+    try {
+      setCounted(!localStorage.getItem(OPT_OUT))
+    } catch {}
+  }, [])
+  const flip = () => {
+    try {
+      if (counted) localStorage.setItem(OPT_OUT, '1')
+      else localStorage.removeItem(OPT_OUT)
+      setCounted(!counted)
+    } catch {}
+  }
+  const on = counted ?? true
+  return (
+    <div
+      className={css({
+        display: 'grid',
+        gap: '2',
+        p: '3',
+        pl: '4',
+        borderRadius: 'card',
+        borderWidth: '1px',
+        borderColor: 'line',
+        bg: 'surface',
+      })}
+    >
+      <button
+        type="button"
+        role="switch"
+        aria-checked={on}
+        disabled={counted === null}
+        onClick={flip}
+        className={cx(
+          'group',
+          css({
+            display: 'flex',
+            alignItems: 'center',
+            gap: '3',
+            textAlign: 'left',
+            fontSize: 'sm',
+            fontWeight: '550',
+            color: 'ink',
+            cursor: 'pointer',
+            borderRadius: 'pill',
+            _disabled: { cursor: 'default' },
+            _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '4px' },
+          }),
+        )}
+      >
+        <span className={css({ flex: '1' })}>{copy.count[locale]}</span>
+        <span
+          className={css({
+            fontFamily: 'mono',
+            fontSize: '2xs',
+            fontWeight: '400',
+            textTransform: 'uppercase',
+            letterSpacing: '0.06em',
+            color: 'ink.muted',
+          })}
+        >
+          {on ? copy.counted[locale] : copy.notCounted[locale]}
+        </span>
+        {/* The track and its knob: ink when counted, a bare outline when not. */}
+        <span
+          aria-hidden
+          data-on={on || undefined}
+          className={css({
+            position: 'relative',
+            flexShrink: '0',
+            w: '9',
+            h: '5',
+            borderRadius: 'pill',
+            borderWidth: '1px',
+            borderColor: 'line.strong',
+            bg: 'transparent',
+            transition: 'background 200ms, border-color 200ms',
+            '&[data-on]': { bg: 'ink', borderColor: 'ink' },
+            _after: {
+              content: '""',
+              position: 'absolute',
+              top: '50%',
+              left: '0.5',
+              w: '3.5',
+              h: '3.5',
+              borderRadius: 'full',
+              bg: 'ink.faint',
+              transform: 'translateY(-50%)',
+              transition: 'transform 260ms token(easings.signal), background 200ms',
+            },
+            '&[data-on]::after': { bg: 'paper', transform: 'translate(1rem, -50%)' },
+            _motionReduce: { transition: 'none', _after: { transition: 'none' } },
+          })}
+        />
+      </button>
+      <p className={css({ fontSize: 'xs', color: 'ink.muted' })}>{copy.remembered[locale]}</p>
+    </div>
+  )
+}

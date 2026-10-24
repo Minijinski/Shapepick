@@ -446,8 +446,8 @@ function labelSpot(quad: Quad, viewport: Viewport) {
 
 /**
  * A panel's link. On a phone, a row from the rows' numbers (`--rows-*`, styles.css); on a wider
- * screen the whole screen, cut to the panel's shape (`clipPath`), or a plain column until the
- * viewport is known.
+ * screen the whole screen, cut to the panel's shape (`clipPath`), or to a plain column until the
+ * viewport is known. Its box never moves, so nothing shifts as the page wakes up.
  */
 const bandLink = css({
   position: "absolute",
@@ -465,9 +465,10 @@ const bandLink = css({
     top: "0",
     bottom: "0",
     h: "auto",
-    left: "calc(var(--i) * 100% / var(--n))",
-    right: "auto",
-    w: "calc(100% / var(--n))",
+    left: "0",
+    right: "0",
+    clipPath:
+      "inset(0 calc((var(--n) - 1 - var(--i)) * 100% / var(--n)) 0 calc(var(--i) * 100% / var(--n)))",
     borderRadius: "0",
     _focusVisible: { boxShadow: "none" },
   },
@@ -491,11 +492,12 @@ const label = css({
   transformOrigin: "left bottom",
   "& > *": { transform: "skewX(var(--slant, 0rad))" },
   _slats: {
-    // Until the viewport is known: at the foot of its column.
-    left: "calc(var(--i) * 100% / var(--n) + 24px)",
-    top: "auto",
-    bottom: "24px",
-    translate: "none",
+    // Laid out under the screen's bottom-left corner, and raised to its panel's foot by
+    // `translate`, which leaves the layout alone: nothing shifts as the page wakes up, however
+    // tall the label turns out. Until the viewport is known, at the foot of its column.
+    left: "0",
+    top: "100%",
+    translate: "calc(var(--i) * 100vw / var(--n) + 24px) calc(-100% - 24px)",
     maxW: "none",
   },
   // A frosted plate behind the name, so it stays legible over the products drifting under it:
@@ -594,14 +596,11 @@ function BandLink({
     onHover(category);
     onReveal(index);
   };
-  const linkStyle: CSSProperties = quad
-    ? // The whole screen, cut to the panel's shape.
-      { clipPath: clipPathOf(quad), left: 0, width: "100%" }
-    : {};
+  // The whole screen, cut to the panel's shape.
+  const linkStyle: CSSProperties = quad ? { clipPath: clipPathOf(quad) } : {};
   const labelStyle: CSSProperties = spot
     ? {
-        left: spot.left,
-        bottom: spot.bottom,
+        translate: `${spot.left}px calc(-100% - ${spot.bottom}px)`,
         maxWidth: `min(30rem, ${spot.width}px)`,
         ["--slant" as string]: `${spot.slant}rad`,
         // A name too long for a narrow panel gets smaller rather than overflowing it.

@@ -6,6 +6,14 @@
 [build.environment]
   NODE_VERSION = "24"
 
+# The built scripts, styles and fonts carry a hash of their content in their name
+# (/assets/index-ykt2D-s1.js): a new build gives new names, so browsers keep them for a year
+# without asking again.
+[[headers]]
+  for = "/assets/*"
+  [headers.values]
+    Cache-Control = "public, max-age=31536000, immutable"
+
 # Product photos go through Netlify's image CDN (`/.netlify/images`, see
 # apps/web/src/features/product/photo.ts): resized to the size shown and served from our own domain,
 # so the browser can cut them out whatever the shop's CDN allows. Only these shops may be fetched.

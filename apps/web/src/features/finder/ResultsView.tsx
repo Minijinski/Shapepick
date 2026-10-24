@@ -568,6 +568,7 @@ export function ResultsView({
                         item={first.item}
                         locale={locale}
                         layouts={layouts}
+                        placement="best-match"
                         className={actionButton}
                       />
                       <ProductLink
@@ -768,6 +769,7 @@ export function ResultsView({
                           item={entry.item}
                           locale={locale}
                           layouts={layouts}
+                          placement="runner-up"
                           variant="pill"
                         />
                       </span>
@@ -1018,6 +1020,7 @@ export function ResultsView({
                         item={entry.item}
                         locale={locale}
                         layouts={layouts}
+                        placement="results-row"
                         variant="icon"
                       />
                       <ProductLink

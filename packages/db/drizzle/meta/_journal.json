@@ -36,6 +36,13 @@
       "when": 1792771215388,
       "tag": "0004_mouse_specs",
       "breakpoints": true
+    },
+    {
+      "idx": 5,
+      "version": "7",
+      "when": 1792841935943,
+      "tag": "0005_outbound_clicks",
+      "breakpoints": true
     }
   ]
 }
