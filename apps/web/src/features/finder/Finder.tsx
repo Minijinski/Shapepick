@@ -28,6 +28,7 @@ import {
 import { BrandFilter } from "./BrandFilter";
 import { Console } from "./Console";
 import { DockPanel } from "./DockPanel";
+import { FrostedEdge } from "./FrostedEdge";
 import { JourneyBar } from "./JourneyBar";
 import { JourneyRail } from "./JourneyRail";
 import { JourneySheet } from "./JourneySheet";
@@ -117,15 +118,31 @@ const enterFade = css({
 });
 /**
  * The counter gives way to the results: it lifts away while the results rise. As wide as what it
- * shows, which the canvas's popup keeps clear of.
+ * shows, which the canvas's popup keeps clear of. Past a phone's width the top gradient stops
+ * short of it: a soft halo of paper of its own keeps it legible over the products drifting behind,
+ * and goes wherever it goes.
  */
 const fadesWithResults = css({
+  position: "relative",
+  isolation: "isolate",
   display: "grid",
   gap: "3",
   w: "fit-content",
   transition: "opacity 300ms, transform 450ms token(easings.signal)",
   "&[data-done]": { opacity: 0, transform: "translateY(-12px)" },
   _motionReduce: { transition: "none" },
+  md: {
+    _before: {
+      content: '""',
+      position: "absolute",
+      inset: "-0.5rem -2rem -0.75rem -1.5rem",
+      zIndex: "-1",
+      borderRadius: "2rem",
+      bg: "rgba(243,241,236,0.84)",
+      filter: "blur(18px)",
+      pointerEvents: "none",
+    },
+  },
 });
 
 export function Finder({ category, items, search, product, locale }: Props) {
@@ -472,13 +489,20 @@ export function Finder({ category, items, search, product, locale }: Props) {
             duration: 0.4,
           },
           0,
-        ).to(
-          el.querySelectorAll(
-            "[data-enter=hud], [data-enter=podium], [data-enter=hint], [data-enter=rail]",
-          ),
-          { opacity: 0, y: -10, duration: 0.3 },
-          0,
-        );
+        )
+          .to(
+            el.querySelectorAll(
+              "[data-enter=hud], [data-enter=podium], [data-enter=hint], [data-enter=rail]",
+            ),
+            { opacity: 0, y: -10, duration: 0.3 },
+            0,
+          )
+          // The frost behind the journey fades layer by layer: a fading box would blind them.
+          .to(
+            el.querySelectorAll("[data-enter=veil]"),
+            { opacity: 0, duration: 0.3 },
+            0,
+          );
       }),
   );
 
@@ -517,7 +541,11 @@ export function Finder({ category, items, search, product, locale }: Props) {
         </h1>
       )}
 
-      {/* The canvas fades into paper under the header and the counter, which stay legible. */}
+      {/* The canvas fades into paper under the header and the counter, which stay legible. Past
+          a phone's width the fade is eased, so that no line shows where it ends, and a shorter
+          screen gives it less of its height, the counter keeping a halo of its own
+          (`fadesWithResults`); `topVeil` in scene/geometry.ts says the same height, for the
+          products it leaves out of reach. */}
       <div
         aria-hidden
         className={cx(
@@ -526,9 +554,11 @@ export function Finder({ category, items, search, product, locale }: Props) {
             position: "absolute",
             insetInline: "0",
             top: "0",
-            h: { base: "48", md: "60" },
-            background:
-              "linear-gradient(to bottom, rgba(243,241,236,0.94) 35%, rgba(243,241,236,0.6) 70%, rgba(243,241,236,0))",
+            h: { base: "48", md: "clamp(8.5rem, 17dvh, 15rem)" },
+            background: {
+              base: "linear-gradient(to bottom, rgba(243,241,236,0.94) 35%, rgba(243,241,236,0.6) 70%, rgba(243,241,236,0))",
+              md: "linear-gradient(to bottom, rgba(243,241,236,0.94) 25%, rgba(243,241,236,0.89) 35%, rgba(243,241,236,0.78) 45%, rgba(243,241,236,0.61) 55%, rgba(243,241,236,0.42) 65%, rgba(243,241,236,0.24) 75%, rgba(243,241,236,0.1) 85%, rgba(243,241,236,0.02) 92%, rgba(243,241,236,0))",
+            },
           }),
         )}
         style={{ animationDelay: `${delay}s` }}
@@ -564,6 +594,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
             value={finder.matching}
             total={items.length}
             label={m.matching[category][locale]}
+            labels={Object.values(m.matching).map((words) => words[locale])}
             preview={finder.preview}
             previewLabel={m.ifPicked[locale]}
             ofLabel={m.of[locale]}
@@ -690,47 +721,39 @@ export function Finder({ category, items, search, product, locale }: Props) {
           on screen: only what it lists changes. */}
       <div
         ref={rail}
-        data-enter="rail"
         data-journey-rail
         data-keep-clear
-        className={cx(
-          !swapped && enterLeft,
-          css({
-            position: "absolute",
-            left: "8",
-            bottom: "6",
-            w: "52",
-            pointerEvents: "auto",
-            isolation: "isolate",
-            // The canvas fades into frosted paper along the left edge, down to the bottom, so the
-            // steps stay legible over the products drifting behind (as the counter does under
-            // the top gradient).
-            _before: {
-              content: '""',
-              position: "absolute",
-              inset: "-5rem -5rem -1.5rem -2rem",
-              zIndex: "-1",
-              background:
-                "linear-gradient(to right, rgba(243,241,236,0.94) 55%, rgba(243,241,236,0))",
-              backdropFilter: "blur(8px)",
-              maskImage:
-                "linear-gradient(to bottom, transparent, #000 5rem), linear-gradient(to right, #000 60%, transparent)",
-              maskComposite: "intersect",
-              pointerEvents: "none",
-            },
-          }),
-        )}
-        style={{ animationDelay: `${delay + 0.35}s` }}
+        className={css({
+          position: "absolute",
+          left: "8",
+          bottom: "6",
+          w: "52",
+          isolation: "isolate",
+        })}
       >
-        <JourneyRail
-          stops={finder.journey}
-          done={done}
-          locale={locale}
-          onPick={finder.pickStep}
-          results={finder.matching}
-          onResults={finder.showResults}
-          carryOver={swapped}
+        {/* The canvas frosts over into paper along the left edge, down to the bottom, so the
+            steps stay legible over the products drifting behind (as the counter does under the
+            top gradient). Beside the column's entrance rather than in it: a fading parent would
+            blind its blur. */}
+        <FrostedEdge
+          delay={swapped ? null : delay + 0.35}
+          className={css({ inset: "-6rem -7rem -1.5rem -2rem", zIndex: "-1" })}
         />
+        <div
+          data-enter="rail"
+          className={cx(!swapped && enterLeft, css({ pointerEvents: "auto" }))}
+          style={{ animationDelay: `${delay + 0.35}s` }}
+        >
+          <JourneyRail
+            stops={finder.journey}
+            done={done}
+            locale={locale}
+            onPick={finder.pickStep}
+            results={finder.matching}
+            onResults={finder.showResults}
+            carryOver={swapped}
+          />
+        </div>
       </div>
       <div
         ref={dock}

@@ -15,6 +15,13 @@ const TILT = (16 * Math.PI) / 180
 export const isCompact = (vp: Viewport) => vp.w < 768
 
 /**
+ * How far down a category's canvas fades into paper under the header (px), past a phone's width:
+ * the finder's top gradient, whose height in Finder.tsx (`clamp(8.5rem, 17dvh, 15rem)`) says the
+ * same. A shorter screen gives it less of its height.
+ */
+export const topVeil = (vp: Viewport) => Math.min(240, Math.max(136, vp.h * 0.17))
+
+/**
  * On a phone the home's panels are rows, one under the other below the title, and the page
  * scrolls: slats a third of a phone wide leave no room for a name or for the title above them,
  * nor slats as short as a phone on its side. (`_slats` in panda.config.ts says the same in CSS.)

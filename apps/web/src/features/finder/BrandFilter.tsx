@@ -26,6 +26,13 @@ type Props = {
 
 /** Past this many brands the list gets a search field. */
 const SEARCH_FROM = 8
+/**
+ * What the chip said as its page went, and when (ms). Switching categories the chip stays where it
+ * is: if the next category's says something else (brands set aside in one of them), its words fade
+ * in rather than replace the last ones at once. Past `HANDOFF_MS`, a chip is a new one.
+ */
+let lastSaid: { words: string; at: number } | null = null
+const HANDOFF_MS = 1000
 /** Room the list keeps from the edge of the screen (px). */
 const EDGE = 16
 
@@ -63,6 +70,11 @@ const caption = css({
   color: 'ink.faint',
   textTransform: 'uppercase',
   letterSpacing: '0.04em',
+})
+
+const arrive = css({
+  '&[data-arrive]': { animation: 'fadeIn 0.45s ease 0.05s backwards' },
+  _motionReduce: { '&[data-arrive]': { animation: 'none' } },
 })
 
 const panel = css({
@@ -194,6 +206,23 @@ export function BrandFilter({
   const listId = useId()
   const shown = selected?.size ?? options.length
   const phone = usePhone()
+  const said = summary(options, selected, locale)
+  const saidNow = useRef(said)
+  saidNow.current = said
+  // Taking over from the last category's chip, which said something else: the words fade in.
+  const [arriving] = useState(
+    () =>
+      typeof window !== 'undefined' &&
+      lastSaid != null &&
+      performance.now() - lastSaid.at < HANDOFF_MS &&
+      lastSaid.words !== said,
+  )
+  useEffect(
+    () => () => {
+      lastSaid = { words: saidNow.current, at: performance.now() }
+    },
+    [],
+  )
 
   // Escape or a press anywhere else folds the list away; the pointer leaves its brand behind. A
   // phone's sheet folds away on its own.
@@ -384,7 +413,9 @@ export function BrandFilter({
         onClick={() => onOpenChange(!open)}
       >
         <span className={caption}>{m.brands[locale]}</span>
-        <span>{summary(options, selected, locale)}</span>
+        <span data-arrive={arriving || undefined} className={arrive}>
+          {said}
+        </span>
         <svg
           aria-hidden
           viewBox="0 0 24 24"

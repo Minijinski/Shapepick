@@ -1,11 +1,12 @@
 import type { ReactNode } from 'react'
-import { css } from 'styled-system/css'
+import { css, cx } from 'styled-system/css'
 import { Rolling, rollSlot } from '../motion/Rolling'
 
 // The signature readout: how many products are left, ticking down with every answer. What it says
 // the products are can be followed by a control of what is counted (the brands). Switching
 // categories it stays on screen: its digits roll on from the last category's count to the new
-// one, while the words under them give way to the new category's.
+// one, and only the words under them give way to the new category's. The controls beside them
+// stay put: the words keep the room of the longest the counter may say.
 
 /** The zeros that keep the count as wide as the total (045 of 523): they only hold the place. */
 const placeZeros = css({ color: 'ink.faint' })
@@ -19,10 +20,16 @@ const arrive = css({
   _motionReduce: { '&[data-arrive]': { animation: 'none' } },
 })
 
+/** The words and, unseen in the same place, the longer ones it may say: the widest sets the room. */
+const stacked = css({ display: 'inline-grid', '& > *': { gridArea: '1 / 1' } })
+const unseen = css({ visibility: 'hidden' })
+
 type Props = {
   value: number
   total: number
   label: string
+  /** Everything it may say in place of `label` (the other categories'): the room it keeps. */
+  labels?: readonly string[]
   preview: number | null
   previewLabel: string
   ofLabel: string
@@ -36,6 +43,7 @@ export function LiveCounter({
   value,
   total,
   label,
+  labels = [],
   preview,
   previewLabel,
   ofLabel,
@@ -79,14 +87,17 @@ export function LiveCounter({
           minH: '5',
         })}
       >
-        <span data-swap-part data-arrive={arriving} className={arrive}>
-          {label}
+        <span data-swap-part data-arrive={arriving} className={cx(arrive, stacked)}>
+          <span>{label}</span>
+          {labels
+            .filter((other) => other !== label)
+            .map((other) => (
+              <span key={other} aria-hidden className={unseen}>
+                {other}
+              </span>
+            ))}
         </span>
-        {children && (
-          <span data-swap-part data-arrive={arriving} className={arrive}>
-            {children}
-          </span>
-        )}
+        {children}
         {preview != null && preview !== value && (
           <span className={css({ fontFamily: 'mono', fontSize: 'xs', color: 'signal' })}>
             → {preview} {previewLabel}

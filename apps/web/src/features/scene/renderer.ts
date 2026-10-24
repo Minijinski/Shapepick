@@ -16,6 +16,7 @@ import {
   type Quad,
   tileLayout,
   tiltFor,
+  topVeil,
   traceRounded,
   type Viewport,
 } from './geometry'
@@ -134,10 +135,12 @@ const REGROUP = {
 const APPEAR_MS = 280
 /**
  * Where a product on the field takes the pointer (screen px): half of it (`share`) clear of the
- * screen’s edges and of the paper fading under the header and the counter (the finder's top
- * gradient is still mostly opaque down to here). One showing less than that is only a glimpse.
+ * screen’s edges and of the paper fading under the header (the finder's top gradient is still
+ * mostly opaque down to `veil` of its height, `topVeil`; on a phone down to `topCompact`). The
+ * widgets, the counter among them, are left out on their own (`keepClear`). One showing less than
+ * that is only a glimpse.
  */
-const PICK = { top: 150, topCompact: 118, side: 8, bottom: 8, share: 0.5 }
+const PICK = { veil: 0.6, topCompact: 118, side: 8, bottom: 8, share: 0.5 }
 /** How far ahead (s) the canvas looks for products coming into view, along its motion. */
 const AHEAD_S = 0.9
 /**
@@ -1649,7 +1652,7 @@ export class SceneRenderer {
     const { w: iw, h: ih } = this.sizeOf(slot.item)
     const w = iw * pose.scale
     const h = ih * pose.scale
-    const top = isCompact(this.vp) ? PICK.topCompact : PICK.top
+    const top = isCompact(this.vp) ? PICK.topCompact : topVeil(this.vp) * PICK.veil
     const x0 = Math.max(pose.x - w / 2, PICK.side)
     const x1 = Math.min(pose.x + w / 2, this.vp.w - PICK.side)
     const y0 = Math.max(pose.y - h / 2, top)
