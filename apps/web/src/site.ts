@@ -19,10 +19,3 @@ export const SITE = {
 
 /** A path of the site as a full address, as canonical links, sitemaps and share cards want it. */
 export const absolute = (path: string) => `${SITE.url}${path}`
-
-/**
- * The site's id at Umami Cloud (its settings, Websites): page views and clicks on buy links, with
- * no cookie. Empty, no tracking script at all. It only counts visits on the site's own address,
- * never a local build or a deploy preview (routes/__root.tsx).
- */
-export const UMAMI_WEBSITE_ID: string = ''

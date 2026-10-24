@@ -1,8 +1,8 @@
 /// <reference types="vite/client" />
 import { isLocale } from '@choose/catalog'
 import { createRootRoute, HeadContent, Outlet, Scripts, useParams } from '@tanstack/react-router'
-import type { JSX, ReactNode } from 'react'
-import { SITE, UMAMI_WEBSITE_ID } from '~/site'
+import type { ReactNode } from 'react'
+import { SITE } from '~/site'
 import appCss from '~/styles.css?url'
 
 // React hydrates the whole document, <head> included. On *.netlify.app, Netlify's edge writes a
@@ -13,21 +13,6 @@ import appCss from '~/styles.css?url'
 // spaces).
 const TIDY_HEAD =
   'for(var n=document.head.firstChild,x;n;n=x){x=n.nextSibling;if((n.nodeType===3&&!n.data.trim())||(n.nodeType===8&&/\\s/.test(n.data)))n.remove()}'
-
-// Umami's tracker, without cookies, once the site has its id (site.ts). It counts a page view at
-// each new path and none when only the query changes: the finder's answers live there, so a
-// journey through the questions is one view, and opening a product's sheet is a view of it. Its
-// own domain filter keeps local builds and deploy previews out.
-const tracker =
-  UMAMI_WEBSITE_ID && SITE.url.startsWith('https://')
-    ? ({
-        src: 'https://cloud.umami.is/script.js',
-        defer: true,
-        'data-website-id': UMAMI_WEBSITE_ID,
-        'data-domains': new URL(SITE.url).hostname,
-        'data-exclude-search': 'true',
-      } as JSX.IntrinsicElements['script'])
-    : undefined
 
 export const Route = createRootRoute({
   head: () => ({
@@ -41,7 +26,7 @@ export const Route = createRootRoute({
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
     ],
-    scripts: [{ children: TIDY_HEAD }, tracker],
+    scripts: [{ children: TIDY_HEAD }],
   }),
   shellComponent: RootDocument,
   component: Outlet,

@@ -1,5 +1,5 @@
 import { type Locale, locales, text } from '@choose/catalog'
-import { type ReactNode, useEffect, useState } from 'react'
+import { type ReactNode, useEffect } from 'react'
 import { css, cx } from 'styled-system/css'
 import { messages as m } from '~/i18n/messages'
 import { legalPaths } from './legal'
@@ -36,19 +36,12 @@ export const DATABASE = {
   url: 'https://neon.com',
 }
 
-/** How long each record is kept, in months: Umami Cloud's free plan, and our own click log. */
-export const KEPT = { audience: 6, clicks: 25 }
+/** How long our own click log is kept, in months. */
+export const KEPT = { clicks: 25 }
 
 const copy = {
   updated: text('Version du', 'Updated'),
   back: text('Revenir au site', 'Back to the site'),
-  count: text('Compter mes visites sur ce navigateur', 'Count my visits in this browser'),
-  counted: text('Oui', 'Yes'),
-  notCounted: text('Non', 'No'),
-  remembered: text(
-    'Ton choix reste dans ce navigateur, sans cookie.',
-    'Your choice stays in this browser, without a cookie.',
-  ),
 }
 
 const day = (iso: string, locale: Locale) =>
@@ -402,114 +395,5 @@ export function LegalFacts({ rows }: { rows: readonly (readonly [string, ReactNo
         </div>
       ))}
     </dl>
-  )
-}
-
-/** Umami's own switch: its tracker sends nothing from a browser holding this key. */
-const OPT_OUT = 'umami.disabled'
-
-/**
- * Whether this browser's visits are counted. Unknown on the server and until the page reads the
- * browser's storage; a browser whose storage is blocked cannot keep the choice, and the switch
- * stays off.
- */
-export function AudienceSwitch({ locale }: { locale: Locale }) {
-  const [counted, setCounted] = useState<boolean | null>(null)
-  useEffect(() => {
-    try {
-      setCounted(!localStorage.getItem(OPT_OUT))
-    } catch {}
-  }, [])
-  const flip = () => {
-    try {
-      if (counted) localStorage.setItem(OPT_OUT, '1')
-      else localStorage.removeItem(OPT_OUT)
-      setCounted(!counted)
-    } catch {}
-  }
-  const on = counted ?? true
-  return (
-    <div
-      className={css({
-        display: 'grid',
-        gap: '2',
-        p: '3',
-        pl: '4',
-        borderRadius: 'card',
-        borderWidth: '1px',
-        borderColor: 'line',
-        bg: 'surface',
-      })}
-    >
-      <button
-        type="button"
-        role="switch"
-        aria-checked={on}
-        disabled={counted === null}
-        onClick={flip}
-        className={cx(
-          'group',
-          css({
-            display: 'flex',
-            alignItems: 'center',
-            gap: '3',
-            textAlign: 'left',
-            fontSize: 'sm',
-            fontWeight: '550',
-            color: 'ink',
-            cursor: 'pointer',
-            borderRadius: 'pill',
-            _disabled: { cursor: 'default' },
-            _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '4px' },
-          }),
-        )}
-      >
-        <span className={css({ flex: '1' })}>{copy.count[locale]}</span>
-        <span
-          className={css({
-            fontFamily: 'mono',
-            fontSize: '2xs',
-            fontWeight: '400',
-            textTransform: 'uppercase',
-            letterSpacing: '0.06em',
-            color: 'ink.muted',
-          })}
-        >
-          {on ? copy.counted[locale] : copy.notCounted[locale]}
-        </span>
-        {/* The track and its knob: ink when counted, a bare outline when not. */}
-        <span
-          aria-hidden
-          data-on={on || undefined}
-          className={css({
-            position: 'relative',
-            flexShrink: '0',
-            w: '9',
-            h: '5',
-            borderRadius: 'pill',
-            borderWidth: '1px',
-            borderColor: 'line.strong',
-            bg: 'transparent',
-            transition: 'background 200ms, border-color 200ms',
-            '&[data-on]': { bg: 'ink', borderColor: 'ink' },
-            _after: {
-              content: '""',
-              position: 'absolute',
-              top: '50%',
-              left: '0.5',
-              w: '3.5',
-              h: '3.5',
-              borderRadius: 'full',
-              bg: 'ink.faint',
-              transform: 'translateY(-50%)',
-              transition: 'transform 260ms token(easings.signal), background 200ms',
-            },
-            '&[data-on]::after': { bg: 'paper', transform: 'translate(1rem, -50%)' },
-            _motionReduce: { transition: 'none', _after: { transition: 'none' } },
-          })}
-        />
-      </button>
-      <p className={css({ fontSize: 'xs', color: 'ink.muted' })}>{copy.remembered[locale]}</p>
-    </div>
   )
 }

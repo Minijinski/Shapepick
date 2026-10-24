@@ -1,6 +1,5 @@
 import { createFileRoute, notFound, redirect } from '@tanstack/react-router'
 import {
-  AudienceSwitch,
   CONTACT,
   DATABASE,
   HOST,
@@ -21,7 +20,7 @@ import { pageHead } from '~/seo'
 
 const TITLE = 'Mentions légales et confidentialité'
 const DESCRIPTION =
-  'Qui édite shapepick, qui l’héberge et ce que le site garde de tes visites : aucun cookie, une mesure d’audience anonyme et un décompte des clics vers Amazon, sans donnée personnelle.'
+  'Qui édite shapepick, qui l’héberge et ce que le site garde de tes visites : aucun cookie, seulement un décompte des clics vers Amazon, sans donnée personnelle.'
 
 export const Route = createFileRoute('/$lang_/mentions-legales')({
   // In French only: in English the page has a name of its own, in any other language there is none.
@@ -105,37 +104,10 @@ function MentionsLegales() {
         </p>
       </LegalSection>
 
-      <LegalSection id="audience" n={3} title="Mesure d’audience">
+      <LegalSection id="clics" n={3} title="Clics vers Amazon">
         <p>
-          Pour savoir quelles pages servent et lesquelles améliorer, shapepick compte ses visites
-          avec Umami Cloud, un outil de mesure d’audience sans cookie. Ces statistiques sont
-          anonymes, réservées à shapepick et jamais croisées avec d’autres données.
-        </p>
-        <LegalFacts
-          rows={[
-            [
-              'Ce qui est compté',
-              'Les pages vues, sans tes réponses au questionnaire ; le site d’où tu viens ; ton navigateur, ton système et ton type d’appareil ; la taille de l’écran et la langue ; une localisation approximative (pays, région, ville) ; les clics vers Amazon.',
-            ],
-            [
-              'Jamais',
-              'Ni cookie, ni adresse IP conservée, ni identifiant durable : impossible de te suivre d’un site à l’autre ou de savoir qui tu es.',
-            ],
-            [
-              'Prestataire',
-              'Umami Software, Inc. (États-Unis), pour le compte de shapepick, sur des serveurs dans l’Union européenne et aux États-Unis.',
-            ],
-            ['Conservation', `${KEPT.audience} mois`],
-            ['Base légale', 'L’intérêt légitime de shapepick à mesurer son audience.'],
-          ]}
-        />
-        <AudienceSwitch locale="fr" />
-      </LegalSection>
-
-      <LegalSection id="clics" n={4} title="Clics vers Amazon">
-        <p>
-          Quand tu ouvres un lien vers Amazon, le site note aussi ce clic dans sa propre base de
-          données, pour savoir quels modèles intéressent et quels liens servent.
+          Quand tu ouvres un lien vers Amazon, le site note ce clic dans sa propre base de données,
+          pour savoir quels modèles intéressent et quels liens servent.
         </p>
         <LegalFacts
           rows={[
@@ -153,7 +125,7 @@ function MentionsLegales() {
         />
       </LegalSection>
 
-      <LegalSection id="amazon" n={5} title="Liens vers Amazon.fr">
+      <LegalSection id="amazon" n={4} title="Liens vers Amazon.fr">
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
@@ -184,7 +156,7 @@ function MentionsLegales() {
         <p>Sur Amazon.fr, ce sont les règles de confidentialité d’Amazon qui s’appliquent.</p>
       </LegalSection>
 
-      <LegalSection id="stockage" n={6} title="Stockage dans ton navigateur">
+      <LegalSection id="stockage" n={5} title="Stockage dans ton navigateur">
         <p>
           Pour te faire gagner du temps, le site garde quelques informations dans ton navigateur
           (stockage local) : tes réponses au questionnaire de chaque catégorie, pour les retrouver à
@@ -197,7 +169,7 @@ function MentionsLegales() {
         </p>
       </LegalSection>
 
-      <LegalSection id="produits" n={7} title="Produits et marques">
+      <LegalSection id="produits" n={6} title="Produits et marques">
         <p>
           Les caractéristiques viennent des fabricants et de la presse spécialisée. Les prix sont
           des prix publics indicatifs, pas des offres : seul le prix du vendeur fait foi. Malgré le
@@ -210,7 +182,7 @@ function MentionsLegales() {
         </p>
       </LegalSection>
 
-      <LegalSection id="contact" n={8} title="Contact et droits">
+      <LegalSection id="contact" n={7} title="Contact et droits">
         <p>
           Une question, une erreur à signaler, une demande sur tes données (accès, effacement,
           opposition) : écris à {mail}. Tu peux aussi adresser une réclamation à la CNIL, sur{' '}

@@ -1,6 +1,5 @@
 import { createFileRoute, notFound, redirect } from '@tanstack/react-router'
 import {
-  AudienceSwitch,
   CONTACT,
   DATABASE,
   HOST,
@@ -21,7 +20,7 @@ import { pageHead } from '~/seo'
 
 const TITLE = 'Legal notice and privacy'
 const DESCRIPTION =
-  'Who publishes shapepick, who hosts it and what the site keeps of your visits: no cookies, anonymous audience measurement and a count of clicks to Amazon, with no personal data.'
+  'Who publishes shapepick, who hosts it and what the site keeps of your visits: no cookies, only a count of clicks to Amazon, with no personal data.'
 
 export const Route = createFileRoute('/$lang_/legal')({
   // In English only: in French the page has a name of its own, in any other language there is none.
@@ -102,37 +101,10 @@ function Legal() {
         </p>
       </LegalSection>
 
-      <LegalSection id="audience" n={3} title="Audience measurement">
+      <LegalSection id="clicks" n={3} title="Clicks to Amazon">
         <p>
-          To learn which pages help and which to improve, shapepick counts its visits with Umami
-          Cloud, an audience measurement tool that uses no cookies. These statistics are anonymous,
-          for shapepick alone, and never combined with other data.
-        </p>
-        <LegalFacts
-          rows={[
-            [
-              'Counted',
-              'Pages viewed, without your answers to the questionnaire; the site you came from; your browser, system and kind of device; screen size and language; an approximate location (country, region, city); clicks to Amazon.',
-            ],
-            [
-              'Never',
-              'No cookie, no stored IP address, no lasting identifier: there is no way to follow you from site to site or to know who you are.',
-            ],
-            [
-              'Provider',
-              'Umami Software, Inc. (United States), on behalf of shapepick, on servers in the European Union and the United States.',
-            ],
-            ['Kept for', `${KEPT.audience} months`],
-            ['Legal basis', 'shapepick’s legitimate interest in measuring its audience.'],
-          ]}
-        />
-        <AudienceSwitch locale="en" />
-      </LegalSection>
-
-      <LegalSection id="clicks" n={4} title="Clicks to Amazon">
-        <p>
-          When you open a link to Amazon, the site also notes the click in its own database, to
-          learn which models people look at and which links help.
+          When you open a link to Amazon, the site notes the click in its own database, to learn
+          which models people look at and which links help.
         </p>
         <LegalFacts
           rows={[
@@ -150,7 +122,7 @@ function Legal() {
         />
       </LegalSection>
 
-      <LegalSection id="amazon" n={5} title="Links to Amazon.fr">
+      <LegalSection id="amazon" n={4} title="Links to Amazon.fr">
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
@@ -179,7 +151,7 @@ function Legal() {
         <p>On Amazon.fr, Amazon’s own privacy rules apply.</p>
       </LegalSection>
 
-      <LegalSection id="storage" n={6} title="Storage in your browser">
+      <LegalSection id="storage" n={5} title="Storage in your browser">
         <p>
           To save you time, the site keeps a little in your browser (local storage): your answers to
           each category’s questionnaire, so you find them on your next visit, and the hints you have
@@ -188,7 +160,7 @@ function Legal() {
         <p>You can clear it at any time by deleting the site’s data in your browser’s settings.</p>
       </LegalSection>
 
-      <LegalSection id="products" n={7} title="Products and brands">
+      <LegalSection id="products" n={6} title="Products and brands">
         <p>
           Specifications come from the makers and the specialist press. Prices are typical public
           prices, not offers: only the seller’s price counts. Despite our care, mistakes happen:
@@ -200,7 +172,7 @@ function Legal() {
         </p>
       </LegalSection>
 
-      <LegalSection id="contact" n={8} title="Contact and your rights">
+      <LegalSection id="contact" n={7} title="Contact and your rights">
         <p>
           A question, a mistake to report, a request about your data (access, erasure, objection):
           write to {mail}. You can also lodge a complaint with the CNIL, the French data protection
