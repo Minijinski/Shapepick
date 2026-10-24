@@ -59,7 +59,11 @@ function cacheFile(url: URL) {
   return join(cacheDir, url.host, `${name || 'index'}-${hash}`)
 }
 
-export async function get(href: string): Promise<string> {
+/**
+ * `referer`: the page an API belongs to, sent as a browser sends it when that page calls the API
+ * (ZOWIE's price and retailer APIs answer 401 to a call that names no page of the site).
+ */
+export async function get(href: string, opts: { referer?: string } = {}): Promise<string> {
   const url = new URL(href)
   const file = cacheFile(url)
   if (!http.refresh) {
@@ -68,12 +72,14 @@ export async function get(href: string): Promise<string> {
     } catch {}
   }
   if (http.offline) throw new NotCached(`absent du cache : ${href}`)
+  const headers: Record<string, string> = { 'user-agent': userAgent }
+  if (opts.referer) headers.referer = opts.referer
   for (let attempt = 0; ; attempt++) {
     const wait = (last.get(url.host) ?? 0) + (gaps[url.host] ?? gapMs) - Date.now()
     if (wait > 0) await sleep(wait)
     last.set(url.host, Date.now())
     http.requests++
-    const res = await fetch(url, { headers: { 'user-agent': userAgent } })
+    const res = await fetch(url, { headers })
     if (res.ok) {
       const body = await res.text()
       await mkdir(dirname(file), { recursive: true })
@@ -89,4 +95,5 @@ export async function get(href: string): Promise<string> {
   }
 }
 
-export const getJson = async <T>(href: string): Promise<T> => JSON.parse(await get(href)) as T
+export const getJson = async <T>(href: string, opts: { referer?: string } = {}): Promise<T> =>
+  JSON.parse(await get(href, opts)) as T
