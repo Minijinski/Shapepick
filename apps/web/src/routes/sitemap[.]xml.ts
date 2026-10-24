@@ -1,12 +1,21 @@
 import { type CatalogItem, type Category, categories, type Locale, locales } from '@choose/catalog'
 import type { Snapshot } from '@choose/db'
 import { createFileRoute } from '@tanstack/react-router'
-import { categoryPaths, HOME_FALLBACK, homePaths, productPaths } from '~/seo'
+import { livingCollections } from '~/features/catalogue/collections'
+import {
+  cataloguePaths,
+  categoryPaths,
+  collectionPaths,
+  HOME_FALLBACK,
+  homePaths,
+  productPaths,
+} from '~/seo'
 import { shownCategories } from '~/server/catalog'
 import { absolute } from '~/site'
 
 // The pages search engines should know, in every locale: the home page, each category the site
-// offers and each of its products, each with its other languages (hreflang, as in its head) and
+// offers, its catalogue and the collections with a page, and each of its products, each with its
+// other languages (hreflang, as in its head) and
 // when its catalogue last changed (a product's own date would say no more: every seed stamps every
 // product). A catalogue that fails to load would leave its pages out: no sitemap rather than a
 // short one, and nothing kept by the CDN.
@@ -61,6 +70,16 @@ export const Route = createFileRoute('/sitemap.xml')({
             const paths = categoryPaths(category)
             return { paths, fallback: paths.en, lastmod: updated.get(category) ?? null }
           }),
+          ...shown.map((category) => {
+            const paths = cataloguePaths(category)
+            return { paths, fallback: paths.en, lastmod: updated.get(category) ?? null }
+          }),
+          ...shown.flatMap((category) =>
+            livingCollections(category, catalogs[category]).map((collection) => {
+              const paths = collectionPaths(collection)
+              return { paths, fallback: paths.en, lastmod: updated.get(category) ?? null }
+            }),
+          ),
           ...shown.flatMap((category) =>
             catalogs[category].map((item) => {
               const paths = productPaths(category, item.slug)

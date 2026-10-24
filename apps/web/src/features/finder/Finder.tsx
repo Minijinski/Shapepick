@@ -16,6 +16,7 @@ import {
 } from "react";
 import { css, cx } from "styled-system/css";
 import { messages as m } from "~/i18n/messages";
+import { CatalogueLink } from "../catalogue/CatalogueLink";
 import { gsap, prefersReducedMotion } from "../motion/gsap";
 import { scene } from "../scene/controller";
 import {
@@ -568,7 +569,22 @@ export function Finder({ category, items, search, product, locale }: Props) {
             ofLabel={m.of[locale]}
             carryOver={!!carried?.hud}
           >
-            {!done && brandFilter}
+            {!done && (
+              <span
+                className={css({
+                  display: "inline-flex",
+                  flexWrap: "wrap",
+                  gap: "2",
+                })}
+              >
+                {brandFilter}
+                <CatalogueLink
+                  category={category}
+                  label={m.catalogue[locale]}
+                  locale={locale}
+                />
+              </span>
+            )}
           </LiveCounter>
         </div>
       </div>
@@ -856,6 +872,7 @@ export function Finder({ category, items, search, product, locale }: Props) {
           key={view.opening}
           sheet={sheet}
           similar={similarModels}
+          catalogue={items}
           use={finder.useLabel}
           layouts={layouts}
           locale={locale}

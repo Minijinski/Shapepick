@@ -9,6 +9,7 @@ import {
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
+import { Standings } from '../catalogue/Standings'
 import { AmazonLink } from '../product/AmazonLink'
 import { KeyFigures } from '../product/KeyFigures'
 import { MatchBreakdown } from '../product/MatchBreakdown'
@@ -36,6 +37,8 @@ type Props = {
   sheet: ProductSheet
   /** The products most like it, which it links to. */
   similar: CatalogItem[]
+  /** Its category's catalogue, where its places in the collections are read. */
+  catalogue: CatalogItem[]
   /** The use the visitor picked, which the match is measured against. */
   use: string | null
   /** The visitor's layout answer (azerty, ansi, iso), which the shop search follows. */
@@ -176,6 +179,7 @@ const Icon = ({ d }: { d: string }) => (
 export function ProductDrawer({
   sheet,
   similar,
+  catalogue,
   use,
   layouts,
   locale,
@@ -539,6 +543,8 @@ export function ProductDrawer({
                 )}
               </div>
             )}
+
+            <Standings item={item} items={catalogue} locale={locale} className={onPhoneAt.rest} />
 
             <section className={cx(onPhoneAt.rest, css({ display: 'grid', gap: '2' }))}>
               <h2 className={sectionLabel}>{m.specSheet[locale]}</h2>

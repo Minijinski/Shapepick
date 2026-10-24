@@ -231,6 +231,141 @@ export const messages = {
   noBrandFound: text("Aucune marque à ce nom", "No brand by that name"),
   brandsShown: (n: number, total: number, locale: Locale) =>
     locale === "fr" ? `${n} sur ${total}` : `${n} of ${total}`,
+
+  // ---- The catalogue: every product of a category, and its collections ----
+  catalogue: text("Catalogue", "Catalogue"),
+  /** The catalogue's heading. */
+  catalogueTitle: {
+    keyboard: text("Tous les claviers, de A à Z", "Every keyboard, A to Z"),
+    monitor: text("Tous les écrans, de A à Z", "Every monitor, A to Z"),
+    mouse: text("Toutes les souris, de A à Z", "Every mouse, A to Z"),
+  } satisfies Record<Category, Text>,
+  /** What a line of the catalogue gives of each product. */
+  catalogueSpecs: {
+    keyboard: text("format, touches, connexion", "size, keys, connection"),
+    monitor: text(
+      "taille, définition, dalle, fréquence",
+      "size, resolution, panel, refresh rate",
+    ),
+    mouse: text(
+      "forme, taille, poids, connexion",
+      "shape, size, weight, connection",
+    ),
+  } satisfies Record<Category, Text>,
+  /** How many products, from how many brands, at what prices. */
+  catalogueFacts: (
+    models: number,
+    brands: number,
+    from: string,
+    to: string,
+    locale: Locale,
+  ) =>
+    locale === "fr"
+      ? `${count(models, locale)} modèles de ${brands} marques, de ${from} à ${to}.`
+      : `${count(models, locale)} models from ${brands} brands, ${from} to ${to}.`,
+  /** The catalogue's title, before the site's name. */
+  catalogueHeadTitle: (title: string, models: number, locale: Locale) =>
+    locale === "fr"
+      ? `${title} : ${count(models, locale)} modèles`
+      : `${title}: ${count(models, locale)} models`,
+  /** The catalogue's description, for search results. */
+  catalogueDescription: (
+    models: number,
+    name: string,
+    specs: string,
+    locale: Locale,
+  ) =>
+    locale === "fr"
+      ? `Les ${count(models, locale)} ${name} du site, marque par marque : ${specs} et prix.`
+      : `All ${count(models, locale)} ${name} on the site, brand by brand: ${specs} and price.`,
+  collections: text("Sélections", "Collections"),
+  /** How the catalogue's page groups a category's collections. */
+  collectionGroups: {
+    keyboard: {
+      size: text("Format", "Size"),
+      keys: text("Touches", "Keys"),
+      layout: text("AZERTY", "AZERTY"),
+      link: text("Sans fil", "Wireless"),
+      feature: text("Options", "Features"),
+      price: text("Prix", "Price"),
+      use: text("Usages", "Uses"),
+    },
+    monitor: {
+      size: text("Taille", "Size"),
+      panel: text("Dalle et définition", "Panel and resolution"),
+      link: text("Fréquence", "Refresh rate"),
+      feature: text("Connectique et pied", "Ports and stand"),
+      price: text("Prix", "Price"),
+      use: text("Usages", "Uses"),
+    },
+    mouse: {
+      size: text("Main et forme", "Hand and shape"),
+      link: text("Connexion", "Connection"),
+      feature: text("Options", "Features"),
+      price: text("Prix", "Price"),
+      use: text("Usages et prises", "Uses and grips"),
+    },
+  } satisfies Record<Category, Partial<Record<string, Text>>>,
+  chooseIn: (questions: number, locale: Locale) =>
+    locale === "fr"
+      ? `Choisir en ${questions} questions`
+      : `Choose in ${questions} questions`,
+  everyModel: text("Tous les modèles, de A à Z", "Every model, A to Z"),
+  /** A collection's title, before the site's name. */
+  collectionTitle: (name: string, models: number, locale: Locale) =>
+    locale === "fr"
+      ? `${name} : ${count(models, locale)} modèles classés`
+      : `${name}: ${count(models, locale)} models ranked`,
+  /** A collection's description: the first ones, then what it holds. */
+  collectionDescription: (
+    leaders: string[],
+    models: number,
+    name: string,
+    from: string,
+    to: string,
+    category: Category,
+    locale: Locale,
+  ) => {
+    const and = locale === "fr" ? " et " : " and ";
+    const first = `${leaders.slice(0, -1).join(", ")}${leaders.length > 1 ? and : ""}${leaders.at(-1) ?? ""}`;
+    const ranked = category === "mouse" ? "classées" : "classés";
+    return locale === "fr"
+      ? `${first} en tête. Les ${count(models, locale)} ${name} ${ranked}, de ${from} à ${to}.`
+      : `${first} lead. All ${count(models, locale)} ${name} ranked, ${from} to ${to}.`;
+  },
+  rankingDefault: text("Classement général", "Overall ranking"),
+  /** What the overall ranking weighs, per category (the finder's default profile). */
+  rankingBasis: {
+    keyboard: text(
+      "Construction, confort, sans-fil, réactivité",
+      "Build, comfort, wireless, speed",
+    ),
+    monitor: text(
+      "Fluidité, contraste, netteté, pied",
+      "Smoothness, contrast, sharpness, stand",
+    ),
+    mouse: text("Capteur, poids, sans-fil", "Sensor, weight, wireless"),
+  } satisfies Record<Category, Text>,
+  /** Past the products a collection's page lists. */
+  firstOf: (listed: number, total: number, locale: Locale) =>
+    locale === "fr"
+      ? `Les ${listed} premiers sur ${count(total, locale)}`
+      : `The top ${listed} of ${count(total, locale)}`,
+  seeAlso: text("Voir aussi", "See also"),
+  refine: text(
+    "Affiner avec le questionnaire",
+    "Narrow it down with the questions",
+  ),
+  /** On a product's sheet: where it stands in the collections it belongs to. */
+  standings: text("Classements", "Rankings"),
+  /** A product's sheet, when it is the cheapest of a collection. */
+  cheapestOf: (name: string, category: Category, locale: Locale) =>
+    locale === "fr"
+      ? `${category === "mouse" ? "La moins chère" : "Le moins cher"} des ${name}.`
+      : `The cheapest of the ${name}.`,
+  /** A product's sheet, when it ranks first in a collection. */
+  firstIn: (name: string, locale: Locale) =>
+    locale === "fr" ? `N° 1 des ${name}.` : `No. 1 of the ${name}.`,
 } as const;
 
 export const formatCount = count;

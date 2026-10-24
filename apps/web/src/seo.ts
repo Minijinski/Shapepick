@@ -1,4 +1,4 @@
-import { type Category, categorySlugs, type Locale, locales } from '@choose/catalog'
+import { type Category, categorySlugs, type Locale, locales, type Text } from '@choose/catalog'
 import { messages as m } from '~/i18n/messages'
 import { absolute, SITE } from './site'
 
@@ -22,6 +22,19 @@ export const categoryPaths = (category: Category) =>
 /** A product page's path in each locale: the same slug under its category's name. */
 export const productPaths = (category: Category, slug: string) =>
   inEachLocale((locale) => `/${locale}/${categorySlugs[category][locale]}/${slug}`)
+
+/**
+ * A category's catalogue in each locale: every product, A to Z (/fr/claviers/catalogue). The same
+ * word in both languages, which no product's slug takes.
+ */
+export const cataloguePaths = (category: Category) =>
+  inEachLocale((locale) => `/${locale}/${categorySlugs[category][locale]}/catalogue`)
+
+/** A collection's page in each locale, under its category's catalogue. */
+export const collectionPaths = (collection: { category: Category; slug: Text }) =>
+  inEachLocale(
+    (locale) => `${cataloguePaths(collection.category)[locale]}/${collection.slug[locale]}`,
+  )
 
 /** Where the home page sends a language the site does not speak: "/" picks one of its own. */
 export const HOME_FALLBACK = '/'
@@ -157,6 +170,32 @@ export const productSchema = ({
   ...(similar.length > 0
     ? { isSimilarTo: similar.map((other) => ({ '@type': 'Product', ...other })) }
     : {}),
+})
+
+/**
+ * A ranked list of products, on a collection's page: each one by its own page, in the page's
+ * order, as search engines read a summary page that links to detail pages.
+ */
+export const itemListSchema = ({
+  name,
+  url,
+  items,
+}: {
+  name: string
+  url: string
+  items: { name: string; url: string }[]
+}): Schema => ({
+  '@context': 'https://schema.org',
+  '@type': 'ItemList',
+  name,
+  url,
+  numberOfItems: items.length,
+  itemListElement: items.map((item, i) => ({
+    '@type': 'ListItem',
+    position: i + 1,
+    url: item.url,
+    name: item.name,
+  })),
 })
 
 /** Where a page sits, from the home page down, as search results show it. */
