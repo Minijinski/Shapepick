@@ -76,6 +76,11 @@ photos:
   # Dell SE2426H : la vue de face, cadrée au ras de l'écran, ne se détoure pas ; la fiche la montre
   # telle quelle plutôt que la vue de dos (seule détourable) ou de profil.
   - dell-se2426h
+  # ASUS ROG Falchion Ace 75 HE : galerie surtout en rouge (coloris absent de la page française) ;
+  # photo principale choisie à la main, vue de dessus du noir.
+  - asus-rog-falchion-ace-75-he
+  # ASUS ROG Falchion Ace : galerie avec le couvercle et deux claviers ; vue de dessus du noir choisie à la main.
+  - asus-rog-falchion-ace
   # ASUS ProArt PA27USD et PA32USD : vue de dos, et deux écrans côte à côte ; la galerie de la liste
   # ASUS n'a pas de vue de face, la fiche montre la vue de trois quarts avec la casquette.
   - https://dlcdnwebimgs.asus.com/gain/d46392d5-5768-4d5d-806a-7a367b878d1a
@@ -92,3 +97,18 @@ photos:
   - https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-bottom-angle-gallery-7.png
   # Pulsar Feinmann F01 : vue de dessous.
   - https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_003_b398c1e9-66a0-47fc-a70c-4b04f98398fa.png
+  # ASUS ROG, images de la liste (cartes produit) : plusieurs claviers d'un coup, avec badges de prix.
+  # Falchion Ace 75 HE : trois claviers (noir, blanc, rouge).
+  - https://dlcdnwebimgs.asus.com/gain/ABD68970-AA02-47CE-9D1B-E59EE60C1ACD
+  # Azoth 96 HE : deux claviers et leurs repose-poignets.
+  - https://dlcdnwebimgs.asus.com/gain/808AF14D-C2C7-46C6-91F9-A5E2905D7C9C
+  # Falcata : vue de face, au ras du bord avant.
+  - https://dlcdnwebimgs.asus.com/gain/72513F88-B95B-424F-A080-1405AB835292
+  # Strix Scope II 96 RX Wireless : deux claviers.
+  - https://dlcdnwebimgs.asus.com/gain/32965217-758F-4C72-8620-1A47B9C4A75B
+  # Strix Scope II 96 Wireless : deux claviers.
+  - https://dlcdnwebimgs.asus.com/gain/9E1FA5D0-65AB-4188-84DE-A80058422939
+  # Falchion Ace : deux claviers et des badges de prix.
+  - https://dlcdnwebimgs.asus.com/gain/BAA03A74-6267-44B5-BFC7-22136E9AF51D
+  # Azoth : deux claviers et des badges de prix.
+  - https://dlcdnwebimgs.asus.com/gain/145896AC-B462-4466-A1FE-935F085741F3

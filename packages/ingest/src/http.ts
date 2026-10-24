@@ -34,6 +34,12 @@ const gaps: Record<string, number> = {
   'turtlebeach.com': 4000,
   'www.keychron.com': 4000,
   'eu.pulsar.gg': 4000,
+  'www.gloriousgaming.com': 4000,
+  'eu.gloriousgaming.com': 4000,
+  'akkogear.com': 4000,
+  'en.akkogear.com': 4000,
+  'nuphy.com': 4000,
+  'eu.nuphy.com': 4000,
   // Answered 429 to switch pages fetched one at a time (24 October).
   'epomaker.com': 4000,
 }

@@ -1,0 +1,317 @@
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-strix-morph-96-wireless/gallery/
+- slug: asus-rog-strix-morph-96-wireless
+  brand: asus
+  name: Strix Morph 96 Wireless
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B099K9Q2WP
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/B66FA46C-5CD4-4A8F-88EC-F34C8D6DF0E0, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B80371C6-817D-4E1C-A1C6-9BE90103221D, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FC3B930C-C838-4DDA-B1C7-1BA01D94C5CE, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B78C0FB7-DAB1-451E-B4C0-C3A5A5700D25, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/1006D7B8-72C4-4850-9252-AAED792A6EE2, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5A49444D-1DEB-42CD-864D-8E203F5F49C1, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-strix-morph-96-wireless/
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 1125, widthMm: 398, depthMm: 134 }
+  # switch : texte de la page française (« NX Snow V2 », « switches mécaniques ROG NX Storm V2 ») ; fiche : « ROG NX V2 Mechanical Switch »
+  variants:
+    - { sku: rog-strix-morph-96-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow-v2 }
+    - { sku: rog-strix-morph-96-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-storm-v2 }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-75-he/gallery/
+- slug: asus-rog-falchion-ace-75-he
+  brand: asus
+  name: Falchion Ace 75 HE
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B09C27NV19
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/C98477F7-F655-4CDF-930F-DBBB92CC888B, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/454DFDBD-D453-40D2-8629-C7AF979E8D65, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/ABD68970-AA02-47CE-9D1B-E59EE60C1ACD, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/36BCC01F-0522-4961-BE86-8F08AA0943D0, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/C5287FBB-7763-43FE-B960-DDF3F526C7FB, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/A0F72901-39C9-4A8F-9BFC-4000E384310B, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-75-he/
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, widthMm: 320, depthMm: 145 }
+  # switch : fiche française : « ROG HFX V2 Magnetic Switch ; ROG HFX V2X Magnetic Switch »
+  variants:
+    - { sku: rog-falchion-ace-75-he, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
+    - { sku: rog-falchion-ace-75-he, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2x-magnetic }
+    - { sku: rog-falchion-ace-75-he, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-hfx-v2-magnetic }
+    - { sku: rog-falchion-ace-75-he, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-hfx-v2x-magnetic }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-azoth-96-he/gallery/
+- slug: asus-rog-azoth-96-he
+  brand: asus
+  name: Azoth 96 HE
+  msrpEur: 380
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0BSWYHVCG
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/52262439-D00F-4F3D-A6A6-A3795D369F81, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/808AF14D-C2C7-46C6-91F9-A5E2905D7C9C, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/64330EB6-929A-43CB-9567-7D37087EC9F6, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B206CB66-9EF1-47AB-85FA-7A209B693BDF, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/D1866905-0347-4BE4-8532-5778EB9CBD5A, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/436C8A76-7A3E-42C5-AC84-0C30739F480B, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-azoth-96-he/
+  specs: { formFactor: f96, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, widthMm: 382, depthMm: 136 }
+  # switch : fiche française : « ROG HFX V2 Magnetic Switch »
+  variants:
+    - { sku: rog-azoth-96-he, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
+    - { sku: rog-azoth-96-he, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-hfx-v2-magnetic }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falcata/gallery/
+- slug: asus-rog-falcata
+  brand: asus
+  name: Falcata
+  msrpEur: 390
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0FH2M7FZ3
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/27D639A2-5AA5-4276-A633-F062EF63E96B, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/72513F88-B95B-424F-A080-1405AB835292, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/27510898-4B6E-4DFE-8B98-23E707A2F1ED, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/8A7B731E-095B-46F7-8CE1-7CB7DC3345BA, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/DB0C94E9-57BD-4767-A7CC-465C47EFF034, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/A317DEEE-7F15-4F0A-BDA1-1261D01F365C, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falcata/
+  specs: { formFactor: split, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 968, widthMm: 327, depthMm: 127 }
+  # switch : fiche française : « ROG HFX V2 Magnetic Switch »
+  variants:
+    - { sku: rog-falcata, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-x/gallery/
+- slug: asus-rog-azoth-x
+  brand: asus
+  name: Azoth X
+  msrpEur: 330
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0FH2M2LRC
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/6F7A65B9-618B-4563-971D-C4F50053CF7E, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2A687604-75D0-4913-921E-A0D452F4307A, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/CD211AA1-3B07-42B1-A099-F958820F8DC9, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/59B5F0B8-0F00-41F9-8C20-FA66D30A243D, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/72B99731-7AAD-4BE0-BE10-F2F6DBBF0960, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FB28B043-1423-4967-A276-48CDC7C28ABD, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-x/
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 1600, widthMm: 325, depthMm: 136 }
+  # switch : fiche française : « ROG NX Mechanical Switch (Snow V2 / Strom V2) »
+  variants:
+    - { sku: rog-azoth-x, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-nx-snow-v2 }
+    - { sku: rog-azoth-x, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-nx-storm-v2 }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-x/gallery/
+- slug: asus-rog-strix-scope-ii-x
+  brand: asus
+  name: Strix Scope II X
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0FH2RGFFP
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/7807ADED-E8CE-4757-992F-B9CD77CF4DC6, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B68C8160-56F7-4B55-8B08-562288F8C693, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9407B9CF-6D3F-48AE-AFDE-72C391FE8DB8, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7B611EF5-C87D-4BCD-A763-02463DC7E7A3, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/A03A8807-DF31-4A21-AFBD-2927D15AECE2, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/318CAA8B-2833-4A91-96E0-DD098B59B4CD, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-x/
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, widthMm: 436, depthMm: 129 }
+  # switch : texte de la page française (« Switches ROG NX Snow mécaniques remplaçables à chaud V2 », « ROG NX Storm V2 »)
+  variants:
+    - { sku: rog-strix-scope-ii-x, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow-v2 }
+    - { sku: rog-strix-scope-ii-x, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-storm-v2 }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-96-rx-wireless/gallery/
+- slug: asus-rog-strix-scope-ii-96-rx-wireless
+  brand: asus
+  name: Strix Scope II 96 RX Wireless
+  msrpEur: 230
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/F579E6F5-C5A4-4532-99B7-C619E727ABEA, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/32965217-758F-4C72-8620-1A47B9C4A75B, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0AE762BA-D112-49BF-A029-1D6B01698112, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/39A8C6DA-C9A5-4B66-8C7D-956893F80AAF, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/D72D6834-DCBF-45B8-A5DA-9FC642C5EEAA, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/86B9BB80-FD73-42EF-8CE9-117B723B20ED, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-96-rx-wireless/
+  specs: { formFactor: f96, technology: optical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
+  # switch : texte de la page française : « Équipé des switches optiques ROG RX Red ou Blue »
+  variants:
+    - { sku: rog-strix-scope-ii-96-rx-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-rx-red }
+    - { sku: rog-strix-scope-ii-96-rx-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-rx-blue }
+    - { sku: rog-strix-scope-ii-96-rx-wireless, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-rx-red }
+    - { sku: rog-strix-scope-ii-96-rx-wireless, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-rx-blue }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falchion-ace-hfx/gallery/
+- slug: asus-rog-falchion-ace-hfx
+  brand: asus
+  name: Falchion Ace HFX
+  msrpEur: 210
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B08HLRF5Q5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/BB5CFB46-150B-468C-AAD4-A16811BDA7E8, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F27F6EA6-8BA7-4B35-9BCD-CDDB2CA78639, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EA5D88B9-3AD5-4D01-B72D-3622E1A91994, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5FCB1CA3-C05D-41DC-8A6D-4468699A94F2, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/913D7E4E-DD85-46C1-A73B-A522D3B45E59, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F32B0747-7EA4-4EC9-AC7A-4FC95136E636, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falchion-ace-hfx/
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 643, widthMm: 315, depthMm: 115 }
+  # switch : fiche française : « ROG HFX Magnetic Switch »
+  variants:
+    - { sku: rog-falchion-ace-hfx, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-magnetic }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-azoth-extreme/gallery/
+- slug: asus-rog-azoth-extreme
+  brand: asus
+  name: Azoth Extreme
+  msrpEur: 560
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/A2AF9D47-DE84-4B81-8DD1-EF70766C67D1, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EE775D8C-D6ED-45F7-83DB-2B275BDC772C, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/BE17D44B-A0EA-4B1E-9152-12F37AD5626A, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/1633BD0D-D719-410F-8FCB-67805890A516, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/637048D7-3705-4C6F-B273-ECAF0354077B, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/C47269B2-D782-4CB0-8A3C-819C6CB09FA3, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-azoth-extreme/
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 2200, widthMm: 332, depthMm: 139 }
+  # switch : fiche française : « ROG NX Mechanical Switch (Snow / Strom) »
+  variants:
+    - { sku: rog-azoth-extreme, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow }
+    - { sku: rog-azoth-extreme, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-storm }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-falchion-rx-low-profile/gallery/
+- slug: asus-rog-falchion-rx-low-profile
+  brand: asus
+  name: Falchion RX Low Profile
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CTT7LXJK
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/358CBEB5-3333-4C33-AFDA-F35880F28CD9, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0B522307-78BF-4F10-AA9B-9D9D6BC00C76, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/3777C3E5-8237-4EB6-939B-95CA3F2E00B7, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/3AE003CE-0BBB-414C-99E0-089FC2C0D315, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/6412337C-3A22-47FE-915E-5B5B4826F459, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/95E2F96D-178E-4432-928C-3B462BAF58F7, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-falchion-rx-low-profile/
+  specs: { formFactor: f65, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 595, widthMm: 306, depthMm: 110 }
+  # switch : texte de la page française : « Les switches RX Red et RX Blue pré-lubrifiés », « switches ROG RX Low-Profile »
+  variants:
+    - { sku: rog-falchion-rx-low-profile, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-rx-red-low-profile }
+    - { sku: rog-falchion-rx-low-profile, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-rx-blue-low-profile }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-rx/gallery/
+- slug: asus-rog-strix-scope-ii-rx
+  brand: asus
+  name: Strix Scope II RX
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CJYC4Y49
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/8E2D8455-BE85-46D7-8BE6-17E9A0E96F5C, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/289FCD57-7C08-4B63-B38A-314A009FA46F, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-rx/
+  specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 836, widthMm: 436, depthMm: 129 }
+  # switch : texte de la page française : « Les switches optiques ROG RX Red et RX Blue pré-lubrifiés »
+  variants:
+    - { sku: rog-strix-scope-ii-rx, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-rx-red }
+    - { sku: rog-strix-scope-ii-rx, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-rx-blue }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-strix-scope-ii-96-wireless/gallery/
+- slug: asus-rog-strix-scope-ii-96-wireless
+  brand: asus
+  name: Strix Scope II 96 Wireless
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CDLQVN67
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/689DC7E7-3DDD-4D61-9E32-64E156DF4D6F, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9E1FA5D0-65AB-4188-84DE-A80058422939, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/06521191-8AD8-49B0-B298-AA501EEE6E2E, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2E60E72A-3654-4579-AF91-8B75FEB09B88, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FA23F4E7-2ADA-4389-A648-B7DD53876255, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/3A26E3D2-D9AD-4E40-81AF-21C54848AF77, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-strix-scope-ii-96-wireless/
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
+  # switch : texte de la page française : « Il est équipé de switches mécaniques ROG NX Snow pré-lubrifiés »
+  variants:
+    - { sku: rog-strix-scope-ii-96-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow }
+    - { sku: rog-strix-scope-ii-96-wireless, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-nx-snow }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-model/gallery/
+- slug: asus-rog-falchion-ace
+  brand: asus
+  name: Falchion Ace
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0BSXR4TQ5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/12F54E11-3495-4FA4-9A01-CDEE43A851B6, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/F811A9B4-2FF1-4CE1-AA73-05AEDC4435AB, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/BAA03A74-6267-44B5-BFC7-22136E9AF51D, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/EE4EA6C5-0938-4292-BFA6-DC0A56756148, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FD1BF463-592B-4A4B-AB89-B37677C44CC5, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9F35D699-6A7A-42CD-A1F1-6BF478D1368B, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-model/
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 593, widthMm: 306, depthMm: 101 }
+  # switch : fiche française : « ROG NX Mechanical: Red »
+  variants:
+    - { sku: rog-falchion-ace-model, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-red }
+    - { sku: rog-falchion-ace-model, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-nx-red }
+
+# photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-model/gallery/
+# à vérifier : switch du coloris Moonlight White (la page française ne nomme que le NX Red)
+- slug: asus-rog-azoth
+  brand: asus
+  name: Azoth
+  msrpEur: 240
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/46B0C265-BF5B-44A4-AE54-A707FFC900E2, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/145896AC-B462-4466-A1FE-935F085741F3, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/5707EC06-11F9-4721-B9F4-A028270E5249, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/448D9961-E230-4F24-B3C5-E61C956602EA, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/E75C2F67-34F6-48BE-A27B-94BCF33FE8B7, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/FE8261D4-C50C-454D-AE89-92C6E0533B83, kind: cutout_top }
+  sources:
+    - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-model/
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, weightG: 1186, widthMm: 326, depthMm: 136 }
+  # switch : texte de la page française : « Les switches mécaniques ROG NX Red présentent une distance d’activation de 1,8 mm »
+  variants:
+    - { sku: rog-azoth-model, colorName: Gunmetal, colorFamily: color, layout: iso_fr, switch: rog-nx-red }
+    - { sku: rog-azoth-model, colorName: Moonlight White, colorFamily: white, layout: iso_fr, switch: rog-nx-red }
