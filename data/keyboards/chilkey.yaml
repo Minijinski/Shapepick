@@ -15,7 +15,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26683-F5VQ5-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard.jpg?v=1782330801, kind: cutout_top, width: 2226, height: 2411, primary: true }
+    # photo : vue de dessus (image statique : l’originale est animée), https://www.ozokeyboards.com/products/chilkey-nd104-full-size-rgb-mechanical-keyboard
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND104_RGB.webp?format=jpg, kind: cutout_top, width: 1080, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26683-F5VQ5-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard.jpg?v=1782330801, kind: cutout_top, width: 2226, height: 2411 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26690-C423P-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Gunmeta.jpg?v=1782330801, kind: cutout_top, width: 1080, height: 1080 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26689-TCTDE-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Shadow.jpg?v=1782330801, kind: cutout_top, width: 2244, height: 2418 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26691-8JVRJ-Chilkey-ND104-Aluminum-Hotswap-Wireless-RGB-Keyboard-Lunar-W.jpg?v=1782330801, kind: cutout_top, width: 2040, height: 2315 }

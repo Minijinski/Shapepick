@@ -177,7 +177,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    # photo : vue de dessus, https://hyperx.com/products/hyperx-pulsefire-haste-2-core-wireless-gaming-mouse
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_black_8r2e6aa_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_main_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_core_wireless_white_8r2e7aa_angle_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
@@ -201,7 +203,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_1_main.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    # photo : vue de dessus, https://hyperx.com/products/hyperx-pulsefire-haste-2-gaming-mouse
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_black_1_main.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_1_main.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_2_back.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_3_front.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_white_4_side.jpg, kind: cutout_top, width: 1600, height: 1600 }
@@ -225,7 +229,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_main_1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    # photo : vue de dessus, https://hyperx.com/products/hyperx-pulsefire-haste-2-wireless-gaming-mouse
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_black_main_1_fa6caf47-fbb1-4322-b62e-e026a8fcd241.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_main_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_wireless_white_angle_4.jpg, kind: cutout_top, width: 1600, height: 1600 }

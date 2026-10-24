@@ -13,7 +13,9 @@
   editorialScore: 0.5
   amazonAsin: B0DFH9K6G3
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2qRjmq8sglugWCZZQVCgPx/48adf4a522bdee3cd98c3e3ba4784c8c/apex_pro_tkl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3764.png, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=fullSize&connectivityType=wired&color=black&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/SjkVsj5RCGNGSAsHz3GbP/085e3f6d24c5fc9e8c9ce9bec96fd969/apex_pro_tkl_black_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-3766.png, kind: cutout_top, width: 586, height: 293, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2qRjmq8sglugWCZZQVCgPx/48adf4a522bdee3cd98c3e3ba4784c8c/apex_pro_tkl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3764.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2qRjmq8sglugWCZZQVCgPx/48adf4a522bdee3cd98c3e3ba4784c8c/apex_pro_tkl_black_img_buy_01.png__1920x1080_crop-fit_optimize_subsampling-2-3764.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro-gen-3?keyboardSize=fullSize&connectivityType=wired&color=black&keyboardLanguage=french
@@ -120,7 +122,9 @@
   editorialScore: 0.5
   amazonAsin: B082Y5XBDW
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4CWpyzRjEqQO2vV2EHfFnO/b69b628734979de2eac42c2fb37e478b/buyimg_apex3_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2852.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2put92CUldmJHZMKgNy277/3acf34d424369ad7b553b13c697ef6f2/buyimg_apex3_006-fix.png__1920x1080_crop-fit_optimize_subsampling-2-2857.png, kind: cutout_top, width: 1890, height: 1080, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4CWpyzRjEqQO2vV2EHfFnO/b69b628734979de2eac42c2fb37e478b/buyimg_apex3_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2852.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=fullSize&keyboardLanguage=french
   specs: { formFactor: full, technology: membrane, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 816, widthMm: 445, depthMm: 152 }
@@ -139,7 +143,9 @@
   editorialScore: 0.5
   amazonAsin: B09FQ9TV4C
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3fr1xIH3Us0yH8PqVQzcdP/e520e3085a4af78c5a94b604436da014/buyimg_apex3_tkl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2831.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, coloris blanc, https://steelseries.com/fr-fr/gaming-keyboards/apex-3?keyboardSize=tkl&color=black&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/1H6mHcTiFT2cpcNxyw9000/6d8eb5da90b6ed85cb1fbe71f349dfa9/apex_3_tkl_white_img_buy_2_1.png, kind: cutout_top, width: 586, height: 293, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3fr1xIH3Us0yH8PqVQzcdP/e520e3085a4af78c5a94b604436da014/buyimg_apex3_tkl_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2831.jpg, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/op29mwQ8SzMLM7RpFyA56/dcea225e5cf37fd1818c9bb32f8e6cd6/apex_3_tkl_white_img_buy_1.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/4YHkRZLYAWqI0mRUCuikS8/67642f8d5652cac63ee27117cecca038/apex_3_tkl_aqua_img_buy_1_fr.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/2uix5zhmda6n3gb8yMcbg8/b1db1fe5f60fc9e526d748b5ef5c4eee/apex_3_tkl_lavender_img_buy_1_fr.png, kind: cutout_top }
@@ -185,7 +191,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2Em8bILdMi2vgiHf4Z4aWW/b401920e12b1cb33d8752c657f048004/buyimg_apexpro_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2117.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=fullSize&connectivityType=wired&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4nOY8ok1nks3Vyp3wojAcu/a3505b004e79933f3cb7b01999ddfd4c/buyimg_apexpro_006_fr.png__1920x1080_crop-fit_optimize_subsampling-2-1920.png, kind: cutout_top, width: 1890, height: 1080, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2Em8bILdMi2vgiHf4Z4aWW/b401920e12b1cb33d8752c657f048004/buyimg_apexpro_001.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-2117.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=fullSize&connectivityType=wired&keyboardLanguage=french
   specs: { formFactor: full, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 971, widthMm: 437, depthMm: 139 }
@@ -203,7 +211,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2jGyXpgwHFrgkyHHxGpT0F/8ce43829ef6cbcca8a857a7c81380857/apex_pro_mini_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2022.png, kind: cutout_top, primary: true }
+    # photo : vue de dessus de la version sans fil, même boîtier, https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wired&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6e4E2VVFHBFEVN6wWs8kJC/d368bef89661dda212f12c9b4707ddde/apex_pro_mini_wl_img_buy_04.png__1920x1080_crop-fit_optimize_subsampling-2-2134.png, kind: cutout_top, width: 586, height: 293, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2jGyXpgwHFrgkyHHxGpT0F/8ce43829ef6cbcca8a857a7c81380857/apex_pro_mini_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2022.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2jGyXpgwHFrgkyHHxGpT0F/8ce43829ef6cbcca8a857a7c81380857/apex_pro_mini_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2022.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wired&keyboardLanguage=french
@@ -224,7 +234,9 @@
   editorialScore: 0.5
   amazonAsin: B0B2X3FC5L
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1dUWLXyR0dNU4ieBmpNzfL/3a74d997f07db18a24c367bac80ff2a6/apex_pro_mini_wl_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2132.png, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wireless&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6e4E2VVFHBFEVN6wWs8kJC/d368bef89661dda212f12c9b4707ddde/apex_pro_mini_wl_img_buy_04.png__1920x1080_crop-fit_optimize_subsampling-2-2134.png, kind: cutout_top, width: 586, height: 293, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1dUWLXyR0dNU4ieBmpNzfL/3a74d997f07db18a24c367bac80ff2a6/apex_pro_mini_wl_img_buy_02.png__1920x1080_crop-fit_optimize_subsampling-2-2132.png, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wireless&keyboardLanguage=french
   specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 543, widthMm: 293, depthMm: 103 }
@@ -277,7 +289,9 @@
   editorialScore: 0.5
   amazonAsin: B082Y5XK2W
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3w9vDiEZFAqw4Ut7zxG84J/4db5258d3e31607ba87aee3a4a1cf36b/buyimg_apex5_001-fix.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1000.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-5?keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1YwOrFSH34SkmgTfrezBci/24ac0d5f90cfafe2d658272b8e61f33b/buyimg_apex5_006.png__1920x1080_crop-fit_optimize_subsampling-2-1005.png, kind: cutout_top, width: 1890, height: 1080, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3w9vDiEZFAqw4Ut7zxG84J/4db5258d3e31607ba87aee3a4a1cf36b/buyimg_apex5_001-fix.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-1000.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-5?keyboardLanguage=french
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 925, widthMm: 443, depthMm: 139 }
@@ -293,7 +307,9 @@
   editorialScore: 0.5
   amazonAsin: B07RXWH4DJ
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4nsAjRPVID6YqTP6kftq67/7616fa67a4252a339221fb45b17300b4/buyimg_apex7_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3104.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=fullSize&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1CsoFwU0WrkpWdVSzeijlI/c7b50e4a3fc6ffc5d1fa48530cd05ce0/buyimg_apex7_006_fr.png__1920x1080_crop-fit_optimize_subsampling-2-2927.png, kind: cutout_top, width: 1890, height: 1080, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4nsAjRPVID6YqTP6kftq67/7616fa67a4252a339221fb45b17300b4/buyimg_apex7_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3104.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=fullSize&keyboardLanguage=french
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 953, widthMm: 437, depthMm: 139 }
@@ -309,7 +325,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5UlU8464ekMy0uPRlF2snp/6a892cda4c545534c9c545eced1c0657/buyimg_apex7tkl_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3132.jpg, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=tkl&keyboardLanguage=french
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/3TYB9I3zFTh5bzNxapG6Ug/4bc7d0b7ddb562cf3989106f633d9718/buyimg_apex7tkl_006_fr.png__1920x1080_crop-fit_optimize_subsampling-2-2997.png, kind: cutout_top, width: 1890, height: 1080, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/5UlU8464ekMy0uPRlF2snp/6a892cda4c545534c9c545eced1c0657/buyimg_apex7tkl_001-v2.jpg__1920x1080_q100_crop-fit_optimize_subsampling-2-3132.jpg, kind: cutout_top }
   sources:
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=tkl&keyboardLanguage=french
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 771, widthMm: 355, depthMm: 139 }

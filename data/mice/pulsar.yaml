@@ -37,8 +37,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_001_a1a1808c-15b8-4ae0-aa07-a55541013614.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
-    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_002_1c9df90e-4960-4dc3-8090-40a4275f9f58.png, kind: cutout_top, width: 1600, height: 1600 }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_002_1c9df90e-4960-4dc3-8090-40a4275f9f58.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_001_a1a1808c-15b8-4ae0-aa07-a55541013614.png, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_003_b398c1e9-66a0-47fc-a70c-4b04f98398fa.png, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_004_d7dff341-2d81-43bb-9485-1610fd71cf4e.png, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Feinmann-F01-First-Edition_005.png, kind: cutout_top, width: 1600, height: 1600 }
@@ -122,7 +123,8 @@
     - https://eu.pulsar.gg/products/x3-crazylight-medium-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # shape : « Ergonomic right hand shape », « ergonomically asymmetric design when viewed from above » (eu.pulsar.gg), comme les autres X3
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.7, widthMm: 69.5, heightMm: 43.1, weightG: 46, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: "39065", colorName: Jet Black, colorFamily: black }
     - { sku: "39066", colorName: Uyuni White, colorFamily: white }

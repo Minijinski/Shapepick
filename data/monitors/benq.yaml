@@ -311,7 +311,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://image.benq.com/is/image/benqco/xq2566x-web-mobile-800x750-02?wid=2000&fmt=png-alpha, kind: cutout_front, primary: true }
+    # photo : vue de face, https://zowie.benq.eu/fr-fr/monitor/xq2566x.html
+    - { url: https://image.benq.com/is/image/benqco/01-front?wid=2000&fmt=png-alpha, kind: cutout_front, width: 2000, height: 2000, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/xq2566x-web-mobile-800x750-02?wid=2000&fmt=png-alpha, kind: cutout_front }
     - { url: https://image.benq.com/is/image/benqco/xq2566x-web-1920x1060-02?wid=2000&fmt=png-alpha, kind: cutout_front }
   sources:
     - https://zowie.benq.eu/fr-fr/monitor/xq2566x.html

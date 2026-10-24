@@ -716,7 +716,9 @@
   msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
-  images: []
+  images:
+    # photo : vue de face, https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-s-24-165-hz-s2426hs/s2426hs/-
+    - { url: https://i.dell.com/assetlink/img/global/monitor-dell-plus-s2426hs-wh-row-gallery-2-dl119kia-large.png?fmt=png-alpha&wid=2000, kind: cutout_front, width: 2000, height: 1529, primary: true }
   sources:
     - https://www.dell.com/fr-fr/shop/monitors/apd/écran-dell-s-24-165-hz-s2426hs/s2426hs/-
   specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 165, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.1", speakers: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6670 }
@@ -730,7 +732,9 @@
   msrpEur: 265
   popularity: 0.5
   editorialScore: 0.5
-  images: []
+  images:
+    # photo : vue de face, https://www.dell.com/fr-fr/shop/monitors/apd/écran-wqhd-dell-34-se3426dw/se3426dw/-
+    - { url: https://i.dell.com/assetlink/img/global/monitor-dell-se3426dw-black-gallery-2-dl11g2s2-large.png?fmt=png-alpha&wid=2000, kind: cutout_front, width: 2000, height: 1134, primary: true }
   sources:
     - https://www.dell.com/fr-fr/shop/monitors/apd/écran-wqhd-dell-34-se3426dw/se3426dw/-
   specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 165, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", weightG: 11460 }

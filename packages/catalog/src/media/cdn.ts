@@ -27,8 +27,9 @@ export function atWidth(href: string, width: number): string {
     url.searchParams.set('wid', w)
   } else if (url.hostname === 'cdn.sanity.io' || url.hostname === 'images.ctfassets.net') {
     url.searchParams.set('w', w)
-  } else if (url.hostname === 'dlcdnwebimgs.asus.com') {
-    // ASUS sizes by a path suffix: /gain/<id>/w800.
+  } else if (url.hostname === 'dlcdnwebimgs.asus.com' && url.pathname.startsWith('/gain/')) {
+    // ASUS sizes its /gain/ assets by a path suffix: /gain/<id>/w800. Its product pages'
+    // pictures (/files/media/…/pd-front.png) come at their own size, a suffix breaks them.
     url.pathname = `${url.pathname.replace(/\/[wh]\d+$/, '')}/w${w}`
   } else {
     return href

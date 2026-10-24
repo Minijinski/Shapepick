@@ -446,7 +446,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3457-RIELD-One-2-RGB-TKL-Pudding-Edition.jpg?v=1707268750, kind: cutout_top, width: 1992, height: 1328, primary: true }
+    # photo : vue de dessus, https://ecommerce.datablitz.com.ph/products/ducky-one-2-rgb-tkl-led-double-shot-pbt-pudding-edition-mechanical-keyboard-cherry-mx-rgb-brown-switch-dkon1787st-buspdaztp
+    - { url: https://cdn.shopify.com/s/files/1/0355/8296/7943/products/16373199_d81a6c35-d6d3-411e-8c74-fc0e8bab58ed.jpg, kind: cutout_top, width: 500, height: 500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/3457-RIELD-One-2-RGB-TKL-Pudding-Edition.jpg?v=1707268750, kind: cutout_top, width: 1992, height: 1328 }
   sources:
     - https://mechanicalkeyboards.com/products/ducky-one-2-rgb-tkl-pudding-edition
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true }

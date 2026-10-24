@@ -358,7 +358,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/11399_63ae03367b3f9_Sword-2-108-Warrior-Soar.jpg?v=1707270735, kind: cutout_top, width: 2400, height: 799, primary: true }
+    # photo : vue de dessus, coloris Beijing Opera, https://computerlounge.co.nz/products/varmilo-sword-2-vsm108-beijing-opera-keyboard-white-led-ec-sakura-v2-switch
+    - { url: https://cdn.shopify.com/s/files/1/0596/9300/6963/files/a29d4e173e9767159e3208a7e2d8dde0c7f1de19_Varmilo_Sword_2_VSM108_Beijing_Opera_1.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/11399_63ae03367b3f9_Sword-2-108-Warrior-Soar.jpg?v=1707270735, kind: cutout_top, width: 2400, height: 799 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/11402_62a3d8b1e3ec2_Sword-2-108-Warrior-Soar-Varmilo-EC-Sakura-V2.png?v=1707270735, kind: cutout_top, width: 2399, height: 760 }
   sources:
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-108-warrior-soar

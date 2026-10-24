@@ -90,8 +90,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2bd78ae2-9458-4904-bf57-0a885be4491b.png?v=1776325991, kind: cutout_top, primary: true }
-    - { url: https://fr-store.msi.com/cdn/shop/files/1024_189c2bb9-97df-4ef3-a7bc-b895f7447216.png?v=1776325991, kind: cutout_top }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_189c2bb9-97df-4ef3-a7bc-b895f7447216.png?v=1776325991, kind: cutout_top, primary: true }
+    - { url: https://fr-store.msi.com/cdn/shop/files/1024_2bd78ae2-9458-4904-bf57-0a885be4491b.png?v=1776325991, kind: cutout_top }
     - { url: https://fr-store.msi.com/cdn/shop/files/1024_f17f46ca-e4b7-49b1-9021-40f391885b82.png?v=1776325992, kind: cutout_top }
     - { url: https://fr-store.msi.com/cdn/shop/files/1024_b00515c2-a26d-48d3-b5de-b303067bf885.png?v=1776325991, kind: cutout_top }
     - { url: https://fr-store.msi.com/cdn/shop/files/1024_e3881618-4d40-4397-962e-6530b1d8369f.png?v=1776325992, kind: cutout_top }

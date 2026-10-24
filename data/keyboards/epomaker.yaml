@@ -446,7 +446,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/LUMA40.bip_7.webp?v=1760601733, kind: cutout_top, width: 5000, height: 5000, primary: true }
+    # photo : vue de dessus, https://epomaker.com/products/epomaker-luma40
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_LUMA40_Full_Features1.png, kind: cutout_top, width: 801, height: 299, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/LUMA40.bip_7.webp?v=1760601733, kind: cutout_top, width: 5000, height: 5000 }
   sources:
     - https://epomaker.com/products/epomaker-luma40
   specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: tray, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, soundDampening: true }

@@ -69,7 +69,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18732-IIJ4U-WOBKEY-Rainy-75-Lite-Aluminum-TKL-Hotswap-Bluetooth-Wireless.jpg?v=1712860203, kind: cutout_top, width: 1746, height: 1548, primary: true }
+    # photo : vue de dessus, même boîtier, autre coloris, https://divinikey.com/products/wobkey-rainy75-keyboard-kit
+    - { url: https://cdn.shopify.com/s/files/1/0275/3649/0561/files/preorder-wobkey-rainy75-keyboard-kit-782155.webp, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18732-IIJ4U-WOBKEY-Rainy-75-Lite-Aluminum-TKL-Hotswap-Bluetooth-Wireless.jpg?v=1712860203, kind: cutout_top, width: 1746, height: 1548 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18739-6XCMS-WOBKEY-Rainy-75-Lite-Aluminum-TKL-Hotswap-Bluetooth-Wireless.jpg?v=1712860202, kind: cutout_top, width: 1896, height: 1736 }
   sources:
     - https://mechanicalkeyboards.com/products/wobkey-rainy-75-lite
@@ -87,7 +89,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18740-YGXIL-WOBKEY-Rainy-75-Standard-Mechanical-Keyboard.jpg?v=1715283136, kind: cutout_top, width: 1896, height: 1736, primary: true }
+    # photo : vue de dessus, https://divinikey.com/products/wobkey-rainy75-keyboard-kit
+    - { url: https://cdn.shopify.com/s/files/1/0275/3649/0561/files/wobkey-rainy75-keyboard-kit-242904.webp, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18740-YGXIL-WOBKEY-Rainy-75-Standard-Mechanical-Keyboard.jpg?v=1715283136, kind: cutout_top, width: 1896, height: 1736 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18742-RNYNG-WOBKEY-Rainy-75-Standard-Mechanical-Keyboard-White.jpg?v=1715283137, kind: cutout_top, width: 1784, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/18743-86SGS-WOBKEY-Rainy-75-Standard-Mechanical-Keyboard-Blue.jpg?v=1715283135, kind: cutout_top, width: 1800, height: 1568 }
   sources:

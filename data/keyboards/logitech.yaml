@@ -322,7 +322,9 @@
   editorialScore: 0.5
   amazonAsin: B0D3WMJ8M1
   images:
-    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://www.logitech.com/fr-fr/shop/p/keys-to-go2-universal.920-012969
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-2-fra.png", kind: cutout_top, width: 1600, height: 1374, primary: true }
+    - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-deu.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-fra.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-ch.png", kind: cutout_top }

@@ -14,7 +14,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27647-YRX54-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard.jpg?v=1785185944, kind: cutout_top, width: 2400, height: 1346, primary: true }
+    # photo : vue de dessus, coloris rose, https://divinikey.com/products/qwertykeys-qk100-mk2-keyboard
+    - { url: https://cdn.shopify.com/s/files/1/0275/3649/0561/files/qwertykeys-qk100-mk2-keyboard-2383168.webp, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27647-YRX54-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard.jpg?v=1785185944, kind: cutout_top, width: 2400, height: 1346 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27649-AGTRB-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard-Aqu.jpg?v=1785185945, kind: cutout_top, width: 2400, height: 2400 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27648-HIF18-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard-Sil.jpg?v=1785185945, kind: cutout_top, width: 2400, height: 2400 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/27650-X5RVZ-Qwertykeys-QK100-Mk2-Aluminum-Wireless-Prebuilt-Keyboard-Bla.jpg?v=1785185945, kind: cutout_top, width: 2400, height: 2400 }
@@ -55,7 +57,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26104-NDRS3-ATK-X-Qwertykeys-Hex80-HE-Keyboard.jpg?v=1762193057, kind: cutout_top, width: 1500, height: 1285, primary: true }
+    # photo : vue de dessus, https://divinikey.com/products/qwertykeys-hex80-he-keyboard
+    - { url: https://cdn.shopify.com/s/files/1/0275/3649/0561/files/qwertykeys-hex80-he-keyboard-5570574.webp, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26104-NDRS3-ATK-X-Qwertykeys-Hex80-HE-Keyboard.jpg?v=1762193057, kind: cutout_top, width: 1500, height: 1285 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26106-S7AMZ-ATK-X-Qwertykeys-Hex80-HE-Keyboard-Anodized-Sand-Gold.jpg?v=1762193056, kind: cutout_top, width: 1500, height: 1286 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26105-XMXZT-ATK-X-Qwertykeys-Hex80-HE-Grey-8K-Aluminum-Keyboard.jpg?v=1762193057, kind: cutout_top, width: 2400, height: 2057 }
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/26107-MSNKB-ATK-X-Qwertykeys-Hex80-HE-Keyboard-Purple.jpg?v=1762193057, kind: cutout_top, width: 2400, height: 2057 }

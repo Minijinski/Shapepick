@@ -40,7 +40,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-profile-left-angle-with-badge-gallery-4-new.png", kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://www.logitechg.com/fr-fr/shop/p/pro-x2-superstrike-mouse.910-007777
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-top-angle-lifestyle-gallery-2.png", kind: cutout_top, width: 2500, height: 2160, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-profile-left-angle-with-badge-gallery-4-new.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-profile-angle-gallery-4.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-x2-superstrike-pdp/2026/pro-x2-superstrike-bottom-angle-gallery-7.png", kind: cutout_top }
   sources:
@@ -185,10 +187,11 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-pink-gallery-4.png", kind: cutout_top, primary: true }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-pink-gallery1.png", kind: cutout_top, primary: true }
+    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-pink-gallery-4.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-white-gallery-4.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro-2-lightspeed-mouse-profile-left-angle-black-gallery-4.png", kind: cutout_top }
-    - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-pink-gallery1.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-white-gallery1.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/pro-2-lightspeed/gallery/pro2-lightspeed-black-new-gallery1.png", kind: cutout_top }
   sources:

@@ -99,7 +99,9 @@
   msrpUsd: 300
   popularity: 0.5
   editorialScore: 0.5
-  images: []
+  images:
+    # photo : vue de dessus, https://divinikey.com/products/luminkey80-tkl-keyboard
+    - { url: https://cdn.shopify.com/s/files/1/0275/3649/0561/files/luminkey80-tkl-keyboard-514558.webp, kind: cutout_top, width: 1200, height: 1200, primary: true }
   sources:
     - https://mechanicalkeyboards.com/products/createkeebs-luminkey80-mk-ii-tri-mode-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: pom, keycapMaterial: pbt, keycapProfile: oem, backlight: white, firmware: qmk, macSupport: true, batteryMah: 7000, heightFrontMm: 17.7 }

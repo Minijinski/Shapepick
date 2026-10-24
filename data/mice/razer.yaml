@@ -63,8 +63,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://assets3.razerzone.com/7iNSfvOWFgxrmcfyeEJuZvZpXp4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh37%2Fh08%2F9765619138590%2F240423-viper-v3-pro-black-1500x1000-5.jpg, kind: cutout_top, primary: true }
-    - { url: https://assets3.razerzone.com/16q6d2phedNVhHThXW05Fu5-Hxo=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh08%2Fh61%2F9765618188318%2Fviper-v3-pro-black-500x500.png, kind: cutout_top }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://assets3.razerzone.com/16q6d2phedNVhHThXW05Fu5-Hxo=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh08%2Fh61%2F9765618188318%2Fviper-v3-pro-black-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/7iNSfvOWFgxrmcfyeEJuZvZpXp4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh37%2Fh08%2F9765619138590%2F240423-viper-v3-pro-black-1500x1000-5.jpg, kind: cutout_top }
     - { url: https://assets3.razerzone.com/ZF_oVAk4CuVtEpmCbg-UqkJ5kyI=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh4e%2Fh5e%2F9765618221086%2Fviper-v3-pro-white-500x500.png, kind: cutout_top }
     - { url: https://assets3.razerzone.com/Vn-bHBZD9ZIF_ky3gZCmCPpAWvg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe0%2Fh07%2F9765619105822%2F240423-viper-v3-pro-black-1500x1000-1.jpg, kind: cutout_top }
     - { url: https://assets3.razerzone.com/kM3wMvkVHkt4jWIkrCPR5sN4y54=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh48%2Fh0b%2F9765619204126%2F240423-viper-v3-pro-black-1500x1000-2.jpg, kind: cutout_top }

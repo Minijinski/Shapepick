@@ -61,7 +61,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/CD4D70CA-BEEE-42CE-B28E-E396D2A380A3, kind: cutout_front, primary: true }
+    # photo : vue de face, https://rog.asus.com/fr/monitors/27-to-31-5-inches/ROG-Swift-OLED-PG27AQWP-GR-EDITION-20/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/202605/04f8ed38-815e-4ca3-a509-ce63f6a23c36/v1/img/aspect/pd.png, kind: cutout_front, width: 1300, height: 724, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/CD4D70CA-BEEE-42CE-B28E-E396D2A380A3, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/EB09672C-5DE5-42A4-8838-32DFED67DAE9, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/80BEA282-26AE-4AFD-8E94-09AE6B783E4A, kind: cutout_front }
     - { url: https://dlcdnwebimgs.asus.com/gain/1094C7C6-B607-4823-B7B5-99C296D6DE34, kind: cutout_front }

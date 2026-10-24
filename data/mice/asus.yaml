@@ -14,7 +14,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/B067879B-6EDC-489E-BB31-9DA251D1D733, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ii-ace/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/9c65f438-dd0e-416a-a723-1920de3b02b6/v1/img/spec/sequence/1.png, kind: cutout_top, width: 1350, height: 1478, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/B067879B-6EDC-489E-BB31-9DA251D1D733, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ii-ace/
   # sideButtons : « les deux boutons latéraux » (rog.asus.com)
@@ -50,7 +52,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/D23E776A-0090-43C8-8937-3918EE73C42F, kind: cutout_top, primary: true }
+    # photo : vue de dessus, coloris blanc, https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-strix-impact-iii-wireless/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/65596BCB-D8E6-406E-B0D5-11E6F2DC1EFD/v1/img/customization/pd-front.png, kind: cutout_top, width: 696, height: 701, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/D23E776A-0090-43C8-8937-3918EE73C42F, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-strix-impact-iii-wireless/
   # sideButtons : 2 latéraux, turbovs.com/review/asus-rog-strix-impact-iii-81634
@@ -67,7 +71,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/9B783ACB-999D-41F3-AC55-7859FB30C90B, kind: cutout_top, primary: true }
+    # photo : vue de dessus, coloris blanc, https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-keris-ii-ace/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/BCABBC17-8970-4EF2-8DD5-7720E66A593F/v2/img/control/pd-front.png, kind: cutout_top, width: 717, height: 716, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/9B783ACB-999D-41F3-AC55-7859FB30C90B, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-keris-ii-ace/
   # sideButtons : photo de profil (galerie rog.asus.com)
@@ -101,7 +107,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/0F9B888C-4649-4829-B3C9-BDD8734907A4, kind: cutout_top, primary: true }
+    # photo : vue de dessus, coloris blanc, https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-harpe-ace-aim-lab-edition-model/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/E15AA0D3-A88E-4B0C-808E-480AF705AA2B/v1/img/customization/pd-front.png, kind: cutout_top, width: 696, height: 701, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/0F9B888C-4649-4829-B3C9-BDD8734907A4, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-harpe-ace-aim-lab-edition-model/
   # sideButtons : « only two extra buttons » (test cité sur rog.asus.com)
@@ -137,7 +145,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://dlcdnwebimgs.asus.com/gain/293663B4-274A-413F-AE7F-3F343BCC4C51, kind: cutout_top, primary: true }
+    # photo : vue de dessus, https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-wireless-aimpoint-model/
+    - { url: https://dlcdnwebimgs.asus.com/files/media/6670B097-AC80-447E-AFBD-DE3B2E145A90/v1/img/gen/rog-gladius-iii-wireless.png, kind: cutout_top, width: 600, height: 880, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/293663B4-274A-413F-AE7F-3F343BCC4C51, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ergonomic-right-handed/rog-gladius-iii-wireless-aimpoint-model/
   # sideButtons : photo de profil (galerie rog.asus.com)

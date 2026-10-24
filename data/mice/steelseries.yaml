@@ -84,8 +84,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4IqCRubXR8HOhPNtI0Ups6/aa282222dc9b0eebfd3249baa2c04829/rival_pro_mini_black_pdp_img_buy_primary.png, kind: cutout_top, primary: true }
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4kFaBCyDLhG6zqncnm08Zo/2e327d8b58823f5cfeda47f6fbf89413/rival_pro_mini_black_pdp_img_buy_02.png, kind: cutout_top }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4kFaBCyDLhG6zqncnm08Zo/2e327d8b58823f5cfeda47f6fbf89413/rival_pro_mini_black_pdp_img_buy_02.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/4IqCRubXR8HOhPNtI0Ups6/aa282222dc9b0eebfd3249baa2c04829/rival_pro_mini_black_pdp_img_buy_primary.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/2AOblTljXSCjmTE9gf5YQt/dd0f25f51b0e05ceca5cb522d5897c9f/rival_pro_mini_black_pdp_img_buy_03.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/sde7wFqc41qFhqWan4Ecn/acd2acf18c9a08be71b877b88c96b4c7/rival_pro_mini_black_pdp_img_buy_01.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/RGAP0y3xZHtdjulI6GFJB/46ead83cb19ef2a7d146176b7fbb25c7/rival_pro_mini_black_pdp_img_buy_05.png, kind: cutout_top }
@@ -169,8 +170,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7JsManHQNJr1MlshQO3x1o/ffcb24ca3d58f20de25b510b66f3ff72/rival_3_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top, primary: true }
-    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6JeTt3A36dChpcazQKyHbB/ad71640570dea931c42f1114b92d9993/rival_3_gen_2_black_pdp_img_buy_02.png, kind: cutout_top }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/6JeTt3A36dChpcazQKyHbB/ad71640570dea931c42f1114b92d9993/rival_3_gen_2_black_pdp_img_buy_02.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7JsManHQNJr1MlshQO3x1o/ffcb24ca3d58f20de25b510b66f3ff72/rival_3_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/72z5WLJdYrhOvZ256jmkq8/de05d604e0a6c85fda4a656a5e2b678b/rival_3_gen_2_black_pdp_img_buy_03.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/7c7FUyESCXCFYY1NojwhMR/2ae53df3f434428ea28f8ace5682037d/rival_3_gen_2_black_pdp_img_buy_04.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/hmm5mo4qf4mf/1e9vKjBDLHnPvfqtPIV2nm/b3f8e1522a2316f1caa95024b71add0e/rival_3_gen_2_black_pdp_img_buy_05.png, kind: cutout_top }
@@ -191,8 +193,9 @@
   popularity: 0.5
   editorialScore: 0.5
   images:
-    - { url: https://images.ctfassets.net/w5r1fvmogo3f/Cend6NMex8wf3fZZ8b0cR/ecdb507e7840c6ac60a82f7831bbb9f7/rival_3_wl_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top, primary: true }
-    - { url: https://images.ctfassets.net/w5r1fvmogo3f/1VAQb1O4z8VMaSD2kNhAMy/1b79085222133df770b3b1c2b8fa54a0/rival_3_wl_gen_2_black_pdp_img_buy_02.png, kind: cutout_top }
+    # photo : vue de dessus, galerie officielle, déjà dans data/
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/1VAQb1O4z8VMaSD2kNhAMy/1b79085222133df770b3b1c2b8fa54a0/rival_3_wl_gen_2_black_pdp_img_buy_02.png, kind: cutout_top, primary: true }
+    - { url: https://images.ctfassets.net/w5r1fvmogo3f/Cend6NMex8wf3fZZ8b0cR/ecdb507e7840c6ac60a82f7831bbb9f7/rival_3_wl_gen_2_black_pdp_img_buy_primary_on.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/127bMXtFr5Mg0pp8IQd09Y/c03da7726469649621feffb5ed5ca999/rival_3_wl_gen_2_black_pdp_img_buy_03.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/2ZZ12K7WawtnUUQN4t8RAQ/43c987f97e8cb2ceb9c2d3075b5c4c82/rival_3_wl_gen_2_black_pdp_img_buy_04.png, kind: cutout_top }
     - { url: https://images.ctfassets.net/w5r1fvmogo3f/1634RpVgtwGZSQ0G1QraNx/0751d91623e8e89284ad0d5e139fcda6/rival_3_wl_gen_2_black_pdp_img_buy_05.png, kind: cutout_top }
