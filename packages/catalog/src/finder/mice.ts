@@ -40,17 +40,19 @@ const keepsFlanks = (answers: Answers) => {
   return !shapes.length || shapes.some((s) => !s.startsWith('tb_'))
 }
 
+/** Whether the answers keep trackballs. */
+const keepsBalls = (answers: Answers) => shapesOf(answers).some((s) => s.startsWith('tb_'))
 /**
- * A trackball stays put on the desk: the size and weight questions, asked of the shells a hand
- * moves, leave it in whatever the visitor picks (a shape answer may keep both kinds).
+ * A trackball stays put on the desk: once the shape answer keeps trackballs beside shells, the size
+ * and weight questions, asked of the shells a hand moves, leave them in whatever is picked.
  */
-const sitsStill = (m: M) => m.specs.shape === 'trackball'
-const inBand = (band: SizeBand) => (m: M) => sitsStill(m) || sizeBandOf(m) === band
+const sitsStill = (m: M, answers: Answers) => m.specs.shape === 'trackball' && keepsBalls(answers)
+
+const inBand = (band: SizeBand) => (m: M) => sizeBandOf(m) === band
 /** A few grams either side of a band are not another mouse: they still count. */
 const GRACE_G = 3
 const weighs = (lo: number, hi: number) => (m: M) =>
-  sitsStill(m) ||
-  (m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G)
+  m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G
 /** Buttons on the thumb's flank, between lo and hi. A mouse whose count is unknown answers none. */
 const sides =
   (lo: number, hi = lo) =>
@@ -195,6 +197,7 @@ export const mouseFinder: FinderDefinition<M> = {
       key: 'size',
       kind: 'multi',
       applies: keepsShells,
+      exempt: sitsStill,
       label: text('Taille', 'Size'),
       title: text('Quelle taille de souris ?', 'How big should the mouse be?'),
       help: text(
@@ -225,6 +228,7 @@ export const mouseFinder: FinderDefinition<M> = {
       key: 'weight',
       kind: 'multi',
       applies: keepsShells,
+      exempt: sitsStill,
       label: text('Poids', 'Weight'),
       title: text('Quel poids ?', 'How heavy?'),
       help: text(

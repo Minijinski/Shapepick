@@ -8,10 +8,12 @@ import {
   isTrivial,
   liveAnswers,
   mouseFinder,
+  optionCounts,
   rank,
   rankingAnswers,
   sanitizeAnswers,
   stepOf,
+  withBrands,
 } from '../src'
 import { gripFit, gripOf, sizeBandOf } from '../src/finder/mouse-fit'
 import type { Answers } from '../src/finder/types'
@@ -82,6 +84,24 @@ describe('mouse finder', () => {
     expect(kept.some((m) => m.specs.shape === 'trackball')).toBe(true)
     const shells = kept.filter((m) => m.specs.shape !== 'trackball')
     expect(shells.every((m) => sizeBandOf(m) === 'medium')).toBe(true)
+    // Every size tile counts them then, though none pictures or names one.
+    const mixed = { hand: 'right', shape: 'sym,tb_thumb' }
+    const small = filter(mouseFinder, mice, { ...mixed, shape: 'sym', size: 'small' }).length
+    const balls = filter(mouseFinder, mice, { ...mixed, shape: 'tb_thumb' }).length
+    expect(balls).toBeGreaterThan(0)
+    expect(optionCounts(mouseFinder, mice, mixed, 'size').counts.small).toBe(small + balls)
+    const size = stepOf(mouseFinder, 'size')
+    const options = size.kind === 'range' ? [] : size.options
+    expect(mice.some((m) => m.specs.shape === 'trackball' && options.some((o) => o.match(m)))).toBe(
+      false,
+    )
+  })
+
+  it('keeps trackballs out of a size or a weight asked without the shape', () => {
+    const trackball = (answers: Answers) =>
+      filter(mouseFinder, mice, answers).some((m) => m.specs.shape === 'trackball')
+    expect(trackball({ size: 'small' })).toBe(false)
+    expect(trackball({ weight: 'feather,ultralight' })).toBe(false)
   })
 
   it('ignores a grip answered before the shape ruled grips out', () => {
@@ -235,6 +255,13 @@ describe('size and grip', () => {
     // Shells it tells apart: asked.
     expect(isTrivial(mouseFinder, mice, shells, 'grip')).toBe(false)
     expect(firstPending(mouseFinder, mice, shells)).toBe('grip')
+  })
+
+  it('goes to the results when a brand and a hand leave one mouse', () => {
+    const branded = withBrands(mouseFinder, mice)
+    const left = { brand: 'ardent', hand: 'left' }
+    expect(filter(branded, mice, left).map((m) => m.slug)).toEqual(['ardent-rook-left'])
+    expect(firstPending(branded, mice, { ...left, use: 'gaming' })).toBeNull()
   })
 
   it('leaves the ranking alone until a grip is given', () => {

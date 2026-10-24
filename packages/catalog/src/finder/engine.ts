@@ -108,8 +108,18 @@ export function withOrder<I>(
 
 export const applies = <I>(step: Step<I>, answers: Answers) => step.applies?.(answers) ?? true
 
-/** The test one answered step puts on an item, or null when it does not narrow anything. */
+/**
+ * The test one answered step puts on an item, or null when it does not narrow anything. An item
+ * the step leaves aside, given the other answers (`exempt`), passes it whatever is picked.
+ */
 export function predicateOf<I>(step: Step<I>, answers: Answers): ((item: I) => boolean) | null {
+  const test = testOf(step, answers)
+  const { exempt } = step
+  return test && exempt ? (item) => exempt(item, answers) || test(item) : test
+}
+
+/** What the picks of one answered step ask of an item. */
+function testOf<I>(step: Step<I>, answers: Answers): ((item: I) => boolean) | null {
   if (step.weightOnly || !applies(step, answers)) return null
   if (!isChoice(step)) {
     const range = readRange(answers[step.key])
@@ -175,8 +185,10 @@ export function optionCounts<I>(
   if (!isChoice(step)) return { base: base.length, counts }
   const kept =
     step.kind === 'musts' ? base.filter((i) => predicateOf(step, answers)?.(i) ?? true) : base
+  const { exempt } = step
   for (const option of step.options) {
-    counts[option.id] = step.weightOnly ? base.length : kept.filter(option.match).length
+    const keeps = exempt ? (item: I) => exempt(item, answers) || option.match(item) : option.match
+    counts[option.id] = step.weightOnly ? base.length : kept.filter(keeps).length
   }
   return { base: base.length, counts }
 }
@@ -219,8 +231,8 @@ function steers<I>(def: FinderDefinition<I>, base: I[], prior: Answers, step: St
     const live = liveAnswers(def, withAnswer(prior, step.key, option.id))
     return fed.some((c) => {
       if (!(c.active?.(live) ?? true)) return false
-      const level = c.score(first, live)
-      return rest.some((item) => c.score(item, live) !== level)
+      const level = clamp(c.score(first, live))
+      return rest.some((item) => clamp(c.score(item, live)) !== level)
     })
   })
 }
@@ -441,7 +453,7 @@ function priorTellsApart<I>(def: FinderDefinition<I>, items: I[]): boolean {
  * printed adds the answers: each one that narrows the catalogue is a criterion every ranked item
  * meets, so the match starts at the fit and fills up as the visitor answers, without changing the
  * order. Items with exactly the same match come cheapest first, then as the definition settles
- * them (the newer model…), never by name. Among items whose fit reads the same percent, makers
+ * them (the newer model…), never by name. Among items that read as a tie (`takeTurns`), makers
  * take turns: a brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses
  * are said in their own words, and a caveat (an OLED's burn-in at the office) only ever as a
  * weakness.
@@ -621,18 +633,19 @@ const weakLabelOf = <I>(c: Criterion<I>, item: I, answers: Answers) =>
 export const matchPercent = (score: number) => Math.round(score * 100)
 
 /**
- * Among ranked items whose fit reads the same percent, one per maker in turn (makers in the order
- * their best item came), each maker's items in their own order. Different fits keep their order:
- * only what reads as a tie is reshuffled. The fit, not the match printed: every answer met lifts
- * the match of all ranked items alike and squeezes them together, so ties read on the match would
- * widen with each answer, and answering would reorder products that fit differently.
+ * Among ranked items that read as a tie, one per maker in turn (makers in the order their best item
+ * came), each maker's items in their own order. Others keep their order. A tie is the same match
+ * printed from fits that read the same percent: every answer met lifts the match of all ranked
+ * items alike and squeezes them together, so on the match alone ties would widen with each answer
+ * and answering would reorder products that fit differently; on the fit alone, a tie could straddle
+ * a printed percent and the matches would read out of order.
  */
 function takeTurns<I>(ranked: Ranked<I>[], maker: (item: I) => string): Ranked<I>[] {
   const out: Ranked<I>[] = []
   for (let start = 0; start < ranked.length; ) {
-    const percent = matchPercent(ranked[start]?.fit ?? 0)
+    const tie = tieOf(ranked[start])
     let end = start
-    while (end < ranked.length && matchPercent(ranked[end]?.fit ?? 0) === percent) end++
+    while (end < ranked.length && tieOf(ranked[end]) === tie) end++
     const queues = new Map<string, Ranked<I>[]>()
     for (const entry of ranked.slice(start, end)) {
       const key = maker(entry.item)
@@ -650,6 +663,10 @@ function takeTurns<I>(ranked: Ranked<I>[], maker: (item: I) => string): Ranked<I
   }
   return out
 }
+
+/** What reads as a tie: the same match printed, from fits that read the same percent. */
+const tieOf = <I>(entry: Ranked<I> | undefined) =>
+  entry ? `${matchPercent(entry.score)}|${matchPercent(entry.fit)}` : ''
 
 const clamp = (v: number) => (Number.isFinite(v) ? Math.min(1, Math.max(0, v)) : 0)
 

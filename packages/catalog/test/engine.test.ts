@@ -11,6 +11,7 @@ import {
   isTrivial,
   journeyStates,
   keyboardFinder,
+  matchPercent,
   nearMisses,
   optionCounts,
   previousStep,
@@ -187,6 +188,46 @@ describe('counts, skips and dead ends', () => {
     const answers = { color: 'red', budget: '0-100', musts: 'wifi' }
     expect(optionCounts(def, toys, answers, 'musts').counts.bt).toBe(0)
     expect(deadEnd(def, toys, answers, 'musts', 'bt')).toEqual({ blockedBy: 'budget', count: 1 })
+  })
+})
+
+describe('a question that only steers the ranking', () => {
+  // A finish, asked after the size, that only ranks: large toys feel the same whatever it says.
+  const feel = {
+    key: 'feel',
+    kind: 'single' as const,
+    weightOnly: true,
+    feeds: ['feel'],
+    label: t('Feel'),
+    title: t('Feel?'),
+    options: [
+      { id: 'soft', label: t('Soft'), match: () => true },
+      { id: 'firm', label: t('Firm'), match: () => true },
+    ],
+  }
+  const felt: FinderDefinition<Toy> = {
+    ...def,
+    steps: [...def.steps.slice(0, 3), feel, ...def.steps.slice(3)],
+    criteria: [
+      ...def.criteria,
+      {
+        key: 'feel',
+        label: t('Nice feel'),
+        score: (x, answers) => (x.size === 'l' ? 0.6 : answers.feel === 'soft' ? x.q : 1 - x.q),
+      },
+    ],
+    profiles: { ...def.profiles, quality: { quality: 1, feel: 1 } },
+  }
+  it('is asked while its criteria weigh and tell the products left apart', () => {
+    expect(isTrivial(felt, toys, { use: 'quality' }, 'feel')).toBe(false)
+    // The cheap profile does not weigh the feel.
+    expect(isTrivial(felt, toys, { use: 'cheap' }, 'feel')).toBe(true)
+    // Blue and large leave d and e: the feel scores them alike.
+    expect(isTrivial(felt, toys, { use: 'quality', color: 'blue', size: 'l' }, 'feel')).toBe(true)
+    // A step that does not say what it feeds is always asked.
+    const { feeds: _, ...silent } = feel
+    const unsaid = { ...felt, steps: felt.steps.map((s) => (s.key === 'feel' ? silent : s)) }
+    expect(isTrivial(unsaid, toys, { use: 'cheap' }, 'feel')).toBe(false)
   })
 })
 
@@ -384,6 +425,19 @@ describe('missing figures and ties', () => {
       'a2',
       'b1',
     ])
+  })
+  it('never prints the matches out of order when makers take turns', () => {
+    // Fits 0.8745, 0.874 and 0.868 read 87 % each, but one answer prints them 91, 91 and 90 %.
+    const close = [
+      { ...toys[0], id: 'a1', q: 0.8745 },
+      { ...toys[0], id: 'a2', q: 0.874 },
+      { ...toys[0], id: 'b1', q: 0.868 },
+    ] as Toy[]
+    const byMaker = { ...def, maker: (x: Toy) => x.id[0] ?? '' }
+    const printed = rank(byMaker, close, { use: 'quality', color: 'red' }).map((r) =>
+      matchPercent(r.score),
+    )
+    expect(printed).toEqual([91, 91, 90])
   })
   it('settles exact ties cheapest first, then as the definition says, never by name', () => {
     const like = (id: string, price: number, bt: boolean) => ({ ...toys[0], id, price, bt }) as Toy

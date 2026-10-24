@@ -37,6 +37,12 @@ type StepCommon<I> = {
    * Without it, such a step is always asked.
    */
   feeds?: string[]
+  /**
+   * Items the question does not judge, given the other answers (a trackball, for a mouse's size,
+   * once the shape answer keeps trackballs): whatever is picked keeps them, and every tile counts
+   * them; the options still describe the others alone (what a tile pictures, what a sheet names).
+   */
+  exempt?: (item: I, answers: Answers) => boolean
   /** No "no preference" tile: everyone can make this decision. */
   required?: boolean
   /**
