@@ -90,7 +90,6 @@
     - { sku: FC750RBTN/ELPPD, colorName: White/Pink TKL, colorFamily: white, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: FC750RBTR/EWMPD, colorName: White/Mint TKL, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
 
-# à vérifier : switch « Leopold Mage Sakura Silent » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leopold-mage-sakura-silent)
 - slug: leopold-alchemie
   brand: leopold
   name: Alchemie
@@ -105,7 +104,7 @@
     - https://mechanicalkeyboards.com/products/leopold-alchemie-ash-white-aluminum-wireless-rgb-keyboard
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: top, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, batteryMah: 4000 }
   variants:
-    - { sku: ALHS-EAWPD, colorName: Ash White, colorFamily: white, layout: ansi_us }
+    - { sku: ALHS-EAWPD, colorName: Ash White, colorFamily: white, layout: ansi_us, switch: hmx-silent-sakura }
 
 - slug: leopold-fc630mbt
   brand: leopold

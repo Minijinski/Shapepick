@@ -1,5 +1,9 @@
+import { readFile } from 'node:fs/promises'
+import { join } from 'node:path'
 import type { Switch } from '@choose/catalog'
+import { parse } from 'yaml'
 import { Facts, num, parseHtml } from './facts'
+import { NotCached } from './http'
 import { listProducts, productPage, type ShopifyProduct } from './shopify'
 import { slugify } from './text'
 
@@ -9,6 +13,9 @@ import { slugify } from './text'
 // is kept with its feel alone when its name states it ("Logitech GL Tactile"), without figures;
 // otherwise it stays unresolved, the keyboard variant goes without a switch and the entry is
 // flagged for review.
+//
+// Names a listing spells its own way ("K Pro Red" for Keychron K Pro Red, "Switchs mécaniques
+// verts Razer™" for Razer Green) are tied to their switch in data/switch-aliases.yaml, read first.
 //
 // Catalogues, tried together, the best match winning:
 // - keychron.com: one product per family, one option per colour, one spec table per colour;
@@ -125,6 +132,60 @@ const wantedName = (name: string) =>
     .replace(/\b(pcb|plate|mount|switch(es)?|keyboard|mechanical)\b/gi, ' ')
     .replace(/\s+/g, ' ')
     .trim()
+
+// ─── Aliases ─────────────────────────────────────────────────────────────────────────────────────
+
+/** How the alias table compares names: words in any order, case, accents, punctuation, weight and
+ * "Switch" aside ("Switchs mécaniques verts Razer™" and "razer verts switchs mecaniques" match). */
+export const nameKey = (name: string) =>
+  [
+    ...new Set(
+      tokens(
+        wantedName(
+          name
+            .normalize('NFD')
+            .replace(/\p{M}/gu, '')
+            .replace(/[（）]/g, (p) => (p === '（' ? '(' : ')')),
+        ),
+      ),
+    ),
+  ]
+    .sort()
+    .join(' ')
+
+/** The alias table (switch slug → the names listings give it) as name key → slug, checked: every
+ * slug must be a switch we have, and no name may point to two switches. */
+export function aliasTable(raw: Record<string, string[]>, switches: Switch[]) {
+  const known = new Set(switches.map((s) => s.slug))
+  const table = new Map<string, string>()
+  for (const [slug, names] of Object.entries(raw)) {
+    if (!known.has(slug)) throw new Error(`switch-aliases.yaml : ${slug} absent de switches.yaml`)
+    for (const name of names) {
+      const key = nameKey(name)
+      const other = table.get(key)
+      if (other && other !== slug) {
+        throw new Error(`switch-aliases.yaml : « ${name} » renvoie à ${other} et à ${slug}`)
+      }
+      table.set(key, slug)
+    }
+  }
+  return table
+}
+
+/** data/switch-aliases.yaml, empty when the file does not exist. */
+export async function loadAliases(dataDir: string, switches: Switch[]) {
+  const text = await readFile(join(dataDir, 'switch-aliases.yaml'), 'utf8').catch(() => '')
+  return aliasTable((parse(text) ?? {}) as Record<string, string[]>, switches)
+}
+
+/** A catalogue or a sheet the import's cache lacks, when the run may not fetch (`http.offline`):
+ * nothing to read rather than a failed run. */
+const unlessUncached =
+  <T>(fallback: T) =>
+  (e: unknown) => {
+    if (e instanceof NotCached) return fallback
+    throw e
+  }
 
 /** Specs from one sheet, whatever its template. */
 function specsFrom(f: Facts, name: string, context = ''): Specs | undefined {
@@ -284,7 +345,8 @@ const STORE_CATALOGS = ['https://yunzii.com', 'https://epomaker.com', 'https://w
 
 // ─── Resolver ────────────────────────────────────────────────────────────────────────────────────
 
-export function switchResolver(existing: Switch[]) {
+/** `aliases`: name key → slug, from data/switch-aliases.yaml (loadAliases). */
+export function switchResolver(existing: Switch[], aliases = new Map<string, string>()) {
   const known = new Set(existing.map((s) => s.slug))
   const created = new Map<string, Switch>()
   /** Review notes of the switches built here, by slug. */
@@ -323,14 +385,22 @@ export function switchResolver(existing: Switch[]) {
   async function resolve(raw: string): Promise<SwitchResolution> {
     const name = wantedName(raw)
     if (!name || /^(none|n\/a|no switch(es)?)$/i.test(name)) return {}
-    catalog ??= Promise.all([
-      keychronCatalog(),
-      mkCatalog(),
-      ...STORE_CATALOGS.map(storeCatalog),
-    ]).then((lists) => lists.flat())
+    // "Linear" alone names no switch: each board of a brand may mean another one.
+    if (/^(linear|tactile|clicky)$/i.test(name)) {
+      return { note: `switch « ${raw} » : ressenti sans nom de switch, à relier à la main` }
+    }
+    // A name the alias table knows, or that is the slug of a switch we have: nothing to look up.
+    const alias = aliases.get(nameKey(raw))
+    if (alias) return { slug: alias }
+    const direct = split(name)
+    if (known.has(direct.slug)) return { slug: direct.slug }
+    catalog ??= Promise.all(
+      [keychronCatalog(), mkCatalog(), ...STORE_CATALOGS.map(storeCatalog)].map((list) =>
+        list.catch(unlessUncached<Candidate[]>([])),
+      ),
+    ).then((lists) => lists.flat())
     const ranked = fits(name, await catalog)
     const [best, second] = ranked
-    const direct = split(name)
     if (!best || (second && second.score === best.score && second.slug !== best.slug)) {
       if (known.has(direct.slug) || created.has(direct.slug)) return { slug: direct.slug }
       const stated = feelOnly(raw)
@@ -343,7 +413,7 @@ export function switchResolver(existing: Switch[]) {
     if (known.has(found.slug) || created.has(found.slug)) return { slug: found.slug }
     // The same switch may be on both shops: the first readable sheet wins.
     for (const { c } of ranked.filter((r) => r.slug === found.slug)) {
-      const specs = await c.specs()
+      const specs = await c.specs().catch(unlessUncached(undefined))
       if (specs) return create(found, specs)
     }
     // No readable sheet for this exact name, but a close one we already have ("Cherry MX RGB Red" →

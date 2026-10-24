@@ -5,8 +5,8 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-22 : 8 modèles, turtlebeach.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
-# à vérifier : switch « Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug tactile)
+# switchs par SKU : TBK-1002 « Linear » = TITAN II Red (https://turtlebeach.com/products/vulcan-ii-keyboard),
+# TBK-1101 = TITAN HS Red Linear (https://turtlebeach.com/products/vulcan-ii-xp-air-keyboard)
 - slug: turtle-beach-vulcan-ii
   brand: turtle-beach
   name: Vulcan II
@@ -28,10 +28,12 @@
     - https://turtlebeach.com/products/vulcan-ii-keyboard
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 949, widthMm: 462, depthMm: 153 }
   variants:
-    - { sku: TBK-1101-01-US, colorName: XP Air, colorFamily: color, layout: ansi_us, msrpEur: 240 }
-    - { sku: TBK-1002-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: TBK-1002-11-US, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: TBK-1101-01-US, colorName: XP Air, colorFamily: color, layout: ansi_us, switch: turtle-beach-titan-hs, msrpEur: 240 }
+    - { sku: TBK-1002-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan-ii-red }
+    - { sku: TBK-1002-11-US, colorName: White, colorFamily: white, layout: ansi_us, switch: turtle-beach-titan-ii-red }
 
+# switch du KB5 : « Titan Low-Profile Mechanical Switches » : https://turtlebeach.com/products/command-series-kb5-keyboard ;
+# la variante « Series KP7 Keypad » est un pavé à switchs Hall, pas une variante du clavier
 - slug: turtle-beach-command
   brand: turtle-beach
   name: Command
@@ -49,9 +51,10 @@
     - https://turtlebeach.com/products/command-series-kp7-keypad
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
-    - { sku: TBK-1005-01-US, colorName: Series KB5, colorFamily: color, layout: ansi_us, msrpEur: 180 }
+    - { sku: TBK-1005-01-US, colorName: Series KB5, colorFamily: color, layout: ansi_us, switch: turtle-beach-titan-low-profile, msrpEur: 180 }
     - { sku: TBK-7001-05, colorName: Series KP7 Keypad, colorFamily: color, layout: ansi_us, msrpEur: 120 }
 
+# technologie : magnétique (« Titan Low-Profile Hall-Effect Switches ») : https://turtlebeach.com/products/command-series-kb7-keyboard
 - slug: turtle-beach-command-tkl
   brand: turtle-beach
   name: Command TKL
@@ -65,10 +68,11 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB7_TopDownTransparent_1106x840_8ee4ea3c-1de0-43a1-8552-7298f6992b28.png?v=1779471488, kind: cutout_top, width: 1106, height: 840, primary: true }
   sources:
     - https://turtlebeach.com/products/command-series-kb7-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
     - { sku: TBK-2004-01-US, colorName: Series KB7, colorFamily: color, layout: ansi_us }
 
+# switch : « TITAN HS Linear Mechanical » : https://turtlebeach.com/products/vulcan-ii-tkl-keyboard
 - slug: turtle-beach-vulcan-ii-tkl
   brand: turtle-beach
   name: Vulcan II TKL
@@ -83,9 +87,9 @@
     - https://turtlebeach.com/products/vulcan-ii-tkl-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
-    - { sku: TBK-2003-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-2003-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan-hs }
 
-# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
+# switch et technologie : « Titan II Optical Red Linear » : https://turtlebeach.com/products/vulcan-ii-mini-keyboard
 - slug: turtle-beach-vulcan-ii-mini
   brand: turtle-beach
   name: Vulcan II Mini
@@ -102,10 +106,11 @@
   sources:
     - https://turtlebeach.com/products/vulcan-ii-mini-keyboard
     - https://turtlebeach.com/products/vulcan-ii-mini-air-keyboard
-  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 542, widthMm: 325, depthMm: 124 }
+  specs: { formFactor: f65, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 542, widthMm: 325, depthMm: 124 }
   variants:
-    - { sku: TBK-3001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-3001-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan-ii-optical-red }
 
+# switch : « the linear TITAN Switch Mechanical » : https://turtlebeach.com/products/vulcan-tkl-keyboard
 - slug: turtle-beach-vulcan-tkl
   brand: turtle-beach
   name: Vulcan TKL
@@ -121,8 +126,9 @@
     - https://turtlebeach.com/products/vulcan-tkl-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: proprietary, weightG: 660 }
   variants:
-    - { sku: TBK-2001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: TBK-2001-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan }
 
+# technologie : magnétique (« Hall-Effect Magnetic Switches ») : https://turtlebeach.com/products/vulcan-ii-tkl-pro-keyboard
 - slug: turtle-beach-vulcan-ii-tkl-pro
   brand: turtle-beach
   name: Vulcan II TKL Pro
@@ -138,12 +144,12 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIITKL-WHT-US_a00c45f3-6547-4e3e-8a44-daad9da5a1fb.png?v=1713207927, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/vulcan-ii-tkl-pro-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
     - { sku: TBK-2002-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
     - { sku: TBK-2002-11-US, colorName: White, colorFamily: white, layout: ansi_us }
 
-# à vérifier : switch « Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug linear)
+# switch et technologie : « TITAN II OPTICAL RED Linear » : https://turtlebeach.com/products/vulcan-ii-max-keyboard
 - slug: turtle-beach-vulcan-ii-max
   brand: turtle-beach
   name: Vulcan II Max
@@ -158,7 +164,7 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanIIMax-WHT-US.png?v=1709774505, kind: cutout_top, width: 1106, height: 840 }
   sources:
     - https://turtlebeach.com/products/vulcan-ii-max-keyboard
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 1040, widthMm: 463, depthMm: 236 }
+  specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: rgb, firmware: proprietary, wristRestIncluded: true, weightG: 1040, widthMm: 463, depthMm: 236 }
   variants:
-    - { sku: TBK-1001-01-US, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: TBK-1001-11-US, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: TBK-1001-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan-ii-optical-red }
+    - { sku: TBK-1001-11-US, colorName: White, colorFamily: white, layout: ansi_us, switch: turtle-beach-titan-ii-optical-red }

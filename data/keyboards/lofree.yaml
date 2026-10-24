@@ -25,10 +25,6 @@
     - { sku: LF-Hyzen67WD-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
     - { sku: LF-Hyzen67WD-GRY, colorName: Space Grey, colorFamily: black, layout: ansi_us }
 
-# à vérifier : switch « Lofree x Kailh Surfer 40g Linear Plate Mount Low Profile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer-linear-low-profile)
-# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
-# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
-# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
 - slug: lofree-flow-2-84
   brand: lofree
   name: Flow 2 84
@@ -49,13 +45,13 @@
     - https://mechanicalkeyboards.com/products/lofree-flow-2-84-keyboard
   specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: via, macSupport: true, batteryMah: 2000, soundDampening: true }
   variants:
-    - { sku: LF-Flow284MAC-BLU, colorName: Nebula, colorFamily: color, layout: ansi_us }
-    - { sku: LF-Flow284MAC-YLW, colorName: Volt, colorFamily: color, layout: ansi_us }
-    - { sku: LF-Flow284MAC-PNK, colorName: Petal, colorFamily: color, layout: ansi_us }
-    - { sku: LF-Flow284MAC-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: LF-Flow284-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: LF-Flow284MAC-BLU, colorName: Nebula, colorFamily: color, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow284MAC-YLW, colorName: Volt, colorFamily: color, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow284MAC-PNK, colorName: Petal, colorFamily: color, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow284MAC-SLV, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow284-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us, switch: lofree-pulse }
+    - { sku: LF-Flow284-WHTVOD, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-void }
 
-# à vérifier : switch « Gateron Tofu 45g Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-tofu-linear)
 - slug: lofree-tofu-100
   brand: lofree
   name: Tofu 100
@@ -70,11 +66,8 @@
     - https://mechanicalkeyboards.com/products/lofree-tofu-100-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: LF-TOFU100TOUCH, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: LF-TOFU100TOUCH, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-tofu }
 
-# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
-# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
-# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
 - slug: lofree-flow-2-100
   brand: lofree
   name: Flow 2 100
@@ -93,9 +86,11 @@
     - https://mechanicalkeyboards.com/products/lofree-flow-2-100-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 3000, soundDampening: true }
   variants:
-    - { sku: LF-Flow2100-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
-    - { sku: LF-Flow2100-WHTSUF, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: LF-Flow2100-BLKPLS, colorName: Grey, colorFamily: black, layout: ansi_us, switch: lofree-pulse }
+    - { sku: LF-Flow2100-WHTSUF, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow2100-WHTVOD, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-void }
 
+# switch : « Lofree × GATERON », linéaire : https://www.lofree.co/products/lipstick-mechanical-keyboard
 - slug: lofree-lipstick
   brand: lofree
   name: Lipstick
@@ -111,9 +106,10 @@
     - https://mechanicalkeyboards.com/products/lofree-lipstick-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
   variants:
-    - { sku: LF-LPSTKDOT-BLK, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: LF-LPSTKDOT-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: LF-LPSTKDOT-BLK, colorName: Black, colorFamily: black, layout: ansi_us, switch: lofree-gateron }
+    - { sku: LF-LPSTKDOT-SLV, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-gateron }
 
+# switch : « Lofree × GATERON », linéaire : https://www.lofree.co/products/1970s-mechanical-keyboard
 - slug: lofree-1970s
   brand: lofree
   name: 1970s
@@ -130,12 +126,9 @@
     - https://mechanicalkeyboards.com/products/lofree-1970s-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
   variants:
-    - { sku: LF-1970SDOT-MKSHK, colorName: Milkshake, colorFamily: color, layout: ansi_us }
-    - { sku: LF-1970SDOT-OLV, colorName: Olive Green, colorFamily: color, layout: ansi_us }
+    - { sku: LF-1970SDOT-MKSHK, colorName: Milkshake, colorFamily: color, layout: ansi_us, switch: lofree-gateron }
+    - { sku: LF-1970SDOT-OLV, colorName: Olive Green, colorFamily: color, layout: ansi_us, switch: lofree-gateron }
 
-# à vérifier : switch « Lofree x Kailh Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-pulse)
-# à vérifier : switch « Lofree x Kailh Surfer » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lofree-x-surfer)
-# à vérifier : switch « Lowfree x Kailh Void » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-lowfree-x-void)
 - slug: lofree-flow-2-68
   brand: lofree
   name: Flow 2 68
@@ -153,9 +146,11 @@
     - https://mechanicalkeyboards.com/products/lofree-flow-2-68-keyboard
   specs: { formFactor: f65, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: low, backlight: white, firmware: via, macSupport: true, batteryMah: 2000, soundDampening: true }
   variants:
-    - { sku: LF-Flow268-GRYPLS, colorName: Grey, colorFamily: black, layout: ansi_us }
-    - { sku: LF-Flow268-SLVSUF, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: LF-Flow268-GRYPLS, colorName: Grey, colorFamily: black, layout: ansi_us, switch: lofree-pulse }
+    - { sku: LF-Flow268-SLVSUF, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-surfer }
+    - { sku: LF-Flow268-SLVVOD, colorName: Silver, colorFamily: white, layout: ansi_us, switch: lofree-void }
 
+# switch : « Lofree × GATERON Foundation » : https://www.lofree.co/products/lofree-dot-foundation-mechanical-keyboard
 - slug: lofree-foundation
   brand: lofree
   name: Foundation
@@ -170,8 +165,9 @@
     - https://mechanicalkeyboards.com/products/lofree-foundation-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: LF-FNDNDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us }
+    - { sku: LF-FNDNDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us, switch: lofree-gateron-foundation }
 
+# switch : « Lofree × GATERON », linéaire : https://www.lofree.co/products/sugar-color-70s-mechanical-keyboard
 - slug: lofree-sugar
   brand: lofree
   name: Sugar
@@ -186,9 +182,8 @@
     - https://mechanicalkeyboards.com/products/lofree-sugar-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 4000 }
   variants:
-    - { sku: LF-SUGARDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us }
+    - { sku: LF-SUGARDOT, colorName: Clear, colorFamily: transparent, layout: ansi_us, switch: lofree-gateron }
 
-# à vérifier : switch « Gateron Tofu 45g Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-tofu-linear)
 - slug: lofree-tofu-68
   brand: lofree
   name: Tofu 68
@@ -203,4 +198,4 @@
     - https://mechanicalkeyboards.com/products/lofree-tofu-68-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: LF-TOFU68TOUCH, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: LF-TOFU68TOUCH, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-tofu }

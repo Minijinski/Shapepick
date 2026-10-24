@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 34 modèles, epomaker.com (prix € estimés depuis les prix US)
-# à vérifier : switch « EPOMAKER Creamy Jade Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade-magnetic)
 - slug: epomaker-he60
   brand: epomaker
   name: HE60
@@ -21,11 +20,9 @@
     - https://epomaker.com/products/epomaker-he60
   specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary, batteryMah: 8000 }
   variants:
-    - { sku: EPOMAKER-HE60-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-HE60-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-HE60-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
+    - { sku: EPOMAKER-HE60-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Crystal Tactile Silent Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-crystal-tactile-silent)
 - slug: epomaker-rt75
   brand: epomaker
   name: RT75
@@ -41,11 +38,9 @@
     - https://epomaker.com/products/epomaker-rt75
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
-    - { sku: EPOMAKER-RT75-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-RT75-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT75-WH-CQ-T, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
 
-# à vérifier : switch « EPOMAKER Crystal Silent Tactile Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-crystal-tactile-silent)
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Clear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-clear)
 - slug: epomaker-th65
   brand: epomaker
   name: TH65
@@ -63,11 +58,13 @@
     - https://epomaker.com/products/epomaker-th65
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-TH65-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH65-CF-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH65-CF-PK-CLR, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-TH65-WH-CQ-T, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
+    - { sku: EPOMAKER-TH65-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH65-CF-BK-CQ-T, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
+    - { sku: EPOMAKER-TH65-CF-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH65-CF-PK-CQ-T, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
+    - { sku: EPOMAKER-TH65-CF-PK-CLR, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-clear }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade-magnetic)
 - slug: epomaker-he65-v2
   brand: epomaker
   name: HE65 V2
@@ -85,10 +82,9 @@
     - https://epomaker.com/products/epomaker-he65-v2-tmr
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-HE65V2-TMR-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-HE65V2-TMR-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-HE65V2-TMR-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
+    - { sku: EPOMAKER-HE65V2-TMR-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade-magnetic)
 - slug: epomaker-he75-v2
   brand: epomaker
   name: HE75 V2
@@ -108,11 +104,9 @@
     - https://epomaker.com/products/epomaker-he75-v2
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-HE75V2-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-HE75V2-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-HE75V2-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
+    - { sku: EPOMAKER-HE75V2-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-rt98
   brand: epomaker
   name: RT98
@@ -128,10 +122,9 @@
     - https://epomaker.com/products/epomaker-rt98
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, screen: true, firmware: via, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-RT98-R-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-RT98-R-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT98-R-WH-SQ-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-th108-v2-pro
   brand: epomaker
   name: TH108 V2 Pro
@@ -149,12 +142,15 @@
     - https://epomaker.com/products/epomaker-th108-v2-pro
   specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true, weightG: 1000 }
   variants:
-    - { sku: EPOMAKER-TH108V2-PRO-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH108V2-PRO-JPPK-Yun, colorName: Pink (JellyPaw Keycap), colorFamily: color, layout: ansi_us }
-    - { sku: EPOMAKER-TH108V2-PRO-BLWHPK-Yun, colorName: Blue White Pink, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH108V2-PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-TH108V2-PRO-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108V2-PRO-BK-SQV2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108V2-PRO-JPPK-Yun, colorName: Pink (JellyPaw Keycap), colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108V2-PRO-JPPK-SQV2, colorName: Pink (JellyPaw Keycap), colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108V2-PRO-BLWHPK-Yun, colorName: Blue White Pink, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108V2-PRO-BLWHPK-SQV2, colorName: Blue White Pink, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108V2-PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108V2-PRO-PK-SQV2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade-magnetic)
 - slug: epomaker-he108
   brand: epomaker
   name: HE108
@@ -172,11 +168,10 @@
     - https://epomaker.com/products/epomaker-he108
   specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true, weightG: 1200 }
   variants:
-    - { sku: EPOMAKER-HE108-WH-HFF-YUN, colorName: Epomaker × Human Fall Flat HE108 White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-HE108-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-HE108-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: EPOMAKER-HE108-WH-HFF-YUN, colorName: Epomaker × Human Fall Flat HE108 White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
+    - { sku: EPOMAKER-HE108-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
+    - { sku: EPOMAKER-HE108-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
 
-# à vérifier : switch « EPOMAKER Mint Low Profile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-mint-low-profile)
 - slug: epomaker-luma100
   brand: epomaker
   name: LUMA100
@@ -191,9 +186,8 @@
     - https://epomaker.com/products/epomaker-luma100
   specs: { formFactor: f96, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, batteryMah: 3000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-LUMA100-QMK-SL-LOW-MT, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-LUMA100-QMK-SL-LOW-MT, colorName: Silver, colorFamily: white, layout: ansi_us, switch: epomaker-mint-low-profile }
 
-# à vérifier : switch « EPOMAKER Wisteria Switch V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-wisteria-v2)
 - slug: epomaker-glyph
   brand: epomaker
   name: Glyph
@@ -210,10 +204,8 @@
     - https://epomaker.com/products/epomaker-glyph
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: EPOMAKER-Glyph-WH-WistL-V2, colorName: Retro White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-Glyph-WH-WistL-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-rt100-pro
   brand: epomaker
   name: RT100 Pro
@@ -230,11 +222,11 @@
     - https://epomaker.com/products/epomaker-rt100-pro
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-RT100PRO-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-RT100PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-RT100PRO-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT100PRO-WH-SQ-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-RT100PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT100PRO-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-th80-v2-pro
   brand: epomaker
   name: TH80 V2 Pro
@@ -252,12 +244,13 @@
     - https://epomaker.com/products/epomaker-th80-v2-pro
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1000 }
   variants:
-    - { sku: EPOMAKER-TH80V2-PRO-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH80V2-PRO-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH80V2-PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-TH80V2-PRO-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH80V2-PRO-BK-SQ-V2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH80V2-PRO-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH80V2-PRO-WH-SQ-V2, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH80V2-PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH80V2-PRO-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-th80-v2
   brand: epomaker
   name: TH80 V2
@@ -274,11 +267,11 @@
     - https://epomaker.com/products/epomaker-th80-v2
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-TH80V2-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH80V2-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-TH80V2-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH80V2-BK-SQ-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH80V2-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH80V2-WH-SQ-V2, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-th99-pro
   brand: epomaker
   name: TH99 Pro
@@ -296,12 +289,13 @@
     - https://epomaker.com/products/epomaker-th99-pro
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1200 }
   variants:
-    - { sku: EPOMAKER-TH99PRO-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH99PRO-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH99PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-TH99PRO-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH99PRO-BK-SQ-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH99PRO-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH99PRO-BLWH-SQ-V2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH99PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH99PRO-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-g84-pro
   brand: epomaker
   name: G84 Pro
@@ -320,13 +314,12 @@
     - https://epomaker.com/products/epomaker-g84-pro
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-G84PRO-Sil-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-G84PRO-Sil-PL-Yun, colorName: Purple, colorFamily: color, layout: ansi_us }
-    - { sku: EPOMAKER-G84PRO-SP-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-G84PRO-JIS-BGY-Yun, colorName: Grey, colorFamily: black, layout: jis }
+    - { sku: EPOMAKER-G84PRO-Sil-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-G84PRO-Sil-PL-Yun, colorName: Purple, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-G84PRO-SP-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-G84PRO-JIS-BGY-Yun, colorName: Grey, colorFamily: black, layout: jis, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-G84PRO-JIS-BGY-SQ-V2, colorName: Grey, colorFamily: black, layout: jis, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « Sea Salt Silent Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug sea-salt-silent)
-# à vérifier : switch « Creamy Jade Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug creamy-jade)
 - slug: epomaker-th87
   brand: epomaker
   name: TH87
@@ -345,13 +338,15 @@
     - https://epomaker.com/products/epomaker-th87
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, batteryMah: 10000 }
   variants:
-    - { sku: EPOMAKER-TH87-WHGYPK-SQ-V2, colorName: White Grey Pink, colorFamily: white, layout: ansi_us, msrpEur: 90 }
-    - { sku: EPOMAKER-TH87-DE-ISO-WHGYPK-Yun, colorName: White Grey Pink, colorFamily: white, layout: iso_de, msrpEur: 135 }
-    - { sku: EPOMAKER-TH87-UK-ISO-WHGYPK-Yun, colorName: White Grey Pink, colorFamily: white, layout: iso_uk, msrpEur: 140 }
-    - { sku: EPOMAKER-TH87-JP-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: jis, msrpEur: 95 }
+    - { sku: EPOMAKER-TH87-WHGYPK-SQ-V2, colorName: White Grey Pink, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2, msrpEur: 90 }
+    - { sku: EPOMAKER-TH87-WHGYPK-Yun, colorName: White Grey Pink, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade, msrpEur: 90 }
+    - { sku: EPOMAKER-TH87-DE-ISO-WHGYPK-SQ-V2, colorName: White Grey Pink, colorFamily: white, layout: iso_de, switch: epomaker-sea-salt-silent-v2, msrpEur: 140 }
+    - { sku: EPOMAKER-TH87-DE-ISO-WHGYPK-Yun, colorName: White Grey Pink, colorFamily: white, layout: iso_de, switch: epomaker-creamy-jade, msrpEur: 135 }
+    - { sku: EPOMAKER-TH87-UK-ISO-WHGYPK-SQ-V2, colorName: White Grey Pink, colorFamily: white, layout: iso_uk, switch: epomaker-sea-salt-silent-v2, msrpEur: 140 }
+    - { sku: EPOMAKER-TH87-UK-ISO-WHGYPK-Yun, colorName: White Grey Pink, colorFamily: white, layout: iso_uk, switch: epomaker-creamy-jade, msrpEur: 140 }
+    - { sku: EPOMAKER-TH87-JP-BLWH-SQ-V2, colorName: White Blue, colorFamily: white, layout: jis, switch: epomaker-sea-salt-silent-v2, msrpEur: 95 }
+    - { sku: EPOMAKER-TH87-JP-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: jis, switch: epomaker-creamy-jade, msrpEur: 95 }
 
-# à vérifier : switch « Epomaker Sea Salt Silent Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent)
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
 - slug: epomaker-qk108
   brand: epomaker
   name: QK108
@@ -369,11 +364,10 @@
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: via, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-QK108-GYWHGR-WistL-V2, colorName: Grey White Green, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria }
-    - { sku: EPOMAKER-QK108-GYWHGR-SQ-V2, colorName: Grey White Green, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-QK108-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: EPOMAKER-QK108-GYWHGR-SQ-V2, colorName: Grey White Green, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-QK108-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-QK108-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Sea Salt Silent V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent-v2)
 - slug: epomaker-th108-pro
   brand: epomaker
   name: TH108 Pro
@@ -392,15 +386,19 @@
     - https://epomaker.com/products/epomaker-th108-pro
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1100 }
   variants:
-    - { sku: EPOMAKER-TH108PRO-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH108PRO-WHBLPK-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH108PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: EPOMAKER-TH108PRO-ISO-DE-BK-Yun, colorName: Black Grey, colorFamily: black, layout: iso_de }
-    - { sku: EPOMAKER-TH108PRO-JIS-JP-BKSL-Yun, colorName: Black Grey, colorFamily: black, layout: jis }
-    - { sku: EPOMAKER-TH108PRO-JIS-JP-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: jis }
+    - { sku: EPOMAKER-TH108PRO-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-BK-SQ-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108PRO-WHBLPK-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-WHBLPK-SQ-V2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108PRO-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108PRO-ISO-DE-BK-Yun, colorName: Black Grey, colorFamily: black, layout: iso_de, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-ISO-DE-BK-SQV2, colorName: Black Grey, colorFamily: black, layout: iso_de, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108PRO-JIS-JP-BKSL-Yun, colorName: Black Grey, colorFamily: black, layout: jis, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-JIS-JP-BKSL-SQV2, colorName: Black Grey, colorFamily: black, layout: jis, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108PRO-JIS-JP-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: jis, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108PRO-JIS-JP-BLWH-SQV2, colorName: White Blue, colorFamily: white, layout: jis, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « Creamy Jade Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug creamy-jade)
-# à vérifier : switch « Sea Salt Silent Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug sea-salt-silent)
 - slug: epomaker-rt82
   brand: epomaker
   name: RT82
@@ -417,9 +415,9 @@
     - https://epomaker.com/products/epomaker-rt82
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, screen: true, firmware: via, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-RT82-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-RT82-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT82-WH-SQ-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « Wisteria Linear Switch V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug wisteria-linear-v2)
 - slug: epomaker-split70
   brand: epomaker
   name: Split70
@@ -436,10 +434,9 @@
     - https://epomaker.com/products/epomaker-split70
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: qmk, batteryMah: 3000 }
   variants:
-    - { sku: EPOMAKER-Split70-BK-WisteriaL-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-Split70-WHBL-WistL-V2, colorName: White Blue, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-Split70-BK-WisteriaL-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria-v2 }
+    - { sku: EPOMAKER-Split70-WHBL-WistL-V2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
 
-# à vérifier : switch « Kailh White Rain Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-white-rain)
 - slug: epomaker-luma40
   brand: epomaker
   name: LUMA40
@@ -454,10 +451,8 @@
     - https://epomaker.com/products/epomaker-luma40
   specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: tray, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-LUMA40-QMK-SL-WHRain, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-LUMA40-QMK-SL-WHRain, colorName: Silver, colorFamily: white, layout: ansi_us, switch: kailh-white-rain }
 
-# à vérifier : switch « Feker Marble White Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug feker-marble-white)
-# à vérifier : switch « Epomaker Wisteria Linear V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-wisteria-linear-v2)
 - slug: epomaker-galaxy100-lite
   brand: epomaker
   name: Galaxy100 Lite
@@ -475,10 +470,11 @@
     - https://epomaker.com/products/epomaker-galaxy100-lite
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: qmk, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-Galaxy100-Lite-BK-MWH, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-Galaxy100-Lite-YL-MWH, colorName: Creamy White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-Galaxy100-Lite-BK-MWH, colorName: Black, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
+    - { sku: EPOMAKER-Galaxy100-Lite-BK-WLV2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria-v2 }
+    - { sku: EPOMAKER-Galaxy100-Lite-YL-MWH, colorName: Creamy White, colorFamily: white, layout: ansi_us, switch: feker-marble-white }
+    - { sku: EPOMAKER-Galaxy100-Lite-YL-WLV2, colorName: Creamy White, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
 
-# à vérifier : switch « EPOMAKER Core Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-core)
 - slug: epomaker-magcore65-lite
   brand: epomaker
   name: Magcore65 Lite
@@ -494,11 +490,8 @@
     - https://epomaker.com/products/epomaker-magcore65-lite
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-Magcore65-Lite-IS-BK, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: EPOMAKER-Magcore65-Lite-IS-BK, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-core }
 
-# à vérifier : switch « EPOMAKER Wisteria V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-wisteria-v2-linear)
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « EPOMAKER Crystal Tactile Silent Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-crystal-tactile-silent)
 - slug: epomaker-rt85
   brand: epomaker
   name: RT85
@@ -516,11 +509,12 @@
     - https://epomaker.com/products/epomaker-rt85
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: white, screen: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-RT85-WHGY-WistL-V2, colorName: White Grey, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-RT85-GRWH-WistL-V2, colorName: Green White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-RT85-WHGY-WistL-V2, colorName: White Grey, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
+    - { sku: EPOMAKER-RT85-WHGY-Yun, colorName: White Grey, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-RT85-WHGY-CQ-T, colorName: White Grey, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
+    - { sku: EPOMAKER-RT85-GRWH-WistL-V2, colorName: Green White, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
+    - { sku: EPOMAKER-RT85-GRWH-CQ-T, colorName: Green White, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
 
-# à vérifier : switch « Epomaker Duskrise Magnetic Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-duskrise-magnetic)
-# à vérifier : switch « Creamy Jade Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug creamy-jade-magnetic)
 - slug: epomaker-g84
   brand: epomaker
   name: G84
@@ -538,11 +532,9 @@
     - https://epomaker.com/products/epomaker-g84-he
   specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-G84HE-BLWH-CX, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-G84HE-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-G84HE-BLWH-CX, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-duskrise-magnetic }
+    - { sku: EPOMAKER-G84HE-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « Epomaker Sea Salt Silent Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent)
 - slug: epomaker-th108
   brand: epomaker
   name: TH108
@@ -561,12 +553,15 @@
     - https://epomaker.com/products/epomaker-th108
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 8000, soundDampening: true, weightG: 1200 }
   variants:
-    - { sku: EPOMAKER-TH108-10K-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH108-10K-BLWH-Yun, colorName: Blue White, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH108-10K-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: EPOMAKER-TH108-10K-DE-ISO-BW-Yun, colorName: Blue White, colorFamily: white, layout: iso_de }
+    - { sku: EPOMAKER-TH108-10K-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108-10K-BK-SQ-V2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108-10K-BLWH-Yun, colorName: Blue White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108-10K-BLWH-SQ-V2, colorName: Blue White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108-10K-PK-Yun, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108-10K-PK-SQ-V2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH108-10K-DE-ISO-BW-Yun, colorName: Blue White, colorFamily: white, layout: iso_de, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH108-10K-DE-ISO-BW-SQV2, colorName: Blue White, colorFamily: white, layout: iso_de, switch: epomaker-sea-salt-silent-v2 }
 
-# à vérifier : switch « Epomaker Clear Mag Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-clear-mag)
 - slug: epomaker-he68-lite
   brand: epomaker
   name: HE68 Lite
@@ -583,11 +578,9 @@
     - https://epomaker.com/products/epomaker-he68-lite
   specs: { formFactor: f65, technology: magnetic, hotSwap: none, adjustableActuation: true, mount: sandwich, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 600 }
   variants:
-    - { sku: EPOMAKER-HE68-LITE-Wi-BK-BY, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-HE68-LITE-Wi-WH-BY, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-HE68-LITE-Wi-BK-BY, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-clear-mag }
+    - { sku: EPOMAKER-HE68-LITE-Wi-WH-BY, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-clear-mag }
 
-# à vérifier : switch « EPOMAKER Creamy Jade Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug epomaker-creamy-jade)
-# à vérifier : switch « Epomaker Sea Salt Silent Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-sea-salt-silent)
 - slug: epomaker-th99
   brand: epomaker
   name: TH99
@@ -606,11 +599,12 @@
     - https://epomaker.com/products/epomaker-th99
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-TH99-Plus-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: EPOMAKER-TH99-Plus-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-TH99-ISO-DE-BK-Yun, colorName: Black, colorFamily: black, layout: iso_de, msrpEur: 120 }
+    - { sku: EPOMAKER-TH99-Plus-BLWH-Yun, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH99-Plus-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
+    - { sku: EPOMAKER-TH99-BK-SALT-QU-V2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
+    - { sku: EPOMAKER-TH99-ISO-DE-BK-Yun, colorName: Black, colorFamily: black, layout: iso_de, switch: epomaker-creamy-jade, msrpEur: 120 }
+    - { sku: EPOMAKER-TH99-ISO-DE-BK-SQ-V2, colorName: Black, colorFamily: black, layout: iso_de, switch: epomaker-sea-salt-silent-v2, msrpEur: 120 }
 
-# à vérifier : switch « EPOMAKER MagneX Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug epomaker-magnex)
 - slug: epomaker-he80
   brand: epomaker
   name: HE80
@@ -627,11 +621,9 @@
     - https://epomaker.com/products/epomaker-he80
   specs: { formFactor: f75, technology: magnetic, hotSwap: none, pollingHzWired: 8000, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: EPOMAKER-HE80-Wi-BK-MagneX, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-HE80-Wi-WH-MagneX, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: EPOMAKER-HE80-Wi-BK-MagneX, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-magnex }
+    - { sku: EPOMAKER-HE80-Wi-WH-MagneX, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-magnex }
 
-# à vérifier : switch « Gateron Red Low Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-red)
-# à vérifier : switch « Gateron Brown Low Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-brown)
 - slug: epomaker-carbon60
   brand: epomaker
   name: Carbon60
@@ -647,9 +639,9 @@
     - https://epomaker.com/products/epomaker-carbon60
   specs: { formFactor: f60, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, southFacing: true, firmware: qmk, batteryMah: 3000 }
   variants:
-    - { sku: EPOMAKER-Carbon60-QMK-BK-LOW-R, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: EPOMAKER-Carbon60-QMK-BK-LOW-R, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-red }
+    - { sku: EPOMAKER-Carbon60-QMK-BK-LOW-BR, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-brown }
 
-# à vérifier : switch « Kailh Box Inductive Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-box-inductive)
 - slug: epomaker-magcore-87
   brand: epomaker
   name: Magcore 87
@@ -665,7 +657,7 @@
     - https://epomaker.com/products/epomaker-magcore-87
   specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary }
   variants:
-    - { sku: EPOMAKER-Magcore87-IS-Wi-BK-KA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: EPOMAKER-Magcore87-IS-Wi-BK-KA, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-inductive }
 
 - slug: epomaker-split-65
   brand: epomaker
@@ -685,7 +677,6 @@
     - { sku: EPOMAKER-Split65-BK-WisteriaL-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria }
     - { sku: EPOMAKER-Split65-BK-Flamingo, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-flamingo }
 
-# à vérifier : switch « Feker Marble White Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug feker-marble-white)
 - slug: epomaker-galaxy100
   brand: epomaker
   name: Galaxy100
@@ -703,8 +694,8 @@
     - https://epomaker.com/products/epomaker-galaxy100-qmk-via
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: EPOMAKER-Galaxy100-BKPK-MWH, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: EPOMAKER-Galaxy100-GY-MWH, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: EPOMAKER-Galaxy100-BKPK-MWH, colorName: Black, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
+    - { sku: EPOMAKER-Galaxy100-GY-MWH, colorName: Grey, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
     - { sku: EPOMAKER-Galaxy100-GY-WistL-V2, colorName: Grey, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria, msrpEur: 145 }
 
 - slug: epomaker-th40

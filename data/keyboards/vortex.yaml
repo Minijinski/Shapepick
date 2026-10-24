@@ -54,9 +54,6 @@
     - { sku: VTK61WHEUSSVW, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 85 }
     - { sku: VTK61WHEUSWEN, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-white, msrpEur: 85 }
 
-# à vérifier : switch « Gateron Low Profile Blue » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-blue)
-# à vérifier : switch « Gateron Low Profile Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-brown)
-# à vérifier : switch « Gateron Low Profile Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-low-profile-2-0-red)
 - slug: vortex-core-plus
   brand: vortex
   name: Core Plus
@@ -74,9 +71,13 @@
     - https://mechanicalkeyboards.com/products/vortex-core-plus-aluminum-40-wireless-low-profile-keyboard
   specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: via, macSupport: true, soundDampening: true, typingAngleDeg: 5 }
   variants:
-    - { sku: AC240ACWBK-GLBR, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: AC240ACWWH-GLBE, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: AC240ACWRG-GLRD, colorName: Retro Grey, colorFamily: black, layout: ansi_us }
+    - { sku: AC240ACWBK-GLBE, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-blue }
+    - { sku: AC240ACWBK-GLBR, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-brown }
+    - { sku: AC240ACWBK-GLRD, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-red }
+    - { sku: AC240ACWWH-GLBR, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-low-profile-2-0-brown }
+    - { sku: AC240ACWWH-GLRD, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-low-profile-2-0-red }
+    - { sku: AC240ACWWH-GLBE, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-low-profile-2-0-blue }
+    - { sku: AC240ACWRG-GLRD, colorName: Retro Grey, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-red }
 
 - slug: vortex-pc66-68-key
   brand: vortex
@@ -114,11 +115,6 @@
     - { sku: ATV104V2PGY-USCBR, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-brown }
     - { sku: ATV104V2PGY-USCSR, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx2a-silent-red, msrpEur: 160 }
 
-# à vérifier : switch « Gateron G Pro 2.0 Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-red)
-# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
-# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
-# à vérifier : switch « Gateron G Pro 2.0 Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-brown)
-# à vérifier : switch « Gateron G Pro 2.0 Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-silver)
 - slug: vortex-m0110
   brand: vortex
   name: M0110
@@ -137,13 +133,21 @@
     - https://mechanicalkeyboards.com/products/vortex-m0110-7u-wireless
   specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: none, firmware: qmk, macSupport: true, soundDampening: true }
   variants:
-    - { sku: AAM60GRD03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, msrpEur: 130 }
+    - { sku: AAM60GRD03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-red }
+    - { sku: AAM60GYW03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-yellow }
+    - { sku: AAM60GRW03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-white }
+    - { sku: AAM60GBR03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-brown }
+    - { sku: AAM60GSV03-P0561T, colorName: 6.25u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-silver }
     - { sku: AAM60CBE03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
     - { sku: AAM60CCL03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
     - { sku: AAM60CMK03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-white }
-    - { sku: AAM60GRD03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, msrpEur: 125 }
+    - { sku: AAM60GBR03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-brown }
+    - { sku: AAM60GSV03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-silver }
+    - { sku: AAM60GYW03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-yellow }
+    - { sku: AAM60GRW03-P0560Q, colorName: 7u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-white }
     - { sku: AAM60CBR03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: AAM60CRD03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: cherry-mx-red }
+    - { sku: AAM60GRD03-P0560T, colorName: 7u, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-red }
 
 - slug: vortex-pc66-66-key
   brand: vortex
@@ -230,11 +234,6 @@
     - { sku: VTG61USACBBERED, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-red }
     - { sku: VTG61USACBBENWE, colorName: Black LE Blue Border, colorFamily: black, layout: ansi_us, switch: cherry-mx-nature-white }
 
-# à vérifier : switch « Gateron G Pro 2.0 Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-brown)
-# à vérifier : switch « Gateron G Pro 2.0 Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-red)
-# à vérifier : switch « Gateron G Pro 2.0 Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-silver)
-# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
-# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
 - slug: vortex-m0110-6-25
   brand: vortex
   name: M0110 6.25
@@ -253,7 +252,11 @@
     - { sku: AAM60CBE03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
     - { sku: AAM60CCL03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
     - { sku: AAM60CMK03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: cherry-mx-white }
-    - { sku: AAM60GBR03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: AAM60GBR03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-brown }
+    - { sku: AAM60GRD03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-red }
+    - { sku: AAM60GSV03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-silver }
+    - { sku: AAM60GYW03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-yellow }
+    - { sku: AAM60GRW03-P0561Q, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-white }
 
 - slug: vortex-kbt-re-66
   brand: vortex

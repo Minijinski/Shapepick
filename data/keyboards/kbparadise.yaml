@@ -5,8 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Gateron G Pro Brown » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-brown)
-# à vérifier : switch « Gateron G Pro Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-red)
 - slug: kbparadise-v80-v2
   brand: kbparadise
   name: V80 V2
@@ -21,12 +19,10 @@
     - https://mechanicalkeyboards.com/products/kbparadise-v80-v2-black-crystal-white-led
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: KBP-V80W-BC-GTR, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us }
+    - { sku: KBP-V80W-BC-GTB, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us, switch: gateron-g-pro-brown, msrpEur: 125 }
+    - { sku: KBP-V80W-BC-GTR, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us, switch: gateron-g-pro-red }
     - { sku: KBP-V80W-BC-KLBW, colorName: Black Crystal TKL, colorFamily: transparent, layout: ansi_us, switch: kailh-box-white, msrpEur: 125 }
 
-# à vérifier : switch « Matias Standard Clicky » : specs non publiées en texte, à saisir dans data/switches.yaml (slug matias-standard)
-# à vérifier : switch « Matias Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug matias-linear)
-# à vérifier : switch « Gateron Milky Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-milky-red)
 - slug: kbparadise-v60
   brand: kbparadise
   name: V60
@@ -43,11 +39,11 @@
     - https://mechanicalkeyboards.com/products/kbparadise-v60-gtr
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: qmk, macSupport: true }
   variants:
-    - { sku: KBP-V60-MTSC-VIN, colorName: Vintage, colorFamily: color, layout: ansi_us }
-    - { sku: KBP-V60GTR-R, colorName: GTR, colorFamily: color, layout: ansi_us }
+    - { sku: KBP-V60-MTSC-VIN, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: matias-click }
+    - { sku: KBP-V60-MTSQL-VIN, colorName: Vintage, colorFamily: color, layout: ansi_us, switch: matias-linear }
+    - { sku: KBP-V60GTR-R, colorName: GTR, colorFamily: color, layout: ansi_us, switch: gateron-milky-red }
     - { sku: KBP-V60GTR-G, colorName: GTR, colorFamily: color, layout: ansi_us, switch: gateron-milky-green }
 
-# à vérifier : switch « Matias Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug matias-linear)
 - slug: kbparadise-v60-type-r
   brand: kbparadise
   name: V60 Type R
@@ -66,7 +62,7 @@
   variants:
     - { sku: KBP-V60R-PS-B-DO, colorName: Polestar Deep Ocean, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: KBP-V60R-PS-W-DO, colorName: Polestar Deep Ocean, colorFamily: color, layout: ansi_us, switch: cherry-mx-clear }
-    - { sku: V60R-MTSQL-PS-VIN, colorName: Polestar Vintage, colorFamily: color, layout: ansi_us, msrpEur: 130 }
+    - { sku: V60R-MTSQL-PS-VIN, colorName: Polestar Vintage, colorFamily: color, layout: ansi_us, switch: matias-linear, msrpEur: 130 }
 
 - slug: kbparadise-v60-the-2
   brand: kbparadise

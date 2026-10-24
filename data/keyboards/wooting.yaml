@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 3 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Wooting Lekker Tikken Magnetic Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug wooting-lekker-tikken-magnetic)
 - slug: wooting-60he-v2
   brand: wooting
   name: 60HE V2
@@ -23,10 +22,9 @@
     - https://mechanicalkeyboards.com/products/wooting-60he-v2-magnetic-8k-keyboard
   specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, soundDampening: true, heightFrontMm: 28.6, typingAngleDeg: 6 }
   variants:
-    - { sku: WK3C-US1-TIK-BK1, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 245 }
-    - { sku: WK3C-US1-TIK-ASV1, colorName: Silver, colorFamily: white, layout: ansi_us, msrpEur: 325 }
+    - { sku: WK3C-US1-TIK-BK1, colorName: Black, colorFamily: black, layout: ansi_us, switch: wooting-lekker-tikken, msrpEur: 245 }
+    - { sku: WK3C-US1-TIK-ASV1, colorName: Silver, colorFamily: white, layout: ansi_us, switch: wooting-lekker-tikken, msrpEur: 325 }
 
-# à vérifier : switch « Lekker Linear60 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug lekker-linear60)
 - slug: wooting-60he
   brand: wooting
   name: 60HE+
@@ -42,9 +40,8 @@
     - https://mechanicalkeyboards.com/products/wooting-60he
   specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: tray, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: WT-60HEC, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: WT-60HEC, colorName: Black, colorFamily: black, layout: ansi_us, switch: wooting-lekker-linear60 }
 
-# à vérifier : switch « Lekker Linear60 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug lekker-linear60)
 - slug: wooting-two-he
   brand: wooting
   name: Two HE
@@ -59,4 +56,4 @@
     - https://mechanicalkeyboards.com/products/wooting-two-he
   specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: WT-TWOHEC, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: WT-TWOHEC, colorName: Black, colorFamily: black, layout: ansi_us, switch: wooting-lekker-linear60 }

@@ -4,7 +4,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-22 : 18 modèles, corsair.com/fr/fr (prix € et dispositions du site français)
-# à vérifier : switch « CORSAIR MLX Pulse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-pulse)
 - slug: corsair-galleon-100-sd-stream-deck-integrated
   brand: corsair
   name: GALLEON 100 SD Stream Deck-Integrated
@@ -23,12 +22,10 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-912a41i-uk/galleon-100-sd-stream-deck-integrated-mechanical-keyboard-uk-white-ch-912a41i-uk
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1392 }
   variants:
-    - { sku: CH-912A41I-FR, colorName: White, colorFamily: white, layout: iso_fr }
-    - { sku: CH-912A31I-FR, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: CH-912A41I-UK, colorName: White, colorFamily: white, layout: iso_uk }
+    - { sku: CH-912A41I-FR, colorName: White, colorFamily: white, layout: iso_fr, switch: corsair-mlx-pulse }
+    - { sku: CH-912A31I-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-pulse }
+    - { sku: CH-912A41I-UK, colorName: White, colorFamily: white, layout: iso_uk, switch: corsair-mlx-pulse }
 
-# à vérifier : switch « CORSAIR MLX V2 Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-v2-red)
-# à vérifier : switch « CORSAIR MLX Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-red)
 - slug: corsair-k70-core-se-rgb
   brand: corsair
   name: K70 CORE SE RGB
@@ -44,12 +41,11 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9109c1e-na/k70-core-se-rgb-mechanical-gaming-keyboard-cherry-blossom-ch-9109c1e-na
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
   variants:
-    - { sku: CH-9109E1E-NA, colorName: Dark Cherry Blossom, colorFamily: black, layout: ansi_us }
-    - { sku: CH-9109C1E-FR, colorName: Cherry Blossom, colorFamily: color, layout: iso_fr }
-    - { sku: CH-9109E1E-FR, colorName: Dark Cherry Blossom, colorFamily: black, layout: iso_fr }
-    - { sku: CH-9109C1E-NA, colorName: Cherry Blossom, colorFamily: color, layout: ansi_us }
+    - { sku: CH-9109E1E-NA, colorName: Dark Cherry Blossom, colorFamily: black, layout: ansi_us, switch: corsair-mlx-red }
+    - { sku: CH-9109C1E-FR, colorName: Cherry Blossom, colorFamily: color, layout: iso_fr, switch: corsair-mlx-red }
+    - { sku: CH-9109E1E-FR, colorName: Dark Cherry Blossom, colorFamily: black, layout: iso_fr, switch: corsair-mlx-red }
+    - { sku: CH-9109C1E-NA, colorName: Cherry Blossom, colorFamily: color, layout: ansi_us, switch: corsair-mlx-red }
 
-# à vérifier : switch « CORSAIR MGX Hyperdrive Core » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mgx-hyperdrive-core)
 - slug: corsair-clipper-pro-mini-60
   brand: corsair
   name: CLIPPER PRO MINI 60
@@ -66,12 +62,11 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-979101j-uk/clipper-pro-mini-60-hall-effect-gaming-keyboard-uk-ch-979101j-uk
   specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 414 }
   variants:
-    - { sku: CH-979101J-UK, colorName: Black, colorFamily: black, layout: iso_uk }
-    - { sku: CH-979111J-FR, colorName: White, colorFamily: white, layout: iso_fr }
-    - { sku: CH-979101J-FR, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: CH-979111J-UK, colorName: White, colorFamily: white, layout: iso_uk }
+    - { sku: CH-979101J-UK, colorName: Black, colorFamily: black, layout: iso_uk, switch: corsair-mgx-hyperdrive }
+    - { sku: CH-979111J-FR, colorName: White, colorFamily: white, layout: iso_fr, switch: corsair-mgx-hyperdrive }
+    - { sku: CH-979101J-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mgx-hyperdrive }
+    - { sku: CH-979111J-UK, colorName: White, colorFamily: white, layout: iso_uk, switch: corsair-mgx-hyperdrive }
 
-# à vérifier : switch « CORSAIR MGX V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mgx-v2)
 - slug: corsair-k70-pro-tkl
   brand: corsair
   name: K70 PRO TKL
@@ -88,9 +83,9 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-911911g-na/k70-pro-tkl-hall-effect-programmable-keyboard-ch-911911g-na
   specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 972 }
   variants:
-    - { sku: CH-911921G-NA, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: CH-911911G-NA, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: CH-911911G-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-911921G-NA, colorName: White, colorFamily: white, layout: ansi_us, switch: corsair-mgx-hyperdrive }
+    - { sku: CH-911911G-NA, colorName: Black, colorFamily: black, layout: ansi_us, switch: corsair-mgx-hyperdrive }
+    - { sku: CH-911911G-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mgx-hyperdrive }
 
 - slug: corsair-k55-core-rgb
   brand: corsair
@@ -129,7 +124,6 @@
     - { sku: CH-9226I65-FR, colorName: Black, colorFamily: black, layout: iso_fr }
     - { sku: CH-9226I65-UK, colorName: Black, colorFamily: black, layout: iso_uk }
 
-# à vérifier : switch « CORSAIR MLX Plasma » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-plasma)
 - slug: corsair-vanguard-96-wireless
   brand: corsair
   name: VANGUARD 96 WIRELESS
@@ -144,9 +138,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91f901e-fr/vanguard-96-wireless-mechanical-gaming-keyboard-fr-ch-91f901e-fr
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1170 }
   variants:
-    - { sku: CH-91F901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-91F901E-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-plasma }
 
-# à vérifier : switch « CORSAIR MLX Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-red)
 - slug: corsair-k70-core-rgb
   brand: corsair
   name: K70 CORE RGB
@@ -163,8 +156,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-910991e-fr/k70-core-rgb-mechanical-gaming-keyboard-steel-grey-fr-ch-910991e-fr​
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 934 }
   variants:
-    - { sku: CH-910991E-FR, colorName: Steel Gray, colorFamily: black, layout: iso_fr }
-    - { sku: CH-910971E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-910991E-FR, colorName: Steel Gray, colorFamily: black, layout: iso_fr, switch: corsair-mlx-red }
+    - { sku: CH-910971E-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-red }
 
 - slug: corsair-k55-core-tkl-rgb
   brand: corsair
@@ -182,7 +175,6 @@
   variants:
     - { sku: CH-9216065-FR, colorName: Black, colorFamily: black, layout: iso_fr }
 
-# à vérifier : switch « MLX Plasma » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mlx-plasma)
 - slug: corsair-vanguard-96
   brand: corsair
   name: VANGUARD 96
@@ -198,10 +190,9 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91e921e-fr/vanguard-96-mechanical-gaming-keyboard-corsair-mlx-plasma-ch-91e921e-fr
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 994 }
   variants:
-    - { sku: CH-91E921E-FR, colorName: Dual Tone, colorFamily: color, layout: iso_fr }
-    - { sku: CH-91E901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-91E921E-FR, colorName: Dual Tone, colorFamily: color, layout: iso_fr, switch: corsair-mlx-plasma }
+    - { sku: CH-91E901E-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-plasma }
 
-# à vérifier : switch « CORSAIR OPX Low Profile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-opx-low-profile)
 - slug: corsair-vanguard-air-99-wireless
   brand: corsair
   name: VANGUARD AIR 99 WIRELESS
@@ -217,8 +208,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91ha01b-fr/vanguard-air-99-wireless-optical-mechanical-gaming-keyboard-black-fr-ch-91ha01b-fr
   specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 928 }
   variants:
-    - { sku: CH-91HA01B-FR, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: CH-91H901B-FR, colorName: White, colorFamily: white, layout: iso_fr }
+    - { sku: CH-91HA01B-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-opx }
+    - { sku: CH-91H901B-FR, colorName: White, colorFamily: white, layout: iso_fr, switch: corsair-opx }
 
 - slug: corsair-skiff-100
   brand: corsair
@@ -238,7 +229,6 @@
     - { sku: CH-9226H65-FR, colorName: Black, colorFamily: black, layout: iso_fr }
     - { sku: CH-9226H65-UK, colorName: Black, colorFamily: black, layout: iso_uk }
 
-# à vérifier : switch « MLX Red v2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mlx-red-v2)
 - slug: corsair-k70-core-tkl-wireless-rgb
   brand: corsair
   name: K70 CORE TKL WIRELESS RGB
@@ -253,9 +243,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-914901e-fr/k70-core-tkl-wireless-rgb-mechanical-gaming-keyboard-fr-ch-914901e-fr
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 804 }
   variants:
-    - { sku: CH-914901E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-914901E-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-red }
 
-# à vérifier : switch « MGX Hyperdrive » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mgx-hyperdrive)
 - slug: corsair-vanguard-pro-96
   brand: corsair
   name: VANGUARD PRO 96
@@ -270,9 +259,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-91e911g-fr/vanguard-pro-96-hall-effect-gaming-keyboard-ch-91e911g-fr
   specs: { formFactor: f96, technology: magnetic, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1097 }
   variants:
-    - { sku: CH-91E911G-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-91E911G-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mgx-hyperdrive }
 
-# à vérifier : switch « CORSAIR MLX Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug corsair-mlx-red)
 - slug: corsair-k70-core-tkl-rgb
   brand: corsair
   name: K70 CORE TKL RGB
@@ -287,9 +275,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-911911e-fr/k70-core-tkl-rgb-mechanical-gaming-keyboard-fr-ch-911911e-fr
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 743 }
   variants:
-    - { sku: CH-911911E-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-911911E-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: corsair-mlx-red }
 
-# à vérifier : switch « Cherry® MX RGB Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug cherry-mx-rgb-red)
 - slug: corsair-k65-rgb-mini-60
   brand: corsair
   name: K65 RGB MINI 60%
@@ -305,9 +292,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-9194110-fr/k65-rgb-mini-60-mechanical-gaming-keyboard-cherry-mx-red-fr-white-ch-9194110-fr
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 570 }
   variants:
-    - { sku: CH-9194010-FR, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: CH-9194010-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: cherry-mx-red }
 
-# à vérifier : switch « CHERRY MX Ultra LP TACTILE » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cherry-mx-ultra-lp-tactile)
 - slug: corsair-k100-air-wireless-rgb
   brand: corsair
   name: K100 AIR WIRELESS RGB
@@ -323,8 +309,8 @@
     - https://www.corsair.com/fr/fr/p/keyboards/ch-913a01u-fr/k100-air-wireless-rgb-ultra-thin-mechanical-gaming-keyboard-cherry-mx-ultra-low-profile-tactile-ch-913a01u-fr
   specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 773 }
   variants:
-    - { sku: CH-913A01U-FR, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: CH-913A01U-NA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: CH-913A01U-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: cherry-mx-ulp-tactile }
+    - { sku: CH-913A01U-NA, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-ulp-tactile }
 
 - slug: corsair-k55-rgb-pro
   brand: corsair

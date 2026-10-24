@@ -16,7 +16,7 @@ const glossary: [RegExp, string][] = [
   [/\bm[ée]canique\b/gi, 'Mechanical'],
   [/,/g, ' '],
   [/\brouge\b/gi, 'Red'],
-  [/\bmarron\b/gi, 'Brown'],
+  [/\bmarron\b|\bbrun\b/gi, 'Brown'],
   [/\bbanane\b/gi, 'Banana'],
   [/\bbleu\b/gi, 'Blue'],
   [/\bjaune\b/gi, 'Yellow'],

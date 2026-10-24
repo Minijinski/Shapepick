@@ -1,0 +1,129 @@
+# Noms de switchs relevés sur les pages des claviers → la fiche de data/switches.yaml qui les décrit.
+# Lu par le résolveur de l'import (packages/ingest/src/switches.ts) avant toute recherche, jamais par le
+# site. Un nom s'y compare sans casse, sans accents ni ponctuation, sans « Switch », poids ou montage,
+# et dans n'importe quel ordre : « Gateron Mechanical Low Profile Red » = « Low Profile Gateron Red ».
+# Inutile d'y mettre un nom qui donne déjà le slug d'une fiche (« Keychron K Pro Red »).
+
+# Keychron, noms des options de ses pages (les K Pro sans la marque, les familles sans « Switch »)
+keychron-k-pro-red: [K Pro Red]
+keychron-k-pro-brown: [K Pro Brown]
+keychron-k-pro-blue: [K Pro Blue]
+keychron-k-pro-banana: [K Pro Banana]
+keychron-mechanical-red: [Keychron Mechanical Red]
+keychron-mechanical-brown: [Keychron Mechanical Brown]
+keychron-mechanical-blue: [Keychron Mechanical Blue]
+keychron-milk-pom-low-profile-red: [Keychron Milk POM Red]
+keychron-milk-pom-low-profile-brown: [Keychron Milk POM Brown]
+keychron-milk-pom-low-profile-banana: [Keychron Milk POM Banana]
+keychron-low-profile-red: [Keychron low-profile Red]
+# Même switch sur les Lemokey L0 HE et L5 HE : https://www.keychron.com/products/keychron-ultra-fast-lime-magnetic-switch ;
+# la famille seule vient du nom de l'option du V6 Ultra Hybrid 8K (« Keychron Ultra-Fast Lime Magnetic Switch » : Lime)
+keychron-ultra-fast-lime-magnetic: [Lemokey Ultra-fast Lime Magnetic, Keychron Ultra-Fast Lime Magnetic]
+# « Low Profile Gateron Mechanical » de Keychron = Gateron Low Profile 2.0 (KS-33), comme le « Gateron Low … Switch 2.0 »
+# de l'Epomaker Carbon60. Le Vortex Core Plus dit « Gateron Low Profile » sans préciser la génération : il prend la même fiche.
+gateron-low-profile-2-0-red: [Low Profile Gateron Red, Gateron Red Low]
+gateron-low-profile-2-0-brown: [Low Profile Gateron Brown, Gateron Brown Low]
+gateron-low-profile-2-0-blue: [Low Profile Gateron Blue]
+gateron-low-profile-2-0-banana: [Low Profile Gateron Banana]
+
+# Yunzii, noms des options ; « Cocoa V2 » de l'AL98 Pro = Cocoa Cream V2 d'après sa fiche
+yunzii-milk-v2: [Milk V2 Linear, YUNZII Milk V2 Linear]
+yunzii-milk: [Milk, Milk Linear]
+yunzii-cocoa-cream-v2: [Cocoa Cream V2, Cocoa Cream V2 Linear, YUNZII Cocoa Cream V2 Linear, YUNZII Cocoa V2 Linear, Cocoa Cream V2 Early Bottoming]
+yunzii-crystal-linear: [Crystal]
+yunzii-blue-grey-tactile: [Blue Grey Tactile]
+yunzii-snow-linear: [Snow Linear]
+yunzii-onyx-tactile-clicky: [Onyx Tactile]
+gateron-zero: [Gateron Zero Linear]
+
+# Epomaker ; les fiches des TH87, RT82, QK108, TH108 et TH99 nomment « Sea Salt Silent V2 » leur switch silencieux
+epomaker-creamy-jade: [Creamy Jade]
+epomaker-creamy-jade-magnetic: [Creamy Jade Magnetic, EPOMAKER Creamy Jade Magnetic]
+epomaker-sea-salt-silent-v2: [EPOMAKER Sea Salt Silent V2, Epomaker Sea Salt Silent, Sea Salt Silent]
+epomaker-wisteria-v2: [Epomaker Wisteria Linear V2, EPOMAKER Wisteria V2 Linear, Wisteria Linear V2]
+epomaker-crystal-tactile-silent: [EPOMAKER Crystal Silent Tactile]
+epomaker-duskrise-magnetic: [Epomaker Duskrise Magnetic Switches]
+feker-marble-white: [Feker Marble White]
+
+# Leobog et Aula
+leobog-greywood-v3: [LEOBOG Graywood V3]
+leobog-nimbus-v3: [Nimbus V3]
+aula-stararrow: [StarArrow]
+
+# Ajazz
+ajazz-flying-fish: [Flying Fish]
+
+# Razer, noms du site français
+razer-yellow: [Switchs mécaniques jaunes Razer™ - Fluide et silencieuse]
+razer-green: [Switchs mécaniques verts Razer™ - Tactile et sonore]
+# « Switchs mécaniques » des BlackWidow V4 75 % et V4 Pro 75 % : « Switches mécaniques Razer™ de 3e génération (tactiles) »,
+# le type que la fiche du BlackWidow V4 Tenkeyless HyperSpeed donne à son switch « Mécanique orange »
+razer-orange: [Switchs mécaniques orange Razer™ - Tactile et silencieuse, Mécanique orange, Switchs mécaniques]
+razer-clicky-optical: [Switch optique sonore (violet)]
+razer-linear-optical: [Switch optique linéaire (rouge)]
+razer-analog-optical: [Optiques analogiques]
+razer-low-profile-analog-optical: [Switch optique analogique low-profile Razer™]
+razer-hall-effect-magnetic: [Switches magnétiques à effet Hall Razer™]
+
+# Corsair : « MLX Red v2 » et « MLX V2 Red » sont des MLX Red d'après les fiches techniques des K70 CORE ;
+# Corsair n'a qu'un switch magnétique (MGX Hyperdrive, « MGX V2 » dans les fiches) et qu'un optique (OPX)
+corsair-mlx-red: [MLX Red v2, CORSAIR MLX V2 Red]
+corsair-mlx-plasma: [MLX Plasma]
+corsair-mgx-hyperdrive: [MGX Hyperdrive, CORSAIR MGX V2, CORSAIR MGX Hyperdrive Core]
+corsair-opx: [CORSAIR OPX Low Profile]
+# Le K65 RGB MINI dit « CHERRY MX Red » dans sa fiche technique
+cherry-mx-red: [Cherry® MX RGB Red]
+
+# Cherry MX Ultra Low Profile
+cherry-mx-ulp-tactile: [CHERRY MX Ultra LP TACTILE, Cherry MX Ultra Low Profile Tactile]
+cherry-mx-ulp-click: [Cherry MX Ultra Low Profile Clicky, Cherry MX Ultra LP Click]
+
+# SteelSeries, noms de leurs fiches et types de switch (c_switchType)
+steelseries-qx2-red: [red-qx2-mechanical]
+steelseries-hybrid-blue: [hybrid-blue-mechanical]
+steelseries-optipoint-linear: [SteelSeries Linear OptiPoint Optical]
+steelseries-omnipoint-2-0: [Commutateurs HyperMagnetic réglables OmniPoint 2.0 (capteur magnétique à effet Hall analogique), omnipoint-mechanical]
+
+# HyperX
+hyperx-red: [HyperX Red - Linear]
+hyperx-aqua: [HyperX Aqua - Tactile, HX Aqua - Tactile]
+
+# Varmilo : une seule génération documentée pour Ivy et Moxa (EC V2)
+varmilo-ec-ivy-v2: [Varmilo EC Ivy]
+varmilo-ec-moxa-v2: [Varmilo EC Moxa]
+varmilo-daisy-l: [Varmilo MX Daisy L]
+
+# Kailh
+kailh-box-jellyfish-y: [Kailh Box Jellyfish Y]
+
+# Lofree x Kailh (fabriqués par Kailh, vendus par Lofree ; « Lowfree » est une coquille de la fiche)
+lofree-surfer: [Lofree x Kailh Surfer, Lofree x Kailh Surfer Linear Low Profile]
+lofree-void: [Lofree x Kailh Void, Lowfree x Kailh Void]
+lofree-pulse: [Lofree x Kailh Pulse]
+
+# mechanicalkeyboards.com (« WS » : Wuque Studio, sur la fiche du Chilkey ND104)
+wuque-studio-white-silent: [WS White Silent]
+owlab-ti-he: [Owlab Ti HE Magnetic * Linear]
+wooting-lekker-tikken: [Wooting Lekker Tikken Magnetic]
+wooting-lekker-linear60: [Lekker Linear60]
+matias-click: [Matias Standard Clicky]
+luminkey-astral: [Luminkey Astral Linear]
+
+# Noms dont le ressenti est dans le nom
+hmx-frost: [HMX Frost Linear]
+hmx-violet: [HMX Violet Linear]
+kailh-cocoa: [Kailh Cocoa Linear]
+gateron-tofu: [Gateron Tofu Linear]
+gateron-ef-dopamine-blue: [Gateron EF Dopamine Blue Linear]
+chilkey-aster: [Chilkey Aster Linear Low Profile]
+wuque-studio-flux-poseidon: [Wuque Studio Flux Poseidon Linear Magnetic HE]
+# Womier : toute la série POM est linéaire (https://womierkeyboard.com/products/womier-full-pom-series-pre-lubed-linear-switches) ;
+# l'option « Grey SwitchTactile » du L80 contredit cette page, celle du SK80 (« Full POM Grey Linear ») et celle du L80 lui-même (« linear switches »)
+womier-full-pom-beige: [Womier POM Beige, Womier POM Beige Linear, Womier POM Beige pre-lubed linear]
+womier-full-pom-grey: [Womier Full POM Grey SwitchTactile]
+womier-pom-series: [Womier POM Series, Womier POM, Womier POM pre-lubed linear, POM Creamy Linear]
+
+# Sources non officielles (voir data/switches.yaml) : la fiche du Chilkey ND65 dit « Kailh Blue Lotus », mais seul le
+# Durock Blue Lotus existe ; le « Leopold Mage Sakura Silent » de l'Alchemie est le Silent Sakura que HMX a fait avec Mage Studio
+durock-blue-lotus: [Kailh Blue Lotus]
+hmx-silent-sakura: [Leopold Mage Sakura Silent]

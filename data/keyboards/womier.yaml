@@ -49,7 +49,6 @@
   variants:
     - { sku: JP-Womier-WD99-HLTM-huizhou-SM, colorName: Grey-Blue (Shine Through), colorFamily: black, layout: ansi_us, switch: womier-mint-blizzard-pom }
 
-# à vérifier : switch « Womier Full POM Grey SwitchTactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-full-pom-grey-switchtactile)
 - slug: womier-l80
   brand: womier
   name: L80
@@ -65,10 +64,9 @@
     - https://womierkeyboard.com/products/womier-l80-75-wireless-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1470, widthMm: 451, depthMm: 192 }
   variants:
-    - { sku: JP-Womier-L80-fen-shanhuhai-huizhou-SM, colorName: Coral Sea Pink, colorFamily: color, layout: ansi_us }
-    - { sku: JP-Womier-L80-hei-huizhou-SM, colorName: Coral  Black, colorFamily: black, layout: ansi_us }
+    - { sku: JP-Womier-L80-fen-shanhuhai-huizhou-SM, colorName: Coral Sea Pink, colorFamily: color, layout: ansi_us, switch: womier-full-pom-grey }
+    - { sku: JP-Womier-L80-hei-huizhou-SM, colorName: Coral  Black, colorFamily: black, layout: ansi_us, switch: womier-full-pom-grey }
 
-# à vérifier : switch « POM Creamy Linear Switch (pre-installed) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug pom-creamy-linear)
 - slug: womier-l98
   brand: womier
   name: L98
@@ -86,10 +84,9 @@
     - https://womierkeyboard.com/products/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1439 }
   variants:
-    - { sku: JP-womoer-L98-hei-heishanhuhai-OG-SM-XN-DP, colorName: Coral Sea Black, colorFamily: black, layout: ansi_us }
-    - { sku: JP-womoer-L98-mingyueye-HZ-SM-XN-DP, colorName: Moon Night, colorFamily: color, layout: ansi_us }
+    - { sku: JP-womoer-L98-hei-heishanhuhai-OG-SM-XN-DP, colorName: Coral Sea Black, colorFamily: black, layout: ansi_us, switch: womier-pom-series }
+    - { sku: JP-womoer-L98-mingyueye-HZ-SM-XN-DP, colorName: Moon Night, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
 
-# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
 - slug: womier-vk66-pro
   brand: womier
   name: VK66 Pro
@@ -106,10 +103,9 @@
     - https://womierkeyboard.com/products/womier-vk66-pro
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: xda, backlight: none, knob: true, firmware: via, widthMm: 322, depthMm: 113 }
   variants:
-    - { sku: Womier VK66 PRO-Pink Frosty, colorName: Pink Frosty Jello, colorFamily: white, layout: ansi_us }
-    - { sku: Womier VK66 PRO-Green, colorName: Green, colorFamily: color, layout: ansi_us }
+    - { sku: Womier VK66 PRO-Pink Frosty, colorName: Pink Frosty Jello, colorFamily: white, layout: ansi_us, switch: womier-pom-series }
+    - { sku: Womier VK66 PRO-Green, colorName: Green, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
 
-# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
 - slug: womier-sk30-mini
   brand: womier
   name: SK30 Mini
@@ -125,8 +121,8 @@
     - https://womierkeyboard.com/products/womier-sk30-mini-wireless-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, batteryMah: 3000, weightG: 760, widthMm: 156, depthMm: 143 }
   variants:
-    - { sku: Womier SK30-BL, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
-    - { sku: Womier SK30-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us }
+    - { sku: Womier SK30-BL, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us, switch: womier-pom-series }
+    - { sku: Womier SK30-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us, switch: womier-pom-series }
 
 - slug: womier-m68he-pro
   brand: womier
@@ -146,6 +142,7 @@
     - { sku: JP-womier-M68HEPro-xiantiaobutouguang-bai-cizhou-1, colorName: White (Shine-Through), colorFamily: white, layout: ansi_us }
     - { sku: JP-womier-M68HEPro-xiantiaobutouguang-hei-cizhou-1, colorName: Black (Non Shine-Through), colorFamily: black, layout: ansi_us }
 
+# à vérifier : switch non nommé sur la fiche (« factory pre-lubed switches ») : https://womierkeyboard.com/products/womier-vk75-75-wired-gasket-mechanical-keyboard
 - slug: womier-vk75
   brand: womier
   name: VK75
@@ -162,6 +159,7 @@
   variants:
     - { sku: JP-Womier-VK75-fense-YX-XN-WJ, colorName: Black, colorFamily: black, layout: ansi_us }
 
+# à vérifier : switch non nommé sur la fiche (« Feel: Linear », 45 ± 10 gf, 2 / 4 mm) : https://womierkeyboard.com/products/womier-wk75-75-wireless-hot-swap-keyboard-with-knob
 - slug: womier-wk75
   brand: womier
   name: WK75
@@ -181,7 +179,6 @@
     - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us }
     - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us }
 
-# à vérifier : switch « Womier POM switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom)
 - slug: womier-duo87
   brand: womier
   name: DUO87
@@ -199,7 +196,7 @@
     - https://womierkeyboard.com/products/womier-duo87-mechanical-keyboard-with-detachable-smart-display-for-win-mac
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, screen: true, firmware: via, macSupport: true, weightG: 1102, widthMm: 368, depthMm: 144 }
   variants:
-    - { sku: JP-DUO87-hui-mibaizhou-DM-1, colorName: Oatmeal Latte, colorFamily: color, layout: ansi_us }
+    - { sku: JP-DUO87-hui-mibaizhou-DM-1, colorName: Oatmeal Latte, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
 
 - slug: womier-sk61
   brand: womier
@@ -217,6 +214,8 @@
   variants:
     - { sku: JP-Womier-SK60HE-hei-guangying-cizhou-SM-1, colorName: Black, colorFamily: black, layout: ansi_us }
 
+# à vérifier : switch non nommé sur la fiche du SK75 standard (« New Womier Full POM Switches », sans couleur ni ressenti) : https://womierkeyboard.com/products/womier-sk75-ansi-iso-via-wireless-aluminum-keyboard
+# à vérifier : la 2e source, le SK75 TMR (magnétique, « Womier Void Magnetic Switch »), est un autre clavier fusionné avec celui-ci : à séparer
 # à vérifier : switch « Womier Void Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-void-magnetic)
 - slug: womier-sk75
   brand: womier
@@ -246,6 +245,7 @@
     - { sku: Womier SK75-ISO-Black, colorName: Black, colorFamily: black, layout: iso_de }
     - { sku: Womier SK75-ISO-White, colorName: White, colorFamily: white, layout: iso_de }
 
+# switchs par coloris (lots après juillet 2024) : https://womierkeyboard.com/products/womier-s-k80
 - slug: womier-sk80
   brand: womier
   name: SK80
@@ -265,11 +265,12 @@
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: plastic, keycapMaterial: pom, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, weightG: 680 }
   variants:
     - { sku: Womier SK80-Foundation, colorName: "[New] Foundation", colorFamily: color, layout: ansi_us }
-    - { sku: XVX SK80-Kanagawa-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us }
-    - { sku: XVX-SK80-Kanagawa, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
-    - { sku: Womier S-K80 White Topographic 4.0, colorName: White Topographic, colorFamily: white, layout: ansi_us }
+    - { sku: XVX SK80-Kanagawa-WH, colorName: White Kanagawa, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: XVX-SK80-Kanagawa, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us, switch: womier-full-pom-grey }
+    - { sku: Womier S-K80 White Topographic 4.0, colorName: White Topographic, colorFamily: white, layout: ansi_us, switch: outemu-white }
     - { sku: Womier SK80-Coffee Cat, colorName: Coffee Cat, colorFamily: color, layout: ansi_us }
 
+# switchs par coloris : https://womierkeyboard.com/products/womier-k80-mechanical-keyboard-smart-screen-media-knob-rgb-light-box
 - slug: womier-k80
   brand: womier
   name: K80
@@ -285,9 +286,10 @@
     - https://womierkeyboard.com/products/womier-k80-mechanical-keyboard-smart-screen-media-knob-rgb-light-box
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: via, macSupport: true, batteryMah: 8000, weightG: 1268, widthMm: 324, depthMm: 140 }
   variants:
-    - { sku: JP-Womier-K80-fen-baifenjianb-FZ-SM-DP-XN-1, colorName: Sakura Pink, colorFamily: color, layout: ansi_us }
-    - { sku: JP-Womier-K80-bai-naibaika-BZ-SM-DP-XN-1, colorName: Creamy Coffee, colorFamily: white, layout: ansi_us }
+    - { sku: JP-Womier-K80-fen-baifenjianb-FZ-SM-DP-XN-1, colorName: Sakura Pink, colorFamily: color, layout: ansi_us, switch: womier-full-pom-rose-whisper }
+    - { sku: JP-Womier-K80-bai-naibaika-BZ-SM-DP-XN-1, colorName: Creamy Coffee, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
 
+# à vérifier : switch non nommé sur la fiche : https://womierkeyboard.com/products/mt75-tri-mode-keyboard-with-matrix-screen-and-volume-knob
 - slug: womier-mt75
   brand: womier
   name: MT75
@@ -309,7 +311,6 @@
     - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us }
     - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us }
 
-# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
 - slug: womier-m99
   brand: womier
   name: M99
@@ -324,8 +325,9 @@
     - https://womierkeyboard.com/products/womier-m99-via-support-wireless-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: via, batteryMah: 8000, weightG: 1606, widthMm: 403, depthMm: 140 }
   variants:
-    - { sku: Womier M99 Keyboard, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: Womier M99 Keyboard, colorName: Black, colorFamily: black, layout: ansi_us, switch: womier-pom-series }
 
+# switchs par coloris (« Grey (Purple version) / Beige (Retro/Carbon version) ») : https://womierkeyboard.com/products/womier-m87-pro
 - slug: womier-m87-pro-tkl
   brand: womier
   name: M87 Pro TKL
@@ -342,10 +344,11 @@
     - https://womierkeyboard.com/products/womier-m87-pro
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, batteryMah: 3000, widthMm: 370, depthMm: 146 }
   variants:
-    - { sku: Womier M87 PRO-Carbon, colorName: Carbon, colorFamily: black, layout: ansi_us }
+    - { sku: Womier M87 PRO-Carbon, colorName: Carbon, colorFamily: black, layout: ansi_us, switch: womier-full-pom-beige }
     - { sku: Womier M87 PRO-Gery, colorName: grey, colorFamily: black, layout: ansi_us }
-    - { colorName: Retro Grey, colorFamily: black, layout: ansi_us }
+    - { colorName: Retro Grey, colorFamily: black, layout: ansi_us, switch: womier-full-pom-beige }
 
+# à vérifier : switch non nommé sur la fiche (« comes with linear switch ») : https://womierkeyboard.com/products/womier-l65-60-gaming-mechanical-keyboard-wireless-with-knob
 - slug: womier-l65
   brand: womier
   name: L65
@@ -364,7 +367,6 @@
     - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us }
     - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us }
 
-# à vérifier : switch « Womier POM Beige pre-lubed linear switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige-pre-lubed-linear)
 - slug: womier-l75
   brand: womier
   name: L75
@@ -381,10 +383,9 @@
     - https://womierkeyboard.com/products/womier-l75
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000 }
   variants:
-    - { sku: JP-Womier-L75-bailvlv-baizhou, colorName: Mix White-Green, colorFamily: white, layout: ansi_us }
-    - { sku: JP-Womier-L75-baizilan-baizhou, colorName: Mix White-Pink-Blue, colorFamily: white, layout: ansi_us }
+    - { sku: JP-Womier-L75-bailvlv-baizhou, colorName: Mix White-Green, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: JP-Womier-L75-baizilan-baizhou, colorName: Mix White-Pink-Blue, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
 
-# à vérifier : switch « Womier POM Beige Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige-linear)
 - slug: womier-q61-v2
   brand: womier
   name: Q61 V2
@@ -402,11 +403,12 @@
     - https://womierkeyboard.com/products/womier-q61-v2-wireless-via-mechanical-keyboard-with-knob
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: xda, backlight: none, knob: true, firmware: via, batteryMah: 4000 }
   variants:
-    - { sku: JP-womier-Q61-xiantiaowutoubai-1, colorName: Frost White Line-Print, colorFamily: white, layout: ansi_us }
-    - { sku: JP-womier-Q61-V2-ckwutoubai-SM-QMK-1, colorName: Frost White Side-Print, colorFamily: white, layout: ansi_us }
-    - { sku: JP-womier-Q61-V2-xiantiao-SM-QMK-1, colorName: White Line Black Legends, colorFamily: black, layout: ansi_us }
-    - { sku: JP-womier-Q61-V2-baiheihui-BTG-SM-RCB-xuanniu-QMK-1, colorName: Black Grey Solid Legends, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womier-Q61-xiantiaowutoubai-1, colorName: Frost White Line-Print, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: JP-womier-Q61-V2-ckwutoubai-SM-QMK-1, colorName: Frost White Side-Print, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: JP-womier-Q61-V2-xiantiao-SM-QMK-1, colorName: White Line Black Legends, colorFamily: black, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: JP-womier-Q61-V2-baiheihui-BTG-SM-RCB-xuanniu-QMK-1, colorName: Black Grey Solid Legends, colorFamily: black, layout: ansi_us, switch: womier-full-pom-beige }
 
+# à vérifier : switch non nommé sur la fiche : https://womierkeyboard.com/products/womier-x98-wireless-mechanical-keyboard
 - slug: womier-x98
   brand: womier
   name: X98
@@ -423,7 +425,6 @@
   variants:
     - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us }
 
-# à vérifier : switch « Womier POM Series Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-series)
 - slug: womier-era75
   brand: womier
   name: ERA75
@@ -442,14 +443,13 @@
     - https://womierkeyboard.com/products/womier-era75
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: via, batteryMah: 8000 }
   variants:
-    - { colorName: Cyberpunk, colorFamily: color, layout: ansi_us }
-    - { colorName: Black Gold, colorFamily: black, layout: ansi_us }
-    - { colorName: Doomsday, colorFamily: color, layout: ansi_us }
-    - { colorName: Bronze, colorFamily: color, layout: ansi_us }
-    - { colorName: Ice, colorFamily: color, layout: ansi_us }
-    - { colorName: Interstella, colorFamily: color, layout: ansi_us }
+    - { colorName: Cyberpunk, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { colorName: Black Gold, colorFamily: black, layout: ansi_us, switch: womier-pom-series }
+    - { colorName: Doomsday, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { colorName: Bronze, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { colorName: Ice, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { colorName: Interstella, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
 
-# à vérifier : switch « Womier POM Beige Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-beige)
 - slug: womier-qk87-tkl
   brand: womier
   name: QK87 TKL
@@ -465,8 +465,8 @@
     - https://womierkeyboard.com/products/womier-qk87-tkl-qmk-via-support-multimedia-display-wireless-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, widthMm: 363, depthMm: 134 }
   variants:
-    - { sku: Womier K87 VIA-Brown, colorName: Brown, colorFamily: color, layout: ansi_us }
-    - { sku: Womier K87 VIA-Green, colorName: Green, colorFamily: color, layout: ansi_us }
+    - { sku: Womier K87 VIA-Brown, colorName: Brown, colorFamily: color, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: Womier K87 VIA-Green, colorName: Green, colorFamily: color, layout: ansi_us, switch: womier-full-pom-beige }
 
 # à vérifier : switch « Haimu Ice Jade Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug haimu-ice-jade-magnetic)
 # à vérifier : switch « Outemu Magnetic Switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-magnetic)
@@ -495,6 +495,7 @@
     - { sku: JP-womier-M68HE-Ultra-btgxc-bai, colorName: Colorful White, colorFamily: white, layout: ansi_us }
     - { sku: Womier M68 HE-Black, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 100 }
 
+# switchs par coloris (« Beige (Silver&Beige) / Grey (Black&Blue) ») : https://womierkeyboard.com/products/womier-rd75-pro-wireless-mechanical-aluminum-keyboard
 - slug: womier-rd75-pro
   brand: womier
   name: RD75 Pro
@@ -513,12 +514,11 @@
     - https://womierkeyboard.com/products/womier-rd75-pro-wireless-mechanical-aluminum-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 8000, widthMm: 320, depthMm: 136 }
   variants:
-    - { sku: Womier RD75 Blue Pro, colorName: Anodized Blue, colorFamily: color, layout: ansi_us }
-    - { sku: Womier RD75 Black Pro, colorName: Anodized Black, colorFamily: black, layout: ansi_us }
-    - { sku: Womier RD75 Silver Pro, colorName: Anodized Silver, colorFamily: white, layout: ansi_us }
-    - { sku: Womier RD75 Beige Pro, colorName: Powder-Coated Beige, colorFamily: color, layout: ansi_us }
+    - { sku: Womier RD75 Blue Pro, colorName: Anodized Blue, colorFamily: color, layout: ansi_us, switch: womier-full-pom-grey }
+    - { sku: Womier RD75 Black Pro, colorName: Anodized Black, colorFamily: black, layout: ansi_us, switch: womier-full-pom-grey }
+    - { sku: Womier RD75 Silver Pro, colorName: Anodized Silver, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
+    - { sku: Womier RD75 Beige Pro, colorName: Powder-Coated Beige, colorFamily: color, layout: ansi_us, switch: womier-full-pom-beige }
 
-# à vérifier : switch « Womier POM pre-lubed linear switches » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug womier-pom-pre-lubed-linear)
 - slug: womier-sk80-pro
   brand: womier
   name: SK80 Pro
@@ -537,12 +537,12 @@
     - https://womierkeyboard.com/products/womier-sk80-pro
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 793, widthMm: 348, depthMm: 134 }
   variants:
-    - { sku: Womier SK80 PRO-Pink, colorName: Sakura Pink, colorFamily: color, layout: ansi_us }
-    - { sku: Womier SK80 PRO-Kanagawa, colorName: Kanagawa, colorFamily: color, layout: ansi_us }
-    - { sku: Womier SK80 PRO-Plum Bossom, colorName: Plum Bossom, colorFamily: color, layout: ansi_us }
-    - { sku: JP-Womier-S-K80pro-bai-zheying-DP-baizhou, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: Womier SK80 PRO-Pink, colorName: Sakura Pink, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { sku: Womier SK80 PRO-Kanagawa, colorName: Kanagawa, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { sku: Womier SK80 PRO-Plum Bossom, colorName: Plum Bossom, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
+    - { sku: JP-Womier-S-K80pro-bai-zheying-DP-baizhou, colorName: White, colorFamily: white, layout: ansi_us, switch: womier-pom-series }
 
-# à vérifier : switch « Outemu Red switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-red)
+# filaire seulement (« Connection Types: Wired », « Wired » dans le titre) : la « Battery Capacity: 3000 mAh » de la même fiche est retirée : https://womierkeyboard.com/products/womier-wk61-v2
 - slug: womier-wk61-v2
   brand: womier
   name: WK61 V2
@@ -558,7 +558,7 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-wk61-v2-60-hot-swappable-rgb-mechanical-wired-gaming-keyboard-4-colors-9058001.jpg?v=1773137774, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-wk61-v2
-  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 3000, widthMm: 310, depthMm: 130 }
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, mount: top, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true, widthMm: 310, depthMm: 130 }
   variants:
-    - { sku: Womier WK61-Black Kanagawa-RD, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us }
-    - { sku: Womier WK61-Kanagawa-RD, colorName: Coral Sea, colorFamily: color, layout: ansi_us }
+    - { sku: Womier WK61-Black Kanagawa-RD, colorName: Black Kanagawa, colorFamily: black, layout: ansi_us, switch: outemu-red }
+    - { sku: Womier WK61-Kanagawa-RD, colorName: Coral Sea, colorFamily: color, layout: ansi_us, switch: outemu-red }

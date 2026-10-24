@@ -5,8 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 11 modèles, epomaker.com (prix € estimés depuis les prix US)
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
-# à vérifier : switch « LEOBOG Silent Cotton Candy Mechanical Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-silent-cotton-candy)
 - slug: aula-ea75-max
   brand: aula
   name: EA75 Max
@@ -23,12 +21,11 @@
     - https://epomaker.com/products/epomaker-x-aula-ea75-max
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: AULA-EA75MAX-BKGYGD-Reaper, colorName: Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-EA75MAX-PK-LF, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: AULA-EA75MAX-WH-Reaper, colorName: Retro White, colorFamily: white, layout: ansi_us }
+    - { sku: AULA-EA75MAX-BKGYGD-Reaper, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-EA75MAX-PK-LF, colorName: Pink, colorFamily: color, layout: ansi_us, switch: leobog-silent-cotton-candy }
+    - { sku: AULA-EA75MAX-WH-Reaper, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-EA75MAX-WH-LF, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: leobog-silent-cotton-candy }
 
-# à vérifier : switch « LEOBOG Nimbus V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-nimbus-v3)
-# à vérifier : switch « LEOBOG Greywood V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-greywood-v3)
 - slug: aula-f87-pro
   brand: aula
   name: F87 Pro
@@ -47,16 +44,13 @@
     - https://epomaker.com/products/epomaker-aula-f87-pro
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: polycarbonate, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: AULA-F87PRO-WHBL-Nimbus, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F87PRO-WHGR-Greywood, colorName: White Green, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F87PRO-BK-Greywood, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F87PRO-SMOBL-Greywood, colorName: Smoke Blue, colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F87PRO-SP-BKGY-Greywood, colorName: Black Grey (Side-Printed), colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F87PRO-WHBL-Nimbus, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: leobog-nimbus-v3 }
+    - { sku: AULA-F87PRO-WHGR-Greywood, colorName: White Green, colorFamily: white, layout: ansi_us, switch: leobog-nimbus-v3 }
+    - { sku: AULA-F87PRO-BK-Greywood, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-greywood-v3 }
+    - { sku: AULA-F87PRO-SMOBL-Greywood, colorName: Smoke Blue, colorFamily: color, layout: ansi_us, switch: leobog-greywood-v3 }
+    - { sku: AULA-F87PRO-SP-BKGY-Greywood, colorName: Black Grey (Side-Printed), colorFamily: black, layout: ansi_us, switch: leobog-greywood-v3 }
 
 # à vérifier : switch « Red Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red)
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
-# à vérifier : switch « LEOBOG Dream Sakura Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-dream-sakura)
-# à vérifier : switch « LEOBOG Greywood V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-greywood-v3)
 - slug: aula-f75
   brand: aula
   name: F75
@@ -80,16 +74,18 @@
   variants:
     - { sku: AULA-F75-Wired-BK-R, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 60 }
     - { sku: AULA-F75-Wired-WH-R, colorName: White, colorFamily: white, layout: ansi_us, msrpEur: 60 }
-    - { sku: AULA-F75-SP-BK-Reaper-BPPM, colorName: Black (Side-Printed), colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F75-LTBL-Reaper-BPPM, colorName: Light Blue, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F75-GR-Reaper-BPPM, colorName: Green, colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F75-SP-PK-Reaper-BPPM, colorName: Pink (Side-Printed), colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F75-SP-BL-Reaper-BPPM, colorName: Blue (Side-Printed), colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F75-SP-PK-DreamSakura, colorName: Gradient Pink (Side-Printed), colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F75-SSBL-GreywoodV3-BPPM, colorName: Sea Salt Blue, colorFamily: color, layout: ansi_us }
-    - { sku: AULA-F75ISO-DE-BL-Reaper, colorName: Light Blue, colorFamily: white, layout: iso_de }
-    - { sku: AULA-F75ISO-FR-BK-Reaper, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: AULA-F75-BK-Reaper-BPPM, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-SP-BK-Reaper-BPPM, colorName: Black (Side-Printed), colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-LTBL-Reaper-BPPM, colorName: Light Blue, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-GR-Reaper-BPPM, colorName: Green, colorFamily: color, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-SP-PK-Reaper-BPPM, colorName: Pink (Side-Printed), colorFamily: color, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-SP-BL-Reaper-BPPM, colorName: Blue (Side-Printed), colorFamily: color, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75-SP-PK-DreamSakura, colorName: Gradient Pink (Side-Printed), colorFamily: color, layout: ansi_us, switch: leobog-dream-sakura }
+    - { sku: AULA-F75-SSBL-GreywoodV3-BPPM, colorName: Sea Salt Blue, colorFamily: color, layout: ansi_us, switch: leobog-greywood-v3 }
+    - { sku: AULA-F75ISO-DE-BL-Reaper, colorName: Light Blue, colorFamily: white, layout: iso_de, switch: leobog-reaper }
+    - { sku: AULA-F75ISO-FR-BK-Reaper, colorName: Black, colorFamily: black, layout: iso_fr, switch: leobog-reaper }
 
+# switch : LEOBOG Reaper (SKU « …-Reaper » et option de https://epomaker.com/products/epomaker-x-aula-f108-pro-v2)
 - slug: aula-f108-pro-v2
   brand: aula
   name: F108 Pro V2
@@ -106,11 +102,10 @@
     - https://epomaker.com/products/epomaker-x-aula-f108-pro-v2
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true }
   variants:
-    - { sku: AULA-F108PRO-V2-WH-Reaper, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F108PRO-V2-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F108PRO-V2-PK-Reaper, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: AULA-F108PRO-V2-WH-Reaper, colorName: White, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-V2-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-V2-PK-Reaper, colorName: Pink, colorFamily: color, layout: ansi_us, switch: leobog-reaper }
 
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
 - slug: aula-f65
   brand: aula
   name: F65
@@ -126,9 +121,8 @@
     - https://epomaker.com/products/epomaker-aula-f65
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: AULA-F65-BK-Reaper, colorName: Black Grey, colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F65-BK-Reaper, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
 
-# à vérifier : switch « LEOBOG Nimbus V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-nimbus-v3)
 - slug: aula-f108
   brand: aula
   name: F108
@@ -145,10 +139,8 @@
     - https://epomaker.com/products/epomaker-x-aula-f108
   specs: { formFactor: full, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: AULA-F108-SP-BKGY-NimbusV3, colorName: Black Grey, colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F108-SP-BKGY-NimbusV3, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: leobog-nimbus-v3 }
 
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
-# à vérifier : switch « LEOBOG Greywood V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-greywood-v3)
 - slug: aula-f108-pro
   brand: aula
   name: F108 Pro
@@ -166,13 +158,12 @@
     - https://epomaker.com/products/epomaker-x-aula-f108-pro
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: AULA-F108PRO-BLWHBK-Reaper, colorName: Black White Blue, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F108PRO-BLWHBPL-Reaper, colorName: Light Blue, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F108PRO-DLGYL-Reaper, colorName: Grey Yellow, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F108PRO-SP-BKGY-Reaper, colorName: Gradient Gray, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F108PRO-SP-BKPK-GreywoodV3, colorName: Gradient Black Pink, colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F108PRO-BLWHBK-Reaper, colorName: Black White Blue, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-BLWHBPL-Reaper, colorName: Light Blue, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-DLGYL-Reaper, colorName: Grey Yellow, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-SP-BKGY-Reaper, colorName: Gradient Gray, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F108PRO-SP-BKPK-GreywoodV3, colorName: Gradient Black Pink, colorFamily: black, layout: ansi_us, switch: leobog-greywood-v3 }
 
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
 - slug: aula-f99-max
   brand: aula
   name: F99 Max
@@ -190,12 +181,11 @@
     - https://epomaker.com/products/epomaker-x-aula-f99-max
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: AULA-F99MAX-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99MAX-LDBLWH-Reaper, colorName: Blue White, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F99MAX-WHRPK-Reaper, colorName: white pink, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F99MAX-SP-BK-Reaper-BPPM, colorName: Gradient Gray, colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F99MAX-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F99MAX-LDBLWH-Reaper, colorName: Blue White, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F99MAX-WHRPK-Reaper, colorName: white pink, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F99MAX-SP-BK-Reaper-BPPM, colorName: Gradient Gray, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
 
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
 - slug: aula-f75-max
   brand: aula
   name: F75 Max
@@ -213,14 +203,12 @@
     - https://epomaker.com/products/epomaker-x-aula-f75-max
   specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: AULA-F75MAX-SP-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F75MAX-WHBL-Reaper, colorName: White Blue, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F75MAX-PKWH-Reaper, colorName: Pink White, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F75MAX-BT-Reaper, colorName: Black Transparent, colorFamily: transparent, layout: ansi_us }
-    - { sku: AULA-F75MAX-ISO-DE-SP-BT-Reaper, colorName: Black, colorFamily: black, layout: iso_de }
+    - { sku: AULA-F75MAX-SP-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75MAX-WHBL-Reaper, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75MAX-PKWH-Reaper, colorName: Pink White, colorFamily: white, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75MAX-BT-Reaper, colorName: Black Transparent, colorFamily: transparent, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F75MAX-ISO-DE-SP-BT-Reaper, colorName: Black, colorFamily: black, layout: iso_de, switch: leobog-reaper }
 
-# à vérifier : switch « StarArrow Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug stararrow)
-# à vérifier : switch « Nimbus Switch V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug nimbus-v3)
 - slug: aula-f99-pro
   brand: aula
   name: F99 Pro
@@ -239,15 +227,12 @@
     - https://epomaker.com/products/epomaker-x-aula-f99-pro
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: AULA-F99PRO-BLWHBPL-StarArrow, colorName: Blue White Black, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99-PRO-WHBGR-StarArrow, colorName: White Black Grey, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99-PRO-BKGR-StarArrow, colorName: Black Green, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99PRO-SP-BK-Nimbus, colorName: Black (Side-Printed), colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99-PRO-BL-Nimbus-V3, colorName: Blue (Side-Printed), colorFamily: color, layout: ansi_us }
+    - { sku: AULA-F99PRO-BLWHBPL-StarArrow, colorName: Blue White Black, colorFamily: black, layout: ansi_us, switch: aula-stararrow }
+    - { sku: AULA-F99-PRO-WHBGR-StarArrow, colorName: White Black Grey, colorFamily: black, layout: ansi_us, switch: aula-stararrow }
+    - { sku: AULA-F99-PRO-BKGR-StarArrow, colorName: Black Green, colorFamily: black, layout: ansi_us, switch: aula-stararrow }
+    - { sku: AULA-F99PRO-SP-BK-Nimbus, colorName: Black (Side-Printed), colorFamily: black, layout: ansi_us, switch: leobog-nimbus-v3 }
+    - { sku: AULA-F99-PRO-BL-Nimbus-V3, colorName: Blue (Side-Printed), colorFamily: color, layout: ansi_us, switch: leobog-nimbus-v3 }
 
-# à vérifier : switch « LEOBOG Greywood V3 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-greywood-v3)
-# à vérifier : switch « LEOBOG Reaper Mechanical Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug leobog-reaper)
-# à vérifier : switch « LEOBOG Dream Sakura Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug leobog-dream-sakura)
 - slug: aula-f99
   brand: aula
   name: F99
@@ -265,7 +250,8 @@
     - https://epomaker.com/products/epomaker-aula-f99
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
-    - { sku: AULA-F99-WHBGR-Greywood, colorName: White Black Grey - PC Plate, colorFamily: black, layout: ansi_us }
-    - { sku: AULA-F99-WHBL-Greywood, colorName: White Blue - PC Plate, colorFamily: white, layout: ansi_us }
-    - { sku: AULA-F99-SP-PK-DreamSakura, colorName: Gradient Pink (Side-Printed) - PC Plate, colorFamily: color, layout: ansi_us, msrpEur: 95 }
-    - { sku: AULA-F99-BLWHBPL-Reaper, colorName: Blue White Black - PC Plate, colorFamily: black, layout: ansi_us }
+    - { sku: AULA-F99-WHBGR-Greywood, colorName: White Black Grey - PC Plate, colorFamily: black, layout: ansi_us, switch: leobog-greywood-v3 }
+    - { sku: AULA-F99-WHBGR-Reaper, colorName: White Black Grey - PC Plate, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
+    - { sku: AULA-F99-WHBL-Greywood, colorName: White Blue - PC Plate, colorFamily: white, layout: ansi_us, switch: leobog-greywood-v3 }
+    - { sku: AULA-F99-SP-PK-DreamSakura, colorName: Gradient Pink (Side-Printed) - PC Plate, colorFamily: color, layout: ansi_us, switch: leobog-dream-sakura, msrpEur: 95 }
+    - { sku: AULA-F99-BLWHBPL-Reaper, colorName: Blue White Black - PC Plate, colorFamily: black, layout: ansi_us, switch: leobog-reaper }

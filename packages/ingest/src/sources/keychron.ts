@@ -144,14 +144,21 @@ function colorOf(options: Record<string, string>): string | undefined {
   return undefined
 }
 
-function switchOf(options: Record<string, string>): string | undefined {
-  const entry = Object.entries(options).find(
-    ([name]) => /switch/i.test(name) && !/mount|facing/i.test(name),
-  )
-  return entry?.[1]
-    .replace(/\(.*?\)/g, '')
-    .replace(/\s+/g, ' ')
-    .trim()
+/** Older listings split the switch in two options, its family then its colour ("Switch Type: Low
+ * Profile Gateron Mechanical", "Switch Option: Red"; keychron.fr's "Option de commutation"); some
+ * name the option after the family ("Keychron Ultra-Fast Lime Magnetic Switch": Lime). */
+export function switchOf(options: Record<string, string>): string | undefined {
+  const parts = Object.entries(options)
+    .filter(([name]) => /switch|commutation/i.test(name) && !/mount|facing|pin/i.test(name))
+    .map(([name, value]) => {
+      const family = name.replace(/\b(switch(e?s)?|type|options?|de|commutation)\b/gi, '').trim()
+      return `${family} ${value}`
+        .replace(/[(（].*?[)）]/g, '')
+        .replace(/\s+/g, ' ')
+        .trim()
+    })
+    .filter(Boolean)
+  return parts.length ? parts.join(' ') : undefined
 }
 
 async function rawVariants(model: Model): Promise<Raw[]> {
@@ -193,20 +200,27 @@ async function rawVariants(model: Model): Promise<Raw[]> {
   return raws
 }
 
-async function variantsOf(model: Model, resolver: SwitchResolver) {
+/** `listed`: the one switch family the page's key specs name ("Switches: Keychron low-profile
+ * mechanical; hot-swappable"), if any. */
+async function variantsOf(model: Model, resolver: SwitchResolver, listed?: string) {
   const notes: string[] = []
   const raws = (await rawVariants(model)).filter(
     (r) => !BAREBONE.test(Object.values(r.options).join(' | ')),
   )
-  // A bare colour ("Red") borrows the family a sibling listing spells out in full.
+  // A bare colour ("Red") borrows the family a sibling listing spells out in full, or the one
+  // family the model's listings name ("Blue" beside "Low Profile Gateron Mechanical Red/Brown"),
+  // or else the one its key specs name (J1: "Red", "Brown", "Banana").
   const fullNames = raws.map((r) => switchOf(r.options)).filter((s) => s && s.split(' ').length > 1)
+  const families = new Set(fullNames.map((f) => f?.slice(0, f.lastIndexOf(' '))))
+  if (!families.size && listed) families.add(listed)
   const expand = (name: string) => {
     if (name.split(' ').length > 1) return name
     const prefixes = new Set(
       fullNames.filter((f) => f?.endsWith(` ${name}`)).map((f) => f?.slice(0, -name.length - 1)),
     )
-    const [prefix] = prefixes
-    return prefixes.size === 1 && prefix ? `${prefix} ${name}` : name
+    const borrowed = prefixes.size ? prefixes : families
+    const [prefix] = borrowed
+    return borrowed.size === 1 && prefix ? `${prefix} ${name}` : name
   }
   const switchSlugs = new Map<string, string | undefined>()
   for (const name of new Set(raws.map((r) => switchOf(r.options)).filter(Boolean) as string[])) {
@@ -344,11 +358,12 @@ export async function mapModel(model: Model, resolver: SwitchResolver): Promise<
   if (/70%/.test(size)) notes.push('taille « 70 % » rangée en 65 %')
 
   const magnetic = /\bHE\b|magnetic|hall effect/i.test(title)
+  // The B series says "Scissor Mechanism" in pictures; its pages list the collection by name.
   const technology: Specs['technology'] = magnetic
     ? 'magnetic'
     : /optical/i.test(title)
       ? 'optical'
-      : /scissor/i.test(facts.text)
+      : /scissor/i.test(facts.text) || page.includes('"Scissor Switch Keyboards"')
         ? 'scissor'
         : 'mechanical'
   const lowProfile = tag('Profile').some((p) => /low/i.test(p)) || /low[- ]profile/i.test(title)
@@ -502,7 +517,15 @@ export async function mapModel(model: Model, resolver: SwitchResolver): Promise<
   if (!specs.widthMm) notes.push('dimensions introuvables')
   if (magnetic && !rapidTrigger) notes.push('clavier magnétique sans rapid trigger mentionné')
 
-  const v = await variantsOf(model, resolver)
+  const listed = facts
+    .first(/^switch(es)?$/)
+    ?.split(';')[0]
+    ?.trim()
+  const v = await variantsOf(
+    model,
+    resolver,
+    listed && !/[/、,]|\bor\b/.test(listed) ? listed : undefined,
+  )
   notes.push(...v.notes)
   if (!v.variants.length) throw new Skip('aucune variante montée (que des barebones ?)')
   const priced = priceVariants(v.variants)

@@ -5,9 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Gateron G Pro Red » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-red)
-# à vérifier : switch « Gateron G Pro Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-yellow)
-# à vérifier : switch « Gateron G Pro Silver » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-silver)
 - slug: mistel-md600-alpha
   brand: mistel
   name: MD600 Alpha
@@ -22,8 +19,10 @@
     - https://mechanicalkeyboards.com/products/mistel-md600-alpha-rgb-black
   specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 2000, soundDampening: true }
   variants:
-    - { sku: MD600A-RUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: MD600A-RUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-g-pro-red }
     - { sku: MD600A-PUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-silent-red }
+    - { sku: MD600A-YUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-g-pro-yellow }
+    - { sku: MD600A-SUSPBBLTH, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-g-pro-silver }
 
 - slug: mistel-barocco-60
   brand: mistel
@@ -46,7 +45,6 @@
     - { sku: MD600-RUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red, msrpEur: 130 }
     - { sku: MD600-NUSPDWWT1, colorName: White, colorFamily: white, layout: ansi_us, switch: cherry-mx-nature-white }
 
-# à vérifier : switch « Cherry MX Ultra Low Profile Clicky » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cherry-mx-ultra-low-profile-clicky)
 - slug: mistel-air-one
   brand: mistel
   name: Air One
@@ -62,7 +60,7 @@
     - https://mechanicalkeyboards.com/products/mistel-air-one
   specs: { formFactor: f65, technology: mechanical, lowProfile: true, hotSwap: none, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 295, widthMm: 308, depthMm: 100 }
   variants:
-    - { sku: MD68-CUSBLGRA1, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: MD68-CUSBLGRA1, colorName: Grey, colorFamily: black, layout: ansi_us, switch: cherry-mx-ulp-click }
 
 - slug: mistel-barocco-split
   brand: mistel

@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 22 modèles, yunzii.com (prix € estimés depuis les prix US)
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
 - slug: yunzii-b98-pro
   brand: yunzii
   name: B98 PRO
@@ -26,27 +25,27 @@
     - https://yunzii.com/products/yunzii-b98-pro-qmk-via-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true, widthMm: 414, depthMm: 142 }
   variants:
-    - { sku: b98-pro-pink-milk-v2-de, colorName: Pink, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-pink-milk-v2-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
     - { sku: b98-pro-pink-candy-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
-    - { sku: b98-pro-beige-milk-v2-de, colorName: Beige, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-beige-milk-v2-de, colorName: Beige, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
     - { sku: b98-pro-beige-candy-de, colorName: Beige, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
-    - { sku: b98-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de }
+    - { sku: b98-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
     - { sku: b98-pro-matcha-green-candy-de, colorName: Matcha Green, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
-    - { sku: b98-pro-pink-milk-v2-fr, colorName: Pink, colorFamily: color, layout: iso_fr }
+    - { sku: b98-pro-pink-milk-v2-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-milk-v2 }
     - { sku: b98-pro-pink-candy-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
-    - { sku: b98-pro-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-pink-candy, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-blue-milk-v2, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-blue-milk-v2, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-blue-candy, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: b98-pro-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-matcha-green-milk-v2, colorName: Matcha Green, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-matcha-green-milk-v2, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-matcha-green-candy, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-coffee-brown-milk-v2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-coffee-brown-milk-v2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-coffee-brown-candy, colorName: Coffee Brown, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b98-pro-purple-milk-v2, colorName: Lilac Purple, colorFamily: color, layout: ansi_us }
+    - { sku: b98-pro-purple-milk-v2, colorName: Lilac Purple, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: b98-pro-purple-candy, colorName: Lilac Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
 
 - slug: yunzii-if75
@@ -74,7 +73,6 @@
     - { sku: if75-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
     - { sku: if75-black-onyx-gray, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
 
-# à vérifier : switch « YUNZII Cocoa V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-cocoa-v2-linear)
 - slug: yunzii-al98-pro
   brand: yunzii
   name: AL98 PRO
@@ -92,13 +90,12 @@
     - https://yunzii.com/products/yunzii-al98-pro-dual-8k-wireless-aluminum-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, wristRestIncluded: true, widthMm: 404, depthMm: 136 }
   variants:
-    - { sku: al98pro-white-cocoa-v2, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: al98pro-white-cocoa-v2, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: al98pro-white-candy, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: al98pro-pink-cocoa-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: al98pro-black-cocoa-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: al98pro-pink-cocoa-v2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: al98pro-black-cocoa-v2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: al98pro-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
 - slug: yunzii-if68
   brand: yunzii
   name: IF68
@@ -116,14 +113,13 @@
     - https://yunzii.com/products/yunzii-if68-qmk-via-wireless-mechanical-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, macSupport: true, batteryMah: 8000, soundDampening: true, widthMm: 327, depthMm: 117 }
   variants:
-    - { sku: if68-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: if68-pink-milk-v2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: if68-pink-candy, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: if68-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: if68-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: if68-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: if68-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: if68-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: if68-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
 - slug: yunzii-c75
   brand: yunzii
   name: C75
@@ -144,22 +140,17 @@
     - https://yunzii.com/products/yunzii-c75-cake-meow-wireless-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 5500, weightG: 1008, widthMm: 336, depthMm: 162 }
   variants:
-    - { sku: c75-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: c75-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us }
+    - { sku: c75-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: c75-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c75-purple-mao-candy-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
     - { sku: c75-pink-candy-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c75-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: c75-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c75-beige-candy-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c75-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us }
+    - { sku: c75-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c75-choco-candy-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c75-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: c75-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c75-blue-candy-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « YUNZII Milk V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2)
-# à vérifier : switch « YUNZII Cocoa Cream V2 Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
-# à vérifier : switch « Cocoa Cream V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2)
-# à vérifier : switch « Milk Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk)
-# à vérifier : switch « Blue Grey Tactile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug blue-grey-tactile)
 - slug: yunzii-b75-pro
   brand: yunzii
   name: B75 Pro
@@ -186,23 +177,36 @@
     - https://yunzii.com/products/yunzii-b75-pro-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 907, widthMm: 334, depthMm: 144 }
   variants:
-    - { sku: B75-PRO-Coffee-Brown-MilkV2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us }
-    - { sku: B75-PRO-Olive-Green-MilkV2, colorName: Olive Green, colorFamily: color, layout: ansi_us }
-    - { sku: b75-pro-pink-heart-milk-v2-de, colorName: Pink Heart, colorFamily: color, layout: iso_de }
-    - { sku: b75-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de }
-    - { sku: b75-pro-black-purple-milk-v2-de, colorName: Black Purple, colorFamily: black, layout: iso_de }
-    - { sku: b75-pro-pink-heart-milk-v2-fr, colorName: Pink Heart, colorFamily: color, layout: iso_fr }
-    - { sku: b75-pro-matcha-green-milk-v2-fr, colorName: Matcha Green, colorFamily: color, layout: iso_fr }
-    - { sku: b75-pro-black-purple-milk-v2-fr, colorName: Black Purple, colorFamily: black, layout: iso_fr }
-    - { sku: B75-PRO-Matcha-Green-MilkV2, colorName: Matcha Green, colorFamily: color, layout: ansi_us }
-    - { sku: B75 PRO Pink Milk V2 Switch, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: B75-PRO-White-Heart-MilkV2, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: B75-PRO-Black-Heart-MilkV2, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: B75 PRO Dark Grey Cocoa Cream V2 Switch, colorName: Dark Gray, colorFamily: black, layout: ansi_us }
-    - { sku: B75 PRO Purple Milk Switch, colorName: Purple, colorFamily: color, layout: ansi_us }
-    - { sku: B75 PRO Grey Milk Switch, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: B75-PRO-Coffee-Brown-MilkV2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75-PRO-Coffee-Brown-CocoaV2, colorName: Coffee Brown, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75-PRO-Olive-Green-MilkV2, colorName: Olive Green, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75-PRO-Olive-Green-CocoaV2, colorName: Olive Green, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b75-pro-pink-heart-milk-v2-de, colorName: Pink Heart, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-pink-heart-cocoa-v2-de, colorName: Pink Heart, colorFamily: color, layout: iso_de, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b75-pro-matcha-green-milk-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-matcha-green-cocoa-v2-de, colorName: Matcha Green, colorFamily: color, layout: iso_de, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b75-pro-black-purple-milk-v2-de, colorName: Black Purple, colorFamily: black, layout: iso_de, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-pink-heart-milk-v2-fr, colorName: Pink Heart, colorFamily: color, layout: iso_fr, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-pink-heart-cocoa-v2-fr, colorName: Pink Heart, colorFamily: color, layout: iso_fr, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b75-pro-matcha-green-milk-v2-fr, colorName: Matcha Green, colorFamily: color, layout: iso_fr, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-black-purple-milk-v2-fr, colorName: Black Purple, colorFamily: black, layout: iso_fr, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-black-purple-cocoa-v2-fr, colorName: Black Purple, colorFamily: black, layout: iso_fr, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75-PRO-Matcha-Green-MilkV2, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75-PRO-Matcha-Green-Cocoa-CreamV2, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75 PRO Pink Milk V2 Switch, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75 PRO Pink Cocoa Cream V2 Switch, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75-PRO-White-Heart-MilkV2, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75-PRO-White-Heart-Cocoa-CreamV2, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75-PRO-Black-Heart-MilkV2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: B75-PRO-Black-Heart-CocoaV2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75 PRO Dark Grey Cocoa Cream V2 Switch, colorName: Dark Gray, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75 PRO Dark Grey Milk Switch, colorName: Dark Gray, colorFamily: black, layout: ansi_us, switch: yunzii-milk }
+    - { sku: B75 PRO Dark Grey Blue Grey Switch, colorName: Dark Gray, colorFamily: black, layout: ansi_us, switch: yunzii-blue-grey-tactile }
+    - { sku: B75 PRO Purple Milk Switch, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-milk }
+    - { sku: B75 PRO Purple Cocoa Cream V2 Switch, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: B75 PRO Grey Milk Switch, colorName: Grey, colorFamily: black, layout: ansi_us, switch: yunzii-milk }
+    - { sku: B75 PRO Grey Cocoa Cream V2 Switch, colorName: Grey, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
 
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
 - slug: yunzii-c98
   brand: yunzii
   name: C98
@@ -225,27 +229,26 @@
     - https://yunzii.com/products/yunzii-c98-cake-meow-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1332, widthMm: 406, depthMm: 168 }
   variants:
-    - { sku: c98-pink-milk-v2-linear-de, colorName: Pink, colorFamily: color, layout: iso_de }
+    - { sku: c98-pink-milk-v2-linear-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
     - { sku: c98-pink-candy-linear-de, colorName: Pink, colorFamily: color, layout: iso_de, switch: yunzii-candy-linear }
-    - { sku: c98-beige-milk-v2-linear-de, colorName: Beige, colorFamily: color, layout: iso_de }
-    - { sku: c98-pink-milk-v2-linear-fr, colorName: Pink, colorFamily: color, layout: iso_fr }
+    - { sku: c98-beige-milk-v2-linear-de, colorName: Beige, colorFamily: color, layout: iso_de, switch: yunzii-milk-v2 }
+    - { sku: c98-pink-milk-v2-linear-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-milk-v2 }
     - { sku: c98-pink-candy-linear-fr, colorName: Pink, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
-    - { sku: c98-beige-milk-v2-linear-fr, colorName: Beige, colorFamily: color, layout: iso_fr }
+    - { sku: c98-beige-milk-v2-linear-fr, colorName: Beige, colorFamily: color, layout: iso_fr, switch: yunzii-milk-v2 }
     - { sku: c98-beige-candy-linear-fr, colorName: Beige, colorFamily: color, layout: iso_fr, switch: yunzii-candy-linear }
-    - { sku: c98-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: c98-pink-mao-milk-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-pink-mao-candy-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c98-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us }
+    - { sku: c98-purple-mao-milk-v2-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-purple-mao-candy-linear, colorName: Purple, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c98-green-mao-milk-v2-linear, colorName: Green, colorFamily: color, layout: ansi_us }
+    - { sku: c98-green-mao-milk-v2-linear, colorName: Green, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-green-mao-candy-linear, colorName: Green, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c98-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: c98-beige-milk-v2-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-beige-candy-linear, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c98-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us }
+    - { sku: c98-choco-milk-v2-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-choco-candy-linear, colorName: Choco, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: c98-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: c98-blue-milk-v2-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
     - { sku: c98-blue-candy-linear, colorName: Blue, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « Snow Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug snow-linear)
 - slug: yunzii-x98
   brand: yunzii
   name: X98
@@ -266,15 +269,15 @@
     - https://yunzii.com/products/yunzii-x98-transparent-qmk-via-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true, weightG: 1270, widthMm: 391, depthMm: 142 }
   variants:
-    - { sku: x98-milky-white-snow-switch, colorName: Milky White, colorFamily: white, layout: ansi_us }
+    - { sku: x98-milky-white-snow-switch, colorName: Milky White, colorFamily: white, layout: ansi_us, switch: yunzii-snow-linear }
     - { sku: x98-milky-white-crystal-switch, colorName: Milky White, colorFamily: white, layout: ansi_us, switch: yunzii-crystal-linear }
-    - { sku: x98-white-snow-switch, colorName: Transparent White, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-white-snow-switch, colorName: Transparent White, colorFamily: transparent, layout: ansi_us, switch: yunzii-snow-linear }
     - { sku: x98-white-crystal-switch, colorName: Transparent White, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
-    - { sku: x98-pink-snow-switch, colorName: Transparent Pink, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-pink-snow-switch, colorName: Transparent Pink, colorFamily: transparent, layout: ansi_us, switch: yunzii-snow-linear }
     - { sku: x98-pink-crystal-switch, colorName: Transparent Pink, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
-    - { sku: x98-purple-snow-switch, colorName: Transparent Purple, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-purple-snow-switch, colorName: Transparent Purple, colorFamily: transparent, layout: ansi_us, switch: yunzii-snow-linear }
     - { sku: x98-purple-crystal-switch, colorName: Transparent Purple, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
-    - { sku: x98-transparent-black-snow-switch, colorName: Transparent Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: x98-transparent-black-snow-switch, colorName: Transparent Black, colorFamily: transparent, layout: ansi_us, switch: yunzii-snow-linear }
     - { sku: x98-transparent-black-crystal-switch, colorName: Transparent Black, colorFamily: transparent, layout: ansi_us, switch: yunzii-crystal-linear }
 
 - slug: yunzii-wood84
@@ -294,8 +297,6 @@
   variants:
     - { sku: wood84-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
-# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
 - slug: yunzii-b75-pro-max
   brand: yunzii
   name: B75 PRO MAX
@@ -313,17 +314,19 @@
     - https://yunzii.com/products/yunzii-b75-pro-max-qmk-via-knob-tft-screen-wireless-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, batteryMah: 8000, soundDampening: true, weightG: 993, widthMm: 334, depthMm: 144 }
   variants:
-    - { sku: b75-pro-max-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: b75-pro-max-black-milk-v2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-max-black-cocoa-v2, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: b75-pro-max-black-candy, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b75-pro-max-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: b75-pro-max-beige-milk-v2, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-max-beige-cocoa-v2, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: b75-pro-max-beige-candy, colorName: Beige, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b75-pro-max-white-heart-milk-v2, colorName: White Heart, colorFamily: white, layout: ansi_us }
+    - { sku: b75-pro-max-white-heart-milk-v2, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-max-white-heart-cocoa-v2, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: b75-pro-max-white-heart-candy, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-candy-linear }
-    - { sku: b75-pro-max-pink-heart-milk-v2, colorName: Pink Heart, colorFamily: color, layout: ansi_us }
+    - { sku: b75-pro-max-pink-heart-milk-v2, colorName: Pink Heart, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b75-pro-max-pink-heart-cocoa-v2, colorName: Pink Heart, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
     - { sku: b75-pro-max-pink-heart-candy, colorName: Pink Heart, colorFamily: color, layout: ansi_us, switch: yunzii-candy-linear }
 
-# à vérifier : switch « Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk-v2-linear)
-# à vérifier : switch « Cocoa Cream V2 Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2)
 - slug: yunzii-b87
   brand: yunzii
   name: B87
@@ -349,12 +352,18 @@
     - https://yunzii.com/products/yunzii-b87-qmk-via-custom-mechanical-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1128, widthMm: 373, depthMm: 147 }
   variants:
-    - { sku: b87-matcha-heart-milk-v2-wrist-rest, colorName: Matcha Heart, colorFamily: color, layout: ansi_us }
-    - { sku: b87-brown-heart-milk-v2-wrist-rest, colorName: Brown Heart, colorFamily: color, layout: ansi_us }
-    - { sku: b87-purple-heart-milk-v2-wrist-rest, colorName: Purple Heart, colorFamily: color, layout: ansi_us }
-    - { sku: b87-blue-heart-milk-v2-wrist-rest, colorName: Blue Heart, colorFamily: color, layout: ansi_us }
-    - { sku: b87-white-heart-milk-v2-wrist-rest, colorName: White Heart, colorFamily: white, layout: ansi_us }
-    - { sku: b87 pink milk v2 linear wrist rest, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: b87-matcha-heart-milk-v2-wrist-rest, colorName: Matcha Heart, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87-matcha-heart-cocoa-v2-wrist-rest, colorName: Matcha Heart, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b87-brown-heart-milk-v2-wrist-rest, colorName: Brown Heart, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87-brown-heart-cocoa-v2-wrist-rest, colorName: Brown Heart, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b87-purple-heart-milk-v2-wrist-rest, colorName: Purple Heart, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87-purple-heart-cocoa-v2-wrist-rest, colorName: Purple Heart, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b87-blue-heart-milk-v2-wrist-rest, colorName: Blue Heart, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87-blue-heart-cocoa-v2-wrist-rest, colorName: Blue Heart, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b87-white-heart-milk-v2-wrist-rest, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87-white-heart-cocoa-v2-wrist-rest, colorName: White Heart, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: b87 pink milk v2 linear wrist rest, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: b87 pink cocoa cream v2 linear wrist rest, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
 
 # à vérifier : switch « Outemu Magnetic Red Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug outemu-magnetic-red)
 - slug: yunzii-rt75-pro
@@ -379,8 +388,6 @@
     - { sku: rt75-pro-pink-magnetic-red, colorName: Pink, colorFamily: color, layout: ansi_us }
     - { sku: rt75-pro-gradient-black-magnetic-red, colorName: Gradient Black, colorFamily: black, layout: ansi_us }
 
-# à vérifier : switch « YUNZII Milk V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yunzii-milk-v2-linear)
-# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
 - slug: yunzii-mikiby
   brand: yunzii
   name: MIKIBY
@@ -398,8 +405,10 @@
     - https://yunzii.com/products/mikiby-k98-full-size-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 1144, widthMm: 385, depthMm: 146 }
   variants:
-    - { sku: k98-white-red-milk-v2, colorName: White Red, colorFamily: white, layout: ansi_us }
-    - { sku: k98-white-blue-milk-v2, colorName: White Blue, colorFamily: white, layout: ansi_us }
+    - { sku: k98-white-red-milk-v2, colorName: White Red, colorFamily: white, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: k98-white-red-cocoa-v2, colorName: White Red, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: k98-white-blue-milk-v2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: yunzii-milk-v2 }
+    - { sku: k98-white-blue-cocoa-v2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
 
 - slug: yunzii-ql108
   brand: yunzii
@@ -420,8 +429,6 @@
   variants:
     - { sku: ql108-pink-onyx-gray-tactile-wired, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-gray-tactile-clicky }
 
-# à vérifier : switch « Onyx Tactile Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug onyx-tactile)
-# à vérifier : switch « Cocoa Cream V2 Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2-linear)
 - slug: yunzii-ql75
   brand: yunzii
   name: QL75
@@ -443,14 +450,15 @@
     - https://yunzii.com/products/yunzii-ql75-retro-typewriter-qmk-via-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 4000, weightG: 1462, widthMm: 328, depthMm: 215 }
   variants:
-    - { sku: ql75-white-onyx-tactile, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: ql75-wood-onyx-tactile, colorName: Wood, colorFamily: color, layout: ansi_us }
-    - { sku: pre-order-ql75-wood-cocoa-cream-v2-linear, colorName: PRE-ORDER Wood, colorFamily: color, layout: ansi_us }
-    - { sku: ql75-green-onyx-tactile, colorName: Green, colorFamily: color, layout: ansi_us }
-    - { sku: ql75-pink-onyx-tactile, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: ql75-white-onyx-tactile, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-onyx-tactile-clicky }
+    - { sku: ql75-white-cocoa-cream-v2-linear, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: ql75-wood-onyx-tactile, colorName: Wood, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-tactile-clicky }
+    - { sku: pre-order-ql75-wood-cocoa-cream-v2-linear, colorName: PRE-ORDER Wood, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: ql75-green-onyx-tactile, colorName: Green, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-tactile-clicky }
+    - { sku: ql75-green-cocoa-cream-v2-linear, colorName: Green, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: ql75-pink-onyx-tactile, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-onyx-tactile-clicky }
+    - { sku: ql75-pink-cocoa-cream-v2-linear, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
 
-# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
-# à vérifier : switch « Gateron Zero Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-zero-linear)
 - slug: yunzii-if99
   brand: yunzii
   name: IF99
@@ -466,11 +474,11 @@
     - https://yunzii.com/products/yunzii-if99-qmk-via-full-size-lcd-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, screen: true, firmware: qmk, macSupport: true, batteryMah: 8000, weightG: 1239, widthMm: 385, depthMm: 143 }
   variants:
-    - { sku: if99 white cocoa cream v2 linear, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: if99 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: if99 white cocoa cream v2 linear, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: if99 white zero linear, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-zero }
+    - { sku: if99 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: if99 black zero linear, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-zero }
 
-# à vérifier : switch « YUNZII Cocoa Cream V2 Linear Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug yunzii-cocoa-cream-v2-linear)
-# à vérifier : switch « Gateron Zero Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-zero-linear)
 - slug: yunzii-al80
   brand: yunzii
   name: AL80
@@ -488,9 +496,11 @@
     - https://yunzii.com/products/yunzii-al80-qmk-via-aluminum-lcd-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: qmk, batteryMah: 6000, weightG: 1439, widthMm: 314, depthMm: 138 }
   variants:
-    - { sku: AL80 silver cocoa cream v2 linear, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: AL80 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: AL80 silver cocoa cream v2 linear, colorName: Silver, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: AL80 silver zero linear, colorName: Silver, colorFamily: white, layout: ansi_us, switch: gateron-zero }
+    - { sku: AL80 black cocoa cream v2 linear, colorName: Black, colorFamily: black, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
 
+# technologie : membrane (« Keyboard Type: Membrane Keyboard ») : https://yunzii.com/products/yunzii-actto-b305-wireless-keyboard-mint
 - slug: yunzii-actto-75
   brand: yunzii
   name: ACTTO 75%
@@ -511,7 +521,7 @@
     - https://yunzii.com/products/yunzii-actto-b309-upgraded-rechargeable-wireless-retro-typewriter-keyboard
     - https://yunzii.com/products/yunzii-actto-b305-wireless-keyboard-mint
     - https://yunzii.com/products/yunzii-actto-b303-wireless-keyboard-mint-green
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 366, depthMm: 200 }
+  specs: { formFactor: f75, technology: membrane, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 366, depthMm: 200 }
   variants:
     - { sku: b305 white, colorName: Snow White, colorFamily: white, layout: ansi_us }
     - { sku: fbm b305 midnight, colorName: Midnight Navy, colorFamily: black, layout: ansi_us }
@@ -519,7 +529,6 @@
     - { sku: b309 sand beige, colorName: Sand Beige, colorFamily: color, layout: ansi_us }
     - { sku: B303-BLUE-ENGLISH, colorName: B303, colorFamily: color, layout: ansi_us }
 
-# à vérifier : switch « Crystal Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug crystal)
 - slug: yunzii-x71
   brand: yunzii
   name: X71
@@ -537,11 +546,9 @@
     - https://yunzii.com/products/yunzii-x71-transparent-wireless-gasket-mechanical-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4600, soundDampening: true, weightG: 990, widthMm: 348, depthMm: 113 }
   variants:
-    - { sku: x71 white crystal ice, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: x71 pink crystal ice, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: x71 white crystal ice, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-crystal-linear }
+    - { sku: x71 pink crystal ice, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-crystal-linear }
 
-# à vérifier : switch « Cocoa Cream V2-Early Bottoming » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug cocoa-cream-v2-early-bottoming)
-# à vérifier : switch « Milk-Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug milk-linear)
 - slug: yunzii-c68
   brand: yunzii
   name: C68
@@ -558,9 +565,12 @@
     - https://yunzii.com/products/yunzii-c68
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, batteryMah: 4000, weightG: 1591, widthMm: 380, depthMm: 181 }
   variants:
-    - { sku: c68 keyboard pink cocoa cream v2, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: c68 keyboard coffee cocoa cream v2, colorName: Coffee, colorFamily: color, layout: ansi_us }
+    - { sku: c68 keyboard pink cocoa cream v2, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: c68 keyboard pink milk, colorName: Pink, colorFamily: color, layout: ansi_us, switch: yunzii-milk }
+    - { sku: c68 keyboard coffee cocoa cream v2, colorName: Coffee, colorFamily: color, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
+    - { sku: c68 keyboard coffee milk, colorName: Coffee, colorFamily: color, layout: ansi_us, switch: yunzii-milk }
 
+# technologie : membrane (« Keyboard Type: Membrane Keyboard ») : https://yunzii.com/products/yunzii-actto-b307-baby-pink-upgraded-rechargeable-wireless-retro-typewriter-keyboard
 - slug: yunzii-actto-65
   brand: yunzii
   name: ACTTO 65%
@@ -576,7 +586,7 @@
     - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_89fe5b03-3e41-4654-a80a-756c6a242106.jpg?v=1701424799, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://yunzii.com/products/yunzii-actto-b307-baby-pink-upgraded-rechargeable-wireless-retro-typewriter-keyboard
-  specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 500, weightG: 800, widthMm: 344, depthMm: 180 }
+  specs: { formFactor: f65, technology: membrane, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 500, weightG: 800, widthMm: 344, depthMm: 180 }
   variants:
     - { sku: b307 pink, colorName: Baby Pink, colorFamily: color, layout: ansi_us }
     - { sku: b307 white, colorName: Snow White, colorFamily: white, layout: ansi_us }

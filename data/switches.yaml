@@ -90,3 +90,274 @@
 - { slug: logitech-optical-tactile, brand: Logitech, name: Optical Tactile, feel: tactile, tech: optical }
 - { slug: logitech-tactile, brand: Logitech, name: Tactile, feel: tactile, tech: mechanical }
 - { slug: logitech-tactile-quiet, brand: Logitech, name: Tactile Quiet, feel: tactile, tech: mechanical }
+
+# Switchs relevés à la main sur les fiches des fabricants (2026-10-24), pour les claviers importés sans leur switch.
+# Force : force d'actionnement (ou force de départ pour un switch magnétique, dont la pré-course se règle).
+
+# Gateron G Pro, tableau officiel : https://www.gateron.com/products/gateron-g-pro-3-pin-switch-features
+- { slug: gateron-g-pro-red, brand: Gateron, name: G Pro Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-brown, brand: Gateron, name: G Pro Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-blue, brand: Gateron, name: G Pro Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2.3, totalTravelMm: 4 }
+- { slug: gateron-g-pro-yellow, brand: Gateron, name: G Pro Yellow, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-silver, brand: Gateron, name: G Pro Silver, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.2, totalTravelMm: 3.4, factoryLubed: true }
+# Gateron G Pro 2.0, tableau officiel : https://www.gateron.com/products/gateron-g-pro-20-5-pin-switch-set
+- { slug: gateron-g-pro-2-0-red, brand: Gateron, name: G Pro 2.0 Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-2-0-brown, brand: Gateron, name: G Pro 2.0 Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-2-0-yellow, brand: Gateron, name: G Pro 2.0 Yellow, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-2-0-white, brand: Gateron, name: G Pro 2.0 White, feel: linear, tech: mechanical, actuationForceG: 38, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: gateron-g-pro-2-0-silver, brand: Gateron, name: G Pro 2.0 Silver, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.2, totalTravelMm: 3.4, factoryLubed: true }
+# Gateron Low Profile 2.0 (KS-33), tableau officiel : https://www.gateron.com/products/gateron-ks-33-low-profile-20-switch-set (couleurs lues sur les photos de chaque ligne) ;
+# c'est le switch « Low Profile Gateron Mechanical » des claviers Keychron, lubrifié sauf le Blue : https://www.keychron.com/products/low-profile-gateron-mechanical-switch-set
+- { slug: gateron-low-profile-2-0-red, brand: Gateron, name: Low Profile 2.0 Red, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.7, totalTravelMm: 3.2, factoryLubed: true }
+- { slug: gateron-low-profile-2-0-brown, brand: Gateron, name: Low Profile 2.0 Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 1.7, totalTravelMm: 3.2, factoryLubed: true }
+- { slug: gateron-low-profile-2-0-blue, brand: Gateron, name: Low Profile 2.0 Blue, feel: clicky, tech: mechanical, actuationForceG: 65, preTravelMm: 1.7, totalTravelMm: 3.2 }
+# https://www.gateron.com/products/gateron-ks-33-low-profile-20-banana-switch
+- { slug: gateron-low-profile-2-0-banana, brand: Gateron, name: Low Profile 2.0 Banana, feel: tactile, tech: mechanical, actuationForceG: 60, preTravelMm: 1.7, totalTravelMm: 3, factoryLubed: true }
+# Gateron optiques KS-15, tableau officiel : https://www.gateron.com/products/gateron-ks-15-optical-switch-set (Keychron ne précise pas la version montée)
+- { slug: gateron-optical-red, brand: Gateron, name: Optical Red, feel: linear, tech: optical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: gateron-optical-brown, brand: Gateron, name: Optical Brown, feel: tactile, tech: optical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: gateron-optical-blue, brand: Gateron, name: Optical Blue, feel: clicky, tech: optical, actuationForceG: 55, preTravelMm: 2.3, totalTravelMm: 4 }
+# https://www.gateron.com/products/gateron-zero-switch-set
+- { slug: gateron-zero, brand: Gateron, name: Zero, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+# Gateron Double-Rail, tableau en image : https://www.keychron.com/products/gateron-double-rail-magnetic-switch
+- { slug: gateron-double-rail-magnetic-nebula, brand: Gateron, name: Double-Rail Magnetic Nebula, feel: linear, tech: magnetic, actuationForceG: 40, bottomOutG: 60, totalTravelMm: 4, factoryLubed: true }
+
+# Keychron K Pro, tableau en image : https://www.keychron.com/products/keychron-k-pro-switch
+- { slug: keychron-k-pro-red, brand: Keychron, name: K Pro Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: keychron-k-pro-blue, brand: Keychron, name: K Pro Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-k-pro-yellow, brand: Keychron, name: K Pro Yellow, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+- { slug: keychron-k-pro-silver, brand: Keychron, name: K Pro Silver, feel: linear, tech: mechanical, actuationForceG: 42, preTravelMm: 1.3, totalTravelMm: 3.3, factoryLubed: true }
+# Keychron Mechanical, tableau en image : https://www.keychron.com/products/keychron-mechanical-switch-set
+- { slug: keychron-mechanical-red, brand: Keychron, name: Mechanical Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-mechanical-brown, brand: Keychron, name: Mechanical Brown, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: keychron-mechanical-blue, brand: Keychron, name: Mechanical Blue, feel: clicky, tech: mechanical, actuationForceG: 60, preTravelMm: 2, totalTravelMm: 4 }
+# Keychron Optical, tableau en image : https://www.keychron.com/products/keychron-optical-switch-set
+- { slug: keychron-optical-red, brand: Keychron, name: Optical Red, feel: linear, tech: optical, actuationForceG: 40, preTravelMm: 1.8, totalTravelMm: 4 }
+- { slug: keychron-optical-brown, brand: Keychron, name: Optical Brown, feel: tactile, tech: optical, actuationForceG: 55, preTravelMm: 1.8, totalTravelMm: 4 }
+- { slug: keychron-optical-blue, brand: Keychron, name: Optical Blue, feel: clicky, tech: optical, actuationForceG: 55, preTravelMm: 1.8, totalTravelMm: 4 }
+# Keychron Low Profile Optical, tableau en image : https://www.keychron.com/products/low-profile-keychron-optical-switch-set-87-pcs
+- { slug: keychron-low-profile-optical-red, brand: Keychron, name: Low Profile Optical Red, feel: linear, tech: optical, actuationForceG: 40, preTravelMm: 1.1, totalTravelMm: 2.5 }
+- { slug: keychron-low-profile-optical-brown, brand: Keychron, name: Low Profile Optical Brown, feel: tactile, tech: optical, actuationForceG: 57, preTravelMm: 1.1, totalTravelMm: 2.5 }
+- { slug: keychron-low-profile-optical-blue, brand: Keychron, name: Low Profile Optical Blue, feel: clicky, tech: optical, actuationForceG: 48, preTravelMm: 1.1, totalTravelMm: 2.5 }
+- { slug: keychron-low-profile-optical-banana, brand: Keychron, name: Low Profile Optical Banana, feel: tactile, tech: optical, actuationForceG: 57, preTravelMm: 1.1, totalTravelMm: 2.5 }
+- { slug: keychron-low-profile-optical-mint, brand: Keychron, name: Low Profile Optical Mint, feel: tactile, tech: optical, actuationForceG: 67, preTravelMm: 1.1, totalTravelMm: 2.5 }
+# LK Optical, tableau en image : https://www.keychron.com/products/lk-optical-switch-set
+- { slug: lk-optical-red, brand: LK, name: Optical Red, feel: linear, tech: optical, actuationForceG: 40, preTravelMm: 1.8, totalTravelMm: 4 }
+- { slug: lk-optical-brown, brand: LK, name: Optical Brown, feel: tactile, tech: optical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 4 }
+- { slug: lk-optical-blue, brand: LK, name: Optical Blue, feel: clicky, tech: optical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 4 }
+# Keychron Milk POM Low Profile, tableau : https://www.keychron.com/products/keychron-milk-pom-switch
+- { slug: keychron-milk-pom-low-profile-brown, brand: Keychron, name: Milk POM Low Profile Brown, feel: tactile, tech: mechanical, actuationForceG: 50, preTravelMm: 1.7, totalTravelMm: 3.1, factoryLubed: true }
+- { slug: keychron-milk-pom-low-profile-banana, brand: Keychron, name: Milk POM Low Profile Banana, feel: tactile, tech: mechanical, actuationForceG: 57, preTravelMm: 1.7, totalTravelMm: 3.1, factoryLubed: true }
+# Keychron Ultra-Fast Lime (magnétiques), tableau en image : https://www.keychron.com/products/keychron-ultra-fast-lime-magnetic-switch
+- { slug: keychron-ultra-fast-lime-magnetic, brand: Keychron, name: Ultra-Fast Lime Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5, factoryLubed: true }
+- { slug: keychron-ultra-fast-lime-magnetic-banana, brand: Keychron, name: Ultra-Fast Lime Magnetic Banana, feel: tactile, tech: magnetic, actuationForceG: 30, bottomOutG: 50, totalTravelMm: 3.5, factoryLubed: true }
+- { slug: keychron-ultra-fast-lime-magnetic-silent-red, brand: Keychron, name: Ultra-Fast Lime Magnetic Silent Red, feel: linear, silent: true, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5, factoryLubed: true }
+- { slug: keychron-ultra-fast-lime-magnetic-silent-banana, brand: Keychron, name: Ultra-Fast Lime Magnetic Silent Banana, feel: tactile, silent: true, tech: magnetic, actuationForceG: 30, bottomOutG: 50, totalTravelMm: 3.5, factoryLubed: true }
+
+# Epomaker, fiches de la boutique officielle (epomaker.com)
+# https://epomaker.com/products/epomaker-creamy-jade-switch-set
+- { slug: epomaker-creamy-jade, brand: Epomaker, name: Creamy Jade, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+# https://epomaker.com/products/epomaker-creamy-jade-magnetic-switch-set
+- { slug: epomaker-creamy-jade-magnetic, brand: Epomaker, name: Creamy Jade Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5, factoryLubed: true }
+# https://epomaker.com/products/epomaker-sea-salt-switch-set-v2
+- { slug: epomaker-sea-salt-silent-v2, brand: Epomaker, name: Sea Salt Silent V2, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, bottomOutG: 51, preTravelMm: 1.8, totalTravelMm: 3.5, factoryLubed: true }
+# https://epomaker.com/products/epomaker-wisteria-switches-set (« Specifications for Epomaker Wisteria V2 Switch »)
+- { slug: epomaker-wisteria-v2, brand: Epomaker, name: Wisteria V2, feel: linear, tech: mechanical, actuationForceG: 38, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+# https://epomaker.com/products/epomaker-crystal-tactile-silent-switch, courses et fin de course lues sur https://epomaker.com/products/epomaker-th65
+- { slug: epomaker-crystal-tactile-silent, brand: Epomaker, name: Crystal Tactile Silent, feel: tactile, silent: true, tech: mechanical, actuationForceG: 35, bottomOutG: 52, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+
+# Yunzii, fiches de la boutique officielle (yunzii.com)
+# https://yunzii.com/products/yunzii-mlik-v2-5-pin-mechanical-keyboard-linear-switch
+- { slug: yunzii-milk-v2, brand: Yunzii, name: Milk V2, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.6, factoryLubed: true }
+# https://yunzii.com/products/yunzii-mlik-3-pin-mechanical-keyboard-linear-switch
+- { slug: yunzii-milk, brand: Yunzii, name: Milk, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+# https://yunzii.com/products/yunzii-cocoa-cream-v2-switch
+- { slug: yunzii-cocoa-cream-v2, brand: Yunzii, name: Cocoa Cream V2, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 3.3, factoryLubed: true }
+# https://yunzii.com/products/yunzii-blue-grey-tactile-switch
+- { slug: yunzii-blue-grey-tactile, brand: Yunzii, name: Blue Grey Tactile, feel: tactile, tech: mechanical, actuationForceG: 37, preTravelMm: 2.3, totalTravelMm: 3.6, factoryLubed: true }
+# https://yunzii.com/products/yunzii-snow-linear-5-pin-mechanical-switch
+- { slug: yunzii-snow-linear, brand: Yunzii, name: Snow Linear, feel: linear, tech: mechanical, actuationForceG: 35, preTravelMm: 1.5, totalTravelMm: 3.6, factoryLubed: true }
+# https://yunzii.com/products/yunzii-onyx-tactile-clicky-mechanical-switch
+- { slug: yunzii-onyx-tactile-clicky, brand: Yunzii, name: Onyx Tactile Clicky, feel: clicky, tech: mechanical, actuationForceG: 43, preTravelMm: 2, totalTravelMm: 3.9, factoryLubed: true }
+
+# Razer, sachets de switchs du site français : https://www.razer.com/fr-fr/gaming-keyboards-accessories/razer-mechanical-switches/RC21-02040100-R3M1 (jaune, « linéaire et silencieux »), …-02040200-R3M1 (vert), …-02040300-R3M1 (orange, « tactile et silencieuse »)
+- { slug: razer-yellow, brand: Razer, name: Yellow, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, preTravelMm: 1.2, totalTravelMm: 3.5 }
+- { slug: razer-green, brand: Razer, name: Green, feel: clicky, tech: mechanical, actuationForceG: 50, preTravelMm: 1.9, totalTravelMm: 4 }
+- { slug: razer-orange, brand: Razer, name: Orange, feel: tactile, silent: true, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 3.5 }
+# Razer optiques et magnétiques : ressenti seul, lu sur les fiches des claviers (razer.com/fr-fr, « Toucher de touche ») ; un même nom y couvre des switchs de hauteurs différentes (Huntsman, DeathStalker ultraplat)
+- { slug: razer-clicky-optical, brand: Razer, name: Clicky Optical (Purple), feel: clicky, tech: optical }
+- { slug: razer-linear-optical, brand: Razer, name: Linear Optical (Red), feel: linear, tech: optical }
+- { slug: razer-analog-optical, brand: Razer, name: Analog Optical, feel: linear, tech: optical }
+- { slug: razer-low-profile-analog-optical, brand: Razer, name: Low-Profile Analog Optical, feel: linear, tech: optical }
+- { slug: razer-hall-effect-magnetic, brand: Razer, name: Hall Effect Magnetic, feel: linear, tech: magnetic }
+
+# Corsair, page officielle de comparaison : https://www.corsair.com/us/en/explorer/gamer/keyboards/corsair-key-switches-compared/
+- { slug: corsair-mlx-red, brand: Corsair, name: MLX Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: corsair-mlx-plasma, brand: Corsair, name: MLX Plasma, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: corsair-mlx-pulse, brand: Corsair, name: MLX Pulse, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.6 }
+# OPX : « frappes fluides, linéaires » (fiche du K65 PRO MINI) ; Corsair n'a qu'un switch optique, aussi dans le Vanguard Air 99
+- { slug: corsair-opx, brand: Corsair, name: OPX, feel: linear, tech: optical, actuationForceG: 45, preTravelMm: 1, totalTravelMm: 3.2 }
+# MGX : un seul switch magnétique chez Corsair (« MGX V2 » dans les fiches techniques), linéaire, 30 à 55 g selon la profondeur
+- { slug: corsair-mgx-hyperdrive, brand: Corsair, name: MGX Hyperdrive, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 4 }
+
+# SteelSeries, page officielle des switchs : https://steelseries.com/innovation/keyboard-gaming-switches (course totale et force en cN : fiches FR des Apex 5 et Apex 7)
+- { slug: steelseries-qx2-red, brand: SteelSeries, name: QX2 Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: steelseries-optipoint-linear, brand: SteelSeries, name: OptiPoint Linear, feel: linear, tech: optical, actuationForceG: 35 }
+- { slug: steelseries-omnipoint-2-0, brand: SteelSeries, name: OmniPoint 2.0, feel: linear, tech: magnetic, actuationForceG: 45 }
+# Apex 5 : « le clic tactile satisfaisant d'un commutateur mécanique bleu », 50 cN, 2 / 4 mm : https://steelseries.com/fr-fr/gaming-keyboards/apex-5
+- { slug: steelseries-hybrid-blue, brand: SteelSeries, name: Hybrid Blue, feel: clicky, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 4 }
+
+# HyperX, fiches techniques des claviers (hyperx.com)
+# Red : linéaire ; 45 g, 1,8 / 3,8 mm sur l'Alloy Origins Core, 40 g et 4 mm sur les Alloy Rise et Origins 2 : ressenti seul
+- { slug: hyperx-red, brand: HyperX, name: Red, feel: linear, tech: mechanical }
+# Aqua : https://hyperx.com/products/hyperx-alloy-origins-60-mechanical-gaming-keyboard
+- { slug: hyperx-aqua, brand: HyperX, name: Aqua, feel: tactile, tech: mechanical, actuationForceG: 45, preTravelMm: 1.8, totalTravelMm: 3.8 }
+
+# Varmilo EC V2 (switchs à détection capacitive, rangés en mécanique) et L, page officielle : https://varmilo.com/pages/switches-parameter
+- { slug: varmilo-ec-sakura-v2, brand: Varmilo, name: EC Sakura V2, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: varmilo-ec-rose-v2, brand: Varmilo, name: EC Rose V2, feel: linear, tech: mechanical, actuationForceG: 55, bottomOutG: 65, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: varmilo-ec-daisy-v2, brand: Varmilo, name: EC Daisy V2, feel: linear, tech: mechanical, actuationForceG: 35, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: varmilo-ec-moxa-v2, brand: Varmilo, name: EC Moxa V2, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 55, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: varmilo-ec-jasmine-v2, brand: Varmilo, name: EC Jasmine V2, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 60, preTravelMm: 1, totalTravelMm: 3 }
+- { slug: varmilo-ec-ivy-v2, brand: Varmilo, name: EC Ivy V2, feel: clicky, tech: mechanical, actuationForceG: 50, bottomOutG: 65, preTravelMm: 2.3, totalTravelMm: 4 }
+- { slug: varmilo-ec-iris-v2, brand: Varmilo, name: EC Iris V2, feel: tactile, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 4 }
+- { slug: varmilo-ec-violet-v2, brand: Varmilo, name: EC Violet V2, feel: tactile, tech: mechanical, actuationForceG: 45, bottomOutG: 58, preTravelMm: 2.1, totalTravelMm: 4 }
+- { slug: varmilo-daisy-l, brand: Varmilo, name: Daisy L, feel: linear, tech: mechanical, actuationForceG: 35, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 4 }
+
+# Kailh, fiches vendues par Keychron
+# https://www.keychron.com/products/kailh-jellyfish-box-switch
+- { slug: kailh-box-jellyfish-y, brand: Kailh, name: Box Jellyfish Y, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.8, totalTravelMm: 3.6 }
+# https://www.keychron.com/products/kailh-box-switch-set (tableau en image)
+- { slug: kailh-box-cream, brand: Kailh, name: Box Cream, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+# https://www.keychron.com/products/kailh-midnight-pro-silent-switch
+- { slug: kailh-midnight-pro-silent-linear, brand: Kailh, name: Midnight Pro Silent Linear, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 4, factoryLubed: true }
+
+# Womier, boutique officielle : https://womierkeyboard.com/products/womier-full-pom-series-pre-lubed-linear-switches (série « Pre-lubed Linear », sans chiffres en texte : ressenti seul)
+- { slug: womier-full-pom-beige, brand: Womier, name: Full POM Beige, feel: linear, tech: mechanical, factoryLubed: true }
+- { slug: womier-full-pom-grey, brand: Womier, name: Full POM Grey, feel: linear, tech: mechanical, factoryLubed: true }
+# Même série, couleur non précisée par la fiche du clavier
+- { slug: womier-pom-series, brand: Womier, name: POM Series, feel: linear, tech: mechanical, factoryLubed: true }
+
+# Leobog (switchs des claviers Aula), blocs techniques des fiches Epomaker x Aula
+# https://epomaker.com/products/epomaker-x-aula-ea75-max (la fiche du F75 donne 36 gf, la force de départ)
+- { slug: leobog-reaper, brand: Leobog, name: Reaper, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 55, preTravelMm: 1.8, totalTravelMm: 3.6, factoryLubed: true }
+- { slug: leobog-silent-cotton-candy, brand: Leobog, name: Silent Cotton Candy, feel: linear, silent: true, tech: mechanical, actuationForceG: 36, bottomOutG: 48, preTravelMm: 1.6, totalTravelMm: 3.5, factoryLubed: true }
+# https://epomaker.com/products/epomaker-x-aula-f108-pro (les fiches F75 et F87 Pro donnent la force de départ, 30 gf)
+- { slug: leobog-greywood-v3, brand: Leobog, name: Greywood V3, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 53, preTravelMm: 1.5, totalTravelMm: 3.6, factoryLubed: true }
+# https://epomaker.com/products/epomaker-aula-f87-pro
+- { slug: leobog-nimbus-v3, brand: Leobog, name: Nimbus V3, feel: linear, tech: mechanical, actuationForceG: 34, bottomOutG: 45, preTravelMm: 1.3, totalTravelMm: 3.7, factoryLubed: true }
+# https://epomaker.com/products/epomaker-aula-f75 (35 gf sur la fiche du F108)
+- { slug: leobog-dream-sakura, brand: Leobog, name: Dream Sakura, feel: linear, tech: mechanical, actuationForceG: 42, bottomOutG: 55, preTravelMm: 1.6, totalTravelMm: 3.6 }
+# https://epomaker.com/products/epomaker-x-aula-f99-pro (fabricant non nommé)
+- { slug: aula-stararrow, brand: Aula, name: StarArrow, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 55, preTravelMm: 1.8, totalTravelMm: 3.5, factoryLubed: true }
+
+# Epomaker, blocs techniques des fiches clavier (epomaker.com)
+# https://epomaker.com/products/epomaker-th65
+- { slug: epomaker-clear, brand: Epomaker, name: Clear, feel: linear, tech: mechanical, actuationForceG: 37, bottomOutG: 44, preTravelMm: 2, totalTravelMm: 3.3, factoryLubed: true }
+# https://epomaker.com/products/epomaker-luma100
+- { slug: epomaker-mint-low-profile, brand: Epomaker, name: Mint Low Profile, feel: linear, tech: mechanical, actuationForceG: 50, preTravelMm: 1.2, totalTravelMm: 3.2 }
+# https://epomaker.com/products/epomaker-he68-lite
+- { slug: epomaker-clear-mag, brand: Epomaker, name: Clear Mag, feel: linear, tech: magnetic, actuationForceG: 37, bottomOutG: 45, totalTravelMm: 3.4, factoryLubed: true }
+# https://epomaker.com/products/epomaker-he80
+- { slug: epomaker-magnex, brand: Epomaker, name: MagneX, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 45, totalTravelMm: 3.4, factoryLubed: true }
+# https://epomaker.com/products/epomaker-g84-he
+- { slug: epomaker-duskrise-magnetic, brand: Epomaker, name: Duskrise Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.3 }
+# https://epomaker.com/products/epomaker-magcore65-lite (switch inductif analogique, rangé en magnétique)
+- { slug: epomaker-core, brand: Epomaker, name: Core, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 50, totalTravelMm: 3.5 }
+# https://epomaker.com/products/epomaker-magcore-87 (« smooth linear inductive switches », rangé en magnétique)
+- { slug: kailh-box-inductive, brand: Kailh, name: Box Inductive, feel: linear, tech: magnetic, actuationForceG: 35, totalTravelMm: 3.5 }
+# https://epomaker.com/products/epomaker-luma40 (courses incohérentes sur la fiche : non reprises)
+- { slug: kailh-white-rain, brand: Kailh, name: White Rain, feel: linear, tech: mechanical, actuationForceG: 50, bottomOutG: 60 }
+# https://epomaker.com/products/epomaker-galaxy100-qmk-via
+- { slug: feker-marble-white, brand: Feker, name: Marble White, feel: linear, tech: mechanical, actuationForceG: 30, bottomOutG: 42, preTravelMm: 2, totalTravelMm: 3.5, factoryLubed: true }
+
+# Ajazz, bloc technique de la fiche AK820 Pro : https://epomaker.com/products/ajazz-ak820-pro
+- { slug: ajazz-gift, brand: Ajazz, name: Gift, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 60, preTravelMm: 2, totalTravelMm: 3.6 }
+- { slug: ajazz-flying-fish, brand: Ajazz, name: Flying Fish, feel: linear, tech: mechanical, actuationForceG: 42, bottomOutG: 48, preTravelMm: 2, totalTravelMm: 3.5 }
+# Ajazz, « Specifications for Ajazz Custom Switch » de la boutique officielle : https://ajazzstore.com/products/ajazz-ak650
+- { slug: ajazz-dream, brand: Ajazz, name: Dream, feel: linear, tech: mechanical, actuationForceG: 30, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.3 }
+# Même bloc, fiche AK820 : https://ajazzstore.com/products/ajazz-ak820
+- { slug: ajazz-sea-salt, brand: Ajazz, name: Sea Salt, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 3.5 }
+- { slug: ajazz-moon, brand: Ajazz, name: Moon, feel: linear, tech: mechanical, actuationForceG: 37, bottomOutG: 45, preTravelMm: 2, totalTravelMm: 3.5 }
+
+# Lofree x Kailh, boutique officielle : https://www.lofree.co/products/surfer-low-profile-pom-switches, …/void-low-profile-pom-switches, …/pulse-low-profile-pom-switches
+- { slug: lofree-surfer, brand: Lofree, name: Surfer, feel: linear, tech: mechanical, actuationForceG: 40, totalTravelMm: 2.8 }
+- { slug: lofree-void, brand: Lofree, name: Void, feel: linear, silent: true, tech: mechanical, actuationForceG: 40, totalTravelMm: 2.8 }
+- { slug: lofree-pulse, brand: Lofree, name: Pulse, feel: tactile, tech: mechanical, actuationForceG: 40, totalTravelMm: 2.8 }
+
+# Cherry MX Ultra Low Profile, fiches officielles : https://www.cherry.de/en-gb/product/mx-ulp-tactile, https://www.cherry.de/en-gb/product/mx-ulp-click
+- { slug: cherry-mx-ulp-tactile, brand: Cherry, name: MX ULP Tactile, feel: tactile, tech: mechanical, actuationForceG: 65, preTravelMm: 0.8, totalTravelMm: 1.8 }
+- { slug: cherry-mx-ulp-click, brand: Cherry, name: MX ULP Click, feel: clicky, tech: mechanical, actuationForceG: 65, preTravelMm: 0.8, totalTravelMm: 1.8 }
+
+# Keychron Low Profile Mechanical (le J1 l'annonce dans ses « Key specs »), tableau : https://www.keychron.com/products/keychron-low-profile-mechanical-switch
+- { slug: keychron-low-profile-brown, brand: Keychron, name: Low Profile Brown, feel: tactile, tech: mechanical, actuationForceG: 47, preTravelMm: 1.7, totalTravelMm: 3.1, factoryLubed: true }
+- { slug: keychron-low-profile-banana, brand: Keychron, name: Low Profile Banana, feel: tactile, tech: mechanical, actuationForceG: 55, preTravelMm: 1.4, totalTravelMm: 3.1, factoryLubed: true }
+# Image de la fiche J3 SE (« pre-lubed Keychron Sakura Milk Switch delivers a smooth linear typing feel », sans force) : https://www.keychron.com/products/keychron-j3-se-qmk-wireless-mechanical-keyboard
+- { slug: keychron-sakura-milk, brand: Keychron, name: Sakura Milk, feel: linear, tech: mechanical, factoryLubed: true }
+
+# Fiches « Characteristics » de mechanicalkeyboards.com
+# https://mechanicalkeyboards.com/products/owlab-ti-he-linear-switch (force selon la version, 40 ou 50 g en fin de course)
+- { slug: owlab-ti-he, brand: Owlab, name: Ti HE, feel: linear, tech: magnetic, totalTravelMm: 3.4 }
+# https://mechanicalkeyboards.com/products/wooting-lekker-tikken-magnetic-switch
+- { slug: wooting-lekker-tikken, brand: Wooting, name: Lekker Tikken, feel: linear, tech: magnetic, bottomOutG: 54, totalTravelMm: 4 }
+# https://mechanicalkeyboards.com/products/wooting-lekker-linear60-magnetic-he-switches-12-pack
+- { slug: wooting-lekker-linear60, brand: Wooting, name: Lekker Linear60, feel: linear, tech: magnetic, actuationForceG: 40, totalTravelMm: 4 }
+# https://mechanicalkeyboards.com/products/matias-standard-60g-clicky (60 g dans le titre et la description, 55 cN dans le tableau)
+- { slug: matias-click, brand: Matias, name: Click, feel: clicky, tech: mechanical, actuationForceG: 60, totalTravelMm: 4 }
+# Fiche Gateron des KS-3 Milky Pro (Red : 45 gf, 2 / 4 mm), la seule publiée : https://www.gateron.com/products/gateron-ks-3-milky-pro-switch-set
+- { slug: gateron-milky-red, brand: Gateron, name: Milky Red, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 4 }
+# Astral, description du Luminkey80 MK II : https://mechanicalkeyboards.com/products/createkeebs-luminkey80-mk-ii-tri-mode-keyboard
+- { slug: luminkey-astral, brand: Luminkey, name: Astral, feel: linear, tech: mechanical, actuationForceG: 45, bottomOutG: 50, preTravelMm: 2, totalTravelMm: 3.5 }
+
+# Turtle Beach, fiches des claviers (turtlebeach.com)
+# https://turtlebeach.com/products/vulcan-ii-keyboard : « TITAN II RED switches have a smooth linear feel », « TITAN II BROWN … a gentle tactile bump »
+- { slug: turtle-beach-titan-ii-red, brand: Turtle Beach, name: TITAN II Red, feel: linear, tech: mechanical }
+- { slug: turtle-beach-titan-ii-brown, brand: Turtle Beach, name: TITAN II Brown, feel: tactile, tech: mechanical }
+# https://turtlebeach.com/products/vulcan-ii-max-keyboard : « TITAN II OPTICAL RED Linear, 1.4 mm Actuation Point, 3.6 mm Travel Distance », 45 g
+- { slug: turtle-beach-titan-ii-optical-red, brand: Turtle Beach, name: TITAN II Optical Red, feel: linear, tech: optical, actuationForceG: 45, preTravelMm: 1.4, totalTravelMm: 3.6 }
+# https://turtlebeach.com/products/vulcan-ii-tkl-keyboard : « TITAN HS Linear Mechanical », 1,8 mm, 45 g
+- { slug: turtle-beach-titan-hs, brand: Turtle Beach, name: TITAN HS, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.8, factoryLubed: true }
+# https://turtlebeach.com/products/vulcan-tkl-keyboard : « the linear TITAN Switch Mechanical »
+- { slug: turtle-beach-titan, brand: Turtle Beach, name: TITAN, feel: linear, tech: mechanical }
+# https://turtlebeach.com/products/command-series-kb5-keyboard : « Low-Profile Mechanical Linear, Travel Distance 3.1 mm, Actuation Point & Force 1.2 mm & 42 gf »
+- { slug: turtle-beach-titan-low-profile, brand: Turtle Beach, name: Titan Low-Profile, feel: linear, tech: mechanical, actuationForceG: 42, preTravelMm: 1.2, totalTravelMm: 3.1 }
+
+# Ressenti seul : le nom du switch sur la fiche du clavier dit le ressenti, la marque ne publie pas de fiche lisible
+- { slug: hmx-frost, brand: HMX, name: Frost, feel: linear, tech: mechanical }
+- { slug: hmx-violet, brand: HMX, name: Violet, feel: linear, tech: mechanical }
+- { slug: kailh-cocoa, brand: Kailh, name: Cocoa, feel: linear, tech: mechanical }
+- { slug: gateron-tofu, brand: Gateron, name: Tofu, feel: linear, tech: mechanical }
+- { slug: gateron-ef-dopamine-blue, brand: Gateron, name: EF Dopamine Blue, feel: linear, tech: mechanical }
+- { slug: chilkey-aster, brand: Chilkey, name: Aster, feel: linear, tech: mechanical }
+- { slug: wuque-studio-flux-poseidon, brand: Wuque Studio, name: Flux Poseidon, feel: linear, tech: magnetic }
+- { slug: matias-linear, brand: Matias, name: Linear, feel: linear, tech: mechanical }
+- { slug: ducky-shush-linear, brand: Ducky, name: Shush Linear, feel: linear, tech: mechanical }
+- { slug: ducky-shush-tactile, brand: Ducky, name: Shush Tactile, feel: tactile, tech: mechanical }
+- { slug: outemu-white, brand: Outemu, name: White, feel: linear, tech: mechanical, factoryLubed: true }
+
+# Wuque Studio (« WS » sur la fiche du Chilkey ND104) : https://mechanicalkeyboards.com/products/wuque-studio-white-silent-50g-linear-pcb-mount
+- { slug: wuque-studio-white-silent, brand: Wuque Studio, name: White Silent, feel: linear, silent: true, tech: mechanical, actuationForceG: 50, preTravelMm: 2, totalTravelMm: 3.5 }
+# Glorious Fox, fiche officielle : https://www.gloriousgaming.com/products/glorious-fox-linear-switches (30, 45 ou 55 g selon la version : force non reprise)
+- { slug: glorious-fox, brand: Glorious, name: Fox, feel: linear, tech: mechanical, factoryLubed: true }
+# Womier Rose Whisper, série POM linéaire : https://womierkeyboard.com/products/womier-full-pom-series-pre-lubed-linear-switches
+- { slug: womier-full-pom-rose-whisper, brand: Womier, name: Full POM Rose Whisper, feel: linear, tech: mechanical, factoryLubed: true }
+# Lofree × Gateron, fiches des claviers Dot (lofree.co) : « Switch: Lofree × GATERON », « Switch Type: Linear », 40 g (Lipstick, Sugar) ou 45 g (1970s)
+- { slug: lofree-gateron, brand: Lofree, name: × Gateron, feel: linear, tech: mechanical }
+# https://www.lofree.co/products/lofree-dot-foundation-mechanical-keyboard : « Switch: Lofree × GATERON Foundation », linéaire, 55 gf, 1,7 / 3,2 mm
+- { slug: lofree-gateron-foundation, brand: Lofree, name: × Gateron Foundation, feel: linear, tech: mechanical, actuationForceG: 55, preTravelMm: 1.7, totalTravelMm: 3.2 }
+
+# Sources non officielles, acceptées le 24 octobre faute de fiche du fabricant.
+# Keychron Apex, source non officielle : Notebookcheck (« Red linear (45 gf actuation force, 4 mm travel), Brown tactile
+# (50 gf, 4 mm travel), and Banana tactile (55 gf, 3.6 mm travel) ») : https://www.notebookcheck.net/Keychron-s-latest-semi-affordable-mechanical-keyboards-boast-760-hour-battery-life-and-updated-minimalist-designs.1319845.0.html
+# « pre-lubed » : image officielle de la fiche K2 Ultra 8K (Keychron-K2-Ultra-Features-Apex-Switches.jpg)
+- { slug: keychron-apex-red, brand: Keychron, name: Apex Red, feel: linear, tech: mechanical, actuationForceG: 45, totalTravelMm: 4, factoryLubed: true }
+- { slug: keychron-apex-brown, brand: Keychron, name: Apex Brown, feel: tactile, tech: mechanical, actuationForceG: 50, totalTravelMm: 4, factoryLubed: true }
+- { slug: keychron-apex-banana, brand: Keychron, name: Apex Banana, feel: tactile, tech: mechanical, actuationForceG: 55, totalTravelMm: 3.6, factoryLubed: true }
+# Gateron Sylva, source non officielle : mechanicalkeyboards.com (« a medium-weight linear offering from Gateron », force non reprise) : https://mechanicalkeyboards.com/collections/gateron-sylva-switch-keyboards
+- { slug: gateron-sylva, brand: Gateron, name: Sylva, feel: linear, tech: mechanical }
+# Outemu Red, source non officielle : tableau du revendeur Milktooth : https://milktooth.com/comparisons/outemu-red-vs-type-a
+- { slug: outemu-red, brand: Outemu, name: Red, feel: linear, tech: mechanical, actuationForceG: 46, bottomOutG: 62, preTravelMm: 2.1, totalTravelMm: 4 }
+# Durock Blue Lotus, source non officielle : mechanicalkeyboards.com : https://mechanicalkeyboards.com/products/durock-blue-lotus-55g-tactile-pcb-mount
+- { slug: durock-blue-lotus, brand: Durock, name: Blue Lotus, feel: tactile, tech: mechanical, actuationForceG: 55, bottomOutG: 65, preTravelMm: 2, totalTravelMm: 3.7, factoryLubed: true }
+# HMX Silent Sakura (fait avec Mage Studio), source non officielle : kbd.news : https://kbd.news/switch/HMX-Sakura-175.html
+- { slug: hmx-silent-sakura, brand: HMX, name: Silent Sakura, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, bottomOutG: 53, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }

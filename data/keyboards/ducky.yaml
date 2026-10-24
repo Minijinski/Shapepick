@@ -122,7 +122,6 @@
     - { sku: DKON1808ST-SUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
     - { sku: DKON1808ST-PUSPDAZTP2, colorName: Pudding Edition, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver }
 
-# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
 - slug: ducky-one-3
   brand: ducky
   name: One 3
@@ -158,7 +157,7 @@
     - { sku: DKON2108-SUSPDMAEGGC1, colorName: Matcha, colorFamily: color, layout: ansi_us, switch: cherry-mx-silent-red }
     - { sku: DKON2108ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: DKON2108ST-RUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
-    - { sku: DKON2108ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2108ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: kailh-box-jellyfish-y }
     - { sku: DKON2108ST-SUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
     - { sku: DKON2108ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
     - { sku: DKON2108ST-RUSPDPWWWSC1, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: cherry-mx-red }
@@ -170,8 +169,6 @@
     - { sku: DKON2108ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
     - { sku: DKON2108ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
 
-# à vérifier : switch « Ducky Shush Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ducky-shush-linear)
-# à vérifier : switch « Ducky Shush Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ducky-shush-tactile)
 - slug: ducky-cushion-98
   brand: ducky
   name: Cushion 98
@@ -189,9 +186,12 @@
     - https://mechanicalkeyboards.com/products/ducky-cushion98-wireless-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: via, batteryMah: 4200 }
   variants:
-    - { sku: DKCUS2598-DSUSPMCBSA1, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: DKCUS2598-DSUSPHCC3H1, colorName: Nickel, colorFamily: color, layout: ansi_us }
-    - { sku: DKCUS2598-DSUSPHCC4S1, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: DKCUS2598-DSUSPMCBSA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ducky-shush-linear }
+    - { sku: DKCUS2598-DSUSPHCC3H1, colorName: Nickel, colorFamily: color, layout: ansi_us, switch: ducky-shush-linear }
+    - { sku: DKCUS2598-DDUSPHCC3H1, colorName: Nickel, colorFamily: color, layout: ansi_us, switch: ducky-shush-tactile }
+    - { sku: DKCUS2598-DSUSPHCC4S1, colorName: Silver, colorFamily: white, layout: ansi_us, switch: ducky-shush-linear }
+    - { sku: DKCUS2598-DDUSPHCC4S1, colorName: Silver, colorFamily: white, layout: ansi_us, switch: ducky-shush-tactile }
+    - { sku: DKCUS2598-DDUSPMCBSA1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ducky-shush-tactile }
 
 - slug: ducky-one-2-sf
   brand: ducky
@@ -240,7 +240,6 @@
     - { sku: DKON2308ST-CRUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-red }
     - { sku: DKON2308ST-CPUSPTCHNAZ001, colorName: Nazca, colorFamily: color, layout: ansi_us, switch: cherry-mx2a-speed-silver }
 
-# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
 - slug: ducky-one-3-tkl
   brand: ducky
   name: One 3 TKL
@@ -278,7 +277,7 @@
     - { sku: DKON2187ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
     - { sku: DKON2187ST-PUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
     - { sku: DKON2187ST-RUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-red }
-    - { sku: DKON2187ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2187ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: kailh-box-jellyfish-y }
     - { sku: DKON2187ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
 
 - slug: ducky-one-2-mini-pro
@@ -355,7 +354,6 @@
     - { sku: DKOKM2567-KYUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-baby-blue }
     - { sku: DKOKM2567-KWUSPDCMKB1, colorName: Black, colorFamily: black, layout: ansi_us, switch: ktt-red-wine }
 
-# à vérifier : switch « Kailh Box Jellyfish Y » : specs non publiées en texte, à saisir dans data/switches.yaml (slug kailh-jellyfish-box-y)
 - slug: ducky-one-3-mini
   brand: ducky
   name: One 3 Mini
@@ -378,14 +376,14 @@
   specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
     - { sku: DKON2161ST-BUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
-    - { sku: DKON2161ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2161ST-FUSPDAWWWWK1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: kailh-box-jellyfish-y }
     - { sku: DKON2161ST-PUSPDAWWWWC1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
     - { sku: DKON2161ST-KUSPDAWWWWG1, colorName: Aura Clear White, colorFamily: transparent, layout: ansi_us, switch: gateron-baby-kangaroo }
     - { sku: DKON2161ST-PUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-speed-silver, msrpEur: 150 }
     - { sku: DKON2161ST-CUSPDCLAWSC1, colorName: Classic, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
     - { sku: DKON2161ST-BUSPDCOVVVC2, colorName: Cosmic Blue, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: DKON2161ST-BUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-brown }
-    - { sku: DKON2161ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us }
+    - { sku: DKON2161ST-FUSPDABAAAK1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: kailh-box-jellyfish-y }
     - { sku: DKON2161ST-PUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-speed-silver }
     - { sku: DKON2161ST-SUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-silent-red }
     - { sku: DKON2161ST-CUSPDABAAAC1, colorName: Aura Clear Black, colorFamily: transparent, layout: ansi_us, switch: cherry-mx-blue, msrpEur: 110 }

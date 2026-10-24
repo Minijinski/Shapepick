@@ -20,7 +20,8 @@ import { monitorSources } from './sources/monitors'
 import * as razer from './sources/razer'
 import * as steelseries from './sources/steelseries'
 import * as stores from './sources/stores'
-import { switchResolver } from './switches'
+import { loadAliases, switchResolver } from './switches'
+import { rebuildVariants } from './variants'
 import { appendEntries, compact } from './yaml'
 
 // pnpm ingest <source> [--next 10] [--dry-run] [--refresh]   import the next N models
@@ -30,6 +31,9 @@ import { appendEntries, compact } from './yaml'
 //   mice (sources/mice/, written to data/mice): see mouseSources (razer-mice, zowie…)
 // pnpm ingest prices [--dry-run]                              weekly price refresh, in place
 // pnpm ingest photos [keyboards|monitors|mice] [--dry-run]    each product's best photo as primary
+// pnpm ingest switches [--dry-run] [--accept slug,…]          variants merged for want of their
+//                                                             switches, rebuilt from the cache;
+//                                                             --accept: boards reviewed after a note
 //
 // An import takes the next N models of a source that are not in data/keyboards yet, with the
 // switches and brands they need, validates everything with the seed's Zod schemas, appends it to
@@ -53,6 +57,7 @@ const { values, positionals } = parseArgs({
     next: { type: 'string', default: '10' },
     'dry-run': { type: 'boolean', default: false },
     refresh: { type: 'boolean', default: false },
+    accept: { type: 'string', default: '' },
   },
 })
 const command = positionals[0] ?? 'keychron'
@@ -67,11 +72,16 @@ if (command === 'photos') {
   await pickPhotos(dataDir, dry, positionals[1])
   process.exit(0)
 }
+if (command === 'switches') {
+  const accept = values.accept.split(',').filter(Boolean)
+  await rebuildVariants(dataDir, Object.values(sources), dry, accept)
+  process.exit(0)
+}
 
 const source = sources[command]
 if (!source) {
   throw new Error(
-    `Unknown source "${command}" (available: ${Object.keys(sources).join(', ')}, prices, photos)`,
+    `Unknown source "${command}" (available: ${Object.keys(sources).join(', ')}, prices, photos, switches)`,
   )
 }
 const wanted = Number(values.next)
@@ -94,7 +104,7 @@ const excluded = await readFile(join(dataDir, 'excluded.yaml'), 'utf8')
   .catch(() => ({}) as { slugs?: string[]; brands?: string[] })
 const skipSlugs = new Set(excluded.slugs ?? [])
 const skipBrands = new Set(excluded.brands ?? [])
-const resolver = switchResolver(data.switches)
+const resolver = switchResolver(data.switches, await loadAliases(dataDir, data.switches))
 const drafts: (Draft & { brandName: string })[] = []
 const skipped: string[] = []
 const brands = new Map(data.brands.map((b) => [b.slug, b]))

@@ -46,7 +46,6 @@
     - { sku: QK-QK65Mk3_RWT, colorName: Retro Console Retro White, colorFamily: white, layout: ansi_us, switch: keygeek-neo-oat }
     - { sku: QK-QK65Mk3_BGRY, colorName: Imp Basalt Grey, colorFamily: black, layout: ansi_us, switch: keygeek-neo-oat }
 
-# à vérifier : switch « Owlab Ti HE Magnetic * Linear Plate Mount Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug owlab-ti-he-magnetic)
 - slug: qwertykeys-hex80
   brand: qwertykeys
   name: Hex80
@@ -64,9 +63,9 @@
     - https://mechanicalkeyboards.com/products/atk-x-qwertykeys-hex80-he-8k-aluminum-keyboard
   specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, mount: gasket, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, southFacing: true, firmware: proprietary, soundDampening: true, typingAngleDeg: 7 }
   variants:
-    - { sku: QK-HEX80-ASG, colorName: Anodized Sand Gold, colorFamily: color, layout: ansi_us }
-    - { sku: QK-HEX80-APRP, colorName: Purple, colorFamily: color, layout: ansi_us }
-    - { sku: QK-HEX80-SCSK, colorName: Spray-Coated Spark, colorFamily: color, layout: ansi_us }
+    - { sku: QK-HEX80-ASG, colorName: Anodized Sand Gold, colorFamily: color, layout: ansi_us, switch: owlab-ti-he }
+    - { sku: QK-HEX80-APRP, colorName: Purple, colorFamily: color, layout: ansi_us, switch: owlab-ti-he }
+    - { sku: QK-HEX80-SCSK, colorName: Spray-Coated Spark, colorFamily: color, layout: ansi_us, switch: owlab-ti-he }
 
 - slug: qwertykeys-qk80-mk2
   brand: qwertykeys

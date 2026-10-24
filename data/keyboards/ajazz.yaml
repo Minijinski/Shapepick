@@ -5,8 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 1 modèles, epomaker.com (prix € estimés depuis les prix US)
-# à vérifier : switch « AJAZZ Gift Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ajazz-gift)
-# à vérifier : switch « AJAZZ Flying Fish Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ajazz-flying-fish)
 - slug: ajazz-ak820-pro
   brand: ajazz
   name: AK820 Pro
@@ -25,11 +23,13 @@
     - https://epomaker.com/products/ajazz-ak820-pro
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 4000 }
   variants:
-    - { sku: Ajazz-AK820-Pro-GY-gift, colorName: Grey, colorFamily: black, layout: ansi_us }
-    - { sku: Ajazz-AK820-Pro-WHPL-gift, colorName: White Purple, colorFamily: white, layout: ansi_us }
-    - { sku: AJAZZ-AK820PRO-DE-BKGYYL-gift, colorName: Grey, colorFamily: black, layout: iso_de }
-    - { sku: AJAZZ-AK820PRO-DE-BLWHPL-Gift, colorName: White Purple, colorFamily: white, layout: iso_de }
-    - { sku: AJAZZ-AK820PRO-FR-BKGYYL-Gift, colorName: Grey, colorFamily: black, layout: iso_fr }
+    - { sku: Ajazz-AK820-Pro-GY-gift, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-gift }
+    - { sku: Ajazz-AK820-Pro-GY-flyingfish, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-flying-fish }
+    - { sku: Ajazz-AK820-Pro-WHPL-gift, colorName: White Purple, colorFamily: white, layout: ansi_us, switch: ajazz-gift }
+    - { sku: Ajazz-AK820-Pro-WHPL-flyingfish, colorName: White Purple, colorFamily: white, layout: ansi_us, switch: ajazz-flying-fish }
+    - { sku: AJAZZ-AK820PRO-DE-BKGYYL-gift, colorName: Grey, colorFamily: black, layout: iso_de, switch: ajazz-gift }
+    - { sku: AJAZZ-AK820PRO-DE-BLWHPL-Gift, colorName: White Purple, colorFamily: white, layout: iso_de, switch: ajazz-gift }
+    - { sku: AJAZZ-AK820PRO-FR-BKGYYL-Gift, colorName: Grey, colorFamily: black, layout: iso_fr, switch: ajazz-gift }
 
 # Lot du 2026-10-21 : 1 modèles, yunzii.com (prix € estimés depuis les prix US)
 # à vérifier : switch « Magnetic Pink Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug magnetic-pink)
@@ -141,7 +141,6 @@
     - { sku: AJAZZ-AF98-Wired-ML-BLWH, colorName: Blue White, colorFamily: white, layout: ansi_us }
     - { sku: AJAZZ-AF98Plus-Tri-BKR-RGB, colorName: Black Red, colorFamily: black, layout: ansi_us, msrpEur: 50 }
 
-# à vérifier : switch « Ajazz Dream Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ajazz-dream)
 - slug: ajazz-ak650
   brand: ajazz
   name: AK650
@@ -158,15 +157,14 @@
     - https://ajazzstore.com/products/ajazz-ak650
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: proprietary, batteryMah: 5000, soundDampening: true }
   variants:
-    - { sku: AJAZZ-AK650-Tri-PLWHBL-Dream, colorName: White Purple, colorFamily: white, layout: ansi_us }
-    - { sku: AJAZZ-AK650-Tri-BKGYYL-Dream, colorName: Grey, colorFamily: black, layout: ansi_us }
-    - { sku: AJAZZ-AK650-Tri-SP-BKPK-Dream, colorName: Side-Print Pink, colorFamily: color, layout: ansi_us }
+    - { sku: AJAZZ-AK650-Tri-PLWHBL-Dream, colorName: White Purple, colorFamily: white, layout: ansi_us, switch: ajazz-dream }
+    - { sku: AJAZZ-AK650-Tri-BKGYYL-Dream, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-dream }
+    - { sku: AJAZZ-AK650-Tri-SP-BKPK-Dream, colorName: Side-Print Pink, colorFamily: color, layout: ansi_us, switch: ajazz-dream }
 
 # à vérifier : switch « Merrard Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug merrard)
 # à vérifier : switch « Gift Switch V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gift-v2)
 # à vérifier : switch « TTC Flame Red Switch V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ttc-flame-red-v2)
 # à vérifier : switch « Slient Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug slient)
-# à vérifier : switch « Flying Fish Switch (Without Screen) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug flying-fish)
 - slug: ajazz-ak980
   brand: ajazz
   name: AK980
@@ -186,11 +184,10 @@
   variants:
     - { sku: AJAZZ-AK980V2-SC-BKGYYL-Maillard, colorName: Grey, colorFamily: black, layout: ansi_us }
     - { sku: AJAZZ-AK980V2-SC-PLWHBL-Maillard, colorName: White Purple, colorFamily: white, layout: ansi_us }
-    - { sku: AJAZZ-AK980V2-WHPLDBL-flyingfish, colorName: Blue White, colorFamily: white, layout: ansi_us, msrpEur: 70 }
+    - { sku: AJAZZ-AK980V2-SC-WHPLDBL-QU, colorName: Blue White, colorFamily: white, layout: ansi_us }
+    - { sku: AJAZZ-AK980V2-WHPLDBL-flyingfish, colorName: Blue White, colorFamily: white, layout: ansi_us, switch: ajazz-flying-fish, msrpEur: 70 }
     - { sku: AJAZZ-AK980V2-SC-SP-PK-Maillard, colorName: Side-Print Pink, colorFamily: color, layout: ansi_us, msrpEur: 95 }
 
-# à vérifier : switch « Ajazz Sea Salt Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ajazz-sea-salt)
-# à vérifier : switch « Ajazz Moon Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ajazz-moon)
 - slug: ajazz-ak820
   brand: ajazz
   name: AK820
@@ -208,10 +205,9 @@
     - https://ajazzstore.com/products/ajazz-ak820
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, soundDampening: true }
   variants:
-    - { sku: Ajazz-AK820-WHPL-SALT-QU, colorName: White Purple, colorFamily: white, layout: ansi_us }
-    - { sku: Ajazz-AK820-GY-Moon, colorName: Grey, colorFamily: black, layout: ansi_us }
+    - { sku: Ajazz-AK820-WHPL-SALT-QU, colorName: White Purple, colorFamily: white, layout: ansi_us, switch: ajazz-sea-salt }
+    - { sku: Ajazz-AK820-GY-Moon, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-moon }
 
-# à vérifier : switch « Flying Fish Switch (Without Screen) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug flying-fish)
 - slug: ajazz-ak820-max
   brand: ajazz
   name: AK820 Max
@@ -229,7 +225,7 @@
     - https://ajazzstore.com/products/ajazz-ak820-max
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: abs, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: AJAZZ-AK820-MAX-GYBEOR-flyingfish, colorName: Grey Beige Orange, colorFamily: black, layout: ansi_us }
+    - { sku: AJAZZ-AK820-MAX-GYBEOR-flyingfish, colorName: Grey Beige Orange, colorFamily: black, layout: ansi_us, switch: ajazz-flying-fish }
 
 # à vérifier : switch « Huannuo Short Tea Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug huannuo-short-tea)
 - slug: ajazz-akp815

@@ -49,7 +49,6 @@
 
 # à vérifier : nombre d’appareils Bluetooth non précisé : 3 supposé
 # à vérifier : poids introuvable
-# à vérifier : switch « Gateron Double-Rail Magnetic Nebula Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-double-rail-magnetic-nebula)
 - slug: lemokey-p1-he
   brand: lemokey
   name: P1 HE
@@ -67,15 +66,14 @@
     - https://www.keychron.com/products/lemokey-p1-he-wireless-magnetic-switch-custom-gaming-keyboard-iso-layout-collection
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, mount: gasket, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, widthMm: 322, depthMm: 140, heightFrontMm: 19.2, typingAngleDeg: 5.5 }
   variants:
-    - { sku: P1H-M1, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: P1H-P1, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: P1H-M1-UK, colorName: Black, colorFamily: black, layout: iso_uk }
-    - { sku: P1H-M1-DE, colorName: Black, colorFamily: black, layout: iso_de }
-    - { sku: P1H-M1-BO, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: P1H-M1, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P1H-P1, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P1H-M1-UK, colorName: Black, colorFamily: black, layout: iso_uk, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P1H-M1-DE, colorName: Black, colorFamily: black, layout: iso_de, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P1H-M1-BO, colorName: Black, colorFamily: black, layout: iso_nordic, switch: gateron-double-rail-magnetic-nebula }
 
 # à vérifier : nombre d’appareils Bluetooth non précisé : 3 supposé
 # à vérifier : poids introuvable
-# à vérifier : switch « Gateron Double-Rail Magnetic Nebula Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-double-rail-magnetic-nebula)
 - slug: lemokey-p2-he
   brand: lemokey
   name: P2 HE
@@ -91,12 +89,11 @@
     - https://www.keychron.com/products/lemokey-p2-he-wireless-magnetic-switch-custom-gaming-keyboard
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, mount: gasket, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, widthMm: 318, depthMm: 116, heightFrontMm: 21.5, typingAngleDeg: 5.5 }
   variants:
-    - { sku: P2H-M1, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: P2H-P1, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: P2H-M1, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P2H-P1, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
 
 # à vérifier : nombre d’appareils Bluetooth non précisé : 3 supposé
 # à vérifier : poids introuvable
-# à vérifier : switch « Gateron Double-Rail Magnetic Nebula Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-double-rail-magnetic-nebula)
 - slug: lemokey-l1-he
   brand: lemokey
   name: L1 HE
@@ -113,12 +110,11 @@
     - https://www.keychron.com/products/lemokey-l1-he-wireless-magnetic-switch-custom-gaming-keyboard
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, mount: gasket, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, widthMm: 370, depthMm: 146, heightFrontMm: 21, typingAngleDeg: 5 }
   variants:
-    - { sku: L1H-M1, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: L1H-P1, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: L1H-X1, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: L1H-M1P-FR, colorName: Black-, colorFamily: black, layout: iso_fr }
+    - { sku: L1H-M1, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: L1H-P1, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: L1H-X1, colorName: Silver, colorFamily: white, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: L1H-M1P-FR, colorName: Black-, colorFamily: black, layout: iso_fr, switch: gateron-double-rail-magnetic-nebula }
 
-# à vérifier : switch « Lemokey Ultra-fast Lime Magnetic Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug lemokey-ultra-fast-lime-magnetic)
 - slug: lemokey-l5-he
   brand: lemokey
   name: L5 HE
@@ -135,12 +131,12 @@
     - https://www.keychron.com/products/lemokey-l5-he-magnetic-switch-custom-gaming-keyboard
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, mount: gasket, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1850, widthMm: 329, depthMm: 150, heightFrontMm: 26.97, typingAngleDeg: 4.7 }
   variants:
-    - { sku: L5W-W1, colorName: Cyber, colorFamily: color, layout: ansi_us }
-    - { sku: L5W-M1, colorName: Dark Master, colorFamily: black, layout: ansi_us }
-    - { sku: L5W-P1, colorName: Down Master, colorFamily: color, layout: ansi_us }
-    - { sku: L5W-W1-DE, colorName: Cyber, colorFamily: color, layout: iso_de }
-    - { sku: L5W-W1-UK, colorName: Cyber, colorFamily: color, layout: iso_uk }
-    - { sku: L5W-W1-BO, colorName: Cyber, colorFamily: color, layout: iso_nordic }
+    - { sku: L5W-W1, colorName: Cyber, colorFamily: color, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic }
+    - { sku: L5W-M1, colorName: Dark Master, colorFamily: black, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic }
+    - { sku: L5W-P1, colorName: Down Master, colorFamily: color, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic }
+    - { sku: L5W-W1-DE, colorName: Cyber, colorFamily: color, layout: iso_de, switch: keychron-ultra-fast-lime-magnetic }
+    - { sku: L5W-W1-UK, colorName: Cyber, colorFamily: color, layout: iso_uk, switch: keychron-ultra-fast-lime-magnetic }
+    - { sku: L5W-W1-BO, colorName: Cyber, colorFamily: color, layout: iso_nordic, switch: keychron-ultra-fast-lime-magnetic }
 
 # à vérifier : variantes sans couleur (souvent ISO) : « Black » supposé
 - slug: lemokey-l1
@@ -238,8 +234,6 @@
     - { sku: L4-D3, colorName: Space Silver, colorFamily: black, layout: ansi_us, switch: keychron-super-brown }
     - { sku: L4-D4, colorName: Space Silver, colorFamily: black, layout: ansi_us, switch: keychron-super-banana }
 
-# à vérifier : switch « Keychron Mechanical Red Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug keychron-red)
-# à vérifier : switch « Keychron Mechanical Brown Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug keychron-brown)
 # à vérifier : variantes sans couleur (souvent ISO) : « Black » supposé
 # à vérifier : absent de keychron.fr : prix € estimé depuis le prix US (× 1.2)
 - slug: lemokey-x4
@@ -256,10 +250,10 @@
     - https://www.keychron.com/products/lemokey-x4-qmk-wired-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: oem, backlight: white, southFacing: true, firmware: qmk, macSupport: true, weightG: 712, widthMm: 325, depthMm: 145, heightFrontMm: 19.7, typingAngleDeg: 4 }
   variants:
-    - { sku: X4-A1, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: X4-A1, colorName: Black, colorFamily: black, layout: ansi_us, switch: keychron-mechanical-red }
+    - { sku: X4-A3, colorName: Black, colorFamily: black, layout: ansi_us, switch: keychron-mechanical-brown }
 
 # à vérifier : nombre d’appareils Bluetooth non précisé : 3 supposé
-# à vérifier : switch « Gateron Double-Rail Magnetic Nebula Switch » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-double-rail-magnetic-nebula)
 - slug: lemokey-p3-he
   brand: lemokey
   name: P3 HE
@@ -275,5 +269,5 @@
     - https://www.keychron.com/products/lemokey-p3-he-wireless-magnetic-switch-custom-gaming-keyboard
   specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.2, mount: gasket, caseMaterial: aluminum, plateMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1910, widthMm: 362, depthMm: 138, heightFrontMm: 22, typingAngleDeg: 6 }
   variants:
-    - { sku: P3H-C1, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: P3H-K1, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: P3H-C1, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }
+    - { sku: P3H-K1, colorName: White, colorFamily: white, layout: ansi_us, switch: gateron-double-rail-magnetic-nebula }

@@ -34,10 +34,16 @@ const gaps: Record<string, number> = {
   'turtlebeach.com': 4000,
   'www.keychron.com': 4000,
   'eu.pulsar.gg': 4000,
+  // Answered 429 to switch pages fetched one at a time (24 October).
+  'epomaker.com': 4000,
 }
 
-export const http = { refresh: false, requests: 0 }
+/** `offline`: the cache only, for runs that must read what an import read (pnpm ingest switches). */
+export const http = { refresh: false, offline: false, requests: 0 }
 const last = new Map<string, number>()
+
+/** A page the cache lacks, asked for while `http.offline` is set. */
+export class NotCached extends Error {}
 
 const sleep = (ms: number) => new Promise((resolve) => setTimeout(resolve, ms))
 
@@ -61,6 +67,7 @@ export async function get(href: string): Promise<string> {
       return await readFile(file, 'utf8')
     } catch {}
   }
+  if (http.offline) throw new NotCached(`absent du cache : ${href}`)
   for (let attempt = 0; ; attempt++) {
     const wait = (last.get(url.host) ?? 0) + (gaps[url.host] ?? gapMs) - Date.now()
     if (wait > 0) await sleep(wait)

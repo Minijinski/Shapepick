@@ -178,7 +178,6 @@
     - { sku: 64952:nordic, colorName: Amethyst, colorFamily: color, layout: iso_nordic, msrpEur: 60 }
     - { sku: 64952:uk-english, colorName: Amethyst, colorFamily: color, layout: iso_uk, msrpEur: 60 }
 
-# à vérifier : switch « omnipoint-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug omnipoint-omnipoint)
 - slug: steelseries-apex-pro
   brand: steelseries
   name: Apex Pro
@@ -191,13 +190,12 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=fullSize&connectivityType=wired&keyboardLanguage=french
   specs: { formFactor: full, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 971, widthMm: 437, depthMm: 139 }
   variants:
-    - { sku: 64628:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64628:french, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: 64628:german, colorName: Black, colorFamily: black, layout: iso_de }
-    - { sku: 64628:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
-    - { sku: 64628:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64628:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64628:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64628:german, colorName: Black, colorFamily: black, layout: iso_de, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64628:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64628:uk-english, colorName: Black, colorFamily: black, layout: iso_uk, switch: steelseries-omnipoint-2-0 }
 
-# à vérifier : switch « Commutateurs HyperMagnetic réglables OmniPoint 2.0 (capteur magnétique à effet Hall analogique) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug commutateurs-hypermagnetic-reglables-omnipoint-2-0)
 - slug: steelseries-apex-pro-mini
   brand: steelseries
   name: Apex Pro Mini
@@ -212,13 +210,12 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=tkl&connectivityType=wired&keyboardLanguage=french
   specs: { formFactor: f60, technology: magnetic, hotSwap: none, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 610, widthMm: 293, depthMm: 103 }
   variants:
-    - { sku: 64823:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64823:french, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: 64823:german, colorName: Black, colorFamily: black, layout: iso_de }
-    - { sku: 64823:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
-    - { sku: 64823:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64823:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64823:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64823:german, colorName: Black, colorFamily: black, layout: iso_de, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64823:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64823:uk-english, colorName: Black, colorFamily: black, layout: iso_uk, switch: steelseries-omnipoint-2-0 }
 
-# à vérifier : switch « omnipoint-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug omnipoint-omnipoint)
 - slug: steelseries-apex-pro-mini-wireless
   brand: steelseries
   name: Apex Pro Mini Wireless
@@ -232,13 +229,12 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-pro?keyboardSize=mini&connectivityType=wireless&keyboardLanguage=french
   specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, rapidTrigger: true, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 543, widthMm: 293, depthMm: 103 }
   variants:
-    - { sku: 64845:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64845:french, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: 64845:german, colorName: Black, colorFamily: black, layout: iso_de }
-    - { sku: 64845:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
-    - { sku: 64845:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64845:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64845:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64845:german, colorName: Black, colorFamily: black, layout: iso_de, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64845:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-omnipoint-2-0 }
+    - { sku: 64845:uk-english, colorName: Black, colorFamily: black, layout: iso_uk, switch: steelseries-omnipoint-2-0 }
 
-# à vérifier : switch « SteelSeries Linear OptiPoint Optical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug steelseries-linear-optipoint-optical)
 - slug: steelseries-apex-9-mini
   brand: steelseries
   name: Apex 9 Mini
@@ -252,11 +248,10 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-9?keyboardSize=mini&keyboardLanguage=french
   specs: { formFactor: f60, technology: optical, hotSwap: none, caseMaterial: steel, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true, weightG: 676, widthMm: 293, depthMm: 103 }
   variants:
-    - { sku: 64840:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64840:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
-    - { sku: 64840:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64840:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-optipoint-linear }
+    - { sku: 64840:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-optipoint-linear }
+    - { sku: 64840:uk-english, colorName: Black, colorFamily: black, layout: iso_uk, switch: steelseries-optipoint-linear }
 
-# à vérifier : switch « SteelSeries Linear OptiPoint Optical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug steelseries-linear-optipoint-optical)
 - slug: steelseries-apex-9-tkl
   brand: steelseries
   name: Apex 9 TKL
@@ -270,11 +265,10 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-9?keyboardSize=tkl&keyboardLanguage=french
   specs: { formFactor: tkl, technology: optical, hotSwap: none, caseMaterial: steel, keycapMaterial: pbt, backlight: none, firmware: proprietary, weightG: 635, widthMm: 355, depthMm: 128 }
   variants:
-    - { sku: 64851:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64851:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
-    - { sku: 64851:uk-english, colorName: Black, colorFamily: black, layout: iso_uk }
+    - { sku: 64851:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-optipoint-linear }
+    - { sku: 64851:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-optipoint-linear }
+    - { sku: 64851:uk-english, colorName: Black, colorFamily: black, layout: iso_uk, switch: steelseries-optipoint-linear }
 
-# à vérifier : switch « hybrid-blue-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hybrid-blue-hybrid-blue)
 - slug: steelseries-apex-5
   brand: steelseries
   name: Apex 5
@@ -288,10 +282,9 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-5?keyboardLanguage=french
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 925, widthMm: 443, depthMm: 139 }
   variants:
-    - { sku: 64536:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64536:french, colorName: Black, colorFamily: black, layout: iso_fr }
+    - { sku: 64536:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-hybrid-blue }
+    - { sku: 64536:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-hybrid-blue }
 
-# à vérifier : switch « red-qx2-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red-qx2-red-qx2)
 - slug: steelseries-apex-7-red-switch
   brand: steelseries
   name: Apex 7 (Red Switch)
@@ -305,11 +298,10 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=fullSize&keyboardLanguage=french
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 953, widthMm: 437, depthMm: 139 }
   variants:
-    - { sku: 64638:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64638:french, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: 64638:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64638:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-qx2-red }
+    - { sku: 64638:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-qx2-red }
+    - { sku: 64638:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-qx2-red }
 
-# à vérifier : switch « red-qx2-mechanical » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red-qx2-red-qx2)
 - slug: steelseries-apex-7-tkl-red-switch
   brand: steelseries
   name: Apex 7 TKL (Red Switch)
@@ -322,6 +314,6 @@
     - https://steelseries.com/fr-fr/gaming-keyboards/apex-7?keyboardSize=tkl&keyboardLanguage=french
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: steel, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 771, widthMm: 355, depthMm: 139 }
   variants:
-    - { sku: 64648:english, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: 64648:french, colorName: Black, colorFamily: black, layout: iso_fr }
-    - { sku: 64648:nordic, colorName: Black, colorFamily: black, layout: iso_nordic }
+    - { sku: 64648:english, colorName: Black, colorFamily: black, layout: ansi_us, switch: steelseries-qx2-red }
+    - { sku: 64648:french, colorName: Black, colorFamily: black, layout: iso_fr, switch: steelseries-qx2-red }
+    - { sku: 64648:nordic, colorName: Black, colorFamily: black, layout: iso_nordic, switch: steelseries-qx2-red }

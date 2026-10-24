@@ -4,8 +4,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-22 : 28 modèles, razer.com/fr-fr (prix € et dispositions du site français)
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
-# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
 - slug: razer-huntsman-mini
   brand: razer
   name: Huntsman Mini
@@ -22,15 +20,18 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-mini/RZ03-03390100-R3M1
   specs: { formFactor: f60, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03390100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-03390300-R3M1, colorName: Mercury, colorFamily: white, layout: ansi_us }
-    - { sku: RZ03-03390700-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
-    - { sku: RZ03-03391400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-03391700-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-03392700-R3G1, colorName: Mercury, colorFamily: white, layout: iso_de }
-    - { sku: RZ03-03393600-R3F1, colorName: Mercury, colorFamily: white, layout: iso_fr }
+    - { sku: RZ03-03390100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-clicky-optical }
+    - { sku: RZ03-03390200-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-linear-optical }
+    - { sku: RZ03-03390300-R3M1, colorName: Mercury, colorFamily: white, layout: ansi_us, switch: razer-clicky-optical }
+    - { sku: RZ03-03390400-R3M1, colorName: Mercury, colorFamily: white, layout: ansi_us, switch: razer-linear-optical }
+    - { sku: RZ03-03390700-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-clicky-optical }
+    - { sku: RZ03-03391200-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-linear-optical }
+    - { sku: RZ03-03391400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-clicky-optical }
+    - { sku: RZ03-03391700-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-clicky-optical }
+    - { sku: RZ03-03391900-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-linear-optical }
+    - { sku: RZ03-03392700-R3G1, colorName: Mercury, colorFamily: white, layout: iso_de, switch: razer-linear-optical }
+    - { sku: RZ03-03393600-R3F1, colorName: Mercury, colorFamily: white, layout: iso_fr, switch: razer-linear-optical }
 
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
 - slug: razer-blackwidow-v3-mini-hyperspeed
   brand: razer
   name: BlackWidow V3 Mini HyperSpeed
@@ -47,9 +48,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3-mini-hyperspeed/RZ03-03890100-R3M1
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, conn24ghz: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03890100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-03890100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
 
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
 - slug: razer-huntsman-v2-tenkeyless
   brand: razer
   name: Huntsman V2 Tenkeyless
@@ -65,10 +65,9 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2-tenkeyless/RZ03-03941100-R3G1
   specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03941100-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-03941200-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-03941100-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-clicky-optical }
+    - { sku: RZ03-03941200-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-clicky-optical }
 
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
 - slug: razer-deathstalker-v2-pro
   brand: razer
   name: DeathStalker V2 Pro
@@ -83,11 +82,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2-pro/RZ03-04361800-R3M1
   specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04361800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-04361800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-clicky-optical }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
-# à vérifier : switch « Switchs mécaniques orange Razer™ - Tactile et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-orange-tactile-et-silencieuse)
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
 - slug: razer-blackwidow-v4-low-profile-hyperspeed
   brand: razer
   name: BlackWidow V4 Low-Profile HyperSpeed
@@ -104,12 +100,13 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-low-profile-hyperspeed/RZ03-05270100-R3M1
   specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05450100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-05450900-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-05451100-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-05451900-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: RZ03-05450500-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-05450700-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange }
+    - { sku: RZ03-05450900-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-orange }
+    - { sku: RZ03-05451100-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-orange }
+    - { sku: RZ03-05450100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
+    - { sku: RZ03-05451900-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-orange }
 
-# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
 - slug: razer-huntsman-v3-pro-8khz
   brand: razer
   name: Huntsman V3 Pro 8KHz
@@ -126,15 +123,15 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro-8khz/RZ03-05521500-R3M1
   specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05740100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, msrpEur: 190 }
-    - { sku: RZ03-05740500-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, msrpEur: 190 }
-    - { sku: RZ03-05520500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-05521000-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us }
-    - { sku: RZ03-05521300-R3M1, colorName: Esports Green Edition, colorFamily: color, layout: ansi_us }
-    - { sku: RZ03-05521500-R3M1, colorName: NiKo Edition, colorFamily: color, layout: ansi_us }
-    - { sku: RZ03-05521700-R3M1, colorName: Sentinels Edition, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-05740100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-analog-optical, msrpEur: 190 }
+    - { sku: RZ03-05740500-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-analog-optical, msrpEur: 190 }
+    - { sku: RZ03-05520500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-analog-optical }
+    - { sku: RZ03-05521000-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-05521300-R3M1, colorName: Esports Green Edition, colorFamily: color, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-05521500-R3M1, colorName: NiKo Edition, colorFamily: color, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-05521700-R3M1, colorName: Sentinels Edition, colorFamily: color, layout: ansi_us, switch: razer-analog-optical }
 
-# à vérifier : switch « Switches ultra low-profile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ultra-low-profile)
+# technologie : ciseaux (Razer ne dit que « Switches ultra low-profile Razer™ », jamais mécanique ; « Switch Type: Scissor » au test) : https://www.rtings.com/keyboard/reviews/razer/joro
 - slug: razer-joro
   brand: razer
   name: Joro
@@ -149,13 +146,11 @@
     - { url: https://assets3.razerzone.com/74RehFNmTW3FoMuQTmTHCwneY7Q=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh3f%2Fh66%2F10416606248990%2Fjoro-folio-500x500.png, kind: cutout_top }
   sources:
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-joro/RZ03-02360400-R3F1
-  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, widthMm: 298, depthMm: 112 }
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, widthMm: 298, depthMm: 112 }
   variants:
     - { sku: RZ03-02360100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
     - { sku: RZ03-02360400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
 - slug: razer-blackwidow-v4
   brand: razer
   name: BlackWidow V4
@@ -172,12 +167,12 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4/RZ03-04690300-R3W1
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04690100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-04690400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-04690500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-04690100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-04690400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-green }
+    - { sku: RZ03-04690500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-green }
+    - { sku: RZ03-04691800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
+    - { sku: RZ03-04692100-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-yellow }
 
-# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
 - slug: razer-deathstalker-v2-pro-tenkeyless
   brand: razer
   name: DeathStalker V2 Pro Tenkeyless
@@ -194,10 +189,9 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2-pro-tenkeyless/RZ03-04370600-R3N1
   specs: { formFactor: tkl, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04370600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
-    - { sku: RZ03-04371800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-04370600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-linear-optical }
+    - { sku: RZ03-04371800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-clicky-optical }
 
-# à vérifier : switch « Mécanique orange » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mecanique-orange)
 - slug: razer-blackwidow-v4-tenkeyless-hyperspeed
   brand: razer
   name: BlackWidow V4 Tenkeyless HyperSpeed
@@ -214,10 +208,10 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-tenkeyless-hyperspeed/RZ03-05480100-R3M1
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05480100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-05480400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-05480500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-05481200-R3M1, colorName: Wuthering Waves Edition, colorFamily: color, layout: ansi_us, msrpEur: 210 }
+    - { sku: RZ03-05480100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange }
+    - { sku: RZ03-05480400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-orange }
+    - { sku: RZ03-05480500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-orange }
+    - { sku: RZ03-05481200-R3M1, colorName: Wuthering Waves Edition, colorFamily: color, layout: ansi_us, switch: razer-orange, msrpEur: 210 }
 
 - slug: razer-pro-type-ergo
   brand: razer
@@ -261,7 +255,6 @@
     - { sku: RZ03-04882300-RUEA, colorName: Espeon & Umbreon Edition, colorFamily: color, layout: ansi_us, msrpEur: 150 }
     - { sku: RZ03-04882400-RUEA, colorName: Pikachu & Eevee Edition, colorFamily: color, layout: ansi_us, msrpEur: 150 }
 
-# à vérifier : switch « Switch optique analogique low-profile Razer™ » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-optique-analogique-low-profile)
 - slug: razer-huntsman-v3-pro-low-profile-tenkeyless-8khz
   brand: razer
   name: Huntsman V3 Pro Low-profile Tenkeyless 8KHz
@@ -277,11 +270,10 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro-low-profile-tenkeyless-8khz/RZ03-05850100-R3M1
   specs: { formFactor: tkl, technology: optical, lowProfile: true, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: low, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05850100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-05850300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-05850400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-05850100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-low-profile-analog-optical }
+    - { sku: RZ03-05850300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-low-profile-analog-optical }
+    - { sku: RZ03-05850400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-low-profile-analog-optical }
 
-# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
 - slug: razer-huntsman-v2-analog
   brand: razer
   name: Huntsman V2 Analog
@@ -297,12 +289,9 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2-analog/RZ03-03610500-R3F1
   specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03610500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-03610600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: RZ03-03610500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-analog-optical }
+    - { sku: RZ03-03610600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-analog-optical }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
-# à vérifier : switch « Switchs mécaniques orange Razer™ - Tactile et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-orange-tactile-et-silencieuse)
 - slug: razer-blackwidow-v4-pro
   brand: razer
   name: BlackWidow V4 Pro
@@ -319,12 +308,14 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-pro/RZ03-04683600-R3U1
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04680100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-04680400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-04682200-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-04683600-R3U1, colorName: Blanc, colorFamily: white, layout: ansi_us }
+    - { sku: RZ03-04680100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-04680400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-green }
+    - { sku: RZ03-04681800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
+    - { sku: RZ03-04682100-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-yellow }
+    - { sku: RZ03-04682200-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-yellow }
+    - { sku: RZ03-04683500-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange }
+    - { sku: RZ03-04683600-R3U1, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: razer-green }
 
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
 - slug: razer-huntsman-v2
   brand: razer
   name: Huntsman V2
@@ -340,10 +331,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v2/RZ03-03931200-R3N1
   specs: { formFactor: full, technology: optical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03931200-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
+    - { sku: RZ03-03931200-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-clicky-optical }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
 - slug: razer-blackwidow-v4-x
   brand: razer
   name: BlackWidow V4 X
@@ -360,15 +349,15 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-x/RZ03-04704200-R3M1
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04700100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-04700400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-04700500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-04700600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
-    - { sku: RZ03-04704100-R3M1, colorName: Minecraft Edition, colorFamily: color, layout: ansi_us, msrpEur: 200 }
-    - { sku: RZ03-04704200-R3M1, colorName: Pokémon Edition, colorFamily: color, layout: ansi_us, msrpEur: 190 }
-    - { sku: RZ03-04704300-R3M1, colorName: Zenless Zone Zero Edition, colorFamily: color, layout: ansi_us, msrpEur: 190 }
+    - { sku: RZ03-04700100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-04700400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-green }
+    - { sku: RZ03-04700500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-green }
+    - { sku: RZ03-04700600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-green }
+    - { sku: RZ03-04701800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
+    - { sku: RZ03-04704100-R3M1, colorName: Minecraft Edition, colorFamily: color, layout: ansi_us, switch: razer-green, msrpEur: 200 }
+    - { sku: RZ03-04704200-R3M1, colorName: Pokémon Edition, colorFamily: color, layout: ansi_us, switch: razer-green, msrpEur: 190 }
+    - { sku: RZ03-04704300-R3M1, colorName: Zenless Zone Zero Edition, colorFamily: color, layout: ansi_us, switch: razer-green, msrpEur: 190 }
 
-# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
 - slug: razer-huntsman-v3-pro
   brand: razer
   name: Huntsman V3 Pro
@@ -385,16 +374,14 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-pro/RZ03-04982100-R3M1
   specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 1000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04990100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-04990400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-04990500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
-    - { sku: RZ03-04990600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic }
-    - { sku: RZ03-04991700-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us }
-    - { sku: RZ03-04982100-R3M1, colorName: Counter-Strike 2 Edition, colorFamily: color, layout: ansi_us, msrpEur: 290 }
-    - { sku: RZ03-04992000-R3G1, colorName: Blanc, colorFamily: white, layout: iso_de }
+    - { sku: RZ03-04990100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-04990400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-analog-optical }
+    - { sku: RZ03-04990500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-analog-optical }
+    - { sku: RZ03-04990600-R3N1, colorName: Noir, colorFamily: black, layout: iso_nordic, switch: razer-analog-optical }
+    - { sku: RZ03-04991700-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-04982100-R3M1, colorName: Counter-Strike 2 Edition, colorFamily: color, layout: ansi_us, switch: razer-analog-optical, msrpEur: 290 }
+    - { sku: RZ03-04992000-R3G1, colorName: Blanc, colorFamily: white, layout: iso_de, switch: razer-analog-optical }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
-# à vérifier : switch « Switchs mécaniques jaunes Razer™ - Fluide et silencieuse » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-jaunes-fluide-et-silencieuse)
 - slug: razer-blackwidow-v3-tenkeyless
   brand: razer
   name: BlackWidow V3 Tenkeyless
@@ -411,11 +398,11 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3-tenkeyless/RZ03-03490100-R3M1
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03490100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-03490400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-03490500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-03490100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-03490400-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-green }
+    - { sku: RZ03-03490500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-green }
+    - { sku: RZ03-03491800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-yellow }
 
-# à vérifier : switch « Optiques analogiques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optiques-analogiques)
 - slug: razer-huntsman-v3-tenkeyless-8khz
   brand: razer
   name: Huntsman V3 Tenkeyless 8KHz
@@ -432,10 +419,9 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-tenkeyless-8khz/RZ03-05750300-R3G1
   specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05750100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-05750300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
+    - { sku: RZ03-05750100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-analog-optical }
+    - { sku: RZ03-05750300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-analog-optical }
 
-# à vérifier : switch « Switches magnétiques à effet Hall Razer™ » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-magnetiques-a-effet-hall)
 - slug: razer-huntsman-v3-he-magnetic-8khz
   brand: razer
   name: Huntsman V3 HE Magnetic 8KHz
@@ -452,11 +438,10 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-he-magnetic-8khz/RZ03-05920100-R3M1
   specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05930100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-05930300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de }
-    - { sku: RZ03-05930400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-05930100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-hall-effect-magnetic }
+    - { sku: RZ03-05930300-R3G1, colorName: Noir, colorFamily: black, layout: iso_de, switch: razer-hall-effect-magnetic }
+    - { sku: RZ03-05930400-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-hall-effect-magnetic }
 
-# à vérifier : switch « Switch optique sonore (violet) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-sonore)
 - slug: razer-deathstalker-v2
   brand: razer
   name: DeathStalker V2
@@ -470,9 +455,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-deathstalker-v2/RZ03-04501800-R3M1
   specs: { formFactor: full, technology: optical, lowProfile: true, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-04501800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-04501800-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-clicky-optical }
 
-# à vérifier : switch « Switch optique linéaire (rouge) » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug optique-lineaire)
 - slug: razer-huntsman-v3-x-tenkeyless
   brand: razer
   name: Huntsman V3 X Tenkeyless
@@ -486,9 +470,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-huntsman-v3-x-tenkeyless/RZ03-05020500-R3F1
   specs: { formFactor: tkl, technology: optical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05020500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr }
+    - { sku: RZ03-05020500-R3F1, colorName: Noir, colorFamily: black, layout: iso_fr, switch: razer-linear-optical }
 
-# à vérifier : switch « Switchs mécaniques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug switchs-mecaniques)
 - slug: razer-blackwidow-v4-pro-75
   brand: razer
   name: BlackWidow V4 Pro 75
@@ -504,9 +487,8 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-pro-75/RZ03-05130100-R3M1
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, connBt: true, pollingHzWired: 4000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05130100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-05130100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange }
 
-# à vérifier : switch « Switchs mécaniques verts Razer™ - Tactile et sonore » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug razer-switchs-mecaniques-verts-tactile-et-sonore)
 - slug: razer-blackwidow-v3
   brand: razer
   name: BlackWidow V3
@@ -521,10 +503,9 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v3/RZ03-03540100-R3M1
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-03540100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
-    - { sku: RZ03-03541800-R3M1, colorName: Quartz, colorFamily: color, layout: ansi_us }
+    - { sku: RZ03-03540100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-green }
+    - { sku: RZ03-03541800-R3M1, colorName: Quartz, colorFamily: color, layout: ansi_us, switch: razer-green }
 
-# à vérifier : switch « Switchs mécaniques » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug switchs-mecaniques)
 - slug: razer-blackwidow-v4-75
   brand: razer
   name: BlackWidow V4 75
@@ -541,12 +522,11 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-blackwidow-v4-75/RZ03-05003500-R3M1
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05003900-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, msrpEur: 150 }
-    - { sku: RZ03-05004100-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us, msrpEur: 160 }
-    - { sku: RZ03-05003300-R3M1, colorName: Phantom Green Edition, colorFamily: color, layout: ansi_us, msrpEur: 230 }
-    - { sku: RZ03-05003500-R3M1, colorName: Phantom White Edition, colorFamily: white, layout: ansi_us, msrpEur: 230 }
+    - { sku: RZ03-05003900-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange, msrpEur: 150 }
+    - { sku: RZ03-05004100-R3M1, colorName: Blanc, colorFamily: white, layout: ansi_us, switch: razer-orange, msrpEur: 160 }
+    - { sku: RZ03-05003300-R3M1, colorName: Phantom Green Edition, colorFamily: color, layout: ansi_us, switch: razer-orange, msrpEur: 230 }
+    - { sku: RZ03-05003500-R3M1, colorName: Phantom White Edition, colorFamily: white, layout: ansi_us, switch: razer-orange, msrpEur: 230 }
 
-# à vérifier : switch « Mécanique orange » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug mecanique-orange)
 - slug: razer-reclusa-x-mini-65
   brand: razer
   name: Reclusa X Mini 65
@@ -562,7 +542,7 @@
     - https://www.razer.com/fr-fr/gaming-keyboards/razer-reclusa-x-mini-65/RZ03-05980100-R3M1
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary }
   variants:
-    - { sku: RZ03-05980100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us }
+    - { sku: RZ03-05980100-R3M1, colorName: Noir, colorFamily: black, layout: ansi_us, switch: razer-orange }
 
 - slug: razer-ornata-v3-x
   brand: razer

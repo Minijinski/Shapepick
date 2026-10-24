@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Kailh Cocoa » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-cocoa)
 - slug: wobkey-rainy-75-pro
   brand: wobkey
   name: Rainy 75 Pro
@@ -24,15 +23,13 @@
     - https://mechanicalkeyboards.com/products/wobkey-rainy-75-pro-rgb
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, batteryMah: 7000, soundDampening: true }
   variants:
-    - { sku: WK-PR75CCWht, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: WK-PR75CBlu, colorName: Blue, colorFamily: color, layout: ansi_us }
-    - { sku: WK-PR75CPur, colorName: Purple, colorFamily: color, layout: ansi_us }
-    - { sku: WK-PR75CBLK, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: WK-PR75CSLV, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: WK-PR75CLuna, colorName: Luna, colorFamily: color, layout: ansi_us }
+    - { sku: WK-PR75CCWht, colorName: White, colorFamily: white, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WK-PR75CBlu, colorName: Blue, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WK-PR75CPur, colorName: Purple, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WK-PR75CBLK, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WK-PR75CSLV, colorName: Silver, colorFamily: white, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WK-PR75CLuna, colorName: Luna, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
 
-# à vérifier : switch « Kailh Cocoa 45g Linear Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-cocoa-linear)
-# à vérifier : switch « HMX Frost 45g Linear PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hmx-frost-linear)
 - slug: wobkey-crush-80
   brand: wobkey
   name: Crush 80
@@ -53,16 +50,16 @@
     - https://mechanicalkeyboards.com/products/wobkey-crush-80-reboot-lite-aluminum-hotswap-wireless-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, macSupport: true, batteryMah: 7500, soundDampening: true }
   variants:
-    - { sku: PC80REBK, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: WBKY_PC80REBlue, colorName: Blue, colorFamily: color, layout: ansi_us }
-    - { sku: PC80REYel, colorName: Yellow, colorFamily: color, layout: ansi_us }
-    - { sku: PC80REPur, colorName: Purple, colorFamily: color, layout: ansi_us }
-    - { sku: SKU_PC80REPink, colorName: Pink, colorFamily: color, layout: ansi_us }
-    - { sku: LC80RESil, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: PC80RENavy, colorName: Navy, colorFamily: color, layout: ansi_us }
-    - { sku: PC80RERed, colorName: Red, colorFamily: color, layout: ansi_us }
+    - { sku: PC80REBK, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: WBKY_PC80REBlue, colorName: Blue, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: PC80REYel, colorName: Yellow, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: PC80REPur, colorName: Purple, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: SKU_PC80REPink, colorName: Pink, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: PC80RESil, colorName: Silver, colorFamily: white, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: PC80RENavy, colorName: Navy, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: PC80RERed, colorName: Red, colorFamily: color, layout: ansi_us, switch: kailh-cocoa }
+    - { sku: LC80RESil, colorName: Silver, colorFamily: white, layout: ansi_us, switch: hmx-frost }
 
-# à vérifier : switch « HMX Violet 45g Linear PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hmx-violet-linear)
 - slug: wobkey-rainy-75-lite
   brand: wobkey
   name: Rainy 75 Lite
@@ -78,10 +75,9 @@
     - https://mechanicalkeyboards.com/products/wobkey-rainy-75-lite
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, southFacing: true, firmware: via, macSupport: true, batteryMah: 3500, soundDampening: true }
   variants:
-    - { sku: WK-LR75BK, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: WK-LR75SIL, colorName: Silver, colorFamily: white, layout: ansi_us }
+    - { sku: WK-LR75BK, colorName: Black, colorFamily: black, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-LR75SIL, colorName: Silver, colorFamily: white, layout: ansi_us, switch: hmx-violet }
 
-# à vérifier : switch « HMX Violet 45g Linear PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hmx-violet-linear)
 - slug: wobkey-rainy-75
   brand: wobkey
   name: Rainy 75
@@ -98,10 +94,12 @@
     - https://mechanicalkeyboards.com/products/wobkey-rainy-75-standard-rgb
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: via, batteryMah: 3500, soundDampening: true }
   variants:
-    - { sku: WK-SR75SIL, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: WK-SR75WHT, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: WK-SR75BLU, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: WK-SR75SIL, colorName: Silver, colorFamily: white, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-SR75WHT, colorName: White, colorFamily: white, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-SR75BLU, colorName: Blue, colorFamily: color, layout: ansi_us, switch: hmx-violet }
 
+# switchs par édition (« Lite: HMX Violet », « Ultra: Kailh Box Luna », sans fiche) :
+# https://mechanicalkeyboards.com/products/wobkey-zen-65-aluminum-wireless-keyboard
 - slug: wobkey-zen-65
   brand: wobkey
   name: Zen 65
@@ -119,10 +117,10 @@
     - https://mechanicalkeyboards.com/products/wobkey-zen-65-aluminum-wireless-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, batteryMah: 3000, heightFrontMm: 19 }
   variants:
-    - { sku: WK-ZEN65LT-BK, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: WK-ZEN65LT-SLV, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: WK-ZEN65LTWHT, colorName: White, colorFamily: white, layout: ansi_us }
-    - { sku: WK-ZEN65LTPK, colorName: Pink, colorFamily: color, layout: ansi_us }
+    - { sku: WK-ZEN65LT-BK, colorName: Black, colorFamily: black, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-ZEN65LT-SLV, colorName: Silver, colorFamily: white, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-ZEN65LTWHT, colorName: White, colorFamily: white, layout: ansi_us, switch: hmx-violet }
+    - { sku: WK-ZEN65LTPK, colorName: Pink, colorFamily: color, layout: ansi_us, switch: hmx-violet }
     - { sku: WK-ZEN65U-WSL, colorName: Warm Silver, colorFamily: white, layout: ansi_us, msrpEur: 235 }
     - { sku: WK-ZEN65U-RD, colorName: Red, colorFamily: color, layout: ansi_us, msrpEur: 235 }
     - { sku: WK-ZEN65U-WTGD, colorName: White Gold, colorFamily: white, layout: ansi_us, msrpEur: 235 }

@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « WS White Silent » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ws-white-silent)
 # à vérifier : switch « Wuque Studio Breeze » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug wuque-studio-breeze)
 - slug: chilkey-nd104
   brand: chilkey
@@ -24,12 +23,18 @@
     - https://mechanicalkeyboards.com/products/chilkey-nd104-cnc-aluminum-hotswap-wireless-rgb-keyboard
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: via, macSupport: true, batteryMah: 4000, soundDampening: true }
   variants:
-    - { sku: CK-ND104_GGS12, colorName: Gunmetal Grey, colorFamily: black, layout: ansi_us }
+    - { sku: CK-ND104_GGS12, colorName: Gunmetal Grey, colorFamily: black, layout: ansi_us, switch: wuque-studio-white-silent }
     - { sku: CK-ND104_BKB12, colorName: Shadow Black, colorFamily: black, layout: ansi_us }
     - { sku: CK-ND104_LWB12, colorName: White, colorFamily: white, layout: ansi_us }
     - { sku: CK-ND104_SPB12, colorName: Pink, colorFamily: color, layout: ansi_us }
     - { sku: CK-ND104_LYB12, colorName: Yellow, colorFamily: color, layout: ansi_us }
     - { sku: CK-ND104_SBB12, colorName: Sky Blue, colorFamily: color, layout: ansi_us }
+    - { sku: CK-ND104_GGB16, colorName: Gunmetal Grey, colorFamily: black, layout: ansi_us }
+    - { sku: CK-ND104_BKS16, colorName: Shadow Black, colorFamily: black, layout: ansi_us, switch: wuque-studio-white-silent }
+    - { sku: CK-ND104_LWS16, colorName: White, colorFamily: white, layout: ansi_us, switch: wuque-studio-white-silent }
+    - { sku: CK-ND104_SBS16, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: wuque-studio-white-silent }
+    - { sku: CK-ND104_PS16, colorName: Pink, colorFamily: color, layout: ansi_us, switch: wuque-studio-white-silent }
+    - { sku: CK-ND104_LYS16, colorName: Yellow, colorFamily: color, layout: ansi_us, switch: wuque-studio-white-silent }
     - { sku: CK-ND104_CBKB16, colorName: Classic Black, colorFamily: black, layout: ansi_us, msrpEur: 225 }
 
 # à vérifier : switch « Durock Green Bean » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug durock-green-bean)
@@ -50,7 +55,6 @@
   variants:
     - { sku: CK-FX65WR-NFT, colorName: Wild Rose, colorFamily: color, layout: ansi_us }
 
-# à vérifier : switch « Wuque Studio Flux Poseidon Linear Plate Mount Magnetic HE Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug wuque-studio-flux-poseidon-linear-magnetic-he)
 - slug: chilkey-sf60
   brand: chilkey
   name: SF60
@@ -68,13 +72,11 @@
     - https://mechanicalkeyboards.com/products/chilkey-sf60-he-keyboard
   specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, plateMaterial: fr4, keycapMaterial: pom, backlight: rgb, southFacing: true, firmware: proprietary, soundDampening: true, heightFrontMm: 17.4, typingAngleDeg: 6.5 }
   variants:
-    - { sku: CK-SF60-StbWht, colorName: Starbeam White, colorFamily: white, layout: ansi_us }
-    - { sku: CK-SF60-StSilv, colorName: Stellar Silver, colorFamily: white, layout: ansi_us }
-    - { sku: CK-SF60-StrBlk, colorName: Starlit Black, colorFamily: black, layout: ansi_us }
-    - { sku: CK-SF60-StdPnk, colorName: Stardust Pink, colorFamily: color, layout: ansi_us }
+    - { sku: CK-SF60-StbWht, colorName: Starbeam White, colorFamily: white, layout: ansi_us, switch: wuque-studio-flux-poseidon }
+    - { sku: CK-SF60-StSilv, colorName: Stellar Silver, colorFamily: white, layout: ansi_us, switch: wuque-studio-flux-poseidon }
+    - { sku: CK-SF60-StrBlk, colorName: Starlit Black, colorFamily: black, layout: ansi_us, switch: wuque-studio-flux-poseidon }
+    - { sku: CK-SF60-StdPnk, colorName: Stardust Pink, colorFamily: color, layout: ansi_us, switch: wuque-studio-flux-poseidon }
 
-# à vérifier : switch « Gateron EF Dopamine Blue 45g Linear PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-ef-dopamine-blue-linear)
-# à vérifier : switch « Chilkey Aster 45g Linear Low Profile PCB Mount » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug chilkey-aster-linear-low-profile)
 - slug: chilkey-nd75
   brand: chilkey
   name: ND75
@@ -95,10 +97,9 @@
     - https://mechanicalkeyboards.com/products/chilkey-nd75-lp-aluminum-hotswap-wireless-rgb-low-profile
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 1800, soundDampening: true, typingAngleDeg: 6.5 }
   variants:
-    - { sku: CK-ND75-12F_3, colorName: Mountain Blue, colorFamily: color, layout: ansi_us }
-    - { sku: CK-ND75LP-PWHT, colorName: Pure White, colorFamily: white, layout: ansi_us }
+    - { sku: CK-ND75-12F_3, colorName: Mountain Blue, colorFamily: color, layout: ansi_us, switch: gateron-ef-dopamine-blue }
+    - { sku: CK-ND75LP-PWHT, colorName: Pure White, colorFamily: white, layout: ansi_us, switch: chilkey-aster }
 
-# à vérifier : switch « Kailh Blue Lotus » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug kailh-blue-lotus)
 - slug: chilkey-nd65
   brand: chilkey
   name: ND65
@@ -113,4 +114,4 @@
     - https://mechanicalkeyboards.com/products/chilkey-nd65-jet-black-aluminum-hotswap-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 3000 }
   variants:
-    - { sku: CK-ND65WD, colorName: Jet Black, colorFamily: black, layout: ansi_us }
+    - { sku: CK-ND65WD, colorName: Jet Black, colorFamily: black, layout: ansi_us, switch: durock-blue-lotus }

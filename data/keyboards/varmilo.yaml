@@ -5,12 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 15 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
-# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
-# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
-# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
-# à vérifier : switch « Varmilo EC Iris V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-iris-v2)
 - slug: varmilo-ma-tkl
   brand: varmilo
   name: MA TKL
@@ -33,21 +27,22 @@
     - https://mechanicalkeyboards.com/products/varmilo-vem87-moonlight
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: A33A022A9A3A01A007, colorName: Series V2 Summit R2 White, colorFamily: white, layout: ansi_us }
-    - { sku: A33A002A9A3A01A003, colorName: Series V2 Love Birds Yang (I) White, colorFamily: white, layout: ansi_us }
-    - { sku: A33A001B0A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us }
-    - { sku: A33A036A9A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, msrpEur: 200 }
-    - { sku: A33A023B1A3A01A007, colorName: Series V2 Moonlight White, colorFamily: white, layout: ansi_us }
+    - { sku: A33A022A9A3A01A007, colorName: Series V2 Summit R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A33A022B0A3A01A007, colorName: Series V2 Summit R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
+    - { sku: A33A022B1A3A01A007, colorName: Series V2 Summit R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: A33A002A9A3A01A003, colorName: Series V2 Love Birds Yang (I) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A33A002C2A3A01A003, colorName: Series V2 Love Birds Yang (I) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-violet-v2 }
+    - { sku: A33A001A8A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A33A001A9A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A33A001B0A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
+    - { sku: A33A001B1A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: A33A001C2A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-violet-v2 }
+    - { sku: A33A001C3A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-iris-v2 }
+    - { sku: A33A036A9A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2, msrpEur: 200 }
+    - { sku: A33A036B0A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 200 }
+    - { sku: A33A036C3A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-iris-v2, msrpEur: 220 }
+    - { sku: A33A023B1A3A01A007, colorName: Series V2 Moonlight White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
 
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
-# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
-# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
-# à vérifier : switch « Varmilo EC Iris V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-iris-v2)
-# à vérifier : switch « Varmilo EC Moxa » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-moxa)
-# à vérifier : switch « Varmilo EC Jasmine V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-jasmine-v2)
-# à vérifier : switch « Gateron G Pro 2.0 White » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-white)
-# à vérifier : switch « Gateron G Pro 2.0 Yellow » : specs non publiées en texte, à saisir dans data/switches.yaml (slug gateron-g-pro-2-0-yellow)
-# à vérifier : switch « Varmilo MX Daisy L » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-mx-daisy-l)
 - slug: varmilo-minilo
   brand: varmilo
   name: Minilo
@@ -67,14 +62,16 @@
     - https://mechanicalkeyboards.com/products/varmilo-minilo-vxt67-latte-65-wireless-hotswap-rgb-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, connBt: true, btDevices: 3, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: A40A062B0A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, msrpEur: 105 }
-    - { sku: A42A062E4A5A01A039, colorName: VXT67 Mendozae, colorFamily: color, layout: ansi_us }
-    - { sku: A42A081F9A5A01A039, colorName: VXT67 Latte, colorFamily: color, layout: ansi_us, msrpEur: 155 }
+    - { sku: A40A062B0A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 110 }
+    - { sku: A40A062B1A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 110 }
+    - { sku: A40A062C2A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-violet-v2, msrpEur: 110 }
+    - { sku: A40A062C3A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-iris-v2, msrpEur: 110 }
+    - { sku: A40A062C9A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-moxa-v2, msrpEur: 110 }
+    - { sku: A40A062D7A3A01A039, colorName: VXB67 Mendozae, colorFamily: color, layout: ansi_us, switch: varmilo-ec-jasmine-v2, msrpEur: 110 }
+    - { sku: A42A062E4A5A01A039, colorName: VXT67 Mendozae, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-white }
+    - { sku: A42A062E2A5A01A039, colorName: VXT67 Mendozae, colorFamily: color, layout: ansi_us, switch: gateron-g-pro-2-0-yellow, msrpEur: 150 }
+    - { sku: A42A081F9A5A01A039, colorName: VXT67 Latte, colorFamily: color, layout: ansi_us, switch: varmilo-daisy-l, msrpEur: 155 }
 
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
-# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
-# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
-# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
 - slug: varmilo-sword-2-87
   brand: varmilo
   name: Sword 2-87
@@ -95,15 +92,21 @@
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-87-twilight-green
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: A09A017A8A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us }
-    - { sku: A09A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us }
-    - { sku: A09A027A8A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, msrpEur: 415 }
-    - { sku: A09A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, msrpEur: 310 }
+    - { sku: A09A017B0A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 385 }
+    - { sku: A09A017A9A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2, msrpEur: 385 }
+    - { sku: A09A017A8A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2, msrpEur: 385 }
+    - { sku: A09A017B1A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 440 }
+    - { sku: A09A019B1A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 385 }
+    - { sku: A09A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
+    - { sku: A09A019A9A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2, msrpEur: 385 }
+    - { sku: A09A019A8A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A09A027B0A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 440 }
+    - { sku: A09A027A8A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2, msrpEur: 385 }
+    - { sku: A09A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 310 }
+    - { sku: A09A018A9A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2, msrpEur: 385 }
+    - { sku: A09A018A8A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2, msrpEur: 385 }
+    - { sku: A09A018B1A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 385 }
 
-# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
-# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
-# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
 - slug: varmilo-lure
   brand: varmilo
   name: Lure
@@ -122,13 +125,14 @@
     - https://mechanicalkeyboards.com/products/varmilo-vbs108-lure-bot-lie
   specs: { formFactor: full, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: A01A004A8A4A01A006, colorName: Series Awake White, colorFamily: white, layout: ansi_us, msrpEur: 150 }
-    - { sku: A01A003B1A4A01A005, colorName: Series Lie White, colorFamily: white, layout: ansi_us, msrpEur: 155 }
+    - { sku: A01A004A9A4A01A006, colorName: Series Awake White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2, msrpEur: 205 }
+    - { sku: A01A004A8A4A01A006, colorName: Series Awake White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2, msrpEur: 155 }
+    - { sku: A01A003B1A4A01A005, colorName: Series Lie White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 155 }
+    - { sku: A01A003B0A4A01A005, colorName: Series Lie White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 155 }
+    - { sku: A01A003A8A4A01A005, colorName: Series Lie White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2, msrpEur: 155 }
     - { sku: A03A003A2A0A01A005, colorName: Series Lie, colorFamily: color, layout: ansi_us, switch: cherry-mx-brown }
     - { sku: A03A003A3A0A01A005, colorName: Series Lie, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 200 }
 
-# à vérifier : switch « Varmilo EC Violet V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-violet-v2)
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
 - slug: varmilo-ma
   brand: varmilo
   name: MA
@@ -146,8 +150,8 @@
     - https://mechanicalkeyboards.com/products/varmilo-vem108-warrior-soar
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { sku: A36A001C2A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us }
-    - { sku: A36A036B0A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us }
+    - { sku: A36A001C2A3A01A001, colorName: Series V2 Love Birds Yuan (You) White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-violet-v2 }
+    - { sku: A36A036B0A3A01A032, colorName: Series V2 Warrior Soar White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
 
 # à vérifier : switch « Gateron KS-20 White Magnetic HE » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-ks-20-white-magnetic-he)
 - slug: varmilo-muse65
@@ -166,7 +170,6 @@
   variants:
     - { sku: A88A110H0A5A01A073, colorName: White, colorFamily: white, layout: ansi_us }
 
-# à vérifier : switch « Varmilo MX Daisy L » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-mx-daisy-l)
 - slug: varmilo-sword68
   brand: varmilo
   name: Sword68
@@ -184,12 +187,8 @@
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, batteryMah: 4000, soundDampening: true }
   variants:
     - { sku: A68A091G6A8A01A064, colorName: Classic Black, colorFamily: black, layout: ansi_us, switch: kailh-prestige-voice }
-    - { sku: A68A089F9A8A01A063, colorName: Ariel, colorFamily: color, layout: ansi_us }
+    - { sku: A68A089F9A8A01A063, colorName: Ariel, colorFamily: color, layout: ansi_us, switch: varmilo-daisy-l }
 
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
-# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
-# à vérifier : switch « Varmilo EC Daisy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-daisy-v2)
-# à vérifier : switch « Varmilo EC Ivy V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy-v2)
 - slug: varmilo-sword-2-68
   brand: varmilo
   name: Sword 2-68
@@ -212,11 +211,22 @@
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-68-sakura
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: A07A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us }
-    - { sku: A07A017B0A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, msrpEur: 285 }
-    - { sku: A07A016A8A3A01A017, colorName: Moonlight White, colorFamily: white, layout: ansi_us }
-    - { sku: A07A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us }
-    - { sku: A07A027B1A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, msrpEur: 365 }
+    - { sku: A07A018B0A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
+    - { sku: A07A018A9A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A07A018A8A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A07A018B1A3A01A019, colorName: Twilight Green White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 390 }
+    - { sku: A07A017B0A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 285 }
+    - { sku: A07A017A9A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A07A017A8A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A07A017B1A3A01A019, colorName: Pacific Blue White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: A07A016A8A3A01A017, colorName: Moonlight White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A07A016B1A3A01A017, colorName: Moonlight White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: A07A019B1A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: A07A019B0A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
+    - { sku: A07A019A9A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
+    - { sku: A07A019A8A3A01A017, colorName: Flying Tigers White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-daisy-v2 }
+    - { sku: A07A027B1A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2, msrpEur: 365 }
+    - { sku: A07A027B0A3A01A019, colorName: Sakura R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2, msrpEur: 400 }
 
 # à vérifier : switch « TTC Speed Gold » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ttc-speed-gold)
 - slug: varmilo-va-tkl
@@ -259,8 +269,6 @@
     - { sku: A29A022A1A0A01A007, colorName: Series V2 Summit R2 TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
     - { sku: A29A022A3A0A01A007, colorName: Series V2 Summit R2 TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-red, msrpEur: 200 }
 
-# à vérifier : switch « Varmilo EC Ivy » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-ivy)
-# à vérifier : switch « Varmilo EC Rose V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-rose-v2)
 - slug: varmilo-ma87m
   brand: varmilo
   name: MA87M
@@ -277,8 +285,8 @@
     - https://mechanicalkeyboards.com/products/varmilo-ma87m-summit-r2
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: MA87MA001B1A4A01A001, colorName: Love Birds You White, colorFamily: white, layout: ansi_us }
-    - { sku: MA87MA022B0A4A01A007, colorName: Summit R2 White, colorFamily: white, layout: ansi_us }
+    - { sku: MA87MA001B1A4A01A001, colorName: Love Birds You White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-ivy-v2 }
+    - { sku: MA87MA022B0A4A01A007, colorName: Summit R2 White, colorFamily: white, layout: ansi_us, switch: varmilo-ec-rose-v2 }
 
 # à vérifier : switch « TTC Speed Gold » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug ttc-speed-gold)
 - slug: varmilo-va
@@ -341,7 +349,6 @@
   variants:
     - { sku: A05A005A1A0A01A005, colorName: Bot Lie TKL, colorFamily: color, layout: ansi_us, switch: cherry-mx-blue }
 
-# à vérifier : switch « Varmilo EC Sakura V2 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug varmilo-ec-sakura-v2)
 - slug: varmilo-sword-2-108
   brand: varmilo
   name: Sword 2-108
@@ -357,7 +364,7 @@
     - https://mechanicalkeyboards.com/products/varmilo-sword-2-108-warrior-soar
   specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: A12A036A9A3A01A017, colorName: Warrior Soar, colorFamily: color, layout: ansi_us }
+    - { sku: A12A036A9A3A01A017, colorName: Warrior Soar, colorFamily: color, layout: ansi_us, switch: varmilo-ec-sakura-v2 }
 
 # à vérifier : switch « Grain Gold Magnetic White » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug grain-gold-magnetic-white)
 - slug: varmilo-minilo75

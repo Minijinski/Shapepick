@@ -5,7 +5,7 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 3 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « 5280 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug 5280)
+# switch : Gateron Brown (fiche « GMMK Prebuilt Compact Gateron Brown », SKU GMMK-COMPACT-BRN) : https://mechanicalkeyboards.com/products/glorious-pc-gmmk-prebuilt-compact-gateron-brown
 - slug: glorious-gmmk
   brand: glorious
   name: GMMK
@@ -21,9 +21,8 @@
     - https://mechanicalkeyboards.com/products/glorious-pc-gmmk-prebuilt-compact-gateron-brown
   specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, firmware: proprietary, macSupport: true }
   variants:
-    - { sku: GMMK-COMPACT-BRN, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: GMMK-COMPACT-BRN, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-brown }
 
-# à vérifier : switch « Glorious Fox » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug glorious-fox)
 - slug: glorious-gmmk-v2-65
   brand: glorious
   name: GMMK V2 65%
@@ -41,8 +40,8 @@
     - https://mechanicalkeyboards.com/products/glorious-pc-gmmk-v2-65
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, mount: tray, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, typingAngleDeg: 14 }
   variants:
-    - { sku: GLO-GMMK2-65-FOX-B, colorName: Black, colorFamily: black, layout: ansi_us }
-    - { sku: GLO-GMMK2-65-FOX-W, colorName: White, colorFamily: white, layout: ansi_us }
+    - { sku: GLO-GMMK2-65-FOX-B, colorName: Black, colorFamily: black, layout: ansi_us, switch: glorious-fox }
+    - { sku: GLO-GMMK2-65-FOX-W, colorName: White, colorFamily: white, layout: ansi_us, switch: glorious-fox }
 
 - slug: glorious-gmmk-white-ice
   brand: glorious

@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-22 : 10 modèles, hyperx.com (prix € estimés depuis les prix US)
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-origins-2-pro-65
   brand: hyperx
   name: Origins 2 Pro 65
@@ -21,9 +20,8 @@
     - https://hyperx.com/products/hyperx-origins-2-pro-65-gaming-keyboard
   specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, weightG: 2268 }
   variants:
-    - { sku: BN7S3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: BN7S3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-origins-2-65
   brand: hyperx
   name: Origins 2 65
@@ -39,9 +37,8 @@
     - https://hyperx.com/products/hyperx-origins-2-65-gaming-keyboard
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pom, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 2268 }
   variants:
-    - { sku: B4QS3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: B4QS3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-origins-2-1800
   brand: hyperx
   name: Origins 2 1800
@@ -56,9 +53,9 @@
     - https://hyperx.com/products/hyperx-origins-2-1800-gaming-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pom, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 953 }
   variants:
-    - { sku: B4QS4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: B4QS4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
-# à vérifier : switch « Membrane » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug membrane)
+# technologie : membrane (« Switch: Membrane », « membrane switches ») : https://hyperx.com/products/hyperx-eve-1800-gaming-keyboard
 - slug: hyperx-eve-1800
   brand: hyperx
   name: Eve 1800
@@ -71,11 +68,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_eve_1800_us_b7je0a6_23aba_main_1.jpg?v=1765578394, kind: cutout_top, width: 1500, height: 1500, primary: true }
   sources:
     - https://hyperx.com/products/hyperx-eve-1800-gaming-keyboard
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 653 }
+  specs: { formFactor: f96, technology: membrane, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 653 }
   variants:
     - { sku: B7JE0AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-alloy-rise
   brand: hyperx
   name: Alloy Rise
@@ -91,9 +87,8 @@
     - https://hyperx.com/products/hyperx-alloy-rise-mechanical-gaming-keyboard
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, weightG: 1311 }
   variants:
-    - { sku: 7G7A3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 7G7A3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-alloy-rise-75
   brand: hyperx
   name: Alloy Rise 75
@@ -108,7 +103,7 @@
     - https://hyperx.com/products/hyperx-alloy-rise-75-mechanical-gaming-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: none, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, weightG: 943 }
   variants:
-    - { sku: 7G7A4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 7G7A4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
 - slug: hyperx-alloy-core-rgb
   brand: hyperx
@@ -128,8 +123,6 @@
   variants:
     - { sku: 4P4F5AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
 
-# à vérifier : switch « HyperX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-aqua-tactile)
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
 - slug: hyperx-alloy-origins-65
   brand: hyperx
   name: Alloy Origins 65
@@ -146,10 +139,9 @@
     - https://hyperx.com/products/hyperx-alloy-origins-65
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 826 }
   variants:
-    - { sku: 56R64AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 56R64AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-aqua }
+    - { sku: 4P5D6AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
-# à vérifier : switch « HyperX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-aqua-tactile)
 - slug: hyperx-alloy-origins-60
   brand: hyperx
   name: Alloy Origins 60
@@ -165,10 +157,9 @@
     - https://hyperx.com/products/hyperx-alloy-origins-60-mechanical-gaming-keyboard
   specs: { formFactor: f60, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 780 }
   variants:
-    - { sku: 56R61AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 4P5N4AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
+    - { sku: 56R61AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-aqua }
 
-# à vérifier : switch « HyperX Red - Linear » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hyperx-red-linear)
-# à vérifier : switch « HX Aqua - Tactile » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug hx-aqua-tactile)
 - slug: hyperx-alloy-origins-core
   brand: hyperx
   name: Alloy Origins Core
@@ -184,4 +175,5 @@
     - https://hyperx.com/products/hyperx-alloy-origins-core-mechanical-gaming-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 898 }
   variants:
-    - { sku: 4P5P3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: 4P5P3AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-red }
+    - { sku: 4P5P1AA#ABA, colorName: Black, colorFamily: black, layout: ansi_us, switch: hyperx-aqua }

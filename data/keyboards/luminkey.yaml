@@ -5,7 +5,6 @@
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
 # Lot du 2026-10-21 : 5 modèles, mechanicalkeyboards.com (prix € estimés depuis les prix US)
-# à vérifier : switch « Luminkey Astral 45g Linear PCB Mount Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug luminkey-astral-linear)
 - slug: luminkey-luminkey98-v2
   brand: luminkey
   name: Luminkey98 V2
@@ -23,12 +22,11 @@
     - https://mechanicalkeyboards.com/products/luminkey-luminkey98-v2-aluminum-wireless-keyboard
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 6000, soundDampening: true, heightFrontMm: 19.9, typingAngleDeg: 7 }
   variants:
-    - { sku: LUK-LK98V2-EWHT, colorName: E-White, colorFamily: white, layout: ansi_us }
-    - { sku: LUK-LK98V2-AGRY, colorName: Grey, colorFamily: black, layout: ansi_us }
-    - { sku: LUK-LK98V2-ASLV, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: LUK-LK98V2-BLK, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: LUK-LK98V2-EWHT, colorName: E-White, colorFamily: white, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-LK98V2-AGRY, colorName: Grey, colorFamily: black, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-LK98V2-ASLV, colorName: Silver, colorFamily: white, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-LK98V2-BLK, colorName: Black, colorFamily: black, layout: ansi_us, switch: luminkey-astral }
 
-# à vérifier : switch « Luminkey Astral 45g Linear PCB Mount Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug luminkey-astral-linear)
 - slug: luminkey-lumino75
   brand: luminkey
   name: Lumino75
@@ -47,12 +45,11 @@
     - https://mechanicalkeyboards.com/products/luminkey-lumino75-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, macSupport: true, batteryMah: 4400, soundDampening: true }
   variants:
-    - { sku: LUK-Lumino75-BLPET, colorName: Blush Pink, colorFamily: color, layout: ansi_us }
-    - { sku: LUK-Lumino75-RCHGY, colorName: Retro Grey, colorFamily: black, layout: ansi_us }
-    - { sku: LUK-Lumino75-CRBLZ, colorName: Crimson Blaze, colorFamily: color, layout: ansi_us }
-    - { sku: LUK-Lumino75-MNTBRZ, colorName: Mint Breeze, colorFamily: color, layout: ansi_us }
+    - { sku: LUK-Lumino75-BLPET, colorName: Blush Pink, colorFamily: color, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-Lumino75-RCHGY, colorName: Retro Grey, colorFamily: black, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-Lumino75-CRBLZ, colorName: Crimson Blaze, colorFamily: color, layout: ansi_us, switch: luminkey-astral }
+    - { sku: LUK-Lumino75-MNTBRZ, colorName: Mint Breeze, colorFamily: color, layout: ansi_us, switch: luminkey-astral }
 
-# à vérifier : switch « Gateron Sylva » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug gateron-sylva)
 - slug: luminkey-luminkey80-wkl
   brand: luminkey
   name: LuminKey80 WKL
@@ -70,8 +67,8 @@
     - https://mechanicalkeyboards.com/products/createkeebs-luminkey80-wkl-aluminum-tkl-hotswap-wireless-mechanical-keyboard
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, plateMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: qmk, macSupport: true, batteryMah: 2200, soundDampening: true }
   variants:
-    - { sku: CK-LUK80-SYL-SLV-WKL, colorName: Silver, colorFamily: white, layout: ansi_us }
-    - { sku: CK-LUK80-SYL-BGE-WKL, colorName: Beige, colorFamily: color, layout: ansi_us }
+    - { sku: CK-LUK80-SYL-SLV-WKL, colorName: Silver, colorFamily: white, layout: ansi_us, switch: gateron-sylva }
+    - { sku: CK-LUK80-SYL-BGE-WKL, colorName: Beige, colorFamily: color, layout: ansi_us, switch: gateron-sylva }
 
 # à vérifier : switch « 27228 » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug 27228)
 - slug: luminkey-magger60
@@ -93,6 +90,7 @@
     - { sku: LUK-MG60HEUltra-BLK, colorName: Black, colorFamily: black, layout: ansi_us }
     - { sku: LUK-MG60HEUltra-GLD, colorName: Gold, colorFamily: color, layout: ansi_us }
 
+# switch : « Astral switches » : https://mechanicalkeyboards.com/products/createkeebs-luminkey80-mk-ii-tri-mode-keyboard
 - slug: luminkey-luminkey80
   brand: luminkey
   name: LuminKey80
@@ -106,6 +104,6 @@
     - https://mechanicalkeyboards.com/products/createkeebs-luminkey80-mk-ii-tri-mode-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, plateMaterial: pom, keycapMaterial: pbt, keycapProfile: oem, backlight: white, firmware: qmk, macSupport: true, batteryMah: 7000, heightFrontMm: 17.7 }
   variants:
-    - { sku: CK-LUK80MK2-ASLV-WK, colorName: Anodized Silver, colorFamily: white, layout: ansi_us }
-    - { sku: CK-LUK80MK2-RWHT-WK, colorName: Retro White, colorFamily: white, layout: ansi_us }
-    - { sku: CK-LUK80MK2-ARED-WK, colorName: Red, colorFamily: color, layout: ansi_us }
+    - { sku: CK-LUK80MK2-ASLV-WK, colorName: Anodized Silver, colorFamily: white, layout: ansi_us, switch: luminkey-astral }
+    - { sku: CK-LUK80MK2-RWHT-WK, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: luminkey-astral }
+    - { sku: CK-LUK80MK2-ARED-WK, colorName: Red, colorFamily: color, layout: ansi_us, switch: luminkey-astral }
