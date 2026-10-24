@@ -71,3 +71,9 @@
 
 # Marques importées (pnpm ingest pulsar-mice, 2026-10-23)
 - { slug: pulsar, name: Pulsar, website: https://www.pulsar.gg }
+
+# Marques importées (pnpm ingest zowie, 2026-10-24)
+- { slug: zowie, name: ZOWIE, website: https://zowie.benq.eu }
+
+# Marques importées (pnpm ingest akko, 2026-10-24)
+- { slug: akko, name: Akko, website: https://en.akkogear.com }

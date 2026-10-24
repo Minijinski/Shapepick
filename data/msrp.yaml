@@ -70,3 +70,10 @@ philips-27m2c5501: { eur: 249, source: "https://www.hardwareluxx.de/index.php/ne
 philips-27m2c5200w: { eur: 249, source: "https://www.hardwareluxx.de/index.php/news/hardware/monitore/64089-mg-philips-evnia-27m2c5200w-neuer-curved-monitor-mit-fast-va-panel.html" }
 # ComputerBase, 2024 : UVP
 philips-24b2g5200: { eur: 219, source: "https://www.computerbase.de/news/monitore/sparsam-im-office-philips-praesentiert-monitore-mit-unter-10-watt-trotz-100-hz.90429/" }
+
+# Souris (même règle : prix conseillé de la presse ou d'une page officielle, 2023 et après)
+# ZOWIE : modèles que la boutique BenQ ne vend pas en France
+# Notebookcheck, 2024 : UVP au lancement (« unverbindliche Preisempfehlung von 149,99 Euro »)
+zowie-u2: { eur: 149.99, source: "https://www.notebookcheck.com/BenQ-Zowie-U2-Gaming-Maus-packt-drahtlose-Ladestation-in-USB-Dongle.828036.0.html" }
+# à vérifier : estimation, aucun prix en euros publié ; la boutique ZOWIE vend chacun des autres modèles DW 149,99 €
+zowie-fk2-dw: { eur: 149.99, source: "https://zowie.benq.eu/fr-fr/mouse/fk1-dw.html" }

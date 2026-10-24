@@ -28,7 +28,7 @@ type Money = { value?: number }
 type Price = { minimum_price?: { regular_price?: Money; final_price?: Money } }
 type Spec = { code: string; value: string }
 type Attribute = { code: string; label: string }
-type VariantProduct = {
+export type VariantProduct = {
   sku?: string
   name?: string
   stock_status?: string
@@ -36,7 +36,7 @@ type VariantProduct = {
   image?: { url?: string }
   tech_specs?: Spec[]
 }
-type Item = VariantProduct & {
+export type Item = VariantProduct & {
   categories?: { name?: string }[]
   description?: { html?: string }
   short_description?: { html?: string }
@@ -45,7 +45,7 @@ type Item = VariantProduct & {
 }
 
 /** Cloudinary renditions: the page carries thumbnails ("w_96"), the photo exists at any width. */
-const large = (url?: string) => url?.replace(/([,/])w_\d+/, '$1w_1600')
+export const large = (url?: string) => url?.replace(/([,/])w_\d+/, '$1w_1600')
 
 /** "K70 CORE SE RGB Mechanical Gaming Keyboard – Cherry Blossom" → K70 CORE SE RGB. */
 const modelName = (name: string) =>
@@ -57,7 +57,7 @@ const modelName = (name: string) =>
     ?.replace(/\s+/g, ' ')
     .trim() ?? name
 
-function variantOf(p: VariantProduct, attributes: Attribute[] = []): OfficialVariant {
+export function variantOf(p: VariantProduct, attributes: Attribute[] = []): OfficialVariant {
   const attr = (re: RegExp) => attributes.find((a) => re.test(a.code))?.label
   const spec = (re: RegExp) => p.tech_specs?.find((s) => re.test(s.code))?.value
   const prices = p.price_range?.minimum_price
@@ -74,11 +74,16 @@ function variantOf(p: VariantProduct, attributes: Attribute[] = []): OfficialVar
   }
 }
 
-export function read(url: string, html: string): OfficialProduct | undefined {
+/** The configurable product a page's __NEXT_DATA__ holds (the mice read it too, sources/mice/corsair.ts). */
+export function itemOf(html: string): Item | undefined {
   const data = scriptJson(html, '__NEXT_DATA__') as
     | { props?: { pageProps?: { productData?: { productDetail?: { items?: Item[] } } } } }
     | undefined
-  const item = data?.props?.pageProps?.productData?.productDetail?.items?.[0]
+  return data?.props?.pageProps?.productData?.productDetail?.items?.[0]
+}
+
+export function read(url: string, html: string): OfficialProduct | undefined {
+  const item = itemOf(html)
   if (!item?.name) return undefined
   const variants = item.variants?.length
     ? item.variants.map((v) => variantOf(v.product ?? {}, v.attributes))

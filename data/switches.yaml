@@ -361,3 +361,34 @@
 - { slug: durock-blue-lotus, brand: Durock, name: Blue Lotus, feel: tactile, tech: mechanical, actuationForceG: 55, bottomOutG: 65, preTravelMm: 2, totalTravelMm: 3.7, factoryLubed: true }
 # HMX Silent Sakura (fait avec Mage Studio), source non officielle : kbd.news : https://kbd.news/switch/HMX-Sakura-175.html
 - { slug: hmx-silent-sakura, brand: HMX, name: Silent Sakura, feel: linear, silent: true, tech: mechanical, actuationForceG: 45, bottomOutG: 53, preTravelMm: 2, totalTravelMm: 4, factoryLubed: true }
+
+# ASUS ROG, page officielle des switchs : https://rog.asus.com/content/rog-keyboard-switch/
+# Force : « Initial Force » (force de départ) pour un linéaire, « Tactile Force » pour un clicky ; fin de course :
+# « Total Force » ; pré-course : « Actuation Point » ; course : « Travel Distance » (switchs magnétiques seulement).
+# « lubricated stems and base housings » (NX), « factory pre-lubing » (HFX), « pre-lubed » (HFX V2).
+- { slug: rog-nx-red, brand: ROG, name: NX Red, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 55, preTravelMm: 1.8, factoryLubed: true }
+- { slug: rog-nx-snow, brand: ROG, name: NX Snow, feel: linear, tech: mechanical, actuationForceG: 40, bottomOutG: 53, preTravelMm: 1.8, factoryLubed: true }
+- { slug: rog-nx-storm, brand: ROG, name: NX Storm, feel: clicky, tech: mechanical, actuationForceG: 65, preTravelMm: 1.8, factoryLubed: true }
+# NX Snow V2 et Storm V2 : « Refined Linear », « Refined Clicky » au tableau de la même page, sans chiffres propres
+- { slug: rog-nx-snow-v2, brand: ROG, name: NX Snow V2, feel: linear, tech: mechanical }
+- { slug: rog-nx-storm-v2, brand: ROG, name: NX Storm V2, feel: clicky, tech: mechanical }
+- { slug: rog-rx-red, brand: ROG, name: RX Red, feel: linear, tech: optical, actuationForceG: 40, bottomOutG: 55, preTravelMm: 1.5 }
+- { slug: rog-rx-blue, brand: ROG, name: RX Blue, feel: clicky, tech: optical, actuationForceG: 65, preTravelMm: 1.5 }
+- { slug: rog-rx-red-low-profile, brand: ROG, name: RX Red Low-Profile, feel: linear, tech: optical, actuationForceG: 40, bottomOutG: 55, preTravelMm: 1 }
+- { slug: rog-rx-blue-low-profile, brand: ROG, name: RX Blue Low-Profile, feel: clicky, tech: optical, actuationForceG: 55, preTravelMm: 1.5 }
+- { slug: rog-hfx-magnetic, brand: ROG, name: HFX Magnetic, feel: linear, tech: magnetic, actuationForceG: 40, bottomOutG: 55, totalTravelMm: 4, factoryLubed: true }
+- { slug: rog-hfx-v2-magnetic, brand: ROG, name: HFX V2 Magnetic, feel: linear, tech: magnetic, actuationForceG: 32, bottomOutG: 49, totalTravelMm: 3.5, factoryLubed: true }
+- { slug: rog-hfx-v2x-magnetic, brand: ROG, name: HFX V2X Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 45, totalTravelMm: 3.5 }
+
+# Akko, cartes des switchs des pages produit de la boutique officielle (en.akkogear.com) ; force : « Operating Force »
+# (« Initial Force » pour un magnétique), fin de course : « End Force », courses : « Pre Travel » / « Total Travel ».
+# https://en.akkogear.com/product/blackgold-5098-v5-mechanical-keyboard/
+- { slug: akko-v3-piano-pro, brand: Akko, name: V3 Piano Pro, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 1.9, totalTravelMm: 3.1 }
+# https://en.akkogear.com/product/piggy-party-5108-v5-mechanical-keyboard/
+- { slug: akko-creamy-yellow-u1, brand: Akko, name: Creamy Yellow U1, feel: linear, tech: mechanical, actuationForceG: 45, preTravelMm: 2, totalTravelMm: 3.6 }
+# https://en.akkogear.com/product/shiny-kitten-5108-v5-mechanical-keyboard/
+- { slug: akko-crystal-silver-u1, brand: Akko, name: Crystal Silver U1, feel: linear, tech: mechanical, actuationForceG: 35, preTravelMm: 1, totalTravelMm: 3.6 }
+# https://en.akkogear.com/product/5075-v5-he-magnetic-switch-keyboard/
+- { slug: akko-prism-magnetic, brand: Akko, name: Prism Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }
+# https://en.akkogear.com/product/5075-v5-tmr-magnetic-switch-keyboard/
+- { slug: kailh-aurora-magnetic, brand: Kailh, name: Aurora Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }

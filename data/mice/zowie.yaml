@@ -1,0 +1,262 @@
+# ZOWIE : souris importées de zowie.benq.eu par `pnpm ingest zowie` ; mesures (longueur ×
+# largeur maximale × hauteur) et poids de la comparaison des formes de zowie.benq.com.
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Mesures et poids lus sur la fiche officielle ; une variante est une couleur (une autre taille,
+# fréquence ou une version filaire est un autre produit). Prix indicatifs (boutique officielle
+# hors promo, sinon revendeurs listés par la marque, sinon prix conseillé de data/msrp.yaml),
+# arrondis à 5 €, mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-24 : 11 modèles, zowie.benq.eu/fr-fr (prix € de la boutique BenQ, sinon prix conseillé)
+- slug: zowie-za12-dw
+  brand: zowie
+  name: ZA12-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/za12-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/za12-dw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/za12-dw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/za12-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/za12-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/za12-dw.html
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 64.6, heightMm: 41.4, weightG: 55, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    # couleur : gris très clair sur les photos officielles (« GREY » à la boutique BenQ), rangé en blanc
+    - { sku: za12-dw, colorName: Gris clair, colorFamily: white }
+
+- slug: zowie-fk1-dw
+  brand: zowie
+  name: FK1-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/fk1-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/fk1-dw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/fk1-dw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/fk1-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/fk1-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/fk1-dw.html
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128.9, widthMm: 66.8, heightMm: 37.3, weightG: 55, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    # couleur : gris très clair sur les photos officielles (« GREY » à la boutique BenQ), rangé en blanc
+    - { sku: fk1-dw, colorName: Gris clair, colorFamily: white }
+
+- slug: zowie-ec3-dw
+  brand: zowie
+  name: EC3-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0F6N1ZW2Z
+  images:
+    - { url: https://image.benq.com/is/image/benqco/ec3-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ec3-dw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3-dw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-ec3-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/ec3-dw.html
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 118.4, widthMm: 65.6, heightMm: 41.1, weightG: 59, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: ec3-dw, colorName: Noir, colorFamily: black }
+    - { colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-ec1-dw
+  brand: zowie
+  name: EC1-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0F4WJ16KR
+  images:
+    - { url: https://image.benq.com/is/image/benqco/ec1-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ec1-dw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec1-dw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec1-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec1-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-ec1-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/ec1-dw.html
+  gtins:
+    - "4718755094583"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129.4, widthMm: 69.3, heightMm: 42.3, weightG: 63, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: ec1-dw, colorName: Noir, colorFamily: black }
+    - { colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-ec2-dw
+  brand: zowie
+  name: EC2-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0F6MKRK7K
+  images:
+    - { url: https://image.benq.com/is/image/benqco/ec2-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/ec2-dw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec2-dw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec2-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec2-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-ec2dw-top?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/ec2-dw.html
+  gtins:
+    - "4718755094590"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 65, heightMm: 42.1, weightG: 60, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: ec2-dw, colorName: Noir, colorFamily: black }
+    - { sku: ec2-dw-white, colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-fk2-dw
+  brand: zowie
+  name: FK2-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0DK866K9Z
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-fk2-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/3-fk2-dw-bl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/4-fk2-dw-fl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/5-fk2-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/6-fk2-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-fk2-dw-top-1?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/fk2-dw.html
+    - https://zowie.benq.eu/fr-fr/mouse/fk1-dw.html
+  gtins:
+    - "4718755094200"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.1, widthMm: 64.9, heightMm: 36.4, weightG: 65, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: fk2-dw, colorName: Noir, colorFamily: black }
+    - { sku: fk2-dw-white, colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-u2
+  brand: zowie
+  name: U2
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0CT8KVMWC
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-u2-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-u2_back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-u2_front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-u2_left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-u2-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/u2.html
+    - https://www.notebookcheck.com/BenQ-Zowie-U2-Gaming-Maus-packt-drahtlose-Ladestation-in-USB-Dongle.828036.0.html
+  gtins:
+    - "840046049300"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 65, heightMm: 38, weightG: 60.3, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 70, power: rechargeable }
+  variants:
+    - { sku: u2, colorName: Noir, colorFamily: black }
+
+- slug: zowie-u2-dw
+  brand: zowie
+  name: U2-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0DQ3J1K8M
+  images:
+    - { url: https://image.benq.com/is/image/benqco/U2-DW_top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/U2-DW_BL45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/U2-DW_FL45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/U2-DW_Left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/U2-DW_Right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-u2-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/u2-dw.html
+  gtins:
+    - "4718755094446"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.3, widthMm: 64.3, heightMm: 38.1, weightG: 60, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: u2-dw, colorName: Noir, colorFamily: black }
+    - { sku: u2-dw-white, colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-za13-dw
+  brand: zowie
+  name: ZA13-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0DNJ7YSDZ
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-za13-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/3-za13-dw-bl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/4-za13-dw-fl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/5-za13-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/6-za13-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-za13-dw-top-1?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/za13-dw.html
+  gtins:
+    - "4718755094453"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 62.8, heightMm: 40.2, weightG: 65, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: za13-dw, colorName: Noir, colorFamily: black }
+    - { sku: za13-dw-white, colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-s2-dw
+  brand: zowie
+  name: S2-DW
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0DNHJLRKQ
+  images:
+    - { url: https://image.benq.com/is/image/benqco/1-s2-dw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/3-s2-dw-bl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/4-s2-dw-fl45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/5-s2-dw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/6-s2-dw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/1-s2-dw-top-4?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/s2-dw.html
+  gtins:
+    - "4718755094422"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64.2, heightMm: 38.1, weightG: 65, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 4000, connWired: false, conn24ghz: true, batteryHours: 80, power: rechargeable }
+  variants:
+    - { sku: s2-dw, colorName: Noir, colorFamily: black }
+    - { sku: s2-dw-white, colorName: Blanc brillant, colorFamily: white }
+
+- slug: zowie-ec3-cw
+  brand: zowie
+  name: EC3-CW
+  msrpEur: 140
+  popularity: 0.5
+  editorialScore: 0.5
+  amazonAsin: B0BZR2JBV3
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec3-cw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/04-ec3-cw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ec3-cw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ec3-cw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/03-ec3-cw-front?wid=2000&fmt=png-alpha, kind: cutout_top }
+  sources:
+    - https://zowie.benq.eu/fr-fr/mouse/ec3-cw.html
+  gtins:
+    - "4718755094606"
+  # sideButtons : photos de profil officielles (…-left : 2 boutons ; …-right : aucun), zowie.benq.eu
+  # power : batterie chargée par câble sur son récepteur (photo officielle 08-ec3-cw-rx), « Akku » au test de ComputerBase, https://www.computerbase.de/2023-03/zowie-ec3-cw-wireless-test/
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 66, heightMm: 41, weightG: 76, buttons: 7, sideButtons: 2, dpiMax: 3200, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 70, power: rechargeable }
+  variants:
+    - { sku: ec3-cw, colorName: Noir, colorFamily: black }
