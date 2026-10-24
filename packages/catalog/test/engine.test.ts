@@ -190,6 +190,18 @@ describe('counts, skips and dead ends', () => {
   })
 })
 
+describe('one item left', () => {
+  it('asks nothing more, not even what only steers the ranking', () => {
+    // Colour and must-haves taken first: red with Wi-Fi and Bluetooth leaves b alone.
+    const late = withOrder(def, ['color', 'musts'])
+    const answers = { color: 'red', musts: 'wifi,bt' }
+    expect(filter(late, toys, answers).map((x) => x.id)).toEqual(['b'])
+    expect(isTrivial(late, toys, answers, 'use')).toBe(true)
+    expect(firstPending(late, toys, answers)).toBe(null)
+    expect(journeyStates(late, toys, answers, null, undefined).use).toBe('skipped')
+  })
+})
+
 describe('rank', () => {
   it('orders by the profile picked on the weight-only step', () => {
     expect(rank(def, toys, { use: 'quality' }).map((r) => r.item.id)).toEqual([
@@ -344,24 +356,55 @@ describe('missing figures and ties', () => {
     // Without Wi-Fi, the score itself says so.
     expect(ranked.at(-1)?.item.wifi).toBe(false)
   })
-  it('takes makers in turn among items printed with the same match', () => {
+  it('takes makers in turn among items whose fit reads the same', () => {
     const twins: Toy[] = ['a1', 'a2', 'a3', 'b1', 'b2'].map((id) => ({ ...toys[0], id }) as Toy)
-    const turns = rank({ ...def, maker: (x) => x.id[0] ?? '' }, twins, { use: 'quality' })
-    expect(turns.map((r) => r.item.id)).toEqual(['a1', 'b1', 'a2', 'b2', 'a3'])
+    const makers = rank({ ...def, maker: (x) => x.id[0] ?? '' }, twins, { use: 'quality' }).map(
+      (r) => r.item.id[0],
+    )
+    // One of each in turn while both have some left, whichever comes first.
+    expect(new Set(makers.slice(0, 2)).size).toBe(2)
+    expect(makers).toEqual([makers[0], makers[1], makers[0], makers[1], 'a'])
     // Different matches keep their order.
     const mixed = rank({ ...def, maker: (x) => x.color }, toys, { use: 'quality' })
     expect(mixed.map((r) => r.item.id)).toEqual(['a', 'c', 'e', 'b', 'd'])
   })
+  it('keeps the order of products that fit differently, however many answers they meet', () => {
+    // Fits 0.809, 0.805 and 0.795: three answers print them all at 90 %, yet b1 fits less well.
+    const close = [
+      { ...toys[0], id: 'a1', q: 0.809 },
+      { ...toys[0], id: 'a2', q: 0.805 },
+      { ...toys[0], id: 'b1', q: 0.795 },
+    ] as Toy[]
+    const byMaker = { ...def, maker: (x: Toy) => x.id[0] ?? '' }
+    const order = (answers: Record<string, string>) =>
+      rank(byMaker, close, answers).map((r) => r.item.id)
+    expect(order({ use: 'quality' })).toEqual(['a1', 'a2', 'b1'])
+    expect(order({ use: 'quality', color: 'red', budget: '0-400', musts: 'wifi' })).toEqual([
+      'a1',
+      'a2',
+      'b1',
+    ])
+  })
   it('settles exact ties cheapest first, then as the definition says, never by name', () => {
     const like = (id: string, price: number, bt: boolean) => ({ ...toys[0], id, price, bt }) as Toy
     const twins = [like('a1', 90, false), like('z1', 60, false), like('m1', 90, true)]
-    expect(rank(def, twins, { use: 'quality' }).map((r) => r.item.id)).toEqual(['z1', 'a1', 'm1'])
+    const plain = rank(def, twins, { use: 'quality' }).map((r) => r.item.id)
+    expect(plain[0]).toBe('z1')
+    expect(rank(def, [...twins].reverse(), { use: 'quality' }).map((r) => r.item.id)).toEqual(plain)
     const settled = { ...def, settle: (a: Toy, b: Toy) => Number(b.bt) - Number(a.bt) }
     expect(rank(settled, twins, { use: 'quality' }).map((r) => r.item.id)).toEqual([
       'z1',
       'm1',
       'a1',
     ])
+    // What nothing settles does not follow the names, which begin with the brand's.
+    const makers = ['asus', 'hyperx', 'logitech', 'pulsar', 'razer', 'zowie']
+    const order = rank(
+      def,
+      makers.map((maker) => like(`${maker}-x`, 90, false)),
+      { use: 'quality' },
+    ).map((r) => r.item.id)
+    expect(order).not.toEqual([...order].sort())
   })
   it('leaves out of the fit a prior that every item shares', () => {
     // The same prior for all (no editorial score yet): the fit is the profile's alone.

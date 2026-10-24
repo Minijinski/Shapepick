@@ -30,6 +30,13 @@ type StepCommon<I> = {
    * grip sets what a criterion measures).
    */
   weightOnly?: boolean
+  /**
+   * For a step that only steers the ranking, other than the profile's: the criteria its answer
+   * feeds (a grip, the fit to it). Once none of them weighs in the profile, or they score every
+   * product left alike whatever the answer, the question cannot change anything and is skipped.
+   * Without it, such a step is always asked.
+   */
+  feeds?: string[]
   /** No "no preference" tile: everyone can make this decision. */
   required?: boolean
   /**
@@ -115,10 +122,10 @@ export type FinderDefinition<I> = {
   prior: (item: I) => number
   /**
    * Between two items with exactly the same match and the same price, which comes first: negative
-   * for `a`, positive for `b`. What it leaves level goes by id.
+   * for `a`, positive for `b`. What it leaves level goes by a hash of the id, never by name.
    */
   settle?: (a: I, b: I) => number
-  /** Who makes the item: among items with the same match, the ranking takes makers in turn. */
+  /** Who makes the item: among items whose fit reads the same, the ranking takes makers in turn. */
   maker?: (item: I) => string
   /** The questions a product's sheet reads to suggest products like it (similar.ts). */
   likeness?: Likeness[]

@@ -40,11 +40,17 @@ const keepsFlanks = (answers: Answers) => {
   return !shapes.length || shapes.some((s) => !s.startsWith('tb_'))
 }
 
-const inBand = (band: SizeBand) => (m: M) => sizeBandOf(m) === band
+/**
+ * A trackball stays put on the desk: the size and weight questions, asked of the shells a hand
+ * moves, leave it in whatever the visitor picks (a shape answer may keep both kinds).
+ */
+const sitsStill = (m: M) => m.specs.shape === 'trackball'
+const inBand = (band: SizeBand) => (m: M) => sitsStill(m) || sizeBandOf(m) === band
 /** A few grams either side of a band are not another mouse: they still count. */
 const GRACE_G = 3
 const weighs = (lo: number, hi: number) => (m: M) =>
-  m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G
+  sitsStill(m) ||
+  (m.specs.weightG != null && m.specs.weightG >= lo - GRACE_G && m.specs.weightG < hi + GRACE_G)
 /** Buttons on the thumb's flank, between lo and hi. A mouse whose count is unknown answers none. */
 const sides =
   (lo: number, hi = lo) =>
@@ -167,6 +173,7 @@ export const mouseFinder: FinderDefinition<M> = {
       key: 'grip',
       kind: 'multi',
       weightOnly: true,
+      feeds: ['gripFit'],
       anyLabel: text('Je ne sais pas', 'Not sure'),
       applies: keepsShells,
       label: text('Prise', 'Grip'),

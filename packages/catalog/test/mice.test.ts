@@ -3,7 +3,9 @@ import {
   askedSteps,
   describeAnswer,
   filter,
+  firstPending,
   isInformed,
+  isTrivial,
   liveAnswers,
   mouseFinder,
   rank,
@@ -11,7 +13,7 @@ import {
   sanitizeAnswers,
   stepOf,
 } from '../src'
-import { gripFit, gripOf } from '../src/finder/mouse-fit'
+import { gripFit, gripOf, sizeBandOf } from '../src/finder/mouse-fit'
 import type { Answers } from '../src/finder/types'
 import { mice } from './fixtures'
 
@@ -68,6 +70,18 @@ describe('mouse finder', () => {
     const mixed = askedSteps(mouseFinder, mice, { ...base, shape: 'sym,vertical' })
     expect(mixed).toContain('grip')
     expect(mixed).toContain('size')
+  })
+
+  it('leaves trackballs in whatever size and weight a mixed shape answer picks', () => {
+    const kept = filter(mouseFinder, mice, {
+      hand: 'right',
+      shape: 'sym,tb_thumb',
+      size: 'medium',
+      weight: 'light',
+    })
+    expect(kept.some((m) => m.specs.shape === 'trackball')).toBe(true)
+    const shells = kept.filter((m) => m.specs.shape !== 'trackball')
+    expect(shells.every((m) => sizeBandOf(m) === 'medium')).toBe(true)
   })
 
   it('ignores a grip answered before the shape ruled grips out', () => {
@@ -202,6 +216,25 @@ describe('size and grip', () => {
     expect(relaxed?.hl).toBeLessThan(palm?.hl ?? 0)
     expect(gripOf({ grip: 'palm,fingertip' })).toBeNull()
     expect(gripOf({ grip: 'palm,claw,fingertip' })).toBeNull()
+  })
+
+  it('skips the grip when it cannot change anything', () => {
+    const shells = { use: 'competitive', hand: 'right', shape: 'sym' }
+    // One mouse left: nothing to rank, the results come next.
+    const one = mice.find((m) => m.specs.shape === 'symmetrical' && m.specs.hand !== 'left')
+    if (!one) throw new Error('demo mouse missing')
+    expect(isTrivial(mouseFinder, [one], shells, 'grip')).toBe(true)
+    expect(firstPending(mouseFinder, [one], shells)).toBe(null)
+    // No grip ranks a mouse to travel with.
+    expect(isTrivial(mouseFinder, mice, { ...shells, use: 'travel' }, 'grip')).toBe(true)
+    // Only verticals and trackballs left, though the shape answer keeps shells too.
+    const held = mice.filter((m) => m.specs.shape === 'vertical' || m.specs.shape === 'trackball')
+    const mixed = { use: 'office', hand: 'right', shape: 'sym,vertical,tb_thumb' }
+    expect(filter(mouseFinder, held, mixed).length).toBeGreaterThan(1)
+    expect(isTrivial(mouseFinder, held, mixed, 'grip')).toBe(true)
+    // Shells it tells apart: asked.
+    expect(isTrivial(mouseFinder, mice, shells, 'grip')).toBe(false)
+    expect(firstPending(mouseFinder, mice, shells)).toBe('grip')
   })
 
   it('leaves the ranking alone until a grip is given', () => {

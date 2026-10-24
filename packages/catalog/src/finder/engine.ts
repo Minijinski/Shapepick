@@ -182,22 +182,47 @@ export function optionCounts<I>(
 }
 
 /**
- * A step is trivial when no option would change the result set: every option keeps either all
- * of the remaining items or none of them. It is then skipped rather than asked, so the visitor
- * never answers a question whose answer cannot matter.
+ * A step is trivial when its answer cannot change anything. With one item left, or none, no
+ * answer can. Otherwise, for a step that narrows the catalogue: every option keeps either all of
+ * the remaining items or none of them; for one that only steers the ranking, the criteria it feeds
+ * cannot reorder them (`steers`). It is then skipped rather than asked, so the visitor never
+ * answers a question whose answer cannot matter.
  */
 export function isTrivial<I>(def: FinderDefinition<I>, items: I[], answers: Answers, key: string) {
   const step = stepOf(def, key)
-  if (step.weightOnly) return false
   const prior = priorAnswers(def, answers, key)
   const base = filter(def, items, prior)
   if (base.length <= 1) return true
+  if (step.weightOnly) return !steers(def, base, prior, step)
   if (!isChoice(step)) {
     const values = base.map(step.value)
     return Math.min(...values) === Math.max(...values)
   }
   const { counts } = optionCounts(def, items, prior, key)
   return step.options.every((o) => counts[o.id] === 0 || counts[o.id] === base.length)
+}
+
+/**
+ * Whether answering a step that only steers the ranking could reorder `base`: always for the use
+ * (it picks the profile) and for a step that does not say which criteria it feeds; otherwise once
+ * one of them weighs in the profile the earlier answers pick and, for some option, scores the
+ * remaining items differently. A grip does nothing for a traveller's mouse, which no grip ranks,
+ * nor once only verticals and trackballs are left, which no grip holds.
+ */
+function steers<I>(def: FinderDefinition<I>, base: I[], prior: Answers, step: Step<I>) {
+  if (step.key === def.profileStep || !step.feeds || !isChoice(step)) return true
+  const weights = weightsOf(def, prior)
+  const fed = def.criteria.filter((c) => step.feeds?.includes(c.key) && (weights[c.key] ?? 0) > 0)
+  const [first, ...rest] = base
+  if (first === undefined) return false
+  return step.options.some((option) => {
+    const live = liveAnswers(def, withAnswer(prior, step.key, option.id))
+    return fed.some((c) => {
+      if (!(c.active?.(live) ?? true)) return false
+      const level = c.score(first, live)
+      return rest.some((item) => c.score(item, live) !== level)
+    })
+  })
 }
 
 /** Whether the questionnaire puts this step to the visitor: never one answered aside. */
@@ -416,8 +441,8 @@ function priorTellsApart<I>(def: FinderDefinition<I>, items: I[]): boolean {
  * printed adds the answers: each one that narrows the catalogue is a criterion every ranked item
  * meets, so the match starts at the fit and fills up as the visitor answers, without changing the
  * order. Items with exactly the same match come cheapest first, then as the definition settles
- * them (the newer model…), never by name. Among items printed with the same match, makers take
- * turns: a brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses
+ * them (the newer model…), never by name. Among items whose fit reads the same percent, makers
+ * take turns: a brand that sells ten variants of one board cannot fill a podium on a tie. Weaknesses
  * are said in their own words, and a caveat (an OLED's burn-in at the office) only ever as a
  * weakness.
  */
@@ -495,14 +520,43 @@ function offBy<I>(step: Step<I>, item: I, answers: Answers): number {
   return Math.min(2, Math.log(ratio) / Math.log(RANGE_SLACK))
 }
 
-/** Best match first; the same match, cheapest first, then as the definition settles it, then by id. */
+/**
+ * A number of its own for each id, the same on the server and in the browser (FNV-1a, then
+ * murmur3's final mix so that ids a letter apart land far apart): what puts in order items that
+ * nothing else tells apart, in an order owing nothing to their names, which begin with the brand's.
+ */
+function idHash(id: string) {
+  let hash = 0x811c9dc5
+  for (let i = 0; i < id.length; i++) {
+    hash ^= id.charCodeAt(i)
+    hash = Math.imul(hash, 0x01000193)
+  }
+  hash ^= hash >>> 16
+  hash = Math.imul(hash, 0x85ebca6b)
+  hash ^= hash >>> 13
+  hash = Math.imul(hash, 0xc2b2ae35)
+  hash ^= hash >>> 16
+  return hash >>> 0
+}
+
+/**
+ * Best match first; the same match, cheapest first, then as the definition settles it, then by
+ * the id's hash (by the id itself only if two hashes ever met).
+ */
 const byMatch =
   <I>(def: FinderDefinition<I>) =>
   (a: Ranked<I>, b: Ranked<I>) =>
     b.score - a.score ||
     def.price(a.item) - def.price(b.item) ||
     (def.settle?.(a.item, b.item) ?? 0) ||
+    idHash(def.id(a.item)) - idHash(def.id(b.item)) ||
     def.id(a.item).localeCompare(def.id(b.item))
+
+/** The criteria's weights in the profile the answers pick (the use), or in the default one. */
+function weightsOf<I>(def: FinderDefinition<I>, answers: Answers): Record<string, number> {
+  const profileId = answers[def.profileStep]
+  return (profileId && def.profiles[profileId]) || def.profiles.default || {}
+}
 
 /**
  * What the ranking reads off the answers, ready to judge one item: its fit to the visitor's use,
@@ -510,8 +564,7 @@ const byMatch =
  * a figure missing from a sheet counts as.
  */
 function judgeFor<I>(def: FinderDefinition<I>, items: I[], answers: Answers) {
-  const profileId = answers[def.profileStep]
-  const weights = (profileId && def.profiles[profileId]) || def.profiles.default || {}
+  const weights = weightsOf(def, answers)
   const live = liveAnswers(def, answers)
   // A criterion with nothing to measure yet (a fit to a grip not given) sits out.
   const criteria = def.criteria.filter(
@@ -568,16 +621,18 @@ const weakLabelOf = <I>(c: Criterion<I>, item: I, answers: Answers) =>
 export const matchPercent = (score: number) => Math.round(score * 100)
 
 /**
- * Among ranked items printed with the same match, one per maker in turn (makers in the order
- * their best item came), each maker's items in their own order. Different matches keep their
- * order: only what reads as a tie is reshuffled.
+ * Among ranked items whose fit reads the same percent, one per maker in turn (makers in the order
+ * their best item came), each maker's items in their own order. Different fits keep their order:
+ * only what reads as a tie is reshuffled. The fit, not the match printed: every answer met lifts
+ * the match of all ranked items alike and squeezes them together, so ties read on the match would
+ * widen with each answer, and answering would reorder products that fit differently.
  */
 function takeTurns<I>(ranked: Ranked<I>[], maker: (item: I) => string): Ranked<I>[] {
   const out: Ranked<I>[] = []
   for (let start = 0; start < ranked.length; ) {
-    const percent = matchPercent(ranked[start]?.score ?? 0)
+    const percent = matchPercent(ranked[start]?.fit ?? 0)
     let end = start
-    while (end < ranked.length && matchPercent(ranked[end]?.score ?? 0) === percent) end++
+    while (end < ranked.length && matchPercent(ranked[end]?.fit ?? 0) === percent) end++
     const queues = new Map<string, Ranked<I>[]>()
     for (const entry of ranked.slice(start, end)) {
       const key = maker(entry.item)
