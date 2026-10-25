@@ -153,8 +153,8 @@ const hero = css({
     placeItems: "center",
     alignContent: "normal",
     px: "6",
-    // Centred a little above the middle: the panels' names live at their feet.
-    pb: "14dvh",
+    // Centred above the middle: the panels' names live at their feet.
+    pb: "22dvh",
   },
 });
 
@@ -176,10 +176,11 @@ function Home() {
   const spots = useMemo(() => {
     if (!viewport || !quads || rows) return null;
     const each = quads.map((quad) => labelSpot(quad, viewport));
-    // One size for every name: the largest at which each name still fits its own panel.
+    // One size for every name: the largest at which each name still fits its own panel (a
+    // letter of Hubot Sans at 650 takes up to 0.58 em; 0.66 leaves a margin).
     const fit = Math.min(
       ...shown.map(
-        (c, i) => (each[i]?.width ?? 0) / (0.58 * m.category[c][locale].length),
+        (c, i) => (each[i]?.width ?? 0) / (0.66 * m.category[c][locale].length),
       ),
     );
     return each.map((spot) => ({ ...spot, nameFit: Math.max(20, fit) }));
@@ -368,7 +369,7 @@ function Home() {
                   _slats: "clamp(2.4rem, 1.35rem + 3.5vw, 4.75rem)",
                 },
                 fontWeight: "650",
-                letterSpacing: "-0.035em",
+                letterSpacing: "-0.015em",
                 lineHeight: "1.04",
               })}
             >
@@ -700,7 +701,7 @@ function BandLink({
                 _slats: "min(3rem, var(--name-fit, 3rem))",
               },
               fontWeight: "650",
-              letterSpacing: "-0.045em",
+              letterSpacing: "-0.025em",
               lineHeight: "1",
             }),
           )}

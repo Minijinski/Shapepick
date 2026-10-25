@@ -290,7 +290,7 @@ export function CatalogueShell({
                   md: 'clamp(2.75rem, 1.4rem + 3.2vw, 4.25rem)',
                 },
                 fontWeight: '650',
-                letterSpacing: '-0.035em',
+                letterSpacing: '-0.015em',
                 lineHeight: '1.04',
                 textWrap: 'balance',
               })}
@@ -392,7 +392,7 @@ export function CatalogueSection({
           className={css({
             fontSize: { base: 'lg', md: 'xl' },
             fontWeight: '600',
-            letterSpacing: '-0.02em',
+            letterSpacing: '-0.01em',
             lineHeight: '1.2',
           })}
         >

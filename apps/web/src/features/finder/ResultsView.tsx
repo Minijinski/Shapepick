@@ -386,7 +386,7 @@ export function ResultsView({
           className={css({
             fontSize: { base: "lg", md: "2xl" },
             fontWeight: "600",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.015em",
             whiteSpace: "nowrap",
           })}
         >
@@ -531,7 +531,7 @@ export function ResultsView({
                     className={css({
                       fontSize: { base: "2xl", md: "3xl" },
                       fontWeight: "650",
-                      letterSpacing: "-0.04em",
+                      letterSpacing: "-0.02em",
                       lineHeight: "1.05",
                     })}
                   >
@@ -766,7 +766,7 @@ export function ResultsView({
                           flex: "1 1 12rem",
                           minW: "0",
                           fontWeight: "600",
-                          letterSpacing: "-0.02em",
+                          letterSpacing: "-0.01em",
                         })}
                       >
                         <span

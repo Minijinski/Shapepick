@@ -41,6 +41,9 @@ importers:
       '@fontsource-variable/geist-mono':
         specifier: ^5.3.0
         version: 5.3.0
+      '@fontsource-variable/hubot-sans':
+        specifier: ^5.3.0
+        version: 5.3.0
       '@fontsource-variable/inter-tight':
         specifier: ^5.3.0
         version: 5.3.0
@@ -937,6 +940,9 @@ packages:
 
   '@fontsource-variable/geist-mono@5.3.0':
     resolution: {integrity: sha512-vBbuwDEo9AkrqADMXOrlAR3DFcJi4/JxeuU43FoiQERnNwsfXNnvxvReZG02cQKmyk4DZkZdBZX3oTDvy2zBAw==}
+
+  '@fontsource-variable/hubot-sans@5.3.0':
+    resolution: {integrity: sha512-iFwlxVR7VgQ73VC6CwWwr389wYSNBPpiG8R91kPqRObtxuO3RBpRkwjlGBMtOBgLfpfOGLNSF/EOJvG9QLVKlA==}
 
   '@fontsource-variable/inter-tight@5.3.0':
     resolution: {integrity: sha512-ZhZZ29sNZ15P1K+cUt13GeBRYON0akgmNiftshUeDLos7X7zGcRgPzt434879Xhq1QbwlW3M/apBMk7jWabwvA==}
@@ -5281,6 +5287,8 @@ snapshots:
   '@fastify/busboy@3.2.3': {}
 
   '@fontsource-variable/geist-mono@5.3.0': {}
+
+  '@fontsource-variable/hubot-sans@5.3.0': {}
 
   '@fontsource-variable/inter-tight@5.3.0': {}
 

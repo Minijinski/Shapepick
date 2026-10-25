@@ -671,7 +671,7 @@ export function Console({
             flex: "1",
             fontSize: { base: "xl", md: "2xl" },
             fontWeight: "600",
-            letterSpacing: "-0.03em",
+            letterSpacing: "-0.015em",
             lineHeight: "1.1",
             mt: { base: "1", md: "0" },
             ml: { base: "0", md: "2" },

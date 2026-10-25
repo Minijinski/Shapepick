@@ -1,4 +1,4 @@
-@import "@fontsource-variable/inter-tight";
+@import "@fontsource-variable/hubot-sans";
 @import "@fontsource-variable/geist-mono";
 
 @layer reset, base, tokens, recipes, utilities;
