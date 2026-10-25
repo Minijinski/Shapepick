@@ -16,41 +16,97 @@
 
 # Product photos go through Netlify's image CDN (`/.netlify/images`, see
 # apps/web/src/features/product/photo.ts): resized to the size shown and served from our own domain,
-# so the browser can cut them out whatever the shop's CDN allows. Only these shops may be fetched.
-# The shops whose CDN forbids keeping photos (`private`, `max-age=0`) are relayed by our own route
-# (`/api/photo/…`, which marks them as never changing): its allowlist in
-# apps/web/src/features/product/hosts.ts must match this one.
+# so the browser can cut them out whatever the shop's CDN allows. Only these sources may be fetched,
+# each down to the account the catalogue's photos live in: on a CDN shared by many customers
+# (Shopify, Cloudinary, Sanity, Contentful), a host alone would let anyone's files through. The
+# shops whose CDN forbids keeping photos (`private`, `max-age=0`) are relayed by our own route
+# (`/api/photo/…`, which marks them as never changing). The list is PHOTO_SOURCES in
+# packages/catalog/src/media/hosts.ts, each with `.*` added: a test fails when they differ.
 [images]
   remote_images = [
-    'https://cdn\.shopify\.com/.*',
+    # Shopify stores, one per line: brands' stores and the retailers some photos come from.
+    'https://cdn\.shopify\.com/s/files/1/0012/4957/4961/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0024/9803/5810/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0059/0630/1017/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0275/3649/0561/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0277/2507/0400/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0280/3931/5529/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0355/8296/7943/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0455/0914/8840/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0509/3713/5273/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0510/7866/0274/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0540/7981/5877/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0549/2681/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0549/9768/0300/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0551/3972/9497/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0552/2803/9264/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0554/6678/6869/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0556/5795/5430/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0559/1593/7865/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0561/8345/5901/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0564/2289/1591/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0580/1489/2094/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0581/9675/4466/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0585/2875/9937/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0589/2508/8957/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0596/9300/6963/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0598/8093/1517/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0607/2474/0287/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0621/8894/5585/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0633/6587/3921/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0638/1420/5659/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0644/5013/4180/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0647/6319/9593/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0653/2812/0033/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0665/1484/5931/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0691/4942/5882/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0698/4538/5436/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0704/7210/6227/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0722/4141/4426/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0734/3033/5775/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0774/7531/6010/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0775/4927/3398/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0799/8570/5240/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0815/1800/2452/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0823/5050/6282/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0835/9706/6540/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0846/5727/5175/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/0870/3960/7063/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/1573/2927/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/1888/4001/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/2377/4861/(files|products)/.*',
+    'https://cdn\.shopify\.com/s/files/1/2779/9046/(files|products)/.*',
+    # Razer: its resizer (signed addresses only) and the originals it wraps.
     'https://assets3\.razerzone\.com/.*',
     'https://medias-p1\.phoenix\.razer\.com/.*',
-    'https://assets\.corsair\.com/.*',
-    'https://res\.cloudinary\.com/.*',
+    # Corsair's Cloudinary account, under its own name and Cloudinary's: uploaded files only.
+    'https://assets\.corsair\.com/image/upload/.*',
+    'https://res\.cloudinary\.com/corsair-pwa/image/upload/.*',
     'https://resource\.logitech\.com/.*',
     'https://resource\.logitechg\.com/.*',
-    'https://images\.ctfassets\.net/.*',
+    # Contentful spaces and the Sanity project of brands' sites.
+    'https://images\.ctfassets\.net/hmm5mo4qf4mf/.*',
+    'https://images\.ctfassets\.net/w5r1fvmogo3f/.*',
+    'https://cdn\.sanity\.io/images/hf5b3axp/.*',
     # Monitors: the brands' own image CDNs.
     'https://images\.samsung\.com/.*',
     'https://www\.lg\.com/content/dam/.*',
     'https://i\.dell\.com/.*',
     'https://fr-store\.msi\.com/cdn/shop/.*',
-    'https://cdn\.sanity\.io/.*',
     'https://dlcdnwebimgs\.asus\.com/.*',
     'https://images\.philips\.com/.*',
     'https://image\.benq\.com/.*',
-    # Keyboards: Akko's own shop.
+    # Brands' own sites outside Shopify: Akko, Kensington, Cooler Master, CHERRY XTRFY, Skyloong,
+    # Wooting.
     'https://en\.akkogear\.com/wp-content/uploads/.*',
-    # Mice and keyboards from brands' own sites outside Shopify: Kensington, Cooler Master, CHERRY
-    # XTRFY, Skyloong, Wooting.
     'https://media\.accobrands\.com/.*',
     'https://a\.storyblok\.com/f/281110/.*',
     'https://cherryxtrfy\.com/wp/wp-content/uploads/.*',
     'https://skyloongtech\.com/wp-content/uploads/.*',
     'https://wooting-website\.ams3\.cdn\.digitaloceanspaces\.com/.*',
-    # Retailers' copies of a brand's photo, where the brand shows the product only at an angle or
-    # in a scene.
-    'https://mercular\.s3\.ap-southeast-1\.amazonaws\.com/.*',
-    'https://image\.makewebeasy\.net/.*',
-    'https://f00\.esfr\.pl/.*',
+    # Retailers' copies of a brand's photo, where the brand shows the product only at an angle or in
+    # a scene: Mercular's bucket and its MakeWebEasy shop (Thailand), Euro RTV AGD (Poland).
+    'https://mercular\.s3\.ap-southeast-1\.amazonaws\.com/images/products/.*',
+    'https://image\.makewebeasy\.net/makeweb/[^/]+/f33oHmgTS/.*',
+    'https://f00\.esfr\.pl/foto/.*',
   ]
