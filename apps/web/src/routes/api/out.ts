@@ -36,9 +36,10 @@ export const Route = createFileRoute('/api/out')({
       POST: async ({ request }) => {
         const agent = request.headers.get('user-agent') ?? ''
         if (BOTS.test(agent)) return answer(204)
-        // Another site posting here: a browser always says where a beacon comes from.
+        // A browser always says where a beacon comes from: without that, or from another site, it
+        // is no click of a visitor of ours (a script posting by hand, another site's page).
         const origin = request.headers.get('origin')
-        if (origin && new URL(origin).host !== new URL(request.url).host) return answer(403)
+        if (!origin || URL.parse(origin)?.host !== new URL(request.url).host) return answer(403)
         let click: Record<string, unknown>
         try {
           click = await request.json()

@@ -122,6 +122,8 @@ export function useFinder(
   search: FinderSearch,
   locale: Locale,
 ) {
+  // Every parameter read here is one of FINDER_PARAMS (params.ts): the CDN tells pages apart by
+  // those alone.
   const sequence = search.order;
   const def = useMemo(() => {
     const base = finderOf(category);

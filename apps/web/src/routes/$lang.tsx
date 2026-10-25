@@ -6,6 +6,7 @@ import {
 } from "@choose/catalog";
 import { createFileRoute, notFound, Outlet } from "@tanstack/react-router";
 import { SiteHeader } from "~/components/SiteHeader";
+import { FINDER_VARY } from "~/features/finder/params";
 import { Preloader } from "~/features/scene/Preloader";
 import { Scene } from "~/features/scene/Scene";
 import { getCatalogs, shownCategories } from "~/server/catalog";
@@ -24,7 +25,8 @@ export const Route = createFileRoute("/$lang")({
   },
   // A page is the same for every visitor (answers live in the URL, the journey in the browser):
   // Netlify's CDN keeps it five minutes, then serves it while it fetches a fresh one, so most
-  // visits never wait for a function or the database. A deploy empties the cache.
+  // visits never wait for a function or the database. A deploy empties the cache. One copy per
+  // combination of the parameters a finder reads (features/finder/params.ts): others share it.
   // The preloader holds the page's entrances (html[data-loading]): should the page never wake up,
   // the hold ends after five seconds anyway.
   head: () => ({
@@ -36,13 +38,14 @@ export const Route = createFileRoute("/$lang")({
     ],
   }),
   // A page missing a category that failed to load is not kept: the next visit tries again.
-  headers: ({ loaderData }) =>
+  headers: ({ loaderData }): Record<string, string> =>
     loaderData?.failed.length
       ? { "Cache-Control": "no-store", "Netlify-CDN-Cache-Control": "no-store" }
       : {
           "Cache-Control": "public, max-age=0, must-revalidate",
           "Netlify-CDN-Cache-Control":
             "public, durable, s-maxage=300, stale-while-revalidate=604800",
+          "Netlify-Vary": FINDER_VARY,
         },
   staleTime: Number.POSITIVE_INFINITY,
   shouldReload: false,
