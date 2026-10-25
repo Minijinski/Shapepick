@@ -14,7 +14,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-M1-Wireless-Mouse-Black.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M1-Wireless-Mouse-White.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/products/Keychron-M1-Wireless-Mouse-White-2.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130.2, widthMm: 66.4, heightMm: 38.3, weightG: 79, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Battery life: up to 70 hours » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130.2, widthMm: 66.4, heightMm: 38.3, weightG: 79, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 70, power: rechargeable }
   variants:
     - { sku: M1-A3, colorName: Black, colorFamily: black }
     - { sku: M1-A5, colorName: White, colorFamily: white }
@@ -34,7 +35,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M2-Wireless-Mouse-with-2.4-GHz-Receivers-White-Version.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M2-Wireless-Mouse-Black-Version.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M2-Wireless-Mouse-White-Version.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 66.7, heightMm: 40.6, weightG: 53, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « up to 140 hours in 8K Polling Rate mode, 130 hours (4K version) and 70 hours (1K version) » (fiche keychron.com) : version 1K de la fiche
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 66.7, heightMm: 40.6, weightG: 53, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 70, power: rechargeable }
   variants:
     - { sku: M2-A23, colorName: Black, colorFamily: black }
     - { sku: M2-A24, colorName: White, colorFamily: white }
@@ -54,7 +56,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-8K-wireless-mouse.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-4K-wireless-optical-mouse.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-Wireless-Mouse-Black.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.2, widthMm: 68.2, heightMm: 40.6, weightG: 79, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 70 hours (1K PixArt 3395 version) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.2, widthMm: 68.2, heightMm: 40.6, weightG: 79, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 70, power: rechargeable }
   variants:
     - { sku: M3-A23, colorName: Black, colorFamily: black, msrpEur: 85 }
     - { sku: M3-A3, colorName: White, colorFamily: white, msrpEur: 60 }
@@ -74,7 +77,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-Mini-8K-Wireless-Mouse-Black.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-Mini-8K-Wireless-Mouse-White.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M3-Mini-4K-Wireless-Mouse-Black.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.9, widthMm: 65.3, heightMm: 38.9, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 70 hours (1K PixArt 3395 version) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.9, widthMm: 65.3, heightMm: 38.9, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 70, power: rechargeable }
   variants:
     - { sku: M3M-A23, colorName: Black, colorFamily: black }
     - { sku: M3M-A24, colorName: White, colorFamily: white }
@@ -94,7 +98,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/M4-Launcher-Customization.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M4-wireless-mouse-white-1000-Hz-Polling-Rate.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M4-wireless-mouse-black-4000-Hz-Polling-Rate.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 86, widthMm: 54, heightMm: 32, weightG: 35, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 67 hours in 1K polling rate mode (4K version & 1K version) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 86, widthMm: 54, heightMm: 32, weightG: 35, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 67, power: rechargeable }
   variants:
     - { sku: M4-A23, colorName: Black, colorFamily: black }
     - { sku: M4-A24, colorName: White, colorFamily: white }
@@ -114,7 +119,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M5-PixArt-3395-1K-Polling-Rate-Wireless-Ergonomic-Mouse-Black-Version.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/M5-8K-white.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_M5_Wireless_Ergonomic_Mouse_new_2.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 117.8, widthMm: 87.1, heightMm: 71.7, weightG: 95, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 120 hours at 1K Hz polling rate (8K version) » (fiche keychron.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 117.8, widthMm: 87.1, heightMm: 71.7, weightG: 95, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 120, power: rechargeable }
   variants:
     - { sku: M5-A29, colorName: Black, colorFamily: black, msrpEur: 60 }
     - { sku: M5-A24, colorName: White, colorFamily: white, msrpEur: 85 }
@@ -134,7 +140,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M6-wireless-8K-mouse-black..jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M6-wireless-8K-mouse-white..jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M6-wireless-4K-mouse-black_7780208b-2f39-453f-a827-72ebdb8351f4.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.5, widthMm: 75.4, heightMm: 50, weightG: 78, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Quick swap 3 Bluetooth devices through the bottom button » (fiche keychron.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.5, widthMm: 75.4, heightMm: 50, weightG: 78, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable }
   variants:
     - { sku: M6S-A1, colorName: Black (Premium  Wheel), colorFamily: black }
     - { sku: M6S-A3, colorName: White (Premium  Wheel), colorFamily: white }
@@ -156,7 +163,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M7-8K-wireless-mouse-black.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M7-8K-wireless-mouse-white.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-M7-wireless-mouse-black.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.7, widthMm: 77.1, heightMm: 40.5, weightG: 66, sideButtons: 3, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 70 hours (1K version) » (fiche keychron.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127.7, widthMm: 77.1, heightMm: 40.5, weightG: 66, sideButtons: 3, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 70, power: rechargeable }
   variants:
     - { sku: M7-A23, colorName: Black, colorFamily: black }
     - { sku: M7-A24, colorName: White, colorFamily: white }
@@ -176,7 +184,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Ultra-Lightweight-Design.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Launcher-Customization.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/1.2.jpg, kind: cutout_top, width: 4724, height: 4724 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38.3, weightG: 44, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 140 hours at 1K Hz polling rate (2.4 GHz Mode) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38.3, weightG: 44, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 140, power: rechargeable }
   variants:
     - { sku: G3-Z1, colorName: Black (Carbon Fiber), colorFamily: black, msrpEur: 130 }
     - { sku: G3-A1, colorName: Frosted Gray, colorFamily: white, msrpEur: 100 }
@@ -193,7 +202,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G4-Wireless-Mouse-Lightweight.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G4-Wireless-Mouse-Customize-2.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_G4_Wireless_Mouse-2.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.7, widthMm: 63.5, heightMm: 37.1, weightG: 55, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 130 hours at 1K Hz polling rate (2.4 GHz Mode) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.7, widthMm: 63.5, heightMm: 37.1, weightG: 55, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 130, power: rechargeable }
   variants:
     - { sku: G4-B1, colorName: White, colorFamily: white }
 
@@ -210,6 +220,7 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-Ultralight.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-8K-Polling-Rate.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-Customize.jpg, kind: cutout_top, width: 2000, height: 2000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 39, weightG: 43, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Up to 153 hours at 1K Hz polling rate (2.4 GHz Mode) » (fiche keychron.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 39, weightG: 43, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 153, power: rechargeable }
   variants:
     - { sku: G5-Z1, colorName: Black, colorFamily: black }

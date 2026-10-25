@@ -17,7 +17,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Wireless-USB-Connection.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Soft-Rubber-Palm-Support.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Index-Finger-Control.jpg, kind: cutout_top, width: 1500, height: 1500 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 181.9, widthMm: 114.7, heightMm: 57.2, weightG: 260, ballPosition: finger, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  # buttons : « With 8 buttons plus left and right tilt on the wheel » (fiche elecomusa.com, M-HT1DRBK)
+  # power : « two AA batteries run it for well over a year » (fiche elecomusa.com, M-HT1DRBK)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 181.9, widthMm: 114.7, heightMm: 57.2, weightG: 260, ballPosition: finger, buttons: 8, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, power: aa }
   variants:
     - { sku: M-HT1DRBK, colorName: Black, colorFamily: black }
 
@@ -36,7 +38,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Bottom_surface_close-up.jpg, kind: cutout_top, width: 2000, height: 2000 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Hand_using_trackball_on_desk.jpg, kind: cutout_top, width: 1553, height: 1553 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Product_close_up_of_swappable_bearing_cavity.jpg, kind: cutout_top, width: 1500, height: 1500 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 182.9, widthMm: 114.3, heightMm: 58.4, weightG: 292, ballPosition: finger, sideButtons: 0, dpiMax: 1500, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Connect up to three devices over 2.4GHz wireless, Bluetooth and USB-C cable » (fiche elecomusa.com, M-HT1MRBK)
+  # batteryHours : « lasts up to 5 months per charge » (fiche elecomusa.com, M-HT1MRBK), 240 h par mois comme l'ingest
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 182.9, widthMm: 114.3, heightMm: 58.4, weightG: 292, ballPosition: finger, sideButtons: 0, dpiMax: 1500, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 1200, power: rechargeable }
   variants:
     - { sku: M-HT1MRBK-G, colorName: Black, colorFamily: black }
 
@@ -89,7 +93,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_37.jpg, kind: cutout_top, width: 1200, height: 1200 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_64.jpg, kind: cutout_top, width: 1200, height: 1200 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_68.jpg, kind: cutout_top, width: 1200, height: 1200 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 94, heightMm: 56, weightG: 158, ballPosition: thumb, sideButtons: 0, sensor: PixArt PAW3311DB, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Register up to six devices across Bluetooth, the 2.4GHz receiver and USB-C cable » (fiche elecomusa.com, M-IPT10MRSABK)
+  # power : « drop in two AA batteries or add the optional M-BP10 rechargeable battery pack » (fiche elecomusa.com) : piles AA, la batterie est vendue à part
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 94, heightMm: 56, weightG: 158, ballPosition: thumb, sideButtons: 0, sensor: PixArt PAW3311DB, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 6, power: aa }
   variants:
     - { sku: M-IPT10MRSABK, colorName: Black, colorFamily: black }
 
@@ -108,7 +114,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-Using-Mouse.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-Using-Mouse-Laptop.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Left-Handed-Trackball-Wireless-Red-Ball-USB-Receiver.jpg, kind: cutout_top, width: 1500, height: 1500 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 124.4, widthMm: 94.7, heightMm: 47.9, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  # buttons : « Six buttons keep your shortcuts close » (fiche elecomusa.com, M-XT3DRBK)
+  # power : « one AA battery runs it for months » (fiche elecomusa.com, M-XT3DRBK)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 124.4, widthMm: 94.7, heightMm: 47.9, weightG: 128, ballPosition: thumb, buttons: 6, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, power: aa }
   variants:
     - { sku: M-XT3DRBK, colorName: Black, colorFamily: black }
     - { sku: M-XT3DRBK-G, colorName: Red, colorFamily: color }

@@ -36,7 +36,11 @@
   editorialScore: 0.5
   images:
     - { url: https://dlcdnwebimgs.asus.com/gain/74F92C31-6D37-4160-B3D3-EA4A540287FE, kind: cutout_top, primary: true }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132.7, widthMm: 76.6, heightMm: 42.8, weightG: 127, sideButtons: 2, sensor: ASUS ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Bouton : 11 boutons programmables » (fiche rog.asus.com)
+  # hosts : « Bluetooth LE (jusqu'à 3 appareils appairés) » (fiche rog.asus.com)
+  # batteryHours : « Autonomie de la batterie : Jusqu'à 150 heures » (fiche rog.asus.com)
+  # wirelessCharging : « Recharge sans fil : Compatible chargeur sans fil Qi » (fiche rog.asus.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132.7, widthMm: 76.6, heightMm: 42.8, weightG: 127, buttons: 11, sideButtons: 2, sensor: ASUS ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 150, power: rechargeable, wirelessCharging: true }
   variants:
     - { sku: rog-chakram-x-model, colorName: translucent black and silver, colorFamily: transparent }
 
@@ -120,4 +124,7 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/e3ff2a0d-0ed5-464a-bdac-b32f6856a173/w185, kind: cutout_top, primary: true }
     - { url: https://dlcdnwebimgs.asus.com/gain/f8542d11-491e-4a73-9d17-351cffa80481/w185, kind: cutout_top }
     - { url: https://dlcdnwebimgs.asus.com/gain/2c9aa40a-0ad3-47b6-9dbd-77725d219b1e/w185, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 86, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « Bouton : 6 » (fiche asus.com)
+  # batteryHours : « AA Battery RF 2.4: 134hr BLE: 232hr » (fiche asus.com)
+  # power : « Type de batterie : AAA or AA » (fiche asus.com), une pile AA et un adaptateur AAA dans la boîte
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 86, buttons: 6, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 134, power: aa }

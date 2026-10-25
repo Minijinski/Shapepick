@@ -78,7 +78,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL_BLK_Web_Gallery_BatterySystem_2x_f80faf2a-63b3-4a8e-976d-3f4f295a883f.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_InfinitePlay_2x_bb4d26aa-6af9-45ae-8d58-5c23058cb784.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-WHT_Web_Gallery_Front_2x_5508b885-7e03-4ec5-a7a2-07aaa2ae71ee.webp, kind: cutout_top, width: 1624, height: 1624 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 63.7, heightMm: 41.7, weightG: 69, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Programmable Buttons 6 » (fiche gloriousgaming.com)
+  # batteryHours : « Battery Life Up to 71 hrs (2.4) / 130 hrs (BT) » (fiche gloriousgaming.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 63.7, heightMm: 41.7, weightG: 69, buttons: 6, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 71, power: rechargeable }
   variants:
     - { sku: GLO-D3-WL-BLK, colorName: Black, colorFamily: black }
     - { sku: GLO-D3-WL-WHT, colorName: White, colorFamily: white }
@@ -194,7 +196,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_FindYourFit.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MW_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MW_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 36, weightG: 57, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Programmable Buttons 6 » (fiche gloriousgaming.com)
+  # batteryHours : « Battery Life 110 hrs (2.4 Ghz), 210 hrs (Bluetooth 5.2 LE) » (fiche gloriousgaming.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 36, weightG: 57, buttons: 6, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 110, power: rechargeable }
   variants:
     - { sku: GLO-MS-OMWV2-MB, colorName: Black, colorFamily: black }
     - { sku: GLO-MS-OMWV2-MW, colorName: White, colorFamily: white }
@@ -254,7 +258,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_InfinitePlay_2x_940c2aa4-1a03-45e4-9e4e-e2be3a627ed0.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_BatterySystem_2x_c40bd830-6b44-4aa7-a9f6-20e0dbb23af0.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-BLK_Web_Gallery_Front_2x_d5f2cc78-c1d2-4fb4-b1e5-e5167e562034.webp, kind: cutout_top, width: 1624, height: 1624 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 61.4, heightMm: 39.8, weightG: 66, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Programmable Buttons 6 » (fiche gloriousgaming.com)
+  # batteryHours : « Battery Life Up to 71 hrs (2.4) / 130 hrs (BT) » (fiche gloriousgaming.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 61.4, heightMm: 39.8, weightG: 66, buttons: 6, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, batteryHours: 71, power: rechargeable }
   variants:
     - { sku: GLO-O3-WL-WHT, colorName: White, colorFamily: white }
     - { sku: GLO-O3-WL-BLK, colorName: Black, colorFamily: black }

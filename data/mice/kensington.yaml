@@ -18,7 +18,9 @@
     - { url: https://media.accobrands.com/media/560-560/573292.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/573296.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/576400.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 163, widthMm: 124, heightMm: 61, weightG: 460, ballPosition: finger, sideButtons: 0, dpiMax: 1600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Connect up to four devices » (fiche kensington.com)
+  # batteryHours : « Rechargeable battery supports up to 4 months » (fiche kensington.com), 240 h par mois comme l'ingest
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 163, widthMm: 124, heightMm: 61, weightG: 460, ballPosition: finger, sideButtons: 0, dpiMax: 1600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 4, batteryHours: 960, power: rechargeable }
 
 - slug: kensington-expert-mouse-pro-tb900-eq
   brand: kensington
@@ -43,7 +45,9 @@
     - { url: https://media.accobrands.com/media/560-560/368570.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/368572.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/264678.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 125, heightMm: 70, weightG: 385, ballPosition: finger, sideButtons: 0, sensor: DiamondEye optical, dpiMax: 400, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « Number of Buttons: 4 » (fiche kensington.com)
+  # power : « Battery Type: AA » (fiche kensington.com)
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 125, heightMm: 70, weightG: 385, ballPosition: finger, buttons: 4, sideButtons: 0, sensor: DiamondEye optical, dpiMax: 400, switchType: mechanical, conn24ghz: true, connBt: true, power: aa }
 
 - slug: kensington-orbit-fusion-wireless-trackball
   brand: kensington
@@ -51,7 +55,8 @@
   msrpEur: 75
   popularity: 0.5
   editorialScore: 0.5
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 173, widthMm: 109, heightMm: 76, weightG: 173, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true }
+  # buttons : « Number of Buttons: 5 » (fiche kensington.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 173, widthMm: 109, heightMm: 76, weightG: 173, ballPosition: finger, buttons: 5, sideButtons: 0, switchType: mechanical, conn24ghz: true }
 
 - slug: kensington-orbit-trackball-with-scroll-ring
   brand: kensington
@@ -80,7 +85,8 @@
     - { url: https://media.accobrands.com/media/560-560/368531.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/165009.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/412923.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 108, widthMm: 86, heightMm: 34, weightG: 182, ballPosition: finger, sideButtons: 0, dpiMax: 1000, switchType: mechanical, conn24ghz: true }
+  # buttons : « Number of Buttons: 2 » (fiche kensington.com)
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 108, widthMm: 86, heightMm: 34, weightG: 182, ballPosition: finger, buttons: 2, sideButtons: 0, dpiMax: 1000, switchType: mechanical, conn24ghz: true }
 
 - slug: kensington-pro-fit-ergo-tb450
   brand: kensington
@@ -97,7 +103,9 @@
     - { url: https://media.accobrands.com/media/560-560/566924.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/566925.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/566917.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 132, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  # batteryHours : « up to 18 months of use with 2.4GHz » (fiche kensington.com), 240 h par mois comme l'ingest
+  # power : « Battery Type: AA » (fiche kensington.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 132, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 4320, power: aa }
 
 - slug: kensington-pro-fit-ergo-tb550
   brand: kensington
@@ -114,7 +122,9 @@
     - { url: https://media.accobrands.com/media/560-560/566930.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/566931.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/566932.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 141, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  # batteryHours : « up to 4 months of battery life with a single charge » (fiche kensington.com), 240 h par mois comme l'ingest
+  # power : « Battery Type: Rechargeable Battery » (fiche kensington.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 141, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable }
 
 - slug: kensington-pro-fit-ergo-vertical-tb675
   brand: kensington
@@ -130,7 +140,9 @@
     - { url: https://media.accobrands.com/media/560-560/584944.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/584934.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/584935.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: right, segment: office, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Connect up to 4 devices » (fiche kensington.com)
+  # batteryHours : « Rechargeable battery provides up to 4 months use per charge » (fiche kensington.com), 240 h par mois comme l'ingest
+  specs: { shape: trackball, hand: right, segment: office, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 4, batteryHours: 960, power: rechargeable }
 
 - slug: kensington-pro-fit-ergo-vertical-wireless-mouse
   brand: kensington
@@ -147,7 +159,9 @@
     - { url: https://media.accobrands.com/media/560-560/393733.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/393734.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/393735.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 112, widthMm: 76, heightMm: 72, weightG: 96, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }
+  # buttons : « Number of Buttons: 6 » (fiche kensington.com)
+  # power : « Battery Type: AA » (fiche kensington.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 112, widthMm: 76, heightMm: 72, weightG: 96, buttons: 6, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, power: aa }
 
 - slug: kensington-pro-fit-ergo-wireless-mouse
   brand: kensington
@@ -164,7 +178,9 @@
     - { url: https://media.accobrands.com/media/560-560/385653.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/385654.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/385655.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 132, widthMm: 74, heightMm: 61, weightG: 91, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « Number of Buttons: 6 » (fiche kensington.com)
+  # power : « Battery Type: AA » (fiche kensington.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 132, widthMm: 74, heightMm: 61, weightG: 91, buttons: 6, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, power: aa }
 
 - slug: kensington-slimblade-pro-trackball
   brand: kensington
@@ -181,7 +197,8 @@
     - { url: https://media.accobrands.com/media/560-560/487856.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/487857.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/487858.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 133, heightMm: 56, weightG: 400, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Rechargeable battery provides 4 months battery life with single charge » (fiche kensington.com), 240 h par mois comme l'ingest
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 133, heightMm: 56, weightG: 400, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable }
 
 - slug: kensington-slimblade-trackball
   brand: kensington
@@ -212,4 +229,6 @@
     - { url: https://media.accobrands.com/media/560-560/368577.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/40360.jpg?width=1000px&height=1000px, kind: cutout_top }
     - { url: https://media.accobrands.com/media/560-560/350295.jpg?width=1000px&height=1000px, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 125, widthMm: 80, heightMm: 46, weightG: 100, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }
+  # buttons : « Number of Buttons: 6 » (fiche kensington.com)
+  # power : « Battery Type: AA » (fiche kensington.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 125, widthMm: 80, heightMm: 46, weightG: 100, buttons: 6, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, power: aa }

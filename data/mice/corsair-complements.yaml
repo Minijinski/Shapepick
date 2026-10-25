@@ -94,7 +94,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_06.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_10.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_11.png, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # power : « powered by just a single AA battery » (fiche corsair.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: aa }
   variants:
     - { sku: CH-931C011-EU, colorName: Noir, colorFamily: black }
 
@@ -151,7 +152,9 @@
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_06.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_07.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_08.png, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # batteryHours : « M55 WIRELESS lasts up to 185 hours via SLIPSTREAM WIRELESS » (fiche corsair.com)
+  # power : « AA battery » (fiche corsair.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 185, power: aa }
   variants:
     - { sku: CH-931F000-WW, colorName: Noir, colorFamily: black }
 
