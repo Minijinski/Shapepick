@@ -10,6 +10,7 @@ import {
 import { loadData } from '@choose/catalog/node'
 import { inArray, notInArray, sql } from 'drizzle-orm'
 import { connectDirect, type Db } from './client'
+import { guardProduction } from './production'
 import { purgeCatalogue } from './purge-cdn'
 import * as t from './schema'
 import { storeSnapshot } from './snapshot'
@@ -39,6 +40,7 @@ const commit = (() => {
   }
 })()
 const target = new URL(process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL ?? '')
+guardProduction(target.href, 'pnpm db:seed')
 console.info(`Seeding ${target.hostname}${target.pathname} from ${commit} (${dataDir}).`)
 await db.execute(sql`select set_config('application_name', ${`seed:${commit}`}, false)`)
 const [lock] = await db.execute<{ locked: boolean }>(

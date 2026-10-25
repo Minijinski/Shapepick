@@ -12,7 +12,11 @@
     "seed": "tsx --env-file-if-exists=../../.env src/seed.ts",
     "typecheck": "tsc --noEmit",
     "check-migrations": "tsx --env-file-if-exists=../../.env src/check-migrations.ts",
-    "purge-cdn": "tsx --env-file-if-exists=../../.env src/purge-cdn.ts"
+    "purge-cdn": "tsx --env-file-if-exists=../../.env --env-file-if-exists=../../.env.prod src/purge-cdn.ts",
+    "migrate:prod": "CONFIRM_PROD=1 DB_ENV=prod drizzle-kit migrate",
+    "seed:prod": "CONFIRM_PROD=1 tsx --env-file-if-exists=../../.env --env-file-if-exists=../../.env.prod src/seed.ts",
+    "site-role": "tsx --env-file-if-exists=../../.env src/site-role.ts",
+    "site-role:prod": "CONFIRM_PROD=1 tsx --env-file-if-exists=../../.env --env-file-if-exists=../../.env.prod src/site-role.ts"
   },
   "dependencies": {
     "@choose/catalog": "workspace:*",

@@ -16,7 +16,11 @@
     "pg:local": "sh scripts/pg-local.sh",
     "db:generate": "pnpm --filter @choose/db generate",
     "db:migrate": "pnpm --filter @choose/db migrate",
+    "db:migrate:prod": "pnpm --filter @choose/db migrate:prod",
     "db:seed": "pnpm --filter @choose/db seed",
+    "db:seed:prod": "pnpm --filter @choose/db seed:prod",
+    "db:site-role": "pnpm --filter @choose/db site-role",
+    "db:site-role:prod": "pnpm --filter @choose/db site-role:prod",
     "db:purge-cdn": "pnpm --filter @choose/db purge-cdn",
     "db:studio": "pnpm --filter @choose/db studio",
     "ingest": "pnpm --filter @choose/ingest ingest"
