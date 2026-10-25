@@ -15,7 +15,8 @@ import { existsSync, mkdtempSync, readFileSync, rmSync, writeFileSync } from 'no
 import { tmpdir } from 'node:os'
 import { join } from 'node:path'
 
-// Options: another Chrome binary (CHROME), where temporary profiles go (SCRATCH).
+// Options: another Chrome binary (CHROME, e.g. Playwright's chrome-headless-shell), where
+// temporary profiles go (SCRATCH).
 const {
   CHROME = '/Applications/Google Chrome.app/Contents/MacOS/Google Chrome',
   SCRATCH = tmpdir(),
@@ -53,6 +54,8 @@ export async function launch({
       '--disable-renderer-backgrounding',
       '--disable-backgrounding-occluded-windows',
       '--disable-background-timer-throttling',
+      // A headless shell opens no tab unless given one.
+      'about:blank',
     ],
     { stdio: 'ignore' },
   )
