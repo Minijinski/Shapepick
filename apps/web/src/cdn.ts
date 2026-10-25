@@ -1,6 +1,7 @@
 // How long Netlify's CDN keeps what the site serves. A page only changes with a deploy (the code)
-// or a seed (the catalogue): a deploy empties the CDN, and whatever is built from the catalogue is
-// tagged `catalogue`, which the seed has the CDN drop when it ends (packages/db/src/purge-cdn.ts).
+// or a seed (the catalogue): a deploy empties the CDN, so a seed of production is followed by one
+// (a push, or Trigger deploy); whatever is built from the catalogue is also tagged `catalogue`, which
+// packages/db/src/purge-cdn.ts can have the CDN drop alone, given a Netlify token.
 // So pages are kept a day, not five minutes: past five minutes, a page few people visit was rendered
 // again by the function for nearly every visit, and its visitor waited for it (up to 4 s, the
 // function in Ohio, the database in Frankfurt). Browsers ask again every time (`max-age=0`), so a

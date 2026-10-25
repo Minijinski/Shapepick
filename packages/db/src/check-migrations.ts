@@ -1,6 +1,7 @@
 import { readFileSync } from 'node:fs'
 import { neon } from '@neondatabase/serverless'
 import postgres from 'postgres'
+import { isProduction } from './production'
 
 // Has the database this build will read every migration of this commit? The site reads new columns
 // as soon as it is deployed: pushed before `pnpm db:migrate`, one took every page down with 500s
@@ -59,7 +60,7 @@ if (missing.length === 0) {
   console.info(`check-migrations: ${host} has all ${journal.entries.length} migrations.`)
 } else {
   const list = missing.map((entry) => entry.tag).join(', ')
-  const message = `check-migrations: ${host} lacks ${list}. Run \`pnpm db:migrate\` on it before deploying this commit.`
+  const message = `check-migrations: ${host} lacks ${list}. Run \`pnpm db:migrate${isProduction(url) ? ':prod' : ''}\` on it before deploying this commit.`
   if (preview) {
     console.warn(message)
   } else {
