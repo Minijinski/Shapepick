@@ -31,11 +31,14 @@ export type Snapshot<C extends Category> = {
 }
 
 export async function loadSnapshot<C extends Category>(db: Db, category: C): Promise<Snapshot<C>> {
+  // In the order products were first seeded (their ids): a reseed rewrites rows, which would
+  // otherwise come back in whatever order Postgres stored the new versions.
   const products = await db
     .select({ product: t.products, brand: t.brands })
     .from(t.products)
     .innerJoin(t.brands, eq(t.products.brandId, t.brands.id))
     .where(and(eq(t.products.category, category), eq(t.products.status, 'active')))
+    .orderBy(t.products.id)
   const ids = products.map((p) => p.product.id)
   const [stamp] = await db
     .select({ updated: max(t.products.updatedAt) })

@@ -2,7 +2,7 @@ import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import type { Category, KeyboardInput, MonitorInput, MouseInput } from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
-import { eq, notInArray, sql } from 'drizzle-orm'
+import { inArray, notInArray, sql } from 'drizzle-orm'
 import { connectDirect } from './client'
 import * as t from './schema'
 
@@ -52,32 +52,51 @@ const excluded = (columns: string[]) =>
     ]),
   )
 
+/** Rows per INSERT: a few hundred, well under the 65 535 parameters of Postgres' widest statement. */
+const CHUNK = 500
+const chunked = <T>(rows: T[]): T[][] =>
+  Array.from({ length: Math.ceil(rows.length / CHUNK) }, (_, i) =>
+    rows.slice(i * CHUNK, (i + 1) * CHUNK),
+  )
+
+// Each table is written in a few statements of many rows, not a statement per row: the seed ran
+// ~9 000 queries one after the other, 8 to 14 minutes from this Mac to Frankfurt, long enough for a
+// dropped connection to roll it all back. Rows go in in the files' order, which the ids follow (a
+// product's images and variants are read back in that order).
 await db.transaction(async (tx) => {
   const brandIds = new Map<string, number>()
-  for (const brand of data.brands) {
-    const [row] = await tx
+  for (const rows of chunked(data.brands)) {
+    const written = await tx
       .insert(t.brands)
-      .values(brand)
+      .values(rows)
       .onConflictDoUpdate({ target: t.brands.slug, set: excluded(['name', 'country', 'website']) })
-      .returning({ id: t.brands.id })
-    if (row) brandIds.set(brand.slug, row.id)
+      .returning({ id: t.brands.id, slug: t.brands.slug })
+    for (const row of written) brandIds.set(row.slug, row.id)
   }
 
+  // Every column a switch can have, so that one left out of its file is emptied, not kept.
+  const switchColumns = [
+    ...new Set(data.switches.flatMap(({ slug: _, ...rest }) => Object.keys(rest))),
+  ]
   const switchIds = new Map<string, number>()
-  for (const sw of data.switches) {
-    const { slug: _, ...rest } = sw
-    const [row] = await tx
+  for (const rows of chunked(data.switches)) {
+    const written = await tx
       .insert(t.switches)
-      .values(sw)
-      .onConflictDoUpdate({ target: t.switches.slug, set: excluded(Object.keys(rest)) })
-      .returning({ id: t.switches.id })
-    if (row) switchIds.set(sw.slug, row.id)
+      .values(rows)
+      .onConflictDoUpdate({ target: t.switches.slug, set: excluded(switchColumns) })
+      .returning({ id: t.switches.id, slug: t.switches.slug })
+    for (const row of written) switchIds.set(row.slug, row.id)
   }
 
-  async function upsertProduct(p: KeyboardInput | MonitorInput | MouseInput, category: Category) {
+  const listed: { p: KeyboardInput | MonitorInput | MouseInput; category: Category }[] = [
+    ...data.keyboards.map((p) => ({ p, category: 'keyboard' as const })),
+    ...data.monitors.map((p) => ({ p, category: 'monitor' as const })),
+    ...data.mice.map((p) => ({ p, category: 'mouse' as const })),
+  ]
+  const productRows = listed.map(({ p, category }) => {
     const brandId = brandIds.get(p.brand)
     if (!brandId) throw new Error(`${p.slug}: unknown brand "${p.brand}"`)
-    const values = {
+    return {
       slug: p.slug,
       category,
       brandId,
@@ -91,53 +110,86 @@ await db.transaction(async (tx) => {
       editorialScore: p.editorialScore,
       amazonAsin: p.amazonAsin ?? null,
     }
-    const { slug: _, ...rest } = values
-    const [row] = await tx
+  })
+  const { slug: _slug, ...productColumns } = productRows[0] ?? { slug: '' }
+  const productIds = new Map<string, number>()
+  for (const rows of chunked(productRows)) {
+    const written = await tx
       .insert(t.products)
-      .values(values)
+      .values(rows)
       .onConflictDoUpdate({
         target: t.products.slug,
-        set: { ...excluded(Object.keys(rest)), updatedAt: new Date() },
+        set: { ...excluded(Object.keys(productColumns)), updatedAt: new Date() },
       })
-      .returning({ id: t.products.id })
-    if (!row) throw new Error(`${p.slug}: upsert returned nothing`)
-    const productId = row.id
-
-    await tx.delete(t.productTranslations).where(eq(t.productTranslations.productId, productId))
-    for (const locale of ['fr', 'en'] as const) {
-      if (!p.tagline && !p.description) continue
-      await tx.insert(t.productTranslations).values({
-        productId,
-        locale,
-        tagline: p.tagline?.[locale],
-        description: p.description?.[locale],
-      })
-    }
-    await tx.delete(t.productImages).where(eq(t.productImages.productId, productId))
-    if (p.images?.length) {
-      await tx.insert(t.productImages).values(
-        p.images.map((img) => ({
-          productId,
-          url: img.url,
-          kind: img.kind,
-          width: img.width,
-          height: img.height,
-          isPrimary: img.primary ?? false,
-        })),
-      )
-    }
-    await tx.delete(t.productVariants).where(eq(t.productVariants.productId, productId))
-    return productId
+      .returning({ id: t.products.id, slug: t.products.slug })
+    for (const row of written) productIds.set(row.slug, row.id)
+  }
+  const idOf = (slug: string) => {
+    const id = productIds.get(slug)
+    if (id == null) throw new Error(`${slug}: upsert returned nothing`)
+    return id
   }
 
-  for (const k of data.keyboards) {
-    const productId = await upsertProduct(k, 'keyboard')
-    await tx.insert(t.productVariants).values(
+  // Their children are replaced wholesale: what the files say now, nothing left of before.
+  const ids = [...productIds.values()]
+  for (const table of [
+    t.productTranslations,
+    t.productImages,
+    t.productVariants,
+    t.keyboardSpecs,
+    t.monitorSpecs,
+    t.mouseSpecs,
+  ]) {
+    for (const part of chunked(ids)) await tx.delete(table).where(inArray(table.productId, part))
+  }
+
+  const insertAll = async <R>(
+    table:
+      | typeof t.productTranslations
+      | typeof t.productImages
+      | typeof t.productVariants
+      | typeof t.keyboardSpecs
+      | typeof t.monitorSpecs
+      | typeof t.mouseSpecs,
+    rows: R[],
+  ) => {
+    // biome-ignore lint/suspicious/noExplicitAny: each call passes rows of its own table
+    for (const part of chunked(rows)) await tx.insert(table).values(part as any)
+  }
+
+  await insertAll(
+    t.productTranslations,
+    listed.flatMap(({ p }) =>
+      p.tagline || p.description
+        ? (['fr', 'en'] as const).map((locale) => ({
+            productId: idOf(p.slug),
+            locale,
+            tagline: p.tagline?.[locale],
+            description: p.description?.[locale],
+          }))
+        : [],
+    ),
+  )
+  await insertAll(
+    t.productImages,
+    listed.flatMap(({ p }) =>
+      (p.images ?? []).map((img) => ({
+        productId: idOf(p.slug),
+        url: img.url,
+        kind: img.kind,
+        width: img.width,
+        height: img.height,
+        isPrimary: img.primary ?? false,
+      })),
+    ),
+  )
+  await insertAll(t.productVariants, [
+    ...data.keyboards.flatMap((k) =>
       k.variants.map((v) => {
         const switchId = v.switch ? switchIds.get(v.switch) : undefined
         if (v.switch && !switchId) throw new Error(`${k.slug}: unknown switch "${v.switch}"`)
         return {
-          productId,
+          productId: idOf(k.slug),
           sku: v.sku,
           colorName: v.colorName,
           colorFamily: v.colorFamily,
@@ -146,40 +198,29 @@ await db.transaction(async (tx) => {
           msrpEur: v.msrpEur,
         }
       }),
-    )
-    await tx.delete(t.keyboardSpecs).where(eq(t.keyboardSpecs.productId, productId))
-    await tx.insert(t.keyboardSpecs).values({ productId, ...k.specs })
-  }
-
-  for (const m of data.monitors) {
-    const productId = await upsertProduct(m, 'monitor')
-    await tx.insert(t.productVariants).values(
+    ),
+    ...[...data.monitors, ...data.mice].flatMap((m) =>
       m.variants.map((v) => ({
-        productId,
+        productId: idOf(m.slug),
         sku: v.sku,
         colorName: v.colorName,
         colorFamily: v.colorFamily,
         msrpEur: v.msrpEur,
       })),
-    )
-    await tx.delete(t.monitorSpecs).where(eq(t.monitorSpecs.productId, productId))
-    await tx.insert(t.monitorSpecs).values({ productId, ...m.specs })
-  }
-
-  for (const m of data.mice) {
-    const productId = await upsertProduct(m, 'mouse')
-    await tx.insert(t.productVariants).values(
-      m.variants.map((v) => ({
-        productId,
-        sku: v.sku,
-        colorName: v.colorName,
-        colorFamily: v.colorFamily,
-        msrpEur: v.msrpEur,
-      })),
-    )
-    await tx.delete(t.mouseSpecs).where(eq(t.mouseSpecs.productId, productId))
-    await tx.insert(t.mouseSpecs).values({ productId, ...m.specs })
-  }
+    ),
+  ])
+  await insertAll(
+    t.keyboardSpecs,
+    data.keyboards.map((k) => ({ productId: idOf(k.slug), ...k.specs })),
+  )
+  await insertAll(
+    t.monitorSpecs,
+    data.monitors.map((m) => ({ productId: idOf(m.slug), ...m.specs })),
+  )
+  await insertAll(
+    t.mouseSpecs,
+    data.mice.map((m) => ({ productId: idOf(m.slug), ...m.specs })),
+  )
 
   // Children first: products cascade to their variants, so the switches they used can go next.
   const products = [...data.keyboards, ...data.monitors, ...data.mice].map((p) => p.slug)
