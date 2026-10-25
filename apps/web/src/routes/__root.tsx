@@ -24,9 +24,12 @@ export const Route = createRootRoute({
     ],
     // The icon: the drawing (its version in the address, as browsers keep icons a long while),
     // the same in pixels for those that read no SVG (sized, so the others still take the SVG),
-    // and a square for iOS home screens.
+    // and a square for iOS home screens. Google Search reads no SVG either and asks for more than
+    // 48 px: it gets a 192 px PNG, first in case it takes the first it can read. Chrome and Firefox
+    // still take the SVG. Google wants that address stable: a new drawing overwrites the file.
     links: [
       { rel: 'stylesheet', href: appCss },
+      { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
       { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=2' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
