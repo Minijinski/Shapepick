@@ -93,7 +93,8 @@
     - https://www.lg.com/fr/moniteurs/ultrawide/lg-34u511a-b-moniteur-ultrawide/
   gtins:
     - "8806096520826"
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 2560, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, weightG: 7600 }
+  # hdmiVersion : « HDMI : Oui vers. 1.4 » (fiche lg.com)
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 2560, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "1.4", weightG: 7600 }
   variants:
     - { sku: 34U511A-B, colorName: Noir, colorFamily: black }
 
@@ -171,7 +172,8 @@
     - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-45gx90sa-b-moniteur-ultragear/
   gtins:
     - "8806096429488"
-  specs: { diagonalIn: 44.5, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 13500 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 44.5, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 13500 }
   variants:
     - { sku: 45GX90SA-B, colorName: Noir, colorFamily: black }
 
@@ -190,7 +192,8 @@
     - https://www.lg.com/fr/moniteurs/moniteurs-gaming-ultragear/lg-27g640a-b-moniteur-ultragear/
   gtins:
     - "8806096588642"
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 300, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1300, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 5470 }
+  # hdmiVersion : « HDMI™ 2.1 x2 » (fiche lg.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 300, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1300, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 5470 }
   variants:
     - { sku: 27G640A-B, colorName: Noir, colorFamily: black }
 
@@ -307,7 +310,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-32gs95uv-b-moniteur-ultragear/
   gtins:
     - "8806096269695"
-  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9000 }
+  # hdmiVersion : « DP 1.4 et HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9000 }
   variants:
     - { sku: 32GS95UV-B, colorName: Noir, colorFamily: black }
 
@@ -398,7 +402,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-39gx90sa-w-moniteur-ultragear/
   gtins:
     - "8806096433102"
-  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
   variants:
     - { sku: 39GX90SA-W, colorName: Blanc, colorFamily: white }
 
@@ -418,7 +423,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-34gx90sa-w-moniteur-ultragear/
   gtins:
     - "8806096435939"
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
   variants:
     - { sku: 34GX90SA-W, colorName: Blanc, colorFamily: white }
 
@@ -437,7 +443,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-34gx900a-b-moniteur-ultragear/
   gtins:
     - "8806096492499"
-  specs: { diagonalIn: 33.9, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 33.9, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, pivot: true, weightG: 10400 }
   variants:
     - { sku: 34GX900A-B, colorName: Noir, colorFamily: black }
 
@@ -456,7 +463,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-39gx900a-b-moniteur-ultragear/
   gtins:
     - "8806096497760"
-  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 65, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 39, aspect: 21:9, resW: 3440, resH: 1440, panel: woled, curvatureR: 800, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 250, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", usbcPdW: 65, speakers: true, heightAdjustable: true, pivot: true, weightG: 11450 }
   variants:
     - { sku: 39GX900A-B, colorName: Noir, colorFamily: black }
 
@@ -494,7 +502,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-27gx704a-b-moniteur-ultragear/
   gtins:
     - "8806096599921"
-  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 7200 }
+  # hdmiVersion : « Le 27GX704A dispose d’un taux de rafraîchissement maximum de 240 Hz grâce au HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 7200 }
   variants:
     - { sku: 27GX704A-B, colorName: Noir, colorFamily: black }
 
@@ -513,7 +522,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-32gx870a-b-moniteur-ultragear/
   gtins:
     - "8806096510520"
-  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9800 }
+  # hdmiVersion : « HDMI™ 2.1 x2 » (fiche lg.com)
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: woled, coating: matte, refreshHzMax: 240, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, brightnessSdrNits: 275, dciP3Pct: 98.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 9800 }
   variants:
     - { sku: 32GX870A-B, colorName: Noir, colorFamily: black }
 
@@ -551,7 +561,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-34g630a-b-moniteur-ultragear/
   gtins:
     - "8806096558058"
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 7300 }
+  # hdmiVersion : « HDMI : Oui (ver. 2.1) » (fiche lg.com)
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 300, contrastStatic: 4000, dciP3Pct: 95, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 7300 }
   variants:
     - { sku: 34G630A-B, colorName: Noir, colorFamily: black }
 
@@ -570,7 +581,8 @@
     - https://www.lg.com/fr/moniteurs/gaming/lg-27gx790b-b/
   gtins:
     - "8806096678008"
-  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 540, responseGtgMs: 0.02, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 335, dciP3Pct: 99.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 6800 }
+  # hdmiVersion : « HDMI™ 2.1 x2 » (fiche lg.com)
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 2560, resH: 1440, panel: woled, coating: matte, refreshHzMax: 540, responseGtgMs: 0.02, vrr: freesync_premium_pro, hdrCert: true_black_500, brightnessSdrNits: 335, dciP3Pct: 99.5, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", usbHub: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 6800 }
   variants:
     - { sku: 27GX790B-B, colorName: Noir, colorFamily: black }
 
@@ -615,7 +627,8 @@
     - https://www.lg.com/fr/moniteurs/uhd-4k-5k/lg-32u990a-s-moniteur-bureautique/
   gtins:
     - "8806096615577"
-  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr600, brightnessSdrNits: 450, contrastStatic: 2000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "2.1", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 9500 }
+  # hdmiVersion : « HDMI : Oui (ver. 2.1) » (fiche lg.com)
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr600, brightnessSdrNits: 450, contrastStatic: 2000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "2.1", usbcPdW: 96, thunderbolt: true, kvm: true, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 9500 }
   variants:
     - { sku: 32U990A-S, colorName: Argent, colorFamily: white }
 
@@ -641,7 +654,8 @@
     - https://www.lg.com/fr/moniteurs/fhd-qhd/lg-24ms550-b-moniteur-bureautique/
   gtins:
     - "8806091986443"
-  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, hdmiPorts: 1, speakers: true, tilt: false, weightG: 3200 }
+  # standHeightMm : « *Plage de hauteur : 0~80 mm » ; « un réglage pratique de la hauteur et de l'inclinaison » (fiche lg.com)
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, hdmiPorts: 1, speakers: true, standHeightMm: 80, tilt: false, weightG: 3200 }
   variants:
     - { sku: 24MS550-B, colorName: Noir, colorFamily: black }
 
@@ -804,7 +818,8 @@
     - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-32g810sa-w-smart-monitor/
   gtins:
     - "8806096349304"
-  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 10500 }
+  # hdmiVersion : « USB-C (PD 65W) & HDMI 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 400, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, pivot: true, weightG: 10500 }
   variants:
     - { sku: 32G810SA-W, colorName: Blanc, colorFamily: white }
 
@@ -823,7 +838,8 @@
     - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-32u889sa-w-smart-monitor/
   gtins:
     - "8806096481486"
-  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 21200 }
+  # hdmiVersion : « HDMI : Oui (vers. 2.0) » (fiche lg.com)
+  specs: { diagonalIn: 31.5, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", usbcPdW: 65, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 21200 }
   variants:
     - { sku: 32U889SA-W, colorName: Blanc, colorFamily: white }
 
@@ -887,7 +903,8 @@
     - https://www.lg.com/fr/moniteurs/myview-smart-monitor/lg-34u601sa-w-smart-monitor/
   gtins:
     - "8806096574409"
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, usbHub: true, speakers: true, weightG: 6800 }
+  # hdmiVersion : « HDMI : Oui vers. 2.0 » (fiche lg.com)
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1800, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", usbHub: true, speakers: true, weightG: 6800 }
   variants:
     - { sku: 34U601SA-W, colorName: Blanc, colorFamily: white }
 
@@ -906,6 +923,7 @@
     - https://www.lg.com/fr/moniteurs/ultragear-evo/lg-52g930b-b-moniteur-ultragear/
   gtins:
     - "8806096750360"
-  specs: { diagonalIn: 51.6, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr600, brightnessSdrNits: 400, contrastStatic: 4000, dciP3Pct: 95, factoryCalibrated: true, hdmiPorts: 1, usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 16800 }
+  # hdmiVersion : « 2 x HDMI™ 2.1 » (fiche lg.com)
+  specs: { diagonalIn: 51.6, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 240, responseGtgMs: 1, vrr: freesync_premium, hdrCert: hdr600, brightnessSdrNits: 400, contrastStatic: 4000, dciP3Pct: 95, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", usbcPdW: 90, usbHub: true, speakers: true, heightAdjustable: true, swivel: true, weightG: 16800 }
   variants:
     - { sku: 52G930B-B, colorName: Noir, colorFamily: black }

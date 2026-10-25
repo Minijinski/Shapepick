@@ -25,7 +25,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls24d402gauxen/gallery/fr-essential-s4-s40gd-540207-ls24d402gauxen-546468082?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/business/essential-monitor-s4-s40gd-24-inch-fhd-ips-100hz-ls24d402gauxen/
-  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, standHeightMm: 105, swivel: true, pivot: true, weightG: 3500 }
+  # responseGtgMs : « Temps de réponse : 5(GTG) » (fiche samsung.com), en ms
+  specs: { diagonalIn: 24, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, bitDepth: 8, hdmiPorts: 2, hdmiVersion: "1.4", dpVersion: "1.2", usbHub: true, standHeightMm: 105, swivel: true, pivot: true, weightG: 3500 }
   variants:
     - { sku: LS24D402GAUXEN, colorName: Noir, colorFamily: black }
 
@@ -48,7 +49,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27b800pxpxen/gallery/fr-s80pb-s8-27-522825-ls27b800pxpxen-543514061?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/business/viewfinity-s8-s80pb-27-inch-ips-uhd-hdr-ls27b800pxpxen/
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 90, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6700 }
+  # hdmiVersion : « Version HDMI : 2 » (fiche samsung.com), soit HDMI 2.0
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 3840, resH: 2160, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: hdr400, brightnessSdrNits: 350, contrastStatic: 1000, dciP3Pct: 98, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6700 }
   variants:
     - { sku: LS27B800PXPXEN, colorName: Noir, colorFamily: black }
 
@@ -72,7 +74,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652uauxen/gallery/fr-viewfinity-s6-34s65uc-ls34c652uauxen-538617696?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/curved/viewfinity-s6-s65uc-34-inch-ultra-wqhd-ls34c652uauxen/
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8000 }
+  # hdmiVersion : « Version HDMI : 2 » (fiche samsung.com), soit HDMI 2.0
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8000 }
   variants:
     - { sku: LS34C652UAUXEN, colorName: BLACK, colorFamily: black }
 
@@ -144,7 +147,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/lc34g55twwpxen/gallery/fr-odyssey-g5-34g5-373657-lc34g55twwpxen-536363355?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/gaming/odyssey-g5-34-inch-165hz-curved-ultra-wqhd-lc34g55twwpxen/
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 165, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 2500, bitDepth: 8, hdmiPorts: 1, dpVersion: "1.4", weightG: 5600 }
+  # hdmiVersion : « Version HDMI : 2 » (fiche samsung.com), soit HDMI 2.0
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 165, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 2500, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 5600 }
   variants:
     - { sku: LC34G55TWWPXEN, colorName: Noir, colorFamily: black }
 
@@ -168,7 +172,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32fg506euxen/gallery/fr-odyssey-g5-g50f-ls32fg506euxen-549716674?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/gaming/odyssey-g5-g50f-32-inch-180hz-qhd-ls32fg506euxen/
-  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 105, swivel: true, pivot: true, weightG: 4900 }
+  # responseGtgMs : « Temps de réponse : 1 (GTG) » ; « 1ms de temps de réponse (GtG) » (fiche samsung.com)
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 180, responseGtgMs: 1, vrr: gsync_compatible, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1000, srgbPct: 99, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", standHeightMm: 105, swivel: true, pivot: true, weightG: 4900 }
   variants:
     - { sku: LS32FG506EUXEN, colorName: Black, colorFamily: black }
 
@@ -240,7 +245,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27hg806efxen/gallery/fr-odyssey-g8-g80hf-ls27hg806efxen-552156188?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/gaming/odyssey-g8-g80hf-27-inch-dual-mode-5k-180hz-qhd-360hz-ls27hg806efxen/
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 180, dualModeHz: 360, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6200 }
+  # responseGtgMs : « Temps de réponse : 1 (GTG) » ; « un temps de réponse de 1ms (GTG) » (fiche samsung.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 180, dualModeHz: 360, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 6200 }
   variants:
     - { sku: LS27HG806EFXEN, colorName: Black, colorFamily: black }
 
@@ -262,7 +268,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32hg806esxen/gallery/fr-odyssey-g8-g80hs-ls32hg806esxen-552179395?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/gaming/odyssey-g8-g80hs-32-inch-dual-mode-6k-165hz-3k-330hz-ls32hg806esxen/
-  specs: { diagonalIn: 32, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 330, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7400 }
+  # responseGtgMs : « Temps de réponse : 1 (GTG) » ; « 1 ms (GtG) » (fiche samsung.com)
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 6144, resH: 3456, panel: ips, coating: matte, refreshHzMax: 330, responseGtgMs: 1, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "2.1", usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7400 }
   variants:
     - { sku: LS32HG806ESXEN, colorName: Noir, colorFamily: black }
 
@@ -482,7 +489,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls32d600uauxen/gallery/fr-viewfinity-s6-24s60ud--27s60ud-32s60ud-566333-ls32d600uauxen-549285242?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s6-32-inch-qhd-100hz-easysetupstand-ls32d600uauxen/
-  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7200 }
+  # hdmiVersion : « Version HDMI : 2 » (fiche samsung.com), soit HDMI 2.0
+  specs: { diagonalIn: 32, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 7200 }
   variants:
     - { sku: LS32D600UAUXEN, colorName: Noir, colorFamily: black }
 
@@ -530,7 +538,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls34c652vauxen/gallery/fr-viewfinity-s6-34s65vc-ls34c652vauxen-538537104?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s6-s65vc-34-inch-ultra-wqhd-ls34c652vauxen/
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8100 }
+  # hdmiVersion : « Version HDMI : 2 » (fiche samsung.com), soit HDMI 2.0
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 100, responseGtgMs: 5, vrr: freesync, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 115, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 8100 }
   variants:
     - { sku: LS34C652VAUXEN, colorName: Noir, colorFamily: black }
 
@@ -577,7 +586,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls27h804efaxen/gallery/fr-viewfinity-s8-27s80hf-ls27h804efaxen-552813853?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s80hf-27-inch-5k-usb-c-easy-connection-ls27h804efaxen/
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 60, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 5400 }
+  # responseGtgMs : « Temps de réponse : 5 (GTG) » (fiche samsung.com), en ms
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 1000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, standHeightMm: 120, swivel: true, pivot: true, weightG: 5400 }
   variants:
     - { sku: LS27H804EFAXEN, colorName: Noir, colorFamily: black }
 
@@ -623,7 +633,8 @@
     - { url: https://images.samsung.com/is/image/samsung/p6pim/fr/ls40h850tauxen/gallery/fr-viewfinity-s8-40s85th-ls40h850tauxen-552695774?$ORIGIN_PNG$, kind: cutout_front }
   sources:
     - https://www.samsung.com/fr/monitors/high-resolution/viewfinity-s8-s85th-40-inch-5k2k-curved-wuhd-ls40h850tauxen/
-  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 144, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 14000 }
+  # responseGtgMs : « Temps de réponse : 4 (GTG) » (fiche samsung.com), en ms
+  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: va, curvatureR: 1000, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync_premium, hdrCert: none, brightnessSdrNits: 350, contrastStatic: 3000, srgbPct: 99, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 14000 }
   variants:
     - { sku: LS40H850TAUXEN, colorName: Noir, colorFamily: black }
 

@@ -23,7 +23,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/8BD63ECE-E581-4E7C-BE16-EDFF09C0A7B6, kind: cutout_front }
   sources:
     - https://rog.asus.com/fr/monitors/27-to-31-5-inches/rog-strix-5k-xg27jceg/
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 320, responseGtgMs: 0.3, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1500, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
+  # dciP3Pct : « 95% DCI-P3 » (fiche rog.asus.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 5120, resH: 2880, panel: ips, coating: matte, refreshHzMax: 320, responseGtgMs: 0.3, vrr: freesync_premium, hdrCert: hdr400, brightnessSdrNits: 350, brightnessHdrPeakNits: 400, contrastStatic: 1500, dciP3Pct: 95, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, usbHub: true, standHeightMm: 110, swivel: true, pivot: true, weightG: 6800 }
   variants:
     - { sku: XG27JCEG, colorName: Noir, colorFamily: black }
 
