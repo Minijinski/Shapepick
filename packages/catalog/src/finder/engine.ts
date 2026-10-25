@@ -336,8 +336,12 @@ export function deadEnd<I>(
 // ==== Ranking ==================================================================================
 
 const FLOOR = 0.05
-/** The profile's share of the fit once the prior tells items apart; the prior has the rest. */
-const FIT_SHARE = 0.75
+/**
+ * How far the prior moves a fit, either way: a prior of 0.5 (nothing known) leaves it alone, 1
+ * adds two points, 0 takes two off. Enough to settle products that read alike, never to put one
+ * above a product that suits the answers clearly better.
+ */
+const PRIOR_REACH = 0.02
 /** Weight of the fit in the match, against one answer that an item meets. */
 const FIT_WEIGHT = 3
 
@@ -419,37 +423,13 @@ function typicalScores<I>(def: FinderDefinition<I>, items: I[]): Typical {
   return typical
 }
 
-/** Per catalogue, whether its items' priors differ. */
-const priorCache = new WeakMap<object, WeakMap<object, boolean>>()
-
-/**
- * Whether the prior tells any of the catalogue's items apart. Until editorial scores and
- * popularity are filled in, every item has the same one: its share of the fit would then squeeze
- * every match towards the middle without ever changing the order.
- */
-function priorTellsApart<I>(def: FinderDefinition<I>, items: I[]): boolean {
-  let byPrior = priorCache.get(items)
-  if (!byPrior) {
-    byPrior = new WeakMap()
-    priorCache.set(items, byPrior)
-  }
-  let differs = byPrior.get(def.prior)
-  if (differs === undefined) {
-    const [first] = items
-    const level = first === undefined ? 0 : clamp(def.prior(first))
-    differs = items.some((item) => clamp(def.prior(item)) !== level)
-    byPrior.set(def.prior, differs)
-  }
-  return differs
-}
-
 /**
  * Scores the items that pass every filter. The fit is a weighted geometric mean of the profile's
  * criteria, so one catastrophic axis drags the whole score down instead of being averaged away. A
  * figure the item's sheet does not give counts as the catalogue's typical one (median), so a
  * sparse sheet is never ranked as a poor product, and it is never named as a strength or a
- * weakness. A prior from the editorial score and popularity takes a share of the fit once it
- * tells the catalogue's items apart; while every item has the same one, it sits out. The match
+ * weakness. A prior from the editorial score and popularity moves the fit by two points at most,
+ * from a neutral 0.5: it settles products that read alike, and nothing more. The match
  * printed adds the answers: each one that narrows the catalogue is a criterion every ranked item
  * meets, so the match starts at the fit and fills up as the visitor answers, without changing the
  * order. Items with exactly the same match come cheapest first, then as the definition settles
@@ -587,7 +567,6 @@ function judgeFor<I>(def: FinderDefinition<I>, items: I[], answers: Answers) {
   /** The criteria whose weakness is worth saying: the heaviest half, at least three. */
   const weighty = new Set(heavy.slice(0, Math.max(3, Math.ceil(heavy.length / 2))))
   const typical = typicalScores(def, items)
-  const fitShare = priorTellsApart(def, items) ? FIT_SHARE : 1
 
   return (item: I): Pick<Ranked<I>, 'fit' | 'pros' | 'cons'> => {
     const scores = new Map<string, number>()
@@ -619,7 +598,7 @@ function judgeFor<I>(def: FinderDefinition<I>, items: I[], answers: Answers) {
       .filter((c) => (scores.get(c.key) ?? 1) < 0.35)
       .slice(0, 2)
     return {
-      fit: fitShare * profileFit + (1 - fitShare) * prior,
+      fit: clamp(profileFit + PRIOR_REACH * (2 * prior - 1)),
       pros: pros.map((c) => c.label),
       cons: cons.map((c) => weakLabelOf(c, item, live)),
     }

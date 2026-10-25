@@ -460,14 +460,23 @@ describe('missing figures and ties', () => {
     ).map((r) => r.item.id)
     expect(order).not.toEqual([...order].sort())
   })
-  it('leaves out of the fit a prior that every item shares', () => {
-    // The same prior for all (no editorial score yet): the fit is the profile's alone.
+  it('moves the fit by two points at most with the prior, from a neutral 0.5', () => {
+    // Nothing known (0.5): the fit is the profile's alone.
     const level = rank(def, toys, { use: 'quality' })
     expect(level.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.9)
-    // A prior that tells items apart takes its quarter.
+    // The best prior adds two points, the worst takes two off, and a fit never passes 1.
     const told = rank({ ...def, prior: (x) => (x.wifi ? 1 : 0) }, toys, { use: 'quality' })
-    expect(told.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.75 * 0.9 + 0.25)
-    expect(told.find((r) => r.item.id === 'c')?.fit).toBeCloseTo(0.75 * 0.7)
+    expect(told.find((r) => r.item.id === 'a')?.fit).toBeCloseTo(0.92)
+    expect(told.find((r) => r.item.id === 'c')?.fit).toBeCloseTo(0.68)
+    const perfect = { ...toys[0], q: 1 } as Toy
+    expect(rank({ ...def, prior: () => 1 }, [perfect], { use: 'quality' })[0]?.fit).toBe(1)
+    // It settles products that read alike, never one that suits the answers clearly better.
+    const like = (id: string, q: number) => ({ ...toys[0], id, q }) as Toy
+    const favoured = { ...def, prior: (x: Toy) => (x.id.startsWith('fav') ? 1 : 0.5) }
+    const order = (q: number) =>
+      rank(favoured, [like('plain', 0.9), like('fav', q)], { use: 'quality' }).map((r) => r.item.id)
+    expect(order(0.89)).toEqual(['fav', 'plain'])
+    expect(order(0.87)).toEqual(['plain', 'fav'])
   })
 })
 

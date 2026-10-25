@@ -122,8 +122,8 @@ export type FinderDefinition<I> = {
   id: (item: I) => string
   price: (item: I) => number
   /**
-   * 0 … 1 prior (editorial score, popularity): a quarter of the fit once it tells the catalogue's
-   * items apart. While every item has the same one, it sits out.
+   * 0 … 1 prior (editorial score, popularity), 0.5 when nothing is known: it moves the fit by two
+   * points at most either way.
    */
   prior: (item: I) => number
   /**
@@ -142,8 +142,8 @@ export type Ranked<I> = {
   /** 0 … 1, what the card prints as a match percentage. */
   score: number
   /**
-   * 0 … 1, how well it suits the visitor's use: the profile's fit, with the editorial prior once it
-   * tells items apart.
+   * 0 … 1, how well it suits the visitor's use: the profile's fit, moved by two points at most by
+   * the editorial prior.
    */
   fit: number
   /** How many answers narrow the catalogue: a ranked item meets every one of them. */
