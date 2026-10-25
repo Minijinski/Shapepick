@@ -17,8 +17,39 @@ const FIRST_HOST = 'choose-a-device.netlify.app'
 /** Paths that are no pages, never moved: `/_serverFn/` is where TanStack Start serves functions. */
 const NOT_PAGES = ['/api/', '/_serverFn/']
 
+/**
+ * What every answer tells the browser, pages and API alike: no page of ours inside another site's
+ * frame, no plugin, no base address or form pointing elsewhere, nothing of our addresses but the
+ * domain in the Referer sent to other sites, no camera, microphone or location. A policy for
+ * scripts, styles and images is only reported for now (Report-Only): the console shows what it
+ * would block, before it blocks anything. Netlify sends HSTS and nosniff itself; the headers of
+ * netlify.toml never reach a function's answers, hence here (static files get the same from
+ * there). An answer's own policy (the photo relay's) stays as it is.
+ */
+const SECURITY_HEADERS: Record<string, string> = {
+  'content-security-policy':
+    "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'",
+  'content-security-policy-report-only':
+    "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'",
+  'referrer-policy': 'strict-origin-when-cross-origin',
+  'permissions-policy': 'camera=(), microphone=(), geolocation=(), payment=(), usb=()',
+  'x-frame-options': 'DENY',
+}
+
+function secured(response: Response) {
+  const headers = new Headers(response.headers)
+  for (const [name, value] of Object.entries(SECURITY_HEADERS)) {
+    if (!headers.has(name)) headers.set(name, value)
+  }
+  return new Response(response.body, {
+    status: response.status,
+    statusText: response.statusText,
+    headers,
+  })
+}
+
 export default createServerEntry({
-  fetch(request, opts) {
+  async fetch(request, opts) {
     const url = new URL(request.url)
     const home = new URL(SITE.url)
     const page = !NOT_PAGES.some((prefix) => url.pathname.startsWith(prefix))
@@ -33,6 +64,6 @@ export default createServerEntry({
         },
       })
     }
-    return handler.fetch(request, opts)
+    return secured(await handler.fetch(request, opts))
   },
 })

@@ -14,6 +14,17 @@
   [headers.values]
     Cache-Control = "public, max-age=31536000, immutable"
 
+# What every static file tells the browser, as the function's answers do (apps/web/src/server.ts,
+# where the reasons are; these headers never reach a function's answers): keep both the same.
+[[headers]]
+  for = "/*"
+  [headers.values]
+    Content-Security-Policy = "frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
+    Content-Security-Policy-Report-Only = "default-src 'self'; script-src 'self' 'unsafe-inline'; style-src 'self' 'unsafe-inline'; img-src 'self' data: blob:; font-src 'self' data:; connect-src 'self'; worker-src 'self' blob:; frame-ancestors 'none'; base-uri 'self'; object-src 'none'; form-action 'self'"
+    Referrer-Policy = "strict-origin-when-cross-origin"
+    Permissions-Policy = "camera=(), microphone=(), geolocation=(), payment=(), usb=()"
+    X-Frame-Options = "DENY"
+
 # Product photos go through Netlify's image CDN (`/.netlify/images`, see
 # apps/web/src/features/product/photo.ts): resized to the size shown and served from our own domain,
 # so the browser can cut them out whatever the shop's CDN allows. Only these sources may be fetched,
