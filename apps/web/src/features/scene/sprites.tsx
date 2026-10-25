@@ -98,14 +98,19 @@ function loadImage(src: string) {
 
 /**
  * The canvas's drawings: one bitmap per drawing, shared by every product drawn alike, rasterised
- * when the canvas first draws one of them (two at a time, from the frame loop), then the rest
- * while the page is idle. `resolution` is device px per world px: the device pixel ratio times
- * the largest zoom the canvas draws them at.
+ * when the canvas first draws one of them (a few at a time, from the frame loop). While the page
+ * is idle, it also makes ahead the drawings of the products that have no photo, which stay on
+ * screen as drawings; the others are drawn only until their photo comes, and only when the canvas
+ * needs them. Making all of them ahead (314 for the three catalogues) kept a phone's processor
+ * busy for seconds after every visit. `resolution` is device px per world px: the device pixel
+ * ratio times the largest zoom the canvas draws them at.
  */
 export class Drawings {
   private readonly ready = new Map<string, { sprite: Sprite; at: number }>()
   /** A product to draw for each drawing, and its shape. */
   private readonly models = new Map<string, { item: CatalogItem; shape: Shape }>()
+  /** Drawings some product without a photo keeps on screen: made ahead, while the page is idle. */
+  private readonly lasting = new Set<string>()
   private readonly queue: string[] = []
   private readonly asked = new Set<string>()
   private running = 0
@@ -121,6 +126,7 @@ export class Drawings {
     return items.map((item) => {
       const shape = shapeOf(item)
       if (!this.models.has(shape.key)) this.models.set(shape.key, { item, shape })
+      if (!item.photo) this.lasting.add(shape.key)
       return shape
     })
   }
@@ -178,16 +184,25 @@ export class Drawings {
     if (host) queueMicrotask(() => host.root.unmount())
   }
 
-  /** Drawings nobody asked for yet, one at a time, while the page has nothing else to do. */
+  /**
+   * The lasting drawings nobody asked for yet, one at a time, while the page has nothing else to
+   * do: never forced into a busy moment.
+   */
   private prefetch() {
-    if (this.idle != null || this.asked.size >= this.models.size) return
-    this.idle = onIdle(() => {
+    if (this.idle != null) return
+    let next: string | undefined
+    for (const key of this.lasting) {
+      if (this.asked.has(key)) continue
+      next = key
+      break
+    }
+    if (next == null) return
+    const key = next
+    this.idle = onIdle((deadline) => {
       this.idle = null
-      for (const key of this.models.keys()) {
-        if (this.asked.has(key)) continue
-        this.want(key)
-        break
-      }
+      // Too little time left in this idle moment: the next one.
+      if (deadline && deadline.timeRemaining() < IDLE_SLICE_MS) return this.prefetch()
+      this.want(key)
       this.pump()
     })
   }
@@ -233,9 +248,13 @@ export class Drawings {
   }
 }
 
-const onIdle = (run: () => void): number =>
+/** Idle time a drawing made ahead needs (ms): rendered, serialised and decoded on a slow phone. */
+const IDLE_SLICE_MS = 12
+
+/** Runs when the page is idle; a browser without idle callbacks, after a short wait. */
+const onIdle = (run: (deadline?: IdleDeadline) => void): number =>
   typeof window.requestIdleCallback === 'function'
-    ? window.requestIdleCallback(run, { timeout: 1500 })
+    ? window.requestIdleCallback(run)
     : window.setTimeout(run, 120)
 
 const cancelIdle = (id: number) => {

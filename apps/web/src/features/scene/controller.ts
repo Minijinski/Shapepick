@@ -55,6 +55,8 @@ class SceneController {
   private kind: Arrival = 'intro'
   private stage: Rect | null = null
   private pickable = true
+  /** Product sheets open over the canvas (one folds away as the next opens). */
+  private veils = 0
   private settleAt = 0
   private timer: ReturnType<typeof setTimeout> | undefined
   private readonly waiting = new Set<() => void>()
@@ -74,6 +76,7 @@ class SceneController {
     for (const [category, targets] of this.targets) renderer.setTargets(category, targets)
     renderer.setStage(this.stage)
     renderer.setPickable(this.pickable)
+    renderer.setVeiled(this.veils > 0)
     renderer.setHomeLayer(this.homeLayer)
     if (this.target) this.settleIn(renderer.go(this.target, { intro: true }))
     return () => {
@@ -186,6 +189,22 @@ class SceneController {
   /** How far the home page was scrolled when it was left (px): it comes back there. */
   homeScroll() {
     return this.renderer?.homeScroll ?? 0
+  }
+
+  /**
+   * A product's sheet veils the canvas until the returned function is called: the canvas is then
+   * drawn one frame in two (its blurred drift looks the same, for half the work).
+   */
+  veil() {
+    this.veils++
+    this.renderer?.setVeiled(true)
+    let lifted = false
+    return () => {
+      if (lifted) return
+      lifted = true
+      this.veils--
+      this.renderer?.setVeiled(this.veils > 0)
+    }
   }
 
   /** Whether the products on the canvas take the pointer (off while the results cover it). */

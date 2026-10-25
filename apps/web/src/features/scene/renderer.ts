@@ -411,6 +411,9 @@ export class SceneRenderer {
   private stage: Rect | null = null
   /** Off while the finder's results cover the canvas: the products then take no pointer. */
   private pickable = true
+  /** Under a product's sheet (its veil and blur over the canvas): one frame in two is drawn. */
+  private veiled = false
+  private skipped = false
   private dots: CanvasPattern | null = null
   private focus: { hit: Hit; since: number } | null = null
   private dragging = false
@@ -1668,6 +1671,11 @@ export class SceneRenderer {
     return shown >= PICK.share * w * h
   }
 
+  /** Whether a product's sheet veils the canvas: it is then drawn one frame in two. */
+  setVeiled(on: boolean) {
+    this.veiled = on
+  }
+
   /** Whether the products take the pointer: off while the finder's results cover the canvas. */
   setPickable(on: boolean) {
     this.pickable = on
@@ -1761,6 +1769,12 @@ export class SceneRenderer {
   // ---- Frame ----------------------------------------------------------------------------------
 
   tick = () => {
+    // Under a sheet's veil, half the frames: the blurred drift looks the same, for half the work.
+    // The next frame moves everything by both frames' time.
+    if (this.veiled) {
+      this.skipped = !this.skipped
+      if (this.skipped) return
+    }
     const now = performance.now()
     frame(now - this.last)
     const dt = Math.min(0.05, (now - this.last) / 1000)

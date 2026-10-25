@@ -18,6 +18,7 @@ import { ProductPicture } from '../product/ProductPicture'
 import { photoSrc } from '../product/photo'
 import { AMAZON_PARTNER_TAG } from '../product/shops'
 import { formatPrice, productKind, sheetSpecs } from '../product/specs'
+import { scene } from '../scene/controller'
 import { ProductLink } from './ProductLink'
 import { foldAway, useSheetDrag } from './Sheet'
 import type { ProductSheet } from './useFinder'
@@ -216,6 +217,9 @@ export function ProductDrawer({
     const wide = window.matchMedia('(min-width: 48rem)').matches
     foldAway(panel.current, backdrop.current, onGone, wide)
   }, [leaving, onGone])
+
+  // Its veil over the canvas: the canvas draws one frame in two meanwhile.
+  useEffect(() => scene.veil(), [])
 
   // Focus moves into the sheet and back to whatever had it once the sheet closes.
   useEffect(() => {
