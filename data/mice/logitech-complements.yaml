@@ -129,4 +129,5 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
-  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101, sideButtons: 2, sensor: Logitech Advanced Optical, dpiMax: 4000, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true }
+  # hosts : « short press the connect button between Channel 1, 2, or 3 » (support.logi.com, Getting Started - Signature AI Edition M750)
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101, sideButtons: 2, sensor: Logitech Advanced Optical, dpiMax: 4000, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3 }
