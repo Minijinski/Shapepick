@@ -78,7 +78,7 @@ export function pageHead({
   // The same picture for every page of a locale, without the site's name on it: the card shows
   // the name beside it (og:site_name), so renaming the site leaves it as it is.
   const card = image ?? {
-    url: absolute(`/og/default-${locale}-v2.png`),
+    url: absolute(`/og/default-${locale}-v3.png`),
     width: 1200,
     height: 630,
     alt: m.shareImageAlt[locale],
