@@ -407,15 +407,19 @@ export const monitorFinder: FinderDefinition<M> = {
       key: 'color',
       label: text('Couleurs fidèles et étendues', 'Wide, accurate colour'),
       weakLabel: text('Couleurs moins étendues', 'Narrower colour gamut'),
-      // A sheet without its DCI-P3 coverage counts as the typical panel of its kind.
+      // A sheet without its DCI-P3 coverage counts as the typical panel of its kind. Read in points
+      // of P3 over 70 %: a factory calibration is worth 8, 10-bit colour 4, and the top of the
+      // scale takes 98 % of P3 with both.
       known: (m) => m.specs.dciP3Pct != null,
       peers: (m) => m.specs.panel,
       score: (m) =>
         Math.min(
           1,
-          ((m.specs.dciP3Pct ?? 75) - 70) / 30 +
-            (m.specs.factoryCalibrated ? 0.15 : 0) +
-            (m.specs.bitDepth === 10 ? 0.1 : 0),
+          ((m.specs.dciP3Pct ?? 75) -
+            70 +
+            (m.specs.factoryCalibrated ? 8 : 0) +
+            (m.specs.bitDepth === 10 ? 4 : 0)) /
+            40,
         ),
     },
     {
@@ -473,9 +477,9 @@ export const monitorFinder: FinderDefinition<M> = {
     fps: { refresh: 3, response: 3, esportsSize: 2, contrast: 0.5 },
     immersive: { contrast: 3, hdr: 2.5, immersion: 2, refresh: 1 },
     console: { console: 3, hdr: 2, contrast: 1.5, refresh: 1 },
-    // Contrast counts, but less than accuracy and sharpness: a 4K OLED for gaming should not
-    // outrank a calibrated 5K panel for retouching on its blacks alone.
-    creative: { color: 3, sharpness: 2.5, ergonomics: 1, contrast: 0.5 },
+    // Accuracy and sharpness, not blacks: a gaming OLED's contrast is no reason to retouch on
+    // it, and palettes that stay put all day may burn in, as at the office.
+    creative: { color: 3, sharpness: 2.5, ergonomics: 1, burnIn: 0.5 },
     office: { sharpness: 2.5, ergonomics: 2, connectivity: 2, workspace: 1.5, burnIn: 1 },
     mixed: { refresh: 1.5, contrast: 1.5, sharpness: 1.5, hdr: 1, ergonomics: 1 },
     default: { refresh: 1, contrast: 1, sharpness: 1, ergonomics: 1 },

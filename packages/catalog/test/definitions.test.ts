@@ -114,6 +114,28 @@ describe('monitor finder', () => {
     const top = rank(monitorFinder, monitors, { use: 'creative' }).slice(0, 3)
     expect(top.every((r) => r.item.specs.factoryCalibrated)).toBe(true)
   })
+  it('keeps the top of the colour scale for calibrated 10-bit panels covering 98 % of P3', () => {
+    const color = monitorFinder.criteria.find((c) => c.key === 'color')
+    const panel = monitors.find((m) => m.slug === 'vanta-v32-oled-4k')
+    if (!color || !panel) throw new Error('colour criterion or demo panel missing')
+    const at = (dciP3Pct: number, factoryCalibrated: boolean) =>
+      color.score(
+        { ...panel, specs: { ...panel.specs, dciP3Pct, factoryCalibrated, bitDepth: 10 } },
+        {},
+      )
+    expect(at(98, true)).toBe(1)
+    expect(at(95, true)).toBeLessThan(1)
+    expect(at(99, false)).toBeLessThan(1)
+  })
+  it('puts an IPS ahead of the same screen in OLED for creative work, and says why', () => {
+    const oled = monitors.find((m) => m.slug === 'vanta-v32-oled-4k')
+    if (!oled) throw new Error('demo OLED missing')
+    const ips = { ...oled, slug: 'same-in-ips', specs: { ...oled.specs, panel: 'ips' as const } }
+    const burnIn = monitorFinder.criteria.find((c) => c.key === 'burnIn')
+    const [first, second] = rank(monitorFinder, [oled, ips], { use: 'creative' })
+    expect(first?.item.slug).toBe('same-in-ips')
+    expect(second?.cons).toContainEqual(burnIn?.weakLabel)
+  })
   it('asks the budget right after the size', () => {
     expect(monitorFinder.steps.map((s) => s.key).slice(0, 3)).toEqual(['use', 'format', 'budget'])
     expect(firstPending(monitorFinder, monitors, { use: 'office', format: 's27' })).toBe('budget')
