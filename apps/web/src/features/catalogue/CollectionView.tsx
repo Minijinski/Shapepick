@@ -26,7 +26,10 @@ import { type Collection, collections } from './collections'
 
 type Row = CollectionPage['rows'][number]
 
-/** The ranking it follows, in a few words: the use's own hint, or what the overall one weighs. */
+/**
+ * The ranking it follows, in a few words: the use it ranks for and that use's own hint, or what the
+ * overall one weighs. A use's own page (Pour jouer, Claw grip) is named after it already.
+ */
 function rankingOf(collection: Collection, locale: Locale) {
   const def = finderOf(collection.category)
   const [key, id] = collection.use
@@ -39,8 +42,9 @@ function rankingOf(collection: Collection, locale: Locale) {
           return step.kind === 'range' ? undefined : step.options.find((o) => o.id === id)
         })()
       : undefined
-  return option
-    ? { title: `${m.ranking[locale]} · ${collection.short[locale]}`, basis: option.hint?.[locale] }
+  const named = collection.group === 'use' ? collection.short : option?.label
+  return option && named
+    ? { title: `${m.ranking[locale]} · ${named[locale]}`, basis: option.hint?.[locale] }
     : { title: m.rankingDefault[locale], basis: m.rankingBasis[collection.category][locale] }
 }
 
