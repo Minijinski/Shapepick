@@ -49,6 +49,18 @@ describe('keyboard finder', () => {
     const [first] = rank(keyboardFinder, keyboards, { use: 'office', size: 'full,f96' })
     expect(first?.item.slug).toBe('atelier-silence-96')
   })
+  it('never ranks an office board on its build', () => {
+    const board = keyboards.find((k) => k.specs.caseMaterial === 'aluminum')
+    if (!board) throw new Error('demo aluminium board missing')
+    const plastic = {
+      ...board,
+      slug: 'same-in-plastic',
+      specs: { ...board.specs, caseMaterial: 'plastic' as const, keycapMaterial: 'abs' as const },
+    }
+    const [a, b] = rank(keyboardFinder, [board, plastic], { use: 'office' })
+    expect(a?.fit).toBe(b?.fit)
+    expect(rank(keyboardFinder, [board, plastic], { use: 'code' })[0]?.item.slug).toBe(board.slug)
+  })
   it('reads the feel of a switch known by its feel alone', () => {
     // Logitech names its switches by their feel ("GL Tactile") and publishes no figures.
     const glTactile = switchSchema.parse({

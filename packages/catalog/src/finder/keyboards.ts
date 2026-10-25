@@ -657,7 +657,8 @@ export const keyboardFinder: FinderDefinition<K> = {
       wireless: 1,
       polling: 1,
     },
-    office: { quiet: 3, multidevice: 2, fullLayout: 2, comfort: 2, build: 1 },
+    // No build at the office: a plastic scissor board types as well as an aluminium one there.
+    office: { quiet: 3, multidevice: 2, fullLayout: 2, comfort: 2 },
     code: { programmable: 3, comfort: 2, build: 2, quiet: 1 },
     travel: { light: 3, compact: 2, multidevice: 2, battery: 2, wireless: 1 },
     default: { build: 2, comfort: 1, wireless: 1, speed: 1 },
