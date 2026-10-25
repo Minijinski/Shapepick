@@ -37,7 +37,8 @@ export async function importMice(
     wanted,
     dry,
     command,
-  }: { dataDir: string; wanted: number; dry: boolean; command: string },
+    only,
+  }: { dataDir: string; wanted: number; dry: boolean; command: string; only?: Set<string> },
 ) {
   const data = await loadData(dataDir)
   const known = new Set([...data.mice, ...data.monitors, ...data.keyboards].map((p) => p.slug))
@@ -50,6 +51,7 @@ export async function importMice(
 
   for (const candidate of await source.candidates()) {
     if (drafts.length >= wanted) break
+    if (only?.size && !only.has(candidate.slug)) continue
     if (known.has(candidate.slug) || excluded.slugs.has(candidate.slug)) continue
     if (skipBrands.has(candidate.brand.slug)) continue
     try {

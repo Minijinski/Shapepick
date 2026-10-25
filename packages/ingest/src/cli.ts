@@ -27,6 +27,7 @@ import { rebuildVariants } from './variants'
 import { appendEntries, compact } from './yaml'
 
 // pnpm ingest <source> [--next 10] [--dry-run] [--refresh]   import the next N models
+//   [--only slug,…]                                         only these models of the source
 //   keyboards: keychron, mk (mechanicalkeyboards.com), epomaker, womier, yunzii, ajazz, akko, logitech,
 //   logitechg, corsair, razer, rog, steelseries, hyperx, turtlebeach
 //   monitors (sources/monitors/, written to data/monitors): see monitorSources
@@ -62,6 +63,7 @@ const { values, positionals } = parseArgs({
     'dry-run': { type: 'boolean', default: false },
     refresh: { type: 'boolean', default: false },
     accept: { type: 'string', default: '' },
+    only: { type: 'string', default: '' },
   },
 })
 const command = positionals[0] ?? 'keychron'
@@ -90,13 +92,15 @@ if (!source) {
 }
 const wanted = Number(values.next)
 http.refresh = values.refresh
+/** Models picked by slug: the others are passed over, whatever their place in the source. */
+const only = new Set(values.only.split(',').filter(Boolean))
 
 if (source.category === 'monitor') {
   await importMonitors(source, { dataDir, wanted, dry, command })
   process.exit(0)
 }
 if (source.category === 'mouse') {
-  await importMice(source, { dataDir, wanted, dry, command })
+  await importMice(source, { dataDir, wanted, dry, command, only })
   process.exit(0)
 }
 
@@ -116,6 +120,7 @@ const newBrands = new Map<string, { slug: string; name: string }>()
 
 for (const candidate of await source.candidates()) {
   if (drafts.length >= wanted) break
+  if (only.size && !only.has(candidate.slug)) continue
   if (known.has(candidate.slug) || skipSlugs.has(candidate.slug)) continue
   if (skipBrands.has(candidate.brand.slug)) continue
   try {

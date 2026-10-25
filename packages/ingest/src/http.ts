@@ -42,6 +42,13 @@ const gaps: Record<string, number> = {
   'eu.nuphy.com': 4000,
   // Answered 429 to switch pages fetched one at a time (24 October).
   'epomaker.com': 4000,
+  // Shopify stores read for photos, colours and sheets (24 October): the same pace.
+  'www.rkgamingstore.com': 4000,
+  'redragonshop.com': 4000,
+  'www.lamzu.com': 4000,
+  'www.endgamegear.com': 4000,
+  'www.atk.store': 4000,
+  'finalmouse.com': 4000,
 }
 
 /** `offline`: the cache only, for runs that must read what an import read (pnpm ingest switches). */

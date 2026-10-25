@@ -59,6 +59,7 @@ const STORES: Store[] = [
     partners: ['Roccat'],
   },
   { id: 'ajazz', origin: 'https://ajazzstore.com', brand: 'Ajazz' },
+  { id: 'royalkludge', origin: 'https://www.rkgamingstore.com', brand: 'Royal Kludge' },
 ]
 
 const NOT_A_KEYBOARD =
