@@ -1,0 +1,85 @@
+# ASUS : modèles ajoutés le 2026-10-24 en complément de asus.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 10 modèles
+- slug: asus-proart-md300
+  brand: asus
+  name: ProArt MD300
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118, widthMm: 72, heightMm: 42, weightG: 109, sideButtons: 1, dpiMax: 4200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: asus-proart-md301
+  brand: asus
+  name: ProArt MD301
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 114.8, widthMm: 75.2, heightMm: 46.8, weightG: 99.7, sideButtons: 2, dpiMax: 8000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+# à vérifier : boutons latéraux : 2, plus un joystick sur le flanc
+- slug: asus-rog-chakram-x
+  brand: asus
+  name: Chakram X
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132.7, widthMm: 76.6, heightMm: 42.8, weightG: 127, sideButtons: 2, sensor: ASUS ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: asus-rog-gladius-iii-core
+  brand: asus
+  name: Gladius III Core
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 72, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000 }
+
+- slug: asus-rog-harpe-ace-mini
+  brand: asus
+  name: Harpe Ace Mini
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 37, weightG: 49, sideButtons: 2, sensor: ASUS ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: asus-rog-harpe-mini-core
+  brand: asus
+  name: Harpe Mini Core
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 37, weightG: 52, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000 }
+
+- slug: asus-rog-keris-ii-origin
+  brand: asus
+  name: Keris II Origin
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 67, heightMm: 42, weightG: 65, sideButtons: 2, sensor: ASUS ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: asus-tuf-gaming-m3-gen-ii
+  brand: asus
+  name: TUF Gaming M3 Gen II
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 40, weightG: 59, sideButtons: 2, sensor: PixArt PAW3318, dpiMax: 8000, pollingHz: 1000, switchType: mechanical }
+
+- slug: asus-tuf-m4-air
+  brand: asus
+  name: TUF M4 Air
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 47, sideButtons: 2, sensor: PixArt PAW3335, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: asus-tuf-m4-wireless
+  brand: asus
+  name: TUF M4 Wireless
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 86, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }

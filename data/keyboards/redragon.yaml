@@ -1,0 +1,289 @@
+# Redragon : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 15 modèles
+- slug: redragon-yama-k550
+  brand: redragon
+  name: YAMA K550
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonYAMAK550WiredAluminumRGBGamingKeyboard_2.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonYAMAK550WiredAluminumRGBGamingKeyboard_4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_9.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK550RGBGamingKeyboard_6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, wristRestIncluded: true, weightG: 1500 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: redragon-horus-k618
+  brand: redragon
+  name: HORUS K618
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_11.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/HORUSK618.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_10.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK618WirelessUltra-ThinLowProfileRGBMechanicalKeyboard_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, weightG: 725 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-wyvern-k761-pro
+  brand: redragon
+  name: Wyvern K761 Pro
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_1_c61ca0ab-0019-45f4-91f2-56922edf7b89.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_WYVERN_K761_PRO-WB_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_16.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_2_117c6e91-f813-41b2-908a-9df8dde72c43.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_8_1b77aa06-0703-4237-972e-3427f4b6fd73.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_10_f35e971f-8704-4e48-bff3-da8b91e493b0.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_14.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonWYVERNK761PROWirelessFullSizeMechanicalKeyboard_4_8084baa9-c0fc-4feb-a0ea-85e1592d9dec.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1450 }
+  variants:
+    - { colorName: White & Green, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-ucal-k673-pro
+  brand: redragon
+  name: UCAL K673 Pro
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK673PRO75_WirelessGasketRGBKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragonk673pinkgamingkeyboard_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragonk673pinkgamingkeyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK673keyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK673PRO75_WirelessGasketRGBKeyboard_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragonk673pinkgamingkeyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK673keyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK673keyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, soundDampening: true, weightG: 1200 }
+  variants:
+    - { colorName: Abyssal Blue, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-terraflare-k762-pro
+  brand: redragon
+  name: TERRAFLARE K762 Pro
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO-WB_3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO-WP_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK762WirelessGasketGamingKeyboard_6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO-vl_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO-8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TERRAFLARE_K762_PRO-1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1350 }
+  variants:
+    - { colorName: White & Purple, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White & Purple, colorFamily: color, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: White & Purple, colorFamily: color, layout: iso_de, switch: switch-lineaire }
+
+- slug: redragon-fizz-k617
+  brand: redragon
+  name: FIZZ K617
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonFIZZK61760RapidTriggerMagneticSwitchGamingKeyboard_1_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonFIZZK61760RapidTriggerMagneticSwitchGamingKeyboard_1_d9cf98d1-2b01-4bcb-8237-d8168b2853d8.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617RapidTriggerGamingKeyboard_6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617RapidTriggerGamingKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617RapidTriggerGamingKeyboard_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617RapidTriggerGamingKeyboard_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617FIZZ60_RapidTriggerWiredMechanicalGamingKeyboard.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK617RapidTriggerGamingKeyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 590 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+
+- slug: redragon-tl84
+  brand: redragon
+  name: TL84
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 460 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+
+- slug: redragon-vata-k580-pro
+  brand: redragon
+  name: VATA K580 Pro
+  msrpEur: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_1_5662a89c-1eae-47e1-a979-abfd9d6053d0.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_9.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK580PROVATARGBBacklit3ModesMechanicalGamingKeyboard_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, weightG: 820 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire }
+
+- slug: redragon-eisa-k686-he
+  brand: redragon
+  name: EISA K686 HE
+  msrpEur: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonEISAK686HERapidTriggerGamingKeyboard_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f96, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, soundDampening: true, weightG: 1200 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: redragon-artemis-k719-pro
+  brand: redragon
+  name: Artemis K719 Pro
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1150 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-antonium-k745-pro
+  brand: redragon
+  name: ANTONIUM K745 Pro
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonANTONIUMK745PROKeyboard_2.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonANTONIUMK745PROKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_ANTONIUM_K745_PRO-White_Pink_6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_ANTONIUM_K745_PRO-Black_Green_2_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_ANTONIUM_K745_PRO_White_Orange_4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_K745_PRO_Wireless_Mechanical_Keyboard_11.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_K745_PRO_Wireless_Mechanical_Keyboard_11_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_K745_PRO_Wireless_Mechanical_Keyboard_11_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1060 }
+  variants:
+    - { colorName: White & Purple, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White & Purple, colorFamily: color, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: White & Purple, colorFamily: color, layout: iso_de, switch: switch-lineaire }
+
+- slug: redragon-horus-k619
+  brand: redragon
+  name: HORUS K619
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/K619wiredkeyboard_3.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/K619wiredkeyboard_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/RedragonK619lowprofilewiredkeyboard_5.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/RedragonK619lowprofilewiredkeyboard_4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/RedragonK619lowprofilewiredkeyboard_6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/K619wiredkeyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/RedragonK619lowprofilewiredkeyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/RedragonK619lowprofilewiredkeyboard_2.png, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, weightG: 614 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-eisa-k686-pro
+  brand: redragon
+  name: EISA K686 Pro
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_8.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_9.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK686PRO98KeysWirelessGasketRGBGamingKeyboard_6.jpg, kind: cutout_top, width: 720, height: 720 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1060 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: redragon-trundle-k668
+  brand: redragon
+  name: TRUNDLE K668
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonTRUNDLEK668Hot-swappableGamingKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK668QWERTZ-LayoutKabelgebundeneGaming-Tastatur.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK668RGBTecladoGamingMecanicoCableado_2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonTRUNDLEK668Hot-swappableGamingKeyboard_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TRUNDLE_K668-IT.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/Redragon_TRUNDLE_K668-FR_21008611-abc2-4e76-8620-6e4cde8574c6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK668Keyboard.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonTRUNDLEK668Hot-swappableGamingKeyboard_5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 880 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire }
+
+- slug: redragon-dragonborn-k630
+  brand: redragon
+  name: DRAGONBORN K630
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragon60keyboard.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragonk630keyboard_3_c51d3856-0120-4b39-b234-651ae37dfa80_1.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK630Wired60_Keyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragonk630keyboard_6_e140e81a-b9f6-4b3c-b5d8-8e749ee25c39.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragonk630keyboard_5.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragonk630keyboard_4_39100a94-78a4-46f4-ad98-c8ba39f39ccb.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragonk630keyboard_3_c51d3856-0120-4b39-b234-651ae37dfa80.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/products/redragonk630keyboard_1_eb3ee13e-a0be-49d0-9878-d74796e4cd9e.png, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 840 }
+  variants:
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-clicky }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-tactile }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White, colorFamily: white, layout: jis, switch: switch-clicky }
+    - { colorName: White, colorFamily: white, layout: jis, switch: switch-tactile }
+    - { colorName: White, colorFamily: white, layout: jis, switch: switch-lineaire }

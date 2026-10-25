@@ -1,0 +1,64 @@
+# Ajazz : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 4 modèles
+- slug: ajazz-aj159
+  brand: ajazz
+  name: AJ159
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8474_d2fa6333-d707-4b07-a862-8440cb0ec369.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8455_52b4a006-b4fd-476d-961c-61e53f947f4e.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8476_d79a2da9-ddf4-4381-82b9-0d9f4f32423f.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8477_ba22b748-f273-47f9-b3b6-92a735e0791b.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8459_5564ec2c-a843-44ee-bff8-90cd3657d2d1.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8472_80595861-072a-4b40-817d-df75ec543024.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8458_e1cc899c-e45a-414a-bc16-6de664d6b5ae.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/IMG_8439_0602e2ff-794f-4096-b7f9-c9b64c0fc407.jpg, kind: cutout_top, width: 1000, height: 1000 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.1, widthMm: 63.1, heightMm: 37.7, weightG: 56, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: AJAZZ-AJ159-WH, colorName: White, colorFamily: white, msrpEur: 40 }
+    - { sku: AJAZZ-AJ159P-BK, colorName: Black, colorFamily: black, msrpEur: 50 }
+    - { sku: AJAZZ-AJ159APEX-BL, colorName: Blue, colorFamily: color, msrpEur: 85 }
+    - { sku: AJAZZ-AJ159APEX-OR, colorName: Orange, colorFamily: color, msrpEur: 85 }
+
+- slug: ajazz-aj139-pro
+  brand: ajazz
+  name: AJ139 Pro
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.4, widthMm: 63.3, heightMm: 38.2, weightG: 59, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: ajazz-aj199
+  brand: ajazz
+  name: AJ199
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 61.6, heightMm: 38.6, weightG: 60, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: ajazz-aj179
+  brand: ajazz
+  name: AJ179
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/01.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/02.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/03.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/04.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/05.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/06.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/07.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/08_568a03b4-2074-43a6-8541-f0307b39fe0c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 117.8, widthMm: 65.6, heightMm: 41.3, weightG: 58, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: AJAZZ-MOUSE-AJ179-WH, colorName: White, colorFamily: white, msrpEur: 35 }
+    - { sku: AJAZZ-MOUSE-AJ179P-BK, colorName: Black, colorFamily: black, msrpEur: 50 }
+    - { sku: AJAZZ-MOUSE-AJ179APEX-BL, colorName: Blue, colorFamily: color, msrpEur: 95 }
+    - { sku: AJAZZ-MOUSE-AJ179APEX-OR, colorName: Orange, colorFamily: color, msrpEur: 95 }

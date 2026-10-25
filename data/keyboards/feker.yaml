@@ -1,0 +1,46 @@
+# Feker : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 4 modèles
+- slug: feker-alice98
+  brand: feker
+  name: Alice98
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, soundDampening: true, weightG: 1799 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: feker-alice75
+  brand: feker
+  name: Alice75
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1788 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: feker-galaxy80
+  brand: feker
+  name: Galaxy80
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1700 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: feker-galaxy100
+  brand: feker
+  name: Galaxy100
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

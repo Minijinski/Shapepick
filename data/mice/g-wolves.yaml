@@ -1,0 +1,100 @@
+# G-Wolves : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 12 modèles
+- slug: g-wolves-htx-4k
+  brand: g-wolves
+  name: HTX 4K
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 63.5, heightMm: 36, weightG: 39, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-htx-ace
+  brand: g-wolves
+  name: HTX Ace
+  msrpEur: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 63.5, heightMm: 36, weightG: 36, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-htx-mini-8k
+  brand: g-wolves
+  name: HTX Mini 8K
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 109, widthMm: 60, heightMm: 35, weightG: 27, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-htx-ultra-8k
+  brand: g-wolves
+  name: HTX Ultra 8K
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 64.1, heightMm: 37.1, weightG: 32.1, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-hts-plus-4k
+  brand: g-wolves
+  name: HTS Plus 4K
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 61, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3399, dpiMax: 20000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-hts-plus-8k
+  brand: g-wolves
+  name: HTS Plus 8K
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 61, heightMm: 40, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-hts-ultra-8k
+  brand: g-wolves
+  name: HTS Ultra 8K
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 113, widthMm: 61, heightMm: 40, weightG: 29.5, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-ht-s2-8k
+  brand: g-wolves
+  name: HT-S2 8K
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 110, widthMm: 61, heightMm: 37, weightG: 33, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-hsk-pro-4k
+  brand: g-wolves
+  name: HSK Pro 4K
+  msrpEur: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 73.3, widthMm: 56, heightMm: 29, weightG: 29, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-hsk-plus-4k
+  brand: g-wolves
+  name: HSK Plus 4K
+  msrpEur: 205
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 89, widthMm: 58.5, heightMm: 36, weightG: 38, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-htr-8k
+  brand: g-wolves
+  name: HTR 8K
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 92, widthMm: 57, heightMm: 35, weightG: 26, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: g-wolves-vuk
+  brand: g-wolves
+  name: VUK
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.8, widthMm: 64.6, heightMm: 38.1, weightG: 34.5, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }

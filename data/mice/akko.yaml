@@ -1,0 +1,28 @@
+# Akko : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: akko-dash-max
+  brand: akko
+  name: Dash Max
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117.6, widthMm: 60.9, heightMm: 37, weightG: 40, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: akko-nest
+  brand: akko
+  name: Nest
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 64, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: akko-pulse-01
+  brand: akko
+  name: Pulse 01
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.4, widthMm: 63.3, heightMm: 40.5, weightG: 77, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }

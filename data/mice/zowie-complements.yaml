@@ -1,0 +1,108 @@
+# ZOWIE : modèles ajoutés le 2026-10-24 en complément de zowie.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 13 modèles
+- slug: zowie-ec1-c
+  brand: zowie
+  name: EC1-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 69, heightMm: 42, weightG: 80, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-ec1-cw
+  brand: zowie
+  name: EC1-CW
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 69, heightMm: 42, weightG: 79, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 3200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: zowie-ec2-c
+  brand: zowie
+  name: EC2-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 65, heightMm: 42, weightG: 73, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-ec2-cw
+  brand: zowie
+  name: EC2-CW
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 65, heightMm: 42, weightG: 77, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 3200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: zowie-ec3-c
+  brand: zowie
+  name: EC3-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 66, heightMm: 41, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-fk1-plus-c
+  brand: zowie
+  name: FK1+-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129, widthMm: 69, heightMm: 39, weightG: 77, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-fk1-c
+  brand: zowie
+  name: FK1-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128.9, widthMm: 66.8, heightMm: 37.3, weightG: 74, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-fk2-c
+  brand: zowie
+  name: FK2-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.1, widthMm: 64.9, heightMm: 36.4, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-s1-c
+  brand: zowie
+  name: S1-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 40, weightG: 72, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-s2-c
+  brand: zowie
+  name: S2-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64.2, heightMm: 38.1, weightG: 69, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-za11-c
+  brand: zowie
+  name: ZA11-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129, widthMm: 67, heightMm: 42, weightG: 72, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-za12-c
+  brand: zowie
+  name: ZA12-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 64.6, heightMm: 41.4, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: zowie-za13-c
+  brand: zowie
+  name: ZA13-C
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 62.8, heightMm: 40.2, weightG: 65, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }

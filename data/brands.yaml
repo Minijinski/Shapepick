@@ -77,3 +77,61 @@
 
 # Marques importées (pnpm ingest akko, 2026-10-24)
 - { slug: akko, name: Akko, website: https://en.akkogear.com }
+
+# Marques importées (pnpm ingest royalkludge, 2026-10-24)
+- { slug: royal-kludge, name: Royal Kludge }
+
+# Marques ajoutées avec les souris du 2026-10-24
+- { slug: lamzu, name: LAMZU, website: https://www.lamzu.com }
+- { slug: endgame-gear, name: Endgame Gear, website: https://www.endgamegear.com }
+- { slug: vaxee, name: VAXEE, website: https://vaxee.co }
+- { slug: kensington, name: Kensington, website: https://www.kensington.com }
+- { slug: cherry-xtrfy, name: Cherry Xtrfy, website: https://www.cherryxtrfy.com }
+- { slug: darmoshark, name: Darmoshark }
+- { slug: pwnage, name: Pwnage }
+- { slug: finalmouse, name: Finalmouse, website: https://finalmouse.com }
+- { slug: wlmouse, name: WLMOUSE }
+- { slug: g-wolves, name: G-Wolves }
+- { slug: cooler-master, name: Cooler Master, website: https://www.coolermaster.com }
+- { slug: atk, name: ATK }
+- { slug: vgn, name: VGN }
+- { slug: vxe, name: VXE }
+- { slug: ninjutso, name: Ninjutso }
+- { slug: mionix, name: Mionix }
+- { slug: waizowl, name: Waizowl }
+- { slug: dream-machines, name: Dream Machines }
+- { slug: redragon, name: Redragon }
+- { slug: mchose, name: MCHOSE }
+- { slug: rapoo, name: Rapoo }
+- { slug: scyrox, name: Scyrox }
+- { slug: attack-shark, name: Attack Shark }
+- { slug: dareu, name: Dareu }
+- { slug: elecom, name: Elecom }
+- { slug: nulea, name: Nulea }
+- { slug: protoarc, name: ProtoArc }
+
+# Marques ajoutées avec les claviers du 2026-10-24
+- { slug: shortcut-studio, name: Shortcut Studio }
+- { slug: feker, name: Feker }
+- { slug: nuphy, name: NuPhy }
+- { slug: skyloong, name: Skyloong }
+- { slug: meletrix, name: Meletrix }
+- { slug: cidoo, name: Cidoo }
+- { slug: coolkiller, name: Coolkiller }
+- { slug: ergodox, name: Ergodox }
+- { slug: vter, name: VTER }
+- { slug: jamesdonkey, name: Jamesdonkey }
+- { slug: keydous, name: Keydous }
+- { slug: gamakay, name: Gamakay }
+- { slug: leobog, name: Leobog }
+- { slug: irok, name: Irok }
+- { slug: noppoo, name: Noppoo }
+- { slug: ganss, name: Ganss }
+- { slug: monka, name: Monka }
+- { slug: fopato, name: Fopato }
+- { slug: newmen, name: Newmen }
+- { slug: fl-esports, name: FL ESPORTS }
+- { slug: monsgeek, name: MonsGeek }
+- { slug: langtu, name: Langtu }
+- { slug: 8bitdo, name: 8BitDo }
+- { slug: weikav, name: Weikav }

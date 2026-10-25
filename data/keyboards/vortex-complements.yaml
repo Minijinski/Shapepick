@@ -1,0 +1,31 @@
+# Vortex : claviers ajoutés le 2026-10-24 en complément de vortex.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: vortex-multix-104-via
+  brand: vortex
+  name: Multix 104 VIA
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+
+- slug: vortex-cypher-split
+  brand: vortex
+  name: Cypher Split
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }

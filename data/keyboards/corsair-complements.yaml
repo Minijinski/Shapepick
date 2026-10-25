@@ -1,0 +1,27 @@
+# Corsair : claviers ajoutés le 2026-10-24 en complément de corsair.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: corsair-k70-pro
+  brand: corsair
+  name: K70 Pro
+  msrpEur: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 880 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: corsair-k70-max
+  brand: corsair
+  name: K70 Max
+  msrpEur: 335
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: magnetic, hotSwap: none, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, wristRestIncluded: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

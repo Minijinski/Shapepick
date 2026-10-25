@@ -1,0 +1,244 @@
+# Glorious : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 19 modèles
+- slug: glorious-model-d-2-wired
+  brand: glorious
+  name: Model D 2 Wired
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 67, heightMm: 43, weightG: 58, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000 }
+
+- slug: glorious-model-d-2-wireless
+  brand: glorious
+  name: Model D 2 Wireless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 67, heightMm: 43, weightG: 66, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: glorious-model-d-2-pro-4k-8k
+  brand: glorious
+  name: Model D 2 Pro 4K/8K
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 67, heightMm: 42, weightG: 62, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: glorious-model-d3-wireless
+  brand: glorious
+  name: Model D3 Wireless
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_Top_2x_6011c0b5-a5f1-4960-8073-40e6c0663ee2.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_Front_2x_904e8b0c-d7df-452f-8d02-c77ac2135703.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_Side_2x_a0e4de7a-ad0f-4bac-a8bc-f6a298eb0847.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_Bottom_2x_c9c8667d-251b-430b-a4cd-50a42255bfdd.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_Battery_2x_a49d89c8-f4e9-40e6-81d3-14984309d981.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL_BLK_Web_Gallery_BatterySystem_2x_f80faf2a-63b3-4a8e-976d-3f4f295a883f.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-BLK_Web_Gallery_InfinitePlay_2x_bb4d26aa-6af9-45ae-8d58-5c23058cb784.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-WL-WHT_Web_Gallery_Front_2x_5508b885-7e03-4ec5-a7a2-07aaa2ae71ee.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 63.7, heightMm: 41.7, weightG: 69, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-D3-WL-BLK, colorName: Black, colorFamily: black }
+    - { sku: GLO-D3-WL-WHT, colorName: White, colorFamily: white }
+
+- slug: glorious-model-d3-wired
+  brand: glorious
+  name: Model D3 Wired
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-W-BLK_Web_Gallery_Top_2x_c6d005f5-2dda-4c1b-9e24-3ef8cadafd02.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-W-BLK_Web_Gallery_Front_2x_490bdda1-ae02-47ec-bbf8-56a2373d6eac.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-W-BLK_Web_Gallery_Side_2x_8e5a2639-92f6-4961-a47f-cd33ebdcc636.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-W-BLK_Web_Gallery_Bottom_2x_74ea921a-3f2a-46d5-81e4-c9125247b8d7.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-D3-W-BLK_Web_Gallery_BuyImage_2x_fd3fccdd-3b54-4033-80d3-2d07641357fa.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 63.7, heightMm: 41.7, weightG: 57, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 1000, switchType: optical }
+  variants:
+    - { sku: GLO-D3-W-BLK, colorName: Black, colorFamily: black }
+
+- slug: glorious-model-i-2-wireless
+  brand: glorious
+  name: Model I 2 Wireless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 72, heightMm: 42, weightG: 75, sideButtons: 4, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: glorious-model-o-2-wired
+  brand: glorious
+  name: Model O 2 Wired
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 38, weightG: 59, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000 }
+
+- slug: glorious-model-o-2-wireless
+  brand: glorious
+  name: Model O 2 Wireless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 38, weightG: 68, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: glorious-model-o-2-mini-wired
+  brand: glorious
+  name: Model O 2 Mini Wired
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MW_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1625, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_Side.webp, kind: cutout_top, width: 1624, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_Bottom.webp, kind: cutout_top, width: 1624, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_MiniDesign.webp, kind: cutout_top, width: 1628, height: 1629 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MB_Web_Gallery_FindYourFit.webp, kind: cutout_top, width: 1624, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMV2-MW_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1625 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 36, weightG: 49, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: GLO-MS-OMV2-MB, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-OMV2-MW, colorName: White, colorFamily: white }
+
+- slug: glorious-model-o-2-mini-wireless
+  brand: glorious
+  name: Model O 2 Mini Wireless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_Side.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_Bottom.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_MiniDesign.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MB_Web_Gallery_FindYourFit.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MW_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OMWV2-MW_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 36, weightG: 57, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-OMWV2-MB, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-OMWV2-MW, colorName: White, colorFamily: white }
+
+- slug: glorious-model-o-2-pro-4k-8k
+  brand: glorious
+  name: Model O 2 Pro 4K/8K
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 59, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+
+- slug: glorious-model-o-eternal
+  brand: glorious
+  name: Model O Eternal
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-BLK_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-BLK_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-BLK_Web_Gallery_Side.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-BLK_Web_Gallery_Bottom.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-WHT_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-WHT_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-WHT_Web_Gallery_Side.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-OE-W-WHT_Web_Gallery_Bottom.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 55, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000 }
+  variants:
+    - { sku: GLO-OE-W-BLK, colorName: Black, colorFamily: black }
+    - { sku: GLO-OE-W-WHT, colorName: White, colorFamily: white }
+
+- slug: glorious-model-o3-wireless
+  brand: glorious
+  name: Model O3 Wireless
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_Top_2x_7c6a7987-f2ac-4acd-aaec-0c6aa8f754f2.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_Front_2x_674bcb8a-fe06-4cc4-8f2b-d1e791640eed.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_Side_2x_2916a9db-06f4-49d0-9e4c-a03f9f3266a5.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_Bottom_2x_73ec310a-335b-4653-bd22-5ac0be59c8b3.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_Battery_2x_d9b07aaf-bb3f-40fd-bc31-e4ad01e31cd7.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_InfinitePlay_2x_940c2aa4-1a03-45e4-9e4e-e2be3a627ed0.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-WHT_Web_Gallery_BatterySystem_2x_c40bd830-6b44-4aa7-a9f6-20e0dbb23af0.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-WL-BLK_Web_Gallery_Front_2x_d5f2cc78-c1d2-4fb4-b1e5-e5167e562034.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 61.4, heightMm: 39.8, weightG: 66, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-O3-WL-WHT, colorName: White, colorFamily: white }
+    - { sku: GLO-O3-WL-BLK, colorName: Black, colorFamily: black }
+
+- slug: glorious-model-o3-wired
+  brand: glorious
+  name: Model O3 Wired
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-W-BLK_Web_Gallery_Top_2x_d15e45c6-2367-4a2e-9959-ee06a143a3b1.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-W-BLK_Web_Gallery_Front_2x_412cd141-108b-4fc2-a4ea-4e1934ecfc2c.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-W-BLK_Web_Gallery_Side_2x_de5d98cb-ea0e-4599-9514-5704f87766ad.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-W-BLK_Web_Gallery_Bottom_2x_ad90c14a-a973-44ba-907a-b34ab3271876.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-O3-W-BLK_Web_Gallery_BuyImage_2x_b9179f00-4fd8-47c7-896d-cd5fb56a7e9d.webp, kind: cutout_top, width: 1624, height: 1624 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 61.4, heightMm: 39.8, weightG: 54, sideButtons: 2, sensor: Glorious BAMF 3.0, dpiMax: 30000, pollingHz: 1000, switchType: optical }
+  variants:
+    - { sku: GLO-O3-W-BLK, colorName: Black, colorFamily: black }
+
+- slug: glorious-series-2-pro
+  brand: glorious
+  name: Series 2 Pro
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Top.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Front.webp, kind: cutout_top, width: 1625, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Side.webp, kind: cutout_top, width: 1625, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Persp.webp, kind: cutout_top, width: 1625, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Bottom.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL_Web_Gallery_8KHzPolling.webp, kind: cutout_top, width: 1625, height: 1625 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL_US_Amazon_IMG4_1500x1500_88d12758-7cba-437b-8bd7-97d85aca4f6c.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-S2PRO-WL-BLK_Web_Gallery_Sensor.webp, kind: cutout_top, width: 1625, height: 1625 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.5, widthMm: 62, heightMm: 38, weightG: 55, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-S2PRO-WL-BLK, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-S2PRO-WL-WHT, colorName: White, colorFamily: white }
+
+- slug: glorious-model-o-2-pro-1k
+  brand: glorious
+  name: Model O 2 Pro 1K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 57, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+
+- slug: glorious-model-d-2-pro-1k
+  brand: glorious
+  name: Model D 2 Pro 1K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 67, heightMm: 42, weightG: 60, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: glorious-model-i
+  brand: glorious
+  name: Model I
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 74, heightMm: 42, weightG: 69, sideButtons: 4, sensor: Glorious BAMF, dpiMax: 19000, pollingHz: 1000 }
+
+- slug: glorious-model-o-classic
+  brand: glorious
+  name: Model O Classic
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 69, sideButtons: 2, sensor: Glorious BAMF, dpiMax: 19000, pollingHz: 1000, switchType: mechanical }

@@ -1,0 +1,52 @@
+# Elecom : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 6 modèles
+- slug: elecom-huge-trackball-m-ht1dr
+  brand: elecom
+  name: HUGE Trackball M-HT1DR
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 181.9, widthMm: 114.7, heightMm: 57.2, weightG: 260, ballPosition: finger, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+
+- slug: elecom-huge-plus
+  brand: elecom
+  name: HUGE Plus
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 182.9, widthMm: 114.3, heightMm: 58.4, weightG: 292, ballPosition: finger, sideButtons: 0, dpiMax: 1500, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: elecom-deft-pro-trackball-m-dpt1mr
+  brand: elecom
+  name: DEFT PRO Trackball M-DPT1MR
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 133.4, widthMm: 91.4, heightMm: 57.3, weightG: 162, ballPosition: finger, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: elecom-ex-g-pro-trackball-m-xpt1mr
+  brand: elecom
+  name: EX-G PRO Trackball M-XPT1MR
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 135, widthMm: 108, heightMm: 47.7, weightG: 147, ballPosition: thumb, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: elecom-ist-pro
+  brand: elecom
+  name: IST PRO
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 94, heightMm: 56, weightG: 158, ballPosition: thumb, sideButtons: 0, sensor: PixArt PAW3311DB, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: elecom-ex-g-trackball-m-xt3dr
+  brand: elecom
+  name: EX-G Trackball M-XT3DR
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 124.4, widthMm: 94.7, heightMm: 47.9, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }

@@ -1,0 +1,108 @@
+# Pulsar : modèles ajoutés le 2026-10-24 en complément de pulsar.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 13 modèles
+- slug: pulsar-x2h
+  brand: pulsar
+  name: X2H
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 54, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2a
+  brand: pulsar
+  name: X2A
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 57, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-xlite-v3-medium
+  brand: pulsar
+  name: Xlite v3 Medium
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2-v3
+  brand: pulsar
+  name: X2 v3
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 53, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2h-v3
+  brand: pulsar
+  name: X2H v3
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 53, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-xlite-v4-es-medium
+  brand: pulsar
+  name: Xlite v4 eS Medium
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 67, heightMm: 43, weightG: 65, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2f
+  brand: pulsar
+  name: X2F
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 87.5, widthMm: 61.1, heightMm: 31.6, weightG: 38, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x3-lhd
+  brand: pulsar
+  name: X3 LHD
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 124.6, widthMm: 69.3, heightMm: 43.1, weightG: 55, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2a-mini
+  brand: pulsar
+  name: X2A Mini
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 37, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2-mini
+  brand: pulsar
+  name: X2 Mini
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 37, weightG: 52, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-xlite-v3-large
+  brand: pulsar
+  name: Xlite v3 Large
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 126, widthMm: 69.5, heightMm: 44.5, weightG: 58, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pulsar-x2-wired
+  brand: pulsar
+  name: X2 Wired
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 51, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical }
+
+- slug: pulsar-x2h-wired
+  brand: pulsar
+  name: X2H Wired
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 51, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical }

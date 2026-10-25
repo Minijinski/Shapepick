@@ -1,0 +1,17 @@
+# Leopold : claviers ajoutés le 2026-10-24 en complément de leopold.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 1 modèles
+- slug: leopold-fc980m
+  brand: leopold
+  name: FC980M
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, soundDampening: true, weightG: 1100 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }

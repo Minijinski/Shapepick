@@ -1,0 +1,28 @@
+# Dream Machines : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: dream-machines-dm6-holey
+  brand: dream-machines
+  name: DM6 Holey
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 66, heightMm: 40, weightG: 69, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 12000, pollingHz: 1000, switchType: mechanical }
+
+- slug: dream-machines-dm6-holey-s
+  brand: dream-machines
+  name: DM6 Holey S
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 66, heightMm: 40, weightG: 69, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: dream-machines-dm6-duo
+  brand: dream-machines
+  name: DM6 Duo
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 66, heightMm: 40, weightG: 79, sideButtons: 2, sensor: PixArt PAW3335, dpiMax: 16000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }

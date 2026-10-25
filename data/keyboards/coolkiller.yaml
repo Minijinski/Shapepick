@@ -1,0 +1,26 @@
+# Coolkiller : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: coolkiller-ck108
+  brand: coolkiller
+  name: CK108
+  msrpEur: 265
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: coolkiller-balloon84
+  brand: coolkiller
+  name: Balloon84
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 870 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }

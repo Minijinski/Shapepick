@@ -1,0 +1,20 @@
+# Scyrox : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: scyrox-v8
+  brand: scyrox
+  name: V8
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 63, heightMm: 38, weightG: 36, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: scyrox-v6
+  brand: scyrox
+  name: V6
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 61, heightMm: 40, weightG: 40, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }

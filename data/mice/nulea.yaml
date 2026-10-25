@@ -1,0 +1,20 @@
+# Nulea : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: nulea-m501
+  brand: nulea
+  name: M501
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 103, heightMm: 50, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: nulea-m505
+  brand: nulea
+  name: M505
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 168, widthMm: 104, heightMm: 56, weightG: 193, ballPosition: finger, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }

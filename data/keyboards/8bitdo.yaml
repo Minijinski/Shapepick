@@ -1,0 +1,15 @@
+# 8BitDo : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 1 modèles
+- slug: 8bitdo-retro87
+  brand: 8bitdo
+  name: Retro87
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: top, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, weightG: 1100 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }

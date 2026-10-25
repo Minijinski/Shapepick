@@ -1,0 +1,35 @@
+# Aula : claviers ajoutés le 2026-10-24 en complément de aula.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: aula-f98-pro
+  brand: aula
+  name: F98 PRO
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: aula-f98
+  brand: aula
+  name: F98
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1040 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: aula-f75-ultra
+  brand: aula
+  name: F75 Ultra
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, soundDampening: true, weightG: 1100 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

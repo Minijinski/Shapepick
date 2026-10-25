@@ -1,0 +1,116 @@
+# Kensington : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 14 modèles
+- slug: kensington-expert-mouse-pro-tb800-eq-trackball
+  brand: kensington
+  name: Expert Mouse Pro TB800 EQ Trackball
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 163, widthMm: 124, heightMm: 61, weightG: 460, ballPosition: finger, sideButtons: 0, dpiMax: 1600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: kensington-expert-mouse-pro-tb900-eq
+  brand: kensington
+  name: Expert Mouse Pro TB900 EQ
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 165, widthMm: 125, heightMm: 60, weightG: 450, ballPosition: finger, sideButtons: 0, sensor: DiamondEye optical, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: kensington-expert-mouse-wireless-trackball
+  brand: kensington
+  name: Expert Mouse Wireless Trackball
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 125, heightMm: 70, weightG: 385, ballPosition: finger, sideButtons: 0, sensor: DiamondEye optical, dpiMax: 400, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: kensington-orbit-fusion-wireless-trackball
+  brand: kensington
+  name: Orbit Fusion Wireless Trackball
+  msrpEur: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 173, widthMm: 109, heightMm: 76, weightG: 173, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true }
+
+- slug: kensington-orbit-trackball-with-scroll-ring
+  brand: kensington
+  name: Orbit Trackball with Scroll Ring
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 140, widthMm: 114, heightMm: 51, weightG: 162, ballPosition: finger, sideButtons: 0, switchType: mechanical }
+
+- slug: kensington-orbit-wireless-mobile-trackball
+  brand: kensington
+  name: Orbit Wireless Mobile Trackball
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 108, widthMm: 86, heightMm: 34, weightG: 182, ballPosition: finger, sideButtons: 0, dpiMax: 1000, switchType: mechanical, conn24ghz: true }
+
+- slug: kensington-pro-fit-ergo-tb450
+  brand: kensington
+  name: Pro Fit Ergo TB450
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 132, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: kensington-pro-fit-ergo-tb550
+  brand: kensington
+  name: Pro Fit Ergo TB550
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 141, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: kensington-pro-fit-ergo-vertical-tb675
+  brand: kensington
+  name: Pro Fit Ergo Vertical TB675
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: kensington-pro-fit-ergo-vertical-wireless-mouse
+  brand: kensington
+  name: Pro Fit Ergo Vertical Wireless Mouse
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 112, widthMm: 76, heightMm: 72, weightG: 96, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }
+
+- slug: kensington-pro-fit-ergo-wireless-mouse
+  brand: kensington
+  name: Pro Fit Ergo Wireless Mouse
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 132, widthMm: 74, heightMm: 61, weightG: 91, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: kensington-slimblade-pro-trackball
+  brand: kensington
+  name: SlimBlade Pro Trackball
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 133, heightMm: 56, weightG: 400, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: kensington-slimblade-trackball
+  brand: kensington
+  name: SlimBlade Trackball
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 150, widthMm: 133, heightMm: 60, weightG: 317, ballPosition: finger, sideButtons: 0, switchType: mechanical }
+
+- slug: kensington-pro-fit-full-size-wireless-mouse
+  brand: kensington
+  name: Pro Fit Full-Size Wireless Mouse
+  msrpEur: 25
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 125, widthMm: 80, heightMm: 46, weightG: 100, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }

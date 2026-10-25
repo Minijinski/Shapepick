@@ -1,0 +1,305 @@
+# LAMZU : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 16 modèles
+- slug: lamzu-atlantis-mini
+  brand: lamzu
+  name: Atlantis Mini
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Atlantis_MINI_1-859376.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Atlantis_MINI_5-617898.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Atlantis_MINI_4-803245.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Atlantis_MINI_2-326712.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Mini_800X800_1_c49a04be-268c-48f2-9370-319ac49cf0e9-592957.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Mini_800X800_2_ae0ceb74-9c89-4194-a1cd-b1c048c44d9e-977396.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Mini_800X800_5_dfcb6a29-379b-4441-a017-cee1b8b38fd4-553183.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Mini_800X800_3_909ae319-9edc-4063-8a42-f83ce93d97ff-805668.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.9, widthMm: 63.1, heightMm: 37, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: lamzu-atlantis-mini-pro
+  brand: lamzu
+  name: Atlantis Mini Pro
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_mini_white.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-mini-pro-polar-white-1-445836.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisMINIPROPolarWhite_4-612279.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-mini-pro-polar-white-2-566255.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/Atlantis-MINI-PRO-MatchaGreen_02-712537.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_mini_green.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/Atlantis-MINI-PRO-MatchaGreen_04-989348.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/Atlantis-MINI-PRO-MatchaGreen_01-503865.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.9, widthMm: 63.1, heightMm: 37, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00010, colorName: Polar White, colorFamily: white }
+    - { sku: C.00019, colorName: Matcha Green, colorFamily: color }
+    - { sku: C.00017, colorName: Miami Blue, colorFamily: color }
+    - { sku: C.00015, colorName: Elegant  Blue, colorFamily: color }
+
+- slug: lamzu-atlantis-og-v2
+  brand: lamzu
+  name: Atlantis OG V2
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 38, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: lamzu-atlantis-og-v2-pro
+  brand: lamzu
+  name: Atlantis OG V2 Pro
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_V2_pro_white.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-02-342030.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-04-657759.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-01-880259.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/dongle_79c33c73-b100-4792-962b-414ef27097e9-450673.jpg, kind: cutout_top, width: 2047, height: 2048 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-02_2275ccf0-ca9c-4e36-9c95-a0601ce5fb45-425684.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-04_63dfd30a-8497-4a68-a2eb-9938562c7693-233856.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/atlantis-og-v2-pro-01_b59755ab-2d71-4334-8715-f0b0b9d36faf-451572.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 38, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00018, colorName: Matcha Green, colorFamily: color }
+    - { sku: C.00014, colorName: Elegant  Blue, colorFamily: color }
+    - { sku: C.00013, colorName: Polar White, colorFamily: white }
+    - { sku: C.00016, colorName: Miami Blue, colorFamily: color }
+
+- slug: lamzu-inca
+  brand: lamzu
+  name: Inca
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_1.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_2.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_3.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_4.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_5.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_6.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_7.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/INCA_800X800_8.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 63, heightMm: 40, weightG: 40, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00083, colorName: Black, colorFamily: black }
+    - { sku: C.00084, colorName: White, colorFamily: white }
+
+- slug: lamzu-maya
+  brand: lamzu
+  name: MAYA
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_maya_white.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya-Polar-white-background_02.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/20231018-Maya-imperial-red-black-background_02-521968.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_maya_Red.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/20231018-Maya-imperial-red-black-background_01-930586.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/Maya-Cloud-grey-background_02-555630.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_maya_gray.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/20231018-Maya-imperial-red-black-background_04-973552.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 62, heightMm: 38, weightG: 45, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00029, colorName: Imperial Red, colorFamily: color }
+    - { sku: C.00026, colorName: White, colorFamily: white }
+    - { sku: C.00024, colorName: Cloud Gray, colorFamily: black }
+    - { sku: C.00025, colorName: Charcoal Black, colorFamily: black }
+
+- slug: lamzu-maya-x
+  brand: lamzu
+  name: MAYA X
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_1-797429.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_3-590960.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_2-830719.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_4-817494.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_5-789120.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_2_560b02bc-5b7e-4f39-b529-9690ef13ffe1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_4_b4d5d55c-fae4-448d-a0c7-6227865fc81a.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Maya_X_8K_800X800_3_ce14d93c-e659-46ed-a992-d4efbaabbb63.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.4, widthMm: 64.9, heightMm: 39.6, weightG: 47, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00077, colorName: Light Pink, colorFamily: white }
+    - { sku: C.00004, colorName: White, colorFamily: white }
+    - { sku: C.00005, colorName: Cloud Gray, colorFamily: black }
+    - { sku: C.00006, colorName: Purple Shadow, colorFamily: color }
+    - { sku: C.00007, colorName: Charcoal Black, colorFamily: black }
+
+- slug: lamzu-orcus
+  brand: lamzu
+  name: Orcus
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/4_011b9fe4-b573-44ce-a4a9-c969ac6a1d44.png, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/5_cff244f8-ebcc-4fdb-ab43-39fd4c914bd2.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_3bfb9fe8-f736-4bc8-a876-2686aadf47cc.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/2_d0cec0ce-184d-4478-8e91-fe9ee06eb679.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/3_854e1e96-55cb-402f-936e-4970f1e2056e.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/4_5616bc97-c6d3-4942-8772-c92ee633e5e0.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/5_30187ff5-3539-4b4c-aacc-58eec7d3b8ba.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_89013a40-c922-49c0-9194-e1cfeb33ca1b.png, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 92, widthMm: 56, heightMm: 35, weightG: 38, sideButtons: 2, sensor: PixArt PAW NEXT I, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00163, colorName: Orange, colorFamily: color }
+    - { sku: C.00164, colorName: Purple, colorFamily: color }
+
+- slug: lamzu-paro
+  brand: lamzu
+  name: Paro
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_1_8ac1f6bf-4e40-4578-b8d2-832abc82d88d-960517.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_2_9fae6a04-688e-4e1c-88e5-263de4480a1a-507913.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_4_0fb098f9-4b26-4d5a-b204-afc0e3613367-814972.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_5_e6425ca6-ad61-4e67-bf8c-2f2f8f41a2b0-458202.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_1-397484.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_2-359219.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_4-819688.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Paro_5.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 40, weightG: 48, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00059, colorName: Charcoal Black, colorFamily: black }
+    - { sku: C.00030, colorName: Polar White, colorFamily: white }
+
+- slug: lamzu-tachi
+  brand: lamzu
+  name: Tachi
+  msrpEur: 205
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_1-803480.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_2_b6bbdfcb-8771-4682-8f4c-5bb5e3bd7c6a-988331.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_3_71b945b4-1b4a-47d9-b185-d778d30307bc-465755.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_4-133061.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_5_dbd9b96b-eaef-4115-859b-bc7d89089e19-999435.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_1_ff09be97-3e73-4958-bc23-296adeab028b-548865.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_2-963021.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Tachi_8K_800X800_3-391039.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 49, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00081, colorName: Warrior Black, colorFamily: black }
+    - { sku: C.00080, colorName: Warrior White, colorFamily: white }
+
+- slug: lamzu-thorn
+  brand: lamzu
+  name: Thorn
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_thorn.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/thorn-1-467963.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/thorn-4-654320.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/thorn-2.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 65, heightMm: 42, weightG: 52, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00020, colorName: Polar White, colorFamily: white }
+
+- slug: lamzu-thorn-v2
+  brand: lamzu
+  name: Thorn V2
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_ff95c640-6e49-4e04-a7ef-ce95afb96313.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/2_60570e34-21f1-4cc8-9b37-1df2bbd0f824.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/3_fb92791f-7c21-4cad-aeae-1394087f010b.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/4_0d7adf91-bb64-4a57-8005-a5c8f4e9fd8d.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/5_7d171b11-bd4f-4c17-b449-20e2d7d20dfb.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/11_74b9a2a5-80f6-42a9-a31e-07de6c183bae.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/12.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/13.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124, widthMm: 66, heightMm: 42, weightG: 55, sideButtons: 2, sensor: PixArt PAW NEXT I, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00151, colorName: Purple, colorFamily: color }
+    - { sku: C.00150, colorName: Black-red, colorFamily: black }
+    - { sku: C.00154, colorName: Orange, colorFamily: color }
+    - { sku: C.00153, colorName: White, colorFamily: white }
+
+- slug: lamzu-maya-4k
+  brand: lamzu
+  name: MAYA 4K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_1.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_5.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_3.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_4.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/maya_6.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_9e77ec0d-1328-4bcb-954d-5313d73cbd3d-350349.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/2.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 62, heightMm: 38, weightG: 45, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00028, colorName: Cloud Gray, colorFamily: black }
+    - { sku: C.00027, colorName: Charcoal Black, colorFamily: black }
+
+- slug: lamzu-atlantis-mini-4k
+  brand: lamzu
+  name: Atlantis Mini 4K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_mini_4k.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/AtlantisMINI4K_1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/AtlantisMINI4K_4.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/AtlantisMINI4K_3.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/AtlantisMINI4K_2.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.9, widthMm: 63.1, heightMm: 37, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00012, colorName: Charcoal Black, colorFamily: black }
+
+- slug: lamzu-thorn-4k
+  brand: lamzu
+  name: Thorn 4K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_thorn_4k.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/Thorn4KCharcoalBlack-blackbackgroun_1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/1_7530a677-96af-4c8c-929f-eaccd7474231.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/2_24034463-b9e9-481a-82ef-045d39a9af7a.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/3_dd68c290-f17e-4a1e-87b1-daf74e4da947.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/4_1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/5_1.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 65, heightMm: 42, weightG: 52, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00022, colorName: Charcoal Black, colorFamily: black }
+
+- slug: lamzu-atlantis-og-v2-4k
+  brand: lamzu
+  name: Atlantis OG V2 4K
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_V2_4K.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_1-258078.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_3-824341.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_4-620742.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_2-951341.jpg, kind: cutout_top, width: 800, height: 800 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 38, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: C.00011, colorName: Charcoal Black, colorFamily: black }

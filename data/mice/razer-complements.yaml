@@ -1,0 +1,76 @@
+# Razer : modèles ajoutés le 2026-10-24 en complément de razer.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 9 modèles
+- slug: razer-basilisk-x-hyperspeed
+  brand: razer
+  name: Basilisk X HyperSpeed
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42, weightG: 83, sideButtons: 2, sensor: Razer 5G, dpiMax: 16000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: razer-deathadder-v2-x-hyperspeed
+  brand: razer
+  name: DeathAdder V2 X HyperSpeed
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 42.7, weightG: 103, sideButtons: 2, sensor: Razer 5G, dpiMax: 14000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: razer-naga-v2-pro
+  brand: razer
+  name: Naga V2 Pro
+  msrpEur: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75.5, heightMm: 43.5, weightG: 134, sideButtons: 12, mmo: true, sensor: Razer Focus Pro 30K, dpiMax: 30000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: razer-naga-x
+  brand: razer
+  name: Naga X
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.5, widthMm: 75.5, heightMm: 43.5, weightG: 85, sideButtons: 12, mmo: true, sensor: Razer 5G, dpiMax: 18000, pollingHz: 1000, switchType: optical }
+
+- slug: razer-pro-click-mini
+  brand: razer
+  name: Pro Click Mini
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 100.2, widthMm: 62.7, heightMm: 34.2, weightG: 88, sideButtons: 2, sensor: Razer 5G, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: razer-viper-mini
+  brand: razer
+  name: Viper Mini
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 62, heightMm: 39, weightG: 61, sideButtons: 2, sensor: PixArt PMW3359, dpiMax: 8500, pollingHz: 1000, switchType: optical }
+
+- slug: razer-viper-v2-pro
+  brand: razer
+  name: Viper V2 Pro
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.7, widthMm: 66, heightMm: 37.8, weightG: 59, sideButtons: 2, sensor: Razer Focus Pro 30K, dpiMax: 30000, pollingHz: 4000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: razer-viper-8khz
+  brand: razer
+  name: Viper 8KHz
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 126.7, widthMm: 66, heightMm: 37.8, weightG: 71, sideButtons: 2, sensor: Razer Focus+, dpiMax: 20000, pollingHz: 8000, switchType: optical }
+
+- slug: razer-abyssus-essential
+  brand: razer
+  name: Abyssus Essential
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 114.7, widthMm: 63, heightMm: 37.3, weightG: 78, sideButtons: 0, dpiMax: 7200, pollingHz: 1000, switchType: mechanical }

@@ -1,0 +1,28 @@
+# Waizowl : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: waizowl-cloud-ultra
+  brand: waizowl
+  name: Cloud Ultra
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 68, heightMm: 38, weightG: 59, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: waizowl-ogm-pro-v2
+  brand: waizowl
+  name: OGM Pro V2
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: waizowl-cloud-xs
+  brand: waizowl
+  name: Cloud XS
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 36, weightG: 45, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }

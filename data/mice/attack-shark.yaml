@@ -1,0 +1,28 @@
+# Attack Shark : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: attack-shark-x3
+  brand: attack-shark
+  name: X3
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.5, widthMm: 61, heightMm: 39.7, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: attack-shark-x8-pro
+  brand: attack-shark
+  name: X8 Pro
+  msrpEur: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.5, widthMm: 63, heightMm: 40, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395 Pro, dpiMax: 40000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: attack-shark-r3
+  brand: attack-shark
+  name: R3
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 60.9, heightMm: 36.2, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }

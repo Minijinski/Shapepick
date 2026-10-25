@@ -1,0 +1,25 @@
+# Attack Shark : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: attack-shark-k85
+  brand: attack-shark
+  name: K85
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, knob: true, firmware: proprietary, macSupport: true, weightG: 780 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: attack-shark-x68-he
+  brand: attack-shark
+  name: X68 HE
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, weightG: 950 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

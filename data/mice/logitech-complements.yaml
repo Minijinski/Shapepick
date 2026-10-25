@@ -1,0 +1,132 @@
+# Logitech : modèles ajoutés le 2026-10-24 en complément de logitech.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 16 modèles
+- slug: logitech-pro-wireless
+  brand: logitech
+  name: PRO Wireless
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 80, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-pro-x-superlight
+  brand: logitech
+  name: PRO X SUPERLIGHT
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 63.5, heightMm: 40, weightG: 63, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-g203-lightsync
+  brand: logitech
+  name: G203 LIGHTSYNC
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.2, heightMm: 38.2, weightG: 85, sideButtons: 2, sensor: PixArt 1855, dpiMax: 8000, pollingHz: 1000, switchType: mechanical }
+
+- slug: logitech-g303-shroud-edition
+  brand: logitech
+  name: G303 Shroud Edition
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 70, heightMm: 40, weightG: 75, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-g403-hero
+  brand: logitech
+  name: G403 HERO
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124, widthMm: 68, heightMm: 43, weightG: 87, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical }
+
+- slug: logitech-g502-lightspeed
+  brand: logitech
+  name: G502 LIGHTSPEED
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132, widthMm: 75, heightMm: 40, weightG: 114, sideButtons: 3, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-g502-x-lightspeed
+  brand: logitech
+  name: G502 X LIGHTSPEED
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131.4, widthMm: 79.2, heightMm: 41.1, weightG: 100, sideButtons: 3, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: hybrid, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-g703-lightspeed
+  brand: logitech
+  name: G703 LIGHTSPEED
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124, widthMm: 68, heightMm: 43, weightG: 107, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-g705
+  brand: logitech
+  name: G705
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 105.8, widthMm: 68.1, heightMm: 39.4, weightG: 85, sideButtons: 2, dpiMax: 8200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: logitech-g903-lightspeed
+  brand: logitech
+  name: G903 LIGHTSPEED
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130, widthMm: 67, heightMm: 40, weightG: 110, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: logitech-m100
+  brand: logitech
+  name: M100
+  msrpEur: 10
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 113, widthMm: 62, heightMm: 38, weightG: 90, sideButtons: 0, sensor: PixArt PAW3526, dpiMax: 800, pollingHz: 125, switchType: mechanical }
+
+- slug: logitech-m185
+  brand: logitech
+  name: M185
+  msrpEur: 20
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 74, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+
+- slug: logitech-m190
+  brand: logitech
+  name: M190
+  msrpEur: 20
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 115.4, widthMm: 66.1, heightMm: 40.3, weightG: 89.9, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+
+- slug: logitech-m196
+  brand: logitech
+  name: M196
+  msrpEur: 20
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 100, widthMm: 60, heightMm: 38, weightG: 76, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, connBt: true }
+
+- slug: logitech-m510
+  brand: logitech
+  name: M510
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 120, widthMm: 65, heightMm: 41, weightG: 129, sideButtons: 2, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+
+- slug: logitech-signature-ai-edition-m750
+  brand: logitech
+  name: Signature AI Edition M750
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101, sideButtons: 2, sensor: Logitech Advanced Optical, dpiMax: 4000, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true }

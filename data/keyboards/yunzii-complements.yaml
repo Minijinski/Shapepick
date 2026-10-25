@@ -1,0 +1,134 @@
+# Yunzii : claviers ajoutés le 2026-10-24 en complément de yunzii.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 10 modèles
+- slug: yunzii-al68
+  brand: yunzii
+  name: AL68
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1205 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-al66
+  brand: yunzii
+  name: AL66
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1145 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-rt75
+  brand: yunzii
+  name: RT75
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 962 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: yunzii-al75
+  brand: yunzii
+  name: AL75
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1411 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: yunzii-al98
+  brand: yunzii
+  name: AL98
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 2175 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-b68
+  brand: yunzii
+  name: B68
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_339e3e2a-f9b4-4808-86e2-b83bcbb5a4f3.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_2a6ec037-fdce-46f2-9861-70d4642e0d56.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_5c45186f-c8c3-4a57-aefe-88503330d83b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7_d756e80d-7079-4c5d-b76c-f716ccb6b973.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/8_7b79acc5-63bf-4713-9418-890ec2dd63ec.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/9_81013fe7-a1a9-4dfe-964d-3143bba5363c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/9-1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/10_0fd0faf6-5c69-4d11-b59c-e14e323cfb66.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 700 }
+  variants:
+    - { colorName: Pink, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-yz87
+  brand: yunzii
+  name: YZ87
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_6a6c69c6-fe2e-43cf-b347-7968881072e7.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5_e412b8f0-773f-4e5e-a3f8-eb58d59f341a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7_6ffb296a-9c27-4ddf-ad2a-f5d4c817cfc7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7_b7fbc21f-4a05-4b64-8fb4-fe4f617b4844.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1.2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_6c05583d-c955-41c8-aa65-dd2dc53f2ca0.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_dee09738-2b0d-45ea-8bbc-9b313ac49a43.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4.1_550c10b4-1fc8-46a4-bf95-fd23ca46e986.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, soundDampening: true, weightG: 852 }
+  variants:
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-yz98
+  brand: yunzii
+  name: YZ98
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/46de65a59b6d076114996be5a84d3157.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/bc5c38b83e6a430531fa2d80ec6a7269_eb7039f9-9e7a-4554-affa-54470febf0e5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/be455129aea4ecddcce9011e1893f5fd_58230c13-1e0f-4a32-8963-d571aa279d87.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/33ffae0206d3c7cd1aadac09875e5e96_06aed5b5-52a8-4a49-b5e5-7650b4c45363.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_6caa795e-eda0-4da0-89ed-43a9ec1b9c5d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_29e3290a-160b-47c0-82c2-c9853e81612a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_5d02b60d-97a4-449f-b413-8f13dc937f31.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4.2_cdf36cc1-0931-43eb-a5d6-ea70c279c31d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1050 }
+  variants:
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+
+- slug: yunzii-al75-pro
+  brand: yunzii
+  name: AL75 Pro
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1384 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: yunzii-rt68
+  brand: yunzii
+  name: RT68
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 745 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

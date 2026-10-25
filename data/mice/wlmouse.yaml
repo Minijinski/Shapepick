@@ -1,0 +1,76 @@
+# WLMOUSE : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 9 modèles
+- slug: wlmouse-beast-x
+  brand: wlmouse
+  name: Beast X
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 62, heightMm: 37, weightG: 39, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-beast-x-pro
+  brand: wlmouse
+  name: Beast X Pro
+  msrpEur: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 62, heightMm: 37, weightG: 39, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-beast-x-mini
+  brand: wlmouse
+  name: Beast X Mini
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 58, heightMm: 35, weightG: 34, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-beast-x-max
+  brand: wlmouse
+  name: Beast X Max
+  msrpEur: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 65, heightMm: 39, weightG: 42, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-ying
+  brand: wlmouse
+  name: Ying
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 60, heightMm: 37, weightG: 37, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-sword-x
+  brand: wlmouse
+  name: Sword X
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 67, heightMm: 42, weightG: 47, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-strider
+  brand: wlmouse
+  name: Strider
+  msrpEur: 160
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 66, heightMm: 38, weightG: 45, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-huan
+  brand: wlmouse
+  name: Huan
+  msrpEur: 150
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 38, weightG: 48, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: wlmouse-beast-miao
+  brand: wlmouse
+  name: Beast Miao
+  msrpEur: 175
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 91, widthMm: 55, heightMm: 34, weightG: 31, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }

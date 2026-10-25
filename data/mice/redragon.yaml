@@ -1,0 +1,33 @@
+# Redragon : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: redragon-g49-pro
+  brand: redragon
+  name: G49 Pro
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: redragon-m916-pro
+  brand: redragon
+  name: M916 Pro
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_2.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK1INGM916PRO3-ModeWirelessGamingMouse_1_d555ca7b-3c35-4772-ba48-eea593149b7e.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK1INGM916PRO3-ModeWirelessGamingMouse_2_1fbe448e-c786-495f-9d62-e9152ccd5243.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_18.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_14.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: RED-M916-N3BK, colorName: Black, colorFamily: black }
+    - { sku: RED-M916-N3WT, colorName: White, colorFamily: white }
+    - { sku: RED-M916-N3PK, colorName: Pink, colorFamily: color }

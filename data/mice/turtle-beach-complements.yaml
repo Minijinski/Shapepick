@@ -1,0 +1,15 @@
+# Turtle Beach : modèles ajoutés le 2026-10-24 en complément de turtle-beach.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 1 modèles
+- slug: turtle-beach-burst-ii-pro
+  brand: turtle-beach
+  name: Burst II Pro
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.2, widthMm: 67.3, heightMm: 39.2, weightG: 57, sideButtons: 3, sensor: Turtle Beach Owl-Eye 30K, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: TBM-2102-05, colorName: Black, colorFamily: black }
+    - { sku: TBM-2102-15, colorName: White, colorFamily: white }

@@ -1,0 +1,52 @@
+# Cooler Master : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 6 modèles
+- slug: cooler-master-mm710
+  brand: cooler-master
+  name: MM710
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 53, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: cooler-master-mm730
+  brand: cooler-master
+  name: MM730
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.3, widthMm: 69, heightMm: 39.1, weightG: 48, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: optical }
+
+- slug: cooler-master-mm720
+  brand: cooler-master
+  name: MM720
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 105.4, widthMm: 76.5, heightMm: 37.4, weightG: 49, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: optical }
+
+- slug: cooler-master-mm712
+  brand: cooler-master
+  name: MM712
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 58, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: cooler-master-mm711
+  brand: cooler-master
+  name: MM711
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 60, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: cooler-master-mm731
+  brand: cooler-master
+  name: MM731
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.3, widthMm: 69, heightMm: 39.1, weightG: 59, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }

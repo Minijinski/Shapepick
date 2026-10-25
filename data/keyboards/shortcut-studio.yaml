@@ -1,0 +1,25 @@
+# Shortcut Studio : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: shortcut-studio-bridge75
+  brand: shortcut-studio
+  name: Bridge75
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: shortcut-studio-bridge75-he
+  brand: shortcut-studio
+  name: Bridge75 HE
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

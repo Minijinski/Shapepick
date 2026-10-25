@@ -1,0 +1,140 @@
+# Corsair : modèles ajoutés le 2026-10-24 en complément de corsair.yaml, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 17 modèles
+- slug: corsair-dark-core-rgb-pro
+  brand: corsair
+  name: Dark Core RGB Pro
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 81, heightMm: 43, weightG: 137, sideButtons: 2, sensor: PixArt PAW3392, dpiMax: 18000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: corsair-harpoon-rgb-pro
+  brand: corsair
+  name: Harpoon RGB Pro
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.3, widthMm: 68.3, heightMm: 40.4, weightG: 85, sideButtons: 2, sensor: PixArt PAW3327, dpiMax: 12000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-ironclaw-rgb-wireless
+  brand: corsair
+  name: Ironclaw RGB Wireless
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 80, heightMm: 45, weightG: 133, sideButtons: 3, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: corsair-katar-elite-wireless
+  brand: corsair
+  name: Katar Elite Wireless
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 69, sideButtons: 2, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: corsair-katar-pro-wireless
+  brand: corsair
+  name: Katar Pro Wireless
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: corsair-katar-pro-xt
+  brand: corsair
+  name: Katar Pro XT
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 73, sideButtons: 2, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-m55-wired
+  brand: corsair
+  name: M55 Wired
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 55, sideButtons: 2, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-m55-wireless
+  brand: corsair
+  name: M55 Wireless
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: corsair-m65-rgb-ultra
+  brand: corsair
+  name: M65 RGB Ultra
+  msrpEur: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 97, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical }
+
+- slug: corsair-m65-rgb-ultra-wireless
+  brand: corsair
+  name: M65 RGB Ultra Wireless
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 110, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 2000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: corsair-sabre-v2-pro-cf
+  brand: corsair
+  name: Sabre v2 Pro CF
+  msrpEur: 240
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.9, widthMm: 64.1, heightMm: 38.8, weightG: 55, sideButtons: 2, sensor: Corsair MARKSMAN S, dpiMax: 33000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: corsair-scimitar-rgb-elite
+  brand: corsair
+  name: Scimitar RGB Elite
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 76, heightMm: 42, weightG: 122, sideButtons: 12, mmo: true, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-nightsword-rgb
+  brand: corsair
+  name: Nightsword RGB
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 86, heightMm: 43, weightG: 119, sideButtons: 3, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-glaive-rgb
+  brand: corsair
+  name: Glaive RGB
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 70, heightMm: 45.5, weightG: 122, sideButtons: 2, sensor: PixArt PMW3367, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-m55-rgb-pro
+  brand: corsair
+  name: M55 RGB Pro
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 124.4, widthMm: 68, heightMm: 40, weightG: 86, sideButtons: 2, sensor: PixArt PAW3327, dpiMax: 12400, pollingHz: 1000, switchType: mechanical }
+
+- slug: corsair-harpoon-rgb-wireless
+  brand: corsair
+  name: Harpoon RGB Wireless
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.3, widthMm: 68.3, heightMm: 40.4, weightG: 99, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 1000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: corsair-dark-core-rgb-pro-se
+  brand: corsair
+  name: Dark Core RGB Pro SE
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 81, heightMm: 43, weightG: 137, sideButtons: 2, sensor: PixArt PAW3392, dpiMax: 18000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }

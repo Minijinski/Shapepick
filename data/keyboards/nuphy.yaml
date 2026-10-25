@@ -1,0 +1,122 @@
+# NuPhy : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 10 modèles
+- slug: nuphy-air75-v2
+  brand: nuphy
+  name: Air75 V2
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 598 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: nuphy-halo75-v2
+  brand: nuphy
+  name: Halo75 V2
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1020 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+
+- slug: nuphy-halo96-v2
+  brand: nuphy
+  name: Halo96 V2
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1150 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+
+- slug: nuphy-air96-v2
+  brand: nuphy
+  name: Air96 V2
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 663 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: nuphy-air60-v2
+  brand: nuphy
+  name: Air60 V2
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f60, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 463 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: nuphy-node75-high-profile
+  brand: nuphy
+  name: Node75 High Profile
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 827 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: nuphy-air75-v3
+  brand: nuphy
+  name: Air75 V3
+  msrpEur: 170
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 750 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+
+- slug: nuphy-node-100
+  brand: nuphy
+  name: Node 100
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 787 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: nuphy-air100-v3
+  brand: nuphy
+  name: Air100 V3
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 950 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+
+- slug: nuphy-node75-low-profile
+  brand: nuphy
+  name: Node75 Low Profile
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, weightG: 659 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }

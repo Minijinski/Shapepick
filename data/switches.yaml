@@ -392,3 +392,25 @@
 - { slug: akko-prism-magnetic, brand: Akko, name: Prism Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }
 # https://en.akkogear.com/product/5075-v5-tmr-magnetic-switch-keyboard/
 - { slug: kailh-aurora-magnetic, brand: Kailh, name: Aurora Magnetic, feel: linear, tech: magnetic, actuationForceG: 30, bottomOutG: 55, totalTravelMm: 3.5 }
+
+# Switchs lus sur les fiches des boutiques (pnpm ingest royalkludge, 2026-10-24)
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: tactile-beige, brand: Royal Kludge, name: Tactile Beige, feel: tactile, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: linear-violet, brand: Royal Kludge, name: Linear Violet, feel: linear, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: cream, brand: Royal Kludge, name: Cream, feel: linear, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: linear-creamy, brand: Royal Kludge, name: Linear Creamy, feel: linear, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: tactile-snowfall, brand: Royal Kludge, name: Tactile Snowfall, feel: tactile, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: tactile-pale-green, brand: Royal Kludge, name: Tactile Pale Green, feel: tactile, tech: mechanical }
+# à vérifier : ressenti seul : la marque ne publie ni force ni course
+- { slug: linear-viridian, brand: Royal Kludge, name: Linear Viridian, feel: linear, tech: mechanical }
+
+# Switchs génériques : le ressenti seul, pour les claviers dont la fiche ne nomme pas le switch
+- { slug: switch-lineaire, brand: Générique, name: Linéaire, feel: linear, tech: mechanical }
+- { slug: switch-tactile, brand: Générique, name: Tactile, feel: tactile, tech: mechanical }
+- { slug: switch-clicky, brand: Générique, name: Clicky, feel: clicky, tech: mechanical }
+- { slug: switch-lineaire-silencieux, brand: Générique, name: Linéaire silencieux, feel: linear, silent: true, tech: mechanical }

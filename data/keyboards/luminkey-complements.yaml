@@ -1,0 +1,25 @@
+# Luminkey : claviers ajoutés le 2026-10-24 en complément de luminkey.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: luminkey-luminkey65
+  brand: luminkey
+  name: Luminkey65
+  msrpEur: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1500 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: luminkey-luminkey75
+  brand: luminkey
+  name: LuminKey75
+  msrpEur: 310
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: aluminum, keycapMaterial: abs, backlight: none, knob: true, firmware: qmk, macSupport: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

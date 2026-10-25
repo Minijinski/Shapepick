@@ -1,0 +1,36 @@
+# Finalmouse : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 4 modèles
+- slug: finalmouse-ulx-competition-small
+  brand: finalmouse
+  name: ULX Competition Small
+  msrpEur: 225
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 60, heightMm: 35.2, weightG: 33, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: finalmouse-ulx-competition-medium
+  brand: finalmouse
+  name: ULX Competition Medium
+  msrpEur: 225
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.3, widthMm: 62, heightMm: 37, weightG: 36, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: finalmouse-ulx-competition-classic
+  brand: finalmouse
+  name: ULX Competition Classic
+  msrpEur: 225
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 65, heightMm: 38.4, weightG: 38, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: finalmouse-starlight-x
+  brand: finalmouse
+  name: Starlight X
+  msrpEur: 180
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.8, widthMm: 62.8, heightMm: 39.5, weightG: 38, sideButtons: 2, sensor: Finalmouse F1, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }

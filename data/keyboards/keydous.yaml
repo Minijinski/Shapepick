@@ -1,0 +1,35 @@
+# Keydous : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: keydous-nj98-cp-v3-he
+  brand: keydous
+  name: NJ98 CP V3 HE
+  msrpEur: 215
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1400 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: keydous-nj68pro-cp
+  brand: keydous
+  name: NJ68Pro CP
+  msrpEur: 300
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: top, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1000 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: keydous-nj80-cp-v2-he
+  brand: keydous
+  name: NJ80 CP V2 HE
+  msrpEur: 145
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, weightG: 800 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

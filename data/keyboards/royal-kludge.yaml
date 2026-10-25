@@ -1,0 +1,228 @@
+# Royal Kludge : importés de www.rkgamingstore.com par `pnpm ingest royalkludge`.
+# Prix € estimés (prix US × 1.2).
+# Le script ajoute seulement les modèles absents : les corrections faites ici restent.
+# Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
+# Une fois une note « à vérifier » traitée, supprimer le commentaire.
+
+# Lot du 2026-10-24 : 9 modèles, www.rkgamingstore.com (prix € estimés depuis les prix US)
+- slug: royal-kludge-s98
+  brand: royal-kludge
+  name: S98
+  releaseYear: 2023
+  msrpEur: 130
+  msrpUsd: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/S98Pink96_WirelessMechanicalKeyboard_2.png?v=1787800645, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/S9896_WirelessMechanicalKeyboard_ChristmasLimitedEdition_4.png?v=1761968589, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKS9896_WirelessMechanicalKeyboard_1.png?v=1776224152, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGES98WirelessHot-SwappableRGBKeyboard_7.png?v=1776224152, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGES98WirelessHot-SwappableRGBKeyboard_5_1c842c3a-a46f-429f-a075-eceae102db63.png?v=1772522307, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGES98WirelessHot-SwappableRGBKeyboard_8.png?v=1772522307, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://www.rkgamingstore.com/products/s98-pink-edition
+    - https://www.rkgamingstore.com/products/s98-winter-limited-edition
+    - https://www.rkgamingstore.com/products/s98-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-S98-R36PK, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 145 }
+    - { sku: RK-S98-R37WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: tactile-beige, msrpEur: 145 }
+    - { sku: RK-S98-R35WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-S98-R36BKM, colorName: Phantom Black, colorFamily: black, layout: ansi_us, switch: cream, msrpEur: 145 }
+    - { sku: RK-S98-R35BKM, colorName: Phantom Black, colorFamily: black, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-S98-R36OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-S98-R35OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-S98-R36GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-S98-R35GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: linear-violet, msrpEur: 145 }
+    - { sku: RK-S98-R37BLM, colorName: Turquoise Green, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-S98-R35BLM, colorName: Turquoise Green, colorFamily: color, layout: ansi_us, switch: linear-violet }
+
+- slug: royal-kludge-rk920
+  brand: royal-kludge
+  name: RK920
+  releaseYear: 2026
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RK920WiredMechanicalKeyboard_4_03d49ff5-11f9-42dd-b4f5-bae3bde72377.png?v=1779074310, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RK920WiredMechanicalKeyboard_3.png?v=1779074200, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://www.rkgamingstore.com/products/rk920-color-block-edition
+  specs: { formFactor: full, technology: mechanical, hotSwap: 3pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: via, macSupport: true, batteryMah: 1450, weightG: 500 }
+  variants:
+    - { sku: RK-920-R14OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-920-R15OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: linear-creamy }
+    - { sku: RK-920-R16OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: tactile-snowfall }
+    - { sku: RK-920-R14WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-920-R15WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: linear-creamy }
+    - { sku: RK-920-R16WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: tactile-snowfall }
+
+- slug: royal-kludge-a72
+  brand: royal-kludge
+  name: A72
+  releaseYear: 2025
+  msrpEur: 125
+  msrpUsd: 105
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKA72AliceErgonomicWirelessMechanicalKeyboard_2.png?v=1765794372, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKA72AliceErgonomicWirelessMechanicalKeyboard_8.png?v=1765794372, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKA72AliceErgonomicWirelessMechanicalKeyboard_7.png?v=1765794372, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://www.rkgamingstore.com/products/a72-alice-ergonomic-keyboard
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-A72-R35SKB, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-A72-R36SKB, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-A72-R34CLD, colorName: Cloudy Black, colorFamily: black, layout: ansi_us, switch: cream }
+    - { sku: RK-A72-R35CLD, colorName: Cloudy Black, colorFamily: black, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-A72-R36CLD, colorName: Cloudy Black, colorFamily: black, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-A72-R34MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-A72-R35MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-A72-R36MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: linear-violet, msrpEur: 145 }
+
+- slug: royal-kludge-l98
+  brand: royal-kludge
+  name: L98
+  releaseYear: 2025
+  msrpEur: 120
+  msrpUsd: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEL98WirelessMechanicalKeyboard_2.png?v=1762466323, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEL98WirelessMechanicalKeyboard_1.png?v=1749034131, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEL98WirelessMechanicalKeyboard_3.png?v=1749034131, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEL98WirelessMechanicalKeyboard_5.png?v=1749034131, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://www.rkgamingstore.com/products/l98-96-wireless-mechanical-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-L98-R34SNG, colorName: Sage Blue, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-L98-R35SNG, colorName: Sage Blue, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-L98-R36SNG, colorName: Sage Blue, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-L98-R34SWB, colorName: Sandalwood Brown, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-L98-R35SWB, colorName: Sandalwood Brown, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+    - { sku: RK-L98-R36SWB, colorName: Sandalwood Brown, colorFamily: color, layout: ansi_us, switch: linear-violet }
+    - { sku: RK-L98-R34LMG, colorName: Lemon Green, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-L98-R35LMG, colorName: Lemon Green, colorFamily: color, layout: ansi_us, switch: tactile-beige }
+
+- slug: royal-kludge-m87-tkl
+  brand: royal-kludge
+  name: M87 TKL
+  releaseYear: 2024
+  msrpEur: 110
+  msrpUsd: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEM8780_TKLGasketMountWirelessGamingKeyboard_1.png?v=1762463296, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEM8780_TKLGasketMountWirelessGamingKeyboard_3.png?v=1748573654, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEM8780_TKLGasketMountWirelessGamingKeyboard_4.png?v=1748573654, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://www.rkgamingstore.com/products/m87-tkl-wireless-gaming-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, weightG: 500 }
+  variants:
+    - { sku: RK-M87-R34WRM, colorName: Red, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-M87-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us, switch: cream }
+
+- slug: royal-kludge-r87-pro-tkl
+  brand: royal-kludge
+  name: R87 PRO TKL
+  releaseYear: 2024
+  msrpEur: 80
+  msrpUsd: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGER87ProWiredTKLGasketMountGamingKeyboard_1.png?v=1762463300, kind: cutout_top, width: 2000, height: 2000, primary: true }
+  sources:
+    - https://www.rkgamingstore.com/products/r87-tkl-wired-gaming-keyboard
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-R87-R14WGM, colorName: Black, colorFamily: black, layout: ansi_us }
+
+- slug: royal-kludge-r75
+  brand: royal-kludge
+  name: R75
+  releaseYear: 2024
+  msrpEur: 90
+  msrpUsd: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGER7575_WirelessGamingKeyboardSupportsQMKVIA_2.png?v=1762463287, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGER7575_WirelessGamingKeyboardSupportsQMKVIA_3.png?v=1748569089, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGER7575_WirelessGamingKeyboardSupportsQMKVIA_4.png?v=1748569089, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R7575_WiredGamingKeyboard_QMKVIA_4.png?v=1762463287, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R7575_WiredGamingKeyboard_QMKVIA_2.png?v=1748568380, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R7575_WiredGamingKeyboard_QMKVIA_1.png?v=1748568380, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://www.rkgamingstore.com/products/r75-75-wireless-gaming-keyboard
+    - https://www.rkgamingstore.com/products/r75-75-wired-gaming-keyboard
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-R75-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us }
+    - { sku: RK-R75-R34GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us }
+    - { sku: RK-R75-R14BKM, colorName: Black, colorFamily: black, layout: ansi_us, switch: cream, msrpEur: 80 }
+    - { sku: RK-R75-R14CYM, colorName: Green, colorFamily: color, layout: ansi_us, switch: cream, msrpEur: 80 }
+
+- slug: royal-kludge-r65
+  brand: royal-kludge
+  name: R65
+  releaseYear: 2024
+  msrpEur: 85
+  msrpUsd: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WirelessGamingKeyboardQMKVIA_3.png?v=1762463277, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WirelessGamingKeyboardQMKVIA_1.png?v=1748512803, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WirelessGamingKeyboardQMKVIA_4.png?v=1748512803, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WiredGamingKeyboard_QMKVIA_2.png?v=1762463252, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WiredGamingKeyboard_QMKVIA_1.png?v=1748568047, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/R6565_WiredGamingKeyboard_QMKVIA_4.png?v=1748568047, kind: cutout_top, width: 2000, height: 2000 }
+  sources:
+    - https://www.rkgamingstore.com/products/r65-65-wireless-gaming-keyboard
+    - https://www.rkgamingstore.com/products/r65-wired-gaming-mechanical-keyboard
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, weightG: 500 }
+  variants:
+    - { sku: RK-R65-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-R65-R34GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: cream }
+    - { sku: RK-R65-R14BKM, colorName: Black, colorFamily: black, layout: ansi_us, switch: cream }
+    - { sku: RK-R65-R14CYM, colorName: Cyan, colorFamily: color, layout: ansi_us, switch: cream }
+
+# à vérifier : switch « Yellow Switch » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug yellow)
+# à vérifier : switch « Brown » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug brown)
+# à vérifier : switch « Red » : aucune fiche trouvée, à saisir dans data/switches.yaml (slug red)
+- slug: royal-kludge-rk96
+  brand: royal-kludge
+  name: RK96
+  releaseYear: 2022
+  msrpEur: 115
+  msrpUsd: 95
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_1.png?v=1762462345, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_3.png?v=1752832479, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_5.png?v=1752832479, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_6.png?v=1752832479, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_ForestBlue_1.png?v=1762461236, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGERK96WirelessHot-SwappableRGBKeyboard_ForestBlue_2.png?v=1748585056, kind: cutout_top, width: 1600, height: 1600 }
+  sources:
+    - https://www.rkgamingstore.com/products/rk96-wireless-hot-swappable-rgb-keyboard
+    - https://www.rkgamingstore.com/products/rk96-keyboard-forest-blue
+    - https://www.rkgamingstore.com/products/rk96-wireless-hot-swappable-keyboard
+    - https://www.rkgamingstore.com/products/rk96-96-layout-mechanical-gaming-keyboard
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  variants:
+    - { sku: RK-96-R36WTM, colorName: Taro Milk White, colorFamily: white, layout: ansi_us, switch: tactile-pale-green }
+    - { sku: RK-96-R36BKM, colorName: Black & Pink, colorFamily: color, layout: ansi_us, switch: tactile-pale-green }
+    - { sku: RK-96-R37BKM, colorName: Eclipse Black, colorFamily: black, layout: ansi_us, switch: linear-viridian }
+    - { sku: RK-96-R35BLM, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RK-96-S32WT, colorName: White, colorFamily: white, layout: ansi_us }

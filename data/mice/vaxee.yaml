@@ -1,0 +1,140 @@
+# VAXEE : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 17 modèles
+- slug: vaxee-e1-wireless-4k
+  brand: vaxee
+  name: E1 Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 42, weightG: 61, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-np-01-ergo
+  brand: vaxee
+  name: NP-01 Ergo
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 38.5, weightG: 58, sideButtons: 2, sensor: VAXEE Core1, dpiMax: 42000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-np-01s-v3
+  brand: vaxee
+  name: NP-01S V3
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.8, widthMm: 63, heightMm: 37, weightG: 57, sideButtons: 2, sensor: VAXEE Core1, dpiMax: 42000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-outset-ax
+  brand: vaxee
+  name: OUTSET AX
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 117.4, widthMm: 66, heightMm: 43, weightG: 76, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: vaxee-outset-ax-wireless-4k
+  brand: vaxee
+  name: OUTSET AX Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 117.4, widthMm: 66, heightMm: 43, weightG: 73, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-xe-v2
+  brand: vaxee
+  name: XE v2
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 66, heightMm: 38.7, weightG: 59, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-xe-wireless-4k
+  brand: vaxee
+  name: XE Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 66, heightMm: 38.7, weightG: 76, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-xe-s-wireless-4k
+  brand: vaxee
+  name: XE-S Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 64, heightMm: 36, weightG: 60, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-xe-s-l-wireless-4k
+  brand: vaxee
+  name: XE-S L Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: left, segment: gaming, lengthMm: 118, widthMm: 64, heightMm: 36, weightG: 60, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-zygen-np-01
+  brand: vaxee
+  name: ZYGEN NP-01
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 66, heightMm: 39, weightG: 75, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: vaxee-zygen-np-01-wireless-4k
+  brand: vaxee
+  name: ZYGEN NP-01 Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 66, heightMm: 39, weightG: 73, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-zygen-np-01s
+  brand: vaxee
+  name: ZYGEN NP-01S
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.8, widthMm: 63, heightMm: 37, weightG: 71, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: vaxee-zygen-np-01s-ergo
+  brand: vaxee
+  name: ZYGEN NP-01S Ergo
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.8, widthMm: 63, heightMm: 38.5, weightG: 59, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-zygen-np-01s-wireless-4k
+  brand: vaxee
+  name: ZYGEN NP-01S Wireless 4K
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.8, widthMm: 63, heightMm: 37, weightG: 68, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-zygen-np-01s-v2
+  brand: vaxee
+  name: ZYGEN NP-01S v2
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119.8, widthMm: 63, heightMm: 37, weightG: 57, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 3200, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: vaxee-xe
+  brand: vaxee
+  name: XE
+  msrpEur: 70
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 66, heightMm: 38.7, weightG: 67, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+
+- slug: vaxee-xe-wireless
+  brand: vaxee
+  name: XE Wireless
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 66, heightMm: 38.7, weightG: 76, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 3200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }

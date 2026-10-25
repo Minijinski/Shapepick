@@ -1,0 +1,84 @@
+# Darmoshark : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 10 modèles
+- slug: darmoshark-m3
+  brand: darmoshark
+  name: M3
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129.6, widthMm: 66.1, heightMm: 39.2, weightG: 58, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m3-pro
+  brand: darmoshark
+  name: M3 Pro
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129.6, widthMm: 66.1, heightMm: 39.2, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m3s
+  brand: darmoshark
+  name: M3S
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.7, widthMm: 62.5, heightMm: 37.8, weightG: 54, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m3s-pro
+  brand: darmoshark
+  name: M3S Pro
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.7, widthMm: 62.5, heightMm: 37.8, weightG: 54, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m3-micro
+  brand: darmoshark
+  name: M3 Micro
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 105.5, widthMm: 54.6, heightMm: 33.5, weightG: 42, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m3-xs
+  brand: darmoshark
+  name: M3 XS
+  msrpEur: 55
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 60.4, heightMm: 36, weightG: 45, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m5
+  brand: darmoshark
+  name: M5
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 91.8, widthMm: 57.1, heightMm: 35.8, weightG: 38, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-n3
+  brand: darmoshark
+  name: N3
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 40, weightG: 61, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-n7
+  brand: darmoshark
+  name: N7
+  msrpEur: 75
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 65, heightMm: 42, weightG: 53, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: darmoshark-m6
+  brand: darmoshark
+  name: M6
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 62.5, heightMm: 38.4, weightG: 41, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }

@@ -1,0 +1,44 @@
+# Pwnage : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 5 modèles
+- slug: pwnage-stormbreaker-v3
+  brand: pwnage
+  name: StormBreaker V3
+  msrpEur: 205
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 64, heightMm: 42, weightG: 49, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pwnage-stormbreaker-max-cf
+  brand: pwnage
+  name: StormBreaker Max CF
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 43, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pwnage-trinity-cf
+  brand: pwnage
+  name: Trinity CF
+  msrpEur: 165
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 60, heightMm: 39, weightG: 37, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: pwnage-symm-3
+  brand: pwnage
+  name: Symm 3
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 40.8, weightG: 50, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 36000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: pwnage-ergo-wireless
+  brand: pwnage
+  name: Ergo Wireless
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 66, heightMm: 42, weightG: 69, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }

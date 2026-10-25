@@ -1,0 +1,20 @@
+# ProtoArc : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: protoarc-em03-nl
+  brand: protoarc
+  name: EM03 NL
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 167, widthMm: 105, heightMm: 55, weightG: 230, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+
+- slug: protoarc-em04
+  brand: protoarc
+  name: EM04
+  msrpEur: 30
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136.8, widthMm: 100.5, heightMm: 52.3, weightG: 119, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true }

@@ -1,0 +1,273 @@
+# ATK : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 14 modèles
+- slug: atk-f1-pro
+  brand: atk
+  name: F1 Pro
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Black.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_White.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Extreme_Black.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Extreme_White.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-1_18fb359b-c4f9-4f68-908c-eae9df01c251.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-2_07fcd364-5e20-42b6-be3d-098271023e54.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-3_1e3c7673-9852-4075-9af3-f8bff0f59a13.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-4_ab512bce-29ed-4e34-ac7e-c1dd9fcb3de8.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 62.4, heightMm: 38.8, weightG: 45, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12010403", colorName: Black, colorFamily: black }
+    - { sku: "12010404", colorName: White, colorFamily: white }
+
+- slug: atk-f1-extreme
+  brand: atk
+  name: F1 Extreme
+  msrpEur: 90
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Black.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_White.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Extreme_Black.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_F1_Extreme_White.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-1_18fb359b-c4f9-4f68-908c-eae9df01c251.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-2_07fcd364-5e20-42b6-be3d-098271023e54.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-3_1e3c7673-9852-4075-9af3-f8bff0f59a13.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/F1-4_ab512bce-29ed-4e34-ac7e-c1dd9fcb3de8.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 62.4, heightMm: 38.8, weightG: 35, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12010403", colorName: Black, colorFamily: black }
+    - { sku: "12010404", colorName: White, colorFamily: white }
+
+- slug: atk-f1-ultimate
+  brand: atk
+  name: F1 Ultimate
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 62.4, heightMm: 38.8, weightG: 38, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+
+- slug: atk-f1-v3-ultimate-plus
+  brand: atk
+  name: F1 V3 Ultimate+
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/308f16e04a2ebe3414304d40b04f9ee7.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/b5e4237a957ea2f8baab789f67411c92.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/672a8606b51331c8c3b3b26180562aa2.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/5e720b902824166a7a7222e4d8e3e8d1_a9a3ae06-5f47-4458-90f1-827174bd17b2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/33ffae0206d3c7cd1aadac09875e5e96_0b9f2910-f9b5-4227-acca-c9195f7efb06.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/4fe40f089696834c4906303a743d01c5_e7aff1ff-9206-4ed5-80d5-7a2066ee6990.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ef4e53d14c6389f20f094f23aff2ad3c.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/95897aaf923d03f4229c01af61ebc8e0_a8f3b4aa-6d3f-48b1-be46-58c08ab2f682.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 62.4, heightMm: 38.8, weightG: 37, sideButtons: 2, sensor: PixArt PAW3955 Master, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12010538", colorName: Black, colorFamily: black }
+    - { sku: "12010506", colorName: White, colorFamily: white }
+    - { sku: "12010508", colorName: Pearl Blue, colorFamily: color }
+    - { sku: "12010540", colorName: Coral Pink, colorFamily: color }
+    - { sku: "12010525", colorName: Lake Green, colorFamily: color }
+    - { sku: "12010526", colorName: Leviatan Edition, colorFamily: color }
+    - { sku: "12010551", colorName: Frosted Red, colorFamily: white }
+    - { sku: "12010552", colorName: Frosted Green, colorFamily: white }
+    - { sku: "12010553", colorName: Frosted White, colorFamily: white }
+
+- slug: atk-f1-v3-extreme-plus
+  brand: atk
+  name: F1 V3 Extreme+
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/308f16e04a2ebe3414304d40b04f9ee7.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/b5e4237a957ea2f8baab789f67411c92.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/672a8606b51331c8c3b3b26180562aa2.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/5e720b902824166a7a7222e4d8e3e8d1_a9a3ae06-5f47-4458-90f1-827174bd17b2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/33ffae0206d3c7cd1aadac09875e5e96_0b9f2910-f9b5-4227-acca-c9195f7efb06.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/4fe40f089696834c4906303a743d01c5_e7aff1ff-9206-4ed5-80d5-7a2066ee6990.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ef4e53d14c6389f20f094f23aff2ad3c.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/95897aaf923d03f4229c01af61ebc8e0_a8f3b4aa-6d3f-48b1-be46-58c08ab2f682.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 62.4, heightMm: 38.8, weightG: 36, sideButtons: 2, sensor: PixArt PAW3955 Master, dpiMax: 50000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12010538", colorName: Black, colorFamily: black }
+    - { sku: "12010506", colorName: White, colorFamily: white }
+    - { sku: "12010508", colorName: Pearl Blue, colorFamily: color }
+    - { sku: "12010540", colorName: Coral Pink, colorFamily: color }
+    - { sku: "12010525", colorName: Lake Green, colorFamily: color }
+    - { sku: "12010526", colorName: Leviatan Edition, colorFamily: color }
+    - { sku: "12010551", colorName: Frosted Red, colorFamily: white }
+    - { sku: "12010552", colorName: Frosted Green, colorFamily: white }
+    - { sku: "12010553", colorName: Frosted White, colorFamily: white }
+
+- slug: atk-x1
+  brand: atk
+  name: X1
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Purple.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Red.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_Purple.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_Red.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_-5.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_-2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127, widthMm: 64, heightMm: 40, weightG: 54, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12040092", colorName: Black, colorFamily: black, msrpEur: 35 }
+    - { sku: "12040015", colorName: White, colorFamily: white, msrpEur: 35 }
+    - { sku: "12020679", colorName: Metallic Purple, colorFamily: color, msrpEur: 60 }
+    - { sku: "12020680", colorName: Metallic Red, colorFamily: color, msrpEur: 60 }
+
+- slug: atk-x1-pro-max
+  brand: atk
+  name: X1 Pro Max
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Purple.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_X1_Red.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_Purple.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_Red.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_-5.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/X1_-2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127, widthMm: 64, heightMm: 40, weightG: 54, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12040092", colorName: Black, colorFamily: black, msrpEur: 35 }
+    - { sku: "12040015", colorName: White, colorFamily: white, msrpEur: 35 }
+    - { sku: "12020679", colorName: Metallic Purple, colorFamily: color, msrpEur: 60 }
+    - { sku: "12020680", colorName: Metallic Red, colorFamily: color, msrpEur: 60 }
+
+- slug: atk-u2
+  brand: atk
+  name: U2
+  msrpEur: 35
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/U2Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/U2White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.7, widthMm: 64.6, heightMm: 39.1, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395 SE, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12080042", colorName: Black, colorFamily: black }
+    - { sku: "12080014", colorName: White, colorFamily: white }
+
+- slug: atk-a9
+  brand: atk
+  name: A9
+  msrpEur: 50
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Pink.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Black.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Mouse_Aesthetic_Shot-Pink.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Mouse_Aesthetic_Shot-White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Mouse_Aesthetic_Shot-Black.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Mouse_Aesthetic_Shot-Pink-Image_2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Dragonfly_A9_Mouse_Aesthetic_Shot-White-Image_2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125, widthMm: 64, heightMm: 40, weightG: 53, sideButtons: 2, sensor: PixArt PAW3395 SE, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12110048", colorName: White, colorFamily: white, msrpEur: 30 }
+    - { sku: "12110157", colorName: Black, colorFamily: black }
+    - { sku: "12110073", colorName: Pink, colorFamily: color }
+
+- slug: atk-zero
+  brand: atk
+  name: Zero
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1018eb4b165c295a804b3a2290659823.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/a83d32c6e59d936f2fdde2416d90d1c1.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/07f44d6e88554a44495e38ed16e4552f.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/20f5d99ee2a75bb4fc9627908e4b663e.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ceedbed5538eca13f14748a934597998.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/7c520d388912554d8a187b917e0ed71e.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/b04a70ae01f04036e17b97cf0b12c47c.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/8b9cc7c9808a81fc8db0eaf67a4d79d7_72293c2d-0750-4d13-8ad3-a44fb6a75c46.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.1, widthMm: 63.2, heightMm: 38.1, weightG: 39, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12070001", colorName: Black, colorFamily: black }
+    - { sku: "12070007", colorName: White, colorFamily: white }
+    - { sku: "12030021", colorName: Coral Pink, colorFamily: color }
+    - { sku: "12030020", colorName: Pearl Blue, colorFamily: color }
+    - { sku: "12030025", colorName: Frosted White, colorFamily: white }
+    - { sku: "12030026", colorName: Frosted Purple, colorFamily: white }
+    - { sku: "12030022", colorName: Frosted Ice, colorFamily: white, msrpEur: 170 }
+    - { sku: "12030023", colorName: Frosted Black, colorFamily: black, msrpEur: 170 }
+    - { sku: "12030024", colorName: Frosted Orange, colorFamily: white, msrpEur: 170 }
+
+- slug: atk-z1-pro-max
+  brand: atk
+  name: Z1 Pro Max
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_Z1_Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_Z1_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ATK_Blazing_Sky_Z1_Orange.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.5, widthMm: 66.8, heightMm: 42.4, weightG: 57, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12030009", colorName: Black, colorFamily: black }
+    - { sku: "12030010", colorName: White, colorFamily: white }
+    - { sku: "12030013", colorName: Orange, colorFamily: color, msrpEur: 95 }
+
+- slug: atk-ghost-ultimate
+  brand: atk
+  name: GHOST Ultimate
+  msrpEur: 100
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121, widthMm: 61.3, heightMm: 38, weightG: 48, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable }
+
+- slug: atk-duckbill
+  brand: atk
+  name: Duckbill
+  msrpEur: 155
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/ebca1310540d15083861da13dfd3b5e3.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/3b7fec1e156030a5aa8bb136b4b3c475.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/36cc12c6f77a628f78acec4c509abdd7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62.5, heightMm: 37.4, weightG: 46, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12090011", colorName: Metallic Purple, colorFamily: color }
+    - { sku: "12090010", colorName: White, colorFamily: white }
+    - { sku: "12090009", colorName: Black, colorFamily: black }
+
+- slug: atk-y9-ultimate
+  brand: atk
+  name: Y9 Ultimate
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_3d3cf86c-83f8-4a27-b9c9-114c90740c12.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_ae9caef2-1c25-4157-a529-763d876c16d4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_a9b749fb-e3d0-43b5-b985-2d8a7a8e43f8.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_5f8a7fbb-fd95-4141-b719-3e3ac7c3bd2f.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_a59e9643-c5c1-4d83-9252-01f8a160b7df.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_aa9f7160-0075-4d4f-ae0b-0e44f8652ff1.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_f0a2e018-be0d-431c-8c35-6a847bf9a749.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_d9ac0e9d-5b50-431e-aed5-ce635fab5d8b.jpg, kind: cutout_top, width: 1500, height: 1500 }
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 125.6, widthMm: 67.5, heightMm: 43.3, weightG: 55, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12090003", colorName: Black, colorFamily: black }
+    - { sku: "12090004", colorName: White, colorFamily: white }
+    - { sku: "12090035", colorName: Pink, colorFamily: color }

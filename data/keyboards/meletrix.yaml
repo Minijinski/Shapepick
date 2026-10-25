@@ -1,0 +1,38 @@
+# Meletrix : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: meletrix-zoom-dyna
+  brand: meletrix
+  name: Zoom DYNA
+  msrpEur: 265
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, soundDampening: true, weightG: 2000 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: meletrix-zoom75-tiga
+  brand: meletrix
+  name: Zoom75 TIGA
+  msrpEur: 260
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: qmk, soundDampening: true, weightG: 3000 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+
+- slug: meletrix-boog75
+  brand: meletrix
+  name: BOOG75
+  msrpEur: 275
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: magnetic, hotSwap: none, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, firmware: proprietary, weightG: 3000 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

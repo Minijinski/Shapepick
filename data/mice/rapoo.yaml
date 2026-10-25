@@ -1,0 +1,28 @@
+# Rapoo : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 3 modèles
+- slug: rapoo-vt3-pro
+  brand: rapoo
+  name: VT3 Pro
+  msrpEur: 60
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 42, weightG: 59, sideButtons: 2, sensor: PixArt PAW3998, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: rapoo-vt9-pro
+  brand: rapoo
+  name: VT9 Pro
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.8, widthMm: 67.1, heightMm: 38.7, weightG: 68, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+
+- slug: rapoo-vt3s-gen-2
+  brand: rapoo
+  name: VT3S Gen-2
+  msrpEur: 40
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 66, heightMm: 42, weightG: 49, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }

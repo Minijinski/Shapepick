@@ -1,0 +1,15 @@
+# Irok : claviers ajoutés le 2026-10-24, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 1 modèles
+- slug: irok-iyx-mu68-pro
+  brand: irok
+  name: IYX MU68 Pro
+  msrpEur: 130
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us }

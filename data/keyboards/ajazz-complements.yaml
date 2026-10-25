@@ -1,0 +1,76 @@
+# Ajazz : claviers ajoutés le 2026-10-24 en complément de ajazz.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 7 modèles
+- slug: ajazz-ak35i-v3
+  brand: ajazz
+  name: AK35i V3
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, soundDampening: true, weightG: 1230 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-ak820-max-plus
+  brand: ajazz
+  name: AK820 Max Plus
+  msrpEur: 80
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 850 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-ac100
+  brand: ajazz
+  name: AC100
+  msrpEur: 135
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, weightG: 2100 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-ak35i-v3-max
+  brand: ajazz
+  name: AK35I V3 Max
+  msrpEur: 125
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-aks068-pro
+  brand: ajazz
+  name: AKS068 Pro
+  msrpEur: 85
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: alice, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: via, soundDampening: true, weightG: 710 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-akp846
+  brand: ajazz
+  name: AKP846
+  msrpEur: 190
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 950 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: ajazz-ak871
+  brand: ajazz
+  name: AK871
+  msrpEur: 45
+  popularity: 0.5
+  editorialScore: 0.5
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, weightG: 970 }
+  variants:
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

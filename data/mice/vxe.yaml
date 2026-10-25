@@ -1,0 +1,49 @@
+# VXE : souris ajoutées le 2026-10-24, sans fiche officielle relue.
+# Mesures, poids, boutons latéraux, capteur et liaisons à recouper avec la fiche de la marque.
+# Photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon dessin, « Black » et prix indicatif.
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: vxe-r1
+  brand: vxe
+  name: R1
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_1afcc09c-0e35-4450-ba7a-d5a441d8b96e.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_34ef550b-f1eb-4851-8459-7a074b14279f.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_2a3050fa-3b1c-42af-af3c-9c9f918d4b8f.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_eb4e5101-13e1-4425-ad09-5aab724336ae.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_76d63d9f-1147-4b03-8d83-b2799a44a9b2.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/R1_29224b2f-6436-4c47-af26-579134659a0e.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.6, widthMm: 64, heightMm: 37.8, weightG: 51, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12020730", colorName: Black, colorFamily: black, msrpEur: 25 }
+    - { sku: "12020731", colorName: White, colorFamily: white, msrpEur: 25 }
+    - { sku: "12020607", colorName: Lemon Yellow, colorFamily: color }
+    - { sku: "12020608", colorName: Blush Pink, colorFamily: color }
+    - { sku: "12020609", colorName: Lilac Purple, colorFamily: color }
+    - { sku: "12020610", colorName: Sunset Orange, colorFamily: color }
+    - { sku: "12020615", colorName: Sakura Pink, colorFamily: color }
+
+- slug: vxe-mad-r
+  brand: vxe
+  name: MAD R
+  msrpEur: 65
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/VXE_MAD_R_Black.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/VXE_MAD_R_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/VXE_MAD_R_Major_Black.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/VXE_MAD_R_Major_White.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/VXE_MAD_R_Major_Red.jpg, kind: cutout_top, width: 1200, height: 1200 }
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.1, widthMm: 63.1, heightMm: 38.1, weightG: 36, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "12020648", colorName: Black（1K Dongle Only）, colorFamily: black, msrpEur: 55 }
+    - { sku: "12020647", colorName: White（1K Dongle Only）, colorFamily: white, msrpEur: 55 }
+    - { sku: "12020634", colorName: Black（8K Dongle Only）, colorFamily: black }
+    - { sku: "12020633", colorName: White（8K Dongle Only）, colorFamily: white }
+    - { sku: "12020642", colorName: Red（8K Dongle Only）, colorFamily: color, msrpEur: 90 }

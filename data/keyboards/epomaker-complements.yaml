@@ -1,0 +1,43 @@
+# Epomaker : claviers ajoutés le 2026-10-24 en complément de epomaker.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 2 modèles
+- slug: epomaker-galaxy70
+  brand: epomaker
+  name: Galaxy70
+  msrpEur: 120
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9950_a3b88441-47dd-4155-9665-ea56c92177cc.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9952_2d2a95ba-4d82-411f-beac-9e6d463f0f6c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9956_55770160-ce8b-47cb-8c08-892be89117c8.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_Galaxy70_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_0252_0a39ca9e-de96-42c3-b6a9-b3f27143ae55.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_0267_25a0509d-1bda-43f6-845b-08f8cde81356.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_0269_b15e255f-3584-4ab9-89d9-80d1d864c9e5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_0270_58242699-b06e-4c32-8a79-aaabcdf2fc7e.jpg, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1790 }
+  variants:
+    - { colorName: Gray, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+
+- slug: epomaker-hack70
+  brand: epomaker
+  name: Hack70
+  msrpEur: 110
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_06_2a3efab0-a0e1-40ab-8c00-1fcf5544da3a.webp, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_01_324707e6-16d2-417f-a99d-d7039611cd48.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_03_9ddd0534-3775-46f5-b2db-adde83d42775.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_04_ca553cd1-cc78-499d-ac30-6ed571657808.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_05_d52e48e7-761c-407a-a860-dbecb6b4aedf.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_07_f0528f91-b1bc-411c-8bfb-8acc84e7d887.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_08_ab4542a0-bc24-44fe-88e1-97bac629f280.webp, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHack70_09_70b7fd9c-15c3-401e-96ba-e15e5ea7fab9.webp, kind: cutout_top, width: 1600, height: 1600 }
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, macSupport: true, soundDampening: true, weightG: 676 }
+  variants:
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }

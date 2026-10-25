@@ -1,0 +1,20 @@
+# Keychron : claviers ajoutés le 2026-10-24 en complément de keychron.yaml, sans fiche officielle relue.
+# Format, technologie, liaisons, rétroéclairage et options à recouper avec la fiche de la marque.
+# Dispositions, photos, coloris et prix lus sur la boutique de la marque quand elle vend le modèle ; sinon
+# QWERTY US, « Black » et prix indicatif. Switch donné par son seul ressenti (switchs génériques).
+
+# Lot du 2026-10-24 : 1 modèles
+- slug: keychron-r6
+  brand: keychron
+  name: R6
+  msrpEur: 115
+  popularity: 0.5
+  editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-R6-QMK-Wireless-Mechanical-Keyboard-Red.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-R6-QMK-Wireless-Mechanical-Keyboard-Brown.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-R6-QMK-Wireless-Mechanical-Keyboard-Banana.jpg, kind: cutout_top, width: 2000, height: 2000 }
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true }
+  variants:
+    - { colorName: Retro, colorFamily: color, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Retro, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
