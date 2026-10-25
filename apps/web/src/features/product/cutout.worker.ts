@@ -6,8 +6,11 @@ import { isolate } from '@choose/catalog/media'
 // canvas asks for photos ahead of the camera (`warm`), and asks again for one whose bitmap it let
 // go, and neither should wait on the network twice.
 
-/** `warm`: only fetch the bytes and keep them, for a cut-out asked for later. */
-export type CutoutAsk = { id: number; url: string; warm?: boolean }
+/**
+ * `warm`: only fetch the bytes and keep them, for a cut-out asked for later. `priority`: a photo
+ * the page waits on (a product's sheet), cut out before the canvas's.
+ */
+export type CutoutAsk = { id: number; url: string; warm?: boolean; priority?: boolean }
 
 export type CutoutAnswer =
   | {
@@ -33,6 +36,8 @@ export type CutoutAnswer =
 const TIMEOUT_MS = 15_000
 /** Bytes of photos kept for later, the ones used longest ago going first. */
 const KEPT_BYTES = 24_000_000
+/** Longest the canvas's photos wait for a priority one before going on anyway. */
+const PRIORITY_WAIT_MS = 3000
 
 const scope = self as unknown as {
   onmessage: ((event: MessageEvent<CutoutAsk>) => void) | null
@@ -81,10 +86,34 @@ function bytesOf(url: string): Promise<Blob | number> {
   return job
 }
 
-async function cut({ id, url, warm }: CutoutAsk): Promise<CutoutAnswer> {
+/**
+ * Priority photos being cut out, and what the others wait for: decoding and cutting out take this
+ * thread for a while, and a sheet's photo, the page's main picture, goes before the canvas's.
+ */
+let urgent = 0
+let calm: Promise<void> = Promise.resolve()
+let release = () => {}
+
+async function cut({ id, url, warm, priority }: CutoutAsk): Promise<CutoutAnswer> {
+  if (priority && !warm && urgent++ === 0) {
+    calm = new Promise((resolve) => {
+      release = resolve
+    })
+  }
+  try {
+    return await cutNow({ id, url, warm, priority })
+  } finally {
+    if (priority && !warm && --urgent === 0) release()
+  }
+}
+
+async function cutNow({ id, url, warm, priority }: CutoutAsk): Promise<CutoutAnswer> {
   const bytes = await bytesOf(url)
   if (typeof bytes === 'number') return { id, status: 'http', code: bytes }
   if (warm) return { id, status: 'warm' }
+  if (!priority && urgent) {
+    await Promise.race([calm, new Promise((resolve) => setTimeout(resolve, PRIORITY_WAIT_MS))])
+  }
   const bitmap = await createImageBitmap(bytes)
   const { width: w, height: h } = bitmap
   const canvas = new OffscreenCanvas(w, h)

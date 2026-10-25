@@ -69,7 +69,12 @@ export function ProductHero({ item, locale }: { item: CatalogItem; locale: Local
               p: '4',
             })}
           >
-            <ProductPicture item={item} shadow="lg" className={css({ w: '100%', h: '100%' })} />
+            <ProductPicture
+              item={item}
+              shadow="lg"
+              preload
+              className={css({ w: '100%', h: '100%' })}
+            />
           </div>
         </figure>
         <KeySpecs item={item} locale={locale} />

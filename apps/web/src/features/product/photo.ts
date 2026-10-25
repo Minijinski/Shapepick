@@ -88,6 +88,22 @@ export function sharedPhoto(photo: Photo, width = 1200) {
 }
 
 /**
+ * The widths a page may ask the photo at, as an image's `srcset`: the steps `photoWidthFor`
+ * rounds to, up to the photo's own width.
+ */
+export function photoSrcSet(photo: Photo, upTo = 1600) {
+  const widths = new Set<number>()
+  for (let w = 400; w <= upTo; w += 200) widths.add(Math.min(w, photo.width ?? w))
+  return [...widths].map((w) => `${photoSrc(photo, w, true)} ${w}w`).join(', ')
+}
+
+/** The width of the photo at an address `photoSrc` made, if it says. */
+export function widthOfSrc(src: string) {
+  const w = /[?&]w=(\d+)/.exec(src)?.[1]
+  return w ? Number(w) : null
+}
+
+/**
  * The photo width to ask for so that the product, drawn `px` device pixels wide, stays sharp: shops
  * leave a margin around it. Rounded so that every size shares the CDN's cache.
  */
@@ -136,6 +152,10 @@ function workerOf() {
   return worker
 }
 
+// Started as soon as this module loads in a browser, while the page is still waking up: the first
+// cut-out (a sheet's photo, an option's tile) then finds the worker ready.
+if (typeof window !== 'undefined') queueMicrotask(() => workerOf())
+
 function giveUpWorker() {
   worker?.terminate()
   worker = null
@@ -143,13 +163,13 @@ function giveUpWorker() {
   waiting.clear()
 }
 
-function ask(src: string): Promise<Answer> {
+function ask(src: string, priority = false): Promise<Answer> {
   const w = workerOf()
   if (!w) return cutHere(src)
   const id = ++asked
   return new Promise((resolve) => {
     waiting.set(id, resolve)
-    w.postMessage({ id, url: src } satisfies CutoutAsk)
+    w.postMessage({ id, url: src, priority } satisfies CutoutAsk)
   })
 }
 
@@ -239,8 +259,13 @@ const cutting = new Map<string, Promise<Cutout | null>>()
 /** Photos that turned out not to be cut-outs: not worth another try this session. */
 const unusable = new Set<string>()
 
-async function cutFrom(photo: Photo, width: number, through: boolean): Promise<Cutout | null> {
-  const answer = await ask(photoSrc(photo, width, through))
+async function cutFrom(
+  photo: Photo,
+  width: number,
+  through: boolean,
+  priority: boolean,
+): Promise<Cutout | null> {
+  const answer = await ask(photoSrc(photo, width, through), priority)
   if (answer.status === 'ok') {
     const { image, source, fill, parts, detail, symmetry } = answer
     return {
@@ -262,7 +287,7 @@ async function cutFrom(photo: Photo, width: number, through: boolean): Promise<C
     // No image CDN here (404: a second dev server), or a shop it is not allowed to fetch from
     // (403): straight from the shop, for every photo after a 404.
     if (answer.code === 404) proxied = false
-    return cutFrom(photo, width, false)
+    return cutFrom(photo, width, false, priority)
   }
   if (answer.status === 'http' && answer.code >= 400 && answer.code < 500 && answer.code !== 429) {
     unusable.add(photo.url)
@@ -274,14 +299,14 @@ async function cutFrom(photo: Photo, width: number, through: boolean): Promise<C
 /**
  * The photo at `width` px, cut out; null if there is nothing to cut out. Rejects with
  * `PhotoUnavailable` when it cannot be fetched this time. The bitmaps are not kept: whoever asks
- * keeps what it needs.
+ * keeps what it needs. `priority`: the page waits on it (a product's sheet), it goes first.
  */
-export function cutout(photo: Photo, width: number): Promise<Cutout | null> {
+export function cutout(photo: Photo, width: number, priority = false): Promise<Cutout | null> {
   if (unusable.has(photo.url)) return Promise.resolve(null)
   const key = `${photo.url}@${width}`
   let job = cutting.get(key)
   if (!job) {
-    job = cutFrom(photo, width, proxied).finally(() => cutting.delete(key))
+    job = cutFrom(photo, width, proxied, priority).finally(() => cutting.delete(key))
     cutting.set(key, job)
   }
   return job
@@ -365,16 +390,16 @@ export const pictureSettled = (photo: Photo) => ready.has(photo.url) || unusable
 
 /**
  * The photo at `width` px, cut out, as an image URL, once per visit (kept from the last visit for
- * small widths); null if it cannot be.
+ * small widths); null if it cannot be. `priority`: cut out before the canvas's photos.
  */
-export function picture(photo: Photo, width: number): Promise<Picture | null> {
+export function picture(photo: Photo, width: number, priority = false): Promise<Picture | null> {
   const key = `${photo.url}@${width}`
   let job = pictures.get(key)
   if (!job) {
     job = fromShelf(key, width)
       .then(async (kept) => {
         if (kept) return kept
-        const cut = await cutout(photo, width)
+        const cut = await cutout(photo, width, priority)
         if (!cut) return null
         let canvas: HTMLCanvasElement
         if (cut.image instanceof HTMLCanvasElement) {
