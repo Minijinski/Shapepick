@@ -9,6 +9,15 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/573290.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/573293.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/573295.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/573291.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/573294.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/573292.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/573296.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/576400.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 163, widthMm: 124, heightMm: 61, weightG: 460, ballPosition: finger, sideButtons: 0, dpiMax: 1600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: kensington-expert-mouse-pro-tb900-eq
@@ -25,6 +34,15 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/368565.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/368566.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368567.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/264684.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368569.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368570.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368572.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/264678.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 125, heightMm: 70, weightG: 385, ballPosition: finger, sideButtons: 0, sensor: DiamondEye optical, dpiMax: 400, switchType: mechanical, conn24ghz: true, connBt: true }
 
 - slug: kensington-orbit-fusion-wireless-trackball
@@ -41,6 +59,12 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/370513.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/383054.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368509.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368510.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/39429.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 140, widthMm: 114, heightMm: 51, weightG: 162, ballPosition: finger, sideButtons: 0, switchType: mechanical }
 
 - slug: kensington-orbit-wireless-mobile-trackball
@@ -49,6 +73,13 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/414550.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/368519.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/522296.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368531.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/165009.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/412923.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 108, widthMm: 86, heightMm: 34, weightG: 182, ballPosition: finger, sideButtons: 0, dpiMax: 1000, switchType: mechanical, conn24ghz: true }
 
 - slug: kensington-pro-fit-ergo-tb450
@@ -57,6 +88,15 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/566919.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/566920.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566921.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566922.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566923.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566924.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566925.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566917.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 132, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
 
 - slug: kensington-pro-fit-ergo-tb550
@@ -65,6 +105,15 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/566934.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/566926.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566927.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566928.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566929.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566930.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566931.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/566932.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 138.2, widthMm: 93.4, heightMm: 50.1, weightG: 141, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
 
 - slug: kensington-pro-fit-ergo-vertical-tb675
@@ -73,6 +122,14 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/584941.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/584940.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/584942.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/584943.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/584944.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/584934.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/584935.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: right, segment: office, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: kensington-pro-fit-ergo-vertical-wireless-mouse
@@ -81,6 +138,15 @@
   msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/393729.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/393728.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393730.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393731.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393732.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393733.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393734.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/393735.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: vertical, hand: right, segment: office, lengthMm: 112, widthMm: 76, heightMm: 72, weightG: 96, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }
 
 - slug: kensington-pro-fit-ergo-wireless-mouse
@@ -89,6 +155,15 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/385651.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/385647.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/384645.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/385652.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/384648.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/385653.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/385654.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/385655.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 132, widthMm: 74, heightMm: 61, weightG: 91, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
 
 - slug: kensington-slimblade-pro-trackball
@@ -97,6 +172,15 @@
   msrpEur: 145
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/496976.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/487852.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487853.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487854.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487855.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487856.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487857.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/487858.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 153, widthMm: 133, heightMm: 56, weightG: 400, ballPosition: finger, sideButtons: 0, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: kensington-slimblade-trackball
@@ -105,6 +189,15 @@
   msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/368504.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/270321.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368506.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368507.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368508.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/196948.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/37958.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/322469.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: trackball, hand: ambidextrous, segment: office, lengthMm: 150, widthMm: 133, heightMm: 60, weightG: 317, ballPosition: finger, sideButtons: 0, switchType: mechanical }
 
 - slug: kensington-pro-fit-full-size-wireless-mouse
@@ -113,4 +206,10 @@
   msrpEur: 25
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://media.accobrands.com/media/560-560/368575.jpg?width=1000px&height=1000px, kind: cutout_top, primary: true }
+    - { url: https://media.accobrands.com/media/560-560/368576.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/368577.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/40360.jpg?width=1000px&height=1000px, kind: cutout_top }
+    - { url: https://media.accobrands.com/media/560-560/350295.jpg?width=1000px&height=1000px, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 125, widthMm: 80, heightMm: 46, weightG: 100, sideButtons: 2, dpiMax: 1600, switchType: mechanical, conn24ghz: true }

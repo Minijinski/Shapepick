@@ -10,19 +10,37 @@
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_4a196425-73de-40c7-aa99-0eb852aff0b9.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4_a3f82464-ad8d-4fa4-a519-e181fe08162c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_468febd7-c795-49b4-bbdb-c1f0137e83e2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_020a0efa-986c-4af0-b327-c78258cb506c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5_2b24a821-3d14-4bd3-8f5a-619296ead2e7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_340e8f23-7ce5-4652-bbe5-a3c28814f001.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/9_a9d62045-4456-4c9f-a57b-456509cb68bf.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/10_a2ebb087-01ba-40c4-9425-008cb7f059a8.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1205 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
 
 - slug: yunzii-al66
   brand: yunzii
   name: AL66
-  msrpEur: 80
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/8_ee27bc91-6913-488f-8174-0e64419fd9d1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/9_cd04cd08-63bf-455f-81f2-22a4c025338a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/11_88eed1ed-9f3f-4b02-b9be-cb390b55155b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/10_ed030e3f-079b-4cb8-95cd-6d2f63c8600d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_f6b7d408-29af-4589-87f2-7f3e2ac9d78f.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_729b48f8-a9fa-47d8-aea9-a94313a42afc.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/AL6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/AL66_480f3149-f610-4b9b-881d-dcf2366927ee.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1145 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
 
 - slug: yunzii-rt75
   brand: yunzii
@@ -30,6 +48,15 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_60a816ed-92e0-4563-a9df-826fbe0ed3e4.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_bb576525-af18-4af4-a215-1285f4d7a1cc.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3-2_cdca9ca6-d085-4253-a5e9-2c0ef7efc680.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4_1dc2d68e-0721-45f5-877a-683891263cc6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5-2_d41e8b42-7f5b-419f-9108-c80e747204d1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_0651947a-cdb5-477e-92e0-f934830a3b62.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7-3.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 962 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }
@@ -40,10 +67,19 @@
   msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/16_987a3d0a-63d5-40c2-8ba9-8a95f6c7d714.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/17_b68bd2dc-1296-451f-a8c3-91893dd1a78a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5_427ab2b3-6d3b-40e9-8d9d-e994c8e69644.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5-1_a1affe91-3e20-4d58-ad53-ddbf06d25255.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_f1bb0645-b033-4508-9267-5a7e483c3fd5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4_2eaa113c-e86b-4bbf-8de4-443f8d8449f0.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5_ad256f72-d8b1-4531-8e4f-2e6c35e5e090.jpg, kind: cutout_top, width: 3840, height: 3840 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_be0ee52f-85f6-498c-adf6-00a99746ad1d.jpg, kind: cutout_top, width: 3840, height: 3840 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1411 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-tactile }
 
 - slug: yunzii-al98
   brand: yunzii
@@ -51,9 +87,18 @@
   msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-1.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-9.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-10.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-11.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/al98-main-12.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 2175 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
 
 - slug: yunzii-b68
   brand: yunzii
@@ -118,10 +163,19 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_151c4bc9-c4cf-401f-b8f6-1df1231c7b6d.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3-1_4fcd7c9d-3c1d-4441-a12e-2459c5910398.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_e154c628-f529-476e-911b-bbb40bb1fc3e.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1-1_29676b80-2ec3-4668-979e-27481053befc.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_e2133f1b-da48-4bdd-93b2-b3037fa9c0c3.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7_15fad50a-940c-4bf0-ac97-31ef89b3808d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/8_239165a3-cea5-4bdc-87ec-143a1592db11.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/9_22d3d83f-3449-463d-8773-d94ae0814666.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1384 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Silver, colorFamily: white, layout: ansi_us, switch: switch-tactile }
 
 - slug: yunzii-rt68
   brand: yunzii
@@ -129,6 +183,15 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/2_efdd47fe-b9f1-4fc5-848a-e27096e2e140.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/3_a7c70892-3cfa-45de-a257-917100fc851c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/1_44fec7ec-44d8-4e51-ab5e-827c6193165c.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/4_43f91c5d-cb18-4271-a4f2-2bcdb0fcc19b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/5_3a1a6f85-3458-4295-a6a6-26de9342c21b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/6_78aa6c2a-7815-40d7-a871-d873b0065d0d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/7_43fcb7d5-6d25-4581-9782-5cc848db393b.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0509/3713/5273/files/8_e9bd10d3-6c07-46ac-bb10-1fa0bcb05ce2.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 745 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Beige, colorFamily: color, layout: ansi_us }

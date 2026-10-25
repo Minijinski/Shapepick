@@ -10,6 +10,15 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_Black_FrontBack.png, kind: cutout_top, width: 2160, height: 2160, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_Lavender_FrontBack.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_SkyBlue_FrontBack.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_MilkTea_FrontBack.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_Silver_FrontBack.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_White_FrontBack.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_Black_Front.png, kind: cutout_top, width: 2160, height: 2160 }
+    - { url: https://cdn.shopify.com/s/files/1/0799/8570/5240/files/ND75LP_Black_Back.png, kind: cutout_top, width: 2160, height: 2160 }
   specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Milk Tea, colorFamily: color, layout: ansi_us, switch: switch-lineaire }

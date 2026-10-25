@@ -9,7 +9,17 @@
   msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball.jpg, kind: cutout_top, width: 1162, height: 1162, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Ergonomic-Angled-Design.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-8-Programmable-Buttons.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Oversized-52mm-Ball.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Wireless-USB-Connection.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Soft-Rubber-Palm-Support.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Huge-Trackball-Mouse-Wireless-USB-Red-Ball-Index-Finger-Control.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 181.9, widthMm: 114.7, heightMm: 57.2, weightG: 260, ballPosition: finger, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  variants:
+    - { sku: M-HT1DRBK, colorName: Black, colorFamily: black }
 
 - slug: elecom-huge-plus
   brand: elecom
@@ -17,7 +27,18 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Huge_Plus_close-up_with_USB_receiver.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Close_hand-on-ball_branded_HUGE_PLUS_image.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Four-panel_feature_layout.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Removable_ball_and_bearing_system.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Desk_setup_top-down.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Bottom_surface_close-up.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Hand_using_trackball_on_desk.jpg, kind: cutout_top, width: 1553, height: 1553 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Product_close_up_of_swappable_bearing_cavity.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 182.9, widthMm: 114.3, heightMm: 58.4, weightG: 292, ballPosition: finger, sideButtons: 0, dpiMax: 1500, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: M-HT1MRBK-G, colorName: Black, colorFamily: black }
 
 - slug: elecom-deft-pro-trackball-m-dpt1mr
   brand: elecom
@@ -25,7 +46,14 @@
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Deft-Pro-Trackball-Red-Ball.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Deft-Pro-Trackball-Red-Ball-Left-Right-Angle.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Deft-Pro-Trackball-Red-Ball-Side-Angle.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-Deft-Pro-Trackball-Red-Ball-USB-Receiver-Cable.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 133.4, widthMm: 91.4, heightMm: 57.3, weightG: 162, ballPosition: finger, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: M-DPT1MRXBK, colorName: Black, colorFamily: black }
 
 - slug: elecom-ex-g-pro-trackball-m-xpt1mr
   brand: elecom
@@ -33,7 +61,18 @@
   msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-using-mouse.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-using-mouse-keyboard-monitor.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-mouse-keyboard-monitor.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-USB-Receiver.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-USB-Receiver-Cable.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-Front-Angle.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-PRO-Trackball-Red-Ball-Side-Angle.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 135, widthMm: 108, heightMm: 47.7, weightG: 147, ballPosition: thumb, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: M-XPT1MRXBK, colorName: Black, colorFamily: black }
 
 - slug: elecom-ist-pro
   brand: elecom
@@ -41,7 +80,18 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_01k.jpg, kind: cutout_top, width: 1038, height: 1038, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_60.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_32.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_33.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_34.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_37.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_64.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/ELECOM_ISTProTrackball_MI-IPT10MRSABK_Banner_68.jpg, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 94, heightMm: 56, weightG: 158, ballPosition: thumb, sideButtons: 0, sensor: PixArt PAW3311DB, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: M-IPT10MRSABK, colorName: Black, colorFamily: black }
 
 - slug: elecom-ex-g-trackball-m-xt3dr
   brand: elecom
@@ -49,4 +99,16 @@
   msrpEur: 45
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Black-Ball.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-Red-Ball-USB-Receiver.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-On-Desk.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-Left-Right-Angle.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-Using-Mouse.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Trackball-Wireless-USB-Red-Ball-Using-Mouse-Laptop.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0559/1593/7865/files/Elecom-Black-EX-G-Left-Handed-Trackball-Wireless-Red-Ball-USB-Receiver.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 124.4, widthMm: 94.7, heightMm: 47.9, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1500, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  variants:
+    - { sku: M-XT3DRBK, colorName: Black, colorFamily: black }
+    - { sku: M-XT3DRBK-G, colorName: Red, colorFamily: color }

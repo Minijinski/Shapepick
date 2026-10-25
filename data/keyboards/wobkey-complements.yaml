@@ -7,9 +7,18 @@
 - slug: wobkey-crush-80-reboot-pro
   brand: wobkey
   name: Crush 80 Reboot Pro
-  msrpEur: 175
+  msrpEur: 205
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_19fe9878-6b5d-459f-a7ab-847c607fe5b0.jpg, kind: cutout_top, width: 3000, height: 3000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_6ce001ca-1410-45c5-8fbd-41743396cf0a.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_97719f74-4a7a-4b45-81c8-8fb77e3747aa.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_9f1876f0-e7c4-4c2c-910b-be8deeca50d9.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_5a98a487-e4d7-4732-9c8c-8c9ed8117925.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_5acd7e34-8ad2-4e63-a882-ab2ed63f10c0.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_920fd993-41a5-434b-84de-7161735fdf47.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0665/1484/5931/files/pro_3c8cecbe-05f1-4683-9638-633766e128bb.jpg, kind: cutout_top, width: 3000, height: 3000 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: via, macSupport: true, soundDampening: true, weightG: 1500 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

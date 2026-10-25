@@ -6,15 +6,49 @@
 - slug: nulea-m501
   brand: nulea
   name: M501
-  msrpEur: 40
+  msrpEur: 45
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-red.jpg, kind: cutout_top, width: 1200, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-black_01.jpg, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-blue.jpg, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-pink_01.jpg, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-purple_01.jpg, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-sliver_01.jpg, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-green-2.png, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-orange-2.png, kind: cutout_top, width: 1200, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 103, heightMm: 50, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: "", colorName: Red, colorFamily: color, msrpEur: 40 }
+    - { sku: "", colorName: Blue, colorFamily: color }
+    - { sku: "", colorName: Black, colorFamily: black, msrpEur: 40 }
+    - { sku: "", colorName: Silver, colorFamily: white, msrpEur: 40 }
+    - { sku: "", colorName: Pink, colorFamily: color }
+    - { sku: "", colorName: Purple, colorFamily: color }
+    - { sku: "", colorName: Green, colorFamily: color }
+    - { sku: "", colorName: Orange, colorFamily: color }
+    - { sku: "", colorName: Gold, colorFamily: color, msrpEur: 40 }
 
 - slug: nulea-m505
   brand: nulea
   name: M505
-  msrpEur: 45
+  msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x-5.webp, kind: cutout_top, width: 1200, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse_blue_1x_be43eb7c-2c6b-4a66-aed9-1508175b2154.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse_green_1x-4.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse_purple_1x_a6f65668-fa9e-4ce4-ab56-bad4d08dacc0.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse_silver_gray_1x-7.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x-6.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x-7.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x_a5f5b92f-2f37-4836-9abc-a61b1db9ce2a.webp, kind: cutout_top, width: 1200, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 168, widthMm: 104, heightMm: 56, weightG: 193, ballPosition: finger, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: "", colorName: Red, colorFamily: color, msrpEur: 45 }
+    - { sku: "", colorName: Blue, colorFamily: color }
+    - { sku: FBA-M505A-MOUSE-Green-US-TFS, colorName: Green, colorFamily: color }
+    - { sku: "", colorName: Purple, colorFamily: color }
+    - { sku: FBA-M505A-MOUSE-Black-US-TFS, colorName: Black, colorFamily: black }

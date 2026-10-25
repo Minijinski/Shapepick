@@ -9,7 +9,21 @@
   msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-white-gold-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1182572690.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-black-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1182572688.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-rose-red-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1182572689.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-iron-red-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1200359902.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-black-pre-order-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1174256639.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1182572692.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1182572693.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-mchose-k7-ultra-lightweight-wireless-gaming-mouse-1200359903.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 127.3, widthMm: 63.8, heightMm: 39.9, weightG: 59, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: HW-K7-13, colorName: Black, colorFamily: black }
+    - { sku: HW-K7-11, colorName: White Gold, colorFamily: white }
+    - { sku: MC-K7-10, colorName: Rose Red, colorFamily: color }
+    - { sku: HW-K7-12, colorName: Iron Red, colorFamily: color }
 
 - slug: mchose-m7
   brand: mchose
@@ -22,10 +36,20 @@
 - slug: mchose-g3
   brand: mchose
   name: G3
-  msrpEur: 55
+  msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-g3-black-mchose-g3-dual-8k-high-performance-wireless-gaming-mouse-1166639847.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-g3-white-mchose-g3-dual-8k-high-performance-wireless-gaming-mouse-1166639846.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-g3-blue-mchose-g3-dual-8k-high-performance-wireless-gaming-mouse-1166639845.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mouse-g3-purple-mchose-g3-dual-8k-high-performance-wireless-gaming-mouse-1166639844.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.5, widthMm: 62.9, heightMm: 38.2, weightG: 64, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: MC-G3-2, colorName: White, colorFamily: white }
+    - { sku: MC-G3-5, colorName: Black, colorFamily: black }
+    - { sku: "", colorName: Blue, colorFamily: color }
+    - { sku: "", colorName: Purple, colorFamily: color }
 
 - slug: mchose-ax5
   brand: mchose

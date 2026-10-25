@@ -230,10 +230,23 @@
 - slug: atk-ghost-ultimate
   brand: atk
   name: GHOST Ultimate
-  msrpEur: 100
+  msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_9207a22b-fff4-4701-b3ac-0090dfd22d21.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_e4fd74f1-87bd-49da-8e4b-f34fbd0bb003.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_e0268ebf-2aad-4313-bfca-227348bf5074.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1500_db4d672c-ccaa-46b8-ad4b-b136cbd724f1.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/20260112-164302.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/1_27e4f708-639b-4d0e-a1f8-49be7f16bbfc.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/2_8ebb6bd0-15b4-4717-a32c-dc50c9d8b285.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0691/4942/5882/files/3_398d5093-81af-43dc-9e4a-a48682817fee.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121, widthMm: 61.3, heightMm: 38, weightG: 48, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "12060073", colorName: Black, colorFamily: black }
+    - { sku: "12060075", colorName: Silver, colorFamily: white }
+    - { sku: "12060076", colorName: Red, colorFamily: color }
 
 - slug: atk-duckbill
   brand: atk

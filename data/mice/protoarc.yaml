@@ -6,15 +6,42 @@
 - slug: protoarc-em03-nl
   brand: protoarc
   name: EM03 NL
-  msrpEur: 40
+  msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALL_ee61410e-4e10-44d8-9a7b-bf1efd07a2f2_1.webp, kind: cutout_top, width: 1600, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLREDBALL_51f22811-30bf-4df8-8f78-ea13ccb33f96.webp, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLPURPLEBALL_983147b1-836d-486b-a7a3-e33211ad67b1.webp, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALLA1.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALLA2.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALLA4.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALLA3.webp, kind: cutout_top, width: 1200, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/EM03NLGRAYBALLA5.webp, kind: cutout_top, width: 1200, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 167, widthMm: 105, heightMm: 55, weightG: 230, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: CP016612, colorName: Purple, colorFamily: color }
+    - { sku: CP016610, colorName: Gray, colorFamily: black }
+    - { sku: CP016611, colorName: Red, colorFamily: color }
 
 - slug: protoarc-em04
   brand: protoarc
   name: EM04
-  msrpEur: 30
+  msrpEur: 45
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/58.png, kind: cutout_top, width: 1600, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/60.png, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/62.png, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/61.png, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/59.png, kind: cutout_top, width: 1600, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/71NEHHriRrL._AC_SL1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/61Q3TkpiM-L._AC_SL1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0551/3972/9497/files/715phgaXw_L._AC_SL1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: trackball, hand: right, segment: office, lengthMm: 136.8, widthMm: 100.5, heightMm: 52.3, weightG: 119, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: CP012985, colorName: Black, colorFamily: black }
+    - { sku: CP013668, colorName: Purple, colorFamily: color }
+    - { sku: CP014704, colorName: Silver, colorFamily: white }
+    - { sku: CP014705, colorName: Red, colorFamily: color }

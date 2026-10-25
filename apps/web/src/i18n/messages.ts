@@ -219,8 +219,11 @@ export const messages = {
   onlyBrand: text("Seulement", "Only"),
   onlyBrandOf: (name: string, locale: Locale) =>
     locale === "fr" ? `Seulement ${name}` : `Only ${name}`,
-  findBrand: text("Chercher une marque", "Find a brand"),
-  noBrandFound: text("Aucune marque à ce nom", "No brand by that name"),
+  findBrand: text("Marque ou modèle", "Brand or model"),
+  noBrandFound: text(
+    "Aucune marque ni modèle à ce nom",
+    "No brand or model by that name",
+  ),
   brandsShown: (n: number, total: number, locale: Locale) =>
     locale === "fr" ? `${n} sur ${total}` : `${n} of ${total}`,
 

@@ -7,9 +7,18 @@
 - slug: lofree-block-98
   brand: lofree
   name: Block 98
-  msrpEur: 170
+  msrpEur: 205
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP108.webp, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP101.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP109.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP104.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP106.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP102.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP103.webp, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/BlockP105.webp, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1090 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -20,6 +29,18 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI03.webp, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI01.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_White_PI01.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_flamingo_PI01.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI02.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI04.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_Marble_PI05.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/2779/9046/files/Flow84_White_PI02.webp, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 555 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Marble with Specter Switches, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Marble with Specter Switches, colorFamily: color, layout: iso_de, switch: switch-lineaire }
+    - { colorName: Marble with Specter Switches, colorFamily: color, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: Marble with Specter Switches, colorFamily: color, layout: iso_uk, switch: switch-lineaire }

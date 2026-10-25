@@ -10,6 +10,15 @@
   msrpEur: 160
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix_V2-6.25U-1_1_02-01.png, kind: cutout_top, width: 1280, height: 1280, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix_104_VIA_Spring_01_0001.png, kind: cutout_top, width: 2560, height: 2560 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/3fe378824ad9610349eb918354fb9ca3.png, kind: cutout_top, width: 4000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix_V2-6.25U-1_1_01.png, kind: cutout_top, width: 1280, height: 1280 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix104Autumn_Summer_02.png, kind: cutout_top, width: 2560, height: 2560 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/products/104SideView.png, kind: cutout_top, width: 1785, height: 1785 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix_104_Explosion_7d0cc851-b6f9-433a-bc64-ea5f9ea94838.png, kind: cutout_top, width: 2560, height: 2560 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/Multix104N-KeyRollover.png, kind: cutout_top, width: 2560, height: 2560 }
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: qmk, macSupport: true, soundDampening: true }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
@@ -23,6 +32,12 @@
   msrpEur: 115
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/files/CypherUS2.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/products/Cypher-split02.jpg, kind: cutout_top, width: 2508, height: 1672 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/products/Cypher-split04.jpg, kind: cutout_top, width: 2508, height: 1672 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/products/Cypher-split03.jpg, kind: cutout_top, width: 2508, height: 1672 }
+    - { url: https://cdn.shopify.com/s/files/1/0653/2812/0033/products/Cypher-split01.jpg, kind: cutout_top, width: 2508, height: 1672 }
   specs: { formFactor: f65, technology: mechanical, hotSwap: none, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, macSupport: true }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }

@@ -22,9 +22,14 @@ export const Route = createRootRoute({
       { name: 'theme-color', content: '#F3F1EC' },
       { title: SITE.name },
     ],
+    // The icon: the drawing (its version in the address, as browsers keep icons a long while),
+    // the same in pixels for those that read no SVG (sized, so the others still take the SVG),
+    // and a square for iOS home screens.
     links: [
       { rel: 'stylesheet', href: appCss },
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg' },
+      { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=2' },
+      { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
     ],
     scripts: [{ children: TIDY_HEAD }],
   }),

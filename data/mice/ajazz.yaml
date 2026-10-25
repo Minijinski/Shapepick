@@ -28,18 +28,43 @@
 - slug: ajazz-aj139-pro
   brand: ajazz
   name: AJ139 Pro
-  msrpEur: 45
+  msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/b8421501ceee8ed8defa49d79fc692df_e2a2d931-ecf2-4c26-ad58-6d84d38cb480.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/5_3fb2522c-a859-49fc-bde4-9944a580b454.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/1_5d760359-1a87-4a84-81db-e29ef2ca8170.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/32_968d7eb2-50e3-4286-ae4e-1d31a2443df6.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/8_9147e07c-09d5-43d4-9510-173db15d18cb.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/9_d05f3aba-b701-46a7-99d5-bff073059d8e.jpg, kind: cutout_top, width: 990, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_f3d5a8bb-24a5-47e1-a025-c94f124ebd94.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_84f97ab0-e4fe-422f-bbb2-cb9be77b4eca.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.4, widthMm: 63.3, heightMm: 38.2, weightG: 59, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: AJ139Pro-white, colorName: White, colorFamily: white }
+    - { sku: AJ139Pro-black, colorName: Black, colorFamily: black }
+    - { sku: AJ139Pro-Red, colorName: Red, colorFamily: color }
 
 - slug: ajazz-aj199
   brand: ajazz
   name: AJ199
-  msrpEur: 50
+  msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_White_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_5.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0554/6678/6869/files/AJAZZ_AJ199_Carbon_Fiber_Mouse_Black_7.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 61.6, heightMm: 38.6, weightG: 60, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: AJAZZ-MOUSE-AJ199-CF-BK, colorName: Black, colorFamily: black }
+    - { sku: AJAZZ-MOUSE-AJ199-CF-WH, colorName: White, colorFamily: white }
 
 - slug: ajazz-aj179
   brand: ajazz

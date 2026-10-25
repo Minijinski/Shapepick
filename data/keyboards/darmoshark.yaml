@@ -7,20 +7,38 @@
 - slug: darmoshark-top98
   brand: darmoshark
   name: TOP98
-  msrpEur: 100
+  msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/11_68c71454-9a98-4a83-9a6d-d54701ad189b.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/22_40c84545-2ac6-42f9-b72d-3b5ce1b96425.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/33.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/44.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_20e31217-937e-46fb-aece-4a636048e141.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_abd2283d-15a2-4ead-bbe3-4b7253df0157.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_e59d1f26-67a3-417a-b2e1-755b7adc08eb.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_a85b19a9-b32d-40b7-a145-1aa9271c4e69.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, weightG: 1262 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-tactile }
 
 - slug: darmoshark-k8
   brand: darmoshark
   name: K8
-  msrpEur: 110
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/11111.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/111_b29fceb9-37f7-4c05-8dda-08aac4a42e09.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_e8fa69cc-d1a9-4144-9a66-a9c0d674c15c.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_7b3c4694-bac4-447a-b9ef-3a8c9e6ea0f9.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/3_96c3a7b3-a681-4df5-8de3-376f97f67e58.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/4_77677d9d-884a-4767-8306-01d9ccd69ebd.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/5_23e2a806-76a4-40e3-9b32-6f79b4469e07.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/7_5819a9dc-9d3f-425d-ab74-e2f6592eb37f.jpg, kind: cutout_top, width: 1000, height: 1000 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White, colorFamily: white, layout: ansi_us, switch: switch-lineaire }

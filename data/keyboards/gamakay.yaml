@@ -7,14 +7,23 @@
 - slug: gamakay-lk75
   brand: gamakay
   name: LK75
-  msrpEur: 95
+  msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_7594.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_2039.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_7548.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_7543.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_2034.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_7574.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_2042.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/MG_7553.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: proprietary }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+    - { colorName: Grayish Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Grayish Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Grayish Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
 
 - slug: gamakay-tk75-v2
   brand: gamakay
@@ -31,19 +40,39 @@
 - slug: gamakay-tk75he-v2
   brand: gamakay
   name: TK75HE V2
-  msrpEur: 110
+  msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/Hall_effect_keyboard_TK75HEV2_ISO_DE_layout.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/TK75hev2_Hall_effect_keyboard_Ansi_layout_white.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/Tk75hev2_hall_effect_keyboard_ansi_layout.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/UK_1_e6fd2e7e-f48d-4305-9155-a240b6f880b6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/UK_1_f41b46a1-39dd-44c5-96a7-5de1f3e6b199.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/UK_1_f45cf716-121e-4bb1-ae8d-6121d8fc5b1a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/Gamakay_TK75HEV2_ISO_UK_Layout_color_white.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/files/1_8378be84-3e57-40f2-a555-ef8df0ac1ed7.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: top, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 840 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: White, colorFamily: white, layout: iso_de }
+    - { colorName: White, colorFamily: white, layout: iso_uk }
+    - { colorName: White, colorFamily: white, layout: ansi_us }
 
 - slug: gamakay-gk75
   brand: gamakay
   name: GK75
-  msrpEur: 95
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/GK752_f9ff6b92-10b0-41af-a328-8d0358342d5c.jpg, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/d668af2f6aa80498fc58899c134527a.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/d06b8a5d782b9c3cb2d33afb511d6ef.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/GK753.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/db04d78ea37bada433d4060fd5a99b4.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/MG_9242.jpg, kind: cutout_top, width: 3207, height: 3207 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/2_ab33f112-85d7-4fcf-9c58-e6e26af9d60f.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0589/2508/8957/products/4_5bbe05a6-a773-475e-9426-fa0070b1867b.jpg, kind: cutout_top, width: 1200, height: 1200 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 1700 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Green, colorFamily: color, layout: ansi_us, switch: switch-lineaire }

@@ -41,6 +41,13 @@
     'https://image\.benq\.com/.*',
     # Keyboards: Akko's own shop.
     'https://en\.akkogear\.com/wp-content/uploads/.*',
+    # Mice and keyboards from brands' own sites outside Shopify: Kensington, Cooler Master, CHERRY
+    # XTRFY, Skyloong, Wooting.
+    'https://media\.accobrands\.com/.*',
+    'https://a\.storyblok\.com/f/281110/.*',
+    'https://cherryxtrfy\.com/wp/wp-content/uploads/.*',
+    'https://skyloongtech\.com/wp-content/uploads/.*',
+    'https://wooting-website\.ams3\.cdn\.digitaloceanspaces\.com/.*',
     # Retailers' copies of a brand's photo, where the brand shows the product only at an angle or
     # in a scene.
     'https://mercular\.s3\.ap-southeast-1\.amazonaws\.com/.*',

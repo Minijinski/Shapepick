@@ -6,10 +6,22 @@
 - slug: glorious-model-d-2-wired
   brand: glorious
   name: Model D 2 Wired
-  msrpEur: 80
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MB_Web_Bottom_6b9b6bfd-211c-4f1f-ab0f-cb943cd12c9d.webp, kind: cutout_top, width: 1622, height: 1622, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MB_Web_Gallery_Front_9db47815-ea1e-4cc9-8d00-6f73ee951a59.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MW_Web_Gallery_Front_e4a48af3-a236-4baa-867b-0f04bc15c65f.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MB_Web_Side_7ca8b5d5-abac-4013-bcea-eecd15f986f0.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MB_Web_Gallery_Persp_87b3d02a-4cfc-4177-9179-f3eaff68550d.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MW_Web_Side_3fe619ab-d5ae-4f06-882c-2d377e8151a6.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MW_Web_Gallery_Persp_a6beeec7-9956-4193-877c-c8f8caf31505.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DV2-MW_Web_Bottom_8d772d17-26cc-4a4b-a8c6-53c1b7f81c76.webp, kind: cutout_top, width: 1622, height: 1622 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 67, heightMm: 43, weightG: 58, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: GLO-MS-DV2-MB, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-DV2-MW, colorName: White, colorFamily: white }
 
 - slug: glorious-model-d-2-wireless
   brand: glorious
@@ -17,15 +29,39 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MB_Web_Bottom_3ed30b29-d1e1-4fb2-ba26-8685ecded497.webp, kind: cutout_top, width: 1622, height: 1622, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MB_Web_Gallery_Front_b0323b14-b1a2-4d42-b148-2b5f5f29a450.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MW_Web_Gallery_Front_1556ecc4-02fc-46b3-8b04-44ea7d6f6e7b.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MB_Web_Side_d00e7899-360b-49c7-b866-1307742cadc1.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MB_Web_Gallery_Persp_94d3472b-87bc-41c5-8366-b700d5b82921.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MW_Web_Side_b37fcdb4-a3ac-40cd-b51c-ff6f999c5681.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MW_Web_Gallery_Persp_f3fd8236-a136-4b99-8c3f-ffe906a9c660.webp, kind: cutout_top, width: 1622, height: 1622 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-DWV2-MW_Web_Bottom_0e8c0020-9787-4bb2-9f90-3609ee905fd9.webp, kind: cutout_top, width: 1622, height: 1622 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 67, heightMm: 43, weightG: 66, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-DWV2-MB, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-DWV2-MW, colorName: White, colorFamily: white }
 
 - slug: glorious-model-d-2-pro-4k-8k
   brand: glorious
   name: Model D 2 Pro 4K/8K
-  msrpEur: 155
+  msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-W_Web_Bottom.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-W_Web_Gallery_Front.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-B_Web_Gallery_Front_f77aa541-4b84-4758-9ef0-8728a474c78d.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-W_Web_Side.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-W_Web_Gallery_Persp.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-B_Web_Side_56f53c74-dd74-4ee2-a2f3-c0731e2b63ff.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-B_Web_Gallery_Persp_439e6b95-33d7-44e6-8e03-f02125b58087.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-4K8K-B_Web_Bottom_8f344afb-4f09-4577-b40a-e7990d6c8f9e.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 67, heightMm: 42, weightG: 62, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-PDWV2-4K8K-W, colorName: White, colorFamily: white }
+    - { sku: GLO-MS-PDWV2-4K8K-B, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-d3-wireless
   brand: glorious
@@ -66,26 +102,62 @@
 - slug: glorious-model-i-2-wireless
   brand: glorious
   name: Model I 2 Wireless
-  msrpEur: 120
+  msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MW_Web_Bottom_36552c04-4e48-47d3-afc4-376225a4a437.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MW_Web_Gallery_Front_a3db7805-f4af-4357-8f26-2f9e136bed38.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Gallery_Front_d372d7e9-b4ac-4543-9a97-987d17874dfe.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MW_Web_Side_704524f7-ab5a-4791-afcd-234beda61572.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MW_Web_Gallery_Persp_b6ce74e7-095f-4c02-83e9-281d9fa2377e.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Side_99b5cfa9-f975-4c1c-aa99-a17c9f88c4a8.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Gallery_Persp_a8d85017-4832-4974-b2ea-2a76b3749706.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Bottom_ce3dacdf-0f8e-4d34-bd3e-3f8a8c5719c4.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 72, heightMm: 42, weightG: 75, sideButtons: 4, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-IWV2-MW, colorName: White, colorFamily: white }
+    - { sku: GLO-MS-IWV2-MB, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-o-2-wired
   brand: glorious
   name: Model O 2 Wired
-  msrpEur: 80
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MB_Web_Bottom_31881613-8d3b-4f8a-8718-d61998a2dc3d.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MB_Web_Gallery_Front_287511ee-b7e9-49d3-b280-5496812bb0a0.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MW_Web_Gallery_Front_c3e70b0f-514e-422b-aa2c-8088675c9b02.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MB_Web_Side_0469c6f5-8170-4ac3-91a1-85dc0b363573.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MB_Web_Gallery_Persp_74cafbe1-ecfe-4dc7-a5ce-8edfffd6384b.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MW_Web_Side_147c8a3f-c1a4-4676-8d4c-f92937ac74c3.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MW_Web_Gallery_Persp_96ab2726-42d8-47cd-bfe0-02fbf30a1b8c.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OV2-MW_Web_Bottom_863e0f58-0903-4efd-8f3b-2ed9c1f59235.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 38, weightG: 59, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000 }
+  variants:
+    - { sku: GLO-MS-OV2-MB, colorName: Black, colorFamily: black }
+    - { sku: GLO-MS-OV2-MW, colorName: White, colorFamily: white }
 
 - slug: glorious-model-o-2-wireless
   brand: glorious
   name: Model O 2 Wireless
-  msrpEur: 120
+  msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MW_Web_Bottom_6f0faad5-c1d2-470e-aa34-d9c133e6ee2f.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MW_Web_Gallery_Front_09edbd89-d8e0-4dc9-88f5-f1ef766c106c.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MB_Web_Gallery_Front_0bc8a820-937a-4157-ba94-de7eca86e085.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MW_Web_Side_e89f0c00-5bd9-41f4-aa9d-c5da4f467d0c.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MW_Web_Gallery_Persp_dcb59b75-1ba1-467a-9dba-58bb8b3d2513.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MB_Web_Side_a751d231-e53c-497c-97cf-6e5ec9b55749.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MB_Web_Gallery_Persp_c0368d7b-c250-4ae7-9e1b-757f0121f4c8.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-OWV2-MB_Web_Bottom_3ed23fc8-58e8-4878-82de-138f7c1dfe23.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 38, weightG: 68, sideButtons: 2, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-OWV2-MW, colorName: White, colorFamily: white }
+    - { sku: GLO-MS-OWV2-MB, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-o-2-mini-wired
   brand: glorious
@@ -130,10 +202,22 @@
 - slug: glorious-model-o-2-pro-4k-8k
   brand: glorious
   name: Model O 2 Pro 4K/8K
-  msrpEur: 155
+  msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-W_Web_Bottom.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-B_Web_Gallery_Front_854c9056-367c-413b-ab69-5a13feb5cc5f.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-B_Web_Gallery_Front_1e378203-06bb-4f49-8147-8d3d577563ef.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-W_Web_Side.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-W_Web_Gallery_Persp.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-B_Web_Side_0ea3f0e2-f707-4527-97e2-3bdf88e41393.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-B_Web_Gallery_Persp_b63b086a-6bf0-4612-9b4a-8ade98b6615b.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-4K8K-B_Web_Bottom_d55fa560-5887-4793-9db0-1ced82f456d6.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 59, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-POWV2-4K8K-W, colorName: White, colorFamily: white }
+    - { sku: GLO-MS-POWV2-4K8K-B, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-o-eternal
   brand: glorious
@@ -214,18 +298,32 @@
 - slug: glorious-model-o-2-pro-1k
   brand: glorious
   name: Model O 2 Pro 1K
-  msrpEur: 120
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-1K-B_Web_Gallery_Front_f50a28dd-06e5-44ff-a930-fe377fcbf939.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-1K-B_Web_Side_be0e8a9f-1e3a-4773-9f9d-00ed55e09fe8.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-1K-B_Web_Gallery_Persp_12782593-575c-419d-9102-c1c9617c5faf.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-POWV2-1K-B_Web_Bottom_f56e5d83-b67c-41a4-a80b-0f5d38e19325.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128, widthMm: 66, heightMm: 38, weightG: 57, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-POWV2-1K-B, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-d-2-pro-1k
   brand: glorious
   name: Model D 2 Pro 1K
-  msrpEur: 120
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-1K-B_Web_Gallery_Front_4e8f166a-1f48-4658-9a78-08e3cec0b472.webp, kind: cutout_top, width: 1624, height: 1624, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-1K-B_Web_Side_00e0d479-6f44-4728-93e5-ca50f4194798.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-1K-B_Web_Gallery_Persp_5ae0dda9-8abd-48d0-8d94-72bc44b50086.webp, kind: cutout_top, width: 1624, height: 1624 }
+    - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-PDWV2-1K-B_Web_Bottom_a029b93c-78c5-4279-9fb6-fe5eb103fb0b.webp, kind: cutout_top, width: 1624, height: 1624 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 67, heightMm: 42, weightG: 60, sideButtons: 2, sensor: Glorious BAMF 2.0 26K, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: GLO-MS-PDWV2-1K-B, colorName: Black, colorFamily: black }
 
 - slug: glorious-model-i
   brand: glorious

@@ -9,7 +9,20 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/0_45b12456-6803-4764-8888-21fc1ae811fc.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/0_287e704f-2ea6-4c04-94a0-4f1dc9a23ace.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/0.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/1_f6c9db3d-aba7-48f4-9792-70926aca1b1c.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/2_d4ffb6f6-f3b1-4072-a963-bf0d4bab7b21.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/3_aa54271f-f131-450c-9d6e-997d6c950624.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/4_d5a18bec-02c8-4168-81f9-0668d5d5e488.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/0_91d5a242-0ae8-4d5c-b4e3-1e6eadc84e98.png, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 63, heightMm: 38, weightG: 36, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: SC.00003, colorName: Black, colorFamily: black }
+    - { sku: SC.00002, colorName: White, colorFamily: white }
+    - { sku: SC.00001, colorName: Yellow, colorFamily: color }
 
 - slug: scyrox-v6
   brand: scyrox
@@ -17,4 +30,17 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_3ad09d86-8dae-4ec6-9174-8fbfc3e6997f.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_a08707da-c074-4a83-bb1e-36cf61ff5af2.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_blue2.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_blue3.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_blue4.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_blue1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0580/1489/2094/files/V6_blue.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 61, heightMm: 40, weightG: 40, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: SC.00006, colorName: Blue, colorFamily: color }
+    - { sku: SC.00004, colorName: Black, colorFamily: black }
+    - { sku: SC.00005, colorName: White, colorFamily: white }

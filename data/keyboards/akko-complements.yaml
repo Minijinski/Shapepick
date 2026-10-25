@@ -7,9 +7,14 @@
 - slug: akko-5075b-plus
   brand: akko
   name: 5075B Plus
-  msrpEur: 100
+  msrpEur: 105
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/07/BlackSilver-5075B-Plus.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/07/BlackSilver-5075B-Plus-2.jpg, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/07/BlackSilver-5075B-Plus-3.jpg, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/07/BlackSilver-5075B-Plus-4.jpg, kind: cutout_top }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1500 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -18,9 +23,13 @@
 - slug: akko-mod007b-he
   brand: akko
   name: MOD007B HE
-  msrpEur: 270
+  msrpEur: 200
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/10/MOD007B-HE-GX-YF2.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/10/MOD007B-HE-GX-3.jpg, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2023/10/MOD007B-HE-GX-4.jpg, kind: cutout_top }
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 2000 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Black (Akko Cream Yellow Magnetic Switch), colorFamily: black, layout: ansi_us }

@@ -16,9 +16,9 @@ import {
 
 // Brand stores on Shopify (Epomaker, Womier, Yunzii, Ajazz, HyperX, Turtle Beach…): one source per store, all mapped by
 // the generic mapper. Their descriptions carry "Label: value" spec lists; their prices are in
-// dollars, so euros are estimated like mechanicalkeyboards.com's. Bundles, accessories, numpads and
-// co-branded collaborations are left out, except a partner brand the store sells under its name
-// ("EPOMAKER x AULA F75" is an Aula F75).
+// dollars, so euros are estimated like mechanicalkeyboards.com's, except at the stores that answer
+// in euros (`currency`). Bundles, accessories, numpads and co-branded collaborations are left out,
+// except a partner brand the store sells under its name ("EPOMAKER x AULA F75" is an Aula F75).
 
 type Specs = KeyboardInput['specs']
 
@@ -31,6 +31,8 @@ type Store = {
   sizeHint?: (title: string) => string | undefined
   /** Titles carry no colourway: the model name runs up to the first descriptive word. */
   fullNames?: boolean
+  /** Prices already in euros, VAT included: no estimate from dollars. */
+  currency?: 'EUR'
 }
 
 const STORES: Store[] = [
@@ -59,7 +61,16 @@ const STORES: Store[] = [
     partners: ['Roccat'],
   },
   { id: 'ajazz', origin: 'https://ajazzstore.com', brand: 'Ajazz' },
-  { id: 'royalkludge', origin: 'https://www.rkgamingstore.com', brand: 'Royal Kludge' },
+  // Shopify Markets picks the currency from the visitor's country: from France, the pages and
+  // /products.json alike are in euros, "Taxes included" (R65 Wireless: 72.99, "priceCurrency":
+  // "EUR"; the shop's base currency is USD). An import run from outside the euro area would read
+  // dollars.
+  {
+    id: 'royalkludge',
+    origin: 'https://www.rkgamingstore.com',
+    brand: 'Royal Kludge',
+    currency: 'EUR',
+  },
 ]
 
 const NOT_A_KEYBOARD =
@@ -134,12 +145,15 @@ async function loadModels(store: Store): Promise<GenericModel[]> {
 }
 
 function storeSource(store: Store): Source {
+  const euros = store.currency === 'EUR'
   return {
     host: new URL(store.origin).host,
-    label: `${new URL(store.origin).host} (prix € estimés depuis les prix US)`,
+    label: euros
+      ? `${new URL(store.origin).host} (prix € de la boutique)`
+      : `${new URL(store.origin).host} (prix € estimés depuis les prix US)`,
     intro: (brand) => [
       `# ${brand.name} : importés de ${new URL(store.origin).host} par \`pnpm ingest ${store.id}\`.`,
-      `# Prix € estimés (prix US × ${EUR_PER_USD}).`,
+      euros ? '# Prix € de la boutique.' : `# Prix € estimés (prix US × ${EUR_PER_USD}).`,
     ],
     candidates: async () =>
       (await loadModels(store)).map((m) => ({
@@ -148,14 +162,17 @@ function storeSource(store: Store): Source {
         map: (resolver) =>
           mapListings(m, resolver, {
             colorway: (l) => nameOf(l.product.title, m.brandName).colorway,
-            toEur: (usd) => usd * EUR_PER_USD,
+            toEur: (price) => (euros ? price : price * EUR_PER_USD),
+            currency: store.currency,
           }),
       })),
     priceIndex: async () => {
       const index = new Map<string, { eur?: number; usd?: number }>()
       for (const p of await listProducts(store.origin)) {
         for (const v of p.variants) {
-          if (v.sku) index.set(v.sku, { usd: listPrice(v), eur: listPrice(v) * EUR_PER_USD })
+          if (!v.sku) continue
+          const price = listPrice(v)
+          index.set(v.sku, euros ? { eur: price } : { usd: price, eur: price * EUR_PER_USD })
         }
       }
       return index

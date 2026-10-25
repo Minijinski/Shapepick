@@ -9,15 +9,36 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/d0d8bed28284860354c18286fe331916.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 63.7, heightMm: 37.8, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
 
 - slug: vgn-dragonfly-f1-pro
   brand: vgn
   name: Dragonfly F1 Pro
-  msrpEur: 60
+  msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/d0d8bed28284860354c18286fe331916.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 63.7, heightMm: 37.8, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "30805", colorName: White, colorFamily: white }
+    - { sku: "30812", colorName: Black, colorFamily: black }
 
 - slug: vgn-dragonfly-f1-pro-max
   brand: vgn
@@ -25,36 +46,100 @@
   msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/d0d8bed28284860354c18286fe331916.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 63.7, heightMm: 37.8, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "30829", colorName: White, colorFamily: white }
+    - { sku: "30836", colorName: Black, colorFamily: black }
 
 - slug: vgn-dragonfly-f1-moba
   brand: vgn
   name: Dragonfly F1 MOBA
-  msrpEur: 65
+  msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/d0d8bed28284860354c18286fe331916.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-White45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Moba-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1Pro-Black45.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 63.7, heightMm: 37.8, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "30720", colorName: White, colorFamily: white }
+    - { sku: "30713", colorName: Black, colorFamily: black }
 
 - slug: vgn-dragonfly-f1-v5-ultra
   brand: vgn
   name: Dragonfly F1 V5 Ultra
-  msrpEur: 70
+  msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1V5_f27a7e4d-cd9a-4e49-9906-137be392381b.webp, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1V5_7469774a-15e6-4420-9109-faa374922326.webp, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1V5_5a9cd8e2-4e02-459c-9374-83aa7a0b1825.webp, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F1V5.webp, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/1-800.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/2-800.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/4-800.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/3-800.png, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 63.7, heightMm: 37.8, weightG: 53, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 42000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "35619", colorName: White, colorFamily: white }
+    - { sku: "35602", colorName: Black Gold, colorFamily: black }
+    - { sku: "35626", colorName: Rose Red, colorFamily: color }
 
 - slug: vgn-dragonfly-f2-pro-max
   brand: vgn
   name: Dragonfly F2 Pro Max
-  msrpEur: 60
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800_3.png, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800_4.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800_1.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800_2.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800-_4.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800-1.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/20251016144951_1659_217.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/F2_800-800-3.png, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.4, widthMm: 65.1, heightMm: 38.3, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 36000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "32564", colorName: Green, colorFamily: color }
+    - { sku: "32540", colorName: Pink, colorFamily: color }
+    - { sku: "32533", colorName: Black, colorFamily: black }
+    - { sku: "32557", colorName: White, colorFamily: white }
 
 - slug: vgn-y2-pro
   brand: vgn
   name: Y2 Pro
-  msrpEur: 60
+  msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/1_28b63cf4-e1b1-48e6-822c-5b7711cd6ee0.png, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/2_afd6dcbc-5b9f-47c7-bba2-07b42cb41d02.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/3_52ec3ef9-3b66-4e5f-ba0c-2c1e7f053b81.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/6_0630a31e-b634-46cc-baba-0193764f47cf.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/5_77df56e9-5193-4f19-b943-ad31ca3fa0c4.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/4_ec23830e-2a19-4b44-9f5f-82948044523a.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/3_41283af2-a22f-40be-ae2c-1c382523b427.png, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0775/4927/3398/files/2_bc21944f-fff5-47ef-9438-3f1247226933.png, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 63.3, heightMm: 39.4, weightG: 42, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 36000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "32342", colorName: White, colorFamily: white }
+    - { sku: "32335", colorName: Black, colorFamily: black }
+    - { sku: "32359", colorName: Blue, colorFamily: color }

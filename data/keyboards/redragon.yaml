@@ -180,6 +180,15 @@
   msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK719PROWirelessGasketGamingKeyboardBlackRed_4.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonARTEMISK719PROAnimeKeyboard_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK719PROWirelessGasketGamingKeyboardBlackRed_7.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK719PROWirelessGasketGamingKeyboardBlackRed_2.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragon_K719_waifu_keyboard_4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragon_K719_waifu_keyboard_1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragon_K719_waifu_keyboard_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/redragon_K719_waifu_keyboard_3.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1150 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

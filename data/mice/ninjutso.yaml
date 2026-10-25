@@ -6,10 +6,25 @@
 - slug: ninjutso-sora-v2
   brand: ninjutso
   name: Sora V2
-  msrpEur: 120
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/292e9c5e16b241202e71de7b5ce53973.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/2_e4678c92-8d25-4663-a47b-7ce89b6e64ff.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/1_fc47a72a-d895-4be4-a133-264f52dfeb98.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/sora-v2-pink.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Top_ad8bc9cc-2e82-4226-be54-754075623b25.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/46de65a59b6d076114996be5a84d3157.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/3_9e9e0625-8f0b-4bed-b21c-84444bcf0815.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.2, widthMm: 62, heightMm: 37.7, weightG: 39, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: Sora V2 Black, colorName: Black, colorFamily: black }
+    - { sku: Sora V2 White, colorName: White, colorFamily: white }
+    - { sku: Sora V2 Pink, colorName: Pink, colorFamily: color }
+    - { colorName: PAW3395 1KHz Black, colorFamily: black, msrpEur: 95 }
+    - { colorName: PAW3395 1KHz White, colorFamily: white, msrpEur: 95 }
+    - { colorName: PAW3395 1KHz Pink, colorFamily: color, msrpEur: 95 }
 
 - slug: ninjutso-sora-v3
   brand: ninjutso
@@ -17,15 +32,42 @@
   msrpEur: 145
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_22bc3cff-2401-43cb-b9fc-b1a7c2516fb7.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_9a3abbdc-011a-4e95-95a4-443a2a811927.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_871e5b99-58fd-4513-8414-857618162d1d.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_a700f6e3-4f39-44a3-9a37-2c6169149199.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_fad0f2f2-9cfa-4158-9b28-e3167cfdc305.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-V3_02bc990c-1e51-4ee4-af25-7af72ce483f2.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.2, widthMm: 62, heightMm: 37.7, weightG: 40, sideButtons: 2, sensor: Ninjutso AimNinja 2 Pro 45K, dpiMax: 45000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: Sora V3 Black, colorName: Black, colorFamily: black }
+    - { sku: Sora V3 White, colorName: White, colorFamily: white }
+    - { sku: Sora V3 Pink, colorName: Pink, colorFamily: color }
 
 - slug: ninjutso-sora-4k
   brand: ninjutso
   name: Sora 4K
-  msrpEur: 145
+  msrpEur: 170
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora_70acf9f1-b9a2-49e5-a447-3cb39a53c3a4.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-B_f4fb6c87-90b3-47ef-8dc2-d7924f586124.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-O_b05b73b9-dc1c-464d-81cd-aeb8b0efd9c1.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-P_92130393-186b-49bf-842d-b3837391958e.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-R.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora_02dc2f25-6169-4590-93fb-4ad0fb1e888b.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Sora-B.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.5, heightMm: 37.3, weightG: 47, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: Vaxee x Ninjutso Sora 4K Blue, colorName: Blue, colorFamily: color }
+    - { sku: Vaxee x Ninjutso Sora 4K Pink, colorName: Pink, colorFamily: color }
+    - { sku: Vaxee x Ninjutso Sora 4K Red, colorName: Red, colorFamily: color }
+    - { sku: Vaxee x Ninjutso Sora 4K Orange, colorName: Orange, colorFamily: color }
+    - { sku: Vaxee x Ninjutso Sora 4K Black, colorName: Black, colorFamily: black }
 
 - slug: ninjutso-ten
   brand: ninjutso
@@ -33,4 +75,15 @@
   msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten-Ultra_d03bec41-b28d-4f51-8c4e-8184cecfc38c.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten-Ultra.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten-Ultra_b0b43c5d-a24a-41d9-a15f-a2fa186ac039.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten-Ultra_e83815f7-e93e-466c-afca-07aa7f80e05a.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten-Ultra_3fe32a84-28d0-4f64-aeb8-bb805c0a62de.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0277/2507/0400/files/Ten_220d22a8-3a09-4ca0-9781-1dbc2fd02ac2.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 63.9, heightMm: 39, weightG: 53, sideButtons: 2, sensor: Ninjutso AimNinja, dpiMax: 30000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: Ten Black, colorName: Black, colorFamily: black }
+    - { sku: Ten White, colorName: White, colorFamily: white }

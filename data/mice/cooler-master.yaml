@@ -9,6 +9,15 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/68ef9f4515/mm710-black-glossy-02.png, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/821ab7d292/mm710-black-glossy-01.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/c2c108d138/mm710w-glossy-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/82a40b9f29/mm710w-glossy-2.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/6430a839c8/mm710-black-glossy-03.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/fd785990c1/mm710-black-glossy-04.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/e84cb45645/mm710-black-glossy-05.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/81f600414e/mm710-black-glossy-06.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 53, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
 
 - slug: cooler-master-mm730
@@ -17,6 +26,15 @@
   msrpEur: 35
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/5ea20ab0f6/mm730-black-gallery-2.jpg, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/f16b594783/mm730-black-gallery-1.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/de91f0513c/mm730-white-gallery-1.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/25f539fdf6/mm730-white-gallery-2.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/614c4642d7/mm730-black-gallery-3.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/a826981a7e/mm730-white-gallery-3.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/7ebd019ccb/mm730-black-gallery-4.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/7ba11d9314/mm730-black-gallery-5.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.3, widthMm: 69, heightMm: 39.1, weightG: 48, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: optical }
 
 - slug: cooler-master-mm720
@@ -25,6 +43,15 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/7b12df7428/mm720-black-matte-2.png, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/cc026b80bf/mm720-black-matte-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/b65a5932c4/mm720-black-matte-3.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/f61e7e3569/mm720-black-matte-4.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/81c36138ec/mm720-black-matte-5.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/5a59203eb1/mm720-black-matte-6.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/94081ea19a/mm720-white-matte-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/5a9c707f5f/mm720-white-matte-2.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 105.4, widthMm: 76.5, heightMm: 37.4, weightG: 49, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: optical }
 
 - slug: cooler-master-mm712
@@ -33,6 +60,15 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/d820192e86/mm712-white-gallery-2.png, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/ca64b4b423/mm712-white-gallery-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/565df74d5e/mm712-black-gallery-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/204e9bb5cf/mm712-black-gallery-2.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/583695014e/mm712-black-gallery-3.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/555x580/c7a76ada58/mm712-sec1-p1-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/555x580/f0a0dd27ad/mm712-sec1-p2-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/555x580/55e22edf35/mm712-sec1-p3-1.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 58, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: cooler-master-mm711
@@ -41,6 +77,15 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/51ec79848e/mm711-black-matte-gallery-2.png, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/74fa2c73e0/mm711-black-matte-gallery-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/d84061d692/mm711-black-matte-gallery-3.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/ac7d76de86/mm711-black-matte-gallery-4.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/ef75372a99/mm711-black-matte-gallery-6.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/497f90c068/mm711-black-matte-gallery-5.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/c12aaf0d4e/mm711-black-glossy-gallery-1.png, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/32f94d5ecb/mm711-black-glossy-gallery-2.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 62.6, heightMm: 38.3, weightG: 60, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
 
 - slug: cooler-master-mm731
@@ -49,4 +94,13 @@
   msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://a.storyblok.com/f/281110/04178b8a1a/mm731-black-gallery-2.jpg, kind: cutout_top, primary: true }
+    - { url: https://a.storyblok.com/f/281110/1a9e26438c/mm731-black-gallery-1.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/4736e75a94/mm731-white-gallery-1.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/59ab3e62ed/mm731-white-gallery-2.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/534727ec62/mm731-black-gallery-3.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/27b636bce8/mm731-black-gallery-4.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/bb1bd138ec/mm731-black-gallery-5.jpg, kind: cutout_top }
+    - { url: https://a.storyblok.com/f/281110/4e13b364df/mm731-black-gallery-6.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122.3, widthMm: 69, heightMm: 39.1, weightG: 59, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }

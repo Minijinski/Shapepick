@@ -14,18 +14,51 @@
 - slug: pwnage-stormbreaker-max-cf
   brand: pwnage
   name: StormBreaker Max CF
-  msrpEur: 165
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_black_07_001.png, kind: cutout_top, width: 2001, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_nacho_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_platinum_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_carnage_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_ninja_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_frostfire_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_yellow_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/sb-ergo-max_cf-composite_black_05_001.png, kind: cutout_top, width: 2001, height: 2000 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 128, widthMm: 68, heightMm: 44, weightG: 43, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 36000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PSB-MCF-PT, colorName: Platinum, colorFamily: color }
+    - { sku: PSB-MCF-CR, colorName: Carnage, colorFamily: color }
+    - { sku: PSB-MCF-PN, colorName: Ninja, colorFamily: color }
+    - { sku: PSB-MCF-FF, colorName: Frostfire, colorFamily: white }
+    - { sku: PSB-MCF-SB, colorName: Solar Blitz, colorFamily: color }
+    - { sku: PSB-MCF-B, colorName: Black, colorFamily: black }
+    - { sku: PSB-MCF-N, colorName: Nacho, colorFamily: color }
 
 - slug: pwnage-trinity-cf
   brand: pwnage
   name: Trinity CF
-  msrpEur: 165
+  msrpEur: 175
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_black_07_001.png, kind: cutout_top, width: 2001, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_platinum_07_001.png, kind: cutout_top, width: 2001, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_nacho_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_purple_07_001.png, kind: cutout_top, width: 2001, height: 2001 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_solid_black_07_001.png, kind: cutout_top, width: 2001, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_solid_platinum_07_001.png, kind: cutout_top, width: 2001, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_solid_purple_07_001.png, kind: cutout_top, width: 2001, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/trinity_solid_nacho_07_001_9dd41c00-2071-425d-b54c-def3e56f0ce1.png, kind: cutout_top, width: 2001, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 60, heightMm: 39, weightG: 37, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PWT-CF-B, colorName: Black, colorFamily: black }
+    - { sku: PWT-CF-P, colorName: Platinum, colorFamily: color }
+    - { sku: PWT-CF-W, colorName: White, colorFamily: white }
+    - { sku: PWT-CF-N, colorName: Nacho, colorFamily: color }
+    - { sku: PWT-CF-SS, colorName: Sakura Samurai, colorFamily: color }
+    - { sku: PWT-CF-ME, colorName: Midnight Eclipse, colorFamily: black }
 
 - slug: pwnage-symm-3
   brand: pwnage
@@ -33,7 +66,21 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/uc_pro_symm3_black_01_003_15df5c13-0589-4d0c-b315-b8b67a0feeac.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/uc_pro_symm3_white_01_002.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/uc_pro_symm3_purple_01_001.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/uc_pro_symm3_transparent-pink_01_001.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/1_1888f11f-1966-4565-95ce-6f94770cc076.png, kind: cutout_top, width: 1122, height: 1402 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/4_edddbd0c-5e1c-4244-b90e-c07713d38258.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/3.png, kind: cutout_top, width: 1536, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/files/2.png, kind: cutout_top, width: 1536, height: 1024 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 62, heightMm: 40.8, weightG: 50, sideButtons: 2, sensor: Pwnage XERO, dpiMax: 36000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: PUC-PS3-B, colorName: Black, colorFamily: black }
+    - { sku: PUC-PS3-W, colorName: White, colorFamily: white }
+    - { sku: PUC-PS3-P, colorName: Nyomi Purple, colorFamily: color }
+    - { colorName: Pink Transparent, colorFamily: transparent }
 
 - slug: pwnage-ergo-wireless
   brand: pwnage
@@ -41,4 +88,13 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide4black.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide4white.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide1black_c7ec3feb-8315-4db2-84cb-5dc9b55f63a5.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide1white_51a898f5-30f6-41d9-856a-fe7bf5acd75d.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide2black.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide2white.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide3black.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/1573/2927/products/slide3white.png, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 66, heightMm: 42, weightG: 69, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }

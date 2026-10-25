@@ -1,16 +1,15 @@
 # Royal Kludge : importés de www.rkgamingstore.com par `pnpm ingest royalkludge`.
-# Prix € estimés (prix US × 1.2).
+# Prix € de la boutique.
 # Le script ajoute seulement les modèles absents : les corrections faites ici restent.
 # Prix indicatifs (prix habituel hors promo, arrondi à 5 €), mis à jour par pnpm ingest prices.
 # Une fois une note « à vérifier » traitée, supprimer le commentaire.
 
-# Lot du 2026-10-24 : 9 modèles, www.rkgamingstore.com (prix € estimés depuis les prix US)
+# Lot du 2026-10-24 : 9 modèles, www.rkgamingstore.com (prix € de la boutique)
 - slug: royal-kludge-s98
   brand: royal-kludge
   name: S98
   releaseYear: 2023
-  msrpEur: 130
-  msrpUsd: 110
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -26,15 +25,15 @@
     - https://www.rkgamingstore.com/products/s98-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
   variants:
-    - { sku: RK-S98-R36PK, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 145 }
-    - { sku: RK-S98-R37WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: tactile-beige, msrpEur: 145 }
+    - { sku: RK-S98-R36PK, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RK-S98-R37WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: tactile-beige }
     - { sku: RK-S98-R35WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: linear-violet }
-    - { sku: RK-S98-R36BKM, colorName: Phantom Black, colorFamily: black, layout: ansi_us, switch: cream, msrpEur: 145 }
+    - { sku: RK-S98-R36BKM, colorName: Phantom Black, colorFamily: black, layout: ansi_us, switch: cream }
     - { sku: RK-S98-R35BKM, colorName: Phantom Black, colorFamily: black, layout: ansi_us, switch: linear-violet }
     - { sku: RK-S98-R36OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: cream }
     - { sku: RK-S98-R35OWM, colorName: Sky Blue, colorFamily: color, layout: ansi_us, switch: linear-violet }
     - { sku: RK-S98-R36GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: cream }
-    - { sku: RK-S98-R35GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: linear-violet, msrpEur: 145 }
+    - { sku: RK-S98-R35GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: linear-violet }
     - { sku: RK-S98-R37BLM, colorName: Turquoise Green, colorFamily: color, layout: ansi_us, switch: tactile-beige }
     - { sku: RK-S98-R35BLM, colorName: Turquoise Green, colorFamily: color, layout: ansi_us, switch: linear-violet }
 
@@ -42,8 +41,7 @@
   brand: royal-kludge
   name: RK920
   releaseYear: 2026
-  msrpEur: 85
-  msrpUsd: 70
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -64,8 +62,7 @@
   brand: royal-kludge
   name: A72
   releaseYear: 2025
-  msrpEur: 125
-  msrpUsd: 105
+  msrpEur: 105
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -83,14 +80,13 @@
     - { sku: RK-A72-R36CLD, colorName: Cloudy Black, colorFamily: black, layout: ansi_us, switch: linear-violet }
     - { sku: RK-A72-R34MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: cream }
     - { sku: RK-A72-R35MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: tactile-beige }
-    - { sku: RK-A72-R36MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: linear-violet, msrpEur: 145 }
+    - { sku: RK-A72-R36MTC, colorName: Matcha Green, colorFamily: color, layout: ansi_us, switch: linear-violet, msrpEur: 120 }
 
 - slug: royal-kludge-l98
   brand: royal-kludge
   name: L98
   releaseYear: 2025
-  msrpEur: 120
-  msrpUsd: 100
+  msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -115,8 +111,7 @@
   brand: royal-kludge
   name: M87 TKL
   releaseYear: 2024
-  msrpEur: 110
-  msrpUsd: 90
+  msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -134,8 +129,7 @@
   brand: royal-kludge
   name: R87 PRO TKL
   releaseYear: 2024
-  msrpEur: 80
-  msrpUsd: 65
+  msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -150,8 +144,7 @@
   brand: royal-kludge
   name: R75
   releaseYear: 2024
-  msrpEur: 90
-  msrpUsd: 75
+  msrpEur: 75
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -168,15 +161,14 @@
   variants:
     - { sku: RK-R75-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us }
     - { sku: RK-R75-R34GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us }
-    - { sku: RK-R75-R14BKM, colorName: Black, colorFamily: black, layout: ansi_us, switch: cream, msrpEur: 80 }
-    - { sku: RK-R75-R14CYM, colorName: Green, colorFamily: color, layout: ansi_us, switch: cream, msrpEur: 80 }
+    - { sku: RK-R75-R14BKM, colorName: Black, colorFamily: black, layout: ansi_us, switch: cream, msrpEur: 65 }
+    - { sku: RK-R75-R14CYM, colorName: Green, colorFamily: color, layout: ansi_us, switch: cream, msrpEur: 65 }
 
 - slug: royal-kludge-r65
   brand: royal-kludge
   name: R65
   releaseYear: 2024
-  msrpEur: 85
-  msrpUsd: 70
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
   images:
@@ -203,8 +195,7 @@
   brand: royal-kludge
   name: RK96
   releaseYear: 2022
-  msrpEur: 115
-  msrpUsd: 95
+  msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
   images:

@@ -48,6 +48,12 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/files/productColor_V2_4K.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_1-258078.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_3-824341.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_4-620742.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0581/9675/4466/products/AtlantisOGV24K_2-951341.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 38, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
 
 - slug: lamzu-atlantis-og-v2-pro

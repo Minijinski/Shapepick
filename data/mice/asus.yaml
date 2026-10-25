@@ -9,7 +9,7 @@
 # Lot du 2026-10-23 : 11 modèles, rog.asus.com/fr (prix € de l’eStore ASUS)
 - slug: asus-rog-harpe-ii-ace
   brand: asus
-  name: Harpe II Ace
+  name: ROG Harpe II Ace
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
@@ -30,7 +30,7 @@
 # à vérifier : alimentation non dite
 - slug: asus-rog-harpe-ace-extreme
   brand: asus
-  name: Harpe Ace Extreme
+  name: ROG Harpe Ace Extreme
   msrpEur: 250
   popularity: 0.5
   editorialScore: 0.5
@@ -47,7 +47,7 @@
 # à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
 - slug: asus-rog-strix-impact-iii-wireless
   brand: asus
-  name: Strix Impact III Wireless
+  name: ROG Strix Impact III Wireless
   msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
@@ -66,7 +66,7 @@
 
 - slug: asus-rog-keris-ii-ace
   brand: asus
-  name: Keris II Ace
+  name: ROG Keris II Ace
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
@@ -85,7 +85,7 @@
 
 - slug: asus-rog-strix-impact-iii
   brand: asus
-  name: Strix Impact III
+  name: ROG Strix Impact III
   msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
@@ -102,7 +102,7 @@
 # à vérifier : dite ambidextre, boutons de côté à gauche seulement supposés : droitier
 - slug: asus-rog-harpe-ace-aim-lab-edition
   brand: asus
-  name: Harpe Ace Aim Lab Edition
+  name: ROG Harpe Ace Aim Lab Edition
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
@@ -122,7 +122,7 @@
 # à vérifier : alimentation non dite
 - slug: asus-rog-keris-wireless-aimpoint
   brand: asus
-  name: Keris Wireless AimPoint
+  name: ROG Keris Wireless AimPoint
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
@@ -142,7 +142,7 @@
 # à vérifier : alimentation non dite
 - slug: asus-rog-gladius-iii-wireless-aimpoint
   brand: asus
-  name: Gladius III Wireless AimPoint
+  name: ROG Gladius III Wireless AimPoint
   msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
@@ -161,7 +161,7 @@
 
 - slug: asus-rog-spatha-x
   brand: asus
-  name: Spatha X
+  name: ROG Spatha X
   msrpEur: 160
   popularity: 0.5
   editorialScore: 0.5
@@ -177,7 +177,7 @@
 
 - slug: asus-rog-gladius-iii
   brand: asus
-  name: Gladius III
+  name: ROG Gladius III
   msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
@@ -193,7 +193,7 @@
 
 - slug: asus-rog-strix-carry
   brand: asus
-  name: Strix Carry
+  name: ROG Strix Carry
   msrpEur: 75
   popularity: 0.5
   editorialScore: 0.5
