@@ -168,7 +168,7 @@ function PodiumCard({
             className={css({
               fontSize: { base: 'md', md: 'lg' },
               fontWeight: '600',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               lineHeight: '1.2',
             })}
           >

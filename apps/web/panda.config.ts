@@ -263,7 +263,7 @@ export default defineConfig({
         fonts: {
           sans: {
             value:
-              "'Inter Tight Variable', 'Inter Tight', ui-sans-serif, system-ui, sans-serif",
+              "'Hubot Sans Variable', 'Hubot Sans', ui-sans-serif, system-ui, sans-serif",
           },
           mono: {
             value:

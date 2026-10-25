@@ -440,7 +440,7 @@ export function ProductDrawer({
                 className={css({
                   fontSize: { base: '2xl', md: '3xl' },
                   fontWeight: '650',
-                  letterSpacing: '-0.04em',
+                  letterSpacing: '-0.02em',
                   lineHeight: '1.05',
                 })}
               >

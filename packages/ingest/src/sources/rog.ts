@@ -205,7 +205,14 @@ async function models(): Promise<OfficialModel[]> {
       if (!(e instanceof Skip)) throw e
       continue
     }
-    out.push({ brand: BRAND, name, slug: slugify(`asus rog ${name}`), products: [product] })
+    // Named as ASUS names it, line included ("ROG Azoth"), as the monitors are: a visitor looking
+    // for ROG finds it. The tables above match the name without it.
+    out.push({
+      brand: BRAND,
+      name: `ROG ${name}`,
+      slug: slugify(`asus rog ${name}`),
+      products: [product],
+    })
   }
   return out
 }

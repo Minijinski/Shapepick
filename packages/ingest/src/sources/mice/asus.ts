@@ -122,7 +122,8 @@ export async function readRog(p: Listed): Promise<OfficialMouse> {
     .map((src) => src.replace(/\/w\d+$/, ''))
     .slice(0, 8)
     .map((src) => ({ src }))
-  const name = nameOf(p)
+  // Named as ASUS names it, line included ("ROG Harpe II Ace"), as the monitors are.
+  const name = `ROG ${nameOf(p)}`
   return {
     url,
     name,
@@ -140,7 +141,7 @@ async function models(): Promise<MouseModel[]> {
     const url = p.ProductURL ?? ''
     if (p.isRogFlag !== 1 || !/\/mice\//.test(url) || EDITION.test(nameOf(p))) continue
     const mouse = await readRog(p)
-    out.push({ brand: BRAND, slug: slugify(`asus rog ${mouse.name}`), read: async () => mouse })
+    out.push({ brand: BRAND, slug: slugify(`asus ${mouse.name}`), read: async () => mouse })
   }
   return out.slice(0, TOP)
 }

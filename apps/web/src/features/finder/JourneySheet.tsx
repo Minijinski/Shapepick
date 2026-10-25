@@ -146,7 +146,7 @@ export function JourneySheet({
       onClose={onClose}
       title={
         <span className={css({ display: 'flex', alignItems: 'baseline', gap: '2.5' })}>
-          <span className={css({ fontSize: 'lg', fontWeight: '600', letterSpacing: '-0.02em' })}>
+          <span className={css({ fontSize: 'lg', fontWeight: '600', letterSpacing: '-0.01em' })}>
             {m.journey[locale]}
           </span>
           {!done && (

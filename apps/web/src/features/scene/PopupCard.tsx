@@ -98,7 +98,7 @@ export function PopupCard({
             className={css({
               fontWeight: '600',
               fontSize: 'md',
-              letterSpacing: '-0.02em',
+              letterSpacing: '-0.01em',
               lineHeight: '1.15',
             })}
           >
