@@ -377,6 +377,19 @@ export function useFinder(
   const order = useMemo(() => ranked.map((r) => def.id(r.item)), [def, ranked]);
   const scores = useMemo(() => ranked.map((r) => r.score), [ranked]);
 
+  /** Each brand's models in this category, A to Z: its search finds a brand by them too ("rog"). */
+  const modelsByBrand = useMemo(() => {
+    const models = new Map<string, string[]>();
+    for (const item of items) {
+      const list = models.get(item.brand.slug);
+      if (list) list.push(item.name);
+      else models.set(item.brand.slug, [item.name]);
+    }
+    for (const list of models.values())
+      list.sort((a, b) => a.localeCompare(b, "fr", { numeric: true }));
+    return models;
+  }, [items]);
+
   /** The brands offered, A to Z, with what each keeps given the other answers, and those picked. */
   const brands = useMemo(() => {
     const brandStep = def.steps.find((s) => s.key === BRAND_STEP);
@@ -388,10 +401,11 @@ export function useFinder(
         id: o.id,
         name: o.label[locale],
         count: kept[o.id] ?? 0,
+        models: modelsByBrand.get(o.id) ?? [],
       })),
       selected: picked && picked !== ANY ? new Set(picked) : null,
     };
-  }, [def, items, effective, answers, locale]);
+  }, [def, items, effective, answers, locale, modelsByBrand]);
 
   /** The product pictured in each option's tile (`examplesFor`). */
   const examples = useMemo(

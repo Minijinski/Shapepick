@@ -9,9 +9,21 @@ import { Sheet } from './Sheet'
 // answers leave. Unticking a brand hides it, "Only" (beside the count, under the pointer) keeps one
 // alone, "Show all" undoes it all; each change applies at once, the canvas and the counter follow.
 // A brand under the pointer rings its products on the canvas. On a phone the list opens in a sheet
-// from the bottom of the screen rather than hanging from the chip.
+// from the bottom of the screen rather than hanging from the chip. Its search finds a brand by its
+// name or by one of its models' ("rog" finds ASUS, whose models then show beside it).
 
-type Option = { id: string; name: string; count: number }
+/** `models`: the brand's models in this category, A to Z. */
+type Option = { id: string; name: string; count: number; models: readonly string[] }
+
+/** Lower case, accents dropped: what the search compares. */
+const fold = (s: string) => s.normalize('NFD').replace(/\p{M}/gu, '').toLowerCase()
+
+/** Whether `needle` starts a word of `text`: "rog" in "rog azoth", not in "progress". */
+function startsWord(text: string, needle: string) {
+  for (let at = text.indexOf(needle); at !== -1; at = text.indexOf(needle, at + 1))
+    if (at === 0 || !/[\p{L}\p{N}]/u.test(text.charAt(at - 1))) return true
+  return false
+}
 
 type Props = {
   options: Option[]
@@ -122,6 +134,7 @@ const box = css({
   appearance: 'none',
   display: 'grid',
   placeItems: 'center',
+  flexShrink: '0',
   w: '4',
   h: '4',
   m: '0',
@@ -271,8 +284,13 @@ export function BrandFilter({
     )
   }
 
-  const needle = query.trim().toLowerCase()
-  const listed = needle ? options.filter((o) => o.name.toLowerCase().includes(needle)) : options
+  // A brand by its name, else by its models' names, which then show beside it.
+  const needle = fold(query.trim())
+  const listed = options.flatMap((o) => {
+    if (!needle || fold(o.name).includes(needle)) return [{ ...o, matched: [] as string[] }]
+    const matched = o.models.filter((name) => startsWord(fold(name), needle))
+    return matched.length ? [{ ...o, matched }] : []
+  })
 
   // The list's head: how many brands show, and the way back to all of them.
   const head = (
@@ -369,7 +387,22 @@ export function BrandFilter({
                 disabled={last}
                 onChange={() => toggle(o.id)}
               />
-              <span className={css({ truncate: true })}>{o.name}</span>
+              <span className={css({ truncate: true })}>
+                {o.name}
+                {o.matched.length > 0 && (
+                  <span
+                    title={o.matched.join(', ')}
+                    className={css({
+                      ml: '2',
+                      fontSize: 'xs',
+                      color: 'ink.muted',
+                      '[data-empty] &': { color: 'inherit' },
+                    })}
+                  >
+                    {o.matched.join(', ')}
+                  </span>
+                )}
+              </span>
             </label>
             <button
               type="button"
