@@ -30,7 +30,8 @@ import { ProductLink } from "./ProductLink";
 // photo beside its name, price, match and key specs, then what its match is made of), the next two
 // below it, every other match in a list. When the answers keep fewer than three, the closest of
 // those they rule out fill the next two's free places: dashed, the answers they miss in place of
-// a match. Every product links to its sheet: the best match from its
+// a match. When they keep none, the closest come alone under the empty notice, without a rank.
+// Every product links to its sheet: the best match from its
 // photo or its button, the others from anywhere on their card or row; each also links to Amazon
 // (keyboards). The list can hold the whole catalogue: only the rows in view (and a few around
 // them) are rendered, each the same height, so opening the results costs the same for 5 products
@@ -278,6 +279,197 @@ const ResetIcon = () => (
   </svg>
 );
 
+/**
+ * A product behind the best match, as a card: its rank and match, or, for one the answers rule
+ * out, the answers it misses (and its rank only beside actual results); then its photo, name,
+ * price, shop and specs.
+ */
+function RunnerUp({
+  entry,
+  rank,
+  scored,
+  locale,
+  layouts,
+}: {
+  entry: Ranked<CatalogItem>;
+  rank?: number;
+  scored: boolean;
+  locale: Locale;
+  layouts?: readonly string[];
+}) {
+  const near = !!entry.misses?.length;
+  return (
+    <article
+      data-result
+      data-near={near || undefined}
+      className={css({
+        position: "relative",
+        display: "grid",
+        gap: "3",
+        p: "4",
+        borderRadius: "card",
+        borderWidth: "1px",
+        borderColor: "line",
+        bg: "surface",
+        transition: "border-color 160ms, background 160ms",
+        _hover: {
+          borderColor: "line.strong",
+          bg: "surface.raised",
+        },
+        // A product the answers rule out, there to fill the places.
+        "&[data-near]": {
+          borderStyle: "dashed",
+          borderColor: "line.strong",
+        },
+      })}
+    >
+      <div
+        className={css({
+          display: "flex",
+          alignItems: "center",
+          justifyContent: "space-between",
+          gap: "3",
+          fontFamily: "mono",
+          fontSize: "xs",
+          color: "ink.faint",
+        })}
+      >
+        {rank != null && <span>{String(rank).padStart(2, "0")}</span>}
+        {near ? (
+          <span
+            className={css({
+              minW: "0",
+              color: "ink.muted",
+              truncate: true,
+            })}
+          >
+            {`${m.ruledOutBy[locale]} · ${entry.misses
+              ?.map((label) => label[locale])
+              .join(", ")}`}
+          </span>
+        ) : (
+          scored && <Match score={entry.score} locale={locale} size="sm" />
+        )}
+      </div>
+      <div
+        className={css({
+          h: "24",
+          display: "grid",
+          placeItems: "center",
+        })}
+      >
+        <ProductPicture
+          item={entry.item}
+          className={css({ maxH: "24", w: "80%", h: "auto" })}
+        />
+      </div>
+      {/* The name keeps the width it needs: on a narrow card the price and the
+          shop go under it rather than squeezing it. */}
+      <div
+        className={css({
+          display: "flex",
+          flexWrap: "wrap",
+          justifyContent: "space-between",
+          alignItems: "center",
+          columnGap: "3",
+          rowGap: "2",
+        })}
+      >
+        <h3
+          className={css({
+            flex: "1 1 12rem",
+            minW: "0",
+            fontWeight: "600",
+            letterSpacing: "-0.02em",
+          })}
+        >
+          <span
+            className={css({
+              color: "ink.muted",
+              fontWeight: "500",
+            })}
+          >
+            {entry.item.brand.name}
+          </span>{" "}
+          {entry.item.name}
+        </h3>
+        <span
+          className={css({
+            display: "flex",
+            alignItems: "center",
+            gap: "2.5",
+            flexShrink: "0",
+          })}
+        >
+          <span
+            className={css({
+              fontFamily: "mono",
+              fontSize: "sm",
+            })}
+          >
+            {formatPrice(entry.item.priceEur, locale)}
+          </span>
+          <AmazonLink
+            item={entry.item}
+            locale={locale}
+            layouts={layouts}
+            placement="runner-up"
+            variant="pill"
+          />
+        </span>
+      </div>
+      <dl
+        className={css({
+          display: "grid",
+          gridTemplateColumns: "auto minmax(0, 1fr)",
+          alignItems: "center",
+          columnGap: "4",
+          rowGap: "2",
+          fontSize: "xs",
+        })}
+      >
+        {specCells(entry.item, locale).map((cell) => (
+          <div key={cell.label} className={css({ display: "contents" })}>
+            <dt
+              className={css({
+                fontFamily: "mono",
+                color: "ink.faint",
+              })}
+            >
+              {cell.label}
+            </dt>
+            <dd className={css({ minW: "0" })}>
+              <SpecValue cell={cell} layout="inline" />
+            </dd>
+          </div>
+        ))}
+      </dl>
+      <ProductLink
+        slug={entry.item.slug}
+        className={opener}
+        aria-label={m.sheetOf(
+          `${entry.item.brand.name} ${entry.item.name}`,
+          locale,
+        )}
+      />
+    </article>
+  );
+}
+
+/** The notice Amazon requires wherever its affiliate links are, as in the sheet. */
+const AmazonNotice = ({ locale }: { locale: Locale }) =>
+  AMAZON_PARTNER_TAG ? (
+    <p
+      className={css({
+        fontSize: "xs",
+        color: "ink.faint",
+        lineHeight: "1.45",
+      })}
+    >
+      {m.amazonNotice[locale]}
+    </p>
+  ) : null;
+
 export function ResultsView({
   ranked,
   near = [],
@@ -468,9 +660,44 @@ export function ResultsView({
       </div>
 
       {!first ? (
-        <p className={css({ p: "8", color: "ink.muted" })}>
-          {m.resultsEmpty[locale]}
-        </p>
+        <div
+          className={css({
+            p: { base: "4", md: "6" },
+            display: "grid",
+            gap: "6",
+          })}
+        >
+          <p className={css({ color: "ink.muted" })}>
+            {m.resultsEmpty[locale]}
+          </p>
+          {near.length > 0 && (
+            <section className={css({ display: "grid", gap: "1" })}>
+              <h4 className={caption}>{m.runnersUp[locale]}</h4>
+              <div
+                className={css({
+                  display: "grid",
+                  gridTemplateColumns: {
+                    base: "1fr",
+                    md: "1fr 1fr",
+                    lg: "repeat(3, minmax(0, 1fr))",
+                  },
+                  gap: "3",
+                })}
+              >
+                {near.map((entry) => (
+                  <RunnerUp
+                    key={entry.item.slug}
+                    entry={entry}
+                    scored={scored}
+                    locale={locale}
+                    layouts={layouts}
+                  />
+                ))}
+              </div>
+            </section>
+          )}
+          {near.length > 0 && <AmazonNotice locale={locale} />}
+        </div>
       ) : (
         <div
           className={css({
@@ -679,169 +906,14 @@ export function ResultsView({
                 })}
               >
                 {runnersUp.map((entry, i) => (
-                  <article
+                  <RunnerUp
                     key={entry.item.slug}
-                    data-result
-                    data-near={entry.misses?.length ? true : undefined}
-                    className={css({
-                      position: "relative",
-                      display: "grid",
-                      gap: "3",
-                      p: "4",
-                      borderRadius: "card",
-                      borderWidth: "1px",
-                      borderColor: "line",
-                      bg: "surface",
-                      transition: "border-color 160ms, background 160ms",
-                      _hover: {
-                        borderColor: "line.strong",
-                        bg: "surface.raised",
-                      },
-                      // A product the answers rule out, there to fill the places.
-                      "&[data-near]": {
-                        borderStyle: "dashed",
-                        borderColor: "line.strong",
-                      },
-                    })}
-                  >
-                    <div
-                      className={css({
-                        display: "flex",
-                        alignItems: "center",
-                        justifyContent: "space-between",
-                        fontFamily: "mono",
-                        fontSize: "xs",
-                        color: "ink.faint",
-                      })}
-                    >
-                      <span>{String(i + 2).padStart(2, "0")}</span>
-                      {entry.misses?.length ? (
-                        <span
-                          className={css({
-                            minW: "0",
-                            color: "ink.muted",
-                            truncate: true,
-                          })}
-                        >
-                          {`${m.ruledOutBy[locale]} · ${entry.misses
-                            .map((label) => label[locale])
-                            .join(", ")}`}
-                        </span>
-                      ) : (
-                        scored && (
-                          <Match
-                            score={entry.score}
-                            locale={locale}
-                            size="sm"
-                          />
-                        )
-                      )}
-                    </div>
-                    <div
-                      className={css({
-                        h: "24",
-                        display: "grid",
-                        placeItems: "center",
-                      })}
-                    >
-                      <ProductPicture
-                        item={entry.item}
-                        className={css({ maxH: "24", w: "80%", h: "auto" })}
-                      />
-                    </div>
-                    {/* The name keeps the width it needs: on a narrow card the price and the
-                        shop go under it rather than squeezing it. */}
-                    <div
-                      className={css({
-                        display: "flex",
-                        flexWrap: "wrap",
-                        justifyContent: "space-between",
-                        alignItems: "center",
-                        columnGap: "3",
-                        rowGap: "2",
-                      })}
-                    >
-                      <h3
-                        className={css({
-                          flex: "1 1 12rem",
-                          minW: "0",
-                          fontWeight: "600",
-                          letterSpacing: "-0.02em",
-                        })}
-                      >
-                        <span
-                          className={css({
-                            color: "ink.muted",
-                            fontWeight: "500",
-                          })}
-                        >
-                          {entry.item.brand.name}
-                        </span>{" "}
-                        {entry.item.name}
-                      </h3>
-                      <span
-                        className={css({
-                          display: "flex",
-                          alignItems: "center",
-                          gap: "2.5",
-                          flexShrink: "0",
-                        })}
-                      >
-                        <span
-                          className={css({
-                            fontFamily: "mono",
-                            fontSize: "sm",
-                          })}
-                        >
-                          {formatPrice(entry.item.priceEur, locale)}
-                        </span>
-                        <AmazonLink
-                          item={entry.item}
-                          locale={locale}
-                          layouts={layouts}
-                          placement="runner-up"
-                          variant="pill"
-                        />
-                      </span>
-                    </div>
-                    <dl
-                      className={css({
-                        display: "grid",
-                        gridTemplateColumns: "auto minmax(0, 1fr)",
-                        alignItems: "center",
-                        columnGap: "4",
-                        rowGap: "2",
-                        fontSize: "xs",
-                      })}
-                    >
-                      {specCells(entry.item, locale).map((cell) => (
-                        <div
-                          key={cell.label}
-                          className={css({ display: "contents" })}
-                        >
-                          <dt
-                            className={css({
-                              fontFamily: "mono",
-                              color: "ink.faint",
-                            })}
-                          >
-                            {cell.label}
-                          </dt>
-                          <dd className={css({ minW: "0" })}>
-                            <SpecValue cell={cell} layout="inline" />
-                          </dd>
-                        </div>
-                      ))}
-                    </dl>
-                    <ProductLink
-                      slug={entry.item.slug}
-                      className={opener}
-                      aria-label={m.sheetOf(
-                        `${entry.item.brand.name} ${entry.item.name}`,
-                        locale,
-                      )}
-                    />
-                  </article>
+                    entry={entry}
+                    rank={i + 2}
+                    scored={scored}
+                    locale={locale}
+                    layouts={layouts}
+                  />
                 ))}
               </div>
             </section>
@@ -1068,18 +1140,7 @@ export function ResultsView({
             </div>
           )}
 
-          {/* The notice Amazon requires wherever its affiliate links are, as in the sheet. */}
-          {AMAZON_PARTNER_TAG && (
-            <p
-              className={css({
-                fontSize: "xs",
-                color: "ink.faint",
-                lineHeight: "1.45",
-              })}
-            >
-              {m.amazonNotice[locale]}
-            </p>
-          )}
+          <AmazonNotice locale={locale} />
         </div>
       )}
     </section>
