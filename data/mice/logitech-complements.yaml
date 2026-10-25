@@ -177,7 +177,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-profile-right-angle-black-gallery-6.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-bottom-angle-gallery-3.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-3qtr-high-back-angle-gallery-4.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130, widthMm: 67, heightMm: 40, weightG: 110, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  # batteryHours : « jusqu'à 140 heures de jeu avec l'éclairage LIGHTSYNC RGB en pleine effect — et jusqu'à 180 heures sans éclairage » (fiche logitechg.com), sans éclairage comme l'ingest
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130, widthMm: 67, heightMm: 40, weightG: 110, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, batteryHours: 180, power: rechargeable }
   variants:
     - { sku: 910-005673, colorName: Noir, colorFamily: black }
 

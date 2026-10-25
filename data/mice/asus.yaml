@@ -21,7 +21,8 @@
     - https://rog.asus.com/fr/mice-mouse-pads/mice/ambidextrous/rog-harpe-ii-ace/
   # sideButtons : « les deux boutons latéraux » (rog.asus.com)
   # buttons : « 5 programmable buttons » (directcomputers.co.uk)
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.1, widthMm: 63.9, heightMm: 39.7, weightG: 48, buttons: 5, sideButtons: 2, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, power: rechargeable, rgb: true }
+  # batteryHours : « Autonomie de la batterie en mode 2,4 GHz (fréquence d'interrogation de 1000 Hz) et Bluetooth : jusqu'à 101 heures avec l'éclairage éteint » (fiche rog.asus.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.1, widthMm: 63.9, heightMm: 39.7, weightG: 48, buttons: 5, sideButtons: 2, sensor: ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, connWired: false, conn24ghz: true, connBt: true, batteryHours: 101, power: rechargeable, rgb: true }
   variants:
     - { sku: rog-harpe-ii-ace, colorName: Black, colorFamily: black }
     - { sku: rog-harpe-ii-ace, colorName: White, colorFamily: white }
@@ -179,7 +180,8 @@
     - https://rog.asus.com/fr/mice-mouse-pads/mice/wireless/rog-spatha-x-model/
   # sideButtons : grappe de 6 sous le pouce, rtings.com/mouse/reviews/asus/rog-spatha-x
   # buttons : fiche rog.asus.com, « Bouton : 12 »
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 137, widthMm: 89, heightMm: 45, weightG: 168, buttons: 12, sideButtons: 6, mmo: true, dpiMax: 19000, pollingHz: 1000, connWired: false, conn24ghz: true, power: rechargeable, wirelessCharging: true, makerGrips: [ palm ] }
+  # batteryHours : « Jusqu'à 67 heures d'autonomie en mode sans fil (RGB désactivé) » (fiche rog.asus.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 137, widthMm: 89, heightMm: 45, weightG: 168, buttons: 12, sideButtons: 6, mmo: true, dpiMax: 19000, pollingHz: 1000, connWired: false, conn24ghz: true, batteryHours: 67, power: rechargeable, wirelessCharging: true, makerGrips: [ palm ] }
   variants:
     - { sku: rog-spatha-x-model, colorName: Black, colorFamily: black }
 

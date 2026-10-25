@@ -9,7 +9,8 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « 5 programmable buttons are all editable » (fiche redragonshop.com, K1NG M916 PRO (4K Hz) / G49)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, buttons: 5, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: redragon-m916-pro
   brand: redragon
@@ -26,7 +27,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonK1INGM916PRO3-ModeWirelessGamingMouse_2_1fbe448e-c786-495f-9d62-e9152ccd5243.png, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_18.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0012/4957/4961/files/RedragonM916PRO3-ModeWirelessGamingMouse_14.jpg, kind: cutout_top, width: 1600, height: 1600 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « 5 programmable buttons are all editable » (fiche redragonshop.com, K1NG M916 PRO (1K Hz))
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.8, widthMm: 64.3, heightMm: 37.9, weightG: 49, buttons: 5, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
   variants:
     - { sku: RED-M916-N3BK, colorName: Black, colorFamily: black }
     - { sku: RED-M916-N3WT, colorName: White, colorFamily: white }

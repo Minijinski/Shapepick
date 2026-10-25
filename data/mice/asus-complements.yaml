@@ -13,7 +13,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/4a95f18f-210f-49c1-b4f0-5c6ccf7981b1/w185, kind: cutout_top, primary: true }
     - { url: https://dlcdnwebimgs.asus.com/gain/cbe0acd6-81c0-4af3-b472-b0ca39a87c1f/w185, kind: cutout_top }
     - { url: https://dlcdnwebimgs.asus.com/gain/146f77d0-cc54-4acf-a08e-1f0237d8a295/w185, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118, widthMm: 72, heightMm: 42, weightG: 109, sideButtons: 1, dpiMax: 4200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Button : 6 programmable buttons » (fiche asus.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118, widthMm: 72, heightMm: 42, weightG: 109, buttons: 6, sideButtons: 1, dpiMax: 4200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: asus-proart-md301
   brand: asus
@@ -25,7 +26,9 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/9faca2e2-47b0-49d7-b411-f0f0dfde8c91/w185, kind: cutout_top, primary: true }
     - { url: https://dlcdnwebimgs.asus.com/gain/7747159a-bdc0-4020-bea2-e82557e94933/w185, kind: cutout_top }
     - { url: https://dlcdnwebimgs.asus.com/gain/76ab8955-1fd1-4b7d-ba1f-c43ab7f34d1a/w185, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 114.8, widthMm: 75.2, heightMm: 46.8, weightG: 99.7, sideButtons: 2, dpiMax: 8000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Button : 6 programmable buttons » (fiche asus.com)
+  # batteryHours : « Battery Life : Up to 180 days » (fiche asus.com), 8 h par jour comme l'ingest
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 114.8, widthMm: 75.2, heightMm: 46.8, weightG: 99.7, buttons: 6, sideButtons: 2, dpiMax: 8000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 1440, power: rechargeable }
 
 # à vérifier : boutons latéraux : 2, plus un joystick sur le flanc
 - slug: asus-rog-chakram-x

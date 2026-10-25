@@ -80,7 +80,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/02-01_d9104c11-03bf-48fd-a4b9-98158dc53dc1.png, kind: cutout_top, width: 1000, height: 1000 }
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01-01_0e6e04fe-df5a-462b-a9ba-217eb592befb.png, kind: cutout_top, width: 1000, height: 1000 }
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/03-001.png, kind: cutout_top, width: 1000, height: 1000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 109, widthMm: 60, heightMm: 35, weightG: 27, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  # buttons : « Buttons : 5 » (fiche g-wolves.com)
+  # batteryHours : « Battery : 250mAh; about 80h at 1K report rate » (fiche g-wolves.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 109, widthMm: 60, heightMm: 35, weightG: 27, buttons: 5, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, batteryHours: 80, power: rechargeable }
   variants:
     - { sku: 027-8k-Black-Red, colorName: Black, colorFamily: black }
     - { sku: 027-8k-White, colorName: White, colorFamily: white }
@@ -106,7 +108,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/8-01.jpg, kind: cutout_top, width: 1000, height: 1000 }
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/7-01_9336e38f-d825-4923-b02a-1adbb60b67a4.png, kind: cutout_top, width: 1000, height: 1000 }
     - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/4-01_8b0272fd-3589-40ed-8b90-68ec4106b39d.png, kind: cutout_top, width: 1000, height: 1000 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 64.1, heightMm: 37.1, weightG: 32.1, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  # buttons : « Buttons : 5 » (fiche g-wolves.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 64.1, heightMm: 37.1, weightG: 32.1, buttons: 5, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
   variants:
     - { sku: 056-Black-All, colorName: Black, colorFamily: black }
     - { sku: 056-White-Green, colorName: White, colorFamily: white }

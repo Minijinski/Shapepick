@@ -116,7 +116,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Side_99b5cfa9-f975-4c1c-aa99-a17c9f88c4a8.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Gallery_Persp_a8d85017-4832-4974-b2ea-2a76b3749706.webp, kind: cutout_top, width: 1624, height: 1624 }
     - { url: https://cdn.shopify.com/s/files/1/0549/2681/files/GLO-MS-IWV2-MB_Web_Bottom_ce3dacdf-0f8e-4d34-bd3e-3f8a8c5719c4.webp, kind: cutout_top, width: 1624, height: 1624 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 72, heightMm: 42, weightG: 75, sideButtons: 4, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « 9 programmable buttons with customizable side controls » (fiche gloriousgaming.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 72, heightMm: 42, weightG: 75, buttons: 9, sideButtons: 4, sensor: Glorious BAMF 2.0, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
   variants:
     - { sku: GLO-MS-IWV2-MW, colorName: White, colorFamily: white }
     - { sku: GLO-MS-IWV2-MB, colorName: Black, colorFamily: black }
