@@ -816,7 +816,7 @@ Ce qui bat les 78 souris : multi-appareils (30), capteur (27), légèreté (10).
 
 ### Trous de données (point 4)
 
-Traités le 25 octobre après-midi sur la branche `claude/audit-donnees-fee473`, pas encore en ligne : voir « Données manquantes (point 4, 25 octobre) ». Les chiffres ci-dessous sont ceux d'avant.
+Traités le 25 octobre après-midi sur la branche `claude/audit-donnees-fee473`, en ligne depuis le seed de 13:09 UTC : voir « Données manquantes (point 4, 25 octobre) ». Les chiffres ci-dessous sont ceux d'avant.
 
 - `power` absent sur 29 souris sans fil (25 nouvelles) : « Batterie rechargeable » les écarte, même à piles (M185, M510, Kensington…), et leur autonomie se lit à 70 h.
 - `hosts` absent sur 326 souris sans fil hors Logitech : 2 par défaut pour 147 (2,4 GHz + Bluetooth), 1 pour 203 (2,4 GHz) et pour 2 (Bluetooth seul, écartées par « Multi-appareils »).
@@ -867,7 +867,7 @@ Vérifié en ligne : favicon, `.ico` et icône iOS servis ; feuille de style en 
 
 ## Données manquantes (point 4, 25 octobre)
 
-Le point 4 de l'audit : ce qui manque dans les fiches, cherché à la source. 5 commits sur la branche `claude/audit-donnees-fee473` (sur `11f2fdb`), ni poussés ni seedés : une valeur ne se voit en ligne qu'après le seed de production. Chaque valeur a sa source en commentaire au-dessus de `specs:` (ou de `variants:` pour un switch), au format de `4470886`.
+Le point 4 de l'audit : ce qui manque dans les fiches, cherché à la source. 5 commits sur la branche `claude/audit-donnees-fee473` (sur `11f2fdb`), fusionnés dans main (b82efd6) et poussés le 25 octobre à 12:53 UTC ; seed de production de 12:53 à 13:09 UTC (15 min, 1 416 produits). Vérifié en ligne : Logitech M185 à piles AA, Razer Pro Click Mini à 4 appareils, Samsung G5 G50F à 1 ms. Chaque valeur a sa source en commentaire au-dessus de `specs:` (ou de `variants:` pour un switch), au format de `4470886`.
 
 | Commit | Lot | Valeurs |
 | --- | --- | --- |
