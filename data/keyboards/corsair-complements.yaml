@@ -7,11 +7,23 @@
 - slug: corsair-k70-pro
   brand: corsair
   name: K70 Pro
-  msrpEur: 215
+  msrpEur: 220
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/CH-9109410-FR/Gallery/K70_RGB_PRO_PBT_08.png, kind: cutout_top }
   specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 880 }
   variants:
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-clicky }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-tactile }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
@@ -19,9 +31,18 @@
 - slug: corsair-k70-max
   brand: corsair
   name: K70 Max
-  msrpEur: 335
+  msrpEur: 285
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-FR/FR_K70_MAX_PBT_RENDER_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-NA/CH-910961G_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/k70-max/CH-910961G-FR/FR_K70_MAX_PBT_RENDER_09.png, kind: cutout_top }
   specs: { formFactor: full, technology: magnetic, hotSwap: none, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, wristRestIncluded: true, soundDampening: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Black, colorFamily: black, layout: iso_fr }

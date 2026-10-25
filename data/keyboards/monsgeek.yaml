@@ -7,23 +7,42 @@
 - slug: monsgeek-m3w
   brand: monsgeek
   name: M3W
-  msrpEur: 125
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Purple-1.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Black-1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Silver-1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Silver-2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Purple-2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Black-6.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Black-2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M3W-Black-8.png, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 2000 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
+    - { colorName: Purple, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Purple, colorFamily: color, layout: ansi_us, switch: switch-tactile }
 
 - slug: monsgeek-m1w-v3-sp
   brand: monsgeek
   name: M1W V3 SP
-  msrpEur: 120
+  msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/Akko-M1W-V3-Black-Silver-RGB-DE.png, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/MonsGeek-M1W-V3-ISO-Black-Silver.png, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/MonsGeek-M1W-V3-SP-ISO-Black-2000-2000-1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/MonsGeek-M1W-V3-SP-ISO-Pink-2000-2000-1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/MonsGeek-M1W-V3-SP-ISO-Purple-2000-2000-1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/M1W-SP-V3-US-Black-1-2000-2000.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/M1W-SP-V3-US-Pink-1-2000-2000.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/files/M1W-SP-V3-US-Purple-1-2000-2000.png, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black & Silver, colorFamily: black, layout: iso_de, switch: switch-lineaire }
+    - { colorName: Black & Silver, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
 
 - slug: monsgeek-m1-he
   brand: monsgeek
@@ -31,6 +50,15 @@
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W-_RGB_e100a724-b7c1-4689-82c3-2c21b26c850d.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W_cba75073-80c4-4c6f-bf5d-03f12071f7c2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W_484b3278-c0e9-44b6-94a2-4d68ce45bad1.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W-Black-11_9e6b9a0e-f3a8-47ff-9857-f68d2ad18510.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W-Black-7_983efb9e-4fac-4f38-978b-d3c44a6356ab.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/f5075a188b5cf637bb79c004479d92b8_69e133b0-1ad2-4607-80fb-7d07186ad9c2.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W-Black-5_26f67d3a-6b9e-4b50-87e5-ccddb755c818.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0734/3033/5775/products/M1W-Black-3_4960f568-da30-4aa4-9f78-3b62d5b99a97.png, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }

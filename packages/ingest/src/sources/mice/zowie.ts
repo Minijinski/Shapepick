@@ -228,6 +228,7 @@ export const source: MouseSource = {
         slug: model.slug,
         brand: BRAND,
         map: async () => mapMouse(model, await model.read()),
+        read: model.read,
       }
     })
   },

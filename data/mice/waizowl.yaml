@@ -14,10 +14,26 @@
 - slug: waizowl-ogm-pro-v2
   brand: waizowl
   name: OGM Pro V2
-  msrpEur: 115
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_231_6c5c61fa-e40c-4781-b0c5-8b9d4092b0e4.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_229.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_222.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_223.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_232.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_227.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_329_0cb45b13-f010-4ce4-b822-4359807f6947.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/GM-833_PW_11.png, kind: cutout_top, width: 2958, height: 1432 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: "", colorName: Pink, colorFamily: color }
+    - { colorName: Purple fade, colorFamily: color }
+    - { colorName: Zeus, colorFamily: color }
+    - { colorName: Hades, colorFamily: color }
+    - { colorName: Poseidon, colorFamily: color }
+    - { sku: "", colorName: Kanagawa Wave, colorFamily: color }
 
 - slug: waizowl-cloud-xs
   brand: waizowl
@@ -25,4 +41,17 @@
   msrpEur: 115
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_319.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_318.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_320.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_333_43effb74-b46b-49f2-bf80-26f96e879d5d.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_254_b89fca5c-854d-4eea-8a68-b5df439a177c.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_264_f2064e0a-2d85-49ed-a608-a8556e207dec.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_300_fdecf4a5-6387-48a6-889b-7c15c79a7fac.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0870/3960/7063/files/Frame_281.png, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 36, weightG: 45, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: Cardinal, colorFamily: color }
+    - { colorName: Flamingo, colorFamily: color }
+    - { colorName: Typo, colorFamily: color }

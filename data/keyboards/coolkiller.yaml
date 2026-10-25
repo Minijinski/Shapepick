@@ -10,6 +10,15 @@
   msrpEur: 265
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_93dc21d1-1c0f-483c-b2f1-cc8d4da5c4a1.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/cf93556be8747321456a6d588474f579.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_2_3369cf3a-0307-4e0d-8010-0b4e5c6a6150.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_3-2_c0217028-10dd-4f74-93e0-1a64a9ddbc2a.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_3-3_fdc91540-5803-4e88-8758-93545017f4ff.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_3_a9e59101-6f97-4273-8b44-3021bf0fdd95.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_ab2ed74e-dd7b-4579-93e4-99585be75339.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_9_b531ff7e-f986-4823-b73c-b437a5c3094b.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }
@@ -17,9 +26,18 @@
 - slug: coolkiller-balloon84
   brand: coolkiller
   name: Balloon84
-  msrpEur: 155
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/84.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_dde028a0-31f4-4c67-b54e-0beab447afca.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_5_70b98d44-1694-4aca-9cf9-09c83c270b26.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_2_f2b37202-f61e-4c50-88ad-80fa19ba6239.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_3_c4d99cc3-e035-419d-bd34-8930e9451243.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_4_ae4ea89c-a0b7-4188-b51d-5a4123764a45.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_4-3.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0722/4141/4426/files/1_8_f5112266-8748-48f6-acb0-6c4849e44234.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f75, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 870 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

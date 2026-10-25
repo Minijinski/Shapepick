@@ -9,7 +9,29 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0055.jpg, kind: cutout_top, width: 3200, height: 3200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0056.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0051_678ca850-befd-41a4-b3ef-263ba4e8b452.jpg, kind: cutout_top, width: 3200, height: 3200 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0052_0e99dddc-bb9a-47d2-8563-46f132872314.jpg, kind: cutout_top, width: 3200, height: 3200 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0053_12460e0a-e72a-4c6d-81eb-0899c287c57d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0054_c4431c31-394e-434d-847a-f82bb5d61ec7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_fanghua020050_bcd05e26-94f8-454e-ae5f-be633f072de9.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_fanghua020049_7da5426f-ccbb-4c7c-9cb9-08d675c63fae.jpg, kind: cutout_top, width: 3200, height: 3200 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.5, widthMm: 61, heightMm: 39.7, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: AS-X3-WHITE, colorName: White, colorFamily: white }
+    - { sku: AS-X3-WHITE+TAPE, colorName: White with Tape, colorFamily: white }
+    - { sku: AS-X3-BLACK, colorName: Black, colorFamily: black }
+    - { sku: AS-X3-BLACK+TAPE, colorName: Black with Tape, colorFamily: black }
+    - { sku: AS-X3-RED, colorName: Red, colorFamily: color }
+    - { sku: AS-X3-RED+TAPE, colorName: Red with Tape, colorFamily: color }
+    - { sku: AS-X3-PURPLE, colorName: Purple, colorFamily: color }
+    - { sku: AS-X3-PURPLE+TAPE, colorName: Purple with Tape, colorFamily: color }
+    - { sku: AS-X3-ORANGE, colorName: Orange, colorFamily: color }
+    - { sku: AS-X3-ORANGE+TAPE, colorName: Orange with Tape, colorFamily: color }
+    - { sku: AS-X3-BERRYRED, colorName: Berry Red, colorFamily: color }
+    - { sku: AS-X3-BERRYRED+TAPE, colorName: Berry Red with Tape, colorFamily: color }
 
 - slug: attack-shark-x8-pro
   brand: attack-shark
@@ -17,7 +39,19 @@
   msrpEur: 75
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/X8PRO_C06ULTRA_2.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/X8PRO_C06ULTRA_1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_08a823e9-b9ce-41b4-a65c-356e11185227.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/2_2186b398-1e42-4128-b634-d5cbdad845c5.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/3_a1130104-2219-4047-bbfa-1c92fbde1e26.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/5_12865c2d-4e00-4236-a0fc-2b0f9d9c3861.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/6_4ce4ad85-5518-47aa-bd18-134d7f9810c3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/7_f16bdee6-38b7-4470-8174-f4148281462e.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.5, widthMm: 63, heightMm: 40, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395 Pro, dpiMax: 40000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: AS-X8PRO-White&C06ULTRA, colorName: White, colorFamily: white }
+    - { sku: AS-X8PRO-Black&C06ULTRA, colorName: Black, colorFamily: black }
 
 - slug: attack-shark-r3
   brand: attack-shark
@@ -25,4 +59,18 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/R3_1.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/R3_3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/R3_6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/R3_8.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/7_e7020d5a-14d8-4f73-b1b3-3bf90a565766.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_dbcdd0c1-c47e-4672-8474-9f93077aa41c.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/3_1c0d203a-ca34-4ee6-8cf5-f44f61ccd514.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/4_b1942699-2da2-4096-a3b7-6c586b8aebb5.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 60.9, heightMm: 36.2, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: AS-R3-WHITE, colorName: White, colorFamily: white }
+    - { sku: AS-R3-BLACK, colorName: Black, colorFamily: black }
+    - { sku: AS-R3-GREY, colorName: Grey, colorFamily: black }
+    - { sku: AS-R3-PURPLE, colorName: Purple Blue, colorFamily: color }

@@ -6,18 +6,40 @@
 - slug: corsair-dark-core-rgb-pro
   brand: corsair
   name: Dark Core RGB Pro
-  msrpEur: 120
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315411-EU/Gallery/DARK_CORE_RGB_PRO_08.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 81, heightMm: 43, weightG: 137, sideButtons: 2, sensor: PixArt PAW3392, dpiMax: 18000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-9315411-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-harpoon-rgb-pro
   brand: corsair
   name: Harpoon RGB Pro
-  msrpEur: 50
+  msrpEur: 30
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/Harpoon_RGB_PRO_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/Harpoon_RGB_PRO_10.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/Harpoon_RGB_PRO_11.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/Harpoon_RGB_PRO_13.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/Harpoon_RGB_PRO_14.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/HARPOON_RGB_PRO_15.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/HARPOON_RGB_PRO_16.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9301111-EU/Gallery/HARPOON_RGB_PRO_17.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.3, widthMm: 68.3, heightMm: 40.4, weightG: 85, sideButtons: 2, sensor: PixArt PAW3327, dpiMax: 12000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: CH-9301111-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-ironclaw-rgb-wireless
   brand: corsair
@@ -25,15 +47,37 @@
   msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_08.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9317011-NA/Gallery/IRONCLAW_RGB_WIRELESS_10.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 80, heightMm: 45, weightG: 133, sideButtons: 3, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-9317011-NA, colorName: Noir, colorFamily: black }
 
 - slug: corsair-katar-elite-wireless
   brand: corsair
   name: Katar Elite Wireless
-  msrpEur: 95
+  msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_10.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 69, sideButtons: 2, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-931C111-EU, colorName: Black, colorFamily: black }
 
 - slug: corsair-katar-pro-wireless
   brand: corsair
@@ -41,7 +85,18 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_10.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_11.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: CH-931C011-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-katar-pro-xt
   brand: corsair
@@ -49,31 +104,75 @@
   msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_10.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_11.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_12.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_13.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_14.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_15.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-xt-config/Gallery/KATAR_PRO_XT_16.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 73, sideButtons: 2, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: CH-930C111-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-m55-wired
   brand: corsair
   name: M55 Wired
-  msrpEur: 35
+  msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wired-config/gallery/black/M55_WIRED_BLK_08.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 55, sideButtons: 2, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: CH-930F000-WW, colorName: Noir, colorFamily: black }
 
 - slug: corsair-m55-wireless
   brand: corsair
   name: M55 Wireless
-  msrpEur: 60
+  msrpEur: 55
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_08.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: CH-931F000-WW, colorName: Noir, colorFamily: black }
 
 - slug: corsair-m65-rgb-ultra
   brand: corsair
   name: M65 RGB Ultra
-  msrpEur: 95
+  msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_10.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 97, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical }
+  variants:
+    - { sku: CH-9309411-EU2, colorName: Black, colorFamily: black }
 
 - slug: corsair-m65-rgb-ultra-wireless
   brand: corsair
@@ -81,31 +180,76 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_10.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 110, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 2000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-9319511-NA2, colorName: White, colorFamily: white }
+    - { sku: CH-9319411-NA2, colorName: Black, colorFamily: black }
 
 - slug: corsair-sabre-v2-pro-cf
   brand: corsair
   name: Sabre v2 Pro CF
-  msrpEur: 240
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_03.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_04.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_05.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_06.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_07.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-931G200-WW/gallery/sabre_v2_pro_wl_cf_08.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122.9, widthMm: 64.1, heightMm: 38.8, weightG: 55, sideButtons: 2, sensor: Corsair MARKSMAN S, dpiMax: 33000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: CH-931G200-WW, colorName: Noir, colorFamily: black }
 
 - slug: corsair-scimitar-rgb-elite
   brand: corsair
   name: Scimitar RGB Elite
-  msrpEur: 110
+  msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9304211-EU/Gallery/Scimitar_ELITE_BLK_10.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 76, heightMm: 42, weightG: 122, sideButtons: 12, mmo: true, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: CH-9304211-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-nightsword-rgb
   brand: corsair
   name: Nightsword RGB
-  msrpEur: 120
+  msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_10.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_11.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_12.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_13.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_14.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_15.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9306011-EU/Gallery/NIGHTSWORD_RGB_16.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 129, widthMm: 86, heightMm: 43, weightG: 119, sideButtons: 3, sensor: PixArt PMW3391, dpiMax: 18000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: CH-9306011-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-glaive-rgb
   brand: corsair
@@ -113,6 +257,15 @@
   msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9302211-EU/Gallery/GLAIVE_RGB_PRO_BLACK_23.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 124.5, widthMm: 70, heightMm: 45.5, weightG: 122, sideButtons: 2, sensor: PixArt PMW3367, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
 
 - slug: corsair-m55-rgb-pro
@@ -121,20 +274,51 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_01.png, kind: cutout_top, primary: true }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/revival-series/Revival_Series_Enhanced_Assets_Artboard01.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/revival-series/Revival_Series_Enhanced_Assets_Artboard02.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_10.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_11.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_14.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_15.png, kind: cutout_top }
+    - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9308011-EU/Gallery/M55_RGB_PRO_BLACK_16.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 124.4, widthMm: 68, heightMm: 40, weightG: 86, sideButtons: 2, sensor: PixArt PAW3327, dpiMax: 12400, pollingHz: 1000, switchType: mechanical }
 
 - slug: corsair-harpoon-rgb-wireless
   brand: corsair
   name: Harpoon RGB Wireless
-  msrpEur: 80
+  msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_10.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_01.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_09.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_13.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9311011-EU/Gallery/Harpoon_RGB_Wireless_45.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.3, widthMm: 68.3, heightMm: 40.4, weightG: 99, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 1000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-9311011-EU, colorName: Noir, colorFamily: black }
 
 - slug: corsair-dark-core-rgb-pro-se
   brand: corsair
   name: Dark Core RGB Pro SE
-  msrpEur: 130
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_01.png, kind: cutout_top, primary: true }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_02.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_03.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_04.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_05.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_06.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_07.png, kind: cutout_top }
+    - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/CH-9315511-EU/Gallery/DARK_CORE_RGB_PRO_SE_08.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 81, heightMm: 43, weightG: 137, sideButtons: 2, sensor: PixArt PAW3392, dpiMax: 18000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: CH-9315511-EU, colorName: Noir, colorFamily: black }

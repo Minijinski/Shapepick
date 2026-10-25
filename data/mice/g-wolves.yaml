@@ -9,15 +9,61 @@
   msrpEur: 165
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1.png, kind: cutout_top, width: 1000, height: 997, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_bc134c26-c865-4246-b145-07fea9da3bef.png, kind: cutout_top, width: 1080, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_3d2ec7ea-d74d-44fc-9cb3-0940c496bea5.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_d0bd79a9-d57b-4f61-95ea-6d52b507a7a6.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_82d3d065-3c66-465f-bf4f-ab6459831738.png, kind: cutout_top, width: 1000, height: 999 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_a1e851e8-e80f-4eec-af45-8067474fbad3.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/6-1.jpg, kind: cutout_top, width: 2100, height: 2100 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/07-01.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 63.5, heightMm: 36, weightG: 39, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 057-4K-Hei-WuDong, colorName: Black-NoHoneycomb ( ~43g), colorFamily: black }
+    - { sku: 057-4K-Hei-Dong, colorName: Black-Honeycomb ( ~39g), colorFamily: black }
+    - { sku: 057-4K-Red-WuDong, colorName: Red-NoHoneycomb ( ~43g), colorFamily: color }
+    - { sku: 057-4K-Red-Dong, colorName: Red-Honeycomb ( ~39g), colorFamily: color }
+    - { sku: 057-4K-White-WuDong, colorName: White-NoHoneycomb ( ~43g), colorFamily: white }
+    - { sku: 057-4K-White-Dong, colorName: White-Honeycomb ( ~39g), colorFamily: white }
+    - { sku: 057-4K-Ruby-WuDong, colorName: Ruby-NoHoneycomb ( ~43g), colorFamily: color }
+    - { sku: 057-4K-Ruby-Dong, colorName: Ruby-Honeycomb ( ~39g), colorFamily: color }
+    - { sku: 057-4K-Pink-WuDong, colorName: Pink-NoHoneycomb ( ~43g), colorFamily: color }
+    - { sku: 057-4K-Pink-Dong, colorName: Pink-Honeycomb ( ~39g), colorFamily: color }
+    - { sku: 057-4K-Blue-WuDong, colorName: Blue-NoHoneycomb ( ~43g), colorFamily: color }
+    - { sku: 057-4K-Blue-Dong, colorName: Blue-Honeycomb ( ~39g), colorFamily: color }
 
 - slug: g-wolves-htx-ace
   brand: g-wolves
   name: HTX Ace
-  msrpEur: 105
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_f4bf9031-c800-44ec-a26a-4fc291bc4937.png, kind: cutout_top, width: 1000, height: 997, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_6c2e8352-241b-4b2b-a481-e8959b3f69c1.png, kind: cutout_top, width: 1080, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_1547ddd2-67ce-4055-96e0-1fbe953b3298.png, kind: cutout_top, width: 1000, height: 999 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1.1_b9ff74e7-5c71-48cd-ba09-3d4ce8d7cffe.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/9-1.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/20231104.32.jpg, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/8-1.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-1.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119, widthMm: 63.5, heightMm: 36, weightG: 36, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 057-ACE-WuDong-Hei, colorName: Black-No-Honeycomb(~39g), colorFamily: black, msrpEur: 95 }
+    - { sku: 057-ACE-Dong-Hei, colorName: Black-Honeycomb(~37g), colorFamily: black, msrpEur: 95 }
+    - { sku: 057-ACE-WuDong-Bai, colorName: White-No-Honeycomb(~39g), colorFamily: white, msrpEur: 105 }
+    - { sku: 057-ACE-Dong-Bai, colorName: White-Honeycomb(~37g), colorFamily: white, msrpEur: 105 }
+    - { sku: 057-ACE-WuDong-Red, colorName: Red-No-Honeycomb(~39g), colorFamily: color, msrpEur: 105 }
+    - { sku: 057-ACE-Dong-Red, colorName: Red-Honeycomb(~37g), colorFamily: color, msrpEur: 105 }
+    - { sku: 057-ACE-WuDong-Blue, colorName: Blue-No-Honeycomb(~39g), colorFamily: color }
+    - { sku: 057-ACE-Dong-Blue, colorName: Blue-Honeycomb(~37g), colorFamily: color }
+    - { sku: 057-ACE-WuDong-Ruby, colorName: Ruby-No-Honeycomb(~39g), colorFamily: color }
+    - { sku: 057-ACE-Dong-Ruby, colorName: Ruby-Honeycomb(~37g), colorFamily: color }
+    - { sku: 057-ACE-WuDong-Ruby-2, colorName: Ruby-No-Honeycomb-2(~39g), colorFamily: color }
+    - { sku: 057-ACE-Dong-Ruby-2, colorName: Ruby-Honeycomb-2(~37g), colorFamily: color }
+    - { sku: 057-ACE-YinHui-Dong, colorName: Silver-Gray-Honeycomb(~39g), colorFamily: white }
+    - { sku: 057-ACE-YinHui-WuDong, colorName: Silver-Gray-No-Honeycomb(~41g), colorFamily: white }
 
 - slug: g-wolves-htx-mini-8k
   brand: g-wolves
@@ -25,7 +71,25 @@
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/201.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/301.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/301_79543aea-f06d-4c9f-8c8c-4ef60e02948b.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/201_7cd48f0a-36e3-4a6e-badb-d60d91847670.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-01.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/02-01_d9104c11-03bf-48fd-a4b9-98158dc53dc1.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01-01_0e6e04fe-df5a-462b-a9ba-217eb592befb.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/03-001.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 109, widthMm: 60, heightMm: 35, weightG: 27, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 027-8k-Black-Red, colorName: Black, colorFamily: black }
+    - { sku: 027-8k-White, colorName: White, colorFamily: white }
+    - { sku: 027-8k-Red, colorName: Red, colorFamily: color }
+    - { sku: 027-8k-All-Black, colorName: All-Black, colorFamily: black }
+    - { sku: 027-8k-Ruby, colorName: Ruby, colorFamily: color }
+    - { sku: 027-8k-Blue, colorName: Blue, colorFamily: color }
+    - { sku: 027-8k-Violet, colorName: Violet, colorFamily: color }
+    - { sku: 027-8k-Grey, colorName: Grey, colorFamily: black }
 
 - slug: g-wolves-htx-ultra-8k
   brand: g-wolves
@@ -33,7 +97,27 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-1_3cfd37bb-b2ca-4d02-8348-7ff7d018db2c.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-1_b94db331-4c5d-420f-95a5-20ed0f7efaa4.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3-01_7a048fd2-7d72-4bca-8e80-e369f7bc42cf.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/6-01_56cffe51-dd3c-47db-8977-bf5131b66a62.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/9-01.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/8-01.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/7-01_9336e38f-d825-4923-b02a-1adbb60b67a4.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/4-01_8b0272fd-3589-40ed-8b90-68ec4106b39d.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.7, widthMm: 64.1, heightMm: 37.1, weightG: 32.1, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 056-Black-All, colorName: Black, colorFamily: black }
+    - { sku: 056-White-Green, colorName: White, colorFamily: white }
+    - { sku: 056-SOLID-Blush, colorName: Pink, colorFamily: color }
+    - { sku: 056-Emerald-Green, colorName: Emerald Green, colorFamily: color }
+    - { sku: 056-ClearSky, colorName: Clear Sky, colorFamily: transparent }
+    - { sku: 056-Rose-Tint, colorName: Rose Tint, colorFamily: color }
+    - { sku: 056-Violet, colorName: Violet, colorFamily: color }
+    - { sku: 056-Ruby, colorName: Ruby, colorFamily: color }
+    - { sku: 056-Silver Gray, colorName: Silver Gray, colorFamily: white }
+    - { sku: 056-Crystal, colorName: Crystal, colorFamily: transparent }
 
 - slug: g-wolves-hts-plus-4k
   brand: g-wolves
@@ -41,7 +125,24 @@
   msrpEur: 165
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/p-1.png, kind: cutout_top, width: 1000, height: 999, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1_f1301856-712b-4f54-98ab-b1749f15baac.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/g01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/c2831abc7349d543adb0b881462785d1_8ed60d48-ceeb-4ac3-b1c4-980cc9123cf3.jpg, kind: cutout_top, width: 3500, height: 3500 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/fad72988dc6a8d2323445413f317bcc.jpg, kind: cutout_top, width: 900, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3.84.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3.109.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/4_7f53e6af-d0e6-4900-8455-0d20e2b3e34a.png, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 61, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3399, dpiMax: 20000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 054-4k-white, colorName: White, colorFamily: white }
+    - { sku: 054-4k-pink, colorName: Pink, colorFamily: color }
+    - { sku: 054-4k-gray, colorName: Grey, colorFamily: black }
+    - { sku: 054-4k-TS-Black, colorName: Transparent black, colorFamily: transparent }
+    - { sku: 054-4k-TS-Violet, colorName: Violet, colorFamily: color }
+    - { sku: 054-4k-TS-Sapphire, colorName: Sapphire, colorFamily: color }
+    - { sku: 054-4k-TS-Ruby-B, colorName: Ruby, colorFamily: color }
 
 - slug: g-wolves-hts-plus-8k
   brand: g-wolves
@@ -49,7 +150,27 @@
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/p-1.png, kind: cutout_top, width: 1000, height: 999, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1_f1301856-712b-4f54-98ab-b1749f15baac.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/g01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3.109_e4d38516-a89a-473f-9986-7962773fb518.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/fad72988dc6a8d2323445413f317bcc.jpg, kind: cutout_top, width: 900, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3.84.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01-01_bda49834-35f4-4cf4-b3aa-83a52a1be190.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/02-01_ebbafd42-466e-419f-9712-c633898a6932.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 61, heightMm: 40, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 054-8k-white, colorName: White, colorFamily: white }
+    - { sku: 054-8k-pink, colorName: Pink, colorFamily: color }
+    - { sku: 054-8k-gray, colorName: Grey, colorFamily: black }
+    - { sku: 054-8k-Red, colorName: Red, colorFamily: color }
+    - { sku: 054-8k-TS-Violet, colorName: Violet, colorFamily: color }
+    - { sku: 054-8k-TS-Sapphire, colorName: Sapphire, colorFamily: color }
+    - { sku: 054-8k-TS-Black, colorName: Transparent Black, colorFamily: transparent }
+    - { sku: 054-8k-TS-SilverGlide, colorName: SilverGlide, colorFamily: white }
+    - { sku: 054-8k-TS-Blue, colorName: BlueWave, colorFamily: color }
+    - { sku: 054-8k-TS-Crystal, colorName: Crystal, colorFamily: transparent }
 
 - slug: g-wolves-hts-ultra-8k
   brand: g-wolves
@@ -57,15 +178,48 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01-01.png, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/02-01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/07-01_a8778e23-b892-448d-8a9a-83c65e02fdac.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/003-01_787a6bbe-03bb-4ef3-ba02-fc99c137777d.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/004-01_c9f0818e-4be4-4093-a37a-8c441015dc12.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/6-01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/07-01_92177e3d-03c2-46b9-b45d-ba961cddaa97.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/07-01_42f5111b-9330-45c0-8ae5-baed0847b2bd.png, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 113, widthMm: 61, heightMm: 40, weightG: 29.5, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 053-Ultra-8k-Black, colorName: Standard Edition-Black-32.9g, colorFamily: black, msrpEur: 145 }
+    - { sku: 053-Black-Green, colorName: Deluxe Edition-Black-Green-29.5g, colorFamily: black }
+    - { sku: 053-Black-Red, colorName: Deluxe Edition-Black-Red-29.5g, colorFamily: black }
+    - { sku: 053-White, colorName: Deluxe Edition-White-30.5g, colorFamily: white }
+    - { sku: 053-Black-Ruby, colorName: Deluxe Edition-Ruby-30.5g, colorFamily: color }
+    - { sku: 053-White-Violet, colorName: Deluxe Edition-Violet-30.5g, colorFamily: color }
+    - { sku: 053-White-Pink, colorName: Deluxe Edition-Pink-30.5g, colorFamily: color }
+    - { sku: 053-White-ClearBlue, colorName: Deluxe Edition-ClearBlue-30.5g, colorFamily: transparent }
 
 - slug: g-wolves-ht-s2-8k
   brand: g-wolves
   name: HT-S2 8K
-  msrpEur: 165
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/004-01.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/008-01.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/006-01.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/007-01.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/001-01.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/004-02.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/004-03_ac96a588-8757-42c7-a0f5-9c0c6605c5e8.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/004-04.png, kind: cutout_top, width: 1200, height: 1200 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 110, widthMm: 61, heightMm: 37, weightG: 33, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 079-White, colorName: White, colorFamily: white }
+    - { sku: 079-Green, colorName: Green, colorFamily: color }
+    - { sku: 079-Red, colorName: Red, colorFamily: color }
+    - { sku: 079-Violet, colorName: violet, colorFamily: color }
+    - { sku: 079-Grey, colorName: Grey, colorFamily: black }
 
 - slug: g-wolves-hsk-pro-4k
   brand: g-wolves
@@ -73,6 +227,15 @@
   msrpEur: 215
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/02.webp, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/03.webp, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/b01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/r01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/bb01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/gg01.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01.webp, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/05.webp, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 73.3, widthMm: 56, heightMm: 29, weightG: 29, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
 
 - slug: g-wolves-hsk-plus-4k
@@ -81,7 +244,22 @@
   msrpEur: 205
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/001_03231a58-b40d-40d2-a714-0e987e173de5.png, kind: cutout_top, width: 900, height: 900, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-1_060f834e-c7bc-483f-942c-d9061ed8a508.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2_58d750b5-4d03-4011-8712-106b1d358a4d.jpg, kind: cutout_top, width: 900, height: 900 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1_8d63109f-c18c-449f-b7fc-5941e0e5e6c8.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/20231116210902_dd5fbf18-b9d9-4ab2-a619-011bab486665.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/3_3933b31f-0c44-4b9b-97b7-3994160bfe99.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2_90f75cdf-db53-45e7-ad41-7ea222dcf4c4.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-3.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 89, widthMm: 58.5, heightMm: 36, weightG: 38, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 4K-072-Limit, colorName: Limited edition color, colorFamily: color }
+    - { sku: 4K-072-Purple, colorName: Purple, colorFamily: color }
+    - { sku: 4K-072-Pink, colorName: Pink, colorFamily: color }
+    - { sku: 4K-072-Black, colorName: Black, colorFamily: black }
+    - { sku: 4K-072-White, colorName: White, colorFamily: white }
 
 - slug: g-wolves-htr-8k
   brand: g-wolves
@@ -89,7 +267,21 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/11_bfb7f98c-6720-4638-b3b8-86472a0ee39f.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/11_991d206d-eb51-49fb-8d4a-56635b1d851f.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01_2fd6b5f1-bfe4-4cc6-908b-904a52d14f3f.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/01_3d874d51-1950-4744-85f6-fba7c2b886de.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/41.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/41_3af7cb31-97ed-479b-b888-459e1876fb26.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/31.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/31_9ff72df7-e0cc-4307-a037-39cd41c32e1f.png, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 92, widthMm: 57, heightMm: 35, weightG: 26, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 077-Dong-White, colorName: White, colorFamily: white }
+    - { sku: 077-Dong-Black, colorName: Black, colorFamily: black }
+    - { sku: 077-Dong-Red, colorName: Red, colorFamily: color }
+    - { sku: 077-Dong-Green, colorName: Green, colorFamily: color }
 
 - slug: g-wolves-vuk
   brand: g-wolves
@@ -97,4 +289,17 @@
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-1_4ebe1e7d-0d3a-49ed-b597-dd69e431e79d.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-1_a3353be1-c93f-4196-9586-f6b641585840.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/5-01_01e09d17-3cdb-4bdc-b891-7b42590bae1c.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-2_ff11b82e-3b17-489d-b6df-9796b48f73dc.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-3_75ec4b6a-609f-4d7b-a246-4d4fcde82a30.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-4_0647ac00-9276-4609-958c-66b4bf0c9c02.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/1-5.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0540/7981/5877/files/2-2_f1fb9384-9713-4b15-b07c-472db5225595.png, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.8, widthMm: 64.6, heightMm: 38.1, weightG: 34.5, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: 157-Double-Black, colorName: Black, colorFamily: black }
+    - { sku: 157-Double-White, colorName: White, colorFamily: white }
+    - { sku: 157-ClearSky, colorName: Frost Blue, colorFamily: white }

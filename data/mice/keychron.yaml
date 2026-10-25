@@ -164,10 +164,22 @@
 - slug: keychron-g3
   brand: keychron
   name: G3
-  msrpEur: 100
+  msrpEur: 115
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G3-Wireless-Mouse-Black.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-1.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-2.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Carbon-Fiber-Build.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Triple-Connection-Modes.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Ultra-Lightweight-Design.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/G3-Mouse-Launcher-Customization.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/1.2.jpg, kind: cutout_top, width: 4724, height: 4724 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38.3, weightG: 44, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: G3-Z1, colorName: Black (Carbon Fiber), colorFamily: black, msrpEur: 130 }
+    - { sku: G3-A1, colorName: Frosted Gray, colorFamily: white, msrpEur: 100 }
 
 - slug: keychron-g4
   brand: keychron
@@ -191,4 +203,13 @@
   msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron_G5_Ultralight_Wireless_Mouse.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-feature.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-Carbon-fiber-Build_2.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-Ultralight.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-8K-Polling-Rate.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-G5-Wireless-Mouse-Customize.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 39, weightG: 43, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: G5-Z1, colorName: Black, colorFamily: black }

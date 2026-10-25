@@ -9,7 +9,16 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec1-c-top-202501?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/EC1C-top-edition-1000x1000?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/03-ec1-c-back-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-ec1-c-front-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ec1-c-left-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ec1-c-right-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 69, heightMm: 42, weightG: 80, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-ec1-cw
   brand: zowie
@@ -17,7 +26,15 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec1-cw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-ec1-cw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-ec1-cw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ec1-cw-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ec1-cw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 69, heightMm: 42, weightG: 79, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 3200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: ec1-cw, colorName: Noir, colorFamily: black }
 
 - slug: zowie-ec2-c
   brand: zowie
@@ -25,6 +42,8 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec1-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 65, heightMm: 42, weightG: 73, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
 
 - slug: zowie-ec2-cw
@@ -33,7 +52,15 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec2-cw-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-ec2-cw-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-ec2-cw-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ec2-cw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ec2-cw-right?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 65, heightMm: 42, weightG: 77, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 3200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: ec2-cw, colorName: Noir, colorFamily: black }
 
 - slug: zowie-ec3-c
   brand: zowie
@@ -41,7 +68,18 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ec3-c-top-202501?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-ec3-c-back-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-ec3-c-front-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ec3-c-left-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ec3-c-right-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3c-ec2?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3-c-bg-m?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/ec3-c-bg2?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 119, widthMm: 66, heightMm: 41, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-fk1-plus-c
   brand: zowie
@@ -49,6 +87,8 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-fk1cplus-top-202501?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129, widthMm: 69, heightMm: 39, weightG: 77, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
 
 - slug: zowie-fk1-c
@@ -57,7 +97,15 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-fk1c-top-202501?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-fk1c-back-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-fk1c-front-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-fk1c-left-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-fk1c-right-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 128.9, widthMm: 66.8, heightMm: 37.3, weightG: 74, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-fk2-c
   brand: zowie
@@ -65,7 +113,15 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-fk2c-top-202501?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-fk2c-back-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-fk2c-front-left-45-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-fk2c-left-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-fk2c-right-202501?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.1, widthMm: 64.9, heightMm: 36.4, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-s1-c
   brand: zowie
@@ -73,7 +129,15 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-S1C-top-01?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-S1C-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-S1C-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-S1C-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-S1C-right?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 40, weightG: 72, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-s2-c
   brand: zowie
@@ -81,7 +145,14 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-S2C-top-1?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/04-S2C-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-S2C-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-S2C-right?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 64.2, heightMm: 38.1, weightG: 69, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Noir, colorFamily: black }
 
 - slug: zowie-za11-c
   brand: zowie
@@ -89,7 +160,15 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-ZA11C-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
+    - { url: https://image.benq.com/is/image/benqco/03-ZA11C-back-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/04-ZA11C-front-left-45?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/05-ZA11C-left?wid=2000&fmt=png-alpha, kind: cutout_top }
+    - { url: https://image.benq.com/is/image/benqco/06-ZA11C-right?wid=2000&fmt=png-alpha, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129, widthMm: 67, heightMm: 42, weightG: 72, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: za11c-black, colorName: Noir, colorFamily: black }
 
 - slug: zowie-za12-c
   brand: zowie
@@ -97,6 +176,8 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-za11-b-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 125.8, widthMm: 64.6, heightMm: 41.4, weightG: 70, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }
 
 - slug: zowie-za13-c
@@ -105,4 +186,6 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://image.benq.com/is/image/benqco/01-za11-b-top?wid=2000&fmt=png-alpha, kind: cutout_top, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.7, widthMm: 62.8, heightMm: 40.2, weightG: 65, sideButtons: 2, sensor: PixArt PMW3360, dpiMax: 3200, pollingHz: 1000, switchType: mechanical }

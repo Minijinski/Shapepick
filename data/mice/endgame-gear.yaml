@@ -9,7 +9,19 @@
   msrpEur: 90
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_top_down.jpg, kind: cutout_top, width: 2499, height: 2499, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1White_normal_top_down.jpg, kind: cutout_top, width: 2543, height: 2543 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_rearside_wsb.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_normal_side_wsb.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_normal_side_wosb.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_normal_rear.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_normal_front.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/OP1_Black_beneath_persp_skatess.jpg, kind: cutout_top, width: 3000, height: 3000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 60.5, heightMm: 37.2, weightG: 50.5, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical }
+  variants:
+    - { sku: EGG-OP1-8K-BLK, colorName: Black, colorFamily: black }
+    - { sku: EGG-OP1-8K-WHT, colorName: White, colorFamily: white }
 
 - slug: endgame-gear-op1-8k-v2
   brand: endgame-gear
@@ -200,10 +212,24 @@
 - slug: endgame-gear-op1w-4k
   brand: endgame-gear
   name: OP1w 4k
-  msrpEur: 140
+  msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-Black_top_down.-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-blk-rearside-wsb-dongle-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-wht-rearside-wsb-dongle-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-DF-rearside-wsb-dongle-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-wf-rearside-wsb-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-Black_side_wsb-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-Black_side_wosb-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
+    - { url: https://cdn.shopify.com/s/files/1/0698/4538/5436/files/EGG-OP1w-4K-black_front-3000x3000-2567b33.jpg, kind: cutout_top, width: 3000, height: 3000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.2, widthMm: 60.5, heightMm: 37.2, weightG: 58.5, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: EGG-OP1W4K-BLK, colorName: Black, colorFamily: black }
+    - { sku: EGG-OP1W4K-WHT, colorName: White, colorFamily: white }
+    - { sku: EGG-OP1W4K-DF, colorName: Dark Frost, colorFamily: black }
+    - { sku: EGG-OP1W4K-WF, colorName: White Frost, colorFamily: white }
 
 - slug: endgame-gear-xm1-rgb
   brand: endgame-gear

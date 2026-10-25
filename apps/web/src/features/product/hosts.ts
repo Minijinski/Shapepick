@@ -24,6 +24,13 @@ const ALLOWED = [
   /^https:\/\/image\.benq\.com\//,
   // Akko's own shop.
   /^https:\/\/en\.akkogear\.com\/wp-content\/uploads\//,
+  // Mice and keyboards from brands' own sites outside Shopify: Kensington (its group's CDN), Cooler
+  // Master (its Storyblok space), CHERRY XTRFY and Skyloong (WordPress), Wooting (its bucket).
+  /^https:\/\/media\.accobrands\.com\//,
+  /^https:\/\/a\.storyblok\.com\/f\/281110\//,
+  /^https:\/\/cherryxtrfy\.com\/wp\/wp-content\/uploads\//,
+  /^https:\/\/skyloongtech\.com\/wp-content\/uploads\//,
+  /^https:\/\/wooting-website\.ams3\.cdn\.digitaloceanspaces\.com\//,
   // Retailers' copies of a brand's photo, for products their brand shows only at an angle or in a
   // scene: Mercular and MakeWebEasy (Thailand), Euro RTV AGD (Poland).
   /^https:\/\/mercular\.s3\.ap-southeast-1\.amazonaws\.com\//,

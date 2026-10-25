@@ -17,9 +17,18 @@
 - slug: ajazz-ak820-max-plus
   brand: ajazz
   name: AK820 Max Plus
-  msrpEur: 80
+  msrpEur: 110
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_ed79db27-adb3-40dd-bff1-d17b0437dd89.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_6b316d9c-5ecf-4ce6-a4ed-2ca56618fe0f.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_26d272b6-a92d-4079-8d09-31dad021348b.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_c84aec0c-fa03-4956-8e76-d2dff9be5222.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/SKU_bb72a034-5ced-45e3-a969-efb878147852.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_02_e12205ce-b2a2-456b-9f94-69a46cc89b8c.jpg, kind: cutout_top, width: 790, height: 1023 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_a3681250-0943-4a4b-9146-57f1adcf2e6d.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/SKU_a078a2b0-2591-4b18-bb4a-e433912f69c8.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 850 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -30,9 +39,18 @@
   msrpEur: 135
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/wechat_2025-08-20_170229_129.png, kind: cutout_top, width: 820, height: 820, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/wechat_2025-08-20_170249_247.png, kind: cutout_top, width: 818, height: 820 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/dfdf5b38579eb168c360c27208f6b7f7.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/beaa936537fd529efc36800017596613.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/3RG.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/dd9f287f3d7555196250b905cbaf5a49_58c8996c-2215-471b-b7d5-726e3715cd1d.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/32146cff8342faadc33a787153828a89.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/186707733eee14dbdcb9e267d4d8c87f.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, weightG: 2100 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-lineaire }
 
 - slug: ajazz-ak35i-v3-max
   brand: ajazz
@@ -40,9 +58,18 @@
   msrpEur: 125
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/30.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/29.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/1_9b355c20-6a8a-4b02-9838-80be09317c7d.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/AK35i-v3_c88a4ab0-91ce-49a4-8580-c24a2eb11074.jpg, kind: cutout_top, width: 1080, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/2_81a1d4e4-5cbd-4238-90d5-d7432d944c38.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/3_4fe18646-f2d9-4d47-9366-056746a47ed6.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/5_a7bbf0ac-ccec-4b02-9dd0-53781b010c33.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0704/7210/6227/files/6_79517743-2b92-4b4e-a4ff-60c21a55b107.jpg, kind: cutout_top, width: 1500, height: 1437 }
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Black Grey Yellow, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
 
 - slug: ajazz-aks068-pro
   brand: ajazz

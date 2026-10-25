@@ -164,6 +164,7 @@ export function mouseSource(opts: {
         slug: model.slug,
         brand: model.brand,
         map: async () => mapMouse(model, await model.read()),
+        read: model.read,
       })),
     priceIndex: async (urls) => {
       const index: PriceIndex = new Map()

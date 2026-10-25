@@ -7,13 +7,30 @@
 - slug: varmilo-minilo98-pro
   brand: varmilo
   name: Minilo98 Pro
-  msrpEur: 185
+  msrpEur: 145
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/067K-110Ky-R-Zc.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/starsand1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/2-SKU.jpg, kind: cutout_top, width: 1440, height: 1440 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/060K-110Ky-R-Zc.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/056K-110Ky-R-Zc.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/049K-110Ky-R-Zc.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/800x800.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/PLATY_SWE_1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1000 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_nordic, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_nordic, switch: switch-lineaire-silencieux }
 
 - slug: varmilo-muse65-he
   brand: varmilo
@@ -21,6 +38,15 @@
   msrpEur: 145
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/muse-sakura-01.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/5.7.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/muse-summit-01.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/9d28b38f3a2c77811ac4ab75c5a95830_cb6a3e80-bac0-4d43-b691-a40ae9792170.jpg, kind: cutout_top, width: 1400, height: 1400 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/9d28b38f3a2c77811ac4ab75c5a95830_2916ef7c-ee55-46ed-bd4b-d203006b9f81.jpg, kind: cutout_top, width: 1400, height: 1400 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/IMG_1-10.jpg, kind: cutout_top, width: 3648, height: 3648 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/IMG_1-5.jpg, kind: cutout_top, width: 3143, height: 3143 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/IMG_1-7_7f2085ec-b90d-4a9d-8337-c4656c9fdcec.jpg, kind: cutout_top, width: 3648, height: 3648 }
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1200 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }
@@ -28,14 +54,35 @@
 - slug: varmilo-minilo75-pro
   brand: varmilo
   name: Minilo75 Pro
-  msrpEur: 175
+  msrpEur: 135
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/01_DE.png, kind: cutout_top, width: 4608, height: 4608, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/retro1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/bluebell1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/eu1500.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/02_DE.png, kind: cutout_top, width: 4608, height: 4608 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/02_FR.png, kind: cutout_top, width: 4607, height: 4608 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/03_DE.png, kind: cutout_top, width: 4608, height: 4608 }
+    - { url: https://cdn.shopify.com/s/files/1/0638/1420/5659/files/03_FR-BEL.png, kind: cutout_top, width: 4607, height: 4608 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: qmk, macSupport: true, soundDampening: true, weightG: 850 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_fr, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_uk, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_de, switch: switch-lineaire-silencieux }
+    - { colorName: Black, colorFamily: black, layout: iso_nordic, switch: switch-tactile }
+    - { colorName: Black, colorFamily: black, layout: iso_nordic, switch: switch-lineaire }
+    - { colorName: Black, colorFamily: black, layout: iso_nordic, switch: switch-lineaire-silencieux }
 
 - slug: varmilo-victory-67-he
   brand: varmilo

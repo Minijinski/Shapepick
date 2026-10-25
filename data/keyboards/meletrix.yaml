@@ -10,6 +10,15 @@
   msrpEur: 265
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-3c416ddf-c475-4029-b8f2-666b4b3e110f.jpg, kind: cutout_top, width: 1920, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-fdc6d3ab-41f7-4ea1-86d2-6a55e1b0af10.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/SkyBlue.png, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-d7014267-db76-4d41-9624-b872baccd2b1.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-6f2940e4-d178-472e-8dd1-9b68332c4f1d.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-e4684a83-671a-4437-90df-89104e187acb.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-66f75e6b-8bc1-47ca-8155-60fe824cade1.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/gempages_501750321702241248-78ccfda1-8771-4a42-8706-162198224e79.jpg, kind: cutout_top, width: 1920, height: 1080 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, soundDampening: true, weightG: 2000 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }
@@ -21,6 +30,13 @@
   msrpEur: 260
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_Black_01.jpg, kind: cutout_top, width: 1920, height: 1080, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_FrontBack_Black_a6aa05a6-a2c3-4071-9f3d-4469efce72fa.jpg, kind: cutout_top, width: 2160, height: 1215 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_Black_02.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_Black_03.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_Black_04.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/Zoom75v2_Black_05.jpg, kind: cutout_top, width: 1920, height: 1080 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: qmk, soundDampening: true, weightG: 3000 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -33,6 +49,15 @@
   msrpEur: 275
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/lklJGTa-vsBbT8S-hSbhAl968hYy.webp, kind: cutout_top, width: 3391, height: 1907, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/DSC02074.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/DSC01325.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/lpL3cebr33R4HVlSZewEAEOphVZh.webp, kind: cutout_top, width: 4000, height: 2250 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/lo_idkBrCp35kvLd2Ci3c6KKnDNE.webp, kind: cutout_top, width: 3800, height: 2137 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/ls4TyTKNVP6IPnYWpuIp7Ywn0HQX.webp, kind: cutout_top, width: 1500, height: 844 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/DSC02066.jpg, kind: cutout_top, width: 1920, height: 1080 }
+    - { url: https://cdn.shopify.com/s/files/1/0607/2474/0287/files/DSC02069.jpg, kind: cutout_top, width: 1920, height: 1080 }
   specs: { formFactor: f75, technology: magnetic, hotSwap: none, pollingHzWired: 1000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, firmware: proprietary, weightG: 3000 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Shockwave, colorFamily: color, layout: ansi_us }

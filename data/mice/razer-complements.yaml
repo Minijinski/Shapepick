@@ -17,7 +17,15 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/x3VwYYMS-IV4S8zF1Fvl6GRXKCQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhe8%2Fh51%2F9250345058334%2Fdeathadder-v2-x-hyperspeed-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/FpTYDV8CkW_y2EEnhN_B5UooHIE=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh21%2Fh0a%2F9250344468510%2F211026-deathadder-v2-x-hyperspeed-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/Y2GACpCUff718kHg4bTFY4O_WT8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh66%2Fh07%2F9250344501278%2F211026-deathadder-v2-x-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/61hIjMwMLYErKdU6zBV-h0kx6M0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcf%2Fh0a%2F9250344402974%2F211026-deathadder-v2-x-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/YQxz6U1jf8mWfIKfiXqXUH_PNC4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh78%2Fh0a%2F9250344435742%2F211026-deathadder-v2-x-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 42.7, weightG: 103, sideButtons: 2, sensor: Razer 5G, dpiMax: 14000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  variants:
+    - { sku: RZ01-04130100-R3U1, colorName: Noir, colorFamily: black }
 
 - slug: razer-naga-v2-pro
   brand: razer
@@ -57,7 +65,17 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://assets3.razerzone.com/Bm014U6lEGPjDJY9u-MLJ30INZQ=/500x500/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh9f%2Fh4c%2F9529653461022%2Fviper-v2-pro-black-2-500x500.png, kind: cutout_top, primary: true }
+    - { url: https://assets3.razerzone.com/sSNeXpxs0dgeRSDI-jkb5pXlH1I=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh29%2Fh6f%2F9814444277790%2F240909-viper-v2-pro-black-1500x1000-1.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/IAdXHZTS_uLuDPCtI86REpySO8Q=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh7b%2Fh6e%2F9814444212254%2F240909-viper-v2-pro-black-1500x1000-2.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/VfluI4joEyWA-gfR-PHNnop66Cg=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh6a%2Fh6b%2F9814444146718%2F240909-viper-v2-pro-black-1500x1000-3.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/bEBrMP5H_BQv1cH_9rkkQCu5fbY=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh91%2Fh72%2F9814444376094%2F240909-viper-v2-pro-black-1500x1000-4.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/S6eVi2a4hFPZ2P417R7EYN3siz4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhab%2Fh67%2F9814444015646%2F240909-viper-v2-pro-black-1500x1000-5.jpg, kind: cutout_top }
+    - { url: https://assets3.razerzone.com/nrGXoV5V1Y2B0qIx8AugHV3W-90=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhc1%2Fh6b%2F9814444179486%2F240909-viper-v2-pro-black-1500x1000-6.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126.7, widthMm: 66, heightMm: 37.8, weightG: 59, sideButtons: 2, sensor: Razer Focus Pro 30K, dpiMax: 30000, pollingHz: 4000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: RZ01-04390100-R3U1, colorName: Noir, colorFamily: black }
 
 - slug: razer-viper-8khz
   brand: razer

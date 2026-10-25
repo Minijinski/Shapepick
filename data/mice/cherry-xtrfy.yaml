@@ -6,79 +6,206 @@
 - slug: cherry-xtrfy-m64-wireless
   brand: cherry-xtrfy
   name: M64 Wireless
-  msrpEur: 120
+  msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-Black-Gaming-Mouse_Category.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-Black-Gaming-Mouse_Hero_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-Black-Gaming-Mouse_Hero_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-White-Gaming-Mouse_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-Blue-Gaming-Mouse_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless_quick-001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless_quick_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Wireless-Black-Gaming-Mouse_Hero_003.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 39.5, weightG: 53, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Blue, colorFamily: color }
 
 - slug: cherry-xtrfy-m68-wireless
   brand: cherry-xtrfy
   name: M68 Wireless
-  msrpEur: 120
+  msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Black-Wireless-Gaming-Mouse_Category.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Black-Wireless-Gaming-Mouse_Hero_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Black-Wireless-Gaming-Mouse_Hero_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-White-Wireless-Gaming-Mouse_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Blue-Wireless-Gaming-Mouse_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Wireless_quick_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Wireless_quick_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Black-Wireless-Gaming-Mouse_Hero_003.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.3, widthMm: 64, heightMm: 39.5, weightG: 53, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Blue, colorFamily: color }
 
 - slug: cherry-xtrfy-m64-pro-8k-wireless
   brand: cherry-xtrfy
   name: M64 Pro 8K Wireless
-  msrpEur: 170
+  msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Prow-Black-Wireless-Gaming-Mouse_Category-1.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Prow-Black-White-Gaming-Mouse_Hero_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Prow-Black-White-Gaming-Mouse_Hero_003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Prow-White-Wireless-Gaming-Mouse_Category-1.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-pro-quick-info-1.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Pro-Wireless_quick_004.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Pro-Wireless_quick_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M64-Prow-Black-White-Gaming-Mouse_Hero_001.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 65, heightMm: 39.5, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: cherry-xtrfy-m68-pro-8k-wireless
   brand: cherry-xtrfy
   name: M68 Pro 8K Wireless
-  msrpEur: 170
+  msrpEur: 140
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Black-Wireless-Gaming-Mouse_Category-1.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Black-Wireless-Gaming-Mouse_Hero_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Black-Wireless-Gaming-Mouse_Hero_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-White-Wireless-Gaming-Mouse_Category-2.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Wireless_quick_003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Wireless_quick_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Wireless_quick_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M68-Pro-Black-Wireless-Gaming-Mouse_Hero_003.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.3, widthMm: 64, heightMm: 39.5, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: cherry-xtrfy-m50
   brand: cherry-xtrfy
   name: M50
-  msrpEur: 60
+  msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Category-2.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Gaming-Mouse_Hero_003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Gaming-Mouse_Hero_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Category1.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50_quick_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50_quick_003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2024/12/Untitled-m50-final.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Category.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 63, heightMm: 39, weightG: 69, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: cherry-xtrfy-m50-wireless
   brand: cherry-xtrfy
   name: M50 Wireless
-  msrpEur: 85
+  msrpEur: 80
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Category.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Hero-004.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Black-Wireless-Gaming-Mouse_Hero-003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50-Wireless-Gaming-Mouse_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50_White_Wireless_quick_001.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50_White_Wireless_quick_002.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2023/12/M50_White_Wireless_quick_003.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2024/12/Untitled-m50-final.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 63, heightMm: 39, weightG: 85, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: cherry-xtrfy-m42v2
   brand: cherry-xtrfy
   name: M42V2
-  msrpEur: 70
+  msrpEur: 40
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/002_CHERRYXTRFY-M42V2_herogallery.jpg, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/001_CHERRYXTRFY-M42V2_herogallery.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/004_CHERRYXTRFY-M42V2_quick.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/003_CHERRYXTRFY-M42V2_quick.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/005_CHERRYXTRFY-M42V2_quick.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/001_CHERRYXTRFY-M42V2_quick.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/CHERRYXTRFY-M42V2_frontpage.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2026/08/003_CHERRYXTRFY-M42V2_herogallery.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 45, sideButtons: 2, sensor: PixArt PAW3327, dpiMax: 6200, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Black, colorFamily: black }
 
 - slug: cherry-xtrfy-m8-wireless
   brand: cherry-xtrfy
   name: M8 Wireless
-  msrpEur: 100
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Black_Category.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Black-Gaming-Mouse_Front.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Black-Gaming-Mouse_Hero.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-White_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Retro_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Frosty-Mint_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Frosty-Puple_Category.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2022/10/Xtrfy-M8-Wireless-Gaming-Mouse_quick02.jpg, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 60.5, heightMm: 38.5, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Retro, colorFamily: color }
+    - { colorName: Frosty Mint, colorFamily: white }
+    - { colorName: Frosty Purple, colorFamily: white }
 
 - slug: cherry-xtrfy-m4-wireless
   brand: cherry-xtrfy
   name: M4 Wireless
-  msrpEur: 100
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-Gaming-Mouse_Hero012.jpg, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-Gaming-Mouse_Hero1.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_03-1.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_01.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_04.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_02.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_05-1.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2021/11/Xtrfy-M4-Wireless-gaming-mouse_09.jpg, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 68, heightMm: 39, weightG: 71, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: cherry-xtrfy-m4
   brand: cherry-xtrfy
   name: M4
-  msrpEur: 75
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Category_2022.png, kind: cutout_top, primary: true }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_top-2.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Hero_gallery-Designedinsweden.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_004.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Black-Herogallery_005.jpg, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-White-Category_2022.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Blue-Category_2022.png, kind: cutout_top }
+    - { url: https://cherryxtrfy.com/wp/wp-content/uploads/2020/06/Xtrfy-M4-Pink-Category_2022.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 120, widthMm: 68, heightMm: 39, weightG: 69, sideButtons: 2, sensor: PixArt PMW3389, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Miami Blue, colorFamily: color }
+    - { colorName: Pink, colorFamily: color }
+    - { colorName: Retro, msrpEur: 50, colorFamily: color }

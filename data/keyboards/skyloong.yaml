@@ -7,9 +7,18 @@
 - slug: skyloong-gk104pro
   brand: skyloong
   name: GK104Pro
-  msrpEur: 95
+  msrpEur: 130
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/03/104pro-twilight.jpg, kind: cutout_top, primary: true }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/05/skyloong-gk104pro-twilight-and-lava.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/03/SKYLOONG-GK104Pro-quantum-mech-no.-1.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/04/GK104PRO-Peach.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/04/GK104pro-Lava.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/03/GK104Pro-peach-single-screen.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/03/SKYLOONG-GK104Pro-quantum-mech-no.-2.jpg, kind: cutout_top }
+    - { url: https://skyloongtech.com/wp-content/uploads/2024/10/skyloong-gk104pro-twilight-cherry-profile.jpg, kind: cutout_top }
   specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 1350 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -20,6 +29,10 @@
   msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/gk61proaluminum.webp, kind: cutout_top, width: 2500, height: 1875, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/gk61probluepink.webp, kind: cutout_top, width: 2000, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/gk61prowhitegrey.webp, kind: cutout_top, width: 2000, height: 1500 }
   specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: qmk, macSupport: true }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
@@ -30,6 +43,14 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/gk87prochristmaswhite_d7ac132c-fe04-4973-9138-a61c50ef6139.webp, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK87prochristmasblack3.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK87pro-JIUWEI.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK87sparta.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK87jellyfish.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/gk87prohellosummer.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK87procrazyscientist.webp, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1200 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
@@ -39,9 +60,13 @@
 - slug: skyloong-gk980
   brand: skyloong
   name: GK980
-  msrpEur: 85
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK980-JIUWEIKeyboard.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK980-JIUWEIKeyboard2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/GK980-JIUWEIKeyboard3.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1300 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }
@@ -54,6 +79,15 @@
   msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/products/GK75-RGB-_-_-USB_-_1_6d0513f1-91e7-4ab5-8656-304f7d57bad5.webp, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/skyloonglitegasketstructure.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/products/GK75-RGB-_-_-USB_-_9_970a0e45-8d2e-44f2-82a1-cb20dd4f5348.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/75programableknob.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/hotswappableopticalswitch.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/products/GK75-RGB-_-_-USB_-_11_d3f84405-0517-4786-9eff-bf7ecd8027bf.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/products/GK75-RGB-_-_-USB_-_6_d7626e88-e528-4509-bec5-ea01b3aef818.webp, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0598/8093/1517/files/supportwindows_macOSsystem.webp, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1200 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-tactile }

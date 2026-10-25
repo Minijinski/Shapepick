@@ -9,6 +9,11 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-Wireless-Mouse_Size2_Clearblack-001_92e64525-ed6c-41aa-936d-f42e06ed2e2b.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-Wireless-Mouse_Size2_Clearblack-004_0ea932da-e4d7-4361-9153-4c1c23fc580e.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-Wireless-Mouse_Size2_Clearblack-003_3d89248d-67f6-4e56-9bd8-a1d9b3278664.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2H-Wireless-Mouse_Size2_Clearblack-002_428a3e70-1c34-4781-8185-be9f7205de19.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 54, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
 
 - slug: pulsar-x2a
@@ -17,7 +22,14 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AgamingMouse_top-234273.png, kind: cutout_top, width: 1024, height: 1024, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AgamingMouse_bottom-301957.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AgamingMouse_leftside-446264.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AgamingMouse_rightside-205869.png, kind: cutout_top, width: 1024, height: 1024 }
   specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 57, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PX2A23, colorName: Black, colorFamily: black }
 
 - slug: pulsar-xlite-v3-medium
   brand: pulsar
@@ -25,7 +37,19 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_Black_001-292582.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_Black_004-283838.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_Black_002-270917.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_Black_003-900804.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_White_001-638975.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_White_004-216846.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_White_002-531001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3MediumGamingMouse_White_003-823105.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 66, heightMm: 43, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PXV321, colorName: Black, colorFamily: black }
+    - { sku: PXV322, colorName: White, colorFamily: white }
 
 - slug: pulsar-x2-v3
   brand: pulsar
@@ -33,6 +57,11 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-T1-X2-v3-Gaming-Mouse_Medium_Black_001_medium_fc322cf2-052a-4a58-9b99-de1f93deed63.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-T1-X2-v3-Gaming-Mouse_Medium_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-T1-X2-v3-Gaming-Mouse_Medium_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-T1-X2-v3-Gaming-Mouse_Medium_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 53, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
 
 - slug: pulsar-x2h-v3
@@ -41,7 +70,19 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar_X2H_v3_Gaming_Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/PulsarX2Hv3GamingMouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 53, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PX2H321, colorName: Black, colorFamily: black }
+    - { sku: PX2H322, colorName: White, colorFamily: white }
 
 - slug: pulsar-xlite-v4-es-medium
   brand: pulsar
@@ -49,7 +90,14 @@
   msrpEur: 155
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar_Xlite_V4_eS_Gaming_Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar_Xlite_V4_eS_Gaming_Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar_Xlite_V4_eS_Gaming_Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar_Xlite_V4_eS_Gaming_Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 122, widthMm: 67, heightMm: 43, weightG: 65, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PXL4ES21, colorName: Black, colorFamily: black }
 
 - slug: pulsar-x2f
   brand: pulsar
@@ -57,7 +105,14 @@
   msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar-X2F_Black_01_mini.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/Pulsar-X2F_Black_02.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/20250625_X2F_FULL-DETAIL_RIGHTSHOT-2_1600px.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/20250625_X2F_FULL-DETAIL_LEFTSHOT-2_1600px.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 87.5, widthMm: 61.1, heightMm: 31.6, weightG: 38, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PX2F101, colorName: Black, colorFamily: black }
 
 - slug: pulsar-x3-lhd
   brand: pulsar
@@ -65,7 +120,19 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_Black_001.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_Black_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_Black_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_Black_004.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_White_001.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_White_002.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_White_003.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X3-LHD-Gaming-Mouse_White_004.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: left, segment: gaming, lengthMm: 124.6, widthMm: 69.3, heightMm: 43.1, weightG: 55, sideButtons: 2, sensor: Pulsar XS-1, dpiMax: 32000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: "33367", colorName: Black, colorFamily: black }
+    - { sku: "33368", colorName: White, colorFamily: white }
 
 - slug: pulsar-x2a-mini
   brand: pulsar
@@ -73,7 +140,14 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/files/X2A_gaming_Mouse_Mini_White.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AminigamingMouse_bottom-221331.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AminigamingMouse_leftside-760148.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2AminigamingMouse_rightside-891270.png, kind: cutout_top, width: 1024, height: 1024 }
   specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 37, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PX2A13, colorName: Black, colorFamily: black }
 
 - slug: pulsar-x2-mini
   brand: pulsar
@@ -81,6 +155,11 @@
   msrpEur: 115
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2miniRandomfrankpEditiongamingmouse_001-1-852482.png, kind: cutout_top, width: 1024, height: 1024, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2miniRandomfrankpEditiongamingmouse_002-166164.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2miniRandomfrankpEditiongamingmouse_003-643944.png, kind: cutout_top, width: 1024, height: 1024 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/X2miniRandomfrankpEditiongamingmouse_004-817644.png, kind: cutout_top, width: 1024, height: 1024 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 37, weightG: 52, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
 
 - slug: pulsar-xlite-v3-large
@@ -89,7 +168,19 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_Black_001-123342.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_Black_002-299981.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_Black_003-228665.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_Black_004-516100.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_White_005-510293.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_White_002-190303.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_White_003-408210.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0455/0914/8840/products/PulsarXliteV3LargeGamingMouse_White_004-759702.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 126, widthMm: 69.5, heightMm: 44.5, weightG: 58, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: PXV331, colorName: Black, colorFamily: black }
+    - { sku: PXV332, colorName: White, colorFamily: white }
 
 - slug: pulsar-x2-wired
   brand: pulsar
@@ -97,7 +188,19 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-Wired-Mouse_Size2_Black_001.png, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-Wired-Mouse_Size2_Black_003.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-Wired-Mouse_Size2_Black_002.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2-Wired-Mouse_Size2_Black_005.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2V2-Wired-Mouse_Size2_White_001.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2V2-Wired-Mouse_Size2_White_003.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2V2-Wired-Mouse_Size2_White_002.png, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/Pulsar-X2V2-Wired-Mouse_Size2_White_005.png, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 63, heightMm: 38, weightG: 51, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical }
+  variants:
+    - { sku: "31797", colorName: Black, colorFamily: black }
+    - { sku: "31798", colorName: White, colorFamily: white }
 
 - slug: pulsar-x2h-wired
   brand: pulsar
@@ -105,4 +208,16 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_Black_001_b89c9d3c-69d2-41e1-8281-219ee29253c4.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_Black_002_208abe50-8cc5-44c9-a97c-0e72eefe8eaa.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_Black_003_8e64325e-e22d-4c25-8711-49847d56b048.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_Black_004_2d381489-dcea-41f7-8e18-06824e6a9620.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_White_001_9adcb320-dfd1-4906-a404-ea370c940af1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_White_002_1679dc7e-6f7e-4882-b5bd-fd291e72216f.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_White_003_95b80f35-b130-40f6-92a5-418787791d0d.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0633/6587/3921/files/PulsarX2HWiredGamingMouse_White_004_d189dd51-519a-43a5-adb5-49d289e944a0.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39.1, weightG: 51, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: optical }
+  variants:
+    - { sku: "31799", colorName: Black, colorFamily: black }
+    - { sku: "31800", colorName: White, colorFamily: white }

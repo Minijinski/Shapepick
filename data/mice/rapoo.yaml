@@ -14,15 +14,41 @@
 - slug: rapoo-vt9-pro
   brand: rapoo
   name: VT9 Pro
-  msrpEur: 45
+  msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/VT9PRP-1K-BK.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/VT9PRP-1K-WH.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1_d9ffb423-fe25-42ff-b4dd-a4f5e8a721a5.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1_2cc0aa20-8185-434e-beaa-5195bb48c944.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1_89f9827d-8129-4267-becb-5742b81833c3.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/2_6d29e00f-386b-4af7-beaf-da77b6a02ae4.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/4_40a7564d-fdc0-4159-b9c6-871d08ca8df1.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/5_2.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124.8, widthMm: 67.1, heightMm: 38.7, weightG: 68, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: VT9PRO-1K-BK, colorName: Black, colorFamily: black }
+    - { sku: VT9PRO-1K-WH, colorName: White, colorFamily: white }
+    - { colorName: Black & Purple, colorFamily: color }
 
 - slug: rapoo-vt3s-gen-2
   brand: rapoo
   name: VT3S Gen-2
-  msrpEur: 40
+  msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1.VT3s-YW.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1.VT3s-WH.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1.VT3s-BK.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/1.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/2.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/3.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/XG-VT3S_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/5.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 66, heightMm: 42, weightG: 49, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: VT3s-YW, colorName: Yellow, colorFamily: color }
+    - { sku: VT3s-BK, colorName: Black, colorFamily: black }
+    - { sku: VT3s-WH, colorName: White, colorFamily: white }

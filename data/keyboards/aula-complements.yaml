@@ -17,12 +17,21 @@
 - slug: aula-f98
   brand: aula
   name: F98
-  msrpEur: 85
+  msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0054.jpg, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/203A6768.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/1_52a84756-7f94-4ad2-822a-58ec012423ec.png, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0087.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0059.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0070.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0067.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/DSC0066.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1040 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Pink, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: aula-f75-ultra
   brand: aula
@@ -30,6 +39,15 @@
   msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_03_6f75ccda-1c18-4022-b65b-b4e3ca5e5f9d.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_03.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_01.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_05_0ff3502e-93f9-43b5-8063-5b7c1b3a74b5.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_04_4f0029d9-8e9c-4306-9a98-5153bd501d08.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_09_5d67f90c-1bd1-4d7d-b658-e9ab1e30220a.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_06_90351a85-836c-4490-8824-249f3fe09dac.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0552/2803/9264/files/EPOMAKER_X_AULA_F75_ULTRA_08_aa7ced57-13e5-4e54-a254-f585785573b8.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, knob: true, firmware: via, macSupport: true, soundDampening: true, weightG: 1100 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: White Blue, colorFamily: white, layout: ansi_us, switch: switch-lineaire }

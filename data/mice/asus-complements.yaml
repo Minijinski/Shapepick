@@ -9,6 +9,10 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/4a95f18f-210f-49c1-b4f0-5c6ccf7981b1/w185, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/cbe0acd6-81c0-4af3-b472-b0ca39a87c1f/w185, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/146f77d0-cc54-4acf-a08e-1f0237d8a295/w185, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118, widthMm: 72, heightMm: 42, weightG: 109, sideButtons: 1, dpiMax: 4200, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 - slug: asus-proart-md301
@@ -17,48 +21,70 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/9faca2e2-47b0-49d7-b411-f0f0dfde8c91/w185, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/7747159a-bdc0-4020-bea2-e82557e94933/w185, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/76ab8955-1fd1-4b7d-ba1f-c43ab7f34d1a/w185, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 114.8, widthMm: 75.2, heightMm: 46.8, weightG: 99.7, sideButtons: 2, dpiMax: 8000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
 
 # à vérifier : boutons latéraux : 2, plus un joystick sur le flanc
 - slug: asus-rog-chakram-x
   brand: asus
-  name: Chakram X
+  name: ROG Chakram X
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/74F92C31-6D37-4160-B3D3-EA4A540287FE, kind: cutout_top, primary: true }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 132.7, widthMm: 76.6, heightMm: 42.8, weightG: 127, sideButtons: 2, sensor: ASUS ROG AimPoint, dpiMax: 36000, pollingHz: 1000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: rog-chakram-x-model, colorName: translucent black and silver, colorFamily: transparent }
 
 - slug: asus-rog-gladius-iii-core
   brand: asus
-  name: Gladius III Core
+  name: ROG Gladius III Core
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/2B6A44F5-FA49-4739-B475-F2B6BC614245/w185, kind: cutout_top, primary: true }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 44, weightG: 72, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000 }
 
 - slug: asus-rog-harpe-ace-mini
   brand: asus
-  name: Harpe Ace Mini
-  msrpEur: 155
+  name: ROG Harpe Ace Mini
+  msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/3E3EEEBF-D1CB-4F38-84DD-0C760D49EA76, kind: cutout_top, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 37, weightG: 49, sideButtons: 2, sensor: ASUS ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: rog-harpe-ace-mini, colorName: Black, colorFamily: black }
+    - { sku: rog-harpe-ace-mini, colorName: Moonlight White, colorFamily: white }
 
 - slug: asus-rog-harpe-mini-core
   brand: asus
-  name: Harpe Mini Core
+  name: ROG Harpe Mini Core
   msrpEur: 55
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/FA05331B-7D49-466E-B208-8BAE5B90C64D/w185, kind: cutout_top, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117, widthMm: 63, heightMm: 37, weightG: 52, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000 }
 
 - slug: asus-rog-keris-ii-origin
   brand: asus
-  name: Keris II Origin
-  msrpEur: 160
+  name: ROG Keris II Origin
+  msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/F83BB6CE-9D58-4FA5-9A5D-65F91C149A94, kind: cutout_top, primary: true }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 67, heightMm: 42, weightG: 65, sideButtons: 2, sensor: ASUS ROG AimPoint Pro, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: rog-keris-ii-origin, colorName: Black, colorFamily: black }
+    - { sku: rog-keris-ii-origin, colorName: Moonlight White, colorFamily: white }
 
 - slug: asus-tuf-gaming-m3-gen-ii
   brand: asus
@@ -66,6 +92,10 @@
   msrpEur: 35
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/5498db05-e543-495a-959e-fd54226bbb34/w185, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2f076c12-e30a-4990-81bf-dae414739903/w185, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/672a077b-a4de-4339-814d-482ab04af51f/w185, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 68, heightMm: 40, weightG: 59, sideButtons: 2, sensor: PixArt PAW3318, dpiMax: 8000, pollingHz: 1000, switchType: mechanical }
 
 - slug: asus-tuf-m4-air
@@ -74,6 +104,10 @@
   msrpEur: 45
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/b328e475-2a6e-4adb-afa7-8afd70f0e7bf/w185, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/24df695e-cdb2-4701-b760-8b809e9b8a50/w185, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/d75268cd-6dcf-4373-9e07-61366e9475d0/w185, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 47, sideButtons: 2, sensor: PixArt PAW3335, dpiMax: 16000, pollingHz: 1000, switchType: mechanical }
 
 - slug: asus-tuf-m4-wireless
@@ -82,4 +116,8 @@
   msrpEur: 55
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://dlcdnwebimgs.asus.com/gain/e3ff2a0d-0ed5-464a-bdac-b32f6856a173/w185, kind: cutout_top, primary: true }
+    - { url: https://dlcdnwebimgs.asus.com/gain/f8542d11-491e-4a73-9d17-351cffa80481/w185, kind: cutout_top }
+    - { url: https://dlcdnwebimgs.asus.com/gain/2c9aa40a-0ad3-47b6-9dbd-77725d219b1e/w185, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 63.5, heightMm: 39.6, weightG: 86, sideButtons: 2, sensor: PixArt PAW3311, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }

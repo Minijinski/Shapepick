@@ -6,7 +6,15 @@
 - slug: mionix-naos-pro
   brand: mionix
   name: Naos Pro
-  msrpEur: 60
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/1888/4001/files/naos-pro-side-view-gaming-mouse-mionix_c864d1c6-f49d-484e-a75e-ccf49e0a6e6a.jpg, kind: cutout_top, width: 2350, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/1888/4001/files/Mionix-NAOS-PRO-Hero-front-side_8c631f12-94a8-4e2b-be16-275d085a0532.jpg, kind: cutout_top, width: 3000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1888/4001/files/Mionix-NAOS-PRO-Hero-top_e2957760-3a6e-4496-8a06-6d64c5dd1261.jpg, kind: cutout_top, width: 3000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1888/4001/files/NAOS-PRO-cable-flex-mionix_4d43779b-0b53-46d1-aa80-a548f4509cc3.png, kind: cutout_top, width: 3000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/1888/4001/files/Mionix-NAOS-PRO-Hero-top_4f47f076-cca4-4f5b-814f-e85b55f36676.jpg, kind: cutout_top, width: 3000, height: 2000 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 131, widthMm: 85, heightMm: 39, weightG: 102, sideButtons: 2, sensor: PixArt PAW3370, dpiMax: 19000, pollingHz: 1000, switchType: mechanical }
+  variants:
+    - { sku: NAOS-PRO, colorName: Black, colorFamily: black }

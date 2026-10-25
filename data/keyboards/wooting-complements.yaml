@@ -10,6 +10,13 @@
   msrpEur: 215
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/80HE_OG_2.webp, kind: cutout_top, primary: true }
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/configurator-images/w80he-pcr-black-ansi-us-double-shot-pbt-black.webp, kind: cutout_top }
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/configurator-images/w80he-pcr-translucent-black-ansi-us-double-shot-pbt-black.webp, kind: cutout_top }
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/configurator-images/w80he-zinc-alloy-black-ansi-us-double-shot-pbt-black.webp, kind: cutout_top }
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/configurator-images/w80he-zinc-alloy-white-ansi-us-double-shot-pbt-white.webp, kind: cutout_top }
+    - { url: https://wooting-website.ams3.cdn.digitaloceanspaces.com/products/keyboards/80HE/80HE_OG.webp, kind: cutout_top }
   specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }

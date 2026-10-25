@@ -9,20 +9,43 @@
   msrpEur: 55
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/02/Dash-SX-GX.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/01/Dash-1.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/01/Dash-2.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2026/01/Dash-3.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 117.6, widthMm: 60.9, heightMm: 37, weightG: 40, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Pink, colorFamily: color }
 
 - slug: akko-nest
   brand: akko
   name: Nest
-  msrpEur: 85
+  msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/11/Next-Black.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/11/Next-1.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/11/Next-2.png, kind: cutout_top }
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/11/Next-3.png, kind: cutout_top }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 64, heightMm: 40, weightG: 49, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
 
 - slug: akko-pulse-01
   brand: akko
   name: Pulse 01
-  msrpEur: 85
+  msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/02/Pulse01-W-1.png, kind: cutout_top, primary: true }
+    - { url: https://en.akkogear.com/wp-content/uploads/2025/02/Pulse01-W-2-GX.png, kind: cutout_top }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 123.4, widthMm: 63.3, heightMm: 40.5, weightG: 77, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: White, colorFamily: white }
+    - { colorName: Black, colorFamily: black }

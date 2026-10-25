@@ -10,9 +10,18 @@
   msrpEur: 105
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-horizon-orange-icy-creamsicle-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639912.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-navy-blue-hyacinth-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639908.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-horizon-orange-hyacinth-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639907.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-emerald-green-hyacinth-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639906.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-sky-blue-hyacinth-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639905.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-navy-blue-icy-creamsicle-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639909.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-sky-blue-icy-creamsicle-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639904.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-emerald-green-icy-creamsicle-switch-mchose-k99-wireless-gasket-mount-mechanical-keyboard-1166639903.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
+    - { colorName: Navy Blue, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: mchose-mix-87-he
   brand: mchose
@@ -20,6 +29,15 @@
   msrpEur: 70
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-rose-red-apollo-magnetic-switch-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1177461524.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1208927639.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-black-lightning-magnetic-switch-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282018.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-black-apollo-magnetic-switch-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282020.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-black-mount-tai-magnetic-switch-gt-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282019.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-white-lightning-magnetic-switch-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282015.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-white-apollo-magnetic-switch-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282014.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-white-mount-tai-magnetic-switch-gt-mchose-mix-87-hall-effect-magnetic-switch-gaming-keyboard-1249282016.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, soundDampening: true, weightG: 992 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }
@@ -37,12 +55,21 @@
 - slug: mchose-ace-68-turbo-he
   brand: mchose
   name: Ace 68 Turbo HE
-  msrpEur: 125
+  msrpEur: 165
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-cyber-black-mount-tai-magnetic-switches-gt-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801351.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-galaxy-orange-mount-tai-magnetic-switches-gt-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801350.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-berry-red-mount-tai-magnetic-switches-gt-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801352.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-peachy-pink-mount-tai-magnetic-switches-gt-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801354.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-nova-white-mount-tai-magnetic-switches-gt-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801361.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-peachy-pink-gateron-magnetic-jade-pro-switch-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1213254491.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-nova-white-gateron-magnetic-jade-pro-switch-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1213254490.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-mchose-ace-68-turbo-full-aluminum-esports-hall-effect-keyboard-1208801359.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 16000, rapidTrigger: true, adjustableActuation: true, mount: sandwich, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, soundDampening: true, weightG: 1361 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Cyber Black, colorFamily: black, layout: ansi_us }
 
 - slug: mchose-x75
   brand: mchose
@@ -67,9 +94,18 @@
 - slug: mchose-gx87
   brand: mchose
   name: GX87
-  msrpEur: 130
+  msrpEur: 105
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-max-silver-anodic-oxidation-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639858.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-ultra-white-electrophoresis-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639857.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-ultra-black-anodic-oxidation-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639856.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-ultra-silver-anodic-oxidation-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639855.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-lite-white-nano-spraying-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639854.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-lite-blue-nano-spraying-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639853.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-max-black-anodic-oxidation-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639852.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0846/5727/5175/files/mchose-official-keyboard-top-case-blue-mchose-gx87-aluminum-custom-mechanical-keyboard-1166639851.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 2800 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }

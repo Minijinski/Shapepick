@@ -9,7 +9,15 @@
   msrpEur: 225
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web1.png, kind: cutout_top, width: 2058, height: 2058, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web2.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web3.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web4.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web5.png, kind: cutout_top, width: 2058, height: 2058 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 60, heightMm: 35.2, weightG: 33, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: ulxcs, colorName: Black, colorFamily: black }
 
 - slug: finalmouse-ulx-competition-medium
   brand: finalmouse
@@ -17,7 +25,15 @@
   msrpEur: 225
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web1.png, kind: cutout_top, width: 2058, height: 2058, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web2.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web3.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web4.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web5.png, kind: cutout_top, width: 2058, height: 2058 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.3, widthMm: 62, heightMm: 37, weightG: 36, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: ulxcm, colorName: Black, colorFamily: black }
 
 - slug: finalmouse-ulx-competition-classic
   brand: finalmouse
@@ -25,7 +41,15 @@
   msrpEur: 225
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web1.png, kind: cutout_top, width: 2058, height: 2058, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web2.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web3.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web4.png, kind: cutout_top, width: 2058, height: 2058 }
+    - { url: https://cdn.shopify.com/s/files/1/2377/4861/files/web5.png, kind: cutout_top, width: 2058, height: 2058 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 65, heightMm: 38.4, weightG: 38, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 6400, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: ulxcl, colorName: Black, colorFamily: black }
 
 - slug: finalmouse-starlight-x
   brand: finalmouse

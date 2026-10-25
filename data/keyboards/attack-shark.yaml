@@ -7,19 +7,37 @@
 - slug: attack-shark-k85
   brand: attack-shark
   name: K85
-  msrpEur: 85
+  msrpEur: 100
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1500_2_61c7f4f8-6a47-43cd-b218-4076475f1b64.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/K85_4.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1500_2.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/K85_C03.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/K85_C03_033f4d1d-a840-4430-b00b-6f151b7af4e7.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_7200b3c3-b416-4ded-8d40-f84264e368e6.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/2_ad0041b4-0136-4480-8fde-033abc17e084.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/3_fdf21222-041c-4c67-83f2-90ee5a76f06d.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, adjustableActuation: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, backlight: none, knob: true, firmware: proprietary, macSupport: true, weightG: 780 }
   variants:
-    - { colorName: Black, colorFamily: black, layout: ansi_us }
+    - { colorName: Grey, colorFamily: black, layout: ansi_us }
 
 - slug: attack-shark-x68-he
   brand: attack-shark
   name: X68 HE
-  msrpEur: 60
+  msrpEur: 85
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/06_13d08781-1abb-49e0-b2f9-bf6a453c016c.jpg, kind: cutout_top, width: 1500, height: 1500, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/0.1.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/05_6ac26b32-0392-4c96-9e43-248f731c848f.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/08_124c2ed9-35a7-4eef-8a06-53b081fb3625.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1500X68.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/X68_.3714_0c558aa8-ac47-4cae-b43d-5d9e49d0a404.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_59a636e0-f24c-4fe5-90c2-bac9738748d2.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_9e6ad20c-7a5d-4567-bf47-41ffe49ad37a.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, caseMaterial: aluminum, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, weightG: 950 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us }

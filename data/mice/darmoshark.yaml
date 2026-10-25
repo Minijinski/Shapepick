@@ -6,10 +6,22 @@
 - slug: darmoshark-m3
   brand: darmoshark
   name: M3
-  msrpEur: 65
+  msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/16.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/15.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_ee40c79c-7393-477a-9e6c-7d9ecbb78df0.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_6b5f4d0a-6c17-4ba7-bac6-e48aba930338.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/3_55a6813b-bde2-4e23-8ecc-df4406656242.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/4_bcbc1ea0-9d59-47f8-8814-3966615ddedc.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/5_af17f9ec-e644-47ec-a282-d0dade91c556.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/6_2c1b791e-1949-4339-a221-29a32086c527.jpg, kind: cutout_top, width: 1000, height: 1000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129.6, widthMm: 66.1, heightMm: 39.2, weightG: 58, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 2000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: Darmoshark M3 KIRAN Black, colorName: Black, colorFamily: black }
+    - { sku: Darmoshark  M3 KIRAN  Camel, colorName: Camel, colorFamily: color }
 
 - slug: darmoshark-m3-pro
   brand: darmoshark
@@ -17,7 +29,20 @@
   msrpEur: 65
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/6_b905b137-f3f1-483f-a588-2f771321649e.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/4_6f799e6e-ef4f-4bc9-8c3a-af699870b974.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/5_40127b13-e3d9-4419-b099-4961e8438afd.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_30cfc55f-96bd-4114-a412-1ae615b192d5.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_24120100-9395-4717-b1d9-0022cd439f2c.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/1_d547c7ee-44f7-4ae2-9658-aa87b05b91af.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/7_9561b008-70a5-4fad-a33f-cd7c9617d7cb.jpg, kind: cutout_top, width: 1500, height: 1500 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_128e2fd6-8cb7-47e8-85fa-ddbc4a73fc69.jpg, kind: cutout_top, width: 1500, height: 1500 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 129.6, widthMm: 66.1, heightMm: 39.2, weightG: 55, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 4000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { sku: Darmoshark  M3 PRO KIRAN  White, colorName: White, colorFamily: white }
+    - { sku: Darmoshark M3 PRO KIRAN  Black, colorName: Black, colorFamily: black }
+    - { sku: Darmoshark  M3 PRO KIRAN  Purple, colorName: Purple, colorFamily: color }
 
 - slug: darmoshark-m3s
   brand: darmoshark
@@ -65,7 +90,21 @@
   msrpEur: 50
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/12_f639a1df-1a8b-4817-9541-50ffb1673e43.jpg, kind: cutout_top, width: 1000, height: 1000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/11_0106387f-9d77-4d7b-8a41-c10ef1318c11.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/13.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/14.jpg, kind: cutout_top, width: 1000, height: 1000 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/2_2056e272-0a92-40ed-98d1-0892adfc8a3a.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/4.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/5.jpg, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0647/6319/9593/files/6.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 66, heightMm: 40, weightG: 61, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  variants:
+    - { colorName: Black, colorFamily: black }
+    - { colorName: White, colorFamily: white }
+    - { colorName: Pink, colorFamily: color }
+    - { colorName: Red, colorFamily: color }
 
 - slug: darmoshark-n7
   brand: darmoshark

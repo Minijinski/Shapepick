@@ -14,10 +14,26 @@
 - slug: wlmouse-beast-x-pro
   brand: wlmouse
   name: Beast X Pro
-  msrpEur: 175
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/M_8d7f1a55-aac5-4dfe-9db1-80d667c49999.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/m_79a69d97-9e49-4def-ab3a-174ce142cc6e.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/m_406ab376-c4a1-4bce-a21c-d7414dc9e808.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/m_f9d300c1-1a74-47ee-90bd-417680eb0603.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/Red.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/m.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/wlmouse-beast-x-pro-white.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/m_fed929db-d554-4a5c-9231-edc797d92db8.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 122, widthMm: 62, heightMm: 37, weightG: 39, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: MPRO-BLACK-O, colorName: Black, colorFamily: black }
+    - { sku: MPRO-SLIVER-O, colorName: Silver, colorFamily: white }
+    - { sku: MPRO-RED-O, colorName: Red, colorFamily: color }
+    - { sku: MPRO-WHITE-O, colorName: White, colorFamily: white }
+    - { sku: MPRO-SHIXIN-Blue&Orange-O, colorName: Blue/Orange, colorFamily: color }
+    - { sku: MPRO-SHIXIN-Red&Black-O, colorName: Red/Black, colorFamily: black }
 
 - slug: wlmouse-beast-x-mini
   brand: wlmouse
@@ -30,47 +46,143 @@
 - slug: wlmouse-beast-x-max
   brand: wlmouse
   name: Beast X Max
-  msrpEur: 175
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_7ebbb588-8c29-4b2a-8b9e-902780ad0c13.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_3f1b7aa6-4f49-44ed-bee5-e41182004564.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/Max_6acd5e88-da3e-4a99-98d6-fdc11b2423ab.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_645db88b-dca2-4190-bc33-d4fbca54329a.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_6aaf780e-f0d8-4857-ae3e-e189612e6b28.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_7040c920-947b-46f9-ab38-18a4d79aa465.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_424c460c-1804-42d7-b034-95eef86b4564.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/max_afc4cc91-5841-46e1-8758-3056123bbe1a.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 65, heightMm: 39, weightG: 42, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: MAX-HEI-GUANG, colorName: Black, colorFamily: black }
+    - { sku: MAX-ZI-GUANG, colorName: Purple, colorFamily: color }
+    - { sku: MAX-YIN-GUANG, colorName: Metallic Silver, colorFamily: white }
+    - { sku: MAX-Soft Lilac-O, colorName: Soft Lilac, colorFamily: color }
+    - { sku: MAX-Milky White-O, colorName: Milky White, colorFamily: white }
+    - { sku: MAX-RED-O, colorName: Red, colorFamily: color }
+    - { sku: MAX-SHIXIN-BLUE&PINK-O, colorName: Blue/Pink, colorFamily: color }
+    - { sku: MAX-SHIXIN-Blue&Orange-O, colorName: Blue/Orange, colorFamily: color }
+    - { sku: MAX-SHIXIN-Red&Black-O, colorName: Red/Black, colorFamily: black }
 
 - slug: wlmouse-ying
   brand: wlmouse
   name: Ying
-  msrpEur: 150
+  msrpEur: 180
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Gaming_Mouse_Black.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_White.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_Red.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_Purple.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_Silver.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_Blue.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Ying_MG_Wireless_Gaming_Mouse_Black_White.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120, widthMm: 60, heightMm: 37, weightG: 37, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: YINGMG-BLACK-O, colorName: Black, colorFamily: black }
+    - { sku: YINGMG-WHITE-O, colorName: White, colorFamily: white }
+    - { sku: YINGMG-PURPLE-O, colorName: Purple, colorFamily: color }
+    - { sku: YINGMG-SILVER-O, colorName: Silver, colorFamily: white }
+    - { sku: YINGMG-REDCAT-O, colorName: Red, colorFamily: color }
+    - { sku: YINGMG-BLUECAT-O, colorName: Blue, colorFamily: color }
+    - { sku: YINGMG-WBLACK-O, colorName: White/Black, colorFamily: black }
 
 - slug: wlmouse-sword-x
   brand: wlmouse
   name: Sword X
-  msrpEur: 180
+  msrpEur: 185
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/SWORDX-purple_66493a16-afd4-4a04-8a1a-95b28f17a06f.png, kind: cutout_top, width: 1200, height: 1200, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/swordx-black.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/swordx-white.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/swordx-silver.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/swordx-pink.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/swordx-red.png, kind: cutout_top, width: 1200, height: 1200 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/3-1.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/5-1.jpg, kind: cutout_top, width: 2000, height: 2000 }
   specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123, widthMm: 67, heightMm: 42, weightG: 47, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: Sword-Purple-O, colorName: Purple, colorFamily: color }
+    - { sku: Sword-black-O, colorName: Black, colorFamily: black }
+    - { sku: Sword-White-O, colorName: White, colorFamily: white }
+    - { sku: Sword-Silver-O, colorName: Silver, colorFamily: white }
+    - { sku: Sword-Pink-O, colorName: Pink, colorFamily: color }
+    - { sku: Sword-Red-O, colorName: Red, colorFamily: color }
+    - { sku: SWORD-S/PURPLE-O, colorName: Amethyst, colorFamily: color }
+    - { sku: SWORD-S/RED-O, colorName: Ruby, colorFamily: color }
+    - { sku: SWORD-S/GREEN-O, colorName: Emerald, colorFamily: color }
+    - { sku: SWORD-S/BLUE-O, colorName: Sapphire, colorFamily: color }
+    - { sku: SWORD-S/BLACK-O, colorName: Onyx, colorFamily: black }
+    - { sku: SWORD-S/BROWN-O, colorName: Topaz, colorFamily: color }
 
 - slug: wlmouse-strider
   brand: wlmouse
   name: Strider
-  msrpEur: 160
+  msrpEur: 175
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/190f8640ef1965b196d7443bec5923dc.jpg, kind: cutout_top, width: 2000, height: 2000, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/935e03dc7ed2ed1b5d91730ae628ba1f.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/4a4d94dd98e1dbe124a12e2e1f442eaf.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/ad589558741c5937e4a779b416b898d2.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/bluepink.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/blackgray.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/purple_gold.jpg, kind: cutout_top, width: 2000, height: 2000 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/black_2bdc5c18-1497-45fa-9d7c-08bd16fb3185.jpg, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 121.5, widthMm: 66, heightMm: 38, weightG: 45, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: STRIDER-BLACK-O, colorName: Black, colorFamily: black }
+    - { sku: STRIDER-WHITE-O, colorName: White, colorFamily: white }
+    - { sku: STRIDER-GOLD-O, colorName: Gold, colorFamily: color }
+    - { sku: STRIDER-PURPLE-O, colorName: Purple, colorFamily: color }
+    - { sku: MOU-STR-QYG-O, colorName: Blue, colorFamily: color }
+    - { sku: MOU-STR-XUH-O, colorName: Black Gray, colorFamily: black }
+    - { sku: MOU-STR-ZIG-O, colorName: Purple Gold, colorFamily: color }
 
 - slug: wlmouse-huan
   brand: wlmouse
   name: Huan
-  msrpEur: 150
+  msrpEur: 185
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/d989fb3d858de6f43d8f71c126e55425.png, kind: cutout_top, width: 2000, height: 2000, primary: true }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116, widthMm: 61, heightMm: 38, weightG: 48, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: HUAN-BLACK-O, colorName: Black, colorFamily: black }
 
 - slug: wlmouse-beast-miao
   brand: wlmouse
   name: Beast Miao
-  msrpEur: 175
+  msrpEur: 185
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/black.png, kind: cutout_top, width: 1600, height: 1600, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/white.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/pink.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/iceblue.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/blue-pink.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Beast_Miao_Wireless_Gaming_Mouse_Black_Red.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Beast_Miao_Wireless_Gaming_Mouse_White_Pink.png, kind: cutout_top, width: 1600, height: 1600 }
+    - { url: https://cdn.shopify.com/s/files/1/0774/7531/6010/files/WLMOUSE_Beast_Miao_Wireless_Gaming_Mouse_White_Purple.png, kind: cutout_top, width: 1600, height: 1600 }
   specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 91, widthMm: 55, heightMm: 34, weightG: 31, sideButtons: 2, sensor: PixArt PAW3950, dpiMax: 30000, pollingHz: 8000, switchType: optical, conn24ghz: true, power: rechargeable }
+  variants:
+    - { sku: MIAO-BLACK-O, colorName: Black, colorFamily: black }
+    - { sku: MIAO-WHITE-O, colorName: White, colorFamily: white }
+    - { sku: MIAO-PINK-O, colorName: Pink, colorFamily: color }
+    - { sku: MIAO-IBLUE-O, colorName: Ice Blue, colorFamily: color }
+    - { sku: MIAO-B&PINK-O, colorName: Blue & Pink, colorFamily: color }
+    - { sku: MIAO-Black/Red-O, colorName: Black & Red, colorFamily: color }
+    - { sku: MIAO-White/Pink-O, colorName: White & Pink, colorFamily: color }
+    - { sku: MIAO-White/Purple-O, colorName: White & Purple, colorFamily: color }

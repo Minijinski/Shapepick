@@ -10,6 +10,15 @@
   msrpEur: 120
   popularity: 0.5
   editorialScore: 0.5
+  images:
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro_87_-__08.jpg, kind: cutout_top, width: 800, height: 800, primary: true }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__18.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__17.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__16.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__15.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__14.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__13.jpg, kind: cutout_top, width: 800, height: 800 }
+    - { url: https://cdn.shopify.com/s/files/1/0621/8894/5585/files/85HD03-Retro-87-_-__12.jpg, kind: cutout_top, width: 800, height: 800 }
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: top, caseMaterial: aluminum, keycapMaterial: abs, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, weightG: 1100 }
   variants:
     - { colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-clicky }

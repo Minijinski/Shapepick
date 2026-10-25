@@ -1,4 +1,5 @@
 import type { Brand, KeyboardInput, MonitorInput, MouseRecord } from '@choose/catalog'
+import type { OfficialMouse } from './sources/mice/official'
 import type { SwitchResolver } from './switches'
 
 // What the CLI needs from a shop adapter (sources/*.ts): the models it can import, in batch order,
@@ -40,6 +41,8 @@ export type MouseCandidate = {
   slug: string
   brand: Brand
   map: () => Promise<MouseDraft>
+  /** The page as read, before mapping: its photos and colours even when it gives no price. */
+  read?: () => Promise<OfficialMouse>
 }
 
 export type PriceIndex = Map<string, { eur?: number; usd?: number }>
