@@ -10,6 +10,7 @@ import {
 import { loadData } from '@choose/catalog/node'
 import { inArray, notInArray, sql } from 'drizzle-orm'
 import { connectDirect, type Db } from './client'
+import { purgeCatalogue } from './purge-cdn'
 import * as t from './schema'
 import { storeSnapshot } from './snapshot'
 
@@ -310,3 +311,5 @@ console.info(
   `Seeded ${data.brands.length} brands, ${data.switches.length} switches, ${data.keyboards.length} keyboards, ${data.monitors.length} monitors, ${data.mice.length} mice.`,
 )
 await db.$client.end()
+// Production's pages, kept a day by the CDN, show the new catalogue at once.
+if (target.hostname.endsWith('.neon.tech')) await purgeCatalogue()

@@ -1,5 +1,6 @@
 import { type Category, categories } from '@choose/catalog'
 import { createFileRoute } from '@tanstack/react-router'
+import { CATALOGUE_TAG, catalogueCache } from '~/cdn'
 
 // The catalogue snapshot as JSON, for CDN caching and for anything outside the app (scripts,
 // a future mobile client). The ETag changes whenever a product of the category is updated.
@@ -19,9 +20,9 @@ export const Route = createFileRoute('/api/catalog/$category')({
           headers: {
             etag,
             'cache-control': 'public, max-age=60, stale-while-revalidate=600',
-            // Netlify's CDN keeps it longer and refreshes it in the background; a deploy empties it.
-            'netlify-cdn-cache-control':
-              'public, durable, s-maxage=300, stale-while-revalidate=604800',
+            // Netlify's CDN keeps it a day; a deploy or a seed empties it (src/cdn.ts).
+            'netlify-cdn-cache-control': catalogueCache['Netlify-CDN-Cache-Control'] ?? '',
+            'netlify-cache-tag': CATALOGUE_TAG,
           },
         })
       },

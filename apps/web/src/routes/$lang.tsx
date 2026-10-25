@@ -5,6 +5,7 @@ import {
   type Locale,
 } from "@choose/catalog";
 import { createFileRoute, notFound, Outlet } from "@tanstack/react-router";
+import { catalogueCache, noStore } from "~/cdn";
 import { SiteHeader } from "~/components/SiteHeader";
 import { FINDER_VARY } from "~/features/finder/params";
 import { Preloader } from "~/features/scene/Preloader";
@@ -24,9 +25,9 @@ export const Route = createFileRoute("/$lang")({
     return { catalogs, shown: shownCategories(catalogs), failed };
   },
   // A page is the same for every visitor (answers live in the URL, the journey in the browser):
-  // Netlify's CDN keeps it five minutes, then serves it while it fetches a fresh one, so most
-  // visits never wait for a function or the database. A deploy empties the cache. One copy per
-  // combination of the parameters a finder reads (features/finder/params.ts): others share it.
+  // Netlify's CDN keeps it a day (src/cdn.ts), so most visits never wait for a function or the
+  // database; a deploy or a seed empties it. One copy per combination of the parameters a finder
+  // reads (features/finder/params.ts): others share it.
   // The preloader holds the page's entrances (html[data-loading]): should the page never wake up,
   // the hold ends after five seconds anyway.
   head: () => ({
@@ -40,13 +41,8 @@ export const Route = createFileRoute("/$lang")({
   // A page missing a category that failed to load is not kept: the next visit tries again.
   headers: ({ loaderData }): Record<string, string> =>
     loaderData?.failed.length
-      ? { "Cache-Control": "no-store", "Netlify-CDN-Cache-Control": "no-store" }
-      : {
-          "Cache-Control": "public, max-age=0, must-revalidate",
-          "Netlify-CDN-Cache-Control":
-            "public, durable, s-maxage=300, stale-while-revalidate=604800",
-          "Netlify-Vary": FINDER_VARY,
-        },
+      ? noStore
+      : { ...catalogueCache, "Netlify-Vary": FINDER_VARY },
   staleTime: Number.POSITIVE_INFINITY,
   shouldReload: false,
   component: LocaleLayout,

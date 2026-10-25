@@ -17,6 +17,7 @@
     "db:generate": "pnpm --filter @choose/db generate",
     "db:migrate": "pnpm --filter @choose/db migrate",
     "db:seed": "pnpm --filter @choose/db seed",
+    "db:purge-cdn": "pnpm --filter @choose/db purge-cdn",
     "db:studio": "pnpm --filter @choose/db studio",
     "ingest": "pnpm --filter @choose/ingest ingest"
   },

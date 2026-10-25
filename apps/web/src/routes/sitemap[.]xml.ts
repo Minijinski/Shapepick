@@ -1,6 +1,7 @@
 import { type CatalogItem, type Category, categories, type Locale, locales } from '@choose/catalog'
 import type { Snapshot } from '@choose/db'
 import { createFileRoute } from '@tanstack/react-router'
+import { CATALOGUE_TAG, catalogueCache } from '~/cdn'
 import { livingCollections } from '~/features/catalogue/collections'
 import {
   cataloguePaths,
@@ -91,9 +92,9 @@ export const Route = createFileRoute('/sitemap.xml')({
           headers: {
             'content-type': 'application/xml; charset=utf-8',
             'cache-control': 'public, max-age=3600',
-            // Netlify's CDN keeps it an hour, then serves it while it fetches a fresh one.
-            'netlify-cdn-cache-control':
-              'public, durable, s-maxage=3600, stale-while-revalidate=86400',
+            // Netlify's CDN keeps it a day; a deploy or a seed empties it (src/cdn.ts).
+            'netlify-cdn-cache-control': catalogueCache['Netlify-CDN-Cache-Control'] ?? '',
+            'netlify-cache-tag': CATALOGUE_TAG,
           },
         })
       },

@@ -1,4 +1,5 @@
 import type { Locale } from '@choose/catalog'
+import { deployCache } from '~/cdn'
 
 // What the routes of the legal page and the links to it need, apart from the page itself
 // (LegalPage.tsx): a link to it, or its route's own options, carry nothing of the page.
@@ -12,8 +13,5 @@ export const legalPaths: Record<Locale, string> = {
   en: '/en/legal',
 }
 
-/** Kept by the CDN as the site's pages are (routes/$lang.tsx): a deploy empties it. */
-export const legalHeaders = {
-  'Cache-Control': 'public, max-age=0, must-revalidate',
-  'Netlify-CDN-Cache-Control': 'public, durable, s-maxage=300, stale-while-revalidate=604800',
-}
+/** Kept a day by the CDN: only a deploy changes it, and a deploy empties the CDN (src/cdn.ts). */
+export const legalHeaders = deployCache
