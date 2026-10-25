@@ -11,7 +11,7 @@ import {
   homePaths,
   productPaths,
 } from '~/seo'
-import { shownCategories } from '~/server/catalog'
+import { countsOf, shownCategories } from '~/server/catalog'
 import { absolute } from '~/site'
 
 // The pages search engines should know, in every locale: the home page, each category the site
@@ -63,7 +63,7 @@ export const Route = createFileRoute('/sitemap.xml')({
         const catalogs = Object.fromEntries(
           categories.map((c, i) => [c, snapshots[i]?.items ?? []]),
         ) as Record<Category, CatalogItem[]>
-        const shown = shownCategories(catalogs)
+        const shown = shownCategories(countsOf(catalogs))
         const lastmods = shown.flatMap((c) => updated.get(c) ?? [])
         const pages: Page[] = [
           { paths: homePaths, fallback: HOME_FALLBACK, lastmod: lastmods.sort().at(-1) ?? null },

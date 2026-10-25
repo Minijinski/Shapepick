@@ -8,7 +8,7 @@ import {
   rankingOf,
 } from '~/features/catalogue/collections'
 import { type SpecCell, specCells } from '~/features/product/specs'
-import { shownCategories } from './catalog'
+import { countsOf, shownCategories } from './catalog'
 
 // What the catalogue's pages show, worked out on the server from the category's catalogue: its
 // index (every product, by brand) and its collections (the products a few answers keep, ranked).
@@ -135,7 +135,11 @@ async function catalogueOf(category: Category) {
   )
   if (failed.includes(category)) throw new Error(`The ${category} catalogue is unavailable`)
   const catalogs = Object.fromEntries(entries) as Record<Category, CatalogItem[]>
-  return { items: catalogs[category], shown: shownCategories(catalogs), failed: failed.length > 0 }
+  return {
+    items: catalogs[category],
+    shown: shownCategories(countsOf(catalogs)),
+    failed: failed.length > 0,
+  }
 }
 
 export const getCatalogueIndex = createServerFn({ method: 'GET' })

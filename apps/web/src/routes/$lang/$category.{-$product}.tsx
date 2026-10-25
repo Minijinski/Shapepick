@@ -6,6 +6,7 @@ import {
   similar,
 } from "@choose/catalog";
 import { createFileRoute, getRouteApi, notFound } from "@tanstack/react-router";
+import { ensureCatalog, useCatalogs } from "~/catalogs";
 import { Finder } from "~/features/finder/Finder";
 import type { FinderSearch } from "~/features/finder/useFinder";
 import { sharedPhoto } from "~/features/product/photo";
@@ -45,7 +46,8 @@ export const Route = createFileRoute("/$lang/$category/{-$product}")({
     if (!category) throw notFound();
     const { loaderData } = await parentMatchPromise;
     if (!loaderData?.shown.includes(category)) throw notFound();
-    const items = loaderData.catalogs[category];
+    // Served with the page when it is this category's; fetched when moving here from another.
+    const items = await ensureCatalog(loaderData, category);
     const product = params.product
       ? items.find((item) => item.slug === params.product)
       : undefined;
@@ -141,14 +143,14 @@ const layout = getRouteApi("/$lang");
 
 function FinderPage() {
   const { category } = Route.useLoaderData();
-  const { catalogs } = layout.useLoaderData();
+  const catalogs = useCatalogs(layout.useLoaderData());
   const search = Route.useSearch();
   const { lang, product } = Route.useParams();
   return (
     <Finder
       key={category}
       category={category}
-      items={catalogs[category]}
+      items={catalogs[category] ?? []}
       search={search}
       product={product ?? null}
       locale={lang as Locale}

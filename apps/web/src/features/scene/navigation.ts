@@ -1,6 +1,7 @@
 import { type Category, categorySlugs } from '@choose/catalog'
 import { getRouteApi, useNavigate } from '@tanstack/react-router'
 import { type MouseEvent, useCallback, useEffect, useLayoutEffect, useRef, useState } from 'react'
+import { catalogOf, ensureCatalog } from '~/catalogs'
 import { loadJourney } from '~/features/finder/journey'
 import { type FinderAhead, journeyAhead } from '~/features/finder/targets'
 import { useLocale } from '~/i18n/locale'
@@ -67,37 +68,46 @@ const layout = getRouteApi('/$lang')
 export function useSceneNavigation() {
   const navigate = useNavigate()
   const locale = useLocale()
-  const { catalogs } = layout.useLoaderData()
+  const served = layout.useLoaderData()
   return useCallback(
     (category: Category | null, focal?: Pt) => {
       const current = scene.current
       // Already there: the link of the page on screen does nothing.
       if (category && current?.mode === 'canvas' && current.category === category) return
       if (!category && current?.mode === 'bands') return
-      const kind: ExitKind = category && current?.mode === 'canvas' ? 'switch' : 'leave'
-      const journey = category ? loadJourney(category) : {}
-      const ahead = category ? journeyAhead(category, catalogs[category], journey) : null
-      if (category && ahead) {
-        scene.showCanvas(category, focal)
-        // The canvas arrives showing what the saved answers keep, rather than the whole catalogue
-        // regrouping once the page is on screen.
-        scene.setTargets(category, ahead.targets, focal)
-      } else scene.showBands()
-      const mine = ++ticket
-      void runPageExit(kind, ahead?.finder ?? null).then(() => {
-        if (mine !== ticket) return
-        // The home page restores the scroll it was left at: its row folds back there.
-        if (!category)
-          return navigate({ to: '/$lang', params: { lang: locale }, resetScroll: false })
-        return navigate({
-          to: '/$lang/$category/{-$product}',
-          // The category's finder, without the product of a sheet open on the page left.
-          params: { lang: locale, category: categorySlugs[category][locale], product: undefined },
-          search: journey,
+      const go = () => {
+        const kind: ExitKind = category && current?.mode === 'canvas' ? 'switch' : 'leave'
+        const journey = category ? loadJourney(category) : {}
+        const items = category ? catalogOf(served, category) : undefined
+        const ahead = category && items ? journeyAhead(category, items, journey) : null
+        if (category && ahead) {
+          scene.showCanvas(category, focal)
+          // The canvas arrives showing what the saved answers keep, rather than the whole catalogue
+          // regrouping once the page is on screen.
+          scene.setTargets(category, ahead.targets, focal)
+        } else if (category) scene.showCanvas(category, focal)
+        else scene.showBands()
+        const mine = ++ticket
+        void runPageExit(kind, ahead?.finder ?? null).then(() => {
+          if (mine !== ticket) return
+          // The home page restores the scroll it was left at: its row folds back there.
+          if (!category)
+            return navigate({ to: '/$lang', params: { lang: locale }, resetScroll: false })
+          return navigate({
+            to: '/$lang/$category/{-$product}',
+            // The category's finder, without the product of a sheet open on the page left.
+            params: { lang: locale, category: categorySlugs[category][locale], product: undefined },
+            search: journey,
+          })
         })
-      })
+      }
+      // A catalogue the page came without (src/catalogs.ts) is in before the transition starts: the
+      // scene draws what it shows from the first frame. It usually is in already.
+      const needed = category ? [category] : served.shown
+      if (needed.every((c) => catalogOf(served, c))) return go()
+      void Promise.allSettled(needed.map((c) => ensureCatalog(served, c))).then(go)
     },
-    [navigate, locale, catalogs],
+    [navigate, locale, served],
   )
 }
 

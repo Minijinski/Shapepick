@@ -24,9 +24,12 @@ import { exposeStats, mark } from './stats'
 // `data-keep-clear`) are left alone: the popup never covers them, nor opens for a product they
 // mostly hide.
 
-/** `shown`: the categories the site offers (with products), one band each, in this order. */
+/**
+ * `shown`: the categories the site offers (with products), one band each, in this order.
+ * `catalogs`: those the browser has; one that comes in later is laid out as it arrives.
+ */
 type Props = {
-  catalogs: Record<Category, CatalogItem[]>
+  catalogs: Partial<Record<Category, CatalogItem[]>>
   shown: readonly Category[]
   locale: Locale
 }
@@ -219,6 +222,10 @@ export function Scene({ catalogs, shown, locale }: Props) {
   const dotRef = useRef<HTMLSpanElement>(null)
   const lineRef = useRef<SVGLineElement>(null)
   const rendererRef = useRef<SceneRenderer | null>(null)
+  /** Lays out a category's products once its catalogue is in (set by the scene once it exists). */
+  const addRef = useRef<((category: Category, list: CatalogItem[]) => void) | null>(null)
+  const catalogsRef = useRef(catalogs)
+  catalogsRef.current = catalogs
   const [hit, setHit] = useState<Hit | null>(null)
   /**
    * The card on screen: the product it shows, the opening it belongs to (a new opening plays the
@@ -403,12 +410,21 @@ export function Scene({ catalogs, shown, locale }: Props) {
     gsap.ticker.add(renderer.tick)
 
     // ---- Products: laid out at once from their shapes; drawings come as the canvas needs them --
+    // A category whose catalogue comes in later (src/catalogs.ts) is laid out when it does.
     const shapes = new Map<Category, Map<string, Shape>>()
-    for (const category of shown) {
-      const list = drawings.register(catalogs[category])
+    const items = new Map<Category, Map<string, CatalogItem>>()
+    const add = (category: Category, catalogue: CatalogItem[]) => {
+      if (items.has(category)) return
+      const list = drawings.register(catalogue)
       renderer.setItems(category, list)
       shapes.set(category, new Map(list.map((shape) => [shape.slug, shape])))
+      items.set(category, new Map(catalogue.map((i) => [i.slug, i])))
     }
+    for (const category of shown) {
+      const catalogue = catalogsRef.current[category]
+      if (catalogue) add(category, catalogue)
+    }
+    addRef.current = add
 
     // ---- Photos: fetched for the products the canvas draws, as sharp as it draws them --------
     const photos = new Photos(
@@ -417,7 +433,6 @@ export function Scene({ catalogs, shown, locale }: Props) {
       photoBudget(isCompact(readViewport()), dpr()),
       (category, slug, sprite) => renderer.setPhoto(category, slug, sprite, sprite != null),
     )
-    const items = new Map(shown.map((c) => [c, new Map(catalogs[c].map((i) => [i.slug, i]))]))
     const askForPhotos = window.setInterval(() => {
       for (const [category, drawn] of renderer.takeDrawn()) {
         for (const [slug, { scale, distance }] of drawn) {
@@ -690,12 +705,22 @@ export function Scene({ catalogs, shown, locale }: Props) {
       detach()
       renderer.dispose()
       rendererRef.current = null
+      addRef.current = null
+    }
+  }, [shown])
+
+  useEffect(() => {
+    const add = addRef.current
+    if (!add) return
+    for (const category of shown) {
+      const catalogue = catalogs[category]
+      if (catalogue) add(category, catalogue)
     }
   }, [catalogs, shown])
 
   const shownHit = card?.hit
   const item = shownHit
-    ? catalogs[shownHit.category].find((i) => i.slug === shownHit.slug)
+    ? catalogs[shownHit.category]?.find((i) => i.slug === shownHit.slug)
     : undefined
   const state = card?.leaving ? 'out' : 'in'
 

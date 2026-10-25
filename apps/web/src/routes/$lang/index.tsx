@@ -1,5 +1,6 @@
 import { type Category, categorySlugs, type Locale } from "@choose/catalog";
 import { createFileRoute, getRouteApi, Link } from "@tanstack/react-router";
+import { ensureCatalog } from "~/catalogs";
 import {
   type CSSProperties,
   type FocusEvent,
@@ -42,6 +43,15 @@ import { HOME_FALLBACK, homePaths, pageHead, websiteSchema } from "~/seo";
 // scrolls: the scene moves the rows and this page's layer with the scroll, frame by frame.
 
 export const Route = createFileRoute("/$lang/")({
+  // Its panels draw every category: those the visit has not fetched yet (it started on a
+  // category's page, src/catalogs.ts) come in first. Usually in already.
+  loader: async ({ parentMatchPromise }) => {
+    const { loaderData } = await parentMatchPromise;
+    if (!loaderData) return;
+    await Promise.allSettled(
+      loaderData.shown.map((category) => ensureCatalog(loaderData, category)),
+    );
+  },
   head: ({ params }) => {
     const lang = params.lang as Locale;
     return pageHead({
@@ -160,7 +170,7 @@ const hero = css({
 
 function Home() {
   // One panel per category the site offers (`shown`: those with products).
-  const { catalogs, shown } = layout.useLoaderData();
+  const { counts, shown } = layout.useLoaderData();
   const locale = Route.useParams().lang as Locale;
   const viewport = useViewport();
   // A phone: rows under the title (null while the viewport is unknown: CSS lays the rows out).
@@ -297,7 +307,7 @@ function Home() {
               index={i}
               quad={rows === false ? (quads?.[i] ?? null) : null}
               spot={spots?.[i] ?? null}
-              count={catalogs[category].length}
+              count={counts[category]}
               locale={locale}
               veiled={hovered !== null && hovered !== category}
               onHover={hover}
