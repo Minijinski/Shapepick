@@ -814,7 +814,9 @@ Même moteur que le 24 au soir, avec 467 souris (+293) et 685 claviers (+140). L
 
 Ce qui bat les 78 souris : multi-appareils (30), capteur (27), légèreté (10). En compétitif, G-Wolves prend 5 places du top 10. Rapport et listes complètes : `audit-suite-rapport.md` et `audit-suite-trous.txt` dans le dossier de notes partagé (`~/Library/Application Support/Claude/side-session-notes/local_8b9d2ee1-87d6-49fb-88c3-05b9ac9dfd4e`) ; scripts dans le scratchpad de la session (`audit/run.sh`, `scripts/gaps.mts`).
 
-### Trous de données (point 4, à faire)
+### Trous de données (point 4)
+
+Traités le 25 octobre après-midi sur la branche `claude/audit-donnees-fee473`, en ligne depuis le seed de 13:09 UTC : voir « Données manquantes (point 4, 25 octobre) ». Les chiffres ci-dessous sont ceux d'avant.
 
 - `power` absent sur 29 souris sans fil (25 nouvelles) : « Batterie rechargeable » les écarte, même à piles (M185, M510, Kensington…), et leur autonomie se lit à 70 h.
 - `hosts` absent sur 326 souris sans fil hors Logitech : 2 par défaut pour 147 (2,4 GHz + Bluetooth), 1 pour 203 (2,4 GHz) et pour 2 (Bluetooth seul, écartées par « Multi-appareils »).
@@ -862,6 +864,41 @@ Nouveau favicon, police Hubot Sans, titre de l'accueil remonté et noms ROG : en
 Choix de l'utilisateur, sur maquettes à taille réelle : le favicon parmi quatre pistes (S câblé, écran « s », médiator, trio), puis sa version anguleuse (« moins rounded, plus cyberpunk ») ; la police parmi Hubot Sans, Hubot Sans étroite, Chakra Petch et Saira. Le zéro de Hubot Sans est barré d'un trait horizontal, sans variante.
 
 Vérifié en ligne : favicon, `.ico` et icône iOS servis ; feuille de style en Hubot Sans seule ; API 14/14 claviers ASUS et 16/16 souris ROG nommés « ROG … », fiche « ASUS ROG Azoth, clavier 75 % mécanique » ; filtre des marques « rog » → ASUS (014) ; pages FR et EN sur `default-*-v3.png`, servies à l'octet près, v2 en 404.
+
+## Données manquantes (point 4, 25 octobre)
+
+Le point 4 de l'audit : ce qui manque dans les fiches, cherché à la source. 5 commits sur la branche `claude/audit-donnees-fee473` (sur `11f2fdb`), fusionnés dans main (b82efd6) et poussés le 25 octobre à 12:53 UTC ; seed de production de 12:53 à 13:09 UTC (15 min, 1 416 produits). Vérifié en ligne : Logitech M185 à piles AA, Razer Pro Click Mini à 4 appareils, Samsung G5 G50F à 1 ms. Chaque valeur a sa source en commentaire au-dessus de `specs:` (ou de `variants:` pour un switch), au format de `4470886`.
+
+| Commit | Lot | Valeurs |
+| --- | --- | --- |
+| `8c9a92c` | Souris : alimentation (24 sur 29), appareils (16), autonomie (33), boutons (17) | 94 |
+| `18fbf64` | Claviers : polling filaire (33), appareils Bluetooth (37), batteries (12), poids (5) | 87 |
+| `ce4e036` | Claviers : switch de Womier WK75, L65, MT75, X98 (générique linéaire) et RK R87 PRO | 9 variantes |
+| `9e589ba` | Écrans : temps de réponse Samsung (6), pieds MSI PRO MAX et LG 24MS550 (6), DCI-P3 (5), HDMI (25) | 52 |
+| `411b3c0` | Souris : autonomie (15), boutons (10), polling (2) de 24 souris de plus | 27 |
+
+Sources : le cache de l'ingest d'abord, puis les fiches des marques, avec l'agent de l'ingest, 3 à 4 s entre deux requêtes et robots.txt. Refus non contournés : ir.corsair.com, www.elecom.co.jp et dl.razerzone.com (403), mysupport.razer.com (robots.txt).
+
+### Effet (même moteur, données avant → après)
+
+| Mesure | Avant | Après |
+| --- | --- | --- |
+| Souris sans fil sans `power` | 29 | 5 |
+| Souris Bluetooth hors Logitech sans `hosts` | 143 | 127 |
+| Claviers mécaniques sans switch | 14 | 9 |
+| Claviers magnétiques sans polling | 31 | 18 |
+| Écrans sans temps de réponse (hors OLED) | 15 | 9 |
+| Écrans sans version HDMI | 54 | 29 |
+| Personas souris dont le n°1 change | — | 16 sur 108 |
+| Personas écrans dont le n°1 change | — | 3 sur 72 |
+
+Souris : Keychron G5 n°1 en jeu symétrique moyenne (Sabre v3 Pro PureVector avant), Rapoo VT3S Gen-2 en jeu ergo moyenne, Darmoshark M5 en nomade petite (Keychron M4 : 67 h). Écrans : Samsung G5 G50F n°1 en FPS 32" (1 ms GtG), MSI PRO MAX 271QPHW en bureau 27" ≤ 300 €. Claviers : n°1 inchangés. Les 52 écrans sans champ de pied restants ont un pied fixe, d'après leur fiche.
+
+### Pas à la source, ou à décider
+
+- Restent vides : 5 `power` (Kensington Orbit Fusion et Orbit Wireless Mobile, Razer Basilisk X HyperSpeed et Naga V2 HyperSpeed, ROG Harpe Ace Extreme) ; `pollingHz` des 37 souris de bureau (Logitech donne un intervalle, 7,5 ms, sur support.logi.com) ; 6 switchs Ajazz (nommés, ressenti jamais écrit), Womier VK75 et SK75, Chilkey Foxy 65 ; 9 temps de réponse (MPRT seul, ZOWIE rien) ; 95 DCI-P3 (sRGB ou NTSC seulement) ; 29 HDMI (AOC « 2.1 TMDS », LG « Oui » sans version).
+- À décider : la question « Boutons » ne garde pas l'ASUS ProArt MD300 (1 bouton) : « 2 » pourrait devenir « 1 ou 2 ». Le Royal Kludge R87 PRO mêle le filaire et le sans-fil. Pro Click Mini en `gaming`, Chakram X à 1 000 Hz (8 000 en filaire), ERGO M575S à 2 appareils par défaut : non corrigés.
+- Rapport, listes et tableaux complets : `audit-donnees-rapport.md`, `audit-donnees-trous-avant.md`, `audit-donnees-trous-apres.md` dans le dossier de notes partagé (`~/Library/Application Support/Claude/side-session-notes/local_35da7c6d-efa0-43e8-9ba0-b5af248ac412`).
 
 ## SEO et i18n
 

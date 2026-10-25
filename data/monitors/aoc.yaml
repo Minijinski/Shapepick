@@ -358,7 +358,8 @@
     - https://www.aoc.com/fr/monitors/q27u3cv
   gtins:
     - "4038986182065"
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 75, responseGtgMs: 4, vrr: freesync, hdrCert: hdr400, brightnessHdrPeakNits: 420, contrastStatic: 1000, srgbPct: 144.5, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 96, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4800 }
+  # dciP3Pct : « La gamme AOC Graphic Pro offre une couverture DCI-P3 à 98 %, sRGB à 100 % et Rec. 709 à 100 % » (fiche aoc.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 75, responseGtgMs: 4, vrr: freesync, hdrCert: hdr400, brightnessHdrPeakNits: 420, contrastStatic: 1000, dciP3Pct: 98, srgbPct: 144.5, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "1.4", dpVersion: "1.2", usbcPdW: 96, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true, weightG: 4800 }
   variants:
     - { sku: Q27U3CV, colorName: Noir, colorFamily: black }
 
@@ -828,7 +829,8 @@
     - https://www.aoc.com/fr/monitors/cu34b3e
   gtins:
     - "4038986113250"
-  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, srgbPct: 121, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 7400 }
+  # dciP3Pct : « Gamme de couleurs : NTSC 100% (CIE1976) / sRGB 121% (CIE1931) / DCI-P3 (CIE1976) 91% » (fiche aoc.com)
+  specs: { diagonalIn: 34, aspect: 21:9, resW: 3440, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 120, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 3500, dciP3Pct: 91, srgbPct: 121, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.4", weightG: 7400 }
   variants:
     - { sku: CU34B3E, colorName: Noir, colorFamily: black }
 

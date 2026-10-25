@@ -47,7 +47,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/3.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/XG-VT3S_2.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0585/2875/9937/files/5.VT3s.jpg, kind: cutout_top, width: 1600, height: 1600 }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 66, heightMm: 42, weightG: 49, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  # buttons : « 8 Programmable Buttons » (fiche shop.rapoo.com)
+  # batteryHours : « 800mAh Battery, up to 750 Hours Battery Life » (fiche shop.rapoo.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 121, widthMm: 66, heightMm: 42, weightG: 49, buttons: 8, sideButtons: 2, sensor: PixArt PAW3398, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, batteryHours: 750, power: rechargeable }
   variants:
     - { sku: VT3s-YW, colorName: Yellow, colorFamily: color }
     - { sku: VT3s-BK, colorName: Black, colorFamily: black }

@@ -18,7 +18,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-sliver_01.jpg, kind: cutout_top, width: 1200, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-green-2.png, kind: cutout_top, width: 1200, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/nulea_M501_Wireless_Ergonomic_trackball_mouse-orange-2.png, kind: cutout_top, width: 1200, height: 1500 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 103, heightMm: 50, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true }
+  # hosts : « connects to up to 3 devices via either Bluetooth or a USB dongle » (fiche nulea.com)
+  # power : « The built-in rechargeable battery » (fiche nulea.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 136, widthMm: 103, heightMm: 50, weightG: 128, ballPosition: thumb, sideButtons: 0, dpiMax: 1600, pollingHz: 250, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable }
   variants:
     - { sku: "", colorName: Red, colorFamily: color, msrpEur: 40 }
     - { sku: "", colorName: Blue, colorFamily: color }
@@ -45,7 +47,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x-6.webp, kind: cutout_top, width: 1200, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x-7.webp, kind: cutout_top, width: 1200, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0549/9768/0300/files/Nulea_M505_Wireless_Ergonomic_Trackball_Mouse-red_1x_a5f5b92f-2f37-4836-9abc-a61b1db9ce2a.webp, kind: cutout_top, width: 1200, height: 1500 }
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 168, widthMm: 104, heightMm: 56, weightG: 193, ballPosition: finger, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true }
+  # hosts : « can connect to up to 3 devices via Bluetooth or USB receiver » (fiche nulea.com)
+  # batteryHours : « a built-in rechargeable battery that lasts up to 90 days » (fiche nulea.com), 8 h par jour comme l'ingest
+  # power : « a built-in rechargeable battery » (fiche nulea.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 168, widthMm: 104, heightMm: 56, weightG: 193, ballPosition: finger, sideButtons: 0, dpiMax: 1600, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 720, power: rechargeable }
   variants:
     - { sku: "", colorName: Red, colorFamily: color, msrpEur: 45 }
     - { sku: "", colorName: Blue, colorFamily: color }

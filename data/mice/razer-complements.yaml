@@ -9,7 +9,8 @@
   msrpEur: 60
   popularity: 0.5
   editorialScore: 0.5
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42, weightG: 83, sideButtons: 2, sensor: Razer 5G, dpiMax: 16000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « 6 PROGRAMMABLE BUTTONS » (fiche razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 130, widthMm: 75, heightMm: 42, weightG: 83, buttons: 6, sideButtons: 2, sensor: Razer 5G, dpiMax: 16000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
 
 - slug: razer-deathadder-v2-x-hyperspeed
   brand: razer
@@ -23,7 +24,10 @@
     - { url: https://assets3.razerzone.com/Y2GACpCUff718kHg4bTFY4O_WT8=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh66%2Fh07%2F9250344501278%2F211026-deathadder-v2-x-hyperspeed-1500x1000-2.jpg, kind: cutout_top }
     - { url: https://assets3.razerzone.com/61hIjMwMLYErKdU6zBV-h0kx6M0=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fhcf%2Fh0a%2F9250344402974%2F211026-deathadder-v2-x-hyperspeed-1500x1000-3.jpg, kind: cutout_top }
     - { url: https://assets3.razerzone.com/YQxz6U1jf8mWfIKfiXqXUH_PNC4=/1500x1000/https%3A%2F%2Fmedias-p1.phoenix.razer.com%2Fsys-master-phoenix-images-container%2Fh78%2Fh0a%2F9250344435742%2F211026-deathadder-v2-x-hyperspeed-1500x1000-4.jpg, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 42.7, weightG: 103, sideButtons: 2, sensor: Razer 5G, dpiMax: 14000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « Programmable Buttons: 7 » (fiche razer.com)
+  # batteryHours : « Up to 235 hours (2.4GHz), 615 hours (BLE) with included AA battery » (fiche razer.com)
+  # power : « with included AA battery. AA/AAA Hybrid battery slot » (fiche razer.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 127, widthMm: 70, heightMm: 42.7, weightG: 103, buttons: 7, sideButtons: 2, sensor: Razer 5G, dpiMax: 14000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 235, power: aa }
   variants:
     - { sku: RZ01-04130100-R3U1, colorName: Noir, colorFamily: black }
 
@@ -49,7 +53,13 @@
   msrpEur: 95
   popularity: 0.5
   editorialScore: 0.5
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 100.2, widthMm: 62.7, heightMm: 34.2, weightG: 88, sideButtons: 2, sensor: Razer 5G, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # buttons : « The Razer Pro Click Mini features 7 programmable buttons » (fiche razer.com)
+  # hosts : « Connect with up to 4 devices » (fiche razer.com)
+  # batteryHours : « UP TO 465 HOURS / 19 DAYS* » en 2,4 GHz, « Measured with 2x AA alkaline batteries » (fiche razer.com)
+  # power : « WORKS WITH 1 OR 2 AA BATTERIES » (fiche razer.com)
+  # freeSpinWheel : « TACTILE MODE / FREE-SPIN MODE » (fiche razer.com)
+  # tiltWheel : « 7 programmable buttons which includes a tilt-click scroll wheel » (fiche razer.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 100.2, widthMm: 62.7, heightMm: 34.2, weightG: 88, buttons: 7, sideButtons: 2, sensor: Razer 5G, dpiMax: 12000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 4, batteryHours: 465, power: aa, freeSpinWheel: true, tiltWheel: true }
 
 - slug: razer-viper-mini
   brand: razer

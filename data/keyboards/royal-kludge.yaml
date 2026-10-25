@@ -23,7 +23,8 @@
     - https://www.rkgamingstore.com/products/s98-pink-edition
     - https://www.rkgamingstore.com/products/s98-winter-limited-edition
     - https://www.rkgamingstore.com/products/s98-wireless-mechanical-keyboard
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  # btDevices : « You can pair up to three devices via Bluetooth and switch between them directly from the built-in screen. » (fiche rkgamingstore.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, soundDampening: true, weightG: 500 }
   variants:
     - { sku: RK-S98-R36PK, colorName: Black, colorFamily: black, layout: ansi_us }
     - { sku: RK-S98-R37WTM, colorName: Lavender Purple, colorFamily: color, layout: ansi_us, switch: tactile-beige }
@@ -120,7 +121,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0510/7866/0274/files/RKROYALKLUDGEM8780_TKLGasketMountWirelessGamingKeyboard_4.png?v=1748573654, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://www.rkgamingstore.com/products/m87-tkl-wireless-gaming-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, weightG: 500 }
+  # btDevices : « The 75% layout allows you to connect up to three devices via Bluetooth, and with a simple turn of the knob, you can effortlessly switch between them, providing  » (fiche rkgamingstore.com)
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, screen: true, firmware: via, batteryMah: 1450, weightG: 500 }
   variants:
     - { sku: RK-M87-R34WRM, colorName: Red, colorFamily: color, layout: ansi_us, switch: cream }
     - { sku: RK-M87-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us, switch: cream }
@@ -137,8 +139,9 @@
   sources:
     - https://www.rkgamingstore.com/products/r87-tkl-wired-gaming-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  # switch : « Equipped with factory-lubed linear creamy switches, the R87 Pro provides smooth, quiet keystrokes » (fiche rkgamingstore.com, R87 Pro filaire)
   variants:
-    - { sku: RK-R87-R14WGM, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RK-R87-R14WGM, colorName: Black, colorFamily: black, layout: ansi_us, switch: linear-creamy }
 
 - slug: royal-kludge-r75
   brand: royal-kludge
@@ -157,7 +160,8 @@
   sources:
     - https://www.rkgamingstore.com/products/r75-75-wireless-gaming-keyboard
     - https://www.rkgamingstore.com/products/r75-75-wired-gaming-keyboard
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  # btDevices : « This wireless gaming keyboard supports Bluetooth 5.1, 2.4GHz wireless, and USB-C wired connections, allowing you to pair with up to three devices simultaneously » (fiche rkgamingstore.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
   variants:
     - { sku: RK-R75-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us }
     - { sku: RK-R75-R34GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us }
@@ -181,7 +185,8 @@
   sources:
     - https://www.rkgamingstore.com/products/r65-65-wireless-gaming-keyboard
     - https://www.rkgamingstore.com/products/r65-wired-gaming-mechanical-keyboard
-  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, weightG: 500 }
+  # btDevices : « Pair up to three devices and switch between them with ease using the one-key switch mode. » (fiche rkgamingstore.com)
+  specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, weightG: 500 }
   variants:
     - { sku: RK-R65-R34BLM, colorName: Blue, colorFamily: color, layout: ansi_us, switch: cream }
     - { sku: RK-R65-R34GRM, colorName: Clay Green, colorFamily: color, layout: ansi_us, switch: cream }

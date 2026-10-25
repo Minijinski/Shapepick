@@ -430,7 +430,9 @@
     - https://www.keychron.com/products/keychron-v3-qmk-custom-mechanical-keyboard
     - https://www.keychron.com/products/keychron-v3-qmk-custom-mechanical-keyboard-russian-layout
     - https://www.keychron.com/products/keychron-v3-qmk-custom-mechanical-keyboard-iso-layout-collection
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, mount: tray, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: qmk, macSupport: true }
+  # weightG : « Weight: 1120 g ± 10 g (Fully Assembled Version) » (fiche keychron.com)
+  # pollingHzWired : « Connectivity: wired; 1000 Hz polling rate » (fiche keychron.com)
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: tray, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: qmk, macSupport: true, weightG: 1120 }
   variants:
     - { sku: V3-A1, colorName: Frosted Black (Translucent), colorFamily: transparent, layout: ansi_us, switch: keychron-k-pro-red }
     - { sku: V3-A2, colorName: Frosted Black (Translucent), colorFamily: transparent, layout: ansi_us, switch: keychron-k-pro-blue }
@@ -769,7 +771,8 @@
     - https://www.keychron.com/products/keychron-b1-pro-ultra-slim-wireless-keyboard
     - https://www.keychron.com/products/keychron-b1-pro-keyboard-and-bm24-mouse-wireless-combo
     - https://www.keychron.com/products/keychron-b1-pro-ultra-slim-wireless-keyboard-iso-layout-collection
-  specs: { formFactor: f75, technology: scissor, hotSwap: none, conn24ghz: true, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 425, widthMm: 296, depthMm: 130, typingAngleDeg: 3.2 }
+  # pollingHzWired : « Polling Rate: 1000 Hz (Wired and 2.4 GHz) » (fiche keychron.com)
+  specs: { formFactor: f75, technology: scissor, hotSwap: none, conn24ghz: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 425, widthMm: 296, depthMm: 130, typingAngleDeg: 3.2 }
   variants:
     - { sku: B1P-K1, colorName: Space Gray, colorFamily: black, layout: ansi_us }
     - { sku: B1P-K8, colorName: Ivory White, colorFamily: white, layout: ansi_us }
@@ -841,7 +844,8 @@
     - https://www.keychron.com/products/keychron-b6-pro-ultra-slim-wireless-keyboard
     - https://www.keychron.com/products/keychron-b6-pro-keyboard-and-bm24-mouse-wireless-combo
     - https://www.keychron.com/products/keychron-b6-pro-ultra-slim-wireless-keyboard-iso-layout-collection
-  specs: { formFactor: full, technology: scissor, hotSwap: none, conn24ghz: true, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 623, widthMm: 429, depthMm: 130, typingAngleDeg: 3.2 }
+  # pollingHzWired : « Polling Rate: 1000 Hz (Wired and 2.4 GHz) » (fiche keychron.com)
+  specs: { formFactor: full, technology: scissor, hotSwap: none, conn24ghz: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 623, widthMm: 429, depthMm: 130, typingAngleDeg: 3.2 }
   variants:
     - { sku: B6P-K1, colorName: Space Gray, colorFamily: black, layout: ansi_us }
     - { sku: B6P-K8, colorName: Ivory White, colorFamily: white, layout: ansi_us }
@@ -1475,7 +1479,8 @@
   sources:
     - https://www.keychron.com/products/keychron-b33-keyboard-and-bm25-mouse-wireless-combo
     - https://www.keychron.com/products/keychron-b33-wireless-keyboard
-  specs: { formFactor: tkl, technology: scissor, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: qmk }
+  # batteryMah : « Our B33 keyboard is equipped with a 800mAh rechargeable battery » (fiche keychron.com)
+  specs: { formFactor: tkl, technology: scissor, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: qmk, batteryMah: 800 }
   variants:
     - { sku: B33-K9, colorName: Deep Black, colorFamily: black, layout: ansi_us }
 
@@ -1775,7 +1780,8 @@
     - https://www.keychron.com/products/keychron-v5-qmk-custom-mechanical-keyboard
     - https://www.keychron.com/products/keychron-v5-qmk-custom-mechanical-keyboard-iso-layout-collection
     - https://www.keychron.com/products/keychron-v5-qmk-custom-mechanical-keyboard-russian-layout
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, mount: tray, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: qmk, macSupport: true }
+  # pollingHzWired : « Connectivity: wired; 1000 Hz polling rate » (fiche keychron.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, pollingHzWired: 1000, mount: tray, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: qmk, macSupport: true }
   variants:
     - { sku: V5-A1, colorName: Frosted Black (Translucent), colorFamily: transparent, layout: ansi_us, switch: keychron-k-pro-red }
     - { sku: V5-A2, colorName: Frosted Black (Translucent), colorFamily: transparent, layout: ansi_us, switch: keychron-k-pro-blue }
@@ -1931,7 +1937,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-B2-Pro-Ultra-Slim-Wireless-Keyboard-For-Mac-Windows-And-Android-Ivory-White.jpg?v=1761624467, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://www.keychron.com/products/keychron-b2-pro-ultra-slim-wireless-keyboard
-  specs: { formFactor: f96, technology: scissor, hotSwap: none, conn24ghz: true, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 585, widthMm: 375, depthMm: 132, typingAngleDeg: 3.2 }
+  # pollingHzWired : « Polling Rate 1000 Hz (2.4 GHz & Wired) / 90 Hz (Bluetooth) » (fiche keychron.com)
+  specs: { formFactor: f96, technology: scissor, hotSwap: none, conn24ghz: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: white, firmware: proprietary, macSupport: true, batteryMah: 800, weightG: 585, widthMm: 375, depthMm: 132, typingAngleDeg: 3.2 }
   variants:
     - { sku: B2P-K1, colorName: Space Gray, colorFamily: black, layout: ansi_us }
     - { sku: B2P-K8, colorName: Ivory White, colorFamily: white, layout: ansi_us }
@@ -4091,7 +4098,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/Keychron-C3-HE-Wired-Magnetic-Switch-Keyboard_c18aab9f-067a-4317-82d5-c5f85cf40832.jpg?v=1775801595, kind: cutout_top, width: 2000, height: 2000, primary: true }
   sources:
     - https://www.keychron.com/products/keychron-c3-he-magnetic-switch-keyboard
-  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, widthMm: 382, depthMm: 169, heightFrontMm: 32.2, typingAngleDeg: 4 }
+  # weightG : « Weight: 1125 g / 2.48 lbs » (fiche keychron.com)
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: qmk, macSupport: true, soundDampening: true, weightG: 1125, widthMm: 382, depthMm: 169, heightFrontMm: 32.2, typingAngleDeg: 4 }
   variants:
     - { sku: C3H-H1, colorName: Black, colorFamily: black, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic }
 
@@ -4655,7 +4663,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0059/0630/1017/files/V6_Ultra_Hybrid-_silent_banner.jpg?v=1789473236, kind: cutout_top, width: 3840, height: 3840, primary: true }
   sources:
     - https://www.keychron.com/products/keychron-v6-ultra-hybrid-8k-wireless-custom-magnetic-mechanical-keyboard
-  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, rapidTrigger: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: proprietary }
+  # pollingHzWired : « With an 8K polling rate available in both wired and 2.4 GHz wireless modes, it delivers ultra-low latency and fast response for competitive gaming, while provid » (fiche keychron.com)
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, firmware: proprietary }
   variants:
     - { sku: V6-EA4, colorName: Black, colorFamily: black, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic-silent-banana }
     - { sku: V6-EA3, colorName: Black, colorFamily: black, layout: ansi_us, switch: keychron-ultra-fast-lime-magnetic-silent-red }

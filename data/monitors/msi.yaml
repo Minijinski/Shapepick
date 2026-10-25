@@ -232,7 +232,8 @@
     - https://fr-store.msi.com/products/mag-341cqp-qd-oled-gaming-monitor
   gtins:
     - "4711377135702"
-  specs: { diagonalIn: 34.18, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 175, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 110.8, srgbPct: 139.1, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, kvm: true, standHeightMm: 100, swivel: true, weightG: 8800 }
+  # hdmiVersion : « 2 x HDMI 2.1 : 3440 x 1440 (175 Hz max.) » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 34.18, aspect: 21:9, resW: 3440, resH: 1440, panel: qdoled, curvatureR: 1800, coating: matte, refreshHzMax: 175, responseGtgMs: 0.03, vrr: none, hdrCert: true_black_400, brightnessHdrPeakNits: 1000, dciP3Pct: 110.8, srgbPct: 139.1, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.1", kvm: true, standHeightMm: 100, swivel: true, weightG: 8800 }
   variants:
     - { sku: 9S6-3DD04T-031, colorName: Noir, colorFamily: black }
 
@@ -254,7 +255,8 @@
     - https://fr-store.msi.com/products/mag-275cqpf-gaming-monitor
   gtins:
     - "4711377212786"
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 110, swivel: true, weightG: 5700 }
+  # dciP3Pct : « sRGB / DCP-P3* : 136% / 94% » (fiche fr-store.msi.com), « *sRGB et DCI-P3 selon la norme CIE1976 »
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: va, curvatureR: 1500, coating: matte, refreshHzMax: 180, responseGtgMs: 0.5, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 5000, dciP3Pct: 94, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.4", standHeightMm: 110, swivel: true, weightG: 5700 }
   variants:
     - { sku: 9S6-3CD04H-065, colorName: Noir, colorFamily: black }
 
@@ -884,7 +886,8 @@
     - https://fr-store.msi.com/products/pro-mp245pg-e14-pro-monitor
   gtins:
     - "4711377318334"
-  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 85, srgbPct: 107, bitDepth: 8, hdmiPorts: 1, standHeightMm: 130, swivel: true, pivot: true, weightG: 5250 }
+  # hdmiVersion : « HDMI 2.0 (1920 x 1080 / 144 Hz), HDMI-CEC pour les consoles » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 85, srgbPct: 107, bitDepth: 8, hdmiPorts: 1, hdmiVersion: "2.0", standHeightMm: 130, swivel: true, pivot: true, weightG: 5250 }
   variants:
     - { sku: 9S6-3PE39M-001, colorName: Noir, colorFamily: black }
 
@@ -972,7 +975,10 @@
     - https://fr-store.msi.com/products/pro-max-271qphw-e14-pro-monitor
   gtins:
     - "4711377396325"
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 93, srgbPct: 121, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  # standHeightMm : « Hauteur : 0 ~ 110 mm » (fiche fr-store.msi.com)
+  # swivel : « Réglage de la rotation horizontale : -30° ~ 30° » (fiche fr-store.msi.com)
+  # pivot : « Réglage de la rotation verticale : -90° ~ 90° » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 2560, resH: 1440, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 93, srgbPct: 121, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true, standHeightMm: 110, swivel: true, pivot: true }
   variants:
     - { sku: 9S6-3PF54H-008, colorName: Noir, colorFamily: black }
 
@@ -994,7 +1000,10 @@
     - https://fr-store.msi.com/products/pro-max-271phw-e14-pro-monitor
   gtins:
     - "4711377396301"
-  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 86, srgbPct: 111, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  # standHeightMm : « Hauteur : 0 ~ 110 mm » (fiche fr-store.msi.com)
+  # swivel : « Réglage de la rotation horizontale : -30° ~ 30° » (fiche fr-store.msi.com)
+  # pivot : « Réglage de la rotation verticale : -90° ~ 90° » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 27, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 250, contrastStatic: 1000, dciP3Pct: 86, srgbPct: 111, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true, standHeightMm: 110, swivel: true, pivot: true }
   variants:
     - { sku: 9S6-3PF54H-001, colorName: Noir, colorFamily: black }
 
@@ -1017,7 +1026,10 @@
     - https://fr-store.msi.com/products/pro-max-241phw-e14-pro-monitor
   gtins:
     - "4711377396288"
-  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 96, srgbPct: 122, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true }
+  # standHeightMm : « Hauteur : 0 ~ 110 mm » (fiche fr-store.msi.com)
+  # swivel : « Réglage de la rotation horizontale : -30° ~ 30° » (fiche fr-store.msi.com)
+  # pivot : « Réglage de la rotation verticale : -90° ~ 90° » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 23.8, aspect: 16:9, resW: 1920, resH: 1080, panel: ips, coating: matte, refreshHzMax: 144, responseGtgMs: 4, vrr: freesync, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 1500, dciP3Pct: 96, srgbPct: 122, bitDepth: 8, factoryCalibrated: true, hdmiPorts: 1, hdmiVersion: "2.0", dpVersion: "1.2", usbcPdW: 65, kvm: true, speakers: true, standHeightMm: 110, swivel: true, pivot: true }
   variants:
     - { sku: 9S6-3PF44H-001, colorName: Noir, colorFamily: black }
 
@@ -1063,7 +1075,10 @@
     - https://fr-store.msi.com/products/pro-max-271upx12g-pro-monitor
   gtins:
     - "4711377420617"
-  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, speakers: true }
+  # standHeightMm : « Hauteur : 0 ~ 150 mm » (fiche fr-store.msi.com)
+  # swivel : « Réglage de la rotation horizontale : -30° ~ 30° » (fiche fr-store.msi.com)
+  # pivot : « Réglage de la rotation verticale : -90° ~ 90° » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, factoryCalibrated: true, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 15, kvm: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true }
   variants:
     - { sku: 9S6-3PF8CA-001, colorName: Noir, colorFamily: black }
 
@@ -1155,6 +1170,9 @@
     - https://fr-store.msi.com/products/pro-max-271upxw12g-pro-monitor
   gtins:
     - "4711377421270"
-  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 98, kvm: true, speakers: true }
+  # standHeightMm : « Hauteur : 0 ~ 150 mm » (fiche fr-store.msi.com)
+  # swivel : « Réglage de la rotation horizontale : -30° ~ 30° » (fiche fr-store.msi.com)
+  # pivot : « Réglage de la rotation verticale : -90° ~ 90° » (fiche fr-store.msi.com)
+  specs: { diagonalIn: 26.5, aspect: 16:9, resW: 3840, resH: 2160, panel: qdoled, coating: matte, refreshHzMax: 120, responseGtgMs: 0.03, vrr: freesync_premium_pro, hdrCert: true_black_400, dciP3Pct: 99, srgbPct: 138.2, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 98, kvm: true, speakers: true, standHeightMm: 150, swivel: true, pivot: true }
   variants:
     - { sku: 9S6-3PF9CA-001, colorName: Noir, colorFamily: black }

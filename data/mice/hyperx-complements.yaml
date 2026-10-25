@@ -18,6 +18,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_mini_wireless_black_7d388aa_angle_6.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_mini_wireless_black_7d388aa_angle_7.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0561/8345/5901/files/hyperx_pulsefire_haste_2_mini_wireless_black_7d388aa_angle_8_c2c637d1-abb3-403b-9377-09b0544527ed.jpg, kind: cutout_top, width: 1500, height: 1500 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 61.9, heightMm: 36.7, weightG: 59, sideButtons: 2, sensor: HyperX 26K, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « Buttons: 6 » (fiche hyperx.com)
+  # batteryHours : « Battery Life: Up to 100 hours » (fiche hyperx.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 116.6, widthMm: 61.9, heightMm: 36.7, weightG: 59, buttons: 6, sideButtons: 2, sensor: HyperX 26K, dpiMax: 26000, pollingHz: 1000, conn24ghz: true, connBt: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: 7D388AA, colorName: Black, colorFamily: black }

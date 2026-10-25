@@ -177,7 +177,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-profile-right-angle-black-gallery-6.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-bottom-angle-gallery-3.png", kind: cutout_top }
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g903-hero/2025-update/g903-lightspeed-mouse-3qtr-high-back-angle-gallery-4.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130, widthMm: 67, heightMm: 40, weightG: 110, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, power: rechargeable }
+  # batteryHours : « jusqu'à 140 heures de jeu avec l'éclairage LIGHTSYNC RGB en pleine effect — et jusqu'à 180 heures sans éclairage » (fiche logitechg.com), sans éclairage comme l'ingest
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 130, widthMm: 67, heightMm: 40, weightG: 110, sideButtons: 2, sensor: Logitech HERO 25K, dpiMax: 25600, pollingHz: 1000, switchType: mechanical, conn24ghz: true, batteryHours: 180, power: rechargeable }
   variants:
     - { sku: 910-005673, colorName: Noir, colorFamily: black }
 
@@ -216,7 +217,9 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m185/gallery/m185-gallery-4-blue-emea.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m185/gallery/m185-gallery-2-red-emea.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m185/gallery/m185-gallery-3-red-emea.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 74, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  # batteryHours : « Piles : 12 mois » (fiche logitech.com), 240 h par mois comme l'ingest
+  # power : « Informations sur les piles : 1 x AA (incluse) » (fiche logitech.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 99, widthMm: 60, heightMm: 39, weightG: 74, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true, batteryHours: 2880, power: aa }
   variants:
     - { sku: 910-002236, colorName: Bleu, colorFamily: color }
     - { sku: 910-002237, colorName: Rouge, colorFamily: color }
@@ -237,7 +240,9 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m190-wireless-mouse/m190-wireless-mouse-midgrey-gallery-03.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m190-wireless-mouse/m190-wireless-mouse-midgrey-gallery-04.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m190-wireless-mouse/m190-wireless-mouse-blue-gallery-02.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 115.4, widthMm: 66.1, heightMm: 40.3, weightG: 89.9, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  # batteryHours : « Piles : 18 mois » (fiche logitech.com), 240 h par mois comme l'ingest
+  # power : « 18 mois. Une pile aa. » (fiche logitech.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 115.4, widthMm: 66.1, heightMm: 40.3, weightG: 89.9, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true, batteryHours: 4320, power: aa }
   variants:
     - { sku: 910-005906, colorName: Gris moyen, colorFamily: black }
     - { sku: 910-005907, colorName: Bleu, colorFamily: color }
@@ -254,7 +259,9 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m196/gallery/m196-white-topview-gallery1.png", kind: cutout_top, primary: true }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m196/gallery/m196-rose-topview-gallery1.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m196/gallery/m196-graphite-topview-gallery1.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 100, widthMm: 60, heightMm: 38, weightG: 76, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, connBt: true }
+  # batteryHours : « l'autonomie de 12 mois » (fiche logitech.com), 240 h par mois comme l'ingest
+  # power : « avant de devoir remplacer la pile AA » (fiche logitech.com)
+  specs: { shape: symmetrical, hand: ambidextrous, segment: office, lengthMm: 100, widthMm: 60, heightMm: 38, weightG: 76, sideButtons: 0, dpiMax: 1000, pollingHz: 125, switchType: mechanical, connBt: true, batteryHours: 2880, power: aa }
   variants:
     - { sku: 910-007460, colorName: Blanc cassé, colorFamily: white }
     - { sku: 910-007461, colorName: Rose, colorFamily: color }
@@ -271,7 +278,9 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m510-wireless-mouse/gallery/m510-black-gallery-2.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m510-wireless-mouse/gallery/m510-black-gallery-3.png", kind: cutout_top }
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mice/m510-wireless-mouse/gallery/m510-black-gallery-4.png", kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 120, widthMm: 65, heightMm: 41, weightG: 129, sideButtons: 2, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true }
+  # batteryHours : « 24-month battery life » (fiche logitech.com), 240 h par mois comme l'ingest
+  # power : « Battery Details: 2 x AA (included) » (fiche logitech.com)
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 120, widthMm: 65, heightMm: 41, weightG: 129, sideButtons: 2, dpiMax: 1000, pollingHz: 125, switchType: mechanical, conn24ghz: true, batteryHours: 5760, power: aa }
   variants:
     - { sku: 910-001822, colorName: Black, colorFamily: black }
 
@@ -282,4 +291,6 @@
   popularity: 0.5
   editorialScore: 0.5
   # hosts : « short press the connect button between Channel 1, 2, or 3 » (support.logi.com, Getting Started - Signature AI Edition M750)
-  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101, sideButtons: 2, sensor: Logitech Advanced Optical, dpiMax: 4000, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3 }
+  # batteryHours : « Expected battery life is up to 24 months » (support.logi.com, Getting Started - Signature AI Edition M750), 240 h par mois comme l'ingest
+  # power : « Requires 1 AA alkaline battery » (support.logi.com, Getting Started - Signature AI Edition M750)
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101, sideButtons: 2, sensor: Logitech Advanced Optical, dpiMax: 4000, pollingHz: 125, switchType: mechanical, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa }

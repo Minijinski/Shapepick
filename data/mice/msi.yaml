@@ -149,6 +149,7 @@
   gtins:
     - "4711377367523"
   # sideButtons : photo de profil (fr-store.msi.com)
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 40, weightG: 126, buttons: 7, sideButtons: 2, dpiMax: 12800, rgb: true }
+  # pollingHz : « Polling rate de 1 KHz pour une expérience plus fluide et plus réactive » (fiche fr-store.msi.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 126, widthMm: 66, heightMm: 40, weightG: 126, buttons: 7, sideButtons: 2, dpiMax: 12800, pollingHz: 1000, rgb: true }
   variants:
     - { sku: S12-0402420-HH9, colorName: Black, colorFamily: black }

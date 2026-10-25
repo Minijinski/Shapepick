@@ -70,7 +70,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0835/9706/6540/files/24413-RL2DK-Topre-Realforce-RC1-White-75-30g-Bluetooth-Keyboard.jpg?v=1740167948, kind: cutout_top, width: 1218, height: 667 }
   sources:
     - https://mechanicalkeyboards.com/products/topre-realforce-rc1-75-bluetooth-keyboard
-  specs: { formFactor: f75, technology: topre, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
+  # btDevices : « Connect to up to four devices » (fiche mechanicalkeyboards.com)
+  specs: { formFactor: f75, technology: topre, hotSwap: none, connBt: true, btDevices: 4, caseMaterial: plastic, keycapMaterial: pbt, backlight: white, firmware: proprietary, macSupport: true }
   variants:
     - { sku: RF-C1HK13, colorName: Black, colorFamily: black, layout: ansi_us }
     - { sku: RF-C1HK21, colorName: White, colorFamily: white, layout: ansi_us }

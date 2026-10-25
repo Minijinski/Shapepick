@@ -18,7 +18,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_0054_c4431c31-394e-434d-847a-f82bb5d61ec7.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_fanghua020050_bcd05e26-94f8-454e-ae5f-be633f072de9.jpg, kind: cutout_top, width: 1600, height: 1600 }
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/attackshark_x3_gaming_mouse_fanghua020049_7da5426f-ccbb-4c7c-9cb9-08d675c63fae.jpg, kind: cutout_top, width: 3200, height: 3200 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.5, widthMm: 61, heightMm: 39.7, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « 200 Hours Battery » ; « it can be used for up to 200 hours at intervals on a single charge » (fiche attackshark.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118.5, widthMm: 61, heightMm: 39.7, weightG: 49, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable }
   variants:
     - { sku: AS-X3-WHITE, colorName: White, colorFamily: white }
     - { sku: AS-X3-WHITE+TAPE, colorName: White with Tape, colorFamily: white }
@@ -68,7 +69,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/1_dbcdd0c1-c47e-4672-8474-9f93077aa41c.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/3_1c0d203a-ca34-4ee6-8cf5-f44f61ccd514.jpg, kind: cutout_top, width: 1500, height: 1500 }
     - { url: https://cdn.shopify.com/s/files/1/0823/5050/6282/files/4_b1942699-2da2-4096-a3b7-6c586b8aebb5.jpg, kind: cutout_top, width: 1500, height: 1500 }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 60.9, heightMm: 36.2, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Coupled with prolonged 200Hrs battery life » (fiche attackshark.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 119.6, widthMm: 60.9, heightMm: 36.2, weightG: 46, sideButtons: 2, sensor: PixArt PAW3395, dpiMax: 26000, pollingHz: 8000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 200, power: rechargeable }
   variants:
     - { sku: AS-R3-WHITE, colorName: White, colorFamily: white }
     - { sku: AS-R3-BLACK, colorName: Black, colorFamily: black }

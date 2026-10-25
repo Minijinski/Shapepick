@@ -71,7 +71,8 @@
     - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u4025qw/media-gallery/monitor-ultrasharp-u4025qw-gray-gallery-7.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
   sources:
     - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-40-avec-hub-thunderbolt-u4025qw/u4025qw_monitor/-
-  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: ips, curvatureR: 2500, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: hdr600, brightnessSdrNits: 450, brightnessHdrPeakNits: 600, contrastStatic: 2000, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 12220 }
+  # dciP3Pct : « Gamme de couleurs : 100% BT.709, 100% sRGB, 98% Display P3, 99% DCI-P3 » (fiche dell.com)
+  specs: { diagonalIn: 40, aspect: 21:9, resW: 5120, resH: 2160, panel: ips, curvatureR: 2500, coating: matte, refreshHzMax: 120, responseGtgMs: 5, vrr: freesync, hdrCert: hdr600, brightnessSdrNits: 450, brightnessHdrPeakNits: 600, contrastStatic: 2000, dciP3Pct: 99, srgbPct: 98, bitDepth: 10, hdmiPorts: 1, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 140, thunderbolt: true, kvm: true, usbHub: true, speakers: true, standHeightMm: 150, swivel: true, weightG: 12220 }
   variants:
     - { sku: u4025qw_monitor, colorName: Noir, colorFamily: black }
 
@@ -640,7 +641,8 @@
     - { url: https://i.dell.com/is/image/DellContent/content/dam/ss2/product-images/dell-client-products/peripherals/monitors/u-series/u3824dw/media-gallery/monitor-u3824dw-gray-gallery-6.psd?fmt=png-alpha&wid=2000, kind: cutout_front }
   sources:
     - https://www.dell.com/fr-fr/shop/monitors/apd/écran-incurvé-dell-ultrasharp-38-avec-hub-usb-c-u3824dw/u3824dw_withstand/-
-  specs: { diagonalIn: 38, aspect: 21:9, resW: 3840, resH: 1600, panel: ips, curvatureR: 2300, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 2, dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 13290 }
+  # hdmiVersion : « 2 HDMI 2.1 » (fiche dell.com), schéma des ports
+  specs: { diagonalIn: 38, aspect: 21:9, resW: 3840, resH: 1600, panel: ips, curvatureR: 2300, coating: matte, refreshHzMax: 60, responseGtgMs: 5, vrr: none, hdrCert: none, brightnessSdrNits: 300, contrastStatic: 2000, dciP3Pct: 98, srgbPct: 98, bitDepth: 10, hdmiPorts: 2, hdmiVersion: "2.1", dpVersion: "1.4", usbcPdW: 90, kvm: true, usbHub: true, speakers: true, standHeightMm: 120, swivel: true, weightG: 13290 }
   variants:
     - { sku: u3824dw_withstand, colorName: Noir, colorFamily: black }
 

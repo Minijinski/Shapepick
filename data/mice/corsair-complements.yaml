@@ -75,7 +75,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_06.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_07.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-elite-wireless-config/Gallery/KATAR_ELITE_WIRELESS_10.png, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 69, sideButtons: 2, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: rechargeable }
+  # batteryHours : « Battery Life : 2.4GHz SLIPSTREAM: Up to 60hrs continous use » (fiche corsair.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 69, sideButtons: 2, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 60, power: rechargeable }
   variants:
     - { sku: CH-931C111-EU, colorName: Black, colorFamily: black }
 
@@ -94,7 +95,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_06.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_10.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-katar-pro-wireless-config/Gallery/KATAR_PRO_WIRELESS_11.png, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # power : « powered by just a single AA battery » (fiche corsair.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.8, widthMm: 64.2, heightMm: 37.8, weightG: 96, sideButtons: 2, sensor: PixArt PMW3325, dpiMax: 10000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, power: aa }
   variants:
     - { sku: CH-931C011-EU, colorName: Noir, colorFamily: black }
 
@@ -151,7 +153,9 @@
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_06.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_07.png, kind: cutout_top }
     - { url: https://assets.corsair.com/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m55-wireless-config/gallery/black/M55_WIRELESS_BLK_08.png, kind: cutout_top }
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true }
+  # batteryHours : « M55 WIRELESS lasts up to 185 hours via SLIPSTREAM WIRELESS » (fiche corsair.com)
+  # power : « AA battery » (fiche corsair.com)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 118, widthMm: 62, heightMm: 38, weightG: 85, sideButtons: 2, dpiMax: 24000, pollingHz: 1000, switchType: mechanical, conn24ghz: true, connBt: true, batteryHours: 185, power: aa }
   variants:
     - { sku: CH-931F000-WW, colorName: Noir, colorFamily: black }
 
@@ -170,7 +174,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_06.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_07.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-2-config/Gallery/M65_RGB_ULTRA_10.png, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 97, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical }
+  # buttons : « 8 BOUTONS PROGRAMMABLES » (fiche corsair.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 97, buttons: 8, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 8000, switchType: optical }
   variants:
     - { sku: CH-9309411-EU2, colorName: Black, colorFamily: black }
 
@@ -189,7 +194,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_06.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_07.png, kind: cutout_top }
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Mice/base-m65-rgb-ultra-wireless-2-config/Gallery/M65_RGB_ULTRA_WIRELESS_BLK_10.png, kind: cutout_top }
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 110, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 2000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
+  # buttons : « 8 BOUTONS PROGRAMMABLES » (fiche corsair.com)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 116, widthMm: 78, heightMm: 39, weightG: 110, buttons: 8, sideButtons: 3, sensor: Corsair MARKSMAN 26K, dpiMax: 26000, pollingHz: 2000, switchType: optical, conn24ghz: true, connBt: true, power: rechargeable }
   variants:
     - { sku: CH-9319511-NA2, colorName: White, colorFamily: white }
     - { sku: CH-9319411-NA2, colorName: Black, colorFamily: black }

@@ -82,7 +82,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors-4790007.jpg?v=1783163648, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-l98-98-wireless-mechanical-keyboard-with-tft-screen-knob-3-colors
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1439 }
+  # btDevices : « supports BT5.0, 2.4GHz wireless and USB-C wired connectivity which can save up to five devices » (fiche womierkeyboard.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1439 }
   variants:
     - { sku: JP-womoer-L98-hei-heishanhuhai-OG-SM-XN-DP, colorName: Coral Sea Black, colorFamily: black, layout: ansi_us, switch: womier-pom-series }
     - { sku: JP-womoer-L98-mingyueye-HZ-SM-XN-DP, colorName: Moon Night, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
@@ -137,7 +138,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-m68he-pro-60-mechanical-gaming-keyboard-3959317.jpg?v=1781672114, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-m68he-pro-60-mechanical-gaming-keyboard
-  specs: { formFactor: f60, technology: magnetic, hotSwap: none, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  # weightG : « • Weight: 580g » (fiche womierkeyboard.com)
+  # pollingHzWired : « 8000Hz Polling Rate & Rapid Trigger » (fiche womierkeyboard.com)
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, weightG: 580 }
   variants:
     - { sku: JP-womier-M68HEPro-xiantiaobutouguang-bai-cizhou-1, colorName: White (Shine-Through), colorFamily: white, layout: ansi_us }
     - { sku: JP-womier-M68HEPro-xiantiaobutouguang-hei-cizhou-1, colorName: Black (Non Shine-Through), colorFamily: black, layout: ansi_us }
@@ -175,9 +178,10 @@
   sources:
     - https://womierkeyboard.com/products/womier-wk75-75-wireless-hot-swap-keyboard-with-knob
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
+  # switch : « Feel: Linear », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us }
-    - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us }
+    - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-duo87
   brand: womier
@@ -210,7 +214,10 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk61-he-wireless-magnetic-switch-60-aluminum-hollow-design-gaming-keyboard-5288314.jpg?v=1780926370, kind: cutout_top, width: 2048, height: 2048, primary: true }
   sources:
     - https://womierkeyboard.com/products/womier-sk61-he-wireless-magnetic-keyboard
-  specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  # weightG : « • Keyboard Weight: 825g ± 20g » (fiche womierkeyboard.com)
+  # batteryMah : « • Battery Capacity: 6000mAh (3000mAh × 2) » (fiche womierkeyboard.com)
+  # pollingHzWired : « • 8000Hz Wired / 1000Hz 2.4GHz Polling Rate » (fiche womierkeyboard.com)
+  specs: { formFactor: f60, technology: magnetic, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, batteryMah: 6000, weightG: 825 }
   variants:
     - { sku: JP-Womier-SK60HE-hei-guangying-cizhou-SM-1, colorName: Black, colorFamily: black, layout: ansi_us }
 
@@ -305,11 +312,14 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-mt75-tri-mode-keyboard-with-dot-matrix-screen-and-volume-knob-8116400.jpg?v=1773137546, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/mt75-tri-mode-keyboard-with-matrix-screen-and-volume-knob
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 1010, widthMm: 317, depthMm: 141 }
+  # batteryMah : « 8000mAh Battery for Extended Wireless Use » (fiche womierkeyboard.com)
+  # btDevices : « Effortlessly switch between up to five devices at once, from laptops and tablets to smartphones, without missing a beat. » (fiche womierkeyboard.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1010, widthMm: 317, depthMm: 141 }
+  # switch : « Factory-Lubed Linear Switches for a Smoother Keystroke », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: Womier MT75-Black, colorName: Obsidian, colorFamily: color, layout: ansi_us }
-    - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us }
-    - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us }
+    - { sku: Womier MT75-Black, colorName: Obsidian, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-m99
   brand: womier
@@ -363,9 +373,10 @@
   sources:
     - https://womierkeyboard.com/products/womier-l65-60-gaming-mechanical-keyboard-wireless-with-knob
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1020, widthMm: 363, depthMm: 161 }
+  # switch : « Type: Linear mechanical switches », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us }
-    - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us }
+    - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-l75
   brand: womier
@@ -381,7 +392,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-l75-75-wireless-rgb-gasket-mounted-mechanical-keyboard-with-knob-8078726.jpg?v=1785152227, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-l75
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000 }
+  # btDevices : « Supporting Bluetooth 5.0, 2.4GHz wireless, and USB-C wired connections, the L75 offers flexible compatibility with up to five devices simultaneously. » (fiche womierkeyboard.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: oem, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000 }
   variants:
     - { sku: JP-Womier-L75-bailvlv-baizhou, colorName: Mix White-Green, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
     - { sku: JP-Womier-L75-baizilan-baizhou, colorName: Mix White-Pink-Blue, colorFamily: white, layout: ansi_us, switch: womier-full-pom-beige }
@@ -422,8 +434,9 @@
   sources:
     - https://womierkeyboard.com/products/womier-x98-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 10000 }
+  # switch : « Pre-lubed stabilizers and linear switches provide a creamy, smooth keystroke », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-era75
   brand: womier
@@ -463,7 +476,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-qk87-tkl-qmkvia-support-wireless-keyboard-with-multimedia-display-5989564.jpg?v=1773137706, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-qk87-tkl-qmk-via-support-multimedia-display-wireless-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, widthMm: 363, depthMm: 134 }
+  # batteryMah : « The QK87 features a powerful 4000mAh battery, supporting both Bluetooth and 2.4GHz wireless connections for a seamless typing experience. » (fiche womierkeyboard.com)
+  # btDevices : « Plus, its Bluetooth capability enables connection with up to three devices at once for multitasking ease. » (fiche womierkeyboard.com)
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, plateMaterial: polycarbonate, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 4000, widthMm: 363, depthMm: 134 }
   variants:
     - { sku: Womier K87 VIA-Brown, colorName: Brown, colorFamily: color, layout: ansi_us, switch: womier-full-pom-beige }
     - { sku: Womier K87 VIA-Green, colorName: Green, colorFamily: color, layout: ansi_us, switch: womier-full-pom-beige }
@@ -488,7 +503,8 @@
   sources:
     - https://womierkeyboard.com/products/womier-m68-he-v2
     - https://womierkeyboard.com/products/womier-m68-he-65-hall-effect-wired-gaming-keyboard
-  specs: { formFactor: f65, technology: magnetic, hotSwap: none, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.3, mount: tray, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 580, widthMm: 329, depthMm: 116 }
+  # pollingHzWired : « The M68 HE has high polling rate of 8000 Hz, which increases accuracy and provides lag-free input experience. » (fiche womierkeyboard.com)
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.3, mount: tray, caseMaterial: plastic, plateMaterial: steel, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, weightG: 580, widthMm: 329, depthMm: 116 }
   variants:
     - { sku: JP-womier-M68HE-Ultra-tg-h, colorName: Black Topographic, colorFamily: black, layout: ansi_us }
     - { sku: JP-womier-M68HE-xianliangban-bai, colorName: White, colorFamily: white, layout: ansi_us }
@@ -514,7 +530,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-rd75-pro-75-wireless-mechanical-keyboard-qmkvia-aluminum-custom-keyboard-2289682.jpg?v=1773137651, kind: cutout_top, width: 2000, height: 2000 }
   sources:
     - https://womierkeyboard.com/products/womier-rd75-pro-wireless-mechanical-aluminum-keyboard
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 8000, widthMm: 320, depthMm: 136 }
+  # weightG : « Keyboard Weight: 2000g » (fiche womierkeyboard.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: aluminum, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: qmk, macSupport: true, batteryMah: 8000, weightG: 2000, widthMm: 320, depthMm: 136 }
   variants:
     - { sku: Womier RD75 Blue Pro, colorName: Anodized Blue, colorFamily: color, layout: ansi_us, switch: womier-full-pom-grey }
     - { sku: Womier RD75 Black Pro, colorName: Anodized Black, colorFamily: black, layout: ansi_us, switch: womier-full-pom-grey }
@@ -537,7 +554,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0564/2289/1591/files/womier-sk80-pro-themed-75-wireless-mechanical-keyboard-with-multimedia-display-6840527.jpg?v=1779937628, kind: cutout_top, width: 720, height: 720 }
   sources:
     - https://womierkeyboard.com/products/womier-sk80-pro
-  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 793, widthMm: 348, depthMm: 134 }
+  # btDevices : « Supporting Bluetooth 5.0, 2.4GHz wireless, and USB-C wired connections, the SK80 Pro offers flexible compatibility with up to five devices simultaneously. » (fiche womierkeyboard.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, firmware: proprietary, macSupport: true, batteryMah: 4000, weightG: 793, widthMm: 348, depthMm: 134 }
   variants:
     - { sku: Womier SK80 PRO-Pink, colorName: Sakura Pink, colorFamily: color, layout: ansi_us, switch: womier-pom-series }
     - { sku: Womier SK80 PRO-Kanagawa, colorName: Kanagawa, colorFamily: color, layout: ansi_us, switch: womier-pom-series }

@@ -15,7 +15,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/5A49444D-1DEB-42CD-864D-8E203F5F49C1, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-strix-morph-96-wireless/
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 1125, widthMm: 398, depthMm: 134 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour vous connecter à un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode US » (fiche rog.asus.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 1125, widthMm: 398, depthMm: 134 }
   # switch : texte de la page française (« NX Snow V2 », « switches mécaniques ROG NX Storm V2 ») ; fiche : « ROG NX V2 Mechanical Switch »
   variants:
     - { sku: rog-strix-morph-96-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow-v2 }
@@ -38,7 +39,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/A0F72901-39C9-4A8F-9BFC-4000E384310B, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-75-he/
-  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, widthMm: 320, depthMm: 145 }
+  # pollingHzWired : « Hall-effect magnetic switches with adjustable actuation, 8,000 Hz polling rate, Rapid Trigger, and Speed Tap so you don't miss a single millisecond. » (fiche rog.asus.com)
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, firmware: proprietary, widthMm: 320, depthMm: 145 }
   # switch : fiche française : « ROG HFX V2 Magnetic Switch ; ROG HFX V2X Magnetic Switch »
   variants:
     - { sku: rog-falchion-ace-75-he, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
@@ -63,7 +65,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/436C8A76-7A3E-42C5-AC84-0C30739F480B, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-azoth-96-he/
-  specs: { formFactor: f96, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, widthMm: 382, depthMm: 136 }
+  # btDevices : « La connectivité tri-mode vous permet de basculer en toute transparence entre cinq appareils, avec des taux d'interrogation allant jusqu'à 8000 Hz. » (fiche rog.asus.com)
+  specs: { formFactor: f96, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, soundDampening: true, widthMm: 382, depthMm: 136 }
   # switch : fiche française : « ROG HFX V2 Magnetic Switch »
   variants:
     - { sku: rog-azoth-96-he, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
@@ -86,7 +89,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/A317DEEE-7F15-4F0A-BDA1-1261D01F365C, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falcata/
-  specs: { formFactor: split, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 968, widthMm: 327, depthMm: 127 }
+  # btDevices : « La connectivité tri-mode permet au Falcata de se connecter à cinq appareils simultanément via la technologie sans fil ROG SpeedNova 8K, Bluetooth  ou USB filair » (fiche rog.asus.com)
+  specs: { formFactor: split, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, minActuationMm: 0.1, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 968, widthMm: 327, depthMm: 127 }
   # switch : fiche française : « ROG HFX V2 Magnetic Switch »
   variants:
     - { sku: rog-falcata, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-hfx-v2-magnetic }
@@ -108,7 +112,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/FB28B043-1423-4967-A276-48CDC7C28ABD, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-x/
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 1600, widthMm: 325, depthMm: 136 }
+  # btDevices : « Trois modes de connexion : Connexion via Bluetooth® (jusqu'à trois appareils simultanément), 2,4 GHz avec la technologie sans fil ROG SpeedNova, ou USB câblé » (fiche rog.asus.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 1600, widthMm: 325, depthMm: 136 }
   # switch : fiche française : « ROG NX Mechanical Switch (Snow V2 / Strom V2) »
   variants:
     - { sku: rog-azoth-x, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-nx-snow-v2 }
@@ -153,7 +158,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/86B9BB80-FD73-42EF-8CE9-117B723B20ED, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-96-rx-wireless/
-  specs: { formFactor: f96, technology: optical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour vous connecter à un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode US » (fiche rog.asus.com)
+  specs: { formFactor: f96, technology: optical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
   # switch : texte de la page française : « Équipé des switches optiques ROG RX Red ou Blue »
   variants:
     - { sku: rog-strix-scope-ii-96-rx-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-rx-red }
@@ -199,7 +205,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/C47269B2-D782-4CB0-8A3C-819C6CB09FA3, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-azoth-extreme/
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 2200, widthMm: 332, depthMm: 139 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour vous connecter à un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode US » (fiche rog.asus.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, firmware: proprietary, macSupport: true, wristRestIncluded: true, soundDampening: true, weightG: 2200, widthMm: 332, depthMm: 139 }
   # switch : fiche française : « ROG NX Mechanical Switch (Snow / Strom) »
   variants:
     - { sku: rog-azoth-extreme, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow }
@@ -222,7 +229,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/95E2F96D-178E-4432-928C-3B462BAF58F7, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-falchion-rx-low-profile/
-  specs: { formFactor: f65, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 595, widthMm: 306, depthMm: 110 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour connecter un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode USB filai » (fiche rog.asus.com)
+  specs: { formFactor: f65, technology: optical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 595, widthMm: 306, depthMm: 110 }
   # switch : texte de la page française : « Les switches RX Red et RX Blue pré-lubrifiés », « switches ROG RX Low-Profile »
   variants:
     - { sku: rog-falchion-rx-low-profile, colorName: White, colorFamily: white, layout: iso_fr, switch: rog-rx-red-low-profile }
@@ -264,7 +272,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/3A26E3D2-D9AD-4E40-81AF-21C54848AF77, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/compact/rog-strix-scope-ii-96-wireless/
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour vous connecter à un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode US » (fiche rog.asus.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1012, widthMm: 377, depthMm: 131 }
   # switch : texte de la page française : « Il est équipé de switches mécaniques ROG NX Snow pré-lubrifiés »
   variants:
     - { sku: rog-strix-scope-ii-96-wireless, colorName: Black, colorFamily: black, layout: iso_fr, switch: rog-nx-snow }
@@ -310,7 +319,8 @@
     - { url: https://dlcdnwebimgs.asus.com/gain/FE8261D4-C50C-454D-AE89-92C6E0533B83, kind: cutout_top }
   sources:
     - https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-model/
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, weightG: 1186, widthMm: 326, depthMm: 136 }
+  # btDevices : « Vous pouvez également utiliser le mode Bluetooth pour vous connecter à un maximum de trois appareils en même temps, ou charger et jouer simultanément en mode US » (fiche rog.asus.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, screen: true, firmware: proprietary, macSupport: true, weightG: 1186, widthMm: 326, depthMm: 136 }
   # switch : texte de la page française : « Les switches mécaniques ROG NX Red présentent une distance d’activation de 1,8 mm »
   variants:
     - { sku: rog-azoth-model, colorName: Gunmetal, colorFamily: color, layout: iso_fr, switch: rog-nx-red }

@@ -19,7 +19,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERXAULAEA75MAX_37.webp?v=1774580317, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-x-aula-ea75-max
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: proprietary, soundDampening: true }
+  # batteryMah : « 5000mAh Battery » (fiche epomaker.com)
+  # pollingHzWired : « 1000Hz polling in USB and 2.4GHz modes » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 5000, soundDampening: true }
   variants:
     - { sku: AULA-EA75MAX-BKGYGD-Reaper, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
     - { sku: AULA-EA75MAX-PK-LF, colorName: Pink, colorFamily: color, layout: ansi_us, switch: leobog-silent-cotton-candy }
@@ -70,7 +72,8 @@
   sources:
     - https://epomaker.com/products/aula-f75-wired
     - https://epomaker.com/products/epomaker-aula-f75
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 3pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, screen: true, firmware: qmk, batteryMah: 4000, soundDampening: true }
+  # btDevices : « The F75 connects in three ways: via USB-C cable, via a 2.4GHz wireless receiver stored inside the keyboard itself, or via Bluetooth, with memory for up to three » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 3pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, screen: true, firmware: qmk, batteryMah: 4000, soundDampening: true }
   variants:
     - { sku: AULA-F75-Wired-BK-R, colorName: Black, colorFamily: black, layout: ansi_us, msrpEur: 60 }
     - { sku: AULA-F75-Wired-WH-R, colorName: White, colorFamily: white, layout: ansi_us, msrpEur: 60 }
@@ -201,7 +204,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/AULAF75MAX_03_e088034c-cbe8-4f02-9995-006623560dba.png?v=1770349681, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-x-aula-f75-max
-  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, soundDampening: true }
+  # batteryMah : « 4000mAh » (fiche epomaker.com)
+  # btDevices : « UP TO 4 DEVICES » (fiche epomaker.com)
+  specs: { formFactor: f60, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 4, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
     - { sku: AULA-F75MAX-SP-BK-Reaper, colorName: Black, colorFamily: black, layout: ansi_us, switch: leobog-reaper }
     - { sku: AULA-F75MAX-WHBL-Reaper, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: leobog-reaper }

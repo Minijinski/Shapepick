@@ -448,7 +448,8 @@
   sources:
     - https://yunzii.com/products/yunzii-ql75-vintage-retro-typewriter-qmk-via-mechanical-keyboard
     - https://yunzii.com/products/yunzii-ql75-retro-typewriter-qmk-via-mechanical-keyboard
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 4000, weightG: 1462, widthMm: 328, depthMm: 215 }
+  # btDevices : « Enjoy seamless multi-device use and switch between 5 devices for tablet or smartphone, pc, TV, etc. » (fiche yunzii.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: qmk, macSupport: true, batteryMah: 4000, weightG: 1462, widthMm: 328, depthMm: 215 }
   variants:
     - { sku: ql75-white-onyx-tactile, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-onyx-tactile-clicky }
     - { sku: ql75-white-cocoa-cream-v2-linear, colorName: White, colorFamily: white, layout: ansi_us, switch: yunzii-cocoa-cream-v2 }
@@ -521,7 +522,8 @@
     - https://yunzii.com/products/yunzii-actto-b309-upgraded-rechargeable-wireless-retro-typewriter-keyboard
     - https://yunzii.com/products/yunzii-actto-b305-wireless-keyboard-mint
     - https://yunzii.com/products/yunzii-actto-b303-wireless-keyboard-mint-green
-  specs: { formFactor: f75, technology: membrane, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 366, depthMm: 200 }
+  # btDevices : « You can easily switch between up to three devices with the touch of a button, FN+1/2/3. » (fiche yunzii.com)
+  specs: { formFactor: f75, technology: membrane, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, knob: true, firmware: proprietary, batteryMah: 1600, weightG: 1100, widthMm: 366, depthMm: 200 }
   variants:
     - { sku: b305 white, colorName: Snow White, colorFamily: white, layout: ansi_us }
     - { sku: fbm b305 midnight, colorName: Midnight Navy, colorFamily: black, layout: ansi_us }

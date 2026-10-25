@@ -25,7 +25,8 @@
     - https://eu.pulsar.gg/products/pulsar-es-xlite-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123.5, widthMm: 66.3, heightMm: 42.1, weightG: 51, buttons: 5, sideButtons: 2, sensor: XS-2 Flagship Sensor, dpiMax: 42000, conn24ghz: true, batteryHours: 160, power: rechargeable }
+  # pollingHz : « Ultra-high 8,000Hz polling rate delivers 8x faster data transfer and 0.125ms response times » (fiche pulsar.gg)
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 123.5, widthMm: 66.3, heightMm: 42.1, weightG: 51, buttons: 5, sideButtons: 2, sensor: XS-2 Flagship Sensor, dpiMax: 42000, pollingHz: 8000, conn24ghz: true, batteryHours: 160, power: rechargeable }
   variants:
     - { sku: "41798", colorName: Noir, colorFamily: black }
 
@@ -198,7 +199,8 @@
     - https://eu.pulsar.gg/products/pulsar-es-fs-1-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 37, weightG: 56, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « A 400mAh battery and optimized firmware deliver up to 160 hours of continuous use on a single charge » (fiche pulsar.gg)
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 124, widthMm: 64, heightMm: 37, weightG: 56, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 8000, conn24ghz: true, batteryHours: 160, power: rechargeable }
   variants:
     - { sku: "38478", colorName: Noir, colorFamily: black }
 
@@ -399,7 +401,8 @@
     - https://eu.pulsar.gg/products/xlite-v4-es-mini-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 61, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « 500mA battery for 70-100 hours of usage » (fiche pulsar.gg), le haut de la fourchette, comme un « jusqu'à »
+  specs: { shape: ergonomic, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 63.4, heightMm: 40.7, weightG: 61, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "33500", colorName: Noir, colorFamily: black }
 
@@ -419,7 +422,8 @@
     - https://eu.pulsar.gg/products/x2h-v3-es-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 65, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « 500mA battery for 70-100 hours of usage » (fiche pulsar.gg), le haut de la fourchette, comme un « jusqu'à »
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 120.4, widthMm: 65, heightMm: 39, weightG: 65, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "35075", colorName: Noir, colorFamily: black }
 
@@ -439,7 +443,8 @@
     - https://eu.pulsar.gg/products/x2h-v3-es-mini-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 60, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « 500mA battery for 70-100 hours of usage » (fiche pulsar.gg), le haut de la fourchette, comme un « jusqu'à »
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 62, heightMm: 38, weightG: 60, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "33503", colorName: Noir, colorFamily: black }
 
@@ -462,7 +467,8 @@
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 de chaque côté, caches fournis
   # hand : « Ambidextrous for both left and right hand », caches de boutons fournis (eu.pulsar.gg)
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 64, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « 500mA battery for 70-100 hours of usage » (fiche pulsar.gg), le haut de la fourchette, comme un « jusqu'à »
+  specs: { shape: symmetrical, hand: ambidextrous, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 64, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "33502", colorName: Noir, colorFamily: black }
 
@@ -482,7 +488,8 @@
     - https://eu.pulsar.gg/products/x2-v3-es-mini-gaming-mouse
   # sideButtons : photos de profil (eu.pulsar.gg) : 2 à gauche, aucun à droite
   # buttons : 5 assignables, clics, molette, avant, arrière (manuels pulsar.gg) ; les boutons du dessous règlent la souris
-  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 59, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, power: rechargeable }
+  # batteryHours : « 500mA battery for 70-100 hours of usage » (fiche pulsar.gg), le haut de la fourchette, comme un « jusqu'à »
+  specs: { shape: symmetrical, hand: right, segment: gaming, lengthMm: 115.6, widthMm: 61, heightMm: 36.6, weightG: 59, buttons: 5, sideButtons: 2, sensor: XS-1 Flagship Sensor, dpiMax: 32000, pollingHz: 1000, conn24ghz: true, batteryHours: 100, power: rechargeable }
   variants:
     - { sku: "33501", colorName: Noir, colorFamily: black }
 
