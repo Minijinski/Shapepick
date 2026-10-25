@@ -50,6 +50,13 @@
       "when": 1792846407803,
       "tag": "0006_mouse_side_buttons",
       "breakpoints": true
+    },
+    {
+      "idx": 7,
+      "version": "7",
+      "when": 1792937997205,
+      "tag": "0007_catalog_snapshots",
+      "breakpoints": true
     }
   ]
 }

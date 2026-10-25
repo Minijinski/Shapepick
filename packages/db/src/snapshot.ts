@@ -11,13 +11,15 @@ import {
   toMonitorItems,
   toMouseItems,
 } from '@choose/catalog'
-import { and, eq, inArray, max } from 'drizzle-orm'
+import { and, count, eq, inArray, max, sql } from 'drizzle-orm'
 import type { Db } from './client'
 import * as t from './schema'
 
 // Database → the flat items the finder works on. Rows are turned back into the seed's input shape
 // and run through the same Zod schemas and item builders as the YAML, so the browser can never
-// receive something the engine was not written for.
+// receive something the engine was not written for. The rows come from the tables themselves, or,
+// in one query, from the copy the seed keeps of them (`catalog_snapshots`): the items are built
+// from either with the code deployed, so a change to that code shows without a new seed.
 
 /** Postgres returns null for empty columns; the domain schemas expect the key to be absent. */
 const compact = <T extends Record<string, unknown>>(row: T) =>
@@ -30,25 +32,59 @@ export type Snapshot<C extends Category> = {
   items: ItemOf<C>[]
 }
 
-export async function loadSnapshot<C extends Category>(db: Db, category: C): Promise<Snapshot<C>> {
-  // In the order products were first seeded (their ids): a reseed rewrites rows, which would
-  // otherwise come back in whatever order Postgres stored the new versions.
-  const products = await db
-    .select({ product: t.products, brand: t.brands })
-    .from(t.products)
-    .innerJoin(t.brands, eq(t.products.brandId, t.brands.id))
-    .where(and(eq(t.products.category, category), eq(t.products.status, 'active')))
-    .orderBy(t.products.id)
-  const ids = products.map((p) => p.product.id)
+type SpecRow = { productId: number; extra?: unknown } & Record<string, unknown>
+
+/** What a category's items are built from: its rows, as the tables give them. */
+export type SnapshotRows = {
+  products: { product: typeof t.products.$inferSelect; brand: typeof t.brands.$inferSelect }[]
+  translations: (typeof t.productTranslations.$inferSelect)[]
+  variants: {
+    variant: typeof t.productVariants.$inferSelect
+    switch: typeof t.switches.$inferSelect | null
+  }[]
+  images: (typeof t.productImages.$inferSelect)[]
+  specs: SpecRow[]
+}
+
+const specTables = {
+  keyboard: t.keyboardSpecs,
+  monitor: t.monitorSpecs,
+  mouse: t.mouseSpecs,
+} as const
+
+/** A category's version: its active products, and when one of its products last changed. */
+async function versionOf(db: Db, category: Category) {
   const [stamp] = await db
-    .select({ updated: max(t.products.updatedAt) })
+    .select({
+      active: count(sql`case when ${t.products.status} = 'active' then 1 end`),
+      updated: max(t.products.updatedAt),
+    })
     .from(t.products)
     .where(eq(t.products.category, category))
-  const version = `${ids.length}-${stamp?.updated?.getTime() ?? 0}`
-  const updatedAt = stamp?.updated?.toISOString() ?? null
-  if (!ids.length) return { version, updatedAt, items: [] }
+  return {
+    version: `${stamp?.active ?? 0}-${stamp?.updated?.getTime() ?? 0}`,
+    updatedAt: stamp?.updated?.toISOString() ?? null,
+  }
+}
 
-  const [translations, variants, images] = await Promise.all([
+/** A category's rows, read from the tables themselves. */
+export async function fetchSnapshotRows(db: Db, category: Category) {
+  // In the order products were first seeded (their ids): a reseed rewrites rows, which would
+  // otherwise come back in whatever order Postgres stored the new versions.
+  const [products, stamp] = await Promise.all([
+    db
+      .select({ product: t.products, brand: t.brands })
+      .from(t.products)
+      .innerJoin(t.brands, eq(t.products.brandId, t.brands.id))
+      .where(and(eq(t.products.category, category), eq(t.products.status, 'active')))
+      .orderBy(t.products.id),
+    versionOf(db, category),
+  ])
+  const ids = products.map((p) => p.product.id)
+  const rows: SnapshotRows = { products, translations: [], variants: [], images: [], specs: [] }
+  if (!ids.length) return { ...stamp, rows }
+  const specs = specTables[category]
+  const [translations, variants, images, specRows] = await Promise.all([
     db.select().from(t.productTranslations).where(inArray(t.productTranslations.productId, ids)),
     db
       .select({ variant: t.productVariants, switch: t.switches })
@@ -62,8 +98,17 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
       .from(t.productImages)
       .where(inArray(t.productImages.productId, ids))
       .orderBy(t.productImages.id),
+    db.select().from(specs).where(inArray(specs.productId, ids)),
   ])
+  return {
+    ...stamp,
+    rows: { products, translations, variants, images, specs: specRows as SpecRow[] },
+  }
+}
 
+/** A category's items, built from its rows with the code deployed. */
+export function buildItems<C extends Category>(category: C, rows: SnapshotRows): ItemOf<C>[] {
+  const { products, translations, variants, images } = rows
   const brands = new Map<string, Brand>()
   const switches = new Map<string, Switch>()
   const base = products.map(({ product, brand }) => {
@@ -130,67 +175,89 @@ export async function loadSnapshot<C extends Category>(db: Db, category: C): Pro
     }
   })
 
-  const specsOf = <S extends { productId: number }>(rows: S[]) =>
-    new Map(rows.map((r) => [r.productId, r]))
-  const strip = <S extends { productId: number; extra: unknown }>({
-    productId: _,
-    extra: __,
-    ...rest
-  }: S) => compact(rest)
+  const specs = new Map(rows.specs.map((r) => [r.productId, r]))
+  const strip = ({ productId: _, extra: __, ...rest }: SpecRow) => compact(rest)
 
   const kind: Category = category
   switch (kind) {
     case 'keyboard': {
-      const specs = specsOf(
-        await db.select().from(t.keyboardSpecs).where(inArray(t.keyboardSpecs.productId, ids)),
-      )
       const inputs = base.flatMap((p) => {
         const row = specs.get(p.id)
         return row
           ? [keyboardInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
           : []
       })
-      return {
-        version,
-        updatedAt,
-        items: toKeyboardItems(inputs, [...brands.values()], [...switches.values()]) as ItemOf<C>[],
-      }
+      return toKeyboardItems(inputs, [...brands.values()], [...switches.values()]) as ItemOf<C>[]
     }
     case 'monitor': {
-      const specs = specsOf(
-        await db.select().from(t.monitorSpecs).where(inArray(t.monitorSpecs.productId, ids)),
-      )
       const inputs = base.flatMap((p) => {
         const row = specs.get(p.id)
         if (!row) return []
         const { ppi: _, ...rest } = strip(row)
         return [monitorInputSchema.parse({ ...p.input, specs: rest, variants: p.variants })]
       })
-      return {
-        version,
-        updatedAt,
-        items: toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[],
-      }
+      return toMonitorItems(inputs, [...brands.values()]) as ItemOf<C>[]
     }
     case 'mouse': {
-      const specs = specsOf(
-        await db.select().from(t.mouseSpecs).where(inArray(t.mouseSpecs.productId, ids)),
-      )
       const inputs = base.flatMap((p) => {
         const row = specs.get(p.id)
         return row
           ? [mouseInputSchema.parse({ ...p.input, specs: strip(row), variants: p.variants })]
           : []
       })
-      return {
-        version,
-        updatedAt,
-        items: toMouseItems(inputs, [...brands.values()]) as ItemOf<C>[],
-      }
+      return toMouseItems(inputs, [...brands.values()]) as ItemOf<C>[]
     }
     default: {
       const unknown: never = kind
       throw new Error(`No snapshot for category "${unknown}"`)
     }
   }
+}
+
+/** A category's catalogue, read from the tables themselves (four round trips). */
+export async function loadSnapshot<C extends Category>(db: Db, category: C): Promise<Snapshot<C>> {
+  const { version, updatedAt, rows } = await fetchSnapshotRows(db, category)
+  return { version, updatedAt, items: buildItems(category, rows) }
+}
+
+/**
+ * A category's catalogue as the site reads it: the seed's copy of its rows and the category's
+ * version, asked for together (one round trip). The tables themselves when the copy is missing (its
+ * migration not run yet, no seed since) or behind them (a product changed since the seed).
+ */
+export async function readSnapshot<C extends Category>(db: Db, category: C): Promise<Snapshot<C>> {
+  const [stored, current] = await Promise.all([
+    db
+      .select({ version: t.catalogSnapshots.version, rows: t.catalogSnapshots.rows })
+      .from(t.catalogSnapshots)
+      .where(eq(t.catalogSnapshots.category, category))
+      .then(
+        ([row]) => row,
+        () => undefined,
+      ),
+    versionOf(db, category),
+  ])
+  if (!stored || stored.version !== current.version) return loadSnapshot(db, category)
+  return {
+    version: current.version,
+    updatedAt: current.updatedAt,
+    items: buildItems(category, stored.rows as SnapshotRows),
+  }
+}
+
+/** Keeps a copy of a category's rows for the site (the seed, inside its transaction). */
+export async function storeSnapshot(db: Db, category: Category) {
+  const { version, updatedAt, rows } = await fetchSnapshotRows(db, category)
+  await db
+    .insert(t.catalogSnapshots)
+    .values({ category, version, updatedAt: updatedAt ? new Date(updatedAt) : null, rows })
+    .onConflictDoUpdate({
+      target: t.catalogSnapshots.category,
+      set: {
+        version,
+        updatedAt: updatedAt ? new Date(updatedAt) : null,
+        rows,
+        writtenAt: new Date(),
+      },
+    })
 }

@@ -1,10 +1,17 @@
 import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
-import type { Category, KeyboardInput, MonitorInput, MouseInput } from '@choose/catalog'
+import {
+  type Category,
+  categories,
+  type KeyboardInput,
+  type MonitorInput,
+  type MouseInput,
+} from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
 import { inArray, notInArray, sql } from 'drizzle-orm'
-import { connectDirect } from './client'
+import { connectDirect, type Db } from './client'
 import * as t from './schema'
+import { storeSnapshot } from './snapshot'
 
 // data/*.yaml → Postgres. Validated by Zod on the way in (loadData), upserted by slug, and the
 // per-product children (translations, variants, specs) are replaced wholesale, so re-running the
@@ -284,6 +291,18 @@ await db.transaction(async (tx) => {
   for (const [kind, rows] of Object.entries(gone)) {
     if (rows.length)
       console.info(`Removed ${rows.length} ${kind}: ${rows.map((r) => r.slug).join(', ')}`)
+  }
+
+  // The site's copy of each category's rows, read in one query (src/snapshot.ts), written with the
+  // rest so that it is never ahead of the tables or behind them. Left out while its table's
+  // migration has not run: the site then reads the tables themselves.
+  const [table] = await tx.execute<{ name: string | null }>(
+    sql`select to_regclass('public.catalog_snapshots')::text as name`,
+  )
+  if (table?.name) {
+    for (const category of categories) await storeSnapshot(tx as unknown as Db, category)
+  } else {
+    console.warn('catalog_snapshots is missing (pnpm db:migrate): the site reads the tables.')
   }
 })
 

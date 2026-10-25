@@ -332,3 +332,19 @@ export const outboundClicks = pgTable(
   },
   (t) => [index().on(t.at), index().on(t.productSlug)],
 )
+
+/**
+ * Each category's catalogue as the last seed wrote it: the rows its items are built from (products
+ * with their brand, translations, variants with their switch, images, specs), one row per category.
+ * The site reads a category in one query instead of four round trips one after the other; it still
+ * builds and checks the items with the code deployed (src/snapshot.ts), and reads the tables
+ * themselves while this one is missing, empty, or behind them.
+ */
+export const catalogSnapshots = pgTable('catalog_snapshots', {
+  category: category().primaryKey(),
+  /** Active products and the latest change to the category's products, as the ETag says it. */
+  version: text().notNull(),
+  updatedAt: timestamp({ withTimezone: true }),
+  rows: jsonb().notNull(),
+  writtenAt: timestamp({ withTimezone: true }).notNull().defaultNow(),
+})
