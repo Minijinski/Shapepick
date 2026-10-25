@@ -1,7 +1,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-strix-morph-96-wireless/gallery/
 - slug: asus-rog-strix-morph-96-wireless
   brand: asus
-  name: Strix Morph 96 Wireless
+  name: ROG Strix Morph 96 Wireless
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
@@ -24,7 +24,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-75-he/gallery/
 - slug: asus-rog-falchion-ace-75-he
   brand: asus
-  name: Falchion Ace 75 HE
+  name: ROG Falchion Ace 75 HE
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
@@ -49,7 +49,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-azoth-96-he/gallery/
 - slug: asus-rog-azoth-96-he
   brand: asus
-  name: Azoth 96 HE
+  name: ROG Azoth 96 HE
   msrpEur: 380
   popularity: 0.5
   editorialScore: 0.5
@@ -72,7 +72,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falcata/gallery/
 - slug: asus-rog-falcata
   brand: asus
-  name: Falcata
+  name: ROG Falcata
   msrpEur: 390
   popularity: 0.5
   editorialScore: 0.5
@@ -94,7 +94,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-azoth-x/gallery/
 - slug: asus-rog-azoth-x
   brand: asus
-  name: Azoth X
+  name: ROG Azoth X
   msrpEur: 330
   popularity: 0.5
   editorialScore: 0.5
@@ -117,7 +117,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-x/gallery/
 - slug: asus-rog-strix-scope-ii-x
   brand: asus
-  name: Strix Scope II X
+  name: ROG Strix Scope II X
   msrpEur: 150
   popularity: 0.5
   editorialScore: 0.5
@@ -140,7 +140,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-96-rx-wireless/gallery/
 - slug: asus-rog-strix-scope-ii-96-rx-wireless
   brand: asus
-  name: Strix Scope II 96 RX Wireless
+  name: ROG Strix Scope II 96 RX Wireless
   msrpEur: 230
   popularity: 0.5
   editorialScore: 0.5
@@ -164,7 +164,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-falchion-ace-hfx/gallery/
 - slug: asus-rog-falchion-ace-hfx
   brand: asus
-  name: Falchion Ace HFX
+  name: ROG Falchion Ace HFX
   msrpEur: 210
   popularity: 0.5
   editorialScore: 0.5
@@ -186,7 +186,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-azoth-extreme/gallery/
 - slug: asus-rog-azoth-extreme
   brand: asus
-  name: Azoth Extreme
+  name: ROG Azoth Extreme
   msrpEur: 560
   popularity: 0.5
   editorialScore: 0.5
@@ -208,7 +208,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-falchion-rx-low-profile/gallery/
 - slug: asus-rog-falchion-rx-low-profile
   brand: asus
-  name: Falchion RX Low Profile
+  name: ROG Falchion RX Low Profile
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
@@ -231,7 +231,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/aura-rgb/rog-strix-scope-ii-rx/gallery/
 - slug: asus-rog-strix-scope-ii-rx
   brand: asus
-  name: Strix Scope II RX
+  name: ROG Strix Scope II RX
   msrpEur: 170
   popularity: 0.5
   editorialScore: 0.5
@@ -250,7 +250,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/compact/rog-strix-scope-ii-96-wireless/gallery/
 - slug: asus-rog-strix-scope-ii-96-wireless
   brand: asus
-  name: Strix Scope II 96 Wireless
+  name: ROG Strix Scope II 96 Wireless
   msrpEur: 190
   popularity: 0.5
   editorialScore: 0.5
@@ -273,7 +273,7 @@
 # photos : galerie officielle, https://rog.asus.com/fr/keyboards/keyboards/pbt-keycaps/rog-falchion-ace-model/gallery/
 - slug: asus-rog-falchion-ace
   brand: asus
-  name: Falchion Ace
+  name: ROG Falchion Ace
   msrpEur: 145
   popularity: 0.5
   editorialScore: 0.5
@@ -297,7 +297,7 @@
 # à vérifier : switch du coloris Moonlight White (la page française ne nomme que le NX Red)
 - slug: asus-rog-azoth
   brand: asus
-  name: Azoth
+  name: ROG Azoth
   msrpEur: 240
   popularity: 0.5
   editorialScore: 0.5
