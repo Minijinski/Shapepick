@@ -1,6 +1,7 @@
 import { type Locale, locales, text } from '@choose/catalog'
 import { type ReactNode, useEffect } from 'react'
 import { css, cx } from 'styled-system/css'
+import { Logo } from '~/components/Logo'
 import { messages as m } from '~/i18n/messages'
 import { legalPaths } from './legal'
 
@@ -114,7 +115,7 @@ function LegalHeader({ locale }: { locale: Locale }) {
         href={`/${locale}`}
         className={css({ display: 'inline-flex', alignItems: 'center', gap: '2.5' })}
       >
-        <span aria-hidden className={css({ w: '3', h: '3', borderRadius: 'full', bg: 'signal' })} />
+        <Logo />
         <span
           className={css({
             fontFamily: 'mono',

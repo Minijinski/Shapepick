@@ -11,6 +11,7 @@ import { type ReactNode, useEffect, useState } from 'react'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { CategoryIcon } from '~/components/CategoryIcon'
+import { Logo } from '~/components/Logo'
 import { loadJourney } from '~/features/finder/journey'
 import { legalPaths } from '~/features/legal/legal'
 import { messages as m } from '~/i18n/messages'
@@ -135,7 +136,7 @@ function CatalogueHeader({
           justifySelf: 'start',
         })}
       >
-        <span aria-hidden className={css({ w: '3', h: '3', borderRadius: 'full', bg: 'signal' })} />
+        <Logo />
         <span
           className={css({
             fontFamily: 'mono',
