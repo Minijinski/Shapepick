@@ -1,6 +1,6 @@
 # Handoff — choose-a-device
 
-Oct 24, 2026 · @Eddy
+Oct 25, 2026 · @Eddy
 
 ## En bref
 
@@ -10,7 +10,7 @@ shapepick (choose-a-device jusqu'au 24 octobre) est un « finder » de claviers,
 - **En ligne** : [shapepick.com](https://shapepick.com) depuis le 24 octobre 2026, sur Netlify, base Postgres sur Neon (Francfort). Le site tournait depuis le 20 octobre sur choose-a-device.netlify.app, qui redirige désormais vers le domaine.
 - **Données** : 545 vrais claviers (31 marques, importés par pnpm ingest depuis 14 sources), 264 vrais écrans de 8 marques (voir « Écrans : vrais modèles ») et 174 vraies souris de 10 marques (voir « Souris : troisième catégorie »). Avec les photos choisies par `pnpm ingest photos` (22 octobre au soir) et celles trouvées sur le web (24 octobre au soir), 957 produits sur 983 montrent une vraie vue sur le canvas (voir « Photos remplacées depuis le web »). 244 switchs depuis le 24 octobre au soir (ROG et Akko compris) : seuls 13 claviers mécaniques ou optiques n'ont pas de switch.
 - **Qualité** : 104 tests du moteur et des parcours, 46 de l'import (mappers écrans et souris, switchs, variantes), typecheck des 4 paquets et build au vert ; Biome propre sur les fichiers au style Biome (plusieurs fichiers sont au format Prettier, voir « Pièges »).
-- **État du dépôt** : `main` sur origin s'arrête à ce handoff, poussé et déployé le 24 octobre au soir : le catalogue ZOWIE, Corsair, ASUS ROG et Akko (fusion `a777214`, hôte des photos Akko `124c2e2`, seed de production après le push), l'interface et les mentions légales (`6fd52ff` à `646fb65`, voir « Retours du 24 octobre (soir) »), le contrôle photo assoupli (`df86d23`, puis `74e0bf7` : le LG Swing garde son dessin) et le top 3 toujours plein du Finder (`0589107`, autre session), les photos trouvées sur le web (voir « Photos remplacées depuis le web »), sur le Store ID Amazon Partenaires (`a2d631a`), sur les collections (`7af8928`), les boutons latéraux (`bdb8eb9`, migration `0006` puis seed de production passés sur Neon avant le push) et les switchs (`539fdaf`) ; voir « Soir du 24 octobre ». Dessous : la question « taille de main » retirée (`fac57c1`) et le lot 1 de l'audit (`959f780`, migration `0005` passée sur Neon avant le push ; voir « Audit et lot 1 (24 octobre) »). Avant, le même jour : les fiches produit indexables (`1e4d0bf`), le nom shapepick (`709e57e`) et la redirection de l'ancienne adresse limitée aux pages (`287a219`), sur le fondu de la console (`1dfc469`) et le socle SEO (`0b69127` : `robots.txt`, `sitemap.xml`, JSON-LD, cartes de partage, avec le compteur et la popup revus) ; avant encore, `19ed09a`, la fusion de feat/mobile (`b2d2cc0` à `44699c9`, voir « Mobile (24 octobre) ») sur `c15905f`, qui porte aussi les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`), pas encore décrits ici. Le 23 octobre au soir : la fusion `184fc39` de feat/souris, avec la migration `0004` passée sur Neon avant le push et le seed après (voir « Souris : troisième catégorie ») ; plus tôt le 23 octobre, les vrais écrans (`ad9f146`) avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
+- **État du dépôt** : `main` sur origin s'arrête à ce handoff, poussé le 25 octobre sur f8fd527 (voir « Suites de l'audit (25 octobre) » ; d'autres sessions ont poussé avant, sans être décrites ici) ; poussé et déployé le 24 octobre au soir : le catalogue ZOWIE, Corsair, ASUS ROG et Akko (fusion `a777214`, hôte des photos Akko `124c2e2`, seed de production après le push), l'interface et les mentions légales (`6fd52ff` à `646fb65`, voir « Retours du 24 octobre (soir) »), le contrôle photo assoupli (`df86d23`, puis `74e0bf7` : le LG Swing garde son dessin) et le top 3 toujours plein du Finder (`0589107`, autre session), les photos trouvées sur le web (voir « Photos remplacées depuis le web »), sur le Store ID Amazon Partenaires (`a2d631a`), sur les collections (`7af8928`), les boutons latéraux (`bdb8eb9`, migration `0006` puis seed de production passés sur Neon avant le push) et les switchs (`539fdaf`) ; voir « Soir du 24 octobre ». Dessous : la question « taille de main » retirée (`fac57c1`) et le lot 1 de l'audit (`959f780`, migration `0005` passée sur Neon avant le push ; voir « Audit et lot 1 (24 octobre) »). Avant, le même jour : les fiches produit indexables (`1e4d0bf`), le nom shapepick (`709e57e`) et la redirection de l'ancienne adresse limitée aux pages (`287a219`), sur le fondu de la console (`1dfc469`) et le socle SEO (`0b69127` : `robots.txt`, `sitemap.xml`, JSON-LD, cartes de partage, avec le compteur et la popup revus) ; avant encore, `19ed09a`, la fusion de feat/mobile (`b2d2cc0` à `44699c9`, voir « Mobile (24 octobre) ») sur `c15905f`, qui porte aussi les cinq tours de la session canvas de la nuit du 23 au 24 octobre (`1e87ffa` à `c15905f`), pas encore décrits ici. Le 23 octobre au soir : la fusion `184fc39` de feat/souris, avec la migration `0004` passée sur Neon avant le push et le seed après (voir « Souris : troisième catégorie ») ; plus tôt le 23 octobre, les vrais écrans (`ad9f146`) avec la migration `0003` et leur seed, les « Retours du 23 octobre (2) » (`06057fa`), les ASIN Amazon (`65c326b`) et la migration `0002`.
 
 Pour reprendre : Node 24, `pnpm install`, puis `pnpm dev` ; le `.env` racine pointe sur la base Neon (détails dans « Lancer le projet » et « Mise en ligne »). Le plan d'origine est dans `~/.claude/plans/https-shapefinder-cc-j-aime-beaucoup-le-cheerful-yao.md`.
 
@@ -153,10 +153,10 @@ Les marques sont une étape « à part » construite depuis le catalogue (`withB
 | `histogram` | Répartition des prix pour l'étape budget |
 | `describeAnswer` | Libellé des puces du rail : « 75 % · 65 % », « ≤ 150 € » |
 
-Le classement mêle l'adéquation au profil et un a priori (note éditoriale e et popularité p). L'adéquation est une moyenne géométrique pondérée des critères du profil, plancher 0,05 : un critère catastrophique fait chuter tout le score au lieu d'être noyé dans la moyenne. Un critère peut dire qu'une fiche ne donne pas sa valeur (`known`) : elle compte alors comme la médiane de ses pairs qui la donnent (`peers` : Bluetooth avec Bluetooth, même format pour le poids…) et n'est jamais citée en point fort ou faible. Depuis le 24 octobre, l'a priori ne pèse que s'il départage les produits du catalogue (`priorTellsApart`) : e et p valent 0,5 partout, donc le fit est aujourd'hui l'adéquation seule ; il reprendra 25 % dès qu'une vraie popularité existera. À score strictement égal : le moins cher d'abord, puis le plus récent, puis celui qui a un lien Amazon direct (`settleTies`, `finder/settle.ts`), puis le slug, jamais l'ordre alphabétique des marques ; à % affiché égal, les marques passent ensuite à tour de rôle (`maker`). Depuis le 21 octobre, le % affiché ajoute les réponses : chaque réponse qui filtre (n) est un critère que tout produit classé respecte, donc le % part de l'adéquation et monte à chaque réponse, sans changer l'ordre. Un modèle qui coche tous les critères de l'usage affiche 100 %.
+Le classement mêle l'adéquation au profil et un a priori (note éditoriale e et popularité p). L'adéquation est une moyenne géométrique pondérée des critères du profil, plancher 0,05 : un critère catastrophique fait chuter tout le score au lieu d'être noyé dans la moyenne. Un critère peut dire qu'une fiche ne donne pas sa valeur (`known`) : elle compte alors comme la médiane de ses pairs qui la donnent (`peers` : Bluetooth avec Bluetooth, même format pour le poids…) et n'est jamais citée en point fort ou faible. Depuis le 25 octobre, l'a priori est centré sur 0,5 et déplace le fit de 2 points au plus, dans un sens ou dans l'autre (`PRIOR_REACH`) : e et p valent 0,5 partout, donc le fit est aujourd'hui l'adéquation seule. À score strictement égal : le moins cher d'abord, puis le plus récent, puis celui qui a un lien Amazon direct (`settleTies`, `finder/settle.ts`), puis le slug, jamais l'ordre alphabétique des marques ; à % affiché égal, les marques passent ensuite à tour de rôle (`maker`). Depuis le 21 octobre, le % affiché ajoute les réponses : chaque réponse qui filtre (n) est un critère que tout produit classé respecte, donc le % part de l'adéquation et monte à chaque réponse, sans changer l'ordre. Un modèle qui coche tous les critères de l'usage affiche 100 %.
 
 ```latex
-\text{fit} = a \cdot \exp\left(\frac{\sum_k w_k \ln \max(0{,}05,\ s_k)}{\sum_k w_k}\right) + (1 - a) \cdot (0{,}6\,e + 0{,}4\,p) \qquad a = \begin{cases} 1 & \text{a priori identique pour tous} \\ 0{,}75 & \text{sinon} \end{cases} \qquad \text{score} = \frac{3\,\text{fit} + n}{3 + n}
+\text{fit} = \min\left(1,\ \exp\left(\frac{\sum_k w_k \ln \max(0{,}05,\ s_k)}{\sum_k w_k}\right) + 0{,}02 \cdot (2\,\pi - 1)\right) \qquad \pi = 0{,}6\,e + 0{,}4\,p \qquad \text{score} = \frac{3\,\text{fit} + n}{3 + n}
 ```
 
 Les points forts sont les critères notés au moins 0,75 ; les points faibles, les critères importants notés sous 0,35. Le prix d'un produit est celui de sa variante la moins chère.
@@ -201,13 +201,13 @@ La première réponse choisit les poids des critères ; sans réponse, un profil
 | --- | --- |
 | Clavier, jeu compétitif | Réactivité 3, rapid trigger 3, polling 2, compacité 2, construction 1 |
 | Clavier, jeu polyvalent | Réactivité 2, RGB 1,5, construction 1,5, compacité 1, sans fil 1, polling 1 |
-| Clavier, bureau & frappe | Silence 3, multi-appareils 2, toutes les touches 2, confort 2, construction 1 |
+| Clavier, bureau & frappe | Silence 3, multi-appareils 2, toutes les touches 2, confort 2 (sans construction depuis le 25 octobre) |
 | Clavier, code | Programmable 3, confort 2, construction 2, silence 1 |
 | Clavier, nomade | Légèreté 3, compacité 2, multi-appareils 2, autonomie 2, sans fil 1 |
 | Écran, FPS compétitif | Fréquence 3, temps de réponse 3, taille e-sport 2, contraste 0,5 |
 | Écran, jeu immersif | Contraste 3, HDR 2,5, immersion 2, fréquence 1 |
 | Écran, console | Compatibilité console 3, HDR 2, contraste 1,5, fréquence 1 |
-| Écran, création | Couleurs 3, netteté 2,5, ergonomie 1, contraste 0,5 |
+| Écran, création | Couleurs 3, netteté 2,5, ergonomie 1, marquage OLED 0,5 (cité seulement comme point faible), sans contraste depuis le 25 octobre |
 | Écran, bureau & code | Netteté 2,5, ergonomie 2, connectique 2, espace de travail 1,5, marquage OLED 1 (cité seulement comme point faible) |
 | Écran, polyvalent | Fréquence 1,5, contraste 1,5, netteté 1,5, HDR 1, ergonomie 1 |
 
@@ -786,6 +786,52 @@ Catalogue sans rechargement, cartographié mais reporté : passer les routes cat
 
 Vérifié en Chrome headless (CDP) sur un serveur local : jonction header / canvas avant et après à 1440×900 ; opacité de la bande image par image (accueil → souris : 0 → 1 sans translation ; souris → accueil : 1 → 0 en 0,3 s ; souris → claviers : reste à 1) ; liste des marques nette au-dessus du givre à 1440×900 et 1280×720 ; libellés lisibles sur des formes sombres glissées dessous ; Logitech + main gauche + « Ergonomique » → Continuer → résultats ; liens du catalogue avec le parcours, HTML servi sans ; aucune erreur console ; 390×844 inchangé hors l'entrée. Rejoué sur shapepick.com après le push : mêmes résultats, collection « petites mains » sans trackball, aucune erreur console.
 
+## Suites de l'audit (25 octobre)
+
+Quatre changements du moteur et du Finder sont en ligne depuis le 25 octobre à 11:04 UTC (`f8fd527`, 54 s après le push). Les notes de la presse sont écartées et le point 4 de l'audit (données manquantes) reste à faire. Pas de migration ni de seed : rien dans `data/`.
+
+| Commit | Changement | Effet |
+| --- | --- | --- |
+| `fa104b8` | Page de résultats vide : les 3 produits les plus proches (`nearMisses`) sous « Aucun modèle… », cartes en pointillés, « Écarté par · X », sans rang ni %. Carte partagée `RunnerUp`. | Souris : des produits proches existaient dans 147 états sur 147 à budget trop bas, sans être montrés. |
+| `2c05565` | Profil clavier « Bureau & frappe » sans `build`. | MX Keys S n°127 → n°18, Wave Keys n°64 → n°5, ERGO K860 n°129 → n°20 ; en AZERTY 100 %, Logitech passe de 3 à 5 dans le top 10. |
+| `2a1b723` | Couleur des écrans en points de P3 au-dessus de 70 %, sur 40 : calibration d'usine 8, 10 bits 4 ; 1 = 98 % de P3 avec les deux. « Création » sans contraste, marquage OLED 0,5. | En 27" : SW272U n°17 → n°6, PD2770U n°18 → n°7, OLED de jeu n°1-5 → n°9-11 ; couleur à 1 pour 63 écrans sur 164 renseignés (90 avant). |
+| `0d1fd8b` | Prior centré sur 0,5, 2 points au plus dans un sens ou dans l'autre (`PRIOR_REACH`) ; `priorTellsApart` supprimé. | Aucun : toutes les notes valent 0,5. |
+| `f8fd527` | Fusion d'`origin/main` (photos, ROG, police, prix Royal Kludge). Conflit dans `ResultsView.tsx` : l'espacement -0,01em du titre de carte reporté dans `RunnerUp`. | — |
+
+Vérifié : tests catalog 115/115 (5 nouveaux), ingest 46/46, typecheck web, Biome sur les fichiers touchés, build. En ligne : la page vide souris ≤ 5 € montre « Juste derrière » ; l'ordre Création 27" est celui de la simulation (XG27JCG, S90PC, 274URDFW, S80PB, U2725QE, SW272U…).
+
+### Audit relancé sur le catalogue agrandi
+
+Même moteur que le 24 au soir, avec 467 souris (+293) et 685 claviers (+140). La réplique rapide donne les rangs du vrai `rank()` (934/934 souris, 528/528 écrans, 600/600 tirages).
+
+| Mesure | 24 octobre (174 souris, 545 claviers) | 25 octobre (467, 685) |
+| --- | --- | --- |
+| Souris jamais sur le podium | 5 | 78, dont 49 nouvelles et 58 avec un quasi-doublon |
+| Souris à 3 points ou moins du n°1 (médiane / max) | 3 / 16 | 5 / 75 |
+| Claviers à 3 points ou moins du n°1 (médiane) | 6 | 7 |
+| Superlight 2, compétitif symétrique moyenne griffe | n°6 | n°38 |
+| Validation d'une réponse, souris (p95) | 1,4 ms | 3,6 ms |
+
+Ce qui bat les 78 souris : multi-appareils (30), capteur (27), légèreté (10). En compétitif, G-Wolves prend 5 places du top 10. Rapport et listes complètes : `audit-suite-rapport.md` et `audit-suite-trous.txt` dans le dossier de notes partagé (`~/Library/Application Support/Claude/side-session-notes/local_8b9d2ee1-87d6-49fb-88c3-05b9ac9dfd4e`) ; scripts dans le scratchpad de la session (`audit/run.sh`, `scripts/gaps.mts`).
+
+### Trous de données (point 4, à faire)
+
+- `power` absent sur 29 souris sans fil (25 nouvelles) : « Batterie rechargeable » les écarte, même à piles (M185, M510, Kensington…), et leur autonomie se lit à 70 h.
+- `hosts` absent sur 326 souris sans fil hors Logitech : 2 par défaut pour 147 (2,4 GHz + Bluetooth), 1 pour 203 (2,4 GHz) et pour 2 (Bluetooth seul, écartées par « Multi-appareils »).
+- `pollingHz` absent sur 37 des 55 souris de bureau : la médiane des renseignées (125 Hz) leur donne 0,1 en capteur au lieu de 0,5.
+- ASUS ProArt MD300 : 1 bouton latéral, aucune option de « Boutons » ne la garde.
+- 14 claviers mécaniques sans switch (Ajazz 6, Womier 6, Chilkey Foxy 65, RK R87 Pro) : « Ressenti » les écarte.
+- Écrans : 15 temps de réponse (dont BenQ XL2546X+, XL2566X+, XL2586X+), 58 écrans sans aucun champ de pied (MSI 19, AOC 18, LG 15), 100 couvertures P3, 54 versions HDMI.
+
+### Notes de la presse, écartées
+
+Lues : 17 guides de Tom's Hardware, PC Gamer et Clubic, mis à jour entre décembre 2025 et octobre 2026. 64 fiches citées (31 souris, 19 claviers, 14 écrans) : 0,75 pour une rédaction, 1 pour deux. Effet simulé : top 5 changé pour 21 personas souris sur 108 et 10 écrans sur 72. Écartées par l'utilisateur : 22 des 31 souris sont des Logitech ou des Razer, aucune petite marque, aucun clavier de bureau. Le correctif reste réapplicable : `audit-suite-presse.patch` dans le dossier de notes partagé (`git apply`). RTINGS réserve ses choix aux abonnés ; Les Numériques, Frandroid, 01net, Numerama, JVTech, IGN, PCMag, The Verge et le NYT bloquent l'agent.
+
+### À savoir
+
+- L'outil de l'app qui synchronise un worktree avec `main` a échoué deux fois au fetch de GitLab : fusion faite à la main.
+- Base locale à part `choose_audit_suite` (Postgres du port 54329, catalogue du 25 octobre) : `dropdb -h localhost -p 54329 -U choose choose_audit_suite` quand elle ne sert plus.
+
 ## SEO et i18n
 
 Le site est prêt à se classer depuis le 24 octobre : 2 164 pages indexables (accueils, catégories, catalogues A–Z, 92 collections par langue et une fiche par produit, en français et en anglais) sur shapepick.com, avec `robots.txt`, `sitemap.xml`, données structurées et cartes de partage (socle `0b69127`, fiches `1e4d0bf`, voir « SEO : fiches produit, nom et domaine »). L'audit du 23 octobre, ci-dessous, décrit l'état d'avant ; celui du 24 octobre est dans « Audit et lot 1 (24 octobre) ».
@@ -1092,3 +1138,7 @@ Le premier commit est fait. La suite logique est la phase 5 (pages SEO) et les v
 
 - [ ] **NuPhy et Glorious** : relancer leurs lots dans la session catalogue quand les 429 seront levés (Air75 V3, Air60 V2, Halo, Gem80 ; Model O 3 et D 3).
 - [ ] **ASIN Akko** : les ajouter quand la génération V5 arrivera sur amazon.fr.
+
+* [ ] Point 4 de l'audit : compléter à la source `power`, `hosts` et `pollingHz` des souris, les switchs des 14 claviers, les temps de réponse des BenQ XL et les pieds des 58 écrans (voir « Suites de l'audit (25 octobre) »).
+* [ ] Question « Boutons » des souris : une option pour 1 bouton latéral, ou « 1 ou 2 » (ASUS ProArt MD300).
+* [ ] Prior : trouver une popularité ou des notes moins biaisées que la presse ; le moteur les prend déjà, 2 points au plus.
