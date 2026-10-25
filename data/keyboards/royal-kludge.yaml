@@ -139,8 +139,9 @@
   sources:
     - https://www.rkgamingstore.com/products/r87-tkl-wired-gaming-keyboard
   specs: { formFactor: tkl, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: qmk, batteryMah: 1450, soundDampening: true, weightG: 500 }
+  # switch : « Equipped with factory-lubed linear creamy switches, the R87 Pro provides smooth, quiet keystrokes » (fiche rkgamingstore.com, R87 Pro filaire)
   variants:
-    - { sku: RK-R87-R14WGM, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: RK-R87-R14WGM, colorName: Black, colorFamily: black, layout: ansi_us, switch: linear-creamy }
 
 - slug: royal-kludge-r75
   brand: royal-kludge

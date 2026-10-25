@@ -178,9 +178,10 @@
   sources:
     - https://womierkeyboard.com/products/womier-wk75-75-wireless-hot-swap-keyboard-with-knob
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, plateMaterial: fr4, keycapMaterial: pbt, keycapProfile: cherry, backlight: none, knob: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
+  # switch : « Feel: Linear », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us }
-    - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us }
+    - { sku: JP-womier-WK75-fense-SM, colorName: Unicorn, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: JP-womier-WK75-jianbianmoying-SM, colorName: Topographic, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-duo87
   brand: womier
@@ -314,10 +315,11 @@
   # batteryMah : « 8000mAh Battery for Extended Wireless Use » (fiche womierkeyboard.com)
   # btDevices : « Effortlessly switch between up to five devices at once, from laptops and tablets to smartphones, without missing a beat. » (fiche womierkeyboard.com)
   specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, weightG: 1010, widthMm: 317, depthMm: 141 }
+  # switch : « Factory-Lubed Linear Switches for a Smoother Keystroke », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: Womier MT75-Black, colorName: Obsidian, colorFamily: color, layout: ansi_us }
-    - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us }
-    - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us }
+    - { sku: Womier MT75-Black, colorName: Obsidian, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier MT75-White, colorName: white, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier MT75-Lipstick, colorName: Lipstick, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-m99
   brand: womier
@@ -371,9 +373,10 @@
   sources:
     - https://womierkeyboard.com/products/womier-l65-60-gaming-mechanical-keyboard-wireless-with-knob
   specs: { formFactor: f65, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: oem, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 4000, soundDampening: true, weightG: 1020, widthMm: 363, depthMm: 161 }
+  # switch : « Type: Linear mechanical switches », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us }
-    - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us }
+    - { sku: Womier L65 Pink, colorName: Unicorn, colorFamily: color, layout: ansi_us, switch: switch-lineaire }
+    - { sku: Womier L65 white, colorName: white, colorFamily: white, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-l75
   brand: womier
@@ -431,8 +434,9 @@
   sources:
     - https://womierkeyboard.com/products/womier-x98-wireless-mechanical-keyboard
   specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, pollingHzWireless: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, batteryMah: 10000 }
+  # switch : « Pre-lubed stabilizers and linear switches provide a creamy, smooth keystroke », switch non nommé (fiche womierkeyboard.com) : switch générique linéaire
   variants:
-    - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us }
+    - { sku: JP-womier-X98, colorName: Black, colorFamily: black, layout: ansi_us, switch: switch-lineaire }
 
 - slug: womier-era75
   brand: womier
