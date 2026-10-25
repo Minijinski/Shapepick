@@ -13,6 +13,7 @@ import { useLocale } from "~/i18n/locale";
 import { messages as m } from "~/i18n/messages";
 import { CategoryDrop } from "./CategoryDrop";
 import { CategoryIcon } from "./CategoryIcon";
+import { Logo } from "./Logo";
 
 const link = css({
   fontSize: "sm",
@@ -168,15 +169,7 @@ export function SiteHeader({ shown }: { shown: readonly Category[] }) {
           justifySelf: "start",
         })}
       >
-        <span
-          aria-hidden
-          className={css({
-            w: "3",
-            h: "3",
-            borderRadius: "full",
-            bg: "signal",
-          })}
-        />
+        <Logo />
         <span
           className={css({
             fontFamily: "mono",

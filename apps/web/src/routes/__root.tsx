@@ -31,7 +31,7 @@ export const Route = createRootRoute({
       { rel: 'stylesheet', href: appCss },
       { rel: 'icon', type: 'image/png', sizes: '192x192', href: '/favicon-192.png' },
       { rel: 'icon', href: '/favicon.ico', sizes: '32x32' },
-      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=2' },
+      { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=3' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
     ],
     scripts: [{ children: TIDY_HEAD }],
