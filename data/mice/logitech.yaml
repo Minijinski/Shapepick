@@ -381,7 +381,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-master-4.910-007562
   # sideButtons : avant, arrière, geste et panneau haptique, gigazine.net/gsc_news/en/20251002-logicool-mx-master-4-setup
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 128.15, widthMm: 88.35, heightMm: 50.8, weightG: 150, buttons: 8, sideButtons: 4, dpiMax: 8000, connWired: false, conn24ghz: true, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  # hosts : « Connectez jusqu'à trois appareils et passez de l'un à l'autre via l'Actions Ring ou les boutons Easy-Switch » (fiche logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 128.15, widthMm: 88.35, heightMm: 50.8, weightG: 150, buttons: 8, sideButtons: 4, dpiMax: 8000, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
   variants:
     - { sku: 910-007562, colorName: Graphite, colorFamily: black }
     - { sku: 910-007563, colorName: Pale Gray, colorFamily: white }
@@ -400,7 +401,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-master-3s.910-007501
   # sideButtons : avant/arrière et bouton de geste (fiche logitech.com)
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 124.9, widthMm: 84.3, heightMm: 51, weightG: 141, buttons: 7, sideButtons: 3, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
+  # hosts : Easy-Switch, « up to three devices » (logitech.com/en-us/discover/a/easy-switch-technology) ; « connecting up to 3 devices » (MX Master 3S for Mac, Bluetooth, logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 124.9, widthMm: 84.3, heightMm: 51, weightG: 141, buttons: 7, sideButtons: 3, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 560, power: rechargeable, freeSpinWheel: true, thumbWheel: true }
   variants:
     - { sku: 910-007501, colorName: Graphite, colorFamily: black }
 
@@ -419,7 +421,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-anywhere-3s.910-006929
   # sideButtons : avant/arrière (fiche logitech.com)
-  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 100.5, widthMm: 65, heightMm: 34.4, weightG: 99, buttons: 6, sideButtons: 2, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, batteryHours: 560, power: rechargeable, freeSpinWheel: true }
+  # hosts : « Connectez jusqu'à 3 dispositifs via Bluetooth » (fiche logitech.com)
+  specs: { shape: symmetrical, hand: right, segment: office, lengthMm: 100.5, widthMm: 65, heightMm: 34.4, weightG: 99, buttons: 6, sideButtons: 2, dpiMax: 8000, silentClicks: true, connWired: false, connBt: true, hosts: 3, batteryHours: 560, power: rechargeable, freeSpinWheel: true }
   variants:
     - { sku: 910-006929, colorName: Graphite, colorFamily: black }
     - { sku: 910-006931, colorName: Rose, colorFamily: color }
@@ -470,7 +473,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-ergo-s-wireless-trackball-mouse.910-007260
   # sideButtons : trackball : avant/arrière sur le dessus, près du clic gauche (photos logitech.com)
-  specs: { shape: trackball, hand: right, segment: office, lengthMm: 132.5, widthMm: 99.8, heightMm: 51.4, weightG: 164, ballPosition: thumb, buttons: 8, sideButtons: 0, dpiMax: 2048, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 960, power: rechargeable, tiltWheel: true }
+  # hosts : « Connectez jusqu'à 2 dispositifs via Bluetooth ou avec le récepteur Logi Bolt fourni » (fiche logitech.com)
+  specs: { shape: trackball, hand: right, segment: office, lengthMm: 132.5, widthMm: 99.8, heightMm: 51.4, weightG: 164, ballPosition: thumb, buttons: 8, sideButtons: 0, dpiMax: 2048, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 2, batteryHours: 960, power: rechargeable, tiltWheel: true }
   variants:
     - { sku: 910-007260, colorName: Graphite, colorFamily: black }
 
@@ -493,7 +497,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
   # sideButtons : Suivant/Précédent (fiche logitech.com)
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # hosts : « Easy-Switch, qui permet de la coupler avec jusqu'à 3 dispositifs » (fiche logitech.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006473, colorName: Graphite, colorFamily: black }
     - { sku: 910-006475, colorName: Blanc cassé, colorFamily: white }
@@ -519,7 +524,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/lift-vertical-ergonomic-mouse
   # sideButtons : Suivant/Précédent (fiche logitech.com)
-  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # hosts : « Easy-Switch, qui permet de la coupler avec jusqu'à 3 dispositifs » (fiche logitech.com)
+  specs: { shape: vertical, hand: left, segment: office, lengthMm: 108, widthMm: 70, heightMm: 71, weightG: 125, buttons: 6, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 3, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006474, colorName: Graphite, colorFamily: black }
 
@@ -539,7 +545,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/mx-vertical-ergonomic-mouse.910-005448
   # sideButtons : Précédent/Suivant (fiche logitech.com)
-  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78.5, weightG: 125, buttons: 4, sideButtons: 2, dpiMax: 4000, connWired: false, conn24ghz: true, connBt: true, power: rechargeable }
+  # hosts : « Elle s'appaire avec jusqu'à 3 appareils » (fiche logitech.com)
+  specs: { shape: vertical, hand: right, segment: office, lengthMm: 120, widthMm: 79, heightMm: 78.5, weightG: 125, buttons: 4, sideButtons: 2, dpiMax: 4000, connWired: false, conn24ghz: true, connBt: true, hosts: 3, power: rechargeable }
   variants:
     - { sku: 910-005448, colorName: Graphite, colorFamily: black }
 
@@ -632,7 +639,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
   # sideButtons : « deux boutons latéraux personnalisables pour le pouce » (logitech.com)
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
+  # hosts : pas d'Easy-Switch : « la M750 va plus loin en ajoutant (…) la commutation multi-dispositifs pour jusqu'à trois ordinateurs » (logitech.com) ; Easy-Switch « No » (fiche M650 for Business, logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 108.2, widthMm: 61, heightMm: 38.8, weightG: 101.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 1, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 15, makerHandMaxCm: 19.5 }
   variants:
     - { sku: 910-006253, colorName: Graphite, colorFamily: black }
     - { sku: 910-006254, colorName: Rose, colorFamily: color }
@@ -657,7 +665,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
   # sideButtons : « deux boutons latéraux personnalisables pour le pouce » (logitech.com)
-  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  # hosts : pas d'Easy-Switch : « la M750 va plus loin en ajoutant (…) la commutation multi-dispositifs pour jusqu'à trois ordinateurs » (logitech.com) ; Easy-Switch « No » (fiche M650 for Business, logitech.com)
+  specs: { shape: ergonomic, hand: right, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 1, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
   variants:
     - { sku: 910-006236, colorName: Graphite, colorFamily: black }
     - { sku: 910-006237, colorName: Rose, colorFamily: color }
@@ -682,7 +691,8 @@
   sources:
     - https://www.logitech.com/fr-fr/shop/p/m650-signature-wireless-mouse
   # sideButtons : deux boutons latéraux, « placés sur le côté droit » (logitech.com)
-  specs: { shape: ergonomic, hand: left, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
+  # hosts : pas d'Easy-Switch : « la M750 va plus loin en ajoutant (…) la commutation multi-dispositifs pour jusqu'à trois ordinateurs » (logitech.com) ; Easy-Switch « No » (fiche M650 for Business, logitech.com)
+  specs: { shape: ergonomic, hand: left, segment: office, lengthMm: 118.7, widthMm: 66.2, heightMm: 42, weightG: 115.4, buttons: 5, sideButtons: 2, dpiMax: 4000, silentClicks: true, connWired: false, conn24ghz: true, connBt: true, hosts: 1, batteryHours: 5760, power: aa, freeSpinWheel: true, makerHandMinCm: 19, makerHandMaxCm: 21.5 }
   variants:
     - { sku: 910-006239, colorName: Graphite, colorFamily: black }
     - { sku: 910-006240, colorName: Blanc cassé, colorFamily: white }

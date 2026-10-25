@@ -45,7 +45,10 @@ export type Collection = {
   /** Beside the category's name, on a chip or a sheet's line: "75 % sans fil". */
   short: Text
   picks: Picks
-  /** The use it ranks for; the finder's overall ranking otherwise. */
+  /**
+   * The use it ranks for, when its answers say what it is for (USB-C: the office; 240 Hz: an FPS);
+   * the finder's overall ranking otherwise.
+   */
   use?: string
   /** Answers that only steer the ranking (a grip). */
   steer?: Answers
@@ -121,6 +124,7 @@ const keyboards: Collection[] = [
     ['Claviers avec pavé numérique', 'Full-size keyboards'],
     ['Pavé numérique', 'Full size'],
     { size: ['full'] },
+    { use: 'office' },
   ),
   keyboard('size')(
     'ergo',
@@ -128,6 +132,7 @@ const keyboards: Collection[] = [
     ['Claviers ergonomiques', 'Ergonomic keyboards'],
     ['Ergonomiques', 'Ergonomic'],
     { size: ['ergo'] },
+    { use: 'office' },
   ),
   keyboard('keys')(
     'magnetic',
@@ -135,6 +140,7 @@ const keyboards: Collection[] = [
     ['Claviers magnétiques', 'Magnetic keyboards'],
     ['Magnétiques', 'Magnetic'],
     { tech: ['magnetic'] },
+    { use: 'competitive' },
   ),
   keyboard('keys')(
     'mechanical',
@@ -149,6 +155,7 @@ const keyboards: Collection[] = [
     ['Claviers optiques', 'Optical keyboards'],
     ['Optiques', 'Optical'],
     { tech: ['optical'] },
+    { use: 'gaming' },
   ),
   keyboard('keys')(
     'low',
@@ -156,6 +163,7 @@ const keyboards: Collection[] = [
     ['Claviers extra-plats', 'Low-profile keyboards'],
     ['Extra-plats', 'Low profile'],
     { profile: ['low'] },
+    { use: 'office' },
   ),
   keyboard('keys')(
     'silent',
@@ -163,6 +171,7 @@ const keyboards: Collection[] = [
     ['Claviers mécaniques silencieux', 'Silent mechanical keyboards'],
     ['Silencieux', 'Silent'],
     { feel: ['silent'] },
+    { use: 'office' },
   ),
   keyboard('layout')(
     'azerty',
@@ -212,6 +221,7 @@ const keyboards: Collection[] = [
     ['Claviers AZERTY avec pavé numérique', 'Full-size AZERTY keyboards'],
     ['Pavé num. AZERTY', 'Full-size AZERTY'],
     { size: ['full'], layout: ['azerty'] },
+    { use: 'office' },
   ),
   keyboard('layout')(
     'magnetic-azerty',
@@ -219,6 +229,7 @@ const keyboards: Collection[] = [
     ['Claviers magnétiques AZERTY', 'Magnetic AZERTY keyboards'],
     ['Magnétiques AZERTY', 'Magnetic AZERTY'],
     { tech: ['magnetic'], layout: ['azerty'] },
+    { use: 'competitive' },
   ),
   keyboard('layout')(
     'wireless-mechanical-azerty',
@@ -226,6 +237,7 @@ const keyboards: Collection[] = [
     ['Claviers mécaniques sans fil AZERTY', 'Wireless mechanical AZERTY keyboards'],
     ['Sans fil AZERTY', 'Wireless AZERTY'],
     { tech: ['mechanical'], connection: WIRELESS, layout: ['azerty'] },
+    { use: 'office' },
   ),
   keyboard('layout')(
     'low-azerty',
@@ -233,6 +245,7 @@ const keyboards: Collection[] = [
     ['Claviers extra-plats AZERTY', 'Low-profile AZERTY keyboards'],
     ['Extra-plats AZERTY', 'Low-profile AZERTY'],
     { profile: ['low'], layout: ['azerty'] },
+    { use: 'office' },
   ),
   keyboard('layout')(
     'hotswap-azerty',
@@ -247,6 +260,7 @@ const keyboards: Collection[] = [
     ['Claviers mécaniques sans fil', 'Wireless mechanical keyboards'],
     ['Mécaniques sans fil', 'Wireless mechanical'],
     { tech: ['mechanical'], connection: WIRELESS },
+    { use: 'office' },
   ),
   keyboard('link')(
     'f75-wireless',
@@ -282,6 +296,7 @@ const keyboards: Collection[] = [
     ['Claviers sans fil avec pavé numérique', 'Wireless full-size keyboards'],
     ['Pavé num. sans fil', 'Wireless full-size'],
     { size: ['full'], connection: WIRELESS },
+    { use: 'office' },
   ),
   keyboard('link')(
     'magnetic-wireless',
@@ -289,6 +304,7 @@ const keyboards: Collection[] = [
     ['Claviers magnétiques sans fil', 'Wireless magnetic keyboards'],
     ['Magnétiques sans fil', 'Wireless magnetic'],
     { tech: ['magnetic'], connection: WIRELESS },
+    { use: 'competitive' },
   ),
   keyboard('feature')(
     'hotswap',
@@ -361,6 +377,7 @@ const monitors: Collection[] = [
     ['Écrans 34 pouces ultra-larges', '34-inch ultrawide monitors'],
     ['34 pouces', '34-inch'],
     { format: ['uw34'] },
+    { use: 'immersive' },
   ),
   monitor('size')(
     'suw',
@@ -368,6 +385,7 @@ const monitors: Collection[] = [
     ['Écrans 49 pouces', '49-inch monitors'],
     ['49 pouces', '49-inch'],
     { format: ['suw'] },
+    { use: 'immersive' },
   ),
   monitor('size')(
     'ultrawide',
@@ -375,6 +393,7 @@ const monitors: Collection[] = [
     ['Écrans ultra-larges', 'Ultrawide monitors'],
     ['Ultra-larges', 'Ultrawide'],
     { format: ULTRAWIDE },
+    { use: 'immersive' },
   ),
   monitor('size')(
     's27-curved',
@@ -382,6 +401,7 @@ const monitors: Collection[] = [
     ['Écrans 27 pouces incurvés', '27-inch curved monitors'],
     ['27 pouces incurvés', '27-inch curved'],
     { format: ['s27'], curve: ['curved'] },
+    { use: 'immersive' },
   ),
   monitor('size')(
     'curved',
@@ -389,16 +409,25 @@ const monitors: Collection[] = [
     ['Écrans incurvés', 'Curved monitors'],
     ['Incurvés', 'Curved'],
     { curve: ['curved'] },
+    { use: 'immersive' },
   ),
-  monitor('panel')('oled', ['oled', 'oled'], ['Écrans OLED', 'OLED monitors'], ['OLED', 'OLED'], {
-    panel: ['oled'],
-  }),
+  monitor('panel')(
+    'oled',
+    ['oled', 'oled'],
+    ['Écrans OLED', 'OLED monitors'],
+    ['OLED', 'OLED'],
+    {
+      panel: ['oled'],
+    },
+    { use: 'immersive' },
+  ),
   monitor('panel')(
     'oled-27',
     ['oled-27-pouces', 'oled-27-inch'],
     ['Écrans OLED 27 pouces', '27-inch OLED monitors'],
     ['OLED 27 pouces', '27-inch OLED'],
     { panel: ['oled'], format: ['s27'] },
+    { use: 'immersive' },
   ),
   monitor('panel')(
     'oled-32',
@@ -406,6 +435,7 @@ const monitors: Collection[] = [
     ['Écrans OLED 32 pouces', '32-inch OLED monitors'],
     ['OLED 32 pouces', '32-inch OLED'],
     { panel: ['oled'], format: ['s32'] },
+    { use: 'immersive' },
   ),
   monitor('panel')(
     'oled-4k',
@@ -413,6 +443,7 @@ const monitors: Collection[] = [
     ['Écrans OLED 4K', '4K OLED monitors'],
     ['OLED 4K', '4K OLED'],
     { panel: ['oled'], resolution: ['uhd'] },
+    { use: 'immersive' },
   ),
   monitor('panel')(
     'oled-ultrawide',
@@ -420,6 +451,7 @@ const monitors: Collection[] = [
     ['Écrans OLED ultra-larges', 'Ultrawide OLED monitors'],
     ['OLED ultra-larges', 'Ultrawide OLED'],
     { panel: ['oled'], format: ULTRAWIDE },
+    { use: 'immersive' },
   ),
   monitor('panel')('uhd', ['4k', '4k'], ['Écrans 4K', '4K monitors'], ['4K', '4K'], {
     resolution: ['uhd'],
@@ -451,6 +483,7 @@ const monitors: Collection[] = [
     ['Écrans 5K et plus', '5K and higher monitors'],
     ['5K et plus', '5K and higher'],
     { resolution: ['5k'] },
+    { use: 'creative' },
   ),
   monitor('link')(
     'r144',
@@ -458,6 +491,7 @@ const monitors: Collection[] = [
     ['Écrans 144 Hz', '144 Hz monitors'],
     ['144 Hz', '144 Hz'],
     { refresh: ['144'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     'r240',
@@ -465,6 +499,7 @@ const monitors: Collection[] = [
     ['Écrans 240 Hz', '240 Hz monitors'],
     ['240 Hz', '240 Hz'],
     { refresh: ['240'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     'r360',
@@ -472,6 +507,7 @@ const monitors: Collection[] = [
     ['Écrans 360 Hz', '360 Hz monitors'],
     ['360 Hz', '360 Hz'],
     { refresh: ['360'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     'r480',
@@ -479,6 +515,7 @@ const monitors: Collection[] = [
     ['Écrans 480 Hz', '480 Hz monitors'],
     ['480 Hz', '480 Hz'],
     { refresh: ['480'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     's24-r240',
@@ -486,6 +523,7 @@ const monitors: Collection[] = [
     ['Écrans 24 pouces 240 Hz', '24-inch 240 Hz monitors'],
     ['24 pouces 240 Hz', '24-inch 240 Hz'],
     { format: ['s24'], refresh: ['240'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     's27-r144',
@@ -493,6 +531,7 @@ const monitors: Collection[] = [
     ['Écrans 27 pouces 144 Hz', '27-inch 144 Hz monitors'],
     ['27 pouces 144 Hz', '27-inch 144 Hz'],
     { format: ['s27'], refresh: ['144'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     's27-r240',
@@ -500,6 +539,7 @@ const monitors: Collection[] = [
     ['Écrans 27 pouces 240 Hz', '27-inch 240 Hz monitors'],
     ['27 pouces 240 Hz', '27-inch 240 Hz'],
     { format: ['s27'], refresh: ['240'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     'uhd-r144',
@@ -507,6 +547,7 @@ const monitors: Collection[] = [
     ['Écrans 4K 144 Hz', '4K 144 Hz monitors'],
     ['4K 144 Hz', '4K 144 Hz'],
     { resolution: ['uhd'], refresh: ['144'] },
+    { use: 'fps' },
   ),
   monitor('link')(
     'uhd-r240',
@@ -514,6 +555,7 @@ const monitors: Collection[] = [
     ['Écrans 4K 240 Hz', '4K 240 Hz monitors'],
     ['4K 240 Hz', '4K 240 Hz'],
     { resolution: ['uhd'], refresh: ['240'] },
+    { use: 'fps' },
   ),
   monitor('feature')(
     'usbc',
@@ -521,19 +563,35 @@ const monitors: Collection[] = [
     ['Écrans USB-C', 'USB-C monitors'],
     ['USB-C', 'USB-C'],
     { musts: ['usbc'] },
+    { use: 'office' },
   ),
-  monitor('feature')('kvm', ['kvm', 'kvm'], ['Écrans KVM', 'KVM monitors'], ['KVM', 'KVM'], {
-    musts: ['kvm'],
-  }),
-  monitor('feature')('hdr', ['hdr', 'hdr'], ['Écrans HDR', 'HDR monitors'], ['HDR', 'HDR'], {
-    musts: ['hdr'],
-  }),
+  monitor('feature')(
+    'kvm',
+    ['kvm', 'kvm'],
+    ['Écrans KVM', 'KVM monitors'],
+    ['KVM', 'KVM'],
+    {
+      musts: ['kvm'],
+    },
+    { use: 'office' },
+  ),
+  monitor('feature')(
+    'hdr',
+    ['hdr', 'hdr'],
+    ['Écrans HDR', 'HDR monitors'],
+    ['HDR', 'HDR'],
+    {
+      musts: ['hdr'],
+    },
+    { use: 'immersive' },
+  ),
   monitor('feature')(
     'pivot',
     ['pivotants', 'pivot'],
     ['Écrans pivotants', 'Pivoting monitors'],
     ['Pivotants', 'Pivot'],
     { musts: ['pivot'] },
+    { use: 'office' },
   ),
   monitor('feature')(
     'speakers',
@@ -541,6 +599,7 @@ const monitors: Collection[] = [
     ['Écrans avec haut-parleurs', 'Monitors with speakers'],
     ['Haut-parleurs', 'Speakers'],
     { musts: ['speakers'] },
+    { use: 'office' },
   ),
   monitor('price')(
     'under-200',
@@ -555,6 +614,7 @@ const monitors: Collection[] = [
     ['Écrans 144 Hz à moins de 200 €', '144 Hz monitors under €200'],
     ['144 Hz < 200 €', '144 Hz < €200'],
     { refresh: ['144'], budget: ['0-200'] },
+    { use: 'fps' },
   ),
   monitor('use')(
     'gaming',
@@ -607,6 +667,7 @@ const mice: Collection[] = [
     ['Souris ergonomiques', 'Ergonomic mice'],
     ['Ergonomiques', 'Ergonomic'],
     { shape: ['ergo'] },
+    { use: 'office' },
   ),
   mouse('size')(
     'small',
@@ -628,6 +689,7 @@ const mice: Collection[] = [
     ['Souris ultra-légères', 'Ultralight mice'],
     ['Ultra-légères', 'Ultralight'],
     { weight: ['feather', 'ultralight'] },
+    { use: 'competitive' },
   ),
   mouse('link')(
     'light-wireless',
@@ -635,6 +697,7 @@ const mice: Collection[] = [
     ['Souris légères sans fil', 'Light wireless mice'],
     ['Légères sans fil', 'Light wireless'],
     { weight: ['feather', 'ultralight', 'light'], connection: WIRELESS },
+    { use: 'competitive' },
   ),
   mouse('link')(
     'wireless',
@@ -649,6 +712,7 @@ const mice: Collection[] = [
     ['Souris Bluetooth', 'Bluetooth mice'],
     ['Bluetooth', 'Bluetooth'],
     { connection: ['bluetooth'] },
+    { use: 'travel' },
   ),
   mouse('link')(
     'wired',
@@ -663,6 +727,7 @@ const mice: Collection[] = [
     ['Souris 8 000 Hz', '8,000 Hz mice'],
     ['8 000 Hz', '8,000 Hz'],
     { musts: ['poll8k'] },
+    { use: 'competitive' },
   ),
   mouse('feature')(
     'silent',
@@ -670,6 +735,7 @@ const mice: Collection[] = [
     ['Souris silencieuses', 'Silent mice'],
     ['Silencieuses', 'Silent'],
     { musts: ['silent'] },
+    { use: 'office' },
   ),
   mouse('feature')(
     'freespin',
@@ -677,6 +743,7 @@ const mice: Collection[] = [
     ['Souris à molette infinie', 'Mice with a free-spin wheel'],
     ['Molette infinie', 'Free-spin wheel'],
     { musts: ['freespin'] },
+    { use: 'office' },
   ),
   mouse('feature')(
     'rechargeable',
