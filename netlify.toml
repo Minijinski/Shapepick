@@ -1,6 +1,9 @@
 
+# Before building: the catalogue's tests (the engine, the photo sources against data/ and the list
+# below), then whether the database has every migration of this commit (packages/db/src/
+# check-migrations.ts). A failure stops the build, and the previous deploy stays live.
 [build]
-  command = "pnpm --filter @choose/web build"
+  command = "pnpm --filter @choose/catalog test && pnpm --filter @choose/db check-migrations && pnpm --filter @choose/web build"
   publish = "apps/web/dist/client"
 
 [build.environment]

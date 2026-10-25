@@ -1,3 +1,4 @@
+import { execFileSync } from 'node:child_process'
 import { fileURLToPath } from 'node:url'
 import type { Category, KeyboardInput, MonitorInput, MouseInput } from '@choose/catalog'
 import { loadData } from '@choose/catalog/node'
@@ -16,6 +17,32 @@ const dataDir =
 // One interactive transaction: a TCP connection, not the site's HTTP driver.
 const db = connectDirect()
 const data = await loadData(dataDir)
+
+// One seed at a time. Two at once each write the whole catalogue and the last to commit wins for
+// every row (two started a minute apart on 2026-10-25): the second one stops before writing. The
+// lock belongs to this connection and goes with it. The seed names itself in pg_stat_activity
+// (`seed:<commit>`) and says which database and which commit's files it writes.
+const SEED_LOCK = 7_302_025
+const commit = (() => {
+  try {
+    return execFileSync('git', ['rev-parse', '--short', 'HEAD'], { encoding: 'utf8' }).trim()
+  } catch {
+    return 'unknown'
+  }
+})()
+const target = new URL(process.env.DATABASE_URL_UNPOOLED ?? process.env.DATABASE_URL ?? '')
+console.info(`Seeding ${target.hostname}${target.pathname} from ${commit} (${dataDir}).`)
+await db.execute(sql`select set_config('application_name', ${`seed:${commit}`}, false)`)
+const [lock] = await db.execute<{ locked: boolean }>(
+  sql`select pg_try_advisory_lock(${SEED_LOCK}) as locked`,
+)
+if (!lock?.locked) {
+  console.error(
+    'Another seed is running on this database (application_name seed:* in pg_stat_activity): stopped, nothing written.',
+  )
+  await db.$client.end()
+  process.exit(1)
+}
 
 const excluded = (columns: string[]) =>
   Object.fromEntries(

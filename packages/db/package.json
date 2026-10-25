@@ -10,7 +10,8 @@
     "migrate": "drizzle-kit migrate",
     "studio": "drizzle-kit studio",
     "seed": "tsx --env-file-if-exists=../../.env src/seed.ts",
-    "typecheck": "tsc --noEmit"
+    "typecheck": "tsc --noEmit",
+    "check-migrations": "tsx --env-file-if-exists=../../.env src/check-migrations.ts"
   },
   "dependencies": {
     "@choose/catalog": "workspace:*",
