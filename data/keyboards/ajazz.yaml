@@ -21,7 +21,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/AJAZZ_AK820PRO-DE_8.webp?v=1763030502, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/ajazz-ak820-pro
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 4000 }
+  # pollingHzWired : « 1k polling in both wired and 2.4Ghz mode, and 125hz in Bluetooth mode » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 4000 }
   variants:
     - { sku: Ajazz-AK820-Pro-GY-gift, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-gift }
     - { sku: Ajazz-AK820-Pro-GY-flyingfish, colorName: Grey, colorFamily: black, layout: ansi_us, switch: ajazz-flying-fish }

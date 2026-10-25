@@ -18,7 +18,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_HE60_White_01.webp?v=1791438618, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-he60
-  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary, batteryMah: 8000 }
+  # pollingHzWired : « 8000Hz polling wired and 2.4GHz. » (fiche epomaker.com)
+  specs: { formFactor: f60, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary, batteryMah: 8000 }
   variants:
     - { sku: EPOMAKER-HE60-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
     - { sku: EPOMAKER-HE60-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
@@ -36,7 +37,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_RT75_05.webp?v=1786417015, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-rt75
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  # batteryMah : « 5000mAh Battery » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, batteryMah: 5000 }
   variants:
     - { sku: EPOMAKER-RT75-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-RT75-WH-CQ-T, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
@@ -56,7 +58,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH65pink_12.webp?v=1782197422, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th65
-  specs: { formFactor: f65, technology: mechanical, hotSwap: none, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, soundDampening: true }
+  # pollingHzWired : « POLLING RATE 1000 Hz » (fiche epomaker.com)
+  specs: { formFactor: f65, technology: mechanical, hotSwap: none, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, soundDampening: true }
   variants:
     - { sku: EPOMAKER-TH65-WH-CQ-T, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-crystal-tactile-silent }
     - { sku: EPOMAKER-TH65-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
@@ -80,7 +83,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EpomakerHE65v2TMR_white_04.png?v=1781503759, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-he65-v2-tmr
-  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
+  # btDevices : « Toggle to BT to connect to your phone or tablet for cross-device productivity with up to 3 paired BT device at once. » (fiche epomaker.com)
+  # pollingHzWired : « POLLING RATE 8000 Hz » (fiche epomaker.com)
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-HE65V2-TMR-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
     - { sku: EPOMAKER-HE65V2-TMR-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
@@ -102,7 +107,8 @@
   sources:
     - https://epomaker.com/products/epomaker-he75-v2-tmr
     - https://epomaker.com/products/epomaker-he75-v2
-  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
+  # pollingHzWired : « POLLING RATE 8000 Hz » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-HE75V2-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
     - { sku: EPOMAKER-HE75V2-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
@@ -120,7 +126,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_RT98_6.webp?v=1775635040, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-rt98
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, screen: true, firmware: via, macSupport: true, batteryMah: 8000, soundDampening: true }
+  # btDevices : « UP TO 4 DEVICES » (fiche epomaker.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 4, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, screen: true, firmware: via, macSupport: true, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-RT98-R-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-RT98-R-WH-SQ-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -166,7 +173,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERHE108_05_303fe842-502d-461a-bd78-2592536a0cdc.webp?v=1775200934, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-he108
-  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true, weightG: 1200 }
+  # btDevices : « UP TO 5 DEVICES » (fiche epomaker.com)
+  # pollingHzWired : « 8,000Hz polling rate (wired & wireless) » (fiche epomaker.com)
+  specs: { formFactor: full, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, rapidTrigger: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, southFacing: true, firmware: proprietary, macSupport: true, batteryMah: 10000, soundDampening: true, weightG: 1200 }
   variants:
     - { sku: EPOMAKER-HE108-WH-HFF-YUN, colorName: Epomaker × Human Fall Flat HE108 White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
     - { sku: EPOMAKER-HE108-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
@@ -184,7 +193,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERLUMA100_QMK_05.png?v=1775199870, kind: cutout_top, width: 1600, height: 1600, primary: true }
   sources:
     - https://epomaker.com/products/epomaker-luma100
-  specs: { formFactor: f96, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, batteryMah: 3000, soundDampening: true }
+  # btDevices : « UP TO 3 DEVICES » (fiche epomaker.com)
+  specs: { formFactor: f96, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, mount: gasket, caseMaterial: aluminum, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, batteryMah: 3000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-LUMA100-QMK-SL-LOW-MT, colorName: Silver, colorFamily: white, layout: ansi_us, switch: epomaker-mint-low-profile }
 
@@ -202,7 +212,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERGlyph_V2_04.png?v=1773374781, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-glyph
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true }
+  # batteryMah : « 8000mAh Battery » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, southFacing: true, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 8000 }
   variants:
     - { sku: EPOMAKER-Glyph-WH-WistL-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
 
@@ -220,7 +231,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERRT100PROPink_10.webp?v=1783066829, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-rt100-pro
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
+  # btDevices : « UP TO 5 DEVICES » (fiche epomaker.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, macSupport: true, batteryMah: 5000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-RT100PRO-WH-Yun, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-RT100PRO-WH-SQ-V2, colorName: Retro White, colorFamily: white, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -242,7 +254,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH80V2PRO_v2_06_1333fe1e-bf65-4bbd-b76a-1dfdf4f1e9f0.png?v=1773121903, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th80-v2-pro
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1000 }
+  # btDevices : « UP TO 5 DEVICES » (fiche epomaker.com)
+  # pollingHzWired : « with 2ms low latency and full anti-ghosting at 1k high polling » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1000 }
   variants:
     - { sku: EPOMAKER-TH80V2-PRO-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-TH80V2-PRO-BK-SQ-V2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -265,7 +279,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERTH80V2.png?v=1774855533, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th80-v2
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
+  # pollingHzWired : « Featuring 1k polling and 2ms low latency » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, keycapProfile: cherry, backlight: rgb, southFacing: true, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-TH80V2-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-TH80V2-BK-SQ-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -312,7 +327,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERG84PROJIS_V2_01.webp?v=1790566738, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-g84-pro
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
+  # pollingHzWired : « 3/5-pin PCB · BT 5.0 / 2.4GHz / USB-C · 1000Hz polling » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, knob: true, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-G84PRO-Sil-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-G84PRO-Sil-PL-Yun, colorName: Purple, colorFamily: color, layout: ansi_us, switch: epomaker-creamy-jade }
@@ -384,7 +400,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_TH108PRO_03.png?v=1770346981, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th108-pro
-  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1100 }
+  # btDevices : « seamless transition between up to 5 paired devices under cable, 2.4Ghz and Bluetooth modes » (fiche epomaker.com)
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, knob: true, screen: true, firmware: proprietary, batteryMah: 10000, soundDampening: true, weightG: 1100 }
   variants:
     - { sku: EPOMAKER-TH108PRO-BK-Yun, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-TH108PRO-BK-SQ-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -432,7 +449,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_Split70-black-bip_02.webp?v=1758768073, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-split70
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: qmk, batteryMah: 3000 }
+  # btDevices : « Equipped with Bluetooth 5.0, 2.4GHz Wireless, and USB-C Cable mode, the Split70 Wireless Gaming Keyboard offers versatile compatibility that connects to 5 paire » (fiche epomaker.com)
+  # pollingHzWired : « 1000Hz Polling » (fiche epomaker.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, knob: true, firmware: qmk, batteryMah: 3000 }
   variants:
     - { sku: EPOMAKER-Split70-BK-WisteriaL-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria-v2 }
     - { sku: EPOMAKER-Split70-WHBL-WistL-V2, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-wisteria-v2 }
@@ -451,7 +470,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/LUMA40.bip_7.webp?v=1760601733, kind: cutout_top, width: 5000, height: 5000 }
   sources:
     - https://epomaker.com/products/epomaker-luma40
-  specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: tray, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, soundDampening: true }
+  # batteryMah : « 1450mAh Rechargeable Battery » (fiche epomaker.com)
+  # btDevices : « Desktop, laptop, or tablet, the effortless switch between up to 5 paired devices makes the Luma40 the only keyboard you'll need for all your devices. » (fiche epomaker.com)
+  specs: { formFactor: f40, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: tray, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: rgb, firmware: via, batteryMah: 1450, soundDampening: true }
   variants:
     - { sku: EPOMAKER-LUMA40-QMK-SL-WHRain, colorName: Silver, colorFamily: white, layout: ansi_us, switch: kailh-white-rain }
 
@@ -470,7 +491,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EpomakerGalaxy100Lite_5.webp?v=1776162979, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-galaxy100-lite
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: qmk, batteryMah: 8000, soundDampening: true }
+  # pollingHzWired : « 1000Hz Polling » (fiche epomaker.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: qmk, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-Galaxy100-Lite-BK-MWH, colorName: Black, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
     - { sku: EPOMAKER-Galaxy100-Lite-BK-WLV2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria-v2 }
@@ -490,7 +512,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERMagcore65Lite_2_0d7147d6-e292-4fa9-9e78-59dd047a930d.png?v=1756288353, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-magcore65-lite
-  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 4000, soundDampening: true }
+  # btDevices : « Seamlessly pair and switch between 3 devices of Mac, WIN or Android systems with Bluetooth mode and enjoy up to 66 hours non-stop typing on a single charge, wit » (fiche epomaker.com)
+  # pollingHzWired : « 8K Wired Polling » (fiche epomaker.com)
+  specs: { formFactor: f65, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, btDevices: 3, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 4000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-Magcore65-Lite-IS-BK, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-core }
 
@@ -532,7 +556,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_G84HE_03.png?v=1775530253, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-g84-he
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true }
+  # batteryMah : « 8000mAh Massive Battery » (fiche epomaker.com)
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, conn24ghz: true, connBt: true, pollingHzWired: 8000, adjustableActuation: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-G84HE-BLWH-CX, colorName: White Blue, colorFamily: white, layout: ansi_us, switch: epomaker-duskrise-magnetic }
     - { sku: EPOMAKER-G84HE-WH-Yun, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-creamy-jade-magnetic }
@@ -553,7 +578,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_TH108-iso-de-blu_white_3.webp?v=1763371448, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th108
-  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 8000, soundDampening: true, weightG: 1200 }
+  # btDevices : « seamless transition between up to 5 paired devices under cable, 2.4Ghz and Bluetooth modes » (fiche epomaker.com)
+  specs: { formFactor: full, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, btDevices: 5, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, batteryMah: 8000, soundDampening: true, weightG: 1200 }
   variants:
     - { sku: EPOMAKER-TH108-10K-BK-Yun, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-creamy-jade }
     - { sku: EPOMAKER-TH108-10K-BK-SQ-V2, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-sea-salt-silent-v2 }
@@ -578,7 +604,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKER_HE68Lite_03.webp?v=1761931836, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-he68-lite
-  specs: { formFactor: f65, technology: magnetic, hotSwap: none, adjustableActuation: true, mount: sandwich, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 600 }
+  # pollingHzWired : « UP TO 8000 HZ POLLING » (fiche epomaker.com)
+  specs: { formFactor: f65, technology: magnetic, hotSwap: none, pollingHzWired: 8000, adjustableActuation: true, mount: sandwich, caseMaterial: plastic, keycapMaterial: pbt, backlight: rgb, firmware: proprietary, soundDampening: true, weightG: 600 }
   variants:
     - { sku: EPOMAKER-HE68-LITE-Wi-BK-BY, colorName: Black, colorFamily: black, layout: ansi_us, switch: epomaker-clear-mag }
     - { sku: EPOMAKER-HE68-LITE-Wi-WH-BY, colorName: White, colorFamily: white, layout: ansi_us, switch: epomaker-clear-mag }
@@ -639,7 +666,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_7727.png?v=1746609221, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-carbon60
-  specs: { formFactor: f60, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, southFacing: true, firmware: qmk, batteryMah: 3000 }
+  # pollingHzWired : « USB-C, Bluetooth 5.0 and 2.4GHz on a 3000mAh battery, with 1000Hz polling on wired and 2.4G. » (fiche epomaker.com)
+  specs: { formFactor: f60, technology: mechanical, lowProfile: true, hotSwap: 5pin, conn24ghz: true, connBt: true, pollingHzWired: 1000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: low, backlight: none, southFacing: true, firmware: qmk, batteryMah: 3000 }
   variants:
     - { sku: EPOMAKER-Carbon60-QMK-BK-LOW-R, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-red }
     - { sku: EPOMAKER-Carbon60-QMK-BK-LOW-BR, colorName: Black, colorFamily: black, layout: ansi_us, switch: gateron-low-profile-2-0-brown }
@@ -657,7 +685,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_7938.png?v=1746609284, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-magcore-87
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary }
+  # pollingHzWired : « 8K Polling Rate in Type-C Wired Connection » (fiche epomaker.com)
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: magnetic, pollingHzWired: 8000, adjustableActuation: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, southFacing: true, firmware: proprietary }
   variants:
     - { sku: EPOMAKER-Magcore87-IS-Wi-BK-KA, colorName: Black, colorFamily: black, layout: ansi_us, switch: kailh-box-inductive }
 
@@ -674,7 +703,9 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_4410.png?v=1746609558, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-split-65
-  specs: { formFactor: split, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: qmk, soundDampening: true }
+  # batteryMah : « 3000mAh Battery » (fiche epomaker.com)
+  # pollingHzWired : « POLLING RATE 1000 Hz » (fiche epomaker.com)
+  specs: { formFactor: split, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: top, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: qmk, batteryMah: 3000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-Split65-BK-WisteriaL-V2, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-wisteria }
     - { sku: EPOMAKER-Split65-BK-Flamingo, colorName: Black Grey, colorFamily: black, layout: ansi_us, switch: epomaker-flamingo }
@@ -694,7 +725,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/EPOMAKERGalaxy100_1.png?v=1750757726, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-galaxy100-qmk-via
-  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true }
+  # pollingHzWired : « 1000Hz Polling » (fiche epomaker.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 1000, mount: gasket, caseMaterial: plastic, keycapMaterial: pbt, backlight: none, knob: true, firmware: qmk, batteryMah: 8000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-Galaxy100-BKPK-MWH, colorName: Black, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
     - { sku: EPOMAKER-Galaxy100-GY-MWH, colorName: Grey, colorFamily: black, layout: ansi_us, switch: feker-marble-white }
@@ -714,7 +746,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0280/3931/5529/files/IMG_9492_de4896a8-f27d-4f77-b59b-0bd18cd01c78.jpg?v=1746669807, kind: cutout_top, width: 1600, height: 1600 }
   sources:
     - https://epomaker.com/products/epomaker-th40
-  specs: { formFactor: f40, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, firmware: qmk, soundDampening: true }
+  # batteryMah : « 3000mAh » (fiche epomaker.com)
+  specs: { formFactor: f40, technology: mechanical, hotSwap: 5pin, conn24ghz: true, connBt: true, mount: gasket, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, southFacing: true, firmware: qmk, batteryMah: 3000, soundDampening: true }
   variants:
     - { sku: EPOMAKER-TH40-QMK-BKGD-Flamingo, colorName: Black Gold, colorFamily: black, layout: ansi_us, switch: epomaker-flamingo }
     - { sku: EPOMAKER-TH40-QMK-PL-Flamingo, colorName: Purple, colorFamily: color, layout: ansi_us, switch: epomaker-flamingo }

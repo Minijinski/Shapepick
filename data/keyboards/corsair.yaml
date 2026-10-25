@@ -307,7 +307,8 @@
     - { url: https://res.cloudinary.com/corsair-pwa/image/upload/c_scale%2Cq_auto%2Cw_2000/products/Gaming-Keyboards/base-k100-air-wireless-config/Gallery/K100_RGB_AIR_WIRELESS_01.png, kind: cutout_top }
   sources:
     - https://www.corsair.com/fr/fr/p/keyboards/ch-913a01u-fr/k100-air-wireless-rgb-ultra-thin-mechanical-gaming-keyboard-cherry-mx-ultra-low-profile-tactile-ch-913a01u-fr
-  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 773 }
+  # btDevices : « Basculement fluide entre un maximum de 5 appareils » (fiche corsair.com)
+  specs: { formFactor: full, technology: mechanical, lowProfile: true, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 5, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, keycapProfile: cherry, backlight: rgb, firmware: proprietary, macSupport: true, weightG: 773 }
   variants:
     - { sku: CH-913A01U-FR, colorName: Black, colorFamily: black, layout: iso_fr, switch: cherry-mx-ulp-tactile }
     - { sku: CH-913A01U-NA, colorName: Black, colorFamily: black, layout: ansi_us, switch: cherry-mx-ulp-tactile }

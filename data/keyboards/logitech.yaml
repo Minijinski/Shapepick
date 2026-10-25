@@ -200,7 +200,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/keyboards/k860-ergo/gallery/ergo-k860-gallery-1-deu-new.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/k860-split-ergonomic.920-010104
-  specs: { formFactor: split, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 1160, widthMm: 456, depthMm: 233 }
+  # btDevices : « "text": "Jusqu'à 3 dispositifs simultanément à l'aide des touches Easy-Switch." » (fiche logitech.com)
+  specs: { formFactor: split, technology: membrane, hotSwap: none, conn24ghz: true, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, macSupport: true, wristRestIncluded: true, weightG: 1160, widthMm: 456, depthMm: 233 }
   variants:
     - { sku: 920-010107, colorName: Graphite, colorFamily: black, layout: iso_uk }
     - { sku: 920-009168, colorName: Graphite, colorFamily: black, layout: iso_nordic }
@@ -330,7 +331,8 @@
     - { url: "https://resource.logitech.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/logitech/en/products/mobility/keys-to-go2-universal/gallery/keys-to-go-2-lilac-gallery-1-ch.png", kind: cutout_top }
   sources:
     - https://www.logitech.com/fr-fr/shop/p/keys-to-go2-universal.920-012969
-  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, connBt: true, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, widthMm: 250, depthMm: 105 }
+  # btDevices : « Connectez Keys-To-Go 2 à trois dispositifs maximum » (fiche logitech.com)
+  specs: { formFactor: f75, technology: scissor, lowProfile: true, hotSwap: none, connBt: true, btDevices: 3, caseMaterial: plastic, keycapMaterial: abs, backlight: none, firmware: proprietary, widthMm: 250, depthMm: 105 }
   variants:
     - { sku: 920-012966, colorName: Lilac, colorFamily: color, layout: iso_de }
     - { sku: 920-012969, colorName: Lilac, colorFamily: color, layout: iso_fr }
@@ -442,7 +444,8 @@
     - { url: "https://resource.logitechg.com/c_fill,q_auto,f_auto,dpr_1.0/d_transparent.gif/content/dam/gaming/en/products/g512-x-75-98-pdp/g512-x-98/gallery/g512-x-98-white-top-angle-gallery-1-uk.png", kind: cutout_top }
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-98-gaming-keyboard.920-014000
-  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000 }
+  # pollingHzWired : « Obtenez un avantage compétitif sérieux avec de véritables taux d'interrogation 8K, pour des temps de réponse pratiquement instantanés de 0,125 ms. » (fiche logitechg.com)
+  specs: { formFactor: f96, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 1000 }
   variants:
     - { sku: 920-013998, colorName: Blanc, colorFamily: white, layout: iso_de, switch: logitech-tactile }
     - { sku: 920-014000, colorName: Blanc, colorFamily: white, layout: iso_fr, switch: logitech-tactile }
@@ -472,7 +475,8 @@
   sources:
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard.920-013930
     - https://www.logitechg.com/fr-fr/shop/p/g512-x-75-gaming-keyboard
-  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 850 }
+  # pollingHzWired : « Obtenez un avantage compétitif sérieux avec de véritables taux d’interrogation 8K, pour des temps de réponse pratiquement instantanés de 0,125 ms. » (fiche logitechg.com)
+  specs: { formFactor: f75, technology: mechanical, hotSwap: 5pin, pollingHzWired: 8000, caseMaterial: plastic, keycapMaterial: abs, backlight: rgb, firmware: proprietary, weightG: 850 }
   variants:
     - { sku: 920-013928, colorName: Noir, colorFamily: black, layout: iso_de, switch: logitech-tactile }
     - { sku: 920-013930, colorName: Noir, colorFamily: black, layout: iso_fr, switch: logitech-tactile }

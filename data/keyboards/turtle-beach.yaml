@@ -49,7 +49,8 @@
   sources:
     - https://turtlebeach.com/products/command-series-kb5-keyboard
     - https://turtlebeach.com/products/command-series-kp7-keypad
-  specs: { formFactor: full, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  # pollingHzWired : « Pre‑lubed switches, tuned stabilizers, and true 8K wired polling deliver smooth, ultra‑responsive keystrokes, while five dedicated macro keys and a top‑mounted  » (fiche turtlebeach.com)
+  specs: { formFactor: full, technology: mechanical, hotSwap: none, pollingHzWired: 8000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
     - { sku: TBK-1005-01-US, colorName: Series KB5, colorFamily: color, layout: ansi_us, switch: turtle-beach-titan-low-profile, msrpEur: 180 }
     - { sku: TBK-7001-05, colorName: Series KP7 Keypad, colorFamily: color, layout: ansi_us, msrpEur: 120 }
@@ -68,7 +69,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/TB_VariantImage_KB7_TopDownTransparent_1106x840_8ee4ea3c-1de0-43a1-8552-7298f6992b28.png?v=1779471488, kind: cutout_top, width: 1106, height: 840, primary: true }
   sources:
     - https://turtlebeach.com/products/command-series-kb7-keyboard
-  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
+  # pollingHzWired : « 8K polling and 0.125ms latency for instant response » (fiche turtlebeach.com)
+  specs: { formFactor: tkl, technology: magnetic, hotSwap: none, pollingHzWired: 8000, caseMaterial: polycarbonate, keycapMaterial: abs, backlight: none, firmware: proprietary }
   variants:
     - { sku: TBK-2004-01-US, colorName: Series KB7, colorFamily: color, layout: ansi_us }
 
@@ -124,7 +126,8 @@
     - { url: https://cdn.shopify.com/s/files/1/0556/5795/5430/files/VulcanTKL-BLK-US.png?v=1709736276, kind: cutout_top, width: 1106, height: 840, primary: true }
   sources:
     - https://turtlebeach.com/products/vulcan-tkl-keyboard
-  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: proprietary, weightG: 660 }
+  # pollingHzWired : « 1000Hz polling rate » (fiche turtlebeach.com)
+  specs: { formFactor: tkl, technology: mechanical, hotSwap: none, pollingHzWired: 1000, caseMaterial: polycarbonate, keycapMaterial: abs, keycapProfile: low, backlight: none, firmware: proprietary, weightG: 660 }
   variants:
     - { sku: TBK-2001-01-US, colorName: Black, colorFamily: black, layout: ansi_us, switch: turtle-beach-titan }
 
