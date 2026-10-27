@@ -32,6 +32,7 @@ import {
 } from "@choose/catalog";
 import { useNavigate } from "@tanstack/react-router";
 import { useCallback, useEffect, useMemo, useRef, useState } from "react";
+import { track } from "~/audience";
 import type { ItemDetail } from "../scene/controller";
 import type { JourneyStop } from "./JourneyBar";
 import { warmExamples } from "./OptionExample";
@@ -132,6 +133,19 @@ export function useFinder(
   const navigate = useNavigate();
   const answers = useMemo(() => sanitizeAnswers(def, search), [def, search]);
   const at = search.at;
+
+  // ---- Audience -----------------------------------------------------------------------------
+  // Each answer given or changed goes to Umami as an event named after its question
+  // ("mouse:grip"), the answer as its value; the answers a page opens with (a shared link, a
+  // return visit) do not, nor those a switch of category brings back.
+  const told = useRef<{ category: Category; answers: Answers } | null>(null);
+  useEffect(() => {
+    const before = told.current;
+    told.current = { category, answers };
+    if (before?.category !== category) return;
+    for (const [key, value] of Object.entries(answers))
+      if (value !== before.answers[key]) track(`${category}:${key}`, { value });
+  }, [category, answers]);
 
   const currentKey = useMemo(
     () => stepAt(def, items, answers, at),
@@ -297,10 +311,10 @@ export function useFinder(
   const reset = useCallback(() => go({}, undefined, undefined, ""), [go]);
   // The results read the answers on screen, picks not yet confirmed included (the button said
   // how many they leave), and remember the question they were opened from.
-  const showResults = useCallback(
-    () => go(sanitizeAnswers(def, effective), DONE, currentKey ?? undefined),
-    [def, effective, currentKey, go],
-  );
+  const showResults = useCallback(() => {
+    track(`${category}:results`);
+    go(sanitizeAnswers(def, effective), DONE, currentKey ?? undefined);
+  }, [category, def, effective, currentKey, go]);
   // Back from the results to that question; without one (a shared link), to the first question
   // left unanswered, or the last one asked when every question has its answer.
   const from = search.from;

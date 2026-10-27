@@ -1,9 +1,11 @@
 import type { Category, Locale } from '@choose/catalog'
+import { track } from '~/audience'
 import type { Store } from './shops'
 
 // A click on a buy link, counted as it happens: which shop, which product, where the link sat,
 // whether it opened the product's page at the shop or a search. It goes to our own /api/out, which
-// writes it to the database, with nothing about the visitor.
+// writes it to the database, and to the audience tool when its script runs (audience.ts). Neither
+// keeps anything about the visitor.
 
 /** Where a buy link sits: the sheet, its bar, the best match, a runner-up, a row of the results. */
 export const PLACEMENTS = ['sheet', 'sheet-bar', 'best-match', 'runner-up', 'results-row'] as const
@@ -28,4 +30,5 @@ export function countClick(click: OutboundClick) {
   } catch {
     // A browser that refuses the beacon still follows the link.
   }
+  track('amazon', { product: click.slug, shop: click.shop, placement: click.placement })
 }

@@ -1,5 +1,6 @@
 import { createFileRoute, notFound, redirect } from '@tanstack/react-router'
 import {
+  AudienceSwitch,
   CONTACT,
   DATABASE,
   HOST,
@@ -13,14 +14,20 @@ import { legalHeaders, legalPaths } from '~/features/legal/legal'
 import { AMAZON_PARTNER_TAG, AMAZON_US_TAG } from '~/features/product/shops'
 import { messages as m } from '~/i18n/messages'
 import { pageHead } from '~/seo'
+import { UMAMI_WEBSITE_ID } from '~/site'
 
 // The legal notice and privacy page in English ($lang_.mentions-legales.tsx is the French one): a
 // page of text rendered by the server, outside the locale's layout (no catalogue, no canvas, no
 // preloader). The sitemap leaves it out.
 
 const TITLE = 'Legal notice and privacy'
-const DESCRIPTION =
-  'Publisher, host and data of shapepick. No cookies, only an anonymous count of clicks to Amazon.'
+const DESCRIPTION = UMAMI_WEBSITE_ID
+  ? 'Publisher, host and data of shapepick. No cookies: anonymous audience measurement and a count of clicks to Amazon.'
+  : 'Publisher, host and data of shapepick. No cookies, only an anonymous count of clicks to Amazon.'
+
+/** The audience section, once the site counts its visits (site.ts), and the numbers after it. */
+const AUDIENCE = UMAMI_WEBSITE_ID !== ''
+const after = AUDIENCE ? 1 : 0
 
 export const Route = createFileRoute('/$lang_/legal')({
   // In English only: in French the page has a name of its own, in any other language there is none.
@@ -102,7 +109,35 @@ function Legal() {
         </p>
       </LegalSection>
 
-      <LegalSection id="clicks" n={3} title="Clicks to Amazon">
+      {AUDIENCE && (
+        <LegalSection id="audience" n={3} title="Audience measurement">
+          <p>
+            To learn which pages help and what visitors look for, we count visits with Umami Cloud,
+            a tool without cookies. The figures are anonymous and only for shapepick.
+          </p>
+          <LegalFacts
+            rows={[
+              [
+                'What we count',
+                'Pages viewed, your answers to the questionnaire, clicks to Amazon, the site you came from, your browser and kind of device, the language, an approximate location (country, region, city).',
+              ],
+              [
+                'Never',
+                'No cookie, no IP address kept, no lasting identifier. No one can tell who you are or follow you to other sites.',
+              ],
+              [
+                'Provider',
+                'Umami Software, Inc. (United States), for shapepick, on servers in the European Union and the United States.',
+              ],
+              ['Kept for', `${KEPT.audience} months`],
+              ['Legal basis', 'Our legitimate interest in measuring the site’s audience.'],
+            ]}
+          />
+          <AudienceSwitch locale="en" />
+        </LegalSection>
+      )}
+
+      <LegalSection id="clicks" n={3 + after} title="Clicks to Amazon">
         <p>
           When you open a link to Amazon, we log the click. It shows us which models people look at.
         </p>
@@ -119,7 +154,7 @@ function Legal() {
         />
       </LegalSection>
 
-      <LegalSection id="amazon" n={4} title="Links to Amazon">
+      <LegalSection id="amazon" n={4 + after} title="Links to Amazon">
         {AMAZON_US_TAG && (
           <p>
             From France, its overseas territories, Belgium, Luxembourg and Monaco, links lead to
@@ -144,15 +179,16 @@ function Legal() {
         <p>On Amazon, Amazon’s privacy policy applies.</p>
       </LegalSection>
 
-      <LegalSection id="storage" n={5} title="In your browser">
+      <LegalSection id="storage" n={5 + after} title="In your browser">
         <p>
           Your browser keeps your answers to each questionnaire and the tips you’ve seen, for your
           next visit. They stay on your device.
         </p>
+        {AUDIENCE && <p>It also keeps your choice to count your visits or not.</p>}
         <p>To clear them, delete the site’s data in your browser settings.</p>
       </LegalSection>
 
-      <LegalSection id="products" n={6} title="Products and brands">
+      <LegalSection id="products" n={6 + after} title="Products and brands">
         <p>
           Specs come from the makers and the specialist press. Prices are indicative, only the
           seller’s price counts. Check their page before you buy, and tell us about any mistake.
@@ -163,7 +199,7 @@ function Legal() {
         </p>
       </LegalSection>
 
-      <LegalSection id="contact" n={7} title="Contact and your rights">
+      <LegalSection id="contact" n={7 + after} title="Contact and your rights">
         <p>
           A question, a mistake, a request about your data (access, erasure, objection)? Write to{' '}
           {mail}. You can also contact the CNIL, the French data protection authority, at{' '}
