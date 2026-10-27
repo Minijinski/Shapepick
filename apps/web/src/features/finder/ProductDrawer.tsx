@@ -474,13 +474,6 @@ export function ProductDrawer({
                     <AmazonLink item={item} locale={locale} layouts={layouts} placement="sheet" />
                   }
                 />
-                {/* The notice Amazon requires wherever its affiliate links are, word for word:
-                    the button itself says whether it opens the model's page or a search. */}
-                {AMAZON_PARTNER_TAG && (
-                  <p className={css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' })}>
-                    {m.amazonNotice[locale]}
-                  </p>
-                )}
               </div>
               {sheet.fit != null && sheet.met != null && (
                 <MatchBreakdown fit={sheet.fit} met={sheet.met} use={use} locale={locale} />
@@ -643,6 +636,19 @@ export function ProductDrawer({
                   ))}
                 </ul>
               </section>
+            )}
+
+            {/* The notice Amazon requires wherever its affiliate links are, word for word: last on
+                the sheet, small, above the buying bar. */}
+            {AMAZON_PARTNER_TAG && (
+              <p
+                className={cx(
+                  onPhoneAt.rest,
+                  css({ fontSize: 'xs', color: 'ink.faint', lineHeight: '1.45' }),
+                )}
+              >
+                {m.amazonNotice[locale]}
+              </p>
             )}
           </div>
         </div>
