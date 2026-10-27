@@ -133,10 +133,13 @@ export const websiteSchema = (locale: Locale): Schema => ({
   inLanguage: locale,
 })
 
+/** A product's offer: the indicative price its sheet shows (≈), in euros. Google lists a product
+ * only with an offer, a review or a rating. */
+const offer = (price: number) => ({ '@type': 'Offer', price, priceCurrency: 'EUR' })
+
 /**
- * A product, on its own page: what it is and who makes it, its photo, and the products its sheet
- * suggests beside it. No offer: its price is a typical public one, not a price anyone sells it at
- * here, so search results show it without a price or a rating.
+ * A product, on its own page: what it is and who makes it, its photo, its indicative price, and the
+ * products its sheet suggests beside it, each with its own price.
  */
 export const productSchema = ({
   name,
@@ -146,6 +149,7 @@ export const productSchema = ({
   url,
   image,
   category,
+  price,
   similar,
 }: {
   name: string
@@ -156,7 +160,9 @@ export const productSchema = ({
   url: string
   image?: string
   category: string
-  similar: { name: string; url: string }[]
+  /** Its indicative price, in euros. */
+  price: number
+  similar: { name: string; url: string; price: number }[]
 }): Schema => ({
   '@context': 'https://schema.org',
   '@type': 'Product',
@@ -167,8 +173,15 @@ export const productSchema = ({
   url,
   ...(image ? { image } : {}),
   category,
+  offers: offer(price),
   ...(similar.length > 0
-    ? { isSimilarTo: similar.map((other) => ({ '@type': 'Product', ...other })) }
+    ? {
+        isSimilarTo: similar.map(({ price, ...other }) => ({
+          '@type': 'Product',
+          ...other,
+          offers: offer(price),
+        })),
+      }
     : {}),
 })
 

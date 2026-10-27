@@ -62,6 +62,7 @@ export const Route = createFileRoute("/$lang/$category/{-$product}")({
         ? similar(finderOf(category), items, product).map((other) => ({
             slug: other.slug,
             name: `${other.brand.name} ${other.name}`,
+            price: other.priceEur,
           }))
         : [],
     };
@@ -102,9 +103,11 @@ export const Route = createFileRoute("/$lang/$category/{-$product}")({
             url: absolute(paths[lang]),
             image: image?.url,
             category: name,
+            price: product.priceEur,
             similar: loaderData.similar.map((other) => ({
               name: other.name,
               url: absolute(productPaths(category, other.slug)[lang]),
+              price: other.price,
             })),
           }),
           breadcrumbSchema([
