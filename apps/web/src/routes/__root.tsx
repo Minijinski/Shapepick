@@ -1,7 +1,7 @@
 /// <reference types="vite/client" />
 import { isLocale } from '@choose/catalog'
 import { createRootRoute, HeadContent, Outlet, Scripts, useParams } from '@tanstack/react-router'
-import type { JSX, ReactNode } from 'react'
+import type { ReactNode } from 'react'
 import { SITE, UMAMI_WEBSITE_ID } from '~/site'
 import appCss from '~/styles.css?url'
 
@@ -18,17 +18,13 @@ const TIDY_HEAD =
 // each new path and none when only the query changes: the finder's answers live there, so a
 // journey through the questions is one view, and opening a product's sheet is a view of it. The
 // answers themselves go as events (audience.ts). Its own domain filter keeps local builds and
-// deploy previews out.
-const tracker =
+// deploy previews out. A few lines of ours add it, once: a tag in the head React manages is
+// written again when a page changes the head (a product's sheet), and the tracker then ran again,
+// a second one counting every page twice.
+const TRACKER =
   UMAMI_WEBSITE_ID && SITE.url.startsWith('https://')
-    ? ({
-        src: 'https://cloud.umami.is/script.js',
-        defer: true,
-        'data-website-id': UMAMI_WEBSITE_ID,
-        'data-domains': new URL(SITE.url).hostname,
-        'data-exclude-search': 'true',
-      } as JSX.IntrinsicElements['script'])
-    : undefined
+    ? `if(!window.__umami){window.__umami=1;var s=document.createElement('script');s.src='https://cloud.umami.is/script.js';s.dataset.websiteId=${JSON.stringify(UMAMI_WEBSITE_ID)};s.dataset.domains=${JSON.stringify(new URL(SITE.url).hostname)};s.dataset.excludeSearch='true';document.head.appendChild(s)}`
+    : null
 
 export const Route = createRootRoute({
   head: () => ({
@@ -50,7 +46,7 @@ export const Route = createRootRoute({
       { rel: 'icon', type: 'image/svg+xml', href: '/favicon.svg?v=3' },
       { rel: 'apple-touch-icon', href: '/apple-touch-icon.png' },
     ],
-    scripts: [{ children: TIDY_HEAD }, tracker],
+    scripts: [{ children: TIDY_HEAD }, ...(TRACKER ? [{ children: TRACKER }] : [])],
   }),
   shellComponent: RootDocument,
   component: Outlet,
