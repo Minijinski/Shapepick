@@ -10,7 +10,7 @@ import {
   PUBLISHER,
 } from '~/features/legal/LegalPage'
 import { legalHeaders, legalPaths } from '~/features/legal/legal'
-import { AMAZON_PARTNER_TAG } from '~/features/product/shops'
+import { AMAZON_PARTNER_TAG, AMAZON_US_TAG } from '~/features/product/shops'
 import { messages as m } from '~/i18n/messages'
 import { pageHead } from '~/seo'
 
@@ -110,7 +110,7 @@ function Legal() {
           rows={[
             [
               'What we log',
-              'The product, the kind of link and where it sat, the page and its language, the date and time, the country, the kind of device.',
+              'The shop, the product, the kind of link and where it sat, the page and its language, the date and time, the country, the kind of device.',
             ],
             ['Never', 'No IP address, no cookie, no identifier. We don’t know who clicked.'],
             ['Where', 'Our database, at Neon, in Frankfurt.'],
@@ -119,11 +119,18 @@ function Legal() {
         />
       </LegalSection>
 
-      <LegalSection id="amazon" n={4} title="Links to Amazon.fr">
+      <LegalSection id="amazon" n={4} title="Links to Amazon">
+        {AMAZON_US_TAG && (
+          <p>
+            From France, its overseas territories, Belgium, Luxembourg and Monaco, links lead to
+            Amazon.fr. Elsewhere, to Amazon.com. Your device’s time zone is enough to choose, we
+            don’t keep it.
+          </p>
+        )}
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
-              Links to Amazon.fr are affiliate links. If you buy after a click, Amazon pays us a
+              Links to Amazon are affiliate links. If you buy after a click, Amazon pays us a
               commission. Your price doesn’t change. The ranking ignores it, it depends only on your
               answers and the product sheets.
             </p>
@@ -134,7 +141,7 @@ function Legal() {
         ) : (
           <p>Links to Amazon.fr are plain links. We earn nothing from your purchases.</p>
         )}
-        <p>On Amazon.fr, Amazon’s privacy policy applies.</p>
+        <p>On Amazon, Amazon’s privacy policy applies.</p>
       </LegalSection>
 
       <LegalSection id="storage" n={5} title="In your browser">

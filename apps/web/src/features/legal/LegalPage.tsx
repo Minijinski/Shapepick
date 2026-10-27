@@ -12,7 +12,7 @@ import { legalPaths } from './legal'
 // and the rest of the site are ordinary ones.
 
 /** When the text last changed, shown at its top. */
-export const UPDATED = '2026-10-24'
+export const UPDATED = '2026-10-27'
 
 /**
  * Who publishes the site and directs its publication. Affiliate links (features/product/shops.ts)

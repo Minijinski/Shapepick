@@ -1,15 +1,17 @@
 import type { CatalogItem, Locale } from '@choose/catalog'
-import type { MouseEvent } from 'react'
+import { type MouseEvent, useSyncExternalStore } from 'react'
 import { css, cx } from 'styled-system/css'
 import { button } from 'styled-system/recipes'
 import { messages as m } from '~/i18n/messages'
 import { countClick, type Placement } from './clicks'
-import { amazonLink } from './shops'
+import { amazonLink, type Store, storeOf } from './shops'
 
-// A product's Amazon.fr link, wherever the product shows: a button in its sheet and on the best
+// A product's Amazon link, wherever the product shows: a button in its sheet and on the best
 // match, a small pill on the runners-up, an arrow at the end of a row of the results. It sits above
 // the button stretched over a card or a row, and a click on it never opens the sheet. Its arrow
-// slides out under the pointer. Each click on it is counted (clicks.ts), with where it sat.
+// slides out under the pointer. Each click on it is counted (clicks.ts), with where it sat. The
+// Amazon it opens is the visitor's (shops.ts): the served HTML guesses it from the page's language,
+// the browser then reads the device's time zone.
 
 type Props = {
   item: CatalogItem
@@ -47,6 +49,18 @@ const icon = css({
   _focusVisible: { outline: '2px solid', outlineColor: 'signal', outlineOffset: '2px' },
 })
 
+let zone: string | undefined
+const timeZone = () => (zone ??= Intl.DateTimeFormat().resolvedOptions().timeZone)
+const steady = () => () => {}
+
+/** The visitor's Amazon: the page's language's in the served HTML, the device's once awake. */
+const useStore = (locale: Locale): Store =>
+  useSyncExternalStore(
+    steady,
+    () => storeOf(timeZone(), locale),
+    () => storeOf(undefined, locale),
+  )
+
 const Arrow = ({ size }: { size: number }) => (
   <svg
     data-arrow
@@ -72,7 +86,7 @@ export function AmazonLink({
   variant = 'button',
   className,
 }: Props) {
-  const shop = amazonLink(item, locale, layouts)
+  const shop = amazonLink(item, locale, layouts, useStore(locale))
   const rel = shop.affiliate ? 'sponsored nofollow noopener' : 'nofollow noopener'
   /**
    * A click on the link opens Amazon, never the sheet of the card or row it sits on, and is
@@ -82,6 +96,7 @@ export function AmazonLink({
     e.stopPropagation()
     if (e.type === 'auxclick' && e.button !== 1) return
     countClick({
+      shop: shop.store,
       slug: item.slug,
       category: item.category,
       placement,

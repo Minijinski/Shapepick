@@ -1,11 +1,13 @@
 import { categories, isLocale } from '@choose/catalog'
 import { createFileRoute } from '@tanstack/react-router'
 import { PLACEMENTS } from '~/features/product/clicks'
+import { STORES } from '~/features/product/shops'
 
 // Where clicks on buy links are counted: features/product/clicks.ts sends each one as a beacon. A
-// click names a product of the catalogue, where its link sat and whether it opened the product's
-// page or a search. The country comes from the CDN's geolocation, the kind of device from the user
-// agent, and crawlers are not counted. Nothing else is kept: no address, no cookie, no identifier.
+// click names the shop, a product of the catalogue, where its link sat and whether it opened the
+// product's page or a search. The country comes from the CDN's geolocation, the kind of device
+// from the user agent, and crawlers are not counted. Nothing else is kept: no address, no cookie,
+// no identifier.
 
 const BOTS = /bot|crawl|spider|slurp|preview|headless|lighthouse/i
 const MOBILE = /mobi|android|iphone|ipad/i
@@ -47,7 +49,10 @@ export const Route = createFileRoute('/api/out')({
           return answer(400)
         }
         const { slug, category, placement, link, locale, page } = click
+        // A page served before Amazon.com still names no shop: its links all went to Amazon.fr.
+        const shop = click.shop ?? 'amazon.fr'
         if (
+          !oneOf(STORES, shop) ||
           typeof slug !== 'string' ||
           !oneOf(categories, category) ||
           !oneOf(PLACEMENTS, placement) ||
@@ -61,7 +66,7 @@ export const Route = createFileRoute('/api/out')({
         const { recordClick } = await import('~/server/clicks.server')
         try {
           await recordClick({
-            shop: 'amazon',
+            shop,
             productSlug: slug,
             category,
             placement,

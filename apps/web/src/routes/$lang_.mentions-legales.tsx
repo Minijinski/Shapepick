@@ -10,7 +10,7 @@ import {
   PUBLISHER,
 } from '~/features/legal/LegalPage'
 import { legalHeaders, legalPaths } from '~/features/legal/legal'
-import { AMAZON_PARTNER_TAG } from '~/features/product/shops'
+import { AMAZON_PARTNER_TAG, AMAZON_US_TAG } from '~/features/product/shops'
 import { messages as m } from '~/i18n/messages'
 import { pageHead } from '~/seo'
 
@@ -112,7 +112,7 @@ function MentionsLegales() {
           rows={[
             [
               'Ce que nous notons',
-              'Le produit, le type de lien et sa place, la page et sa langue, la date et l’heure, le pays, le type d’appareil.',
+              'La boutique, le produit, le type de lien et sa place, la page et sa langue, la date et l’heure, le pays, le type d’appareil.',
             ],
             [
               'Jamais',
@@ -124,13 +124,20 @@ function MentionsLegales() {
         />
       </LegalSection>
 
-      <LegalSection id="amazon" n={4} title="Liens vers Amazon.fr">
+      <LegalSection id="amazon" n={4} title="Liens vers Amazon">
+        {AMAZON_US_TAG && (
+          <p>
+            Depuis la France, l’outre-mer, la Belgique, le Luxembourg et Monaco, les liens mènent à
+            Amazon.fr. Ailleurs, à Amazon.com. Le fuseau horaire de votre appareil suffit à choisir,
+            nous ne le gardons pas.
+          </p>
+        )}
         {AMAZON_PARTNER_TAG ? (
           <>
             <p>
-              Les liens vers Amazon.fr sont des liens affiliés. Si vous achetez après un clic,
-              Amazon nous verse une commission. Votre prix ne change pas. Le classement n’en tient
-              pas compte, il dépend seulement de vos réponses et des fiches produits.
+              Les liens vers Amazon sont des liens affiliés. Si vous achetez après un clic, Amazon
+              nous verse une commission. Votre prix ne change pas. Le classement n’en tient pas
+              compte, il dépend seulement de vos réponses et des fiches produits.
             </p>
             <p>
               <strong>{m.amazonNotice.fr}</strong>
@@ -141,7 +148,7 @@ function MentionsLegales() {
             Les liens vers Amazon.fr sont de simples liens. Nous ne touchons rien sur vos achats.
           </p>
         )}
-        <p>Sur Amazon.fr, la politique de confidentialité d’Amazon s’applique.</p>
+        <p>Sur Amazon, la politique de confidentialité d’Amazon s’applique.</p>
       </LegalSection>
 
       <LegalSection id="stockage" n={5} title="Dans votre navigateur">
